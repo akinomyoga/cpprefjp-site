@@ -107,63 +107,61 @@
 
 厳密にはVisual C++はVisual Studioに統合されていて個別の製品名を持たなくなっているが、このサイトでは便宜上Visual C++と呼ぶ。
 
-| 名称                                       | 製品バージョン | Visual C++ バージョン | `_MSC_VER` | `_MSC_FULL_VER` |
-|--------------------------------------------|----------------|-----------------------|----------|---------------|
-| Visual C++ 2017 Update 7                   | 15.7           | 14.14                 | 1914     | 191426428     |
-| Visual C++ 2017 Update 6                   | 15.6           | 14.13                 | 1913     | 191326128     |
-| Visual C++ 2017 Update 5                   | 15.5.7         | 14.12                 | 1912     | 191225835     |
-| Visual C++ 2017 Update 5                   | 15.5.6         | 14.12                 | 1912     | 191225835     |
-| Visual C++ 2017 Update 5                   | 15.5.4         | 14.12                 | 1912     | 191225834     |
-| Visual C++ 2017 Update 5                   | 15.5.2         | 14.12                 | 1912     | 191225831     |
-| Visual C++ 2017 Update 4                   | 15.4.5         | 14.11                 | 1911     | 191125547     |
-| Visual C++ 2017 Update 4                   | 15.4.4         | 14.11                 | 1911     | 191125542     |
-| Visual C++ 2017 Update 3                   | 15.3.3         | 14.11                 | 1911     | 191125507     |
-| Visual C++ 2017 <sup><a id="note_ref-visual_cpp_ver-1" href="#note-visual_cpp_ver-1">[§注1]</a></sup> | 15.0           | 14.10                 | 1910     | 191025017     |
-| Visual C++ 2015 Update 3                   | 14.0           | 14.0                  | 1900     | 190024210     |
-| Visual C++ 2015 Update 2                   | 14.0           | 14.0                  | 1900     | 190023918     |
-| Visual C++ 2015 Update 1                   | 14.0           | 14.0                  | 1900     | 190023506     |
-| Visual C++ 2015                            | 14.0           | 14.0                  | 1900     | 190023026     |
-| Visual C++ 2013 Update 5                   | 12.0           | 12.0                  | 1800     | 180040629     |
-| Visual C++ 2013 Update 4                   | 12.0           | 12.0                  | 1800     | 180031101     |
-| Visual C++ 2013 Update 3                   | 12.0           | 12.0                  | 1800     | 180030723     |
-| Visual C++ 2013 Update 2                   | 12.0           | 12.0                  | 1800     | 180030501     |
-| Visual C++ 2013 Update 1 <sup><a id="note_ref-visual_cpp_ver-2" href="#note-visual_cpp_ver-2">[§注2]</a></sup> | 12.0           | 12.0                  | 1800     | 180021005     |
-| Visual C++ 2013                            | 12.0           | 12.0                  | 1800     | 180021005     |
-| Visual C++ 2012 Update 4                   | 11.0           | 11.0                  | 1700     | 170061030     |
-| Visual C++ 2012 Update 3                   | 11.0           | 11.0                  | 1700     | 170060610     |
-| Visual C++ 2012 Update 2                   | 11.0           | 11.0                  | 1700     | 170060315     |
-| Visual C++ 2012 Update 1                   | 11.0           | 11.0                  | 1700     | 170051106     |
-| Visual C++ 2012                            | 11.0           | 11.0                  | 1700     | 170050727     |
-| Visual C++ 2010 SP1                        | 10.0           | 10.0                  | 1600     | 160040219     |
-| Visual C++ 2010                            | 10.0           | 10.0                  | 1600     | 160030319     |
-| Visual C++ 2008 SP1                        | 9.0            | 9.0                   | 1500     | 150030729     |
-| Visual C++ 2008                            | 9.0            | 9.0                   | 1500     | 150021022     |
-| Visual C++ 2005 SP1                        | 8.0            | 8.0                   | 1400     | 140050727     |
-| Visual C++ 2005                            | 8.0            | 8.0                   | 1400     | 140050320     |
-| Windows Server 2003 SP1 DDK (for AMD64)    |                |                       | 1400     | 140040310     |
-| Visual C++ .NET 2003 SP1                   | 7.1            | 7.1                   | 1310     | 13106030      |
-| Windows Server 2003 SP1 DDK                |                |                       | 1310     | 13104035      |
-| Visual C++ .NET 2003                       | 7.1            | 7.1                   | 1310     | 13103077      |
-| Visual C++ Toolkit 2003                    | 7.1            | 7.1                   | 1310     | 13103052      |
-| Windows Server 2003 DDK                    |                |                       | 1310     | 13102179      |
-| Visual C++ .NET                            | 7.0            | 7.0                   | 1300     | 13009466      |
-| Windows XP SP1 DDK                         |                |                       | 1300     | 13009176      |
-| Visual C++ 6.0 SP5                         | 6.0            | 6.0                   | 1200     | 12008804      |
-| Visual C++ 5.0 <sup><a id="note_ref-visual_cpp_ver-3" href="#note-visual_cpp_ver-3">[§注3]</a></sup> | 5.0            | 5.0                   | 1100     |               |
-| Visual C++ 4.2                             | 4.2            | 4.2                   | 1020     |               |
-| Visual C++ 4.1                             | 4.1            | 4.1                   | 1010     |               |
-| Visual C++ 4.0                             | 4.0            | 4.0                   | 1000     |               |
-| Visual C++ 2.0                             | 2.0            | 2.0                   | 900      |               |
-| Visual C++ 1.0                             | 1.0            | 1.0                   | 800      |               |
-| Microsoft C/C++ 7.0                        |                |                       | 700      |               |
-| Microsoft C 6.0                            |                |                       | 600      |               |
+| 表記          | 製品名 [Visual Studio バージョン]      | VC++ バージョン | `_MSC_VER` | `_MSC_FULL_VER` |
+|---------------|----------------------------------------|-----------------|------------|-----------------|
+| 2017 Update 7 | Visual Studio 2017 Update 7 [15.7]     | 14.13           | 1913       | 191326128       |
+| 2017 Update 6 | Visual Studio 2017 Update 6 [15.6]     | 14.13           | 1913       | 191326128       |
+| 2017 Update 5 | Visual Studio 2017 Update 5 [15.5.7]<br/>Visual Studio 2017 Update 5 [15.5.6] | 14.12 | 1912 | 191225835 |
+|               | Visual Studio 2017 Update 5 [15.5.4]   | 14.12           | 1912       | 191225834       |
+|               | Visual Studio 2017 Update 5 [15.5.2]   | 14.12           | 1912       | 191225831       |
+| 2017 Update 4 | Visual Studio 2017 Update 4 [15.4.5]   | 14.11           | 1911       | 191125547       |
+|               | Visual Studio 2017 Update 4 [15.4.4]   | 14.11           | 1911       | 191125542       |
+| 2017 Update 3 | Visual Studio 2017 Update 3 [15.3.3]   | 14.11           | 1911       | 191125507       |
+| 2017          | Visual Studio 2017 <sup><a id="note_ref-visual_cpp_ver-1" href="#note-visual_cpp_ver-1">[§注1]</a></sup> [15.0] | 14.10 | 1910 | 191025017 |
+| 2015 Update 3 | Visual Studio 2015 Update 3 [14.0]     | 14.0            | 1900       | 190024210       |
+| 2015 Update 2 | Visual Studio 2015 Update 2 [14.0]     | 14.0            | 1900       | 190023918       |
+| 2015 Update 1 | Visual Studio 2015 Update 1 [14.0]     | 14.0            | 1900       | 190023506       |
+| 2015          | Visual Studio 2015          [14.0]     | 14.0            | 1900       | 190023026       |
+| 2013 Update 5 | Visual Studio 2013 Update 5 [12.0]     | 12.0            | 1800       | 180040629       |
+| 2013 Update 4 | Visual Studio 2013 Update 4 [12.0]     | 12.0            | 1800       | 180031101       |
+| 2013 Update 3 | Visual Studio 2013 Update 3 [12.0]     | 12.0            | 1800       | 180030723       |
+| 2013 Update 2 | Visual Studio 2013 Update 2 [12.0]     | 12.0            | 1800       | 180030501       |
+| 2013 Update 1 | Visual Studio 2013 Update 1 <sup><a id="note_ref-visual_cpp_ver-2" href="#note-visual_cpp_ver-2">[§注2]</a></sup> [12.0] | 12.0 | 1800 | 180021005 |
+| 2013          | Visual Studio 2013          [12.0]     | 12.0            | 1800       | 180021005       |
+| 2012 Update 4 | Visual Studio 2012 Update 4 [11.0]     | 11.0            | 1700       | 170061030       |
+| 2012 Update 3 | Visual Studio 2012 Update 3 [11.0]     | 11.0            | 1700       | 170060610       |
+| 2012 Update 2 | Visual Studio 2012 Update 2 [11.0]     | 11.0            | 1700       | 170060315       |
+| 2012 Update 1 | Visual Studio 2012 Update 1 [11.0]     | 11.0            | 1700       | 170051106       |
+| 2012          | Visual Studio 2012          [11.0]     | 11.0            | 1700       | 170050727       |
+| 2010 SP1      | Visual Studio 2010 SP1      [10.0]     | 10.0            | 1600       | 160040219       |
+| 2010          | Visual Studio 2010          [10.0]     | 10.0            | 1600       | 160030319       |
+| 2008 SP1      | Visual Studio 2008 SP1      [9.0]      | 9.0             | 1500       | 150030729       |
+| 2008          | Visual Studio 2008          [9.0]      | 9.0             | 1500       | 150021022       |
+| 2005 SP1      | Visual Studio 2005 SP1      [8.0]      | 8.0             | 1400       | 140050727       |
+| 2005          | Visual Studio 2005          [8.0]      | 8.0             | 1400       | 140050320       |
+|               | Windows Server 2003 SP1 DDK (for AMD64)|                 | 1400       | 140040310       |
+| 2003 SP1      | Visual Studio .NET 2003 SP1 [7.1]      | 7.1             | 1310       | 13106030        |
+|               | Windows Server 2003 SP1 DDK            |                 | 1310       | 13104035        |
+| 2003          | Visual Studio .NET 2003     [7.1]      | 7.1             | 1310       | 13103077        |
+|               | Visual Studio Toolkit 2003  [7.1]      | 7.1             | 1310       | 13103052        |
+|               | Windows Server 2003 DDK                |                 | 1310       | 13102179        |
+| 2002          | Visual Studio .NET (2002) [7.0]<br/>Visual C++ .NET [7.0] | 7.0 | 1300 | 13009466       |
+|               | Windows XP SP1 DDK                     |                 | 1300       | 13009176        |
+|               | Visual Studio 6.0 SP5 <br/>Visual C++ 6.0 SP5 | 6.0      | 1200       | 12008804        |
+|               | Visual Studio 97 [5.0]<br/>Visual C++ 5.0 | 5.0          | 1100       |                 |
+|               | Visual C++ 4.2                         | 4.2             | 1020       |                 |
+|               | Visual C++ 4.1                         | 4.1             | 1010       |                 |
+|               | Visual C++ 4.0                         | 4.0             | 1000       |                 |
+|               | Visual C++ 2.0                         | 2.0             | 900        |                 |
+|               | Visual C++ 1.0                         | 1.0             | 800        |                 |
+|               | Microsoft C/C++ 7.0                    |                 | 700        |                 |
+|               | Microsoft C 6.0                        |                 | 600        |                 |
 
 #### 注釈
 
 1. **<a id="note-visual_cpp_ver-1" href="#note_ref-visual_cpp_ver-1">^</a>**  Visual C++ 2017はVisual C++ 2015とバイナリ互換が保たれているためメジャーバージョンアップは行われなかった。その結果、製品バージョンとVisual C++バージョンが一致しなくなった。
   [Binary Compatibility and Pain-free Upgrade: Why Moving to Visual Studio 2017 is almost “too easy”](https://blogs.msdn.microsoft.com/vcblog/2017/03/07/binary-compatibility-and-pain-free-upgrade-why-moving-to-visual-studio-2017-is-almost-too-easy/)
 2. **<a id="note-visual_cpp_ver-2" href="#note_ref-visual_cpp_ver-2">^</a>**  Visual C++ 2013 Update1ではIDEのみ修正され、コンパイラ、ヘッダー、ライブラリ等は一切変更されなかった。
-3. **<a id="note-visual_cpp_ver-3" href="#note_ref-visual_cpp_ver-3">^</a>**  Visual C++ 5.0はVisual Studio 97にも収録されている。
 
 ### C++11の機能を有効にする
 
