@@ -79,6 +79,7 @@ C++11以降対応については対応バージョンを明記します。バー
 | forward iterator                   | 前方向イテレータ             |
 | fundamental type                   | 単純型                       |
 | ill-formed                         | 不適格                       |
+| ill-formed; no diagnostic required | 不適格(診断不要)             |
 | implementation-defined             | 処理系定義                   |
 | indirect base class                | 間接基底クラス               |
 | inherited                          | 継承                         |
@@ -93,6 +94,7 @@ C++11以降対応については対応バージョンを明記します。バー
 | move assignment                    | ムーブ代入                   |
 | move constructor                   | ムーブコンストラクタ         |
 | mutable iterator                   | 可変イテレータ               |
+| no diagnostic required, NDR        | 診断不要                     |
 | non-virtual base class             | 非仮想基底クラス             |
 | note                               | 注                           |
 | output iterator                    | 出力イテレータ               |
