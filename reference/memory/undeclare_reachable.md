@@ -52,7 +52,7 @@ namespace std {
 int main()
 {
   int* p = new int(100);
-  std::undeclare_reachable(p); // ill-formed
+  std::undeclare_reachable(p); // 不適格
   return EXIT_SUCCESS;
 }
 ```

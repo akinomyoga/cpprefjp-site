@@ -361,7 +361,7 @@ void g() {
 template<class T>
 void g() {
   if constexpr (false)
-    static_assert(false); // 廃棄された分岐内でも引っかかる (ill-formed NDR)
+    static_assert(false); // 廃棄された分岐内でも引っかかる (不適格(診断不要))
 }
 ```
 

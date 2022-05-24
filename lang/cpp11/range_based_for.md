@@ -105,7 +105,7 @@ begin-exprとend-exprの具体的な内容は、範囲として何を渡すか�
 * for-range-declaration[italic]
 * statement[italic]
 
-* ただし、`__bound`は配列の要素数(要素数が不明な場合はill-formed)。
+* ただし、`__bound`は配列の要素数(要素数が不明な場合は不適格)。
 
 範囲の型がクラスであって、メンバ`begin`と`end`が両方存在するとき、以下のように展開される：
 

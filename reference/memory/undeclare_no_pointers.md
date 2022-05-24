@@ -40,7 +40,7 @@ namespace std {
 int main()
 {
   int* p = new int[100];
-  std::undeclare_no_pointers(p); // ill-formed
+  std::undeclare_no_pointers(p); // 不適格
   return EXIT_SUCCESS;
 }
 ```
