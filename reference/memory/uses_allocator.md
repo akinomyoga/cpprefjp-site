@@ -40,7 +40,7 @@ namespace std {
 - `T` がアロケータを利用し、アロケータをコンストラクタ引数の末尾で受け取る場合（`uses_allocator<T, Alloc>::value == true`かつ、[`is_constructible`](/reference/type_traits/is_constructible.md)`<T, V1, V2, ..., VN, Alloc>::value == true`ならば）  
 `obj(v1, v2, ..., vN, alloc);` の形でコンストラクタを呼び出す。
 
-- それ以外の場合、要求された構築はill-formedである。
+- それ以外の場合、要求された構築は不適格である。
 
 すなわち、構築したい型がアロケータを利用するならば引数とアロケータを適切な順序でコンストラクタに与えて呼び出し、利用しないならば通常のコンストラクタ呼び出しを行うような構築方法である。
 
