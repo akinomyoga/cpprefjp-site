@@ -56,7 +56,7 @@ int distance(void *a, void *b)
 
 int main()
 {
-  //Zero is ill-formed in GCC 4.9.
+  // GCC 4.9 は 0 に未対応 (コンパイルエラーになる)。
   //alignas(0) test a;
 
   test t;
