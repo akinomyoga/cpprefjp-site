@@ -235,8 +235,8 @@
 <li><code>operator||, operator&amp;&amp;</code>を<code>remove_cvref_t&lt;T&gt;</code>のクラススコープで名前解決したかの様に探索した結果、候補関数は見つからない</li>
 </ul>
 </li>
-<li><code>operator||, operator&amp;&amp;</code>の<a class="cpprefjp-defined-word" href="../../implementation-compliance.html" title="引数依存名前探索のこと">ADL</a>による探索では<a class="cpprefjp-defined-word" href="../../implementation-compliance.html#dfn-ill-formed" title="プログラムが適格でないこと。コンパイルエラーなどになる">不適格</a>な宣言は見つからない<ul>
-<li><code>T</code>の<a class="cpprefjp-defined-word" href="../../implementation-compliance.html" title="引数依存名前探索のこと">ADL</a>探索範囲に<code>T</code>が左右どちらのオペランドになったとしても、受け入れ可能にオーバーロードされた<code>operator||, operator&amp;&amp;</code>演算子は存在しない</li>
+<li><code>operator||, operator&amp;&amp;</code>のADLによる探索では<a class="cpprefjp-defined-word" href="../../implementation-compliance.html#dfn-ill-formed" title="プログラムが適格でないこと。コンパイルエラーなどになる">不適格</a>な宣言は見つからない<ul>
+<li><code>T</code>のADL探索範囲に<code>T</code>が左右どちらのオペランドになったとしても、受け入れ可能にオーバーロードされた<code>operator||, operator&amp;&amp;</code>演算子は存在しない</li>
 </ul>
 </li>
 </ul>

@@ -240,7 +240,7 @@
 </code></pre></div>
 </p>
 <h2>備考</h2>
-<p>この関数は<code>move_iterator</code>のクラス定義内で<code>friend</code>関数として定義される。そのため、メンバ関数としても非メンバ関数としても明示的に呼び出すことはできず、<a class="cpprefjp-defined-word" href="../../../implementation-compliance.html" title="引数依存名前探索のこと">ADL</a>によってのみ呼び出すことができる。 
+<p>この関数は<code>move_iterator</code>のクラス定義内で<code>friend</code>関数として定義される。そのため、メンバ関数としても非メンバ関数としても明示的に呼び出すことはできず、ADLによってのみ呼び出すことができる。 
 基本的には<code><a href="../iter_swap.html">ranges::iter_swap</a></code>カスタマイゼーションポイントオブジェクトを通して利用する。</p>
 <h2>例</h2>
 <p><div class="yata" id="abbd232a2124863a6bfa17c3a8cd4cb93deacd0d"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf"><a href="../../iterator.html">&lt;iterator&gt;</a></span><span class="cp"></span>

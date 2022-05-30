@@ -180,21 +180,7 @@
       <div class="col-sm-12 content-body">
         
   <h1 itemprop="name"><span class="token">標準規格と処理系</span></h1>
-<div itemprop="articleBody"><h2>不適格と適格である</h2>
-<p>14</p>
-<ul>
-<li><a href="#summary">リンクの中の適格である</a></li>
-<li><dfn>これは適格なのである</dfn></li>
-<li><kbd>これも対象外としたい適格である</kbd></li>
-<li><code>もちろんここの適格も除外する</code></li>
-<li>そのままの<a class="cpprefjp-defined-word" href="#dfn-well-formed" title="プログラムが文法規則・診断対象の意味規則・単一定義規則を満たすこと">適格</a>と<a class="cpprefjp-defined-word" href="#dfn-ill-formed" title="プログラムが適格でないこと。コンパイルエラーなどになる">不適格</a>は変換の対象</li>
-<li><a class="cpprefjp-defined-word" href="" title="引数依存名前探索のこと">ADL</a>は変換対象。二番目以降のADLは変換対象ではない。<code>別要素</code>の後の <a class="cpprefjp-defined-word" href="" title="引数依存名前探索のこと">ADL</a> は変換する。</li>
-<li>SADLY は変換対象ではない。SADL も変換対象ではない。ADLERも変換対象ではない。<a class="cpprefjp-defined-word" href="" title="引数依存名前探索のこと">ADL</a>は変換対象。</li>
-</ul>
-<p><div class="codehilite"><pre><span></span><code><span class="c1">// コードブロック中の適格は除外</span>
-</code></pre></div>
-</p>
-<h2><a href="#summary" id="summary">概要</a></h2>
+<div itemprop="articleBody"><h2><a href="#summary" id="summary">概要</a></h2>
 <p>※ここでは各用語の日本語訳については、できるだけ JIS C++ (JIS X 3014:2003) に倣った。例外についてはそれぞれ注釈で説明を与える。</p>
 <h3><a href="#implementation-compliance" id="implementation-compliance">処理系の適合 (implementation compliance)</a></h3>
 <p><strong>処理系</strong> (implementation) または<strong>実装</strong>とはプログラムの<strong>翻訳</strong> (translation) と<strong>実行</strong> (execution) をする一連の枠組み・ソフトウェアのことである。
