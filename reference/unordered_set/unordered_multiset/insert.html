@@ -25,27 +25,27 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicons/apple-touch-icon.png?cachebust=b310eebf6d56d53be949dce3538d12ec0b499434">
-<link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicons/favicon-32x32.png?cachebust=b310eebf6d56d53be949dce3538d12ec0b499434">
-<link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicons/favicon-16x16.png?cachebust=b310eebf6d56d53be949dce3538d12ec0b499434">
-<link rel="manifest" href="../../../static/favicons/manifest.json?cachebust=b310eebf6d56d53be949dce3538d12ec0b499434">
-<link rel="mask-icon" href="../../../static/favicons/safari-pinned-tab.svg?cachebust=b310eebf6d56d53be949dce3538d12ec0b499434" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicons/apple-touch-icon.png?cachebust=df243140d26ed5a8b0edaad562606dcbdc05a873">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicons/favicon-32x32.png?cachebust=df243140d26ed5a8b0edaad562606dcbdc05a873">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicons/favicon-16x16.png?cachebust=df243140d26ed5a8b0edaad562606dcbdc05a873">
+<link rel="manifest" href="../../../static/favicons/manifest.json?cachebust=df243140d26ed5a8b0edaad562606dcbdc05a873">
+<link rel="mask-icon" href="../../../static/favicons/safari-pinned-tab.svg?cachebust=df243140d26ed5a8b0edaad562606dcbdc05a873" color="#f5f8fc">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../../static/pygments/default.css?cachebust=b310eebf6d56d53be949dce3538d12ec0b499434">
+<link rel="stylesheet" href="../../../static/pygments/default.css?cachebust=df243140d26ed5a8b0edaad562606dcbdc05a873">
 <!-- <link rel="stylesheet" href="../../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../../static/kunai/css/kunai-stage-0.css?cachebust=b310eebf6d56d53be949dce3538d12ec0b499434" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-1.css?cachebust=b310eebf6d56d53be949dce3538d12ec0b499434" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-2.css?cachebust=b310eebf6d56d53be949dce3538d12ec0b499434" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-3.css?cachebust=b310eebf6d56d53be949dce3538d12ec0b499434" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-0.css?cachebust=df243140d26ed5a8b0edaad562606dcbdc05a873" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-1.css?cachebust=df243140d26ed5a8b0edaad562606dcbdc05a873" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-2.css?cachebust=df243140d26ed5a8b0edaad562606dcbdc05a873" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-3.css?cachebust=df243140d26ed5a8b0edaad562606dcbdc05a873" rel="stylesheet">
 
-<script type="text/javascript" src="../../../static/kunai/js/kunai-vendor.js?cachebust=b310eebf6d56d53be949dce3538d12ec0b499434"></script>
-<script type="text/javascript" src="../../../static/kunai/js/kunai.js?cachebust=b310eebf6d56d53be949dce3538d12ec0b499434"></script>
+<script type="text/javascript" src="../../../static/kunai/js/kunai-vendor.js?cachebust=df243140d26ed5a8b0edaad562606dcbdc05a873"></script>
+<script type="text/javascript" src="../../../static/kunai/js/kunai.js?cachebust=df243140d26ed5a8b0edaad562606dcbdc05a873"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -237,12 +237,12 @@
 <ul>
 <li>
 <p><code>v</code> を引数にとる形式（(1)、(2)の上側）では、<code>value_type</code> はコンテナに対してコピー挿入可能（CopyInsertable）でなければならない。<br />
-    コンテナに対してコピー挿入可能とは、<code>m</code> をアロケータ型 <code>allocator_type</code> の左辺値、<code>p</code> を要素型 <code>value_type</code> へのポインタとすると、以下の式が<a class="cpprefjp-defined-word" href="../../../implementation-compliance.html#dfn-well-formed" title="プログラムが文法規則・診断対象の意味規則・単一定義規則を満たすこと">適格</a>（well-formed）であるということである。</p>
+    コンテナに対してコピー挿入可能とは、<code>m</code> をアロケータ型 <code>allocator_type</code> の左辺値、<code>p</code> を要素型 <code>value_type</code> へのポインタとすると、以下の式が<a class="cpprefjp-defined-word" data-desc="プログラムが文法規則・診断対象の意味規則・単一定義規則を満たすこと" href="../../../implementation-compliance.html#dfn-well-formed">適格</a>（well-formed）であるということである。</p>
 <p><code>std::<a href="../../memory/allocator_traits.html">allocator_traits</a>&lt;allocator_type&gt;::<a href="../../memory/allocator_traits/construct.html">construct</a>(m, p, v);</code></p>
 </li>
 <li>
 <p><code>rv</code> を引数にとる形式（(1)、(2)の下側）では、<code>value_type</code> はコンテナに対してムーブ挿入可能（MoveInsertable）でなければならない。<br />
-    コンテナに対してムーブ挿入可能とは、<code>m</code> をアロケータ型 <code>allocator_type</code> の左辺値、<code>p</code> を要素型 <code>value_type</code> へのポインタとすると、以下の式が<a class="cpprefjp-defined-word" href="../../../implementation-compliance.html#dfn-well-formed" title="プログラムが文法規則・診断対象の意味規則・単一定義規則を満たすこと">適格</a>（well-formed）であるということである。</p>
+    コンテナに対してムーブ挿入可能とは、<code>m</code> をアロケータ型 <code>allocator_type</code> の左辺値、<code>p</code> を要素型 <code>value_type</code> へのポインタとすると、以下の式が<a class="cpprefjp-defined-word" data-desc="プログラムが文法規則・診断対象の意味規則・単一定義規則を満たすこと" href="../../../implementation-compliance.html#dfn-well-formed">適格</a>（well-formed）であるということである。</p>
 <p><code>std::<a href="../../memory/allocator_traits.html">allocator_traits</a>&lt;allocator_type&gt;::<a href="../../memory/allocator_traits/construct.html">construct</a>(m, p, std::<a href="../../utility/move.html">move</a>(rv));</code></p>
 </li>
 <li>
@@ -252,7 +252,7 @@
 <li>
 <p>引数 <code>first</code>、および、<code>last</code>は、入力イテレータの要件を満たし、かつ、範囲 <code>[first, last)</code> が当該コンテナ<strong>以外を指す</strong>有効な範囲でなければならない。<br />
     また、引数 <code>first</code>、および、<code>last</code> を引数にとる形式（(3)）では、このコンテナの要素型 <code>value_type</code> は、コンテナに対して <code>*first</code> から直接構築可能（EmplaceConstructible）でなければならない。<br />
-    ここで、コンテナに対して <code>*first</code> から直接構築可能とは、<code>m</code> をアロケータ型 <code>allocator_type</code> の左辺値、<code>p</code> を要素型 <code>value_type</code> へのポインタとすると、以下の式が<a class="cpprefjp-defined-word" href="../../../implementation-compliance.html#dfn-well-formed" title="プログラムが文法規則・診断対象の意味規則・単一定義規則を満たすこと">適格</a>（well-formed）であるということである。</p>
+    ここで、コンテナに対して <code>*first</code> から直接構築可能とは、<code>m</code> をアロケータ型 <code>allocator_type</code> の左辺値、<code>p</code> を要素型 <code>value_type</code> へのポインタとすると、以下の式が<a class="cpprefjp-defined-word" data-desc="プログラムが文法規則・診断対象の意味規則・単一定義規則を満たすこと" href="../../../implementation-compliance.html#dfn-well-formed">適格</a>（well-formed）であるということである。</p>
 <p><code>std::<a href="../../memory/allocator_traits.html">allocator_traits</a>&lt;allocator_type&gt;::<a href="../../memory/allocator_traits/construct.html">construct</a>(m, p, *first);</code></p>
 <p>なお、<code>first</code>、および、<code>last</code>は、標準では <code>value_type</code> を参照しなければならない（つまり、コンテナの <code>value_type</code> と <code>std::<a href="../../iterator/iterator_traits.html">iterator_traits</a>&lt;decltype(first)&gt;::value_type</code> が同一の型でなければならない）ことになっているが、実際にはその必要はなく、上記の直接構築可能の要件を満たすだけで良いものと思われる。</p>
 </li>
