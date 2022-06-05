@@ -3195,13 +3195,14 @@ var Kunai = /*#__PURE__*/function () {
                   var current_script = document.currentScript || document.querySelector('script[src*="kunai/js/kunai.js"]');
 
                   if (current_script) {
-                    // Try to download crsearch.json from the project website for the local
-                    // HTML files.  When a HTML in the local file system is directly opened
+                    // Try to download crsearch.json from the project website for local
+                    // HTML files.  When a HTML in a local file system is directly opened
                     // in a Web browser, "static/crsearch/crsearch.json" cannot be read
                     // through XHR due to the CORS (cross-origin resource sharing) policy
                     // for the local files.  We instead try to download "crsearch.json"
-                    // from the project website, which are assumed to be stored in <meta name="twietter:url"
-                    // content="..." /> or in <meta property="og:url" content="..." />.
+                    // from the project website, which is assumed to be stored in <meta
+                    // name="twietter:url" content="..." /> or in <meta property="og:url"
+                    // content="..." />.
                     if (/^file:\/\//.test(current_script.src)) {
                       var meta = document.querySelector('meta[name="twitter:url"]') || document.querySelector('meta[property="og:url"]');
 
