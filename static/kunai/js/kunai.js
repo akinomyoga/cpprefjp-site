@@ -100,15 +100,38 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-var sanitize = function sanitize(badges) {
-  var i = 0;
+var base_url = null;
+var unresolved_links = [];
 
-  var _iterator = _createForOfIteratorHelper(badges),
+var badge_onDatabase = function onDatabase(db) {
+  base_url = db.base_url.toString();
+
+  var _iterator = _createForOfIteratorHelper(unresolved_links),
       _step;
 
   try {
     for (_iterator.s(); !(_step = _iterator.n()).done;) {
-      var b_raw = _step.value;
+      var a_elem = _step.value;
+      a_elem.attr('href', base_url.replace(/\/$/, '') + a_elem.attr('href'));
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+
+  unresolved_links.length = 0;
+};
+
+var sanitize = function sanitize(badges) {
+  var i = 0;
+
+  var _iterator2 = _createForOfIteratorHelper(badges),
+      _step2;
+
+  try {
+    for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+      var b_raw = _step2.value;
       ++i;
       var b = badge_$(b_raw);
       var b_classes = b.attr('class').split(/\s+/).map(function (t) {
@@ -119,12 +142,12 @@ var sanitize = function sanitize(badges) {
       var deprecated_or_removed = false;
       var cppv = null;
 
-      var _iterator2 = _createForOfIteratorHelper(b_classes),
-          _step2;
+      var _iterator3 = _createForOfIteratorHelper(b_classes),
+          _step3;
 
       try {
-        for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-          var c = _step2.value;
+        for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+          var c = _step3.value;
           var cppm = c.match(/^cpp(\d[\da-zA-Z])(.*)$/);
           if (!cppm) continue;
           b.attr('data-cpp-version', cppm[1]);
@@ -142,9 +165,9 @@ var sanitize = function sanitize(badges) {
           }
         }
       } catch (err) {
-        _iterator2.e(err);
+        _iterator3.e(err);
       } finally {
-        _iterator2.f();
+        _iterator3.f();
       }
 
       if (!deprecated_or_removed) {
@@ -153,15 +176,16 @@ var sanitize = function sanitize(badges) {
 
       b.addClass(classes.join(' '));
       var lang_path = cppv ? "/lang/cpp".concat(cppv) : "/lang";
-      b.empty().append(badge_$('<a>', {
+      var a_elem = badge_$('<a>', {
         href: "".concat(lang_path, ".html")
       }).append(badge_$('<i>')) // .append($('<span>').text(clean_txt))
-      );
+      .appendTo(b.empty());
+      if (base_url) a_elem.attr('href', base_url.replace(/\/$/, '') + a_elem.attr('href'));else unresolved_links.push(a_elem);
     }
   } catch (err) {
-    _iterator.e(err);
+    _iterator2.e(err);
   } finally {
-    _iterator.f();
+    _iterator2.f();
   }
 
   return i;
@@ -177,7 +201,7 @@ var Content = function Content(log) {
   (0,classCallCheck/* default */.Z)(this, Content);
 
   this.log = log.makeContext('Content');
-  this.log.debug('initialzing...');
+  this.log.debug('initializing...');
   this.log.debug("found ".concat(sanitize(content_$('main[role="main"] div[itemtype="http://schema.org/Article"] .content-body span.cpp')), " badges"));
 };
 
@@ -1040,7 +1064,7 @@ var Treeview = /*#__PURE__*/function () {
     }).appendTo(this.e);
     this.opts = (0,esm_extends/* default */.Z)({}, opts);
     this.legacy = this.opts.legacy;
-    this.log.debug('initialzing...');
+    this.log.debug('initializing...');
 
     if (this.legacy) {
       var c = sanitize(this.e.find('.cpp-sidebar'));
@@ -1572,7 +1596,7 @@ var Sidebar = /*#__PURE__*/function () {
     (0,classCallCheck/* default */.Z)(this, Sidebar);
 
     this.log = log.makeContext('Sidebar');
-    this.log.info('initialzing...');
+    this.log.info('initializing...');
     this.kc = new crsearch/* KC.Config */.KC.De({
       'article.md': (__webpack_require__(3437)/* ["default"] */ .Z),
       'cpp.json': __webpack_require__(3723)
@@ -1686,6 +1710,8 @@ var Navbar = /*#__PURE__*/function () {
 
 
 ;// CONCATENATED MODULE: ./kunai/ui.js
+
+
 
 
 
@@ -3131,14 +3157,16 @@ var Kunai = /*#__PURE__*/function () {
           while (1) {
             switch (_context5.prev = _context5.next) {
               case 0:
-                _context5.next = 2;
+                // this.log.debug(`onDatabase`, db)
+                badge_onDatabase(db);
+                _context5.next = 3;
                 return this.ui.sidebar.onDatabase(db);
 
-              case 2:
-                _context5.next = 4;
+              case 3:
+                _context5.next = 5;
                 return this.ui.sidebar.treeview.onPageID(this.meta.page_id);
 
-              case 4:
+              case 5:
               case "end":
                 return _context5.stop();
             }
@@ -3204,6 +3232,11 @@ var Kunai = /*#__PURE__*/function () {
                     // name="twietter:url" content="..." /> or in <meta property="og:url"
                     // content="..." />.
                     if (/^file:\/\//.test(current_script.src)) {
+                      var _url_kunai = current_script.getAttribute("src");
+
+                      var _url = _url_kunai.replace(/\bkunai\/js\/kunai\.js([?#].*)?$/, "crsearch/crsearch.js");
+
+                      if (_url != _url_kunai) return _url;
                       var meta = document.querySelector('meta[name="twitter:url"]') || document.querySelector('meta[property="og:url"]');
 
                       if (meta && meta.content) {

@@ -1905,7 +1905,7 @@ var CRSearch = /*#__PURE__*/function () {
                 _context2.next = 4;
                 return Promise.all(Array.from(this._pendingDB, /*#__PURE__*/function () {
                   var _ref = (0,asyncToGenerator/* default */.Z)( /*#__PURE__*/regenerator_default().mark(function _callee(url, i) {
-                    var data;
+                    var ajaxSettings, data;
                     return regenerator_default().wrap(function _callee$(_context) {
                       while (1) {
                         switch (_context.prev = _context.next) {
@@ -1917,34 +1917,42 @@ var CRSearch = /*#__PURE__*/function () {
                             _this2._log.info("fetching database (".concat(i + 1, "/").concat(size, "): ").concat(url));
 
                             _context.prev = 2;
-                            _context.next = 5;
-                            return crsearch_crsearch_$.ajax({
+                            ajaxSettings = {
                               url: url,
                               dataType: "json"
-                            });
+                            };
 
-                          case 5:
+                            if (/\.js([?#].*)?$/.test(url.toString())) {
+                              ajaxSettings.dataType = "jsonp";
+                              ajaxSettings.jsonpCallback = "callback";
+                              ajaxSettings.crossDomain = true;
+                            }
+
+                            _context.next = 7;
+                            return crsearch_crsearch_$.ajax(ajaxSettings);
+
+                          case 7:
                             data = _context.sent;
 
                             _this2._log.info('fetched');
 
                             _this2._parse(url, data);
 
-                            _context.next = 13;
+                            _context.next = 15;
                             break;
 
-                          case 10:
-                            _context.prev = 10;
+                          case 12:
+                            _context.prev = 12;
                             _context.t0 = _context["catch"](2);
 
                             _this2._log.error('fetch failed', _context.t0);
 
-                          case 13:
+                          case 15:
                           case "end":
                             return _context.stop();
                         }
                       }
-                    }, _callee, null, [[2, 10]]);
+                    }, _callee, null, [[2, 12]]);
                   }));
 
                   return function (_x, _x2) {
