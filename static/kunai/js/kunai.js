@@ -197,13 +197,96 @@ var sanitize = function sanitize(badges) {
 
 
 
-var Content = function Content(log) {
-  (0,classCallCheck/* default */.Z)(this, Content);
 
-  this.log = log.makeContext('Content');
-  this.log.debug('initializing...');
-  this.log.debug("found ".concat(sanitize(content_$('main[role="main"] div[itemtype="http://schema.org/Article"] .content-body span.cpp')), " badges"));
-};
+var Content = /*#__PURE__*/function () {
+  function Content(log) {
+    (0,classCallCheck/* default */.Z)(this, Content);
+
+    this.log = log.makeContext('Content');
+    this.log.debug('initializing...');
+    this.log.debug("found ".concat(sanitize(content_$('main[role="main"] div[itemtype="http://schema.org/Article"] .content-body span.cpp')), " badges"));
+    this.setupTooltip();
+  }
+
+  (0,createClass/* default */.Z)(Content, [{
+    key: "setupTooltip",
+    value: function setupTooltip() {
+      var HORIZONTAL_MARGIN = 8; // (設定) ツールチップ配置時のビューポート横余白
+
+      var VERTICAL_MARGIN = 8; // (設定) ツールチップ配置時のビューポート縦余白
+
+      var VERTICAL_OFFSET = 2; // (設定) ツールチップと対象要素の縦の距離
+
+      var TOOLTIP_ID = 'cpprefjp-dfn-tooltip';
+      var TOOLTIP_CLASS_REVEALED = 'cpprefjp-dfn-tooltip-revealed';
+      var span = document.createElement('span');
+      span.id = TOOLTIP_ID;
+      document.body.appendChild(span);
+      var target = null;
+
+      var showTooltipAt = function showTooltipAt(x, y, targetElement) {
+        target = targetElement; // 物理ピクセル位置にぴったり合わせる
+
+        x = Math.round(x * window.devicePixelRatio) / window.devicePixelRatio;
+        y = Math.round(y * window.devicePixelRatio) / window.devicePixelRatio;
+        span.style.left = "".concat(x, "px");
+        span.style.top = "".concat(y, "px");
+        span.classList.add(TOOLTIP_CLASS_REVEALED);
+      };
+
+      var hideTooltip = function hideTooltip() {
+        target = null;
+        span.classList.remove(TOOLTIP_CLASS_REVEALED);
+      };
+
+      content_$('a[data-desc]').on({
+        mouseover: function mouseover(e) {
+          // 幾何情報の取得
+          span.textContent = this.dataset.desc;
+          var rect = this.getBoundingClientRect(); // ツールチップ表示対象要素の矩形
+
+          var vw = document.documentElement.clientWidth; // スクロールバーを除くビューポートの幅
+
+          var vh = document.documentElement.clientHeight; // スクロールバーを除くビューポートの高さ
+
+          var mx = e.clientX; // ビューポート内のマウス位置X
+
+          var my = e.clientY; // ビューポート内のマウス位置Y
+
+          var tw = span.offsetWidth; // ツールチップの表示幅
+
+          var th = span.offsetHeight; // ツールチップの表示高さ
+          // 位置の決定
+
+          var x = Math.max(HORIZONTAL_MARGIN, Math.min(vw - tw - HORIZONTAL_MARGIN, mx));
+          var y = rect.top - VERTICAL_OFFSET - th;
+
+          if (y < VERTICAL_MARGIN) {
+            y = rect.bottom + VERTICAL_OFFSET;
+            if (y + th > vh - VERTICAL_MARGIN) y = my + VERTICAL_OFFSET;
+          }
+
+          showTooltipAt(x, y, this);
+        },
+        mouseout: function mouseout() {
+          if (this === target) hideTooltip();
+        }
+      });
+
+      var checkScroll = function checkScroll(e) {
+        if (target === null) return;
+        var rect = target.getBoundingClientRect();
+        var hitResult = rect.left <= e.clientX && e.clientX <= rect.right && rect.top <= e.clientY && e.clientY <= rect.bottom;
+        if (!hitResult) hideTooltip();
+      };
+
+      window.addEventListener('scroll', checkScroll, true);
+      window.addEventListener('resize', checkScroll);
+    }
+  }]);
+
+  return Content;
+}();
 
 
 // EXTERNAL MODULE: ../node_modules/@babel/runtime/helpers/esm/slicedToArray.js + 3 modules
