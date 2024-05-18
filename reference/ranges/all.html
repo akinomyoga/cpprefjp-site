@@ -1,13 +1,16 @@
 <!doctype html>
 <html class="cpprefjp" lang="ja" itemscope="" itemtype="http://schema.org/WebPage">
     <head>
+        
+  
+
         <meta charset="UTF-8">
 
         <title>all - cpprefjp C++日本語リファレンス</title>
 
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta name="keywords" content="
-  C++,標準ライブラリ,リファレンス,ドキュメント,STL,std,ranges,std::ranges,cpo,cpp20
+  C++,標準ライブラリ,リファレンス,ドキュメント,STL,std,ranges,std::ranges::views,cpo,cpp20
 ">
         <meta name="title" content="all - cpprefjp C++日本語リファレンス" />
         <meta itemprop="name" content="all - cpprefjp C++日本語リファレンス" />
@@ -25,27 +28,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="manifest" href="../../manifest.json?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="mask-icon" href="../../static/favicons/safari-pinned-tab.svg?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="manifest" href="../../manifest.json?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -54,12 +56,9 @@
   });
 </script>
 
-    
-  
-
     </head>
     <body>
-<header data-kunai-mdinfo="{&#34;meta&#34;: {&#34;header&#34;: [&#34;ranges&#34;], &#34;namespace&#34;: [&#34;std::ranges&#34;], &#34;id-type&#34;: [&#34;cpo&#34;], &#34;cpp&#34;: [&#34;cpp20&#34;]}, &#34;sources&#34;: [{&#34;id&#34;: &#34;6af100f6f144aec7363f3590da4afb58cbd5a966&#34;, &#34;source&#34;: &#34;#include &lt;ranges&gt;\n#include &lt;iostream&gt;\n\nint main() {\n  using namespace std;\n  int a[] = {1, 2, 3, 4, 5};\n\n  for (int i : a | views::all) {\n    cout &lt;&lt; i;\n  }\n}\n&#34;}], &#34;page_id&#34;: [&#34;reference&#34;, &#34;ranges&#34;, &#34;all&#34;]}">
+<header data-kunai-mdinfo="{&#34;meta&#34;: {&#34;header&#34;: [&#34;ranges&#34;], &#34;namespace&#34;: [&#34;std::ranges::views&#34;], &#34;id-type&#34;: [&#34;cpo&#34;], &#34;cpp&#34;: [&#34;cpp20&#34;]}, &#34;sources&#34;: [{&#34;id&#34;: &#34;6af100f6f144aec7363f3590da4afb58cbd5a966&#34;, &#34;source&#34;: &#34;#include &lt;ranges&gt;\n#include &lt;iostream&gt;\n\nint main() {\n  using namespace std;\n  int a[] = {1, 2, 3, 4, 5};\n\n  for (int i : a | views::all) {\n    cout &lt;&lt; i;\n  }\n}\n&#34;}], &#34;page_id&#34;: [&#34;reference&#34;, &#34;ranges&#34;, &#34;all&#34;]}">
   <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -82,6 +81,20 @@
             <div class="google-search">
               
   
+<script>
+  (function() {
+    var cx = '013316413321391058734:ji_u66hl7hq';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div class="gcse-search"></div>
+
 
             </div>
           </li>
@@ -165,12 +178,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2022-04-12T16:04:00">
-        2022年04月12日 16時04分00秒
+      <span itemprop="datePublished" content="2024-01-17T02:53:36">
+        2024年01月17日 02時53分36秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">Tetsuro Matsumura</span>
+        <span itemprop="name">Hiroyuki Hori</span>
       </span>
       が更新
     </small></p>
@@ -189,7 +202,7 @@
     <div class="row">
       <div class="col-sm-12 content-body">
         
-  <div class="identifier-type">customization point object</div><div class="header">&lt;ranges&gt;</div><h1 itemprop="name"><span class="namespace" title="namespace std::ranges">std::ranges::</span><span class="token">all</span><span class="cpp cpp20" title="C++20で追加">(C++20)</span></h1>
+  <div class="identifier-type">customization point object</div><div class="header">&lt;ranges&gt;</div><h1 itemprop="name"><span class="namespace" title="namespace std::ranges::views">std::ranges::views::</span><span class="token">all</span><span class="cpp cpp20" title="C++20で追加">(C++20)</span></h1>
 <div itemprop="articleBody"><p><div class="codehilite"><pre><span></span><code><span class="k">namespace</span> <span class="n">std</span><span class="o">::</span><span class="n">ranges</span><span class="o">::</span><span class="n">views</span> <span class="p">{</span>
   <span class="kr">inline</span> <span class="k">constexpr</span> <span class="cm">/*unspecified*/</span> <span class="n">all</span> <span class="o">=</span> <span class="cm">/*unspecified*/</span><span class="p">;</span>     <span class="c1">// (1)</span>
 
@@ -247,6 +260,7 @@ Rangeアダプタオブジェクトでも暗黙的に使用され、それによ
 <li><a href="https://timsong-cpp.github.io/cppwp/ranges" target="_blank">N4892 24 Ranges library</a></li>
 <li><a href="https://techbookfest.org/product/5134506308665344" target="_blank">C++20 ranges</a></li>
 <li><a href="https://zenn.dev/onihusube/articles/fd07528b68ae0c" target="_blank">［C++］ <code>&lt;ranges&gt;</code>のviewを見る19 - owning_view</a></li>
+<li><a href="https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2021/p2415r2.html" target="_blank">P2415R2 What is a <code>view</code>?</a> (本提案文書はC++20に遡って適用されている)</li>
 </ul></div>
 
       </div>

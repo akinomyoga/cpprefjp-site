@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="cpprefjp" lang="ja" itemscope="" itemtype="http://schema.org/WebPage">
     <head>
+        
+  
+
         <meta charset="UTF-8">
 
         <title>basic_stacktrace::to_string - cpprefjp C++日本語リファレンス</title>
@@ -25,27 +28,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicons/apple-touch-icon.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicons/favicon-32x32.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicons/favicon-16x16.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="manifest" href="../../../manifest.json?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="mask-icon" href="../../../static/favicons/safari-pinned-tab.svg?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicons/apple-touch-icon.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicons/favicon-32x32.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicons/favicon-16x16.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="manifest" href="../../../manifest.json?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../../static/pygments/default.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
+<link rel="stylesheet" href="../../../static/pygments/default.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <!-- <link rel="stylesheet" href="../../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../../static/kunai/css/kunai-stage-0.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-1.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-2.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-3.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-0.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-1.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-2.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-3.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
 
-<script type="text/javascript" src="../../../static/kunai/js/kunai-vendor.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
-<script type="text/javascript" src="../../../static/kunai/js/kunai.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
+<script type="text/javascript" src="../../../static/kunai/js/kunai-vendor.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
+<script type="text/javascript" src="../../../static/kunai/js/kunai.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -54,12 +56,9 @@
   });
 </script>
 
-    
-  
-
     </head>
     <body>
-<header data-kunai-mdinfo="{&#34;meta&#34;: {&#34;header&#34;: [&#34;stacktrace&#34;], &#34;namespace&#34;: [&#34;std&#34;], &#34;class&#34;: [&#34;basic_stacktrace&#34;], &#34;id-type&#34;: [&#34;function&#34;], &#34;cpp&#34;: [&#34;cpp23&#34;]}, &#34;sources&#34;: [{&#34;id&#34;: &#34;4021098f92bc99d6c9a9cdc827737f147a3bbd21&#34;, &#34;source&#34;: &#34;#include &lt;iostream&gt;\n#include &lt;stacktrace&gt;\n\nvoid g() {\n  std::string trace = std::stacktrace::current().to_string();\n  std::cout &lt;&lt; trace &lt;&lt; std::endl;\n}\n\nvoid f() {\n  g();\n}\n\nint main() {\n  f();\n}\n&#34;}], &#34;page_id&#34;: [&#34;reference&#34;, &#34;stacktrace&#34;, &#34;basic_stacktrace&#34;, &#34;to_string&#34;]}">
+<header data-kunai-mdinfo="{&#34;meta&#34;: {&#34;header&#34;: [&#34;stacktrace&#34;], &#34;namespace&#34;: [&#34;std&#34;], &#34;class&#34;: [&#34;basic_stacktrace&#34;], &#34;id-type&#34;: [&#34;function&#34;], &#34;cpp&#34;: [&#34;cpp23&#34;]}, &#34;sources&#34;: [{&#34;id&#34;: &#34;c4e023cc5c8306b6031d38e953e45c05c478ba7d&#34;, &#34;source&#34;: &#34;#include &lt;iostream&gt;\n#include &lt;stacktrace&gt;\n\nvoid g() {\n  std::string trace = std::to_string(std::stacktrace::current());\n  std::cout &lt;&lt; trace &lt;&lt; std::endl;\n}\n\nvoid f() {\n  g();\n}\n\nint main() {\n  f();\n}\n&#34;}], &#34;page_id&#34;: [&#34;reference&#34;, &#34;stacktrace&#34;, &#34;basic_stacktrace&#34;, &#34;to_string&#34;]}">
   <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -82,6 +81,20 @@
             <div class="google-search">
               
   
+<script>
+  (function() {
+    var cx = '013316413321391058734:ji_u66hl7hq';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div class="gcse-search"></div>
+
 
             </div>
           </li>
@@ -177,8 +190,8 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2021-02-17T08:07:52">
-        2021年02月17日 08時07分52秒
+      <span itemprop="datePublished" content="2024-05-13T07:11:26">
+        2024年05月13日 07時11分26秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -217,11 +230,11 @@
 <li>戻り値となる文字列の行数は、<code><a href="size.html">size()</a></code>と等値であるという保証はない</li>
 </ul>
 <h2>例</h2>
-<p><div class="yata" id="4021098f92bc99d6c9a9cdc827737f147a3bbd21"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf"><a href="../../iostream.html">&lt;iostream&gt;</a></span><span class="cp"></span>
+<p><div class="yata" id="c4e023cc5c8306b6031d38e953e45c05c478ba7d"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf"><a href="../../iostream.html">&lt;iostream&gt;</a></span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf"><a href="../../stacktrace.html">&lt;stacktrace&gt;</a></span><span class="cp"></span>
 
 <span class="kt">void</span> <span class="nf">g</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n"><a href="../../string/basic_string.html">std::string</a></span> <span class="n">trace</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">stacktrace</span><span class="o">::</span><span class="n"><a href="current.html">current()</a></span><span class="p">.</span><span class="n"><span style="color:#ff0000">to_string()</span></span><span class="p">;</span>
+  <span class="n"><a href="../../string/basic_string.html">std::string</a></span> <span class="n">trace</span> <span class="o">=</span> <span class="n"><span style="color:#ff0000">std::to_string</span></span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">stacktrace</span><span class="o">::</span><span class="n"><a href="current.html">current()</a></span><span class="p">);</span>
   <span class="n"><a href="../../iostream/cout.html">std::cout</a></span> <span class="o">&lt;&lt;</span> <span class="n">trace</span> <span class="o">&lt;&lt;</span> <span class="n"><a href="../../ostream/endl.html">std::endl</a></span><span class="p">;</span>
 <span class="p">}</span>
 
@@ -234,10 +247,14 @@
 <span class="p">}</span>
 </code></pre></div>
 </div></p>
-<h3>出力例</h3>
-<p><pre><code> 0# g() at main.cpp:5
- 1# f() at main.cpp:10
- 2# main at main.cpp:14
+<h3>出力例 (GCC)</h3>
+<p><pre><code>   0#  g() at /app/example.cpp:5
+   1#  f() at /app/example.cpp:10
+   2# main at /app/example.cpp:14
+   3#      at :0
+   4#      at :0
+   5# _start at :0
+   6# 
 </code></pre></p>
 <h2>バージョン</h2>
 <h3>言語</h3>
@@ -247,7 +264,7 @@
 <h3>処理系</h3>
 <ul>
 <li><a href="../../../implementation.html#clang">Clang</a>: ??</li>
-<li><a href="../../../implementation.html#gcc">GCC</a>: ??</li>
+<li><a href="../../../implementation.html#gcc">GCC</a>: 12</li>
 <li><a href="../../../implementation.html#visual_cpp">Visual C++</a>: ??</li>
 </ul></div>
 

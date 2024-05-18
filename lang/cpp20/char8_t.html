@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="cpprefjp" lang="ja" itemscope="" itemtype="http://schema.org/WebPage">
     <head>
+        
+  
+
         <meta charset="UTF-8">
 
         <title>UTF-8エンコーディングされた文字の型として`char8_t`を追加 - cpprefjp C++日本語リファレンス</title>
@@ -25,27 +28,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="manifest" href="../../manifest.json?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="mask-icon" href="../../static/favicons/safari-pinned-tab.svg?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="manifest" href="../../manifest.json?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -53,9 +55,6 @@
     kn.cpprefjp();
   });
 </script>
-
-    
-  
 
     </head>
     <body>
@@ -82,6 +81,20 @@
             <div class="google-search">
               
   
+<script>
+  (function() {
+    var cx = '013316413321391058734:ji_u66hl7hq';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div class="gcse-search"></div>
+
 
             </div>
           </li>
@@ -165,12 +178,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2022-01-28T09:14:57">
-        2022年01月28日 09時14分57秒
+      <span itemprop="datePublished" content="2022-11-29T10:39:01">
+        2022年11月29日 10時39分01秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">onihusube</span>
+        <span itemprop="name">Akira Takahashi</span>
       </span>
       が更新
     </small></p>
@@ -298,11 +311,11 @@
 <p>またC++11で文字列リテラルに対して、C++17で文字リテラルに対して<code>u8</code>プレフィックスが使えるようになり、これはUTF-8でエンコードされることを保証したが、その文字型としては依然として<code>char</code>型が使われた。<code>char</code>型ではどのようなエンコードの文字が格納されているか型レベルで判断できず、例としてC++17で追加されたファイルシステムライブラリの<code><a href="../../reference/filesystem/path.html">path</a></code>クラスでは、UTF-8でエンコードされたパス文字列を受け取るためにコンストラクタと代入演算子でオーバーロードができず、<code><a href="../../reference/filesystem/u8path.html">u8path()</a></code>という関数を追加せざるをえなかった。</p>
 <p>UTF-8の利用が広く利用されていく中で、C++でもUTF-8を扱う上で障害となる仕様を改める必要があった。そのために<code>char8_t</code>型が必要となった。</p>
 <h2>検討されたほかの選択肢</h2>
-<p>N3398提案では以下のように<code>char8_t</code>型を<code>unsigned char</code>型の別名にすることが提案されていた。</p>
+<p>提案文書N3398では以下のように<code>char8_t</code>型を<code>unsigned char</code>型の別名にすることが提案されていた。</p>
 <p><div class="codehilite"><pre><span></span><code><span class="k">typedef</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">char8_t</span><span class="p">;</span>
 </code></pre></div>
 </p>
-<p>以下のように<code>enum class</code>を利用する選択肢もあったが、P0372R0提案は<code>char8_t</code>型を使うためにヘッダのインクルードが必要になることは望ましくないと述べている。</p>
+<p>以下のように<code>enum class</code>を利用する選択肢もあったが、提案文書P0372R0は<code>char8_t</code>型を使うためにヘッダのインクルードが必要になることは望ましくないと述べている。</p>
 <p><div class="codehilite"><pre><span></span><code><span class="k">enum</span> <span class="k">class</span> <span class="nc">char8_t</span> <span class="o">:</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="p">{};</span>
 </code></pre></div>
 </p>
@@ -319,7 +332,7 @@
 <li><code><a href="../../reference/ostream/basic_ostream/op_ostream_free.html">operator&lt;&lt;</a></code></li>
 </ul>
 <h2>参照</h2>
-<h3><code>char8_t</code>型を追加する提案文章</h3>
+<h3><code>char8_t</code>型を追加する提案文書</h3>
 <ul>
 <li><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2012/n3398.html" target="_blank">N3398: String Interoperation Library</a></li>
 <li><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0372r0.html" target="_blank">P0372R0: A type for utf-8 data</a></li>

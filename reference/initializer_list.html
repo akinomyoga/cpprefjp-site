@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="cpprefjp" lang="ja" itemscope="" itemtype="http://schema.org/WebPage">
     <head>
+        
+  
+
         <meta charset="UTF-8">
 
         <title>initializer_list - cpprefjp C++日本語リファレンス</title>
@@ -15,37 +18,36 @@
         <meta property="og:url" content="https://cpprefjp.github.io/reference/initializer_list.html" />
         <meta property="og:site_name" content="cpprefjp - C++日本語リファレンス" />
         <meta property="og:type" content="article" />
-        <meta property="og:description" content="&amp;lt;initializer_list&amp;gt;initializer_list(C++11) &amp;lt;initializer_list&amp;gt;ヘッダで提供されるinitializer_listクラスは、ユーザー定義型が初期化子リスト構文による初期化を可能にするための特別なクラスである。コンテナクラスの初期化、代入に使用される。    名前 説明 対応バージョン     initializer_l" />
+        <meta property="og:description" content="&amp;lt;initializer_list&amp;gt;initializer_list(C++11) &amp;lt;initializer_list&amp;gt;ヘッダで提供されるinitializer_listクラスは、ユーザー定義型が初期化子リスト構文による初期化を可能にするための特別なクラスである。コンテナクラスの初期化、代入に使用される。 本ヘッダはフリースタンディング環境でも提供される。    名前 説明" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="initializer_list - cpprefjp C++日本語リファレンス" />
         <meta name="twitter:url" content="https://cpprefjp.github.io/reference/initializer_list.html" />
-        <meta name="twitter:description" content="&amp;lt;initializer_list&amp;gt;initializer_list(C++11) &amp;lt;initializer_list&amp;gt;ヘッダで提供されるinitializer_listクラスは、ユーザー定義型が初期化子リスト構文による初期化を可能にするための特別なクラスである。コンテナクラスの初期化、代入に使用される。    名前 説明 対応バージョン     initializer_l" />
+        <meta name="twitter:description" content="&amp;lt;initializer_list&amp;gt;initializer_list(C++11) &amp;lt;initializer_list&amp;gt;ヘッダで提供されるinitializer_listクラスは、ユーザー定義型が初期化子リスト構文による初期化を可能にするための特別なクラスである。コンテナクラスの初期化、代入に使用される。 本ヘッダはフリースタンディング環境でも提供される。    名前 説明" />
 
         
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../static/favicons/apple-touch-icon.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="32x32" href="../static/favicons/favicon-32x32.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="16x16" href="../static/favicons/favicon-16x16.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="manifest" href="../manifest.json?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="mask-icon" href="../static/favicons/safari-pinned-tab.svg?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="../static/favicons/apple-touch-icon.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="32x32" href="../static/favicons/favicon-32x32.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="16x16" href="../static/favicons/favicon-16x16.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="manifest" href="../manifest.json?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../static/pygments/default.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
+<link rel="stylesheet" href="../static/pygments/default.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <!-- <link rel="stylesheet" href="../static/css/root.css"> -->
 
         
   
 
 
-<link href="../static/kunai/css/kunai-stage-0.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../static/kunai/css/kunai-stage-1.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../static/kunai/css/kunai-stage-2.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../static/kunai/css/kunai-stage-3.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
+<link href="../static/kunai/css/kunai-stage-0.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../static/kunai/css/kunai-stage-1.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../static/kunai/css/kunai-stage-2.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../static/kunai/css/kunai-stage-3.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
 
-<script type="text/javascript" src="../static/kunai/js/kunai-vendor.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
-<script type="text/javascript" src="../static/kunai/js/kunai.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
+<script type="text/javascript" src="../static/kunai/js/kunai-vendor.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
+<script type="text/javascript" src="../static/kunai/js/kunai.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -53,9 +55,6 @@
     kn.cpprefjp();
   });
 </script>
-
-    
-  
 
     </head>
     <body>
@@ -82,6 +81,20 @@
             <div class="google-search">
               
   
+<script>
+  (function() {
+    var cx = '013316413321391058734:ji_u66hl7hq';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div class="gcse-search"></div>
+
 
             </div>
           </li>
@@ -153,12 +166,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2018-07-27T11:56:19">
-        2018年07月27日 11時56分19秒
+      <span itemprop="datePublished" content="2022-10-29T08:57:02">
+        2022年10月29日 08時57分02秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">YukiMiyatake</span>
+        <span itemprop="name">yoh</span>
       </span>
       が更新
     </small></p>
@@ -178,7 +191,8 @@
       <div class="col-sm-12 content-body">
         
   <div class="header">&lt;initializer_list&gt;</div><h1 itemprop="name"><span class="token">initializer_list</span><span class="cpp cpp11" title="C++11で追加">(C++11)</span></h1>
-<div itemprop="articleBody"><p><code>&lt;initializer_list&gt;</code>ヘッダで提供される<code>initializer_list</code>クラスは、ユーザー定義型が初期化子リスト構文による初期化を可能にするための特別なクラスである。コンテナクラスの初期化、代入に使用される。</p>
+<div itemprop="articleBody"><p><code>&lt;initializer_list&gt;</code>ヘッダで提供される<code>initializer_list</code>クラスは、<a class="cpprefjp-defined-word" data-desc="プログラム定義型。標準ライブラリの型を除く、ユーザー（プログラマ）によって定義された型のこと">ユーザー定義型</a>が初期化子リスト構文による初期化を可能にするための特別なクラスである。コンテナクラスの初期化、代入に使用される。</p>
+<p>本ヘッダはフリースタンディング環境でも提供される。</p>
 <table border="1" bordercolor="#888" style="border-collapse:collapse">
 <thead>
 <tr>

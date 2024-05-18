@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="cpprefjp" lang="ja" itemscope="" itemtype="http://schema.org/WebPage">
     <head>
+        
+  
+
         <meta charset="UTF-8">
 
         <title>スタイル - cpprefjp C++日本語リファレンス</title>
@@ -15,37 +18,36 @@
         <meta property="og:url" content="https://cpprefjp.github.io/working_style.html" />
         <meta property="og:site_name" content="cpprefjp - C++日本語リファレンス" />
         <meta property="og:type" content="article" />
-        <meta property="og:description" content="スタイル 本サイトで作業を行う上でのスタイルです。  「である」調 句読点は「、」「。」  型修飾のスタイル：  A) const T &amp;amp;v B) const T&amp;amp; v C) const T &amp;amp; v D) T const &amp;amp;v E) T const&amp;amp; v F) T const &amp;amp; v  本サイトでは、Bのスタイルで型修飾を行います。 バージョンの表記" />
+        <meta property="og:description" content="スタイル 本サイトで作業を行う上でのスタイルです。  「である」調 句読点は「、」「。」  型修飾のスタイル： /* (A) */ const T &amp;amp;v /* (B) */ const T&amp;amp; v /* (C) */ const T &amp;amp; v /* (D) */ T const &amp;amp;v /* (E) */ T const&amp;amp; v /* (F) */ T const " />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="スタイル - cpprefjp C++日本語リファレンス" />
         <meta name="twitter:url" content="https://cpprefjp.github.io/working_style.html" />
-        <meta name="twitter:description" content="スタイル 本サイトで作業を行う上でのスタイルです。  「である」調 句読点は「、」「。」  型修飾のスタイル：  A) const T &amp;amp;v B) const T&amp;amp; v C) const T &amp;amp; v D) T const &amp;amp;v E) T const&amp;amp; v F) T const &amp;amp; v  本サイトでは、Bのスタイルで型修飾を行います。 バージョンの表記" />
+        <meta name="twitter:description" content="スタイル 本サイトで作業を行う上でのスタイルです。  「である」調 句読点は「、」「。」  型修飾のスタイル： /* (A) */ const T &amp;amp;v /* (B) */ const T&amp;amp; v /* (C) */ const T &amp;amp; v /* (D) */ T const &amp;amp;v /* (E) */ T const&amp;amp; v /* (F) */ T const " />
 
         
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="./static/favicons/apple-touch-icon.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="32x32" href="./static/favicons/favicon-32x32.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="16x16" href="./static/favicons/favicon-16x16.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="manifest" href="./manifest.json?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="mask-icon" href="./static/favicons/safari-pinned-tab.svg?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="./static/favicons/apple-touch-icon.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="32x32" href="./static/favicons/favicon-32x32.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="16x16" href="./static/favicons/favicon-16x16.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="manifest" href="./manifest.json?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="./static/pygments/default.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
+<link rel="stylesheet" href="./static/pygments/default.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <!-- <link rel="stylesheet" href="./static/css/root.css"> -->
 
         
   
 
 
-<link href="./static/kunai/css/kunai-stage-0.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="./static/kunai/css/kunai-stage-1.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="./static/kunai/css/kunai-stage-2.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="./static/kunai/css/kunai-stage-3.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
+<link href="./static/kunai/css/kunai-stage-0.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="./static/kunai/css/kunai-stage-1.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="./static/kunai/css/kunai-stage-2.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="./static/kunai/css/kunai-stage-3.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
 
-<script type="text/javascript" src="./static/kunai/js/kunai-vendor.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
-<script type="text/javascript" src="./static/kunai/js/kunai.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
+<script type="text/javascript" src="./static/kunai/js/kunai-vendor.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
+<script type="text/javascript" src="./static/kunai/js/kunai.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -53,9 +55,6 @@
     kn.cpprefjp();
   });
 </script>
-
-    
-  
 
     </head>
     <body>
@@ -82,6 +81,20 @@
             <div class="google-search">
               
   
+<script>
+  (function() {
+    var cx = '013316413321391058734:ji_u66hl7hq';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div class="gcse-search"></div>
+
 
             </div>
           </li>
@@ -141,12 +154,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2021-10-26T10:09:44">
-        2021年10月26日 10時09分44秒
+      <span itemprop="datePublished" content="2024-01-16T15:16:56">
+        2024年01月16日 15時16分56秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">Koichi Murase</span>
+        <span itemprop="name">yoh</span>
       </span>
       が更新
     </small></p>
@@ -172,14 +185,14 @@
 <li>句読点は「、」「。」</li>
 </ul>
 <p>型修飾のスタイル：</p>
-<ul>
-<li>A) const T &amp;v</li>
-<li>B) const T&amp; v</li>
-<li>C) const T &amp; v</li>
-<li>D) T const &amp;v</li>
-<li>E) T const&amp; v</li>
-<li>F) T const &amp; v</li>
-</ul>
+<p><div class="codehilite"><pre><span></span><code><span class="cm">/* (A) */</span> <span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span><span class="n">v</span>
+<span class="cm">/* (B) */</span> <span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">v</span>
+<span class="cm">/* (C) */</span> <span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span> <span class="n">v</span>
+<span class="cm">/* (D) */</span> <span class="n">T</span> <span class="k">const</span> <span class="o">&amp;</span><span class="n">v</span>
+<span class="cm">/* (E) */</span> <span class="n">T</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">v</span>
+<span class="cm">/* (F) */</span> <span class="n">T</span> <span class="k">const</span> <span class="o">&amp;</span> <span class="n">v</span>
+</code></pre></div>
+</p>
 <p>本サイトでは、Bのスタイルで型修飾を行います。</p>
 <h2>バージョンの表記</h2>
 <h3>言語</h3>
@@ -297,6 +310,10 @@
 <td>委譲</td>
 </tr>
 <tr>
+<td>dynamic extent</td>
+<td>(std::mdspanの) 動的要素数</td>
+</tr>
+<tr>
 <td>effects</td>
 <td>効果</td>
 </tr>
@@ -389,6 +406,14 @@
 <td>ムーブコンストラクタ</td>
 </tr>
 <tr>
+<td>multidimensional index</td>
+<td>多次元インデクス</td>
+</tr>
+<tr>
+<td>multidimensional index space</td>
+<td>多次元インデクス空間</td>
+</tr>
+<tr>
 <td>mutable iterator</td>
 <td>可変イテレータ</td>
 </tr>
@@ -407,6 +432,10 @@
 <tr>
 <td>overload</td>
 <td>オーバーロード</td>
+</tr>
+<tr>
+<td>(proposal) paper</td>
+<td>提案文書</td>
 </tr>
 <tr>
 <td>partial ordering</td>
@@ -446,7 +475,7 @@
 </tr>
 <tr>
 <td>range</td>
-<td>範囲</td>
+<td>一般用途の場合：範囲<br /> Rangeアルゴリズム・Rangeアダプタ・Rangeオブジェクトの場合：Range<br /> range-based for：範囲for文<br /> 2つのイテレータによる範囲：<a class="cpprefjp-defined-word" data-desc="2つのイテレータで表現される半開区間を表す。C++20からイテレータと番兵で異なる型であっても指定可能になる">イテレータ範囲</a></td>
 </tr>
 <tr>
 <td>remarks</td>
@@ -477,6 +506,10 @@
 <td>符号付き</td>
 </tr>
 <tr>
+<td>static extent</td>
+<td>(std::mdspanの) 静的要素数</td>
+</tr>
+<tr>
 <td>stop request</td>
 <td>停止要求</td>
 </tr>
@@ -491,6 +524,10 @@
 <tr>
 <td>strict weak ordering</td>
 <td>狭義の弱順序</td>
+</tr>
+<tr>
+<td>stride</td>
+<td>(std::mdspanの) ストライド幅</td>
 </tr>
 <tr>
 <td>strong ordering</td>
@@ -531,6 +568,10 @@
 <tr>
 <td>unspecified</td>
 <td><a class="cpprefjp-defined-word" data-desc="未規定の動作。事前の断りなく処理系によって異なる動作をする" href="implementation-compliance.html#dfn-unspecified-behavior">未規定</a></td>
+</tr>
+<tr>
+<td>program-defined type</td>
+<td><a class="cpprefjp-defined-word" data-desc="標準ライブラリの型を除く、ユーザー（プログラマ）によって定義された型のこと">プログラム定義型</a></td>
 </tr>
 <tr>
 <td>virtual base class</td>

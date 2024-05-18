@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="cpprefjp" lang="ja" itemscope="" itemtype="http://schema.org/WebPage">
     <head>
+        
+  
+
         <meta charset="UTF-8">
 
         <title>ranges - cpprefjp C++日本語リファレンス</title>
@@ -25,27 +28,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../static/favicons/apple-touch-icon.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="32x32" href="../static/favicons/favicon-32x32.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="16x16" href="../static/favicons/favicon-16x16.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="manifest" href="../manifest.json?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="mask-icon" href="../static/favicons/safari-pinned-tab.svg?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="../static/favicons/apple-touch-icon.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="32x32" href="../static/favicons/favicon-32x32.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="16x16" href="../static/favicons/favicon-16x16.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="manifest" href="../manifest.json?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../static/pygments/default.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
+<link rel="stylesheet" href="../static/pygments/default.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <!-- <link rel="stylesheet" href="../static/css/root.css"> -->
 
         
   
 
 
-<link href="../static/kunai/css/kunai-stage-0.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../static/kunai/css/kunai-stage-1.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../static/kunai/css/kunai-stage-2.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../static/kunai/css/kunai-stage-3.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
+<link href="../static/kunai/css/kunai-stage-0.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../static/kunai/css/kunai-stage-1.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../static/kunai/css/kunai-stage-2.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../static/kunai/css/kunai-stage-3.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
 
-<script type="text/javascript" src="../static/kunai/js/kunai-vendor.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
-<script type="text/javascript" src="../static/kunai/js/kunai.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
+<script type="text/javascript" src="../static/kunai/js/kunai-vendor.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
+<script type="text/javascript" src="../static/kunai/js/kunai.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -53,9 +55,6 @@
     kn.cpprefjp();
   });
 </script>
-
-    
-  
 
     </head>
     <body>
@@ -82,6 +81,20 @@
             <div class="google-search">
               
   
+<script>
+  (function() {
+    var cx = '013316413321391058734:ji_u66hl7hq';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div class="gcse-search"></div>
+
 
             </div>
           </li>
@@ -153,8 +166,8 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2022-04-10T06:38:10">
-        2022年04月10日 06時38分10秒
+      <span itemprop="datePublished" content="2024-03-10T02:17:53">
+        2024年03月10日 02時17分53秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -207,7 +220,7 @@
 <h2>Rangeアクセス</h2>
 <p>これらの機能は従来<code><a href="iterator.html">&lt;iterator&gt;</a></code>でフリー関数として提供されていた。
 C++20では関数によるカスタマイゼーションポイントの問題点を解消するため、関数オブジェクトとして再実装されている。
-互換性を維持するために従来の関数も残っているが、これらの<a class="cpprefjp-defined-word" data-desc="プログラム定義型に対するオーバーが許されている標準関数名について、中でいい感じにオーバーロード解決して呼び出してくれる関数オブジェクト">カスタマイゼーションポイントオブジェクト</a>を使用することが推奨される。</p>
+互換性を維持するために従来の関数も残っているが、これらの<a class="cpprefjp-defined-word" data-desc="プログラム定義型に対するオーバーロードが許されている標準関数名について、中でいい感じにオーバーロード解決して呼び出してくれる関数オブジェクト">カスタマイゼーションポイントオブジェクト</a>を使用することが推奨される。</p>
 <table border="1" bordercolor="#888" style="border-collapse:collapse">
 <thead>
 <tr>
@@ -305,6 +318,16 @@ C++20では関数によるカスタマイゼーションポイントの問題点
 <td>C++20</td>
 </tr>
 <tr>
+<td><code><a href="ranges/const_iterator_t.html">const_iterator_t</a></code></td>
+<td>定数イテレータ型を取得する (alias template)</td>
+<td>C++23</td>
+</tr>
+<tr>
+<td><code><a href="ranges/const_sentinel_t.html">const_sentinel_t</a></code></td>
+<td>定数番兵型を取得する (alias template)</td>
+<td>C++23</td>
+</tr>
+<tr>
 <td><code><a href="ranges/range_difference_t.html">range_difference_t</a></code></td>
 <td>イテレータの差の型を取得する (alias template)</td>
 <td>C++20</td>
@@ -323,6 +346,11 @@ C++20では関数によるカスタマイゼーションポイントの問題点
 <td><code><a href="ranges/range_reference_t.html">range_reference_t</a></code></td>
 <td>要素の参照型を取得する (alias template)</td>
 <td>C++20</td>
+</tr>
+<tr>
+<td><code><a href="ranges/range_const_reference_t.html">range_const_reference_t</a></code></td>
+<td>要素の定数参照型を取得する (alias template)</td>
+<td>C++23</td>
 </tr>
 <tr>
 <td><code><a href="ranges/range_rvalue_reference_t.html">range_rvalue_reference_t</a></code></td>
@@ -400,6 +428,11 @@ C++20では関数によるカスタマイゼーションポイントの問題点
 <td><code><a href="ranges/viewable_range.html">viewable_range</a></code></td>
 <td>ビューに変換できるRange (concept)</td>
 <td>C++20</td>
+</tr>
+<tr>
+<td><code><a href="ranges/constant_range.html">constant_range</a></code></td>
+<td>要素が定数なRange (concept)</td>
+<td>C++23</td>
 </tr>
 </tbody>
 </table>
@@ -501,9 +534,26 @@ C++20では関数によるカスタマイゼーションポイントの問題点
 </tr>
 </tbody>
 </table>
+<h2>Rangeジェネレータ</h2>
+<table border="1" bordercolor="#888" style="border-collapse:collapse">
+<thead>
+<tr>
+<th>名前</th>
+<th>説明</th>
+<th>対応バージョン</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code><a href="ranges/elements_of.html">elements_of</a></code></td>
+<td>子Range要素の生成を示すタグ型 (class template)</td>
+<td>C++23</td>
+</tr>
+</tbody>
+</table>
 <h2>Rangeファクトリ</h2>
 <p>Rangeファクトリは、Rangeではないオブジェクトから<code><a href="ranges/view.html">view</a></code>を生成するものである。
-その実体は、引数の無いものは変数テンプレート、引数のあるものは関数テンプレートや<a class="cpprefjp-defined-word" data-desc="プログラム定義型に対するオーバーが許されている標準関数名について、中でいい感じにオーバーロード解決して呼び出してくれる関数オブジェクト">カスタマイゼーションポイントオブジェクト</a>となっている。</p>
+その実体は、引数の無いものは変数テンプレート、引数のあるものは関数テンプレートや<a class="cpprefjp-defined-word" data-desc="プログラム定義型に対するオーバーロードが許されている標準関数名について、中でいい感じにオーバーロード解決して呼び出してくれる関数オブジェクト">カスタマイゼーションポイントオブジェクト</a>となっている。</p>
 <h3>empty view</h3>
 <table border="1" bordercolor="#888" style="border-collapse:collapse">
 <thead>
@@ -570,6 +620,28 @@ C++20では関数によるカスタマイゼーションポイントの問題点
 </tr>
 </tbody>
 </table>
+<h3>repeat view</h3>
+<table border="1" bordercolor="#888" style="border-collapse:collapse">
+<thead>
+<tr>
+<th>名前</th>
+<th>説明</th>
+<th>対応バージョン</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code><a href="ranges/repeat_view.html">repeat_view</a></code></td>
+<td>指定した値を指定回数繰り返すRange (class template)</td>
+<td>C++23</td>
+</tr>
+<tr>
+<td><code><a href="ranges/repeat_view.html">views::repeat</a></code></td>
+<td><code>repeat_view</code>を生成する (customization point object)</td>
+<td>C++23</td>
+</tr>
+</tbody>
+</table>
 <h3>istream view</h3>
 <table border="1" bordercolor="#888" style="border-collapse:collapse">
 <thead>
@@ -603,9 +675,8 @@ C++20では関数によるカスタマイゼーションポイントの問題点
 </tbody>
 </table>
 <h2>Rangeアダプタ</h2>
-<p>Rangeアダプタは、既存のRangeに作用して新たな<code><a href="ranges/view.html">view</a></code>を生成するものである。
-その実体は<a class="cpprefjp-defined-word" data-desc="プログラム定義型に対するオーバーが許されている標準関数名について、中でいい感じにオーバーロード解決して呼び出してくれる関数オブジェクト">カスタマイゼーションポイントオブジェクト</a>となっている。</p>
-<p>RangeアダプタをRangeに作用させる方法には、関数記法とパイプライン記法の2つがある。</p>
+<p>Rangeアダプタは、既存のRangeに作用して新たなRangeを生成するものである。</p>
+<p>RangeアダプタをRangeに作用させる方法には、一部の例外を除き、関数記法とパイプライン記法の2つがある。</p>
 <p><code>R</code>をRangeアダプタ、<code>r</code>を元になるRangeとする。このとき、以下の2つの式は同じ<code><a href="ranges/view.html">view</a></code>を生成する。</p>
 <p><div class="codehilite"><pre><span></span><code><span class="n">R</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>   <span class="c1">// 関数記法</span>
 <span class="n">r</span> <span class="o">|</span> <span class="n">R</span>  <span class="c1">// パイプライン記法</span>
@@ -622,14 +693,38 @@ C++20では関数によるカスタマイゼーションポイントの問題点
 <span class="p">}</span>
 </code></pre></div>
 </p>
-<p>第1引数に<code><a href="ranges/viewable_range.html">viewable_range</a></code>を受け取って<code><a href="ranges/view.html">view</a></code>を返す<a class="cpprefjp-defined-word" data-desc="プログラム定義型に対するオーバーが許されている標準関数名について、中でいい感じにオーバーロード解決して呼び出してくれる関数オブジェクト">カスタマイゼーションポイントオブジェクト</a>を、<strong>Rangeアダプタオブジェクト</strong>という。とくに、1引数のものを<strong>Rangeアダプタクロージャオブジェクト</strong>という。</p>
+<p><strong>Rangeアダプタオブジェクト</strong>は次のように定義される。</p>
+<ul>
+<li>第1引数に<code><a href="ranges/viewable_range.html">viewable_range</a></code>を受け取って<code><a href="ranges/view.html">view</a></code>を返す<a class="cpprefjp-defined-word" data-desc="プログラム定義型に対するオーバーロードが許されている標準関数名について、中でいい感じにオーバーロード解決して呼び出してくれる関数オブジェクト">カスタマイゼーションポイントオブジェクト</a></li>
+</ul>
+<p>また、<strong>Rangeアダプタクロージャオブジェクト</strong>は次のように定義される。</p>
+<ul>
+<li>(C++20) <code><a href="ranges/viewable_range.html">viewable_range</a></code>を受け取って<code><a href="ranges/view.html">view</a></code>を返す単項関数オブジェクト</li>
+<li>(C++23) Rangeを受け取る単項関数オブジェクト</li>
+</ul>
 <p>Rangeアダプタオブジェクト<code>adaptor</code>が2つ以上の引数をとる場合、以下の3つの式は等しい。</p>
-<p><div class="codehilite"><pre><span></span><code><span class="n">adaptor</span><span class="p">(</span><span class="n">range</span><span class="p">,</span> <span class="n">args</span><span class="p">...)</span>
-<span class="n">adaptor</span><span class="p">(</span><span class="n">args</span><span class="p">...)(</span><span class="n">range</span><span class="p">)</span>
-<span class="n">range</span> <span class="o">|</span> <span class="n">adaptor</span><span class="p">(</span><span class="n">args</span><span class="p">...)</span>
+<p><div class="codehilite"><pre><span></span><code><span class="n">adaptor</span><span class="p">(</span><span class="n"><a href="ranges/range.html">range</a></span><span class="p">,</span> <span class="n">args</span><span class="p">...)</span>
+<span class="n">adaptor</span><span class="p">(</span><span class="n">args</span><span class="p">...)(</span><span class="n"><a href="ranges/range.html">range</a></span><span class="p">)</span>
+<span class="n"><a href="ranges/range.html">range</a></span> <span class="o">|</span> <span class="n">adaptor</span><span class="p">(</span><span class="n">args</span><span class="p">...)</span>
 </code></pre></div>
 </p>
-<p>このとき、<code>adaptor(args...)</code>はRangeアダプタクロージャオブジェクトになっている。</p>
+<p>このとき、式<code>adaptor(args...)</code>の値がRangeアダプタクロージャオブジェクトになっている。</p>
+<table border="1" bordercolor="#888" style="border-collapse:collapse">
+<thead>
+<tr>
+<th>名前</th>
+<th>説明</th>
+<th>対応バージョン</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code><a href="ranges/range_adaptor_closure.html">range_adaptor_closure</a></code></td>
+<td>Rangeアダプタクロージャオブジェクトの基底クラス (class template)</td>
+<td>C++23</td>
+</tr>
+</tbody>
+</table>
 <h3>all view</h3>
 <table border="1" bordercolor="#888" style="border-collapse:collapse">
 <thead>
@@ -659,6 +754,28 @@ C++20では関数によるカスタマイゼーションポイントの問題点
 <td><code><a href="ranges/all.html">views::all_t</a></code></td>
 <td><code>all</code>の戻り値型 (alias template)</td>
 <td>C++20</td>
+</tr>
+</tbody>
+</table>
+<h3>as rvalue view</h3>
+<table border="1" bordercolor="#888" style="border-collapse:collapse">
+<thead>
+<tr>
+<th>名前</th>
+<th>説明</th>
+<th>対応バージョン</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code><a href="ranges/as_rvalue_view.html">as_rvalue_view</a></code></td>
+<td>各要素をrvalueにするビュー (class template)</td>
+<td>C++23</td>
+</tr>
+<tr>
+<td><code><a href="ranges/as_rvalue_view.html">views::as_rvalue</a></code></td>
+<td><code>as_rvalue_view</code>を生成する (customization point object)</td>
+<td>C++23</td>
 </tr>
 </tbody>
 </table>
@@ -814,19 +931,31 @@ C++20では関数によるカスタマイゼーションポイントの問題点
 <td>ネストされたRangeを平坦にするビューを生成する (customization point object)</td>
 <td>C++20</td>
 </tr>
+</tbody>
+</table>
+<h3>join with view</h3>
+<table border="1" bordercolor="#888" style="border-collapse:collapse">
+<thead>
 <tr>
-<td><code><span href="https://cpprefjp.github.io/reference/ranges/join_with_view.md.nolink">join_with_view</span></code></td>
+<th>名前</th>
+<th>説明</th>
+<th>対応バージョン</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code><a href="ranges/join_with_view.html">join_with_view</a></code></td>
 <td>ネストされたRangeをデリミタで区切りながら平坦にするビュー (class template)</td>
 <td>C++23</td>
 </tr>
 <tr>
-<td><code><span href="https://cpprefjp.github.io/reference/ranges/join_with_view.md.nolink">views::join_with</span></code></td>
+<td><code><a href="ranges/join_with_view.html">views::join_with</a></code></td>
 <td>ネストされたRangeをデリミタで区切りながら平坦にするビューを生成する (customization point object)</td>
 <td>C++23</td>
 </tr>
 </tbody>
 </table>
-<h3>split view</h3>
+<h3>lazy split view</h3>
 <table border="1" bordercolor="#888" style="border-collapse:collapse">
 <thead>
 <tr>
@@ -846,6 +975,18 @@ C++20では関数によるカスタマイゼーションポイントの問題点
 <td><code>lazy_split_view</code>を生成する (customization point object)</td>
 <td>C++20</td>
 </tr>
+</tbody>
+</table>
+<h3>split view</h3>
+<table border="1" bordercolor="#888" style="border-collapse:collapse">
+<thead>
+<tr>
+<th>名前</th>
+<th>説明</th>
+<th>対応バージョン</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td><code><a href="ranges/split_view.html">split_view</a></code></td>
 <td>文字列分割に特化した<code>lazy_split_view</code> (class template)</td>
@@ -919,6 +1060,28 @@ C++20では関数によるカスタマイゼーションポイントの問題点
 </tr>
 </tbody>
 </table>
+<h3>as const view</h3>
+<table border="1" bordercolor="#888" style="border-collapse:collapse">
+<thead>
+<tr>
+<th>名前</th>
+<th>説明</th>
+<th>対応バージョン</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code><a href="ranges/as_const_view.html">as_const_view</a></code></td>
+<td>各要素をconstにするビュー (class template)</td>
+<td>C++23</td>
+</tr>
+<tr>
+<td><code><a href="ranges/as_const_view.html">views::as_const</a></code></td>
+<td><code>as_const_view</code>を生成する (customization point object)</td>
+<td>C++23</td>
+</tr>
+</tbody>
+</table>
 <h3>elements view</h3>
 <table border="1" bordercolor="#888" style="border-collapse:collapse">
 <thead>
@@ -961,6 +1124,28 @@ C++20では関数によるカスタマイゼーションポイントの問題点
 </tr>
 </tbody>
 </table>
+<h3>enumerate view</h3>
+<table border="1" bordercolor="#888" style="border-collapse:collapse">
+<thead>
+<tr>
+<th>名前</th>
+<th>説明</th>
+<th>対応バージョン</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code><a href="ranges/enumerate_view.html">enumerate_view</a></code></td>
+<td>シーケンスにインデックスを付ける<code>view</code> (class template)</td>
+<td>C++23</td>
+</tr>
+<tr>
+<td><code><a href="ranges/enumerate_view.html">views::enumerate</a></code></td>
+<td><code>enumerate_view</code>を生成する (customization point object)</td>
+<td>C++23</td>
+</tr>
+</tbody>
+</table>
 <h3>zip view</h3>
 <table border="1" bordercolor="#888" style="border-collapse:collapse">
 <thead>
@@ -972,22 +1157,34 @@ C++20では関数によるカスタマイゼーションポイントの問題点
 </thead>
 <tbody>
 <tr>
-<td><code><span href="https://cpprefjp.github.io/reference/ranges/zip_view.md.nolink">zip_view</span></code></td>
-<td>2つのシーケンスから値を1つずつ取り出した<code>tuple</code>のビュー (class template)</td>
+<td><code><a href="ranges/zip_view.html">zip_view</a></code></td>
+<td>複数のシーケンスから値を1つずつ取り出した<code>tuple</code>のビュー (class template)</td>
 <td>C++23</td>
 </tr>
 <tr>
-<td><code><span href="https://cpprefjp.github.io/reference/ranges/zip_view.md.nolink">views::zip</span></code></td>
+<td><code><a href="ranges/zip_view.html">views::zip</a></code></td>
 <td><code>zip_view</code>を生成する (customization point object)</td>
 <td>C++23</td>
 </tr>
+</tbody>
+</table>
+<h3>zip transform view</h3>
+<table border="1" bordercolor="#888" style="border-collapse:collapse">
+<thead>
 <tr>
-<td><code><span href="https://cpprefjp.github.io/reference/ranges/zip_transform_view.md.nolink">zip_transform_view</span></code></td>
-<td>2つのシーケンスから値を1つずつ取り出し、関数を適用した結果のビュー (class template)</td>
+<th>名前</th>
+<th>説明</th>
+<th>対応バージョン</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code><a href="ranges/zip_transform_view.html">zip_transform_view</a></code></td>
+<td>複数のシーケンスから値を1つずつ取り出し、関数を適用した結果のビュー (class template)</td>
 <td>C++23</td>
 </tr>
 <tr>
-<td><code><span href="https://cpprefjp.github.io/reference/ranges/zip_transform_view.md.nolink">views::zip_transform</span></code></td>
+<td><code><a href="ranges/zip_transform_view.html">views::zip_transform</a></code></td>
 <td><code>zip_transform_view</code>を生成する (customization point object)</td>
 <td>C++23</td>
 </tr>
@@ -1004,22 +1201,34 @@ C++20では関数によるカスタマイゼーションポイントの問題点
 </thead>
 <tbody>
 <tr>
-<td><code><span href="https://cpprefjp.github.io/reference/ranges/adjacent_view.md.nolink">adjacent_view</span></code></td>
+<td><code><a href="ranges/adjacent_view.html">adjacent_view</a></code></td>
 <td>各要素とそれに隣接する要素を指定個数ずつ取り出した<code>tuple</code>のビュー (class template)</td>
 <td>C++23</td>
 </tr>
 <tr>
-<td><code><span href="https://cpprefjp.github.io/reference/ranges/adjacent_view.md.nolink">views::adjacent</span></code></td>
+<td><code><a href="ranges/adjacent_view.html">views::adjacent</a></code></td>
 <td><code>adjacent_view</code>を生成する (customization point object)</td>
 <td>C++23</td>
 </tr>
+</tbody>
+</table>
+<h3>adjacent transform view</h3>
+<table border="1" bordercolor="#888" style="border-collapse:collapse">
+<thead>
 <tr>
-<td><code><span href="https://cpprefjp.github.io/reference/ranges/adjacent_transform_view.md.nolink">adjacent_transform_view</span></code></td>
+<th>名前</th>
+<th>説明</th>
+<th>対応バージョン</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code><a href="ranges/adjacent_transform_view.html">adjacent_transform_view</a></code></td>
 <td><code>adjacent_view</code>と同様に取り出し、関数を適用した結果のビュー (class template)</td>
 <td>C++23</td>
 </tr>
 <tr>
-<td><code><span href="https://cpprefjp.github.io/reference/ranges/adjacent_transform_view.md.nolink">views::adjacent_transform</span></code></td>
+<td><code><a href="ranges/adjacent_transform_view.html">views::adjacent_transform</a></code></td>
 <td><code>adjacent_transform_view</code>を生成する (customization point object)</td>
 <td>C++23</td>
 </tr>
@@ -1036,22 +1245,34 @@ C++20では関数によるカスタマイゼーションポイントの問題点
 </thead>
 <tbody>
 <tr>
-<td><code><span href="https://cpprefjp.github.io/reference/ranges/chunk_view.md.nolink">chunk_view</span></code></td>
+<td><code><a href="ranges/chunk_view.html">chunk_view</a></code></td>
 <td>シーケンスを指定個数で区切った<code>view</code>のシーケンス (class template)</td>
 <td>C++23</td>
 </tr>
 <tr>
-<td><code><span href="https://cpprefjp.github.io/reference/ranges/chunk_view.md.nolink">views::chunk</span></code></td>
+<td><code><a href="ranges/chunk_view.html">views::chunk</a></code></td>
 <td><code>chunk_view</code>を生成する (customization point object)</td>
 <td>C++23</td>
 </tr>
+</tbody>
+</table>
+<h3>chunk by view</h3>
+<table border="1" bordercolor="#888" style="border-collapse:collapse">
+<thead>
 <tr>
-<td><code><span href="https://cpprefjp.github.io/reference/ranges/chunk_by_view.md.nolink">chunk_by_view</span></code></td>
+<th>名前</th>
+<th>説明</th>
+<th>対応バージョン</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code><a href="ranges/chunk_by_view.html">chunk_by_view</a></code></td>
 <td>2項述語が偽となる部分で区切った<code>view</code>のシーケンス (class template)</td>
 <td>C++23</td>
 </tr>
 <tr>
-<td><code><span href="https://cpprefjp.github.io/reference/ranges/chunk_by_view.md.nolink">views::chunk_by</span></code></td>
+<td><code><a href="ranges/chunk_by_view.html">views::chunk_by</a></code></td>
 <td><code>chunk_by_view</code>を生成する (customization point object)</td>
 <td>C++23</td>
 </tr>
@@ -1068,13 +1289,57 @@ C++20では関数によるカスタマイゼーションポイントの問題点
 </thead>
 <tbody>
 <tr>
-<td><code><span href="https://cpprefjp.github.io/reference/ranges/slide_view.md.nolink">slide_view</span></code></td>
+<td><code><a href="ranges/slide_view.html">slide_view</a></code></td>
 <td>各要素とそれに隣接する要素を指定個数ずつ見る<code>view</code>のシーケンス (class template)</td>
 <td>C++23</td>
 </tr>
 <tr>
-<td><code><span href="https://cpprefjp.github.io/reference/ranges/slide_view.md.nolink">views::slide</span></code></td>
+<td><code><a href="ranges/slide_view.html">views::slide</a></code></td>
 <td><code>slide_view</code>を生成する (customization point object)</td>
+<td>C++23</td>
+</tr>
+</tbody>
+</table>
+<h3>stride view</h3>
+<table border="1" bordercolor="#888" style="border-collapse:collapse">
+<thead>
+<tr>
+<th>名前</th>
+<th>説明</th>
+<th>対応バージョン</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code><a href="ranges/stride_view.html">stride_view</a></code></td>
+<td>要素を指定個数飛ばしに見るビュー (class template)</td>
+<td>C++23</td>
+</tr>
+<tr>
+<td><code><a href="ranges/stride_view.html">views::stride</a></code></td>
+<td><code>stride_view</code>を生成する (customization point object)</td>
+<td>C++23</td>
+</tr>
+</tbody>
+</table>
+<h3>cartesian product view</h3>
+<table border="1" bordercolor="#888" style="border-collapse:collapse">
+<thead>
+<tr>
+<th>名前</th>
+<th>説明</th>
+<th>対応バージョン</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code><a href="ranges/cartesian_product_view.html">cartesian_product_view</a></code></td>
+<td>シーケンスの直積集合のビュー (class template)</td>
+<td>C++23</td>
+</tr>
+<tr>
+<td><code><a href="ranges/cartesian_product_view.html">views::cartesian_product</a></code></td>
+<td><code>cartesian_product_view</code>を生成する (customization point object)</td>
 <td>C++23</td>
 </tr>
 </tbody>
@@ -1090,8 +1355,18 @@ C++20では関数によるカスタマイゼーションポイントの問題点
 </thead>
 <tbody>
 <tr>
-<td><code><span href="https://cpprefjp.github.io/reference/ranges/to.md.nolink">to</span></code></td>
+<td><code><a href="ranges/to.html">to</a></code></td>
 <td>パイプライン記法でRangeからコンテナを構築する (class template)</td>
+<td>C++23</td>
+</tr>
+<tr>
+<td><code><a href="ranges/from_range_t.html">from_range_t</a></code></td>
+<td>Rangeからコンテナへの変換を示すタグ型 (class)</td>
+<td>C++23</td>
+</tr>
+<tr>
+<td><code><a href="ranges/from_range_t.html">from_range</a></code></td>
+<td>Rangeからコンテナへの変換を示すタグ値 (variable)</td>
 <td>C++23</td>
 </tr>
 </tbody>
@@ -1123,7 +1398,9 @@ C++20では関数によるカスタマイゼーションポイントの問題点
 <h2>参照</h2>
 <ul>
 <li><a href="https://timsong-cpp.github.io/cppwp/n4861/ranges" target="_blank">N4861 24 Ranges library</a></li>
+<li><a href="https://timsong-cpp.github.io/cppwp/n4950/ranges" target="_blank">N4950 26 Ranges library</a></li>
 <li><a href="https://techbookfest.org/product/5134506308665344" target="_blank">C++20 ranges</a></li>
+<li><a href="https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2022/p2278r4.html" target="_blank">P2278R4 <code>cbegin</code> should always return a constant iterator</a></li>
 </ul></div>
 
       </div>

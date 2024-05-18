@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="cpprefjp" lang="ja" itemscope="" itemtype="http://schema.org/WebPage">
     <head>
+        
+  
+
         <meta charset="UTF-8">
 
         <title>thread - cpprefjp C++日本語リファレンス</title>
@@ -25,27 +28,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="manifest" href="../../manifest.json?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="mask-icon" href="../../static/favicons/safari-pinned-tab.svg?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="manifest" href="../../manifest.json?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -53,9 +55,6 @@
     kn.cpprefjp();
   });
 </script>
-
-    
-  
 
     </head>
     <body>
@@ -82,6 +81,20 @@
             <div class="google-search">
               
   
+<script>
+  (function() {
+    var cx = '013316413321391058734:ji_u66hl7hq';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div class="gcse-search"></div>
+
 
             </div>
           </li>
@@ -165,8 +178,8 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2019-11-26T08:07:39">
-        2019年11月26日 08時07分39秒
+      <span itemprop="datePublished" content="2022-11-29T06:01:58">
+        2022年11月29日 06時01分58秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -201,7 +214,7 @@
 <p><code>thread</code>オブジェクトとスレッドは1:1の関係で対応づけられるが、両者は同一ではないことに留意。<code>thread</code>コンストラクタによって新しく作成されたスレッドは、その<code>thread</code>オブジェクトに関係付けられる。</p>
 <p><code>thread</code>コンストラクタでは新しいスレッドを1つ作成し、同コンストラクタを呼び出したスレッドはそのまま後続処理を続ける。一方で、新しいスレッド上では<code>thread</code>コンストラクタに与えた関数オブジェクトが呼び出される。つまりプログラム内に複数のスレッドが存在し、並行にそれぞれの処理を行うことが可能な状態となる。なお、複数のスレッドが真に並行実行されるか否かは処理系に依存する。（たとえばDual Core環境で4つのスレッドを作成することはできるが、ハードウェアの制約から同時処理されるのは2スレッド以下に制限される。）</p>
 <p>新しいスレッド上で呼び出される関数オブジェクトから例外が送出された場合、<code><a href="../exception/terminate.html">std::terminate()</a></code>関数が呼び出されてプログラムは終了する。この動作が好ましくないのであれば、同関数オブジェクトから外に例外送出されないことをプログラマが保証しなければならない。</p>
-<p>また、デフォルトコンストラクトされた<code>thread</code>オブジェクトは、何も指さない空の<code>thread</code>オブジェクトとなる。</p>
+<p>また、<a class="cpprefjp-defined-word" data-desc="デフォルト初期化。`T x;`構文での初期化。トリビアルにデフォルト構築可能な型の場合は初期化されず（オブジェクトのlifetimeは開始される）、そうではないクラス型はデフォルトコンストラクタで初期化する。配列型の場合は各要素が再帰的にデフォルト初期化される">デフォルト構築</a>された<code>thread</code>オブジェクトは、何も指さない空の<code>thread</code>オブジェクトとなる。</p>
 <h3>join操作とdetach操作</h3>
 <p><code>thread</code>オブジェクトとスレッドが関連付けられた状態では、<code>thread</code>オブジェクトのメンバ関数<code>join()</code>を介してそのスレッド完了を待機することができる（join操作）。メンバ関数<code>join()</code>が呼び出された時点で<code>thread</code>オブジェクトに関連付けられたスレッドがまだ処理継続中だった場合、その対象スレッドが完了するまで呼び出し元スレッドがブロックされる。このjoin操作が終わった<code>thread</code>オブジェクトは、何も指さない空の<code>thread</code>オブジェクトとなる。</p>
 <p>また<code>thread</code>オブジェクトのメンバ関数<code>detach()</code>により、<code>thread</code>オブジェクトとスレッドの関連付けを切ることもできる（detach操作）。detach操作がなされたスレッドは、それ以後は他スレッドから直接関与することが出来なくなる。またdetach操作が終わった<code>thread</code>オブジェクトは、何も指さない空の<code>thread</code>オブジェクトとなる。</p>

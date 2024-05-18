@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="cpprefjp" lang="ja" itemscope="" itemtype="http://schema.org/WebPage">
     <head>
+        
+  
+
         <meta charset="UTF-8">
 
         <title>処理系 - cpprefjp C++日本語リファレンス</title>
@@ -25,27 +28,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="./static/favicons/apple-touch-icon.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="32x32" href="./static/favicons/favicon-32x32.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="16x16" href="./static/favicons/favicon-16x16.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="manifest" href="./manifest.json?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="mask-icon" href="./static/favicons/safari-pinned-tab.svg?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="./static/favicons/apple-touch-icon.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="32x32" href="./static/favicons/favicon-32x32.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="16x16" href="./static/favicons/favicon-16x16.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="manifest" href="./manifest.json?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="./static/pygments/default.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
+<link rel="stylesheet" href="./static/pygments/default.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <!-- <link rel="stylesheet" href="./static/css/root.css"> -->
 
         
   
 
 
-<link href="./static/kunai/css/kunai-stage-0.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="./static/kunai/css/kunai-stage-1.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="./static/kunai/css/kunai-stage-2.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="./static/kunai/css/kunai-stage-3.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
+<link href="./static/kunai/css/kunai-stage-0.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="./static/kunai/css/kunai-stage-1.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="./static/kunai/css/kunai-stage-2.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="./static/kunai/css/kunai-stage-3.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
 
-<script type="text/javascript" src="./static/kunai/js/kunai-vendor.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
-<script type="text/javascript" src="./static/kunai/js/kunai.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
+<script type="text/javascript" src="./static/kunai/js/kunai-vendor.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
+<script type="text/javascript" src="./static/kunai/js/kunai.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -53,9 +55,6 @@
     kn.cpprefjp();
   });
 </script>
-
-    
-  
 
     </head>
     <body>
@@ -82,6 +81,20 @@
             <div class="google-search">
               
   
+<script>
+  (function() {
+    var cx = '013316413321391058734:ji_u66hl7hq';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div class="gcse-search"></div>
+
 
             </div>
           </li>
@@ -141,8 +154,8 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2021-12-09T04:25:58">
-        2021年12月09日 04時25分58秒
+      <span itemprop="datePublished" content="2024-03-06T17:12:38">
+        2024年03月06日 17時12分38秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -212,6 +225,7 @@
 <li>GNU拡張を有効にする<code>-std=gnu++17</code>オプションもある。</li>
 </ul>
 </li>
+<li>Clang 16.0以降はC++17がデフォルトとなる。デフォルトバージョンのコンパイルオプションは<code>-std=gnu++17</code></li>
 </ul>
 <h3>C++20の機能を有効にする</h3>
 <ul>
@@ -228,6 +242,17 @@
 <ul>
 <li>Clang 12.0以降は、<code>-std=c++2b</code>オプションを使用する。<ul>
 <li>GNU拡張を有効にする<code>-std=gnu++2b</code>オプションもある。</li>
+</ul>
+</li>
+<li>Clang 17.0以降は、<code>-std=c++23</code>オプションを使用する(以前までのオプションも使用できる)。<ul>
+<li>GNU拡張を有効にする<code>-std=gnu++23</code>オプションもある。</li>
+</ul>
+</li>
+</ul>
+<h3>C++26の機能を有効にする</h3>
+<ul>
+<li>Clang 17.0以降は、<code>-std=c++2c</code>オプションを使用する。<ul>
+<li>GNU拡張を有効にする<code>-std=gnu++2c</code>オプションもある。</li>
 </ul>
 </li>
 </ul>
@@ -348,6 +373,62 @@
 <tbody>
 <tr>
 <td>2022</td>
+<td>Visual Studio 2022 version 17.9.2</td>
+<td>14.39</td>
+<td>1939</td>
+<td>193933521</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>Visual Studio 2022 version 17.8.3</td>
+<td>14.38</td>
+<td>1938</td>
+<td>193833133</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>Visual Studio 2022 version 17.7.0</td>
+<td>14.37</td>
+<td>1937</td>
+<td>193732822</td>
+</tr>
+<tr>
+<td>2022 Update 6</td>
+<td>Visual Studio 2022 version 17.6.2</td>
+<td>14.36</td>
+<td>1936</td>
+<td>193632532</td>
+</tr>
+<tr>
+<td>2022 Update 5</td>
+<td>Visual Studio 2022 version 17.5.4</td>
+<td>??</td>
+<td>1935</td>
+<td>193532217</td>
+</tr>
+<tr>
+<td>2022 Update 4</td>
+<td>Visual Studio 2022 version 17.4.9</td>
+<td>??</td>
+<td>1934</td>
+<td>193431944</td>
+</tr>
+<tr>
+<td>2022 Update 3</td>
+<td>Visual Studio 2022 version 17.3.6</td>
+<td>14.33</td>
+<td>1933</td>
+<td>193331630</td>
+</tr>
+<tr>
+<td>2022 Update 2</td>
+<td>Visual Studio 2022 version 17.2.2</td>
+<td>14.32</td>
+<td>1932</td>
+<td>193231329</td>
+</tr>
+<tr>
+<td>2022 Update 1</td>
 <td>Visual Studio 2022 version 17.0.2</td>
 <td>14.30</td>
 <td>1930</td>
@@ -924,7 +1005,7 @@
 </table>
 <ol>
 <li><strong><a href="#note_ref-t1-1" id="note-t1-1">^</a></strong> 製品名の列にはVisual C++コンパイラを含む実際に入手する製品の名称を示す。製品のエディション (Express/Standard/Professional/Enterprise/Community 他) は省略する。Visual Studioの製品バージョンは、製品名に現れていないときは <code>[ ～ ]</code> 内に記す。製品バージョンは、2017以降、メインメニューの [ヘルプ]-[Microsoft Visual Studio のバージョン情報] から確認できるものを指す。</li>
-<li><strong><a href="#note_ref-t1-2" id="note-t1-2">^</a></strong> VC++バージョンの列にはVisual C++ツールセットのバージョンを記述する。この表では特にVisual C++を入れた時に既定で選択されるツールセットのみについて扱う。</li>
+<li><strong><a href="#note_ref-t1-2" id="note-t1-2">^</a></strong> VC++バージョンの列にはVisual C++ツールセットのバージョンを記述する。この表では特にVisual C++を入れた時に既定で選択されるツールセットのみについて扱う。Visual Studio 2022においては<code>C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC</code>配下のフォルダ名(<code>14.39.33519</code>など)で確認できる。</li>
 <li><a id="note-t1-3">^</a> <sup><a href="#note_ref-t1-3-a"><strong>a</strong></a></sup> <sup><a href="#note_ref-t1-3-b"><strong>b</strong></a></sup> <sup><a href="#note_ref-t1-3-c"><strong>c</strong></a></sup> IDEのみ修正され、コンパイラ、ヘッダー、ライブラリ等は変更されなかった。<ul>
 <li><a href="https://blogs.msdn.microsoft.com/vcblog/2017/08/11/c17-features-and-stl-fixes-in-vs-2017-15-3/" target="_blank">C++17 Features And STL Fixes In VS 2017 15.3 | Visual C++ Team Blog</a> - "<em>After VS 2017 RTM, the 15.1 and 15.2 updates improved the IDE. The 15.3 update improves both the IDE and the toolset.</em>"</li>
 <li><a href="https://support.microsoft.com/en-us/help/2911573/description-of-visual-studio-2013-update-1" target="_blank">Description of Visual Studio 2013 Update 1</a></li>

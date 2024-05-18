@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="cpprefjp" lang="ja" itemscope="" itemtype="http://schema.org/WebPage">
     <head>
+        
+  
+
         <meta charset="UTF-8">
 
         <title>thread::id - cpprefjp C++日本語リファレンス</title>
@@ -25,27 +28,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicons/apple-touch-icon.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicons/favicon-32x32.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicons/favicon-16x16.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="manifest" href="../../../manifest.json?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="mask-icon" href="../../../static/favicons/safari-pinned-tab.svg?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicons/apple-touch-icon.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicons/favicon-32x32.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicons/favicon-16x16.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="manifest" href="../../../manifest.json?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../../static/pygments/default.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
+<link rel="stylesheet" href="../../../static/pygments/default.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <!-- <link rel="stylesheet" href="../../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../../static/kunai/css/kunai-stage-0.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-1.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-2.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-3.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-0.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-1.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-2.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-3.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
 
-<script type="text/javascript" src="../../../static/kunai/js/kunai-vendor.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
-<script type="text/javascript" src="../../../static/kunai/js/kunai.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
+<script type="text/javascript" src="../../../static/kunai/js/kunai-vendor.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
+<script type="text/javascript" src="../../../static/kunai/js/kunai.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -53,9 +55,6 @@
     kn.cpprefjp();
   });
 </script>
-
-    
-  
 
     </head>
     <body>
@@ -82,6 +81,20 @@
             <div class="google-search">
               
   
+<script>
+  (function() {
+    var cx = '013316413321391058734:ji_u66hl7hq';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div class="gcse-search"></div>
+
 
             </div>
           </li>
@@ -177,8 +190,8 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2019-11-26T08:07:39">
-        2019年11月26日 08時07分39秒
+      <span itemprop="datePublished" content="2024-05-15T04:22:22">
+        2024年05月15日 04時22分22秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -225,7 +238,7 @@
 </p>
 <h2>概要</h2>
 <p>スレッド識別子。trivially copyable class。</p>
-<p>実行のスレッドに対して一意な<code>thread::id</code>が対応づけられる。デフォルトコンストラクトされた<code>thread::id</code>はいかなるスレッドとも対応付けられない（ポインタ型における<code>nullptr</code>のようなもの）。</p>
+<p>実行のスレッドに対して一意な<code>thread::id</code>が対応づけられる。<a class="cpprefjp-defined-word" data-desc="デフォルト初期化。`T x;`構文での初期化。トリビアルにデフォルト構築可能な型の場合は初期化されず（オブジェクトのlifetimeは開始される）、そうではないクラス型はデフォルトコンストラクタで初期化する。配列型の場合は各要素が再帰的にデフォルト初期化される">デフォルト構築</a>された<code>thread::id</code>はいかなるスレッドとも対応付けられない（ポインタ型における<code>nullptr</code>のようなもの）。</p>
 <p>終了したスレッドを表す識別子の値は、再利用される可能性がある。</p>
 <h2>メンバ関数</h2>
 <table border="1" bordercolor="#888" style="border-collapse:collapse">
@@ -261,28 +274,33 @@
 </tr>
 <tr>
 <td><code>operator!=</code></td>
-<td>非等値比較</td>
+<td>非等値比較 (C++20から<code>operator==</code>により使用可能)</td>
 <td>C++11</td>
 </tr>
 <tr>
 <td><code>operator&lt;</code></td>
-<td>左辺が右辺より小さいかの判定を行う</td>
+<td>左辺が右辺より小さいかの判定を行う (C++20から<code>operator&lt;=&gt;</code>により使用可能)</td>
 <td>C++11</td>
 </tr>
 <tr>
 <td><code>operator&lt;=</code></td>
-<td>左辺が右辺以下かの判定を行う</td>
+<td>左辺が右辺以下かの判定を行う (C++20から<code>operator&lt;=&gt;</code>により使用可能)</td>
 <td>C++11</td>
 </tr>
 <tr>
 <td><code>operator&gt;</code></td>
-<td>左辺が右辺より大きいかの判定を行う</td>
+<td>左辺が右辺より大きいかの判定を行う (C++20から<code>operator&lt;=&gt;</code>により使用可能)</td>
 <td>C++11</td>
 </tr>
 <tr>
 <td><code>operator&gt;=</code></td>
-<td>左辺が右辺以上かの判定を行う</td>
+<td>左辺が右辺以上かの判定を行う (C++20から<code>operator&lt;=&gt;</code>により使用可能)</td>
 <td>C++11</td>
+</tr>
+<tr>
+<td><code>strong_ordering operator&lt;=&gt;(thread::id x, thread::id y) noexcept;</code></td>
+<td>三方比較</td>
+<td>C++20</td>
 </tr>
 </tbody>
 </table>
@@ -303,7 +321,7 @@
 </tr>
 </tbody>
 </table>
-<h2>hashサポート</h2>
+<h2>ハッシュサポート</h2>
 <table border="1" bordercolor="#888" style="border-collapse:collapse">
 <thead>
 <tr>
@@ -317,6 +335,23 @@
 <td><code>hash</code></td>
 <td><code>thread::id</code>での特殊化 (class template)</td>
 <td>C++11</td>
+</tr>
+</tbody>
+</table>
+<h2>文字列フォーマットサポート</h2>
+<table border="1" bordercolor="#888" style="border-collapse:collapse">
+<thead>
+<tr>
+<th>名前</th>
+<th>説明</th>
+<th>対応バージョン</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code><a href="id/formatter.html">formatter</a></code></td>
+<td><code><a href="../../format/formatter.html">std::formatter</a></code>クラスの特殊化</td>
+<td>C++23</td>
 </tr>
 </tbody>
 </table>
@@ -350,6 +385,10 @@
 <h2>参照</h2>
 <ul>
 <li><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/lwg-defects.html#783" target="_blank">LWG Issue 783. <code>thread::id</code> reuse</a></li>
+<li><a href="https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1614r2.html" target="_blank">P1614R2 The Mothership has Landed</a><ul>
+<li>C++20での三方比較演算子の追加と、関連する演算子の自動導出</li>
+</ul>
+</li>
 </ul></div>
 
       </div>

@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="cpprefjp" lang="ja" itemscope="" itemtype="http://schema.org/WebPage">
     <head>
+        
+  
+
         <meta charset="UTF-8">
 
         <title>basic_string_view::compare - cpprefjp C++日本語リファレンス</title>
@@ -25,27 +28,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicons/apple-touch-icon.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicons/favicon-32x32.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicons/favicon-16x16.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="manifest" href="../../../manifest.json?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="mask-icon" href="../../../static/favicons/safari-pinned-tab.svg?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicons/apple-touch-icon.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicons/favicon-32x32.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicons/favicon-16x16.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="manifest" href="../../../manifest.json?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../../static/pygments/default.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
+<link rel="stylesheet" href="../../../static/pygments/default.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <!-- <link rel="stylesheet" href="../../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../../static/kunai/css/kunai-stage-0.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-1.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-2.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-3.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-0.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-1.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-2.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-3.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
 
-<script type="text/javascript" src="../../../static/kunai/js/kunai-vendor.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
-<script type="text/javascript" src="../../../static/kunai/js/kunai.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
+<script type="text/javascript" src="../../../static/kunai/js/kunai-vendor.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
+<script type="text/javascript" src="../../../static/kunai/js/kunai.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -53,9 +55,6 @@
     kn.cpprefjp();
   });
 </script>
-
-    
-  
 
     </head>
     <body>
@@ -82,6 +81,20 @@
             <div class="google-search">
               
   
+<script>
+  (function() {
+    var cx = '013316413321391058734:ji_u66hl7hq';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div class="gcse-search"></div>
+
 
             </div>
           </li>
@@ -177,12 +190,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2019-11-26T08:07:39">
-        2019年11月26日 08時07分39秒
+      <span itemprop="datePublished" content="2024-02-04T04:09:49">
+        2024年02月04日 04時09分49秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">Akira Takahashi</span>
+        <span itemprop="name">suomesta</span>
       </span>
       が更新
     </small></p>
@@ -202,15 +215,15 @@
       <div class="col-sm-12 content-body">
         
   <div class="identifier-type">function</div><div class="header">&lt;string_view&gt;</div><h1 itemprop="name"><span class="namespace" title="namespace std">std::</span><span class="class" title="class basic_string_view">basic_string_view::</span><span class="token">compare</span><span class="cpp cpp17" title="C++17で追加">(C++17)</span></h1>
-<div itemprop="articleBody"><p><div class="codehilite"><pre><span></span><code><span class="k">constexpr</span> <span class="kt">int</span> <span class="nf">compare</span><span class="p">(</span><span class="n">basic_string_view</span> <span class="n">sv</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span><span class="p">;</span> <span class="c1">// (1)</span>
+<div itemprop="articleBody"><p><div class="codehilite"><pre><span></span><code><span class="k">constexpr</span> <span class="kt">int</span> <span class="nf">compare</span><span class="p">(</span><span class="n"><a href="../basic_string_view.html">basic_string_view</a></span> <span class="n">sv</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span><span class="p">;</span> <span class="c1">// (1)</span>
 
 <span class="k">constexpr</span> <span class="kt">int</span> <span class="nf">compare</span><span class="p">(</span><span class="n">size_type</span> <span class="n">pos1</span><span class="p">,</span>
                       <span class="n">size_type</span> <span class="n">n1</span><span class="p">,</span>
-                      <span class="n">basic_string_view</span> <span class="n">sv</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>          <span class="c1">// (2)</span>
+                      <span class="n"><a href="../basic_string_view.html">basic_string_view</a></span> <span class="n">sv</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>          <span class="c1">// (2)</span>
 
 <span class="k">constexpr</span> <span class="kt">int</span> <span class="nf">compare</span><span class="p">(</span><span class="n">size_type</span> <span class="n">pos1</span><span class="p">,</span>
                       <span class="n">size_type</span> <span class="n">n1</span><span class="p">,</span>
-                      <span class="n">basic_string_view</span> <span class="n">sv</span><span class="p">,</span>
+                      <span class="n"><a href="../basic_string_view.html">basic_string_view</a></span> <span class="n">sv</span><span class="p">,</span>
                       <span class="n">size_type</span> <span class="n">pos2</span><span class="p">,</span>
                       <span class="n">size_type</span> <span class="n">n2</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>                  <span class="c1">// (3)</span>
 
@@ -229,9 +242,9 @@
 <h2>概要</h2>
 <p>他の文字列との比較を行う。</p>
 <ul>
-<li>(1) : <code>*this</code>と<code>s</code>を比較する</li>
-<li>(2) : <code>*this</code>の範囲<code>[pos1, pos1 + n1)</code>と<code>s</code>を比較する</li>
-<li>(3) : <code>*this</code>の範囲<code>[pos1, pos1 + n1)</code>と<code>s</code>の範囲<code>[pos2, pos2 + n2)</code>を比較する</li>
+<li>(1) : <code>*this</code>と<code>sv</code>を比較する</li>
+<li>(2) : <code>*this</code>の範囲<code>[pos1, pos1 + n1)</code>と<code>sv</code>を比較する</li>
+<li>(3) : <code>*this</code>の範囲<code>[pos1, pos1 + n1)</code>と<code>sv</code>の範囲<code>[pos2, pos2 + n2)</code>を比較する</li>
 <li>(4) : <code>*this</code>と文字配列<code>s</code>を比較する</li>
 <li>(5) : <code>*this</code>の範囲<code>[pos1, pos1 + n1)</code>と文字配列<code>s</code>を比較する</li>
 <li>(6) : <code>*this</code>の範囲<code>[pos1, pos1 + n1)</code>と文字配列<code>s</code>の先頭<code>n2</code>文字を比較する</li>
@@ -239,12 +252,12 @@
 <h2>効果</h2>
 <ul>
 <li>(1) :<ul>
-<li><code><a href="size.html">size()</a></code>と<code>str.<a href="size.html">size()</a></code>のうち、小さい方を<code>rlen</code>とする</li>
+<li><code><a href="size.html">size()</a></code>と<code>sv.<a href="size.html">size()</a></code>のうち、小さい方を<code>rlen</code>とする</li>
 <li><code>int result = Traits::<a href="../../string/char_traits/compare.html">compare</a>(<a href="data.html">data()</a>, sv.<a href="data.html">data()</a>, rlen);</code></li>
 <li><code>result != 0</code>であれば<code>result</code>を返す。そうでなければ、以下のように返す：<ul>
-<li><code>size() &lt; str.size()</code>であれば0未満の値を返す</li>
-<li><code>size() == str.size()</code>であれば0を返す</li>
-<li><code>size() &gt; str.size()</code>であれば0超の値を返す</li>
+<li><code>size() &lt; sv.size()</code>であれば0未満の値を返す</li>
+<li><code>size() == sv.size()</code>であれば0を返す</li>
+<li><code>size() &gt; sv.size()</code>であれば0超の値を返す</li>
 </ul>
 </li>
 </ul>

@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="cpprefjp" lang="ja" itemscope="" itemtype="http://schema.org/WebPage">
     <head>
+        
+  
+
         <meta charset="UTF-8">
 
         <title>unordered_multimap::insert - cpprefjp C++日本語リファレンス</title>
@@ -25,27 +28,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicons/apple-touch-icon.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicons/favicon-32x32.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicons/favicon-16x16.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="manifest" href="../../../manifest.json?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="mask-icon" href="../../../static/favicons/safari-pinned-tab.svg?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicons/apple-touch-icon.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicons/favicon-32x32.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicons/favicon-16x16.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="manifest" href="../../../manifest.json?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../../static/pygments/default.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
+<link rel="stylesheet" href="../../../static/pygments/default.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <!-- <link rel="stylesheet" href="../../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../../static/kunai/css/kunai-stage-0.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-1.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-2.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-3.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-0.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-1.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-2.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-3.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
 
-<script type="text/javascript" src="../../../static/kunai/js/kunai-vendor.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
-<script type="text/javascript" src="../../../static/kunai/js/kunai.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
+<script type="text/javascript" src="../../../static/kunai/js/kunai-vendor.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
+<script type="text/javascript" src="../../../static/kunai/js/kunai.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -53,9 +55,6 @@
     kn.cpprefjp();
   });
 </script>
-
-    
-  
 
     </head>
     <body>
@@ -82,6 +81,20 @@
             <div class="google-search">
               
   
+<script>
+  (function() {
+    var cx = '013316413321391058734:ji_u66hl7hq';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div class="gcse-search"></div>
+
 
             </div>
           </li>
@@ -177,12 +190,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2020-02-20T14:43:22">
-        2020年02月20日 14時43分22秒
+      <span itemprop="datePublished" content="2023-12-29T16:05:52">
+        2023年12月29日 16時05分52秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">Mitsuru Kariya</span>
+        <span itemprop="name">suomesta</span>
       </span>
       が更新
     </small></p>
@@ -239,7 +252,7 @@
 </ul>
 </li>
 <li>(7) :<ul>
-<li>引数 <code>first</code>、および、<code>last</code>は、入力イテレータの要件を満たし、参照先の要素は <code>value_type</code> 型で、かつ、範囲 <code>[first, last)</code> が当該コンテナ <strong>以外を指す</strong> 有効な範囲であること</li>
+<li>引数 <code>first</code>、および、<code>last</code>は、入力イテレータの要件を満たし、参照先の要素は <code>value_type</code> 型で、かつ、<a class="cpprefjp-defined-word" data-desc="2つのイテレータで表現される半開区間を表す。C++20からイテレータと番兵で異なる型であっても指定可能になる">イテレータ範囲</a> <code>[first, last)</code> が当該コンテナ <strong>以外を指す</strong> 有効な範囲であること</li>
 <li>このコンテナの要素型 <code>value_type</code> は、コンテナに対して <code>*first</code> から直接構築可能であること</li>
 </ul>
 </li>
@@ -269,7 +282,7 @@
 </ul>
 </li>
 <li>(7) :<ul>
-<li>範囲 <code>[first, last)</code> のすべての要素 <code>t</code> に対して、<code>insert(t)</code> を呼び出した場合と等価である（<code>*first</code> の型によって (1)、あるいは(2)の形式が呼び出される）</li>
+<li><a class="cpprefjp-defined-word" data-desc="2つのイテレータで表現される半開区間を表す。C++20からイテレータと番兵で異なる型であっても指定可能になる">イテレータ範囲</a> <code>[first, last)</code> のすべての要素 <code>t</code> に対して、<code>insert(t)</code> を呼び出した場合と等価である（<code>*first</code> の型によって (1)、あるいは(2)の形式が呼び出される）</li>
 </ul>
 </li>
 <li>(8) :<ul>
@@ -285,7 +298,7 @@
 <li>(10) :<ul>
 <li><code>nh</code>が空の場合、効果はなく、<code>(*this).end()</code>を返す</li>
 <li>そうでなければ、 <code>nh</code> によって所有されている要素をコンテナに挿入し、 <code>nh.key()</code> と等価なキーを持つ要素を指すイテレータを返す</li>
-<li><code>nh.key()</code> と等しいキーを持つ要素を含む範囲がコンテナ内に存在する場合、要素はその範囲の終端に挿入される。要素は、<code>p</code>の直前の位置のできるだけ近くに挿入される</li>
+<li><code>nh.key()</code> と等しいキーを持つ要素を含む範囲がコンテナ内に存在する場合、要素はその範囲の終端に挿入される。要素は、<code>hint</code>の直前の位置のできるだけ近くに挿入される</li>
 </ul>
 </li>
 </ul>
@@ -410,7 +423,7 @@
 
     <span class="n"><a href="../../forward_list/forward_list.html">std::forward_list</a></span><span class="o">&lt;</span><span class="n"><a href="../../utility/pair.html">std::pair</a></span><span class="o">&lt;</span><span class="kt">short</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*&gt;&gt;</span> <span class="n">fl</span><span class="p">{</span> <span class="p">{</span><span class="mi">5</span><span class="p">,</span> <span class="s">"5th"</span><span class="p">},</span> <span class="p">{</span><span class="mi">6</span><span class="p">,</span> <span class="s">"6th"</span><span class="p">},</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="s">"0th"</span><span class="p">},</span> <span class="p">{</span><span class="mi">8</span><span class="p">,</span> <span class="s">"8th"</span><span class="p">},</span> <span class="p">{</span><span class="mi">7</span><span class="p">,</span> <span class="s">"7th"</span><span class="p">},</span> <span class="p">};</span>
     <span class="n">um</span><span class="p">.</span><span class="n"><span style="color:#ff0000">insert</span></span><span class="p">(</span><span class="n"><a href="../../forward_list/forward_list/cbegin.html">fl.cbegin()</a></span><span class="p">,</span> <span class="n"><a href="../../forward_list/forward_list/cend.html">fl.cend()</a></span><span class="p">);</span> <span class="c1">// forward_list の要素を全部</span>
-    <span class="n">print</span><span class="p">(</span><span class="s">"<span style="color:#ff0000">insert</span> range"</span><span class="p">,</span> <span class="n">um</span><span class="p">);</span>
+    <span class="n">print</span><span class="p">(</span><span class="s">"<span style="color:#ff0000">insert</span> <a href="../../ranges/range.html">range</a>"</span><span class="p">,</span> <span class="n">um</span><span class="p">);</span>
   <span class="p">}</span>
 
   <span class="c1">// 複数の要素を挿入（(8)の形式）</span>
@@ -432,7 +445,7 @@ insert one element : (6,6th), (5,five), (4,four), (3,three), (2,2nd), (2,two), (
 insert one element with hint : (6,6th), (5,five), (4,four), (3,three), (2,2nd), (2,two), (1,one), (0,zero), 
 (6,6th) (2,2nd)
 insert one element with hint : (6,6th), (5,five), (4,four), (3,three), (2,2nd), (2,two), (1,one), (0,zero), 
-insert range : (7,7th), (8,8th), (6,6th), (5,5th), (5,five), (4,four), (3,three), (2,two), (1,one), (0,0th), (0,zero), 
+insert <a href="../../ranges/range.html">range</a> : (7,7th), (8,8th), (6,6th), (5,5th), (5,five), (4,four), (3,three), (2,two), (1,one), (0,0th), (0,zero), 
 insert initializer_list : (7,7th), (8,8th), (6,6th), (5,5th), (5,five), (4,four), (3,three), (2,two), (1,one), (0,0th), (0,zero), 
 </code></pre></p>
 <p>注：<code><a href="../unordered_multimap.html">unordered_multimap</a></code> は非順序連想コンテナであるため、出力順序は無意味であることに注意</p>
@@ -443,7 +456,6 @@ insert initializer_list : (7,7th), (8,8th), (6,6th), (5,5th), (5,five), (4,four)
 </ul>
 <h3>処理系</h3>
 <ul>
-<li><a href="../../../implementation.html#clang">Clang</a>: -</li>
 <li><a href="../../../implementation.html#clang">Clang</a>: 3.1</li>
 <li><a href="../../../implementation.html#gcc">GCC</a>: 4.7.0</li>
 <li><a href="../../../implementation.html#icc">ICC</a>: ?</li>
@@ -467,7 +479,7 @@ insert initializer_list : (7,7th), (8,8th), (6,6th), (5,5th), (5,five), (4,four)
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">P</span><span class="o">&gt;</span>
 <span class="kr">inline</span> <span class="n">iterator</span> <span class="n">unordered_multimap</span><span class="o">&lt;</span><span class="n">Key</span><span class="p">,</span> <span class="n">Hash</span><span class="p">,</span> <span class="n">Pred</span><span class="p">,</span> <span class="n">Allocator</span><span class="o">&gt;::</span><span class="n"><span style="color:#ff0000">insert</span></span><span class="p">(</span><span class="n">const_iterator</span><span class="p">,</span> <span class="n">P</span><span class="o">&amp;&amp;</span> <span class="n">obj</span><span class="p">)</span>
 <span class="p">{</span>
-  <span class="k">return</span> <span class="n"><span style="color:#ff0000">insert</span></span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n"><a href="../../utility/forward.html">forward</a></span><span class="o">&lt;</span><span class="n">P</span><span class="o">&gt;</span><span class="p">(</span><span class="n">obj</span><span class="p">));</span>
+  <span class="k">return</span> <span class="n"><span style="color:#ff0000">insert</span></span><span class="p">(</span><span class="n"><a href="../../utility/forward.html">std::forward</a></span><span class="o">&lt;</span><span class="n">P</span><span class="o">&gt;</span><span class="p">(</span><span class="n">obj</span><span class="p">));</span>
 <span class="p">}</span>
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">Key</span><span class="p">,</span> <span class="k">class</span> <span class="nc">Hash</span><span class="p">,</span> <span class="k">class</span> <span class="nc">Pred</span><span class="p">,</span> <span class="k">class</span> <span class="nc">Allocator</span><span class="o">&gt;</span>
@@ -481,7 +493,7 @@ insert initializer_list : (7,7th), (8,8th), (6,6th), (5,5th), (5,five), (4,four)
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">Key</span><span class="p">,</span> <span class="k">class</span> <span class="nc">Hash</span><span class="p">,</span> <span class="k">class</span> <span class="nc">Pred</span><span class="p">,</span> <span class="k">class</span> <span class="nc">Allocator</span><span class="o">&gt;</span>
 <span class="kr">inline</span> <span class="kt">void</span> <span class="n">unordered_multimap</span><span class="o">&lt;</span><span class="n">Key</span><span class="p">,</span> <span class="n">Hash</span><span class="p">,</span> <span class="n">Pred</span><span class="p">,</span> <span class="n">Allocator</span><span class="o">&gt;::</span><span class="n"><span style="color:#ff0000">insert</span></span><span class="p">(</span><span class="n"><a href="../../initializer_list/initializer_list.html">initializer_list</a></span><span class="o">&lt;</span><span class="n">Key</span><span class="o">&gt;</span> <span class="n">il</span><span class="p">);</span>
 <span class="p">{</span>
-  <span class="n"><span style="color:#ff0000">insert</span></span><span class="p">(</span><span class="n">il</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">il</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+  <span class="n"><span style="color:#ff0000">insert</span></span><span class="p">(</span><span class="n"><a href="../../initializer_list/initializer_list/begin.html">il.begin()</a></span><span class="p">,</span> <span class="n"><a href="../../initializer_list/initializer_list/end.html">il.end()</a></span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
 </p>

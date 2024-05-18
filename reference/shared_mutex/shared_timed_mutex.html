@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="cpprefjp" lang="ja" itemscope="" itemtype="http://schema.org/WebPage">
     <head>
+        
+  
+
         <meta charset="UTF-8">
 
         <title>shared_timed_mutex - cpprefjp C++日本語リファレンス</title>
@@ -25,27 +28,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="manifest" href="../../manifest.json?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="mask-icon" href="../../static/favicons/safari-pinned-tab.svg?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="manifest" href="../../manifest.json?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -54,12 +56,9 @@
   });
 </script>
 
-    
-  
-
     </head>
     <body>
-<header data-kunai-mdinfo="{&#34;meta&#34;: {&#34;header&#34;: [&#34;shared_mutex&#34;], &#34;namespace&#34;: [&#34;std&#34;], &#34;id-type&#34;: [&#34;class&#34;], &#34;cpp&#34;: [&#34;cpp14&#34;]}, &#34;sources&#34;: [{&#34;id&#34;: &#34;61fb2e3e921a3a9f0050af947e73e5a56a407556&#34;, &#34;source&#34;: &#34;#include &lt;iostream&gt;\n#include &lt;thread&gt;\n#include &lt;shared_mutex&gt;\n#include &lt;chrono&gt;\n\nstd::mutex print_mtx;\nvoid print_value(int x)\n{\n  std::lock_guard&lt;std::mutex&gt; lock(print_mtx);\n  std::cout &lt;&lt; x &lt;&lt; std::endl;\n}\n\nclass X {\n  std::shared_timed_mutex mtx_;\n  int count_ = 0;\npublic:\n  // \u66f8\u304d\u8fbc\u307f\u5074\uff1a\u30ab\u30a6\u30f3\u30bf\u3092\u52a0\u7b97\u3059\u308b\n  void writer()\n  {\n    std::lock_guard&lt;std::shared_timed_mutex&gt; lock(mtx_);\n    ++count_;\n  }\n\n  // \u8aad\u307f\u8fbc\u307f\u5074\uff1a\u30ab\u30a6\u30f3\u30bf\u306e\u5024\u3092\u8aad\u3080\n  void reader()\n  {\n    int local_count;\n    {\n      std::shared_lock&lt;std::shared_mutex&gt; lock(mtx_);\n      local_count = count_;\n    } // \u5171\u6709\u30ed\u30c3\u30af\u3092\u3053\u3053\u3067\u624b\u653e\u3059\n    print_value(local_count);\n  }\n};\n\nX obj;\nvoid writer_thread()\n{\n  for (int i = 0; i &lt; 3; ++i) {\n    std::this_thread::sleep_for(std::chrono::milliseconds(1));\n    obj.writer();\n  }\n}\n\nvoid reader_thread()\n{\n  for (int i = 0; i &lt; 10; ++i) {\n    std::this_thread::sleep_for(std::chrono::milliseconds(1));\n    obj.reader();\n  }\n}\n\nint main()\n{\n  // \u66f8\u304d\u8fbc\u307f\u30e6\u30fc\u30b6\u30fc1\u4eba\n  // \u8aad\u307f\u8fbc\u307f\u30e6\u30fc\u30b6\u30fc3\u4eba\n  std::thread writer1(writer_thread);\n  std::thread reader1(reader_thread);\n  std::thread reader2(reader_thread);\n  std::thread reader3(reader_thread);\n\n  writer1.join();\n  reader1.join();\n  reader2.join();\n  reader3.join();\n}\n&#34;}], &#34;page_id&#34;: [&#34;reference&#34;, &#34;shared_mutex&#34;, &#34;shared_timed_mutex&#34;]}">
+<header data-kunai-mdinfo="{&#34;meta&#34;: {&#34;header&#34;: [&#34;shared_mutex&#34;], &#34;namespace&#34;: [&#34;std&#34;], &#34;id-type&#34;: [&#34;class&#34;], &#34;cpp&#34;: [&#34;cpp14&#34;]}, &#34;sources&#34;: [{&#34;id&#34;: &#34;9c70dadcd9f144890a9454dd3696ccd19694f920&#34;, &#34;source&#34;: &#34;#include &lt;iostream&gt;\n#include &lt;thread&gt;\n#include &lt;shared_mutex&gt;\n#include &lt;chrono&gt;\n\nstd::mutex print_mtx;\nvoid print_value(int x)\n{\n  std::lock_guard&lt;std::mutex&gt; lock(print_mtx);\n  std::cout &lt;&lt; x &lt;&lt; std::endl;\n}\n\nclass X {\n  std::shared_timed_mutex mtx_;\n  int count_ = 0;\npublic:\n  // \u66f8\u304d\u8fbc\u307f\u5074\uff1a\u30ab\u30a6\u30f3\u30bf\u3092\u52a0\u7b97\u3059\u308b\n  void writer()\n  {\n    std::lock_guard&lt;std::shared_timed_mutex&gt; lock(mtx_);\n    ++count_;\n  }\n\n  // \u8aad\u307f\u8fbc\u307f\u5074\uff1a\u30ab\u30a6\u30f3\u30bf\u306e\u5024\u3092\u8aad\u3080\n  void reader()\n  {\n    int local_count;\n    {\n      std::shared_lock&lt;std::shared_timed_mutex&gt; lock(mtx_);\n      local_count = count_;\n    } // \u5171\u6709\u30ed\u30c3\u30af\u3092\u3053\u3053\u3067\u624b\u653e\u3059\n    print_value(local_count);\n  }\n};\n\nX obj;\nvoid writer_thread()\n{\n  for (int i = 0; i &lt; 3; ++i) {\n    std::this_thread::sleep_for(std::chrono::milliseconds(1));\n    obj.writer();\n  }\n}\n\nvoid reader_thread()\n{\n  for (int i = 0; i &lt; 10; ++i) {\n    std::this_thread::sleep_for(std::chrono::milliseconds(1));\n    obj.reader();\n  }\n}\n\nint main()\n{\n  // \u66f8\u304d\u8fbc\u307f\u30e6\u30fc\u30b6\u30fc1\u4eba\n  // \u8aad\u307f\u8fbc\u307f\u30e6\u30fc\u30b6\u30fc3\u4eba\n  std::thread writer1(writer_thread);\n  std::thread reader1(reader_thread);\n  std::thread reader2(reader_thread);\n  std::thread reader3(reader_thread);\n\n  writer1.join();\n  reader1.join();\n  reader2.join();\n  reader3.join();\n}\n&#34;}], &#34;page_id&#34;: [&#34;reference&#34;, &#34;shared_mutex&#34;, &#34;shared_timed_mutex&#34;]}">
   <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -82,6 +81,20 @@
             <div class="google-search">
               
   
+<script>
+  (function() {
+    var cx = '013316413321391058734:ji_u66hl7hq';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div class="gcse-search"></div>
+
 
             </div>
           </li>
@@ -165,12 +178,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2021-03-03T04:24:42">
-        2021年03月03日 04時24分42秒
+      <span itemprop="datePublished" content="2023-11-21T09:04:26">
+        2023年11月21日 09時04分26秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">yoh</span>
+        <span itemprop="name">onihusube</span>
       </span>
       が更新
     </small></p>
@@ -212,7 +225,7 @@
 <h2>備考</h2>
 <ul>
 <li>このクラスは現状、書き込みロックと読み込みロックについてのスケジューリング戦略を規定せず、カスタマイズもできない。そのため、書き込みロックがなかなか取得できない、読み込みロックがなかなか取得できないというスタベーションの問題が発生した場合に、ユーザーの状況に合わせて戦略を変更することができない。POSIXのReaders-writer lockの実装では、スケジューリングのオプションを指定できる<ul>
-<li><code><a href="https://linuxjm.osdn.jp/html/LDP_man-pages/man3/pthread_rwlockattr_setkind_np.3.html" target="_blank">pthread_rwlockattr_setkind_np()</a></code></li>
+<li><code><a href="https://web.archive.org/web/20230130174238/http://linuxjm.osdn.jp/html/LDP_man-pages/man3/pthread_rwlockattr_setkind_np.3.html" target="_blank">pthread_rwlockattr_setkind_np()</a></code></li>
 </ul>
 </li>
 </ul>
@@ -319,7 +332,7 @@
 </tbody>
 </table>
 <h2>例</h2>
-<p><div class="yata" id="61fb2e3e921a3a9f0050af947e73e5a56a407556"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf"><a href="../iostream.html">&lt;iostream&gt;</a></span><span class="cp"></span>
+<p><div class="yata" id="9c70dadcd9f144890a9454dd3696ccd19694f920"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf"><a href="../iostream.html">&lt;iostream&gt;</a></span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf"><a href="../thread.html">&lt;thread&gt;</a></span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf"><a href="../shared_mutex.html">&lt;shared_mutex&gt;</a></span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf"><a href="../chrono.html">&lt;chrono&gt;</a></span><span class="cp"></span>
@@ -347,7 +360,7 @@
   <span class="p">{</span>
     <span class="kt">int</span> <span class="n">local_count</span><span class="p">;</span>
     <span class="p">{</span>
-      <span class="n"><a href="shared_lock.html">std::shared_lock</a></span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">shared_mutex</span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">mtx_</span><span class="p">);</span>
+      <span class="n"><a href="shared_lock.html">std::shared_lock</a></span><span class="o">&lt;</span><span class="n"><span style="color:#ff0000">std::shared_timed_mutex</span></span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">mtx_</span><span class="p">);</span>
       <span class="n">local_count</span> <span class="o">=</span> <span class="n">count_</span><span class="p">;</span>
     <span class="p">}</span> <span class="c1">// 共有ロックをここで手放す</span>
     <span class="n">print_value</span><span class="p">(</span><span class="n">local_count</span><span class="p">);</span>

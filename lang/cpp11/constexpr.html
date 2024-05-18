@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="cpprefjp" lang="ja" itemscope="" itemtype="http://schema.org/WebPage">
     <head>
+        
+  
+
         <meta charset="UTF-8">
 
         <title>constexpr - cpprefjp C++日本語リファレンス</title>
@@ -25,27 +28,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="manifest" href="../../manifest.json?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="mask-icon" href="../../static/favicons/safari-pinned-tab.svg?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="manifest" href="../../manifest.json?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -53,9 +55,6 @@
     kn.cpprefjp();
   });
 </script>
-
-    
-  
 
     </head>
     <body>
@@ -82,6 +81,20 @@
             <div class="google-search">
               
   
+<script>
+  (function() {
+    var cx = '013316413321391058734:ji_u66hl7hq';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div class="gcse-search"></div>
+
 
             </div>
           </li>
@@ -165,8 +178,8 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2020-12-26T13:37:08">
-        2020年12月26日 13時37分08秒
+      <span itemprop="datePublished" content="2024-02-13T09:29:51">
+        2024年02月13日 09時29分51秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -239,7 +252,7 @@
 </code></pre></div>
 </div></p>
 <p><code>constexpr</code>にできる変数の型は、<a href="../../reference/type_traits/is_literal_type.html">リテラル型</a>に分類される必要がある。これには、整数型、浮動小数点数、リテラル型の配列、リテラル型のみをメンバ変数として持つクラスなどが含まれる。</p>
-<p>ユーザー定義のクラスで、コンストラクタを定義する場合には、<code>constexpr</code>をコンストラクタの宣言に付ける。メンバ関数も、コンパイル時に呼び出す必要がある場合には、<code>constexpr</code>修飾する。この時C++14でも<a class="cpprefjp-defined-word" data-desc="プログラムが文法規則・診断対象の意味規則・単一定義規則を満たすこと" href="../../implementation-compliance.html#dfn-well-formed">適格</a>なコードであるためには<code>const</code>メンバ関数である必要がある。メンバ変数の宣言に<code>constexpr</code>を付ける必要はない。</p>
+<p><a class="cpprefjp-defined-word" data-desc="プログラム定義。ユーザー（プログラマ）によって定義されること（標準ライブラリで定義されるものを除く）">ユーザー定義</a>のクラスで、コンストラクタを定義する場合には、<code>constexpr</code>をコンストラクタの宣言に付ける。メンバ関数も、コンパイル時に呼び出す必要がある場合には、<code>constexpr</code>修飾する。この時C++14でも<a class="cpprefjp-defined-word" data-desc="プログラムが文法規則・診断対象の意味規則・単一定義規則を満たすこと" href="../../implementation-compliance.html#dfn-well-formed">適格</a>なコードであるためには<code>const</code>メンバ関数である必要がある。メンバ変数の宣言に<code>constexpr</code>を付ける必要はない。</p>
 <p><div class="yata" id="23d4aa34b768c848f1b0471ce75d97a00d75dcc1"><div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Integer</span> <span class="p">{</span>
   <span class="kt">int</span> <span class="n">value_</span><span class="p">;</span>
 <span class="k">public</span><span class="o">:</span>
@@ -284,7 +297,7 @@
 <span class="p">{</span> <span class="k">return</span> <span class="n">b</span> <span class="o">?</span> <span class="k">throw</span> <span class="o">-</span><span class="mi">1</span> <span class="o">:</span> <span class="mi">0</span><span class="p">;</span> <span class="p">}</span>
 </code></pre></div>
 </p>
-<h3>constexpr変数として使用するユーザー定義クラス</h3>
+<h3>constexpr変数として使用する<a class="cpprefjp-defined-word" data-desc="プログラム定義。ユーザー（プログラマ）によって定義されること（標準ライブラリで定義されるものを除く）">ユーザー定義</a>クラス</h3>
 <ul>
 <li>コンストラクタを明示的に定義する場合には、コンストラクタを<code>constexpr</code>修飾する</li>
 <li>暗黙的に定義されるコンストラクタは、自動的に<code>constexpr</code>修飾される</li>
@@ -346,9 +359,19 @@
 <ul>
 <li><a href="user_defined_literals.html">C++11 ユーザー定義リテラル</a></li>
 <li><a href="../cpp14/relaxing_constraints_on_constexpr.html">C++14 <code>constexpr</code>の制限緩和</a></li>
-<li><a href="../cpp20/allow_virtual_function_calls_in_constant_expressions.html">C++20 定数式からの仮想関数の呼び出しを許可</a></li>
-<li><a href="../cpp20/try-catch_blocks_in_constexpr_functions.html">C++20 <code>constexpr</code>関数内でのtry-catchブロックを許可</a></li>
+<li><a href="../cpp17/constexpr_lambda.html">C++17 <code>constexpr</code>ラムダ</a></li>
 <li><a href="../cpp20/immediate_functions.html">C++20 即時関数</a></li>
+<li><a href="../cpp20/allow_virtual_function_calls_in_constant_expressions.html">C++20 定数式からの仮想関数の呼び出しを許可</a></li>
+<li><a href="../cpp20/allowing_dynamic_cast_polymorphic_typeid_in_constant_expressions.html">C++20 定数式での<code>dynamic_cast</code>、多態的な<code>typeid</code>を許可</a></li>
+<li><a href="../cpp20/try-catch_blocks_in_constexpr_functions.html">C++20 <code>constexpr</code>関数内でのtry-catchブロックを許可</a></li>
+<li><a href="../cpp20/changing_the_active_member_of_a_union_inside_constexpr.html">C++20 定数式内での共用体のアクティブメンバの変更を許可</a></li>
+<li><a href="../cpp20/permitting_trivial_default_initialization_in_constexpr_contexts.html">C++20 constexpr関数内でのトリビアルなデフォルト初期化を許可</a></li>
+<li><a href="../cpp20/enabling_constexpr_intrinsics_by_permitting_unevaluated_inline-assembly_in_constexpr_functions.html">C++20 constexpr関数内で未評価のインラインアセンブリを許可することによる組み込み関数のconstexpr有効化</a></li>
+<li><a href="../cpp20/constinit.html">C++20 コンパイル時初期化を強制する<code>constinit</code>キーワードを追加</a></li>
+<li><a href="../cpp20/more_constexpr_containers.html">C++20 可変サイズをもつコンテナの<code>constexpr</code>化</a></li>
+<li><a href="../cpp23/relaxing_some_constexpr_restrictions.html">C++23 <code>constexpr</code>関数が定数実行できない場合でも適格とする</a></li>
+<li><a href="../cpp23/permitting_static_constexpr_variables_in_constexpr_functions.html">C++23 <code>constexpr</code>関数内での<code>static constexpr</code>変数を許可</a></li>
+<li><a href="../cpp23/consteval_needs_to_propagate_up.html">C++23 <code>constexpr</code>関数内で<code>consteval</code>関数を呼び出せない問題を軽減</a></li>
 </ul>
 <h2>参照</h2>
 <ul>

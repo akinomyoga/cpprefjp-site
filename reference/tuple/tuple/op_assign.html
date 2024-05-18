@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="cpprefjp" lang="ja" itemscope="" itemtype="http://schema.org/WebPage">
     <head>
+        
+  
+
         <meta charset="UTF-8">
 
         <title>tuple::operator= - cpprefjp C++日本語リファレンス</title>
@@ -25,27 +28,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicons/apple-touch-icon.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicons/favicon-32x32.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicons/favicon-16x16.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="manifest" href="../../../manifest.json?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="mask-icon" href="../../../static/favicons/safari-pinned-tab.svg?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicons/apple-touch-icon.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicons/favicon-32x32.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicons/favicon-16x16.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="manifest" href="../../../manifest.json?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../../static/pygments/default.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
+<link rel="stylesheet" href="../../../static/pygments/default.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <!-- <link rel="stylesheet" href="../../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../../static/kunai/css/kunai-stage-0.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-1.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-2.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-3.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-0.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-1.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-2.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-3.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
 
-<script type="text/javascript" src="../../../static/kunai/js/kunai-vendor.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
-<script type="text/javascript" src="../../../static/kunai/js/kunai.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
+<script type="text/javascript" src="../../../static/kunai/js/kunai-vendor.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
+<script type="text/javascript" src="../../../static/kunai/js/kunai.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -53,9 +55,6 @@
     kn.cpprefjp();
   });
 </script>
-
-    
-  
 
     </head>
     <body>
@@ -82,6 +81,20 @@
             <div class="google-search">
               
   
+<script>
+  (function() {
+    var cx = '013316413321391058734:ji_u66hl7hq';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div class="gcse-search"></div>
+
 
             </div>
           </li>
@@ -177,12 +190,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2019-11-26T08:07:39">
-        2019年11月26日 08時07分39秒
+      <span itemprop="datePublished" content="2023-02-01T01:15:46">
+        2023年02月01日 01時15分46秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">Akira Takahashi</span>
+        <span itemprop="name">tomolatoon</span>
       </span>
       が更新
     </small></p>
@@ -205,52 +218,103 @@
 <div itemprop="articleBody"><p><div class="codehilite"><pre><span></span><code><span class="n">tuple</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">tuple</span><span class="o">&amp;</span><span class="p">);</span>                          <span class="c1">// (1) C++11</span>
 <span class="k">constexpr</span> <span class="n">tuple</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">tuple</span><span class="o">&amp;</span><span class="p">);</span>                <span class="c1">// (1) C++20</span>
 
-<span class="n">tuple</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">tuple</span><span class="o">&amp;&amp;</span><span class="p">)</span> <span class="k">noexcept</span><span class="p">(</span><span class="n">see</span> <span class="n">below</span><span class="p">);</span>           <span class="c1">// (2) C++11</span>
-<span class="k">constexpr</span> <span class="n">tuple</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">tuple</span><span class="o">&amp;&amp;</span><span class="p">)</span> <span class="k">noexcept</span><span class="p">(</span><span class="n">see</span> <span class="n">below</span><span class="p">);</span> <span class="c1">// (2) C++20</span>
+<span class="k">constexpr</span> <span class="k">const</span> <span class="n">tuple</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">tuple</span><span class="o">&amp;</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>    <span class="c1">// (2) C++23</span>
+
+<span class="n">tuple</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">tuple</span><span class="o">&amp;&amp;</span><span class="p">)</span> <span class="k">noexcept</span><span class="p">(</span><span class="n"><i>see below</i></span><span class="p">);</span>           <span class="c1">// (3) C++11</span>
+<span class="k">constexpr</span> <span class="n">tuple</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">tuple</span><span class="o">&amp;&amp;</span><span class="p">)</span> <span class="k">noexcept</span><span class="p">(</span><span class="n"><i>see below</i></span><span class="p">);</span> <span class="c1">// (3) C++20</span>
+
+<span class="k">constexpr</span> <span class="k">const</span> <span class="n">tuple</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">tuple</span><span class="o">&amp;&amp;</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>         <span class="c1">// (4) C++23</span>
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="n">class</span><span class="p">...</span> <span class="n">UTypes</span><span class="o">&gt;</span>
-<span class="n">tuple</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">tuple</span><span class="o">&lt;</span><span class="n">UTypes</span><span class="p">...</span><span class="o">&gt;&amp;</span><span class="p">);</span>               <span class="c1">// (3) C++11</span>
+<span class="n">tuple</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">tuple</span><span class="o">&lt;</span><span class="n">UTypes</span><span class="p">...</span><span class="o">&gt;&amp;</span><span class="p">);</span>               <span class="c1">// (5) C++11</span>
 <span class="k">template</span> <span class="o">&lt;</span><span class="n">class</span><span class="p">...</span> <span class="n">UTypes</span><span class="o">&gt;</span>
-<span class="k">constexpr</span> <span class="n">tuple</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">tuple</span><span class="o">&lt;</span><span class="n">UTypes</span><span class="p">...</span><span class="o">&gt;&amp;</span><span class="p">);</span>     <span class="c1">// (3) C++20</span>
+<span class="k">constexpr</span> <span class="n">tuple</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">tuple</span><span class="o">&lt;</span><span class="n">UTypes</span><span class="p">...</span><span class="o">&gt;&amp;</span><span class="p">);</span>     <span class="c1">// (5) C++20</span>
+
+<span class="k">template</span><span class="o">&lt;</span><span class="n">class</span><span class="p">...</span> <span class="n">UTypes</span><span class="o">&gt;</span>
+<span class="k">constexpr</span> <span class="k">const</span> <span class="n">tuple</span><span class="o">&amp;</span>
+  <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">tuple</span><span class="o">&lt;</span><span class="n">UTypes</span><span class="p">...</span><span class="o">&gt;&amp;</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>              <span class="c1">// (6) C++23</span>
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="n">class</span><span class="p">...</span> <span class="n">UTypes</span><span class="o">&gt;</span>
-<span class="n">tuple</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">tuple</span><span class="o">&lt;</span><span class="n">UTypes</span><span class="p">...</span><span class="o">&gt;&amp;&amp;</span><span class="p">);</span>                    <span class="c1">// (4) C++11</span>
+<span class="n">tuple</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">tuple</span><span class="o">&lt;</span><span class="n">UTypes</span><span class="p">...</span><span class="o">&gt;&amp;&amp;</span><span class="p">);</span>                    <span class="c1">// (7) C++11</span>
 <span class="k">template</span> <span class="o">&lt;</span><span class="n">class</span><span class="p">...</span> <span class="n">UTypes</span><span class="o">&gt;</span>
-<span class="k">constexpr</span> <span class="n">tuple</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">tuple</span><span class="o">&lt;</span><span class="n">UTypes</span><span class="p">...</span><span class="o">&gt;&amp;&amp;</span><span class="p">);</span>          <span class="c1">// (4) C++20</span>
+<span class="k">constexpr</span> <span class="n">tuple</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">tuple</span><span class="o">&lt;</span><span class="n">UTypes</span><span class="p">...</span><span class="o">&gt;&amp;&amp;</span><span class="p">);</span>          <span class="c1">// (7) C++20</span>
+
+<span class="k">template</span><span class="o">&lt;</span><span class="n">class</span><span class="p">...</span> <span class="n">UTypes</span><span class="o">&gt;</span>
+<span class="k">constexpr</span> <span class="k">const</span> <span class="n">tuple</span><span class="o">&amp;</span>
+  <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">tuple</span><span class="o">&lt;</span><span class="n">UTypes</span><span class="p">...</span><span class="o">&gt;&amp;&amp;</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>                   <span class="c1">// (8) C++23</span>
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">U1</span><span class="p">,</span> <span class="k">class</span> <span class="nc">U2</span><span class="o">&gt;</span>
-<span class="n">tuple</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n"><a href="../../utility/pair.html">pair</a></span><span class="o">&lt;</span><span class="n">U1</span><span class="p">,</span> <span class="n">U2</span><span class="o">&gt;&amp;</span><span class="p">);</span>                   <span class="c1">// (5) C++11</span>
+<span class="n">tuple</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n"><a href="../../utility/pair.html">pair</a></span><span class="o">&lt;</span><span class="n">U1</span><span class="p">,</span> <span class="n">U2</span><span class="o">&gt;&amp;</span><span class="p">);</span>                   <span class="c1">// (9) C++11</span>
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">U1</span><span class="p">,</span> <span class="k">class</span> <span class="nc">U2</span><span class="o">&gt;</span>
-<span class="k">constexpr</span> <span class="n">tuple</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n"><a href="../../utility/pair.html">pair</a></span><span class="o">&lt;</span><span class="n">U1</span><span class="p">,</span> <span class="n">U2</span><span class="o">&gt;&amp;</span><span class="p">);</span>         <span class="c1">// (5) C++20</span>
+<span class="k">constexpr</span> <span class="n">tuple</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n"><a href="../../utility/pair.html">pair</a></span><span class="o">&lt;</span><span class="n">U1</span><span class="p">,</span> <span class="n">U2</span><span class="o">&gt;&amp;</span><span class="p">);</span>         <span class="c1">// (9) C++20</span>
+
+<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">U1</span><span class="p">,</span> <span class="k">class</span> <span class="nc">U2</span><span class="o">&gt;</span>
+<span class="k">constexpr</span> <span class="k">const</span> <span class="n">tuple</span><span class="o">&amp;</span>
+  <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n"><a href="../../utility/pair.html">pair</a></span><span class="o">&lt;</span><span class="n">U1</span><span class="p">,</span> <span class="n">U2</span><span class="o">&gt;&amp;</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>                  <span class="c1">// (10) C++23</span>
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">U1</span><span class="p">,</span> <span class="k">class</span> <span class="nc">U2</span><span class="o">&gt;</span>
-<span class="n">tuple</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n"><a href="../../utility/pair.html">pair</a></span><span class="o">&lt;</span><span class="n">U1</span><span class="p">,</span> <span class="n">U2</span><span class="o">&gt;&amp;&amp;</span><span class="p">);</span>                        <span class="c1">// (6) C++11</span>
+<span class="n">tuple</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n"><a href="../../utility/pair.html">pair</a></span><span class="o">&lt;</span><span class="n">U1</span><span class="p">,</span> <span class="n">U2</span><span class="o">&gt;&amp;&amp;</span><span class="p">);</span>                        <span class="c1">// (11) C++11</span>
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">U1</span><span class="p">,</span> <span class="k">class</span> <span class="nc">U2</span><span class="o">&gt;</span>
-<span class="k">constexpr</span> <span class="n">tuple</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n"><a href="../../utility/pair.html">pair</a></span><span class="o">&lt;</span><span class="n">U1</span><span class="p">,</span> <span class="n">U2</span><span class="o">&gt;&amp;&amp;</span><span class="p">);</span>              <span class="c1">// (6) C++20</span>
+<span class="k">constexpr</span> <span class="n">tuple</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n"><a href="../../utility/pair.html">pair</a></span><span class="o">&lt;</span><span class="n">U1</span><span class="p">,</span> <span class="n">U2</span><span class="o">&gt;&amp;&amp;</span><span class="p">);</span>              <span class="c1">// (11) C++20</span>
+
+<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">U1</span><span class="p">,</span> <span class="k">class</span> <span class="nc">U2</span><span class="o">&gt;</span>
+<span class="k">constexpr</span> <span class="k">const</span> <span class="n">tuple</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n"><a href="../../utility/pair.html">pair</a></span><span class="o">&lt;</span><span class="n">U1</span><span class="p">,</span> <span class="n">U2</span><span class="o">&gt;&amp;&amp;</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>  <span class="c1">// (12) C++23</span>
+
+<span class="k">template</span><span class="o">&lt;</span><span class="n"><a href="../tuple-like.html">tuple-like</a></span> <span class="n">UTuple</span><span class="o">&gt;</span>
+<span class="k">constexpr</span> <span class="n">tuple</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">UTuple</span><span class="o">&amp;&amp;</span><span class="p">);</span>                    <span class="c1">// (13) C++23</span>
+<span class="k">template</span><span class="o">&lt;</span><span class="n"><a href="../tuple-like.html">tuple-like</a></span> <span class="n">UTuple</span><span class="o">&gt;</span>
+<span class="k">constexpr</span> <span class="k">const</span> <span class="n">tuple</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">UTuple</span><span class="o">&amp;&amp;</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>        <span class="c1">// (14) C++23</span>
 </code></pre></div>
 </p>
 <h2>概要</h2>
 <ul>
 <li>(1) : コピー代入を行う</li>
-<li>(2) : ムーブ代入を行う</li>
-<li>(3) : 変換可能な<code>tuple</code>からのコピー代入を行う</li>
-<li>(4) : 変換可能な<code>tuple</code>からのムーブ代入を行う</li>
-<li>(5) : 変換可能な<code>pair</code>からのコピー代入を行う</li>
-<li>(6) : 変換可能な<code>pair</code>からのムーブ代入を行う</li>
+<li>(2) : (1) のプロキシ参照版</li>
+<li>(3) : ムーブ代入を行う</li>
+<li>(4) : (3) のプロキシ参照版</li>
+<li>(5) : 変換可能な<code><a href="../tuple.html">tuple</a></code>からのコピー代入を行う</li>
+<li>(6) : (5) のプロキシ参照版</li>
+<li>(7) : 変換可能な<code><a href="../tuple.html">tuple</a></code>からのムーブ代入を行う</li>
+<li>(8) : (7) のプロキシ参照版</li>
+<li>(9) : 変換可能な<code><a href="../../utility/pair.html">pair</a></code>からのコピー代入を行う</li>
+<li>(10) : (9) のプロキシ参照版</li>
+<li>(11) : 変換可能な<code><a href="../../utility/pair.html">pair</a></code>からのムーブ代入を行う</li>
+<li>(12) : (11) のプロキシ参照版</li>
+<li>(13) : <code><a href="../tuple-like.html">tuple-like</a></code>なオブジェクトを代入</li>
+<li>(14) : (13) のプロキシ参照版</li>
 </ul>
+<p><a href="../../iterator/indirectly_writable.html">プロキシ参照</a>版とは、<a href="../../iterator/indirectly_writable.html">プロキシ参照</a>である（要素が全て<a href="../../iterator/indirectly_writable.html">プロキシ参照</a>である）<code><a href="../tuple.html">tuple</a></code>が持つ各要素について、その要素の参照先へ、他の<code><a href="../tuple.html">tuple</a></code>又は<code><a href="../tuple-like.html">tuple-like</a></code>なオブジェクトの対応する値を代入する動作を行う版である。</p>
 <h2>要件</h2>
+<p><code>Ti</code>（<code>i</code>は<code>[0, sizeof...(Types))</code>を範囲とする）が以下で現れた場合、元の<code><a href="../tuple.html">tuple</a></code>のテンプレートパラメーターパックの<code>i</code>番目とする。また、<code>Ui</code>については、パラメーターの<code><a href="../tuple.html">tuple</a></code>についてのテンプレートパラメーターパックの<code>i</code>番目とする。</p>
 <ul>
-<li>(1) : <code>tuple</code>の全ての要素型<code>i</code>が<code><a href="../../type_traits/is_copy_assignable.html">is_copy_assignable</a>&lt;i&gt;::value == true</code>であること</li>
-<li>(2) : <code>tuple</code>の全ての要素型<code>i</code>が<code><a href="../../type_traits/is_move_assignable.html">is_move_assignable</a>&lt;i&gt;::value == true</code>であること</li>
-<li>(3) : パラメータの<code>tuple</code>の全ての要素型が、元の<code>tuple</code>の全ての要素型にコピー代入可能であり、要素数が同じであること</li>
-<li>(4) : パラメータの<code>tuple</code>の全ての要素型が、元の<code>tuple</code>の全ての要素型にムーブ代入可能であり、要素数が同じであること</li>
-<li>(5) : 元の<code>tuple</code>の要素数が2であり、パラメータの<code>pair</code>の全ての要素型が元の<code>tuple</code>の全ての要素型にコピー代入可能であること</li>
-<li>(6) : 元の<code>tuple</code>の要素型が2であり、パラメータの<code>pair</code>の全ての要素型が元の<code>tuple</code>の全ての要素型にムーブ代入可能であること</li>
+<li>(1) : 全ての<code>i</code>について、<code><a href="../../type_traits/is_copy_assignable.html">is_copy_assignable</a>&lt;Ti&gt;::value == true</code>であること</li>
+<li>(2) : C++23 : 全ての<code>i</code>について、<code><a href="../../type_traits/is_copy_assignable.html">is_copy_assignable_v</a>&lt;const Ti&gt; == true</code>であること</li>
+<li>(3) : 全ての<code>i</code>について、<code><a href="../../type_traits/is_move_assignable.html">is_move_assignable</a>&lt;Ti&gt;::value == true</code>であること</li>
+<li>(4) : C++23 : 全ての<code>i</code>について、<code><a href="../../type_traits/is_assignable.html">is_assignable_v</a>&lt;const Ti&amp;, Ti&gt; == true</code>であること</li>
+<li>(5) : 要素数が同じかつ、パラメータの<code><a href="../tuple.html">tuple</a></code>の全ての要素型が、元の<code><a href="../tuple.html">tuple</a></code>の全ての要素型にコピー代入可能であること</li>
+<li>(6) : C++23 : 要素数が同じかつ、全ての<code>i</code>について、<code><a href="../../type_traits/is_assignable.html">is_assignable_v</a>&lt;const Ti&amp;, const Ui&amp;&gt; == true</code>であること</li>
+<li>(7) : 要素数が同じかつ、パラメータの<code><a href="../tuple.html">tuple</a></code>の全ての要素型が、元の<code><a href="../tuple.html">tuple</a></code>の全ての要素型にムーブ代入可能であること</li>
+<li>(8) : C++23 : 要素数が同じかつ、全ての<code>i</code>について、<code><a href="../../type_traits/is_assignable.html">is_assignable_v</a>&lt;const Ti&amp;, Ui&gt; = true</code>であること</li>
+<li>(9) : 元の<code><a href="../tuple.html">tuple</a></code>の要素数が2であり、パラメータの<code><a href="../../utility/pair.html">pair</a></code>の全ての要素型が元の<code><a href="../tuple.html">tuple</a></code>の全ての要素型にコピー代入可能であること</li>
+<li>(10) : C++23 : 元の<code><a href="../tuple.html">tuple</a></code>の要素数が2であり、<code><a href="../../type_traits/is_assignable.html">is_assignable_v</a>&lt;const T0&amp;, U1&gt; &amp;&amp; <a href="../../type_traits/is_assignable.html">is_assignable_v</a>&lt;const T1&amp;, U2&gt;</code>であること</li>
+<li>(11) : 元の<code><a href="../tuple.html">tuple</a></code>の要素型が2であり、パラメータの<code><a href="../../utility/pair.html">pair</a></code>の全ての要素型が元の<code><a href="../tuple.html">tuple</a></code>の全ての要素型にムーブ代入可能であること</li>
+<li>(12) : C++23 : 元の<code><a href="../tuple.html">tuple</a></code>の要素数が2であり、<code><a href="../../type_traits/is_assignable.html">is_assignable_v</a>&lt;const T0&amp;, U1&gt; &amp;&amp; <a href="../../type_traits/is_assignable.html">is_assignable_v</a>&lt;const T1&amp;, U2&gt;</code>であること</li>
+<li>(13) : 要素数が同じかつ、次を全て満たすこと<ul>
+<li>C++23 : <code><a href="../../ranges/different-from.html">different-from</a>&lt;UTuple, tuple&gt;</code></li>
+<li>C++23 : <code><a href="../../type_traits/remove_cvref.html">remove_cvref_t</a>&lt;UTuple&gt;</code>が<code><a href="../../ranges/subrange.html">ranges::subrange</a></code>の特殊化でないこと</li>
+<li>C++23 : 全ての<code>i</code>について、<code><a href="../../type_traits/is_assignable.html">is_assignable_v</a>&lt;Ti&amp;, decltype(get&lt;i&gt;(<a href="../../utility/forward.html">std::forward</a>&lt;UTuple&gt;(u)))&gt;</code></li>
+</ul>
+</li>
+<li>(14) : 要素数が同じかつ、次をすべて満たすこと<ul>
+<li>C++23 : <code><a href="../../ranges/different-from.html">different-from</a>&lt;UTuple, tuple&gt;</code></li>
+<li>C++23 : <code><a href="../../type_traits/remove_cvref.html">remove_cvref_t</a>&lt;UTuple&gt;</code>が<code><a href="../../ranges/subrange.html">ranges::subrange</a></code>の特殊化でないこと</li>
+<li>C++23 : <code><a href="../../type_traits/is_assignable.html">is_assignable_v</a>&lt;const Ti&amp;, decltype(get&lt;i&gt;(<a href="../../utility/forward.html">std::forward</a>&lt;UTuple&gt;(u)))&gt;</code></li>
+</ul>
+</li>
 </ul>
 <h2>例外</h2>
 <ul>
-<li>(2) : <code>tuple</code>の全ての要素型<code>i</code>が<code>is_nothrow_move_assignable&lt;i&gt;::value == true</code>の場合、決して例外を投げない。</li>
-<li>(4) : パラメータの<code>tuple</code>の全ての要素型が、元の<code>tuple</code>の全ての要素型にムーブ代入可能であり、要素数が同じであること</li>
+<li>(3) : 全ての<code>i</code>について、<code><a href="../../type_traits/is_nothrow_move_assignable.html">is_nothrow_move_assignable</a>&lt;Ti&gt;::value == true</code>の場合、決して例外を投げない。</li>
 </ul>
 <h2>例</h2>
 <p><div class="yata" id="e2ca71ba87b49dc074f8cd07f53bcef6c32aa0a3"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf"><a href="../../string.html">&lt;string&gt;</a></span><span class="cp"></span>
@@ -260,35 +324,35 @@
 <span class="p">{</span>
   <span class="c1">// コピーコンストラクタ</span>
   <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">char</span><span class="p">,</span> <span class="n"><a href="../../string/basic_string.html">std::string</a></span><span class="o">&gt;</span> <span class="n">t1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="sc">'a'</span><span class="p">,</span> <span class="s">"hello"</span><span class="p">);</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">char</span><span class="p">,</span> <span class="n"><a href="../../string/basic_string.html">std::string</a></span><span class="o">&gt;</span> <span class="n">t2</span> <span class="o">=</span> <span class="n">t1</span><span class="p">;</span>
+    <span class="n"><a href="../tuple.html">std::tuple</a></span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">char</span><span class="p">,</span> <span class="n"><a href="../../string/basic_string.html">std::string</a></span><span class="o">&gt;</span> <span class="n">t1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="sc">'a'</span><span class="p">,</span> <span class="s">"hello"</span><span class="p">);</span>
+    <span class="n"><a href="../tuple.html">std::tuple</a></span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">char</span><span class="p">,</span> <span class="n"><a href="../../string/basic_string.html">std::string</a></span><span class="o">&gt;</span> <span class="n">t2</span> <span class="o">=</span> <span class="n">t1</span><span class="p">;</span>
   <span class="p">}</span>
 
   <span class="c1">// ムーブコンストラクタ</span>
   <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">char</span><span class="p">,</span> <span class="n"><a href="../../string/basic_string.html">std::string</a></span><span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">char</span><span class="p">,</span> <span class="n"><a href="../../string/basic_string.html">std::string</a></span><span class="o">&gt;</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="sc">'a'</span><span class="p">,</span> <span class="s">"hello"</span><span class="p">);</span>
+    <span class="n"><a href="../tuple.html">std::tuple</a></span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">char</span><span class="p">,</span> <span class="n"><a href="../../string/basic_string.html">std::string</a></span><span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n"><a href="../tuple.html">std::tuple</a></span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">char</span><span class="p">,</span> <span class="n"><a href="../../string/basic_string.html">std::string</a></span><span class="o">&gt;</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="sc">'a'</span><span class="p">,</span> <span class="s">"hello"</span><span class="p">);</span>
   <span class="p">}</span>
 
   <span class="c1">// 変換可能なタプルからのコピー構築</span>
   <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">char</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*&gt;</span> <span class="n">t1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="sc">'a'</span><span class="p">,</span> <span class="s">"hello"</span><span class="p">);</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">char</span><span class="p">,</span> <span class="n"><a href="../../string/basic_string.html">std::string</a></span><span class="o">&gt;</span> <span class="n">t2</span> <span class="o">=</span> <span class="n">t1</span><span class="p">;</span>
+    <span class="n"><a href="../tuple.html">std::tuple</a></span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">char</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*&gt;</span> <span class="n">t1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="sc">'a'</span><span class="p">,</span> <span class="s">"hello"</span><span class="p">);</span>
+    <span class="n"><a href="../tuple.html">std::tuple</a></span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">char</span><span class="p">,</span> <span class="n"><a href="../../string/basic_string.html">std::string</a></span><span class="o">&gt;</span> <span class="n">t2</span> <span class="o">=</span> <span class="n">t1</span><span class="p">;</span>
   <span class="p">}</span>
 
   <span class="c1">// 変換可能なタプルからのムーブ構築</span>
   <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">char</span><span class="p">,</span> <span class="n"><a href="../../string/basic_string.html">std::string</a></span><span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_tuple</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="sc">'a'</span><span class="p">,</span> <span class="s">"hello"</span><span class="p">);</span>
+    <span class="n"><a href="../tuple.html">std::tuple</a></span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">char</span><span class="p">,</span> <span class="n"><a href="../../string/basic_string.html">std::string</a></span><span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_tuple</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="sc">'a'</span><span class="p">,</span> <span class="s">"hello"</span><span class="p">);</span>
   <span class="p">}</span>
 
   <span class="c1">// 変換可能なpairからのコピー構築</span>
   <span class="p">{</span>
     <span class="n"><a href="../../utility/pair.html">std::pair</a></span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">char</span><span class="o">&gt;</span> <span class="n">p</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="sc">'a'</span><span class="p">);</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">char</span><span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span>
+    <span class="n"><a href="../tuple.html">std::tuple</a></span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">char</span><span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span>
   <span class="p">}</span>
 
   <span class="c1">// 変換可能なpairからのムーブ構築</span>
   <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">char</span><span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n"><a href="../../utility/make_pair.html">std::make_pair</a></span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="sc">'a'</span><span class="p">);</span>
+    <span class="n"><a href="../tuple.html">std::tuple</a></span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">char</span><span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n"><a href="../../utility/make_pair.html">std::make_pair</a></span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="sc">'a'</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -310,6 +374,7 @@
 <h2>参照</h2>
 <ul>
 <li><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/p1032r1.html" target="_blank">P1032R1 Misc constexpr bits</a></li>
+<li><a href="https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2022/p2165r4.pdf" target="_blank">P2165R4 Compatibility between <code>tuple</code>, <code>pair</code> and <em>tuple-like</em> objects</a></li>
 </ul></div>
 
       </div>

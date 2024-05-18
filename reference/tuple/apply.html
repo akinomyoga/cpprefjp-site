@@ -1,13 +1,16 @@
 <!doctype html>
 <html class="cpprefjp" lang="ja" itemscope="" itemtype="http://schema.org/WebPage">
     <head>
+        
+  
+
         <meta charset="UTF-8">
 
         <title>apply - cpprefjp C++日本語リファレンス</title>
 
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta name="keywords" content="
-  C++,標準ライブラリ,リファレンス,ドキュメント,STL,std,tuple,function,std,cpp17
+  C++,標準ライブラリ,リファレンス,ドキュメント,STL,std,tuple,function template,std,cpp17
 ">
         <meta name="title" content="apply - cpprefjp C++日本語リファレンス" />
         <meta itemprop="name" content="apply - cpprefjp C++日本語リファレンス" />
@@ -25,27 +28,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="manifest" href="../../manifest.json?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="mask-icon" href="../../static/favicons/safari-pinned-tab.svg?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="manifest" href="../../manifest.json?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -54,12 +56,9 @@
   });
 </script>
 
-    
-  
-
     </head>
     <body>
-<header data-kunai-mdinfo="{&#34;meta&#34;: {&#34;header&#34;: [&#34;tuple&#34;], &#34;id-type&#34;: [&#34;function&#34;], &#34;namespace&#34;: [&#34;std&#34;], &#34;cpp&#34;: [&#34;cpp17&#34;]}, &#34;sources&#34;: [{&#34;id&#34;: &#34;0f83f52f54ed195ecb53102f37878b2e2bdac638&#34;, &#34;source&#34;: &#34;#include &lt;iostream&gt;\n#include &lt;tuple&gt;\n#include &lt;string&gt;\n\nvoid f(int a, double b, std::string c)\n{\n  std::cout &lt;&lt; a &lt;&lt; std::endl;\n  std::cout &lt;&lt; b &lt;&lt; std::endl;\n  std::cout &lt;&lt; c &lt;&lt; std::endl;\n}\n\nint main()\n{\n  std::tuple&lt;int, double, std::string&gt; args(1, 3.14, \&#34;hello\&#34;);\n  std::apply(f, args);\n}\n&#34;}], &#34;page_id&#34;: [&#34;reference&#34;, &#34;tuple&#34;, &#34;apply&#34;]}">
+<header data-kunai-mdinfo="{&#34;meta&#34;: {&#34;header&#34;: [&#34;tuple&#34;], &#34;id-type&#34;: [&#34;function template&#34;], &#34;namespace&#34;: [&#34;std&#34;], &#34;cpp&#34;: [&#34;cpp17&#34;]}, &#34;sources&#34;: [{&#34;id&#34;: &#34;0f83f52f54ed195ecb53102f37878b2e2bdac638&#34;, &#34;source&#34;: &#34;#include &lt;iostream&gt;\n#include &lt;tuple&gt;\n#include &lt;string&gt;\n\nvoid f(int a, double b, std::string c)\n{\n  std::cout &lt;&lt; a &lt;&lt; std::endl;\n  std::cout &lt;&lt; b &lt;&lt; std::endl;\n  std::cout &lt;&lt; c &lt;&lt; std::endl;\n}\n\nint main()\n{\n  std::tuple&lt;int, double, std::string&gt; args(1, 3.14, \&#34;hello\&#34;);\n  std::apply(f, args);\n}\n&#34;}], &#34;page_id&#34;: [&#34;reference&#34;, &#34;tuple&#34;, &#34;apply&#34;]}">
   <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -82,6 +81,20 @@
             <div class="google-search">
               
   
+<script>
+  (function() {
+    var cx = '013316413321391058734:ji_u66hl7hq';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div class="gcse-search"></div>
+
 
             </div>
           </li>
@@ -165,12 +178,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2019-04-28T04:50:29">
-        2019年04月28日 04時50分29秒
+      <span itemprop="datePublished" content="2023-11-08T16:46:27">
+        2023年11月08日 16時46分27秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">Mitsuru Kariya</span>
+        <span itemprop="name">Akira Takahashi</span>
       </span>
       が更新
     </small></p>
@@ -189,32 +202,51 @@
     <div class="row">
       <div class="col-sm-12 content-body">
         
-  <div class="identifier-type">function</div><div class="header">&lt;tuple&gt;</div><h1 itemprop="name"><span class="namespace" title="namespace std">std::</span><span class="token">apply</span><span class="cpp cpp17" title="C++17で追加">(C++17)</span></h1>
+  <div class="identifier-type">function template</div><div class="header">&lt;tuple&gt;</div><h1 itemprop="name"><span class="namespace" title="namespace std">std::</span><span class="token">apply</span><span class="cpp cpp17" title="C++17で追加">(C++17)</span></h1>
 <div itemprop="articleBody"><p><div class="codehilite"><pre><span></span><code><span class="k">namespace</span> <span class="n">std</span> <span class="p">{</span>
   <span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">F</span><span class="p">,</span> <span class="k">class</span> <span class="nc">Tuple</span><span class="o">&gt;</span>
-  <span class="k">constexpr</span> <span class="n"><a href="../../lang/cpp14/decltype_auto.html">decltype(auto)</a></span> <span class="n">apply</span><span class="p">(</span><span class="n">F</span><span class="o">&amp;&amp;</span> <span class="n">f</span><span class="p">,</span> <span class="n">Tuple</span><span class="o">&amp;&amp;</span> <span class="n">t</span><span class="p">);</span>
+  <span class="k">constexpr</span> <span class="n"><a href="../../lang/cpp14/decltype_auto.html">decltype(auto)</a></span>
+    <span class="n">apply</span><span class="p">(</span><span class="n">F</span><span class="o">&amp;&amp;</span> <span class="n">f</span><span class="p">,</span> <span class="n">Tuple</span><span class="o">&amp;&amp;</span> <span class="n">t</span><span class="p">);</span>                     <span class="c1">// (1) C++20</span>
+
+  <span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">F</span><span class="p">,</span> <span class="n"><a href="tuple-like.html">tuple-like</a></span> <span class="n">Tuple</span><span class="o">&gt;</span>
+  <span class="k">constexpr</span> <span class="n"><a href="../../lang/cpp14/decltype_auto.html">decltype(auto)</a></span>
+    <span class="n">apply</span><span class="p">(</span><span class="n">F</span><span class="o">&amp;&amp;</span> <span class="n">f</span><span class="p">,</span> <span class="n">Tuple</span><span class="o">&amp;&amp;</span> <span class="n">t</span><span class="p">)</span> <span class="k">noexcept</span><span class="p">(</span><span class="n"><i>see below</i></span><span class="p">);</span> <span class="c1">// (1) C++23</span>
 <span class="p">}</span>
 </code></pre></div>
 </p>
 <h2>概要</h2>
 <p>タプルを展開し、関数の引数に適用してその関数を実行する。</p>
 <h2>要件</h2>
-<p>適用先の関数は<code><a href="../concepts/Callable.html">Callable</a></code>要件を満たす（<a href="../concepts/Invoke.html">INVOKE</a>操作が可能）。展開されるものは、<code><a href="../tuple.html">std::tuple</a></code>、<code><a href="../array/array.html">std::array</a></code>または<code><a href="../utility/pair.html">std::pair</a></code>のように、<code><a href="../array/array/get.html">std::get</a></code>と<code><a href="../array/array/tuple_size.html">std::tuple_size</a></code>をサポートする必要がある。</p>
+<p>適用先の関数は<code><a href="../concepts/Callable.html">Callable</a></code>要件を満たす（<a href="../concepts/Invoke.html">INVOKE</a>操作が可能）。展開される<code>Tuple</code>型は<code><a href="../tuple.html">std::tuple</a></code>に限定されず、<code><a href="../array/array.html">std::array</a></code>または<code><a href="../utility/pair.html">std::pair</a></code>のように、<code><a href="../array/array/get.html">std::get</a></code>と<code><a href="../array/array/tuple_size.html">std::tuple_size</a></code>をサポートする型であればよい。（C++20 まで。）C++23 では<code><a href="tuple-like.html">tuple-like</a></code>による制約が追加されたため、使用できる型は狭まった。（<code><a href="tuple-like.html">tuple-like</a></code>参照）</p>
 <h2>効果</h2>
 <p>次のような関数があるとき、</p>
-<p><div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">F</span><span class="p">,</span> <span class="k">class</span> <span class="nc">Tuple</span><span class="p">,</span> <span class="kt">size_t</span><span class="p">...</span> <span class="n">I</span><span class="o">&gt;</span>
+<p><div class="codehilite"><pre><span></span><code><span class="c1">// C++17</span>
+<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">F</span><span class="p">,</span> <span class="k">class</span> <span class="nc">Tuple</span><span class="p">,</span> <span class="kt">size_t</span><span class="p">...</span> <span class="n">I</span><span class="o">&gt;</span>
 <span class="k">constexpr</span> <span class="n"><a href="../../lang/cpp14/decltype_auto.html">decltype(auto)</a></span> <span class="n">apply</span><span class="o">-</span><span class="n">impl</span><span class="p">(</span><span class="n">F</span><span class="o">&amp;&amp;</span> <span class="n">f</span><span class="p">,</span> <span class="n">Tuple</span><span class="o">&amp;&amp;</span> <span class="n">t</span><span class="p">,</span> <span class="n"><a href="../utility/index_sequence.html">std::index_sequence</a></span><span class="o">&lt;</span><span class="n">I</span><span class="p">...</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="n"><a href="../functional/invoke.html">std::invoke</a></span><span class="p">(</span><span class="n"><a href="../utility/forward.html">std::forward</a></span><span class="o">&lt;</span><span class="n">F</span><span class="o">&gt;</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="n">I</span><span class="o">&gt;</span><span class="p">(</span><span class="n"><a href="../utility/forward.html">std::forward</a></span><span class="o">&lt;</span><span class="n">Tuple</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t</span><span class="p">))...);</span>
+  <span class="k">return</span> <span class="n"><a href="../functional/invoke.html">std::invoke</a></span><span class="p">(</span><span class="n"><a href="../utility/forward.html">std::forward</a></span><span class="o">&lt;</span><span class="n">F</span><span class="o">&gt;</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="n"><a href="tuple/get.html">std::get</a></span><span class="o">&lt;</span><span class="n">I</span><span class="o">&gt;</span><span class="p">(</span><span class="n"><a href="../utility/forward.html">std::forward</a></span><span class="o">&lt;</span><span class="n">Tuple</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t</span><span class="p">))...);</span>
+<span class="p">}</span>
+
+<span class="c1">// C++23</span>
+<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">F</span><span class="p">,</span> <span class="n">tuple</span><span class="o">-</span><span class="n">like</span> <span class="n">Tuple</span><span class="p">,</span> <span class="kt">size_t</span><span class="p">...</span> <span class="n">I</span><span class="o">&gt;</span>
+<span class="k">constexpr</span> <span class="n"><a href="../../lang/cpp14/decltype_auto.html">decltype(auto)</a></span> <span class="n">apply</span><span class="o">-</span><span class="n">impl</span><span class="p">(</span><span class="n">F</span><span class="o">&amp;&amp;</span> <span class="n">f</span><span class="p">,</span> <span class="n">Tuple</span><span class="o">&amp;&amp;</span> <span class="n">t</span><span class="p">,</span> <span class="n"><a href="../utility/index_sequence.html">std::index_sequence</a></span><span class="o">&lt;</span><span class="n">I</span><span class="p">...</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n"><a href="../functional/invoke.html">std::invoke</a></span><span class="p">(</span><span class="n"><a href="../utility/forward.html">std::forward</a></span><span class="o">&lt;</span><span class="n">F</span><span class="o">&gt;</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="n"><a href="tuple/get.html">std::get</a></span><span class="o">&lt;</span><span class="n">I</span><span class="o">&gt;</span><span class="p">(</span><span class="n"><a href="../utility/forward.html">std::forward</a></span><span class="o">&lt;</span><span class="n">Tuple</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t</span><span class="p">))...);</span>
 <span class="p">}</span>
 </code></pre></div>
 </p>
-<p>次と等価である。</p>
-<p><div class="codehilite"><pre><span></span><code><span class="k">return</span> <span class="n">apply</span><span class="o">-</span><span class="n">impl</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">F</span><span class="o">&gt;</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">Tuple</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t</span><span class="p">),</span>
-                  <span class="n"><a href="../utility/make_index_sequence.html">std::make_index_sequence</a></span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">tuple_size_v</span><span class="o">&lt;</span><span class="n"><a href="../type_traits/remove_reference.html">std::remove_reference_t</a></span><span class="o">&lt;</span><span class="n">Tuple</span><span class="o">&gt;&gt;&gt;</span><span class="p">{});</span>
+<p>C++17 : 次と等価である。</p>
+<p><div class="codehilite"><pre><span></span><code><span class="k">return</span> <span class="n">apply</span><span class="o">-</span><span class="n">impl</span><span class="p">(</span><span class="n"><a href="../utility/forward.html">std::forward</a></span><span class="o">&lt;</span><span class="n">F</span><span class="o">&gt;</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="n"><a href="../utility/forward.html">std::forward</a></span><span class="o">&lt;</span><span class="n">Tuple</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t</span><span class="p">),</span>
+                  <span class="n"><a href="../utility/make_index_sequence.html">std::make_index_sequence</a></span><span class="o">&lt;</span><span class="n"><a href="tuple_size.html">std::tuple_size_v</a></span><span class="o">&lt;</span><span class="n"><a href="../type_traits/decay.html">std::decay_t</a></span><span class="o">&lt;</span><span class="n">Tuple</span><span class="o">&gt;&gt;&gt;</span><span class="p">{});</span>
+</code></pre></div>
+</p>
+<p>C++20 : 次と等価である。</p>
+<p><div class="codehilite"><pre><span></span><code><span class="k">return</span> <span class="n">apply</span><span class="o">-</span><span class="n">impl</span><span class="p">(</span><span class="n"><a href="../utility/forward.html">std::forward</a></span><span class="o">&lt;</span><span class="n">F</span><span class="o">&gt;</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="n"><a href="../utility/forward.html">std::forward</a></span><span class="o">&lt;</span><span class="n">Tuple</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t</span><span class="p">),</span>
+                  <span class="n"><a href="../utility/make_index_sequence.html">std::make_index_sequence</a></span><span class="o">&lt;</span><span class="n"><a href="tuple_size.html">std::tuple_size_v</a></span><span class="o">&lt;</span><span class="n"><a href="../type_traits/remove_reference.html">std::remove_reference_t</a></span><span class="o">&lt;</span><span class="n">Tuple</span><span class="o">&gt;&gt;&gt;</span><span class="p">{});</span>
 </code></pre></div>
 </p>
 <h2>戻り値</h2>
-<p>適用した関数の戻り値である。</p>
+<p>適用した関数呼び出しの戻り値</p>
+<h2>例外</h2>
+<p>C++23から : <code>I</code>をパラメータパック<code>0, 1, ..., (<a href="tuple_size.html">tuple_size_v</a>&lt;<a href="../type_traits/remove_reference.html">remove_reference_t</a>&lt;Tuple&gt;&gt;-1)</code>としたとき、例外指定の式は次と等価 : <code>noexcept(<a href="../functional/invoke.html">invoke</a>(std::forward&lt;F&gt;(f), get&lt;I&gt;(std::forward&lt;Tuple&gt;(t))...))</code></p>
 <h2>例</h2>
 <p><div class="yata" id="0f83f52f54ed195ecb53102f37878b2e2bdac638"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf"><a href="../iostream.html">&lt;iostream&gt;</a></span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf"><a href="../tuple.html">&lt;tuple&gt;</a></span><span class="cp"></span>
@@ -229,7 +261,7 @@
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">double</span><span class="p">,</span> <span class="n"><a href="../string/basic_string.html">std::string</a></span><span class="o">&gt;</span> <span class="n">args</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="s">"hello"</span><span class="p">);</span>
+  <span class="n"><a href="tuple.html">std::tuple</a></span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">double</span><span class="p">,</span> <span class="n"><a href="../string/basic_string.html">std::string</a></span><span class="o">&gt;</span> <span class="n">args</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="s">"hello"</span><span class="p">);</span>
   <span class="n"><span style="color:#ff0000">std::apply</span></span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">args</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -253,9 +285,10 @@ hello
 </ul>
 <h2>関連項目</h2>
 <ul>
-<li><a href="make_from_tuple.html">make_from_tuple</a></li>
+<li><code><a href="make_from_tuple.html">make_from_tuple</a></code></li>
 <li><code><a href="../tuple.html">std::tuple</a></code></li>
 <li><a href="../concepts/Invoke.html">INVOKE</a></li>
+<li><code><a href="tuple-like.html">tuple-like</a></code></li>
 </ul>
 <h2>参照</h2>
 <ul>
@@ -265,6 +298,14 @@ hello
 <li><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0220r0.html" target="_blank">P0220R0 Adopt Library Fundamentals TS for C++17</a></li>
 <li><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0220r1.html" target="_blank">P0220R1 Adopt Library Fundamentals V1 TS Components for C++17 (R1)</a></li>
 <li><a href="https://faithandbrave.hateblo.jp/entry/2016/08/18/184315" target="_blank">C++1z タプルを展開して関数呼び出しするapply関数 - Faith and Brave - C++で遊ぼう</a></li>
+<li><a href="https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/p0777r1.pdf" target="_blank">P0777R1 Treating Unnecessary <code>decay</code></a><ul>
+<li>C++20から効果説明の<code>decay_t</code>を<code>remove_cvref_t</code>へ変更。</li>
+</ul>
+</li>
+<li><a href="https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2022/p2517r1.html" target="_blank">P2517R1 Add a conditional <code>noexcept</code> specification to <code>std::apply</code></a><ul>
+<li>C++23から条件付きで<code>noexcept</code>例外指定が行われる。</li>
+</ul>
+</li>
 </ul></div>
 
       </div>

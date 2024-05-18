@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="cpprefjp" lang="ja" itemscope="" itemtype="http://schema.org/WebPage">
     <head>
+        
+  
+
         <meta charset="UTF-8">
 
         <title>説明専用ライブラリ - cpprefjp C++日本語リファレンス</title>
@@ -15,37 +18,36 @@
         <meta property="og:url" content="https://cpprefjp.github.io/reference/exposition-only.html" />
         <meta property="og:site_name" content="cpprefjp - C++日本語リファレンス" />
         <meta property="og:type" content="article" />
-        <meta property="og:description" content="&amp;lt;exposition-only&amp;gt;説明専用ライブラリ このページでは、説明専用のライブラリをまとめる。 これらはC++規格の文章中に現れる説明のためのものであり、実際に使うことはできない。    名前 説明 対応バージョン     decay-copy decayした型にコピーまたはムーブする (function template) C++20   synth-three-way (f" />
+        <meta property="og:description" content="&amp;lt;exposition-only&amp;gt;説明専用ライブラリ このページでは、説明専用のライブラリをまとめる。 これらはC++規格の文章中に現れる説明のためのものであり、実際に使うことはできない。    名前 説明 対応バージョン     decay-copy decayした型にコピーまたはムーブする (function template) C++20   synth-three-way 三方" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="説明専用ライブラリ - cpprefjp C++日本語リファレンス" />
         <meta name="twitter:url" content="https://cpprefjp.github.io/reference/exposition-only.html" />
-        <meta name="twitter:description" content="&amp;lt;exposition-only&amp;gt;説明専用ライブラリ このページでは、説明専用のライブラリをまとめる。 これらはC++規格の文章中に現れる説明のためのものであり、実際に使うことはできない。    名前 説明 対応バージョン     decay-copy decayした型にコピーまたはムーブする (function template) C++20   synth-three-way (f" />
+        <meta name="twitter:description" content="&amp;lt;exposition-only&amp;gt;説明専用ライブラリ このページでは、説明専用のライブラリをまとめる。 これらはC++規格の文章中に現れる説明のためのものであり、実際に使うことはできない。    名前 説明 対応バージョン     decay-copy decayした型にコピーまたはムーブする (function template) C++20   synth-three-way 三方" />
 
         
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../static/favicons/apple-touch-icon.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="32x32" href="../static/favicons/favicon-32x32.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="16x16" href="../static/favicons/favicon-16x16.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="manifest" href="../manifest.json?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="mask-icon" href="../static/favicons/safari-pinned-tab.svg?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="../static/favicons/apple-touch-icon.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="32x32" href="../static/favicons/favicon-32x32.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="16x16" href="../static/favicons/favicon-16x16.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="manifest" href="../manifest.json?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../static/pygments/default.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
+<link rel="stylesheet" href="../static/pygments/default.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <!-- <link rel="stylesheet" href="../static/css/root.css"> -->
 
         
   
 
 
-<link href="../static/kunai/css/kunai-stage-0.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../static/kunai/css/kunai-stage-1.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../static/kunai/css/kunai-stage-2.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../static/kunai/css/kunai-stage-3.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
+<link href="../static/kunai/css/kunai-stage-0.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../static/kunai/css/kunai-stage-1.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../static/kunai/css/kunai-stage-2.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../static/kunai/css/kunai-stage-3.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
 
-<script type="text/javascript" src="../static/kunai/js/kunai-vendor.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
-<script type="text/javascript" src="../static/kunai/js/kunai.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
+<script type="text/javascript" src="../static/kunai/js/kunai-vendor.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
+<script type="text/javascript" src="../static/kunai/js/kunai.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -53,9 +55,6 @@
     kn.cpprefjp();
   });
 </script>
-
-    
-  
 
     </head>
     <body>
@@ -82,6 +81,20 @@
             <div class="google-search">
               
   
+<script>
+  (function() {
+    var cx = '013316413321391058734:ji_u66hl7hq';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div class="gcse-search"></div>
+
 
             </div>
           </li>
@@ -153,8 +166,8 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2022-03-23T23:38:25">
-        2022年03月23日 23時38分25秒
+      <span itemprop="datePublished" content="2024-03-08T19:36:47">
+        2024年03月08日 19時36分47秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -195,14 +208,31 @@
 <td>C++20</td>
 </tr>
 <tr>
-<td><code><span href="https://cpprefjp.github.io/reference/exposition-only/synth-three-way.md.nolink">synth-three-way</span></code></td>
-<td>(function template)</td>
+<td><code><a href="exposition-only/synth-three-way-result.html">synth-three-way</a></code></td>
+<td>三方比較可能であればそれを行い、そうでなければ三方比較を実装して比較を行う (variable)</td>
 <td>C++20</td>
 </tr>
 <tr>
-<td><code><span href="https://cpprefjp.github.io/reference/exposition-only/synth-three-way-result.md.nolink">synth-three-way-result</span></code></td>
-<td>(function template)</td>
+<td><code><a href="exposition-only/synth-three-way-result.html">synth-three-way-result</a></code></td>
+<td><code>synth-three-way</code>関数オブジェクトでの比較結果の型 (function template)</td>
 <td>C++20</td>
+</tr>
+</tbody>
+</table>
+<h2>コンテナ</h2>
+<table border="1" bordercolor="#888" style="border-collapse:collapse">
+<thead>
+<tr>
+<th>名前</th>
+<th>説明</th>
+<th>対応バージョン</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code><a href="exposition-only/container-compatible-range.html">container-compatible-range</a></code></td>
+<td>指定されたコンテナと互換性のあるRange</td>
+<td>C++23</td>
 </tr>
 </tbody>
 </table>
@@ -240,7 +270,7 @@
 </tr>
 <tr>
 <td><code><a href="iterator/dereferenceable.html">can-reference</a></code></td>
-<td><code>with-reference</code>可能 (concept)</td>
+<td><code><a href="iterator/dereferenceable.html">with-reference</a></code>可能 (concept)</td>
 <td>C++20</td>
 </tr>
 <tr>
@@ -258,6 +288,11 @@
 <td>符号なし整数型と同等の型か否かを表す (variable template)</td>
 <td>C++20</td>
 </tr>
+<tr>
+<td><a href="iterator/constant-iterator.html"><code>constant-iterator</code> </a></td>
+<td>要素不変なイテレータ (concept)</td>
+<td>C++23</td>
+</tr>
 </tbody>
 </table>
 <h2><code>&lt;ranges&gt;</code></h2>
@@ -273,6 +308,68 @@
 <tr>
 <td><code><a href="ranges/copyable_box.html">copyable-box</a></code></td>
 <td>コピー可能、または例外なしでムーブ可能な場合のみ値を保持する型 (class template)</td>
+<td>C++20<br /> C++23で削除</td>
+</tr>
+<tr>
+<td><code><a href="ranges/movable_box.html">movable-box</a></code></td>
+<td>例外なしでムーブ可能な場合のみ値を保持する型 (class template)</td>
+<td>C++23</td>
+</tr>
+<tr>
+<td><code><a href="ranges/simple-view.html">simple-view</a></code></td>
+<td>単純なビューを表す (concept)</td>
+<td>C++20</td>
+</tr>
+<tr>
+<td><code><a href="ranges/has-arrow.html">has-arrow</a></code></td>
+<td><code><a href="iterator/input_iterator.html">std::input_iterator</a></code>を満たし、アロー演算子が使用できる型かを表す (concept)</td>
+<td>C++20</td>
+</tr>
+<tr>
+<td><code><a href="ranges/range-with-movable-references.html">range-with-movable-references</a></code></td>
+<td>要素の参照と右辺値参照がムーブ構築できる<code><a href="ranges/input_range.html">input_range</a></code> (concept)</td>
+<td>C++23</td>
+</tr>
+<tr>
+<td><code><a href="ranges/different-from.html">different-from</a></code></td>
+<td><code>const</code>/<code>volatile</code>修飾を無視して、2つの型が同じでないことを表す (concept)</td>
+<td>C++20</td>
+</tr>
+<tr>
+<td><code><a href="ranges/subrange/uses-nonqualification-pointer-conversion.html">uses-nonqualification-pointer-conversion</a></code></td>
+<td>直接変換できない型同士のポインタの変換が必要かどうかを表す (concept)</td>
+<td>C++20</td>
+</tr>
+<tr>
+<td><code><a href="ranges/subrange/convertible-to-non-slicing.html">convertible-to-non-slicing</a></code></td>
+<td>スライシングを起こさずに変換できるかどうかを表す (concept)</td>
+<td>C++20</td>
+</tr>
+<tr>
+<td><code><a href="ranges/subrange/pair-like-convertible-from.html">pair-like-convertible-from</a></code></td>
+<td>ある2つの型から構築出来る<code><a href="tuple/pair-like.html">pair-like</a></code>な型を表す (concept)</td>
+<td>C++20</td>
+</tr>
+</tbody>
+</table>
+<h2><code>&lt;tuple&gt;</code></h2>
+<table border="1" bordercolor="#888" style="border-collapse:collapse">
+<thead>
+<tr>
+<th>名前</th>
+<th>説明</th>
+<th>対応バージョン</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code><a href="tuple/tuple-like.html">tuple-like</a></code></td>
+<td><code><a href="tuple/tuple.html">tuple</a></code>のような型を表す (concept)</td>
+<td>C++23</td>
+</tr>
+<tr>
+<td><code><a href="tuple/pair-like.html">pair-like</a></code></td>
+<td><code><a href="utility/pair.html">pair</a></code>のような型を表す (concept)</td>
 <td>C++20</td>
 </tr>
 </tbody>
@@ -280,6 +377,9 @@
 <h2>参照</h2>
 <ul>
 <li><a href="https://timsong-cpp.github.io/cppwp/n4861/expos.only.func" target="_blank">N4861 16.4.2.1 Exposition-only functions</a></li>
+<li><a href="https://cplusplus.github.io/LWG/issue3404" target="_blank">LWG 3404 Finish removing <code>subrange</code>'s conversions from <code>pair-like</code></a></li>
+<li><a href="https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2022/p2278r4.html" target="_blank">P2278R4 <code>cbegin</code> should always return a constant iterator</a></li>
+<li><a href="https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2022/p2494r2.html" target="_blank">P2494R2 Relaxing range adaptors to allow for move only types</a></li>
 </ul></div>
 
       </div>

@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="cpprefjp" lang="ja" itemscope="" itemtype="http://schema.org/WebPage">
     <head>
+        
+  
+
         <meta charset="UTF-8">
 
         <title>ポインタから`bool`への変換を縮小変換とする - cpprefjp C++日本語リファレンス</title>
@@ -25,27 +28,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="manifest" href="../../manifest.json?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="mask-icon" href="../../static/favicons/safari-pinned-tab.svg?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="manifest" href="../../manifest.json?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -53,9 +55,6 @@
     kn.cpprefjp();
   });
 </script>
-
-    
-  
 
     </head>
     <body>
@@ -82,6 +81,20 @@
             <div class="google-search">
               
   
+<script>
+  (function() {
+    var cx = '013316413321391058734:ji_u66hl7hq';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div class="gcse-search"></div>
+
 
             </div>
           </li>
@@ -165,12 +178,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2021-10-08T05:27:26">
-        2021年10月08日 05時27分26秒
+      <span itemprop="datePublished" content="2023-02-01T00:02:24">
+        2023年02月01日 00時02分24秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">onihusube</span>
+        <span itemprop="name">tomolatoon</span>
       </span>
       が更新
     </small></p>
@@ -210,12 +223,12 @@
 </code></pre></div>
 </p>
 <p>この他にも構築・代入時に縮小変換が行われてしまう事から同様の問題があり、それはC++20において<a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/p0608r3.html" target="_blank">P0608R3</a>によって解決された。そこでは、構築・代入時の縮小変換を禁止するとともに、<code>bool</code>に変換可能な型を<code>bool</code>に変換することを禁止することで問題に対処していた。</p>
-<p>しかしそれによって、<code>bool</code>に変換可能なユーザー定義型を<code>bool</code>値として構築・代入することができなくなった。</p>
+<p>しかしそれによって、<code>bool</code>に変換可能な<a class="cpprefjp-defined-word" data-desc="プログラム定義型。標準ライブラリの型を除く、ユーザー（プログラマ）によって定義された型のこと">ユーザー定義型</a>を<code>bool</code>値として構築・代入することができなくなった。</p>
 <p><div class="codehilite"><pre><span></span><code><span class="n"><a href="../../reference/bitset/bitset.html">std::bitset</a></span><span class="o">&lt;</span><span class="mi">4</span><span class="o">&gt;</span> <span class="n">b</span><span class="p">(</span><span class="s">"0101"</span><span class="p">);</span>
 <span class="n">std</span><span class="o">::</span><span class="n"><a href="../../reference/variant/variant.html">variant</a></span><span class="o">&lt;</span><span class="kt">bool</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">v</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span> <span class="c1">// intを保持して構築されてしまう</span>
 </code></pre></div>
 </p>
-<p><code>std::bitset</code>の非<code>const</code>な<code><a href="../../reference/bitset/bitset/op_at.html">operator[]</a></code>は<code>bool</code>型へ暗黙変換可能なプロクシオブジェクトを返す。</p>
+<p><code>std::bitset</code>の非<code>const</code>な<code><a href="../../reference/bitset/bitset/op_at.html">operator[]</a></code>は<code>bool</code>型へ暗黙変換可能なプロキシオブジェクトを返す。</p>
 <p><code>std::variant</code>の構築・代入時に縮小変換が起こることを検出して防止することはライブラリレベルで可能だったが、ポインタ型から<code>bool</code>への変換を縮小変換として扱うということはライブラリレベルでは実装できなかったため<code>bool</code>への変換全体を禁止せざるを得ず、このような問題が発生していた。</p>
 <p>これらの問題の解決のために、ポインタ型から<code>bool</code>型への変換は縮小変換であると規定することになった。これによって、<code>std::variant</code>の構築・代入時のポインタ型から<code>bool</code>型への変換は縮小変換の一種として検出され禁止されるようになり、上記のコードは意図どおりに動作するようになる。</p>
 <p><div class="codehilite"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">variant</span><span class="o">&lt;</span><span class="n"><a href="../../reference/string/basic_string.html">std::string</a></span><span class="p">,</span> <span class="kt">bool</span><span class="o">&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="s">"abc"</span><span class="p">;</span>  <span class="c1">// <a href="../../reference/string/basic_string.html">std::string</a>を保持して構築</span>

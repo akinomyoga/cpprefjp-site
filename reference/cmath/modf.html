@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="cpprefjp" lang="ja" itemscope="" itemtype="http://schema.org/WebPage">
     <head>
+        
+  
+
         <meta charset="UTF-8">
 
         <title>modf - cpprefjp C++日本語リファレンス</title>
@@ -25,27 +28,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="manifest" href="../../manifest.json?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="mask-icon" href="../../static/favicons/safari-pinned-tab.svg?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="manifest" href="../../manifest.json?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -53,9 +55,6 @@
     kn.cpprefjp();
   });
 </script>
-
-    
-  
 
     </head>
     <body>
@@ -82,6 +81,20 @@
             <div class="google-search">
               
   
+<script>
+  (function() {
+    var cx = '013316413321391058734:ji_u66hl7hq';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div class="gcse-search"></div>
+
 
             </div>
           </li>
@@ -165,8 +178,8 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2017-11-27T05:01:15">
-        2017年11月27日 05時01分15秒
+      <span itemprop="datePublished" content="2023-02-16T08:55:10">
+        2023年02月16日 08時55分10秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -191,19 +204,48 @@
         
   <div class="identifier-type">function</div><div class="header">&lt;cmath&gt;</div><h1 itemprop="name"><span class="namespace" title="namespace std">std::</span><span class="token">modf</span></h1>
 <div itemprop="articleBody"><p><div class="codehilite"><pre><span></span><code><span class="k">namespace</span> <span class="n">std</span> <span class="p">{</span>
-  <span class="kt">double</span> <span class="n">modf</span><span class="p">(</span><span class="kt">double</span> <span class="n">value</span><span class="p">,</span> <span class="kt">double</span><span class="o">*</span> <span class="n">iptr</span><span class="p">);</span>
-  <span class="kt">float</span> <span class="nf">modf</span><span class="p">(</span><span class="kt">float</span> <span class="n">value</span><span class="p">,</span> <span class="kt">float</span><span class="o">*</span> <span class="n">iptr</span><span class="p">);</span>
-  <span class="kt">long</span> <span class="kt">double</span> <span class="nf">modf</span><span class="p">(</span><span class="kt">long</span> <span class="kt">double</span> <span class="n">value</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">double</span><span class="o">*</span> <span class="n">iptr</span><span class="p">);</span>
+  <span class="kt">float</span>
+    <span class="n">modf</span><span class="p">(</span><span class="kt">float</span> <span class="n">value</span><span class="p">,</span> <span class="kt">float</span><span class="o">*</span> <span class="n">iptr</span><span class="p">);</span>     <span class="c1">// (1) C++03からC++20まで</span>
+  <span class="kt">double</span>
+    <span class="nf">modf</span><span class="p">(</span><span class="kt">double</span> <span class="n">value</span><span class="p">,</span> <span class="kt">double</span><span class="o">*</span> <span class="n">iptr</span><span class="p">);</span>   <span class="c1">// (2) C++03からC++20まで</span>
+  <span class="kt">long</span> <span class="kt">double</span>
+    <span class="nf">modf</span><span class="p">(</span><span class="kt">long</span> <span class="kt">double</span> <span class="n">value</span><span class="p">,</span>
+         <span class="kt">long</span> <span class="kt">double</span><span class="o">*</span> <span class="n">iptr</span><span class="p">);</span>            <span class="c1">// (3) C++03からC++20まで</span>
 
-  <span class="kt">double</span> <span class="nf">modf</span><span class="p">(</span><span class="n"><i>Integral</i></span> <span class="n">value</span><span class="p">,</span> <span class="kt">double</span><span class="o">*</span> <span class="n">iptr</span><span class="p">);</span>                <span class="c1">// C++11 から</span>
+  <span class="k">constexpr</span> <span class="n"><i>floating-point-type</i></span>
+    <span class="nf">modf</span><span class="p">(</span><span class="n"><i>floating-point-type</i></span> <span class="n">value</span><span class="p">,</span>
+         <span class="n"><i>floating-point-type</i></span><span class="o">*</span> <span class="n">iptr</span><span class="p">);</span>    <span class="c1">// (4) C++23</span>
 
-  <span class="kt">float</span> <span class="nf">modff</span><span class="p">(</span><span class="kt">float</span> <span class="n">value</span><span class="p">,</span> <span class="kt">float</span><span class="o">*</span> <span class="n">iptr</span><span class="p">);</span>                    <span class="c1">// C++17 から</span>
-  <span class="kt">long</span> <span class="kt">double</span> <span class="nf">modfl</span><span class="p">(</span><span class="kt">long</span> <span class="kt">double</span> <span class="n">value</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">double</span><span class="o">*</span> <span class="n">iptr</span><span class="p">);</span>  <span class="c1">// C++17 から</span>
+  <span class="kt">double</span>
+    <span class="nf">modf</span><span class="p">(</span><span class="n"><i>Integral</i></span> <span class="n">value</span><span class="p">,</span> <span class="kt">double</span><span class="o">*</span> <span class="n">iptr</span><span class="p">);</span> <span class="c1">// (5) C++11</span>
+  <span class="k">constexpr</span> <span class="kt">double</span>
+    <span class="nf">modf</span><span class="p">(</span><span class="n"><i>Integral</i></span> <span class="n">value</span><span class="p">,</span> <span class="kt">double</span><span class="o">*</span> <span class="n">iptr</span><span class="p">);</span> <span class="c1">// (5) C++23</span>
+
+  <span class="kt">float</span>
+    <span class="nf">modff</span><span class="p">(</span><span class="kt">float</span> <span class="n">value</span><span class="p">,</span> <span class="kt">float</span><span class="o">*</span> <span class="n">iptr</span><span class="p">);</span>    <span class="c1">// (6) C++17</span>
+  <span class="k">constexpr</span> <span class="kt">float</span>
+    <span class="nf">modff</span><span class="p">(</span><span class="kt">float</span> <span class="n">value</span><span class="p">,</span> <span class="kt">float</span><span class="o">*</span> <span class="n">iptr</span><span class="p">);</span>    <span class="c1">// (6) C++23</span>
+
+  <span class="kt">long</span> <span class="kt">double</span>
+    <span class="nf">modfl</span><span class="p">(</span><span class="kt">long</span> <span class="kt">double</span> <span class="n">value</span><span class="p">,</span>
+          <span class="kt">long</span> <span class="kt">double</span><span class="o">*</span> <span class="n">iptr</span><span class="p">);</span>           <span class="c1">// (7) C++17</span>
+  <span class="k">constexpr</span> <span class="kt">long</span> <span class="kt">double</span>
+    <span class="nf">modfl</span><span class="p">(</span><span class="kt">long</span> <span class="kt">double</span> <span class="n">value</span><span class="p">,</span>
+          <span class="kt">long</span> <span class="kt">double</span><span class="o">*</span> <span class="n">iptr</span><span class="p">);</span>           <span class="c1">// (7) C++23</span>
 <span class="p">}</span>
 </code></pre></div>
 </p>
 <h2>概要</h2>
 <p>浮動小数点数を、整数部と小数部に分解する。</p>
+<ul>
+<li>(1) : <code>float</code>に対するオーバーロード</li>
+<li>(2) : <code>double</code>に対するオーバーロード</li>
+<li>(3) : <code>long double</code>に対するオーバーロード</li>
+<li>(4) : 浮動小数点数型に対するオーバーロード</li>
+<li>(5) : 整数型に対するオーバーロード (<code>double</code>にキャストして計算される)</li>
+<li>(6) : <code>float</code>型規定</li>
+<li>(7) : <code>long double</code>型規定</li>
+</ul>
 <h2>戻り値</h2>
 <p>引数<code>value</code>の小数部を符号付きとして返す。また、引数<code>value</code>の整数部を<code>*iptr</code>に書き込む。</p>
 <p>この関数によって返される整数部と小数部は、どちらも引数<code>value</code>と同じ符号を持つ。</p>
@@ -221,6 +263,7 @@
 <p>C++11 で <code>value</code> が整数型のオーバーロードが追加されているが、<code>iptr</code> の型によって呼び出されるオーバーロードが一意に決まるため、存在意義は無いものと思われる。<br />
     （<code>value</code> に整数型、<code>iptr</code> に <code>nullptr</code> を渡した場合のみ当該オーバーロードによって呼び出しが曖昧ではなくなるが、その場合は<a class="cpprefjp-defined-word" data-desc="未定義の動作。処理系は予期せぬ動作をする可能性がある。要するに動作保証対象外" href="../../implementation-compliance.html#dfn-undefined-behavior">未定義動作</a>となってしまうため、本オーバーロードの存在はむしろ有害）</p>
 </li>
+<li>C++23では、(1)、(2)、(3)が(4)に統合され、<a class="cpprefjp-defined-word" data-desc="&lt;stdfloat&gt;で定義される内部表現の規定された浮動小数点数型" href="../stdfloat.html">拡張浮動小数点数型</a>を含む浮動小数点数型へのオーバーロードとして定義された</li>
 </ul>
 <h2>例</h2>
 <p><div class="yata" id="4dc59a2ca4b1b9f3ba1dfd67b3b9e35ecce8af02"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf"><a href="../iostream.html">&lt;iostream&gt;</a></span><span class="cp"></span>
@@ -260,11 +303,11 @@
 </code></pre></p>
 <h3>備考</h3>
 <ul>
-<li>特定の環境で <code>constexpr</code> 指定されている場合がある。（独自拡張）<ul>
+<li>特定の環境では、早期に <code>constexpr</code> 対応されている場合がある：<ul>
 <li>GCC 4.6.1 以上</li>
 </ul>
 </li>
-<li>GCC、Clang では、C++11 で追加されたオーバーロードは存在しない。</li>
+<li>GCC、Clang では、C++11 で追加された整数型オーバーロードは存在しない。</li>
 </ul>
 <h2>実装例</h2>
 <p><div class="codehilite"><pre><span></span><code><span class="k">namespace</span> <span class="n">std</span> <span class="p">{</span>
@@ -317,7 +360,18 @@
 <span class="cp"># endif</span>
 <span class="p">}</span>
 </code></pre></div>
-</p></div>
+</p>
+<h2>参照</h2>
+<ul>
+<li><a href="https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2021/p0533r9.pdf" target="_blank">P0533R9 constexpr for <code>&lt;cmath&gt;</code> and <code>&lt;cstdlib&gt;</code></a><ul>
+<li>C++23での、一部関数の<code>constexpr</code>対応</li>
+</ul>
+</li>
+<li><a href="https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2022/p1467r9.html" target="_blank">P1467R9 Extended floating-point types and standard names</a><ul>
+<li>C++23で導入された<a class="cpprefjp-defined-word" data-desc="&lt;stdfloat&gt;で定義される内部表現の規定された浮動小数点数型" href="../stdfloat.html">拡張浮動小数点数型</a>への対応として、<code>float</code>、<code>double</code>、<code>long double</code>のオーバーロードを<code>floating-point-type</code>のオーバーロードに統合し、<a class="cpprefjp-defined-word" data-desc="&lt;stdfloat&gt;で定義される内部表現の規定された浮動小数点数型" href="../stdfloat.html">拡張浮動小数点数型</a>も扱えるようにした</li>
+</ul>
+</li>
+</ul></div>
 
       </div>
     </div>

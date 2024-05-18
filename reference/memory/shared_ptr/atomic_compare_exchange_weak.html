@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="cpprefjp" lang="ja" itemscope="" itemtype="http://schema.org/WebPage">
     <head>
+        
+  
+
         <meta charset="UTF-8">
 
         <title>atomic_compare_exchange_weak - cpprefjp C++日本語リファレンス</title>
@@ -25,27 +28,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicons/apple-touch-icon.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicons/favicon-32x32.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicons/favicon-16x16.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="manifest" href="../../../manifest.json?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="mask-icon" href="../../../static/favicons/safari-pinned-tab.svg?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicons/apple-touch-icon.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicons/favicon-32x32.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicons/favicon-16x16.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="manifest" href="../../../manifest.json?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../../static/pygments/default.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
+<link rel="stylesheet" href="../../../static/pygments/default.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <!-- <link rel="stylesheet" href="../../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../../static/kunai/css/kunai-stage-0.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-1.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-2.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-3.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-0.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-1.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-2.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-3.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
 
-<script type="text/javascript" src="../../../static/kunai/js/kunai-vendor.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
-<script type="text/javascript" src="../../../static/kunai/js/kunai.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
+<script type="text/javascript" src="../../../static/kunai/js/kunai-vendor.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
+<script type="text/javascript" src="../../../static/kunai/js/kunai.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -54,12 +56,9 @@
   });
 </script>
 
-    
-  
-
     </head>
     <body>
-<header data-kunai-mdinfo="{&#34;meta&#34;: {&#34;header&#34;: [&#34;memory&#34;], &#34;namespace&#34;: [&#34;std&#34;], &#34;id-type&#34;: [&#34;function template&#34;], &#34;cpp&#34;: [&#34;cpp11&#34;]}, &#34;sources&#34;: [{&#34;id&#34;: &#34;9f941596b877fb0761b5b3e4faf183b81a14f6c6&#34;, &#34;source&#34;: &#34;#include &lt;iostream&gt;\n#include &lt;memory&gt;\n\nint main()\n{\n  std::shared_ptr&lt;int&gt; p(new int(1));\n\n  std::shared_ptr&lt;int&gt; ps = p;\n  std::shared_ptr&lt;int&gt; q(new int(3));\n  while (!std::atomic_compare_exchange_weak(&amp;p, &amp;ps, q)) {}\n\n  std::shared_ptr&lt;int&gt; result = std::atomic_load(&amp;p);\n  std::cout &lt;&lt; *result &lt;&lt; std::endl;\n}\n&#34;}], &#34;page_id&#34;: [&#34;reference&#34;, &#34;memory&#34;, &#34;shared_ptr&#34;, &#34;atomic_compare_exchange_weak&#34;]}">
+<header data-kunai-mdinfo="{&#34;meta&#34;: {&#34;header&#34;: [&#34;memory&#34;], &#34;namespace&#34;: [&#34;std&#34;], &#34;id-type&#34;: [&#34;function template&#34;], &#34;cpp&#34;: [&#34;cpp11&#34;, &#34;cpp20deprecated&#34;]}, &#34;sources&#34;: [{&#34;id&#34;: &#34;9f941596b877fb0761b5b3e4faf183b81a14f6c6&#34;, &#34;source&#34;: &#34;#include &lt;iostream&gt;\n#include &lt;memory&gt;\n\nint main()\n{\n  std::shared_ptr&lt;int&gt; p(new int(1));\n\n  std::shared_ptr&lt;int&gt; ps = p;\n  std::shared_ptr&lt;int&gt; q(new int(3));\n  while (!std::atomic_compare_exchange_weak(&amp;p, &amp;ps, q)) {}\n\n  std::shared_ptr&lt;int&gt; result = std::atomic_load(&amp;p);\n  std::cout &lt;&lt; *result &lt;&lt; std::endl;\n}\n&#34;}], &#34;page_id&#34;: [&#34;reference&#34;, &#34;memory&#34;, &#34;shared_ptr&#34;, &#34;atomic_compare_exchange_weak&#34;]}">
   <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -82,6 +81,20 @@
             <div class="google-search">
               
   
+<script>
+  (function() {
+    var cx = '013316413321391058734:ji_u66hl7hq';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div class="gcse-search"></div>
+
 
             </div>
           </li>
@@ -177,12 +190,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2019-11-26T08:07:39">
-        2019年11月26日 08時07分39秒
+      <span itemprop="datePublished" content="2023-06-13T05:47:48">
+        2023年06月13日 05時47分48秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">Akira Takahashi</span>
+        <span itemprop="name">onihusube</span>
       </span>
       が更新
     </small></p>
@@ -201,7 +214,7 @@
     <div class="row">
       <div class="col-sm-12 content-body">
         
-  <div class="identifier-type">function template</div><div class="header">&lt;memory&gt;</div><h1 itemprop="name"><span class="namespace" title="namespace std">std::</span><span class="token">atomic_compare_exchange_weak</span><span class="cpp cpp11" title="C++11で追加">(C++11)</span></h1>
+  <div class="identifier-type">function template</div><div class="header">&lt;memory&gt;</div><h1 itemprop="name"><span class="namespace" title="namespace std">std::</span><span class="token">atomic_compare_exchange_weak</span><span class="cpp cpp11" title="C++11で追加">(C++11)</span><span class="cpp cpp20deprecated text-warning" title="C++20で非推奨">(C++20で非推奨)</span></h1>
 <div itemprop="articleBody"><p><div class="codehilite"><pre><span></span><code><span class="k">namespace</span> <span class="n">std</span> <span class="p">{</span>
   <span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
   <span class="kt">bool</span> <span class="n">atomic_compare_exchange_weak</span><span class="p">(</span>
@@ -209,6 +222,7 @@
 <span class="p">}</span>
 </code></pre></div>
 </p>
+<p>この関数は、C++20から非推奨となった。アトミックアクセスの対象としている<code>shared_ptr</code>を<a href="../atomic.html"><code>shared_ptr</code>に対する<code>atomic</code>特殊化</a>で置き換えることで同等の機能を使用できる。</p>
 <h2>概要</h2>
 <p>弱い比較で、アトミックに<code>shared_ptr</code>オブジェクトを入れ替える。</p>
 <h2>要件</h2>
@@ -227,6 +241,11 @@
 </p>
 <h2>例外</h2>
 <p>投げない</p>
+<h2>非推奨・削除の詳細</h2>
+<p>この関数はフリー関数であるため、この関数によってアトミックにアクセスする対象となる<code>shared_ptr</code>オブジェクトそのものはどこかに配置されている非アトミックオブジェクトである。そのため、アトミックアクセスしたい文脈の外側から通常のアクセスが可能であり、もし別のスレッドからそのようなアクセスが行われているとこの関数を用いていてもデータ競合を引き起こし<a class="cpprefjp-defined-word" data-desc="未定義の動作。処理系は予期せぬ動作をする可能性がある。要するに動作保証対象外" href="../../../implementation-compliance.html#dfn-undefined-behavior">未定義動作</a>となる。</p>
+<p>すなわち、アトミックにアクセスしたい<code>shared_ptr</code>オブジェクトに対する全てのアクセスをプログラマがきちんと管理しなければこの関数の使用は安全ではなく、それはかなり困難であったためこの関数は危険な利用がデフォルトとなっていた。</p>
+<p>そのため、この関数（とそのファミリ）は非推奨とされ、代わりに<a href="../atomic.html"><code>shared_ptr</code>に対する<code>atomic</code>特殊化</a>が追加された。<code>shared_ptr</code>に対する<code>atomic</code>特殊化を利用すれば、アトミックにアクセスする対象となる<code>shared_ptr</code>オブジェクトそのものをアトミックオブジェクトとすることができるため、どこからアクセスしたとしても全てのアクセスは自動的にアトミックアクセスとなり、前述の問題は回避できる。</p>
+<p>この関数から<code>shared_ptr</code>に対する<code>atomic</code>特殊化に移行する場合は、元のコードでアトミックアクセス対象となっていた<code>shared_ptr</code>オブジェクトの型を<code>std::atomic&lt;std::shared_ptr&gt;</code>に変更することで移行でき、その場合は<code>atomic</code>のために用意されているフリー関数が代わりに使用される（宣言されているヘッダが異なるため、<code>&lt;atomic&gt;</code>ヘッダのインクルードが必要となるかもしれない）。</p>
 <h2>例</h2>
 <p><div class="yata" id="9f941596b877fb0761b5b3e4faf183b81a14f6c6"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf"><a href="../../iostream.html">&lt;iostream&gt;</a></span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf"><a href="../../memory.html">&lt;memory&gt;</a></span><span class="cp"></span>
@@ -265,6 +284,7 @@
 <li><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2008/n2674.htm" target="_blank">N2674 Shared_ptr atomic access, revision 1</a></li>
 <li><a href="http://faithandbrave.hateblo.jp/entry/20081015/1224066366" target="_blank">C++0x Shared_ptr atomic access - Faith and Brave - C++で遊ぼう</a></li>
 <li><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/lwg-defects.html#2172" target="_blank">LWG Issue 2172. Does <code>atomic_compare_exchange_*</code> accept <code>v == nullptr</code> arguments?</a></li>
+<li><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/p0718r2.html" target="_blank">P0718R2 Revising <code>atomic_shared_ptr</code> for C++20</a></li>
 </ul></div>
 
       </div>

@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="cpprefjp" lang="ja" itemscope="" itemtype="http://schema.org/WebPage">
     <head>
+        
+  
+
         <meta charset="UTF-8">
 
         <title>transform_view - cpprefjp C++日本語リファレンス</title>
@@ -25,27 +28,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="manifest" href="../../manifest.json?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="mask-icon" href="../../static/favicons/safari-pinned-tab.svg?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="manifest" href="../../manifest.json?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -54,12 +56,9 @@
   });
 </script>
 
-    
-  
-
     </head>
     <body>
-<header data-kunai-mdinfo="{&#34;meta&#34;: {&#34;header&#34;: [&#34;ranges&#34;], &#34;namespace&#34;: [&#34;std::ranges&#34;], &#34;id-type&#34;: [&#34;class template&#34;], &#34;cpp&#34;: [&#34;cpp20&#34;]}, &#34;sources&#34;: [{&#34;id&#34;: &#34;4f65f2586601e6eb7e418b990f1783432096eea7&#34;, &#34;source&#34;: &#34;#include &lt;ranges&gt;\n#include &lt;iostream&gt;\n\nint main() {\n  using namespace std;\n  int a[] = {1, 2, 3};\n\n  for (int i : a | views::transform([](int x){ return x * x; })) {\n    cout &lt;&lt; i;\n  }\n}\n&#34;}], &#34;page_id&#34;: [&#34;reference&#34;, &#34;ranges&#34;, &#34;transform_view&#34;]}">
+<header data-kunai-mdinfo="{&#34;meta&#34;: {&#34;header&#34;: [&#34;ranges&#34;], &#34;namespace&#34;: [&#34;std::ranges&#34;], &#34;id-type&#34;: [&#34;class template&#34;], &#34;cpp&#34;: [&#34;cpp20&#34;]}, &#34;sources&#34;: [{&#34;id&#34;: &#34;4f65f2586601e6eb7e418b990f1783432096eea7&#34;, &#34;source&#34;: &#34;#include &lt;ranges&gt;\n#include &lt;iostream&gt;\n\nint main() {\n  using namespace std;\n  int a[] = {1, 2, 3};\n\n  for (int i : a | views::transform([](int x){ return x * x; })) {\n    cout &lt;&lt; i;\n  }\n}\n&#34;}, {&#34;id&#34;: &#34;e303842da962267d908073dc4fffd07fd068b0c9&#34;, &#34;source&#34;: &#34;#include &lt;ranges&gt;\n#include &lt;string&gt;\n#include &lt;iostream&gt;\n\nstruct Record {\n  int id = 0;\n  std::string name;\n};\n\nint main() {\n  using namespace std;\n  Record records[] = {\n    {1, \&#34;Alice\&#34;},\n    {2, \&#34;Bob\&#34;},\n    {3, \&#34;Charlie\&#34;}\n  };\n\n  for (int id : records | views::transform(&amp;Record::id)) {\n    cout &lt;&lt; id &lt;&lt; &#39;\\n&#39;;\n  }\n}\n&#34;}], &#34;page_id&#34;: [&#34;reference&#34;, &#34;ranges&#34;, &#34;transform_view&#34;]}">
   <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -82,6 +81,20 @@
             <div class="google-search">
               
   
+<script>
+  (function() {
+    var cx = '013316413321391058734:ji_u66hl7hq';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div class="gcse-search"></div>
+
 
             </div>
           </li>
@@ -165,8 +178,8 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2022-03-23T22:19:38">
-        2022年03月23日 22時19分38秒
+      <span itemprop="datePublished" content="2024-03-08T19:36:47">
+        2024年03月08日 19時36分47秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -195,7 +208,13 @@
     <span class="n">requires</span> <span class="n"><a href="view.html">view</a></span><span class="o">&lt;</span><span class="n">V</span><span class="o">&gt;</span> <span class="o">&amp;&amp;</span> <span class="n"><a href="../type_traits/is_object.html">is_object_v</a></span><span class="o">&lt;</span><span class="n">F</span><span class="o">&gt;</span> <span class="o">&amp;&amp;</span>
              <span class="n"><a href="../concepts/invocable.html">regular_invocable</a></span><span class="o">&lt;</span><span class="n">F</span><span class="o">&amp;</span><span class="p">,</span> <span class="n"><a href="range_reference_t.html">range_reference_t</a></span><span class="o">&lt;</span><span class="n">V</span><span class="o">&gt;&gt;</span> <span class="o">&amp;&amp;</span>
              <span class="n"><a href="../iterator/dereferenceable.html">can-reference</a></span><span class="o">&lt;</span><span class="n"><a href="../type_traits/invoke_result.html">invoke_result_t</a></span><span class="o">&lt;</span><span class="n">F</span><span class="o">&amp;</span><span class="p">,</span> <span class="n"><a href="range_reference_t.html">range_reference_t</a></span><span class="o">&lt;</span><span class="n">V</span><span class="o">&gt;&gt;&gt;</span>
-  <span class="k">class</span> <span class="nc">transform_view</span> <span class="o">:</span> <span class="k">public</span> <span class="n"><a href="view_interface.html">view_interface</a></span><span class="o">&lt;</span><span class="n">transform_view</span><span class="o">&lt;</span><span class="n">R</span><span class="o">&gt;&gt;</span> <span class="p">{</span> <span class="err">……</span> <span class="p">};</span> <span class="c1">// (1)</span>
+  <span class="k">class</span> <span class="nc">transform_view</span> <span class="o">:</span> <span class="k">public</span> <span class="n"><a href="view_interface.html">view_interface</a></span><span class="o">&lt;</span><span class="n">transform_view</span><span class="o">&lt;</span><span class="n">R</span><span class="o">&gt;&gt;</span> <span class="p">{</span> <span class="err">……</span> <span class="p">};</span> <span class="c1">// (1) C++20</span>
+
+  <span class="k">template</span><span class="o">&lt;</span><span class="n"><a href="input_range.html">input_range</a></span> <span class="n">V</span><span class="p">,</span> <span class="n"><a href="../concepts/move_constructible.html">move_constructible</a></span> <span class="n">F</span><span class="o">&gt;</span>
+    <span class="n">requires</span> <span class="n"><a href="view.html">view</a></span><span class="o">&lt;</span><span class="n">V</span><span class="o">&gt;</span> <span class="o">&amp;&amp;</span> <span class="n"><a href="../type_traits/is_object.html">is_object_v</a></span><span class="o">&lt;</span><span class="n">F</span><span class="o">&gt;</span> <span class="o">&amp;&amp;</span>
+             <span class="n"><a href="../concepts/invocable.html">regular_invocable</a></span><span class="o">&lt;</span><span class="n">F</span><span class="o">&amp;</span><span class="p">,</span> <span class="n"><a href="range_reference_t.html">range_reference_t</a></span><span class="o">&lt;</span><span class="n">V</span><span class="o">&gt;&gt;</span> <span class="o">&amp;&amp;</span>
+             <span class="n"><a href="../iterator/dereferenceable.html">can-reference</a></span><span class="o">&lt;</span><span class="n"><a href="../type_traits/invoke_result.html">invoke_result_t</a></span><span class="o">&lt;</span><span class="n">F</span><span class="o">&amp;</span><span class="p">,</span> <span class="n"><a href="range_reference_t.html">range_reference_t</a></span><span class="o">&lt;</span><span class="n">V</span><span class="o">&gt;&gt;&gt;</span>
+  <span class="k">class</span> <span class="nc">transform_view</span> <span class="o">:</span> <span class="k">public</span> <span class="n"><a href="view_interface.html">view_interface</a></span><span class="o">&lt;</span><span class="n">transform_view</span><span class="o">&lt;</span><span class="n">R</span><span class="o">&gt;&gt;</span> <span class="p">{</span> <span class="err">……</span> <span class="p">};</span> <span class="c1">// (1) C++23</span>
 
   <span class="k">namespace</span> <span class="n">views</span> <span class="p">{</span>
     <span class="kr">inline</span> <span class="k">constexpr</span> <span class="cm">/*unspecified*/</span> <span class="n">transform</span> <span class="o">=</span> <span class="cm">/*unspecified*/</span><span class="p">;</span>         <span class="c1">// (2)</span>
@@ -245,18 +264,9 @@
 <li>(1): <code>V</code>に従う</li>
 <li>(2): 述語が参照を返す場合</li>
 </ul>
-<h2>テンプレートパラメータ制約</h2>
-<ul>
-<li><code><a href="input_range.html">input_range</a>&lt;V&gt;</code></li>
-<li><code><a href="view.html">view</a>&lt;V&gt;</code></li>
-<li><code><a href="../concepts/copy_constructible.html">copy_constructible</a>&lt;F&gt;</code></li>
-<li><code><a href="../type_traits/is_object.html">is_object_v</a>&lt;F&gt;</code></li>
-<li><code><a href="../concepts/invocable.html">regular_invocable</a>&lt;F&amp;,<a href="range_reference_t.html">range_reference_t</a>&lt;V&gt;&gt;</code></li>
-<li><code><a href="../iterator/dereferenceable.html">can-reference</a>&lt;<a href="../type_traits/invoke_result.html">invoke_result_t</a>&lt;F&amp;,<a href="range_reference_t.html">range_reference_t</a>&lt;V&gt;&gt;&gt;</code></li>
-</ul>
 <h2>効果</h2>
 <ul>
-<li>(2): 式<code>views::transform(E, P)</code>の効果は<code>transform_view{E, P}</code>と等しい</li>
+<li>(2): 式<code>views::transform(E, P)</code>の効果は<code>transform_view(E, P)</code>と等しい</li>
 </ul>
 <h2>メンバ関数</h2>
 <table border="1" bordercolor="#888" style="border-collapse:collapse">
@@ -331,6 +341,16 @@
 <td>要素へアクセスする</td>
 <td>C++20</td>
 </tr>
+<tr>
+<td><code><a href="view_interface/cbegin.html">cbegin</a></code></td>
+<td>定数イテレータを取得する</td>
+<td>C++23</td>
+</tr>
+<tr>
+<td><code><a href="view_interface/cend.html">cend</a></code></td>
+<td>定数イテレータ（番兵）を取得する</td>
+<td>C++23</td>
+</tr>
 </tbody>
 </table>
 <h2>推論補助</h2>
@@ -367,6 +387,35 @@
 <h3>出力</h3>
 <p><pre><code>149
 </code></pre></p>
+<h2>例 特定のメンバを選択する</h2>
+<p><div class="yata" id="e303842da962267d908073dc4fffd07fd068b0c9"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf"><a href="../ranges.html">&lt;ranges&gt;</a></span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf"><a href="../string.html">&lt;string&gt;</a></span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf"><a href="../iostream.html">&lt;iostream&gt;</a></span><span class="cp"></span>
+
+<span class="k">struct</span> <span class="n">Record</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n"><a href="../string/basic_string.html">std::string</a></span> <span class="n">name</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+  <span class="n">Record</span> <span class="n">records</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="s">"Alice"</span><span class="p">},</span>
+    <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="s">"Bob"</span><span class="p">},</span>
+    <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="s">"Charlie"</span><span class="p">}</span>
+  <span class="p">};</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">id</span> <span class="p">:</span> <span class="n">records</span> <span class="o">|</span> <span class="n"><span style="color:#ff0000">views::transform</span></span><span class="p">(</span><span class="o">&amp;</span><span class="n">Record</span><span class="o">::</span><span class="n">id</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">id</span> <span class="o">&lt;&lt;</span> <span class="sc">'\n'</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div></p>
+<h3>出力</h3>
+<p><pre><code>1
+2
+3
+</code></pre></p>
 <h2>バージョン</h2>
 <h3>言語</h3>
 <ul>
@@ -382,11 +431,13 @@
 <h2>関連項目</h2>
 <ul>
 <li><code><a href="../algorithm/transform.html">std::transform</a></code>, <code><a href="../algorithm/ranges_transform.html">std::ranges::transform</a></code>: Rangeの要素に先行評価で関数を適用する標準アルゴリズム関数</li>
+<li><code><a href="zip_transform_view.html">zip_transform_view</a></code> : 複数の範囲から要素を取り出し、関数を適用した結果をビューとして提供する</li>
 </ul>
 <h2>参照</h2>
 <ul>
 <li><a href="https://timsong-cpp.github.io/cppwp/n4861/ranges" target="_blank">N4861 24 Ranges library</a></li>
 <li><a href="https://techbookfest.org/product/5134506308665344" target="_blank">C++20 ranges</a></li>
+<li><a href="https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2021/p2367r0.html" target="_blank">P2367R0 Remove misuses of list-initialization from Clause 24</a> (本提案文書はC++20に遡って適用されている)</li>
 </ul></div>
 
       </div>

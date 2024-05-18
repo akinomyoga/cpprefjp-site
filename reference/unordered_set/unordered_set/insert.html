@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="cpprefjp" lang="ja" itemscope="" itemtype="http://schema.org/WebPage">
     <head>
+        
+  
+
         <meta charset="UTF-8">
 
         <title>unordered_set::insert - cpprefjp C++日本語リファレンス</title>
@@ -25,27 +28,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicons/apple-touch-icon.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicons/favicon-32x32.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicons/favicon-16x16.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="manifest" href="../../../manifest.json?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="mask-icon" href="../../../static/favicons/safari-pinned-tab.svg?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicons/apple-touch-icon.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicons/favicon-32x32.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicons/favicon-16x16.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="manifest" href="../../../manifest.json?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../../static/pygments/default.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
+<link rel="stylesheet" href="../../../static/pygments/default.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <!-- <link rel="stylesheet" href="../../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../../static/kunai/css/kunai-stage-0.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-1.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-2.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-3.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-0.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-1.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-2.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-3.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
 
-<script type="text/javascript" src="../../../static/kunai/js/kunai-vendor.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
-<script type="text/javascript" src="../../../static/kunai/js/kunai.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
+<script type="text/javascript" src="../../../static/kunai/js/kunai-vendor.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
+<script type="text/javascript" src="../../../static/kunai/js/kunai.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -53,9 +55,6 @@
     kn.cpprefjp();
   });
 </script>
-
-    
-  
 
     </head>
     <body>
@@ -82,6 +81,20 @@
             <div class="google-search">
               
   
+<script>
+  (function() {
+    var cx = '013316413321391058734:ji_u66hl7hq';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div class="gcse-search"></div>
+
 
             </div>
           </li>
@@ -177,12 +190,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2020-01-26T17:15:56">
-        2020年01月26日 17時15分56秒
+      <span itemprop="datePublished" content="2023-12-29T16:05:52">
+        2023年12月29日 16時05分52秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">hotwatermorning</span>
+        <span itemprop="name">suomesta</span>
       </span>
       が更新
     </small></p>
@@ -236,7 +249,7 @@
     なお、標準では間接参照可能（dereferenceable）である必要があることになっているが、その必要はない（つまり、最終要素の次を指すイテレータでも良い）ものと思われる。</p>
 </li>
 <li>
-<p>引数 <code>first</code>、および、<code>last</code>は、入力イテレータの要件を満たし、かつ、範囲 <code>[first, last)</code> が当該コンテナ<strong>以外を指す</strong>有効な範囲でなければならない。<br />
+<p>引数 <code>first</code>、および、<code>last</code>は、入力イテレータの要件を満たし、かつ、<a class="cpprefjp-defined-word" data-desc="2つのイテレータで表現される半開区間を表す。C++20からイテレータと番兵で異なる型であっても指定可能になる">イテレータ範囲</a> <code>[first, last)</code> が当該コンテナ<strong>以外を指す</strong>有効な範囲でなければならない。<br />
     また、引数 <code>first</code>、および、<code>last</code> を引数にとる形式（(3)）では、このコンテナの要素型 <code>value_type</code> は、コンテナに対して <code>*first</code> から直接構築可能（EmplaceConstructible）でなければならない。<br />
     ここで、コンテナに対して <code>*first</code> から直接構築可能とは、<code>m</code> をアロケータ型 <code>allocator_type</code> の左辺値、<code>p</code> を要素型 <code>value_type</code> へのポインタとすると、以下の式が<a class="cpprefjp-defined-word" data-desc="プログラムが文法規則・診断対象の意味規則・単一定義規則を満たすこと" href="../../../implementation-compliance.html#dfn-well-formed">適格</a>（well-formed）であるということである。</p>
 <p><code>std::<a href="../../memory/allocator_traits.html">allocator_traits</a>&lt;allocator_type&gt;::<a href="../../memory/allocator_traits/construct.html">construct</a>(m, p, *first);</code></p>
@@ -254,13 +267,13 @@
 <li>(1) : 引数 <code>v</code>、あるいは <code>rv</code> で指定した値と等価なキーがコンテナに存在していなければ、当該要素を追加する。</li>
 <li>(2) : 引数 <code>v</code>、あるいは <code>rv</code> で指定した値と等価なキーがコンテナに存在していなければ、当該要素を追加する。<br />
     引数 <code>position</code> は、要素の挿入位置を探し始める場所のヒントとして使用されるが、実装によって無視されるかもしれない。</li>
-<li>(3) : 範囲 <code>[first, last)</code> のすべての要素 <code>t</code> に対して、(1)の形式の <code>insert(t)</code> を呼び出した場合と等価である。</li>
+<li>(3) : <a class="cpprefjp-defined-word" data-desc="2つのイテレータで表現される半開区間を表す。C++20からイテレータと番兵で異なる型であっても指定可能になる">イテレータ範囲</a> <code>[first, last)</code> のすべての要素 <code>t</code> に対して、(1)の形式の <code>insert(t)</code> を呼び出した場合と等価である。</li>
 <li>(4) : (3)の形式を <code>insert(il.begin(), il.end())</code> として呼び出した場合と等価である。</li>
 <li>(5) : <code>nh</code>が空の場合、効果はない。
 それ以外の場合、<code>nh.key()</code>と等価のキーを持つ要素がコンテナにない場合に限り、<code>nh</code>が所有する要素を挿入する。</li>
 <li>(6) : <code>nh</code>が空の場合、効果はなく、<code>(*this).end()</code>を返す。
 それ以外の場合、<code>nh.key()</code>と等価のキーを持つ要素がコンテナにない場合に限り、<code>nh</code>が所有する要素を挿入する。<code>nh.key()</code>と等価のキーの要素を指すイテレータを常に返す。
-要素は、<code>p</code>の直前の位置のできるだけ近くに挿入される。</li>
+要素は、<code>hint</code>の直前の位置のできるだけ近くに挿入される。</li>
 </ul>
 <h2>戻り値</h2>
 <ul>
@@ -358,7 +371,7 @@
 
     <span class="n"><a href="../../forward_list/forward_list.html">std::forward_list</a></span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">fl</span><span class="p">{</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="p">};</span>
     <span class="n">us</span><span class="p">.</span><span class="n"><span style="color:#ff0000">insert</span></span><span class="p">(</span><span class="n"><a href="../../forward_list/forward_list/cbegin.html">fl.cbegin()</a></span><span class="p">,</span> <span class="n"><a href="../../forward_list/forward_list/cend.html">fl.cend()</a></span><span class="p">);</span> <span class="c1">// forward_list の要素を全部</span>
-    <span class="n">print</span><span class="p">(</span><span class="s">"<span style="color:#ff0000">insert</span> range"</span><span class="p">,</span> <span class="n">us</span><span class="p">);</span>
+    <span class="n">print</span><span class="p">(</span><span class="s">"<span style="color:#ff0000">insert</span> <a href="../../ranges/range.html">range</a>"</span><span class="p">,</span> <span class="n">us</span><span class="p">);</span>
   <span class="p">}</span>
 
   <span class="c1">// 複数の要素を挿入（(4)の形式）</span>
@@ -376,7 +389,7 @@
 insert one element : 6 5 4 3 2 1 0
 6 2
 insert one element with hint : 6 5 4 3 2 1 0
-insert range : 7 8 6 5 4 3 2 1 0
+insert <a href="../../ranges/range.html">range</a> : 7 8 6 5 4 3 2 1 0
 insert initializer_list : 7 8 6 5 4 3 2 1 0
 </code></pre></p>
 <p>注：<code><a href="../unordered_set.html">unordered_set</a></code> は非順序連想コンテナであるため、出力順序は無意味であることに注意</p>
@@ -387,7 +400,6 @@ insert initializer_list : 7 8 6 5 4 3 2 1 0
 </ul>
 <h3>処理系</h3>
 <ul>
-<li><a href="../../../implementation.html#clang">Clang</a>: -</li>
 <li><a href="../../../implementation.html#clang">Clang</a>: 3.1</li>
 <li><a href="../../../implementation.html#gcc">GCC</a>: 4.7.0</li>
 <li><a href="../../../implementation.html#icc">ICC</a>: ?</li>

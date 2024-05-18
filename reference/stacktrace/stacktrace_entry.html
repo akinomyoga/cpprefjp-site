@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="cpprefjp" lang="ja" itemscope="" itemtype="http://schema.org/WebPage">
     <head>
+        
+  
+
         <meta charset="UTF-8">
 
         <title>stacktrace_entry - cpprefjp C++日本語リファレンス</title>
@@ -15,37 +18,36 @@
         <meta property="og:url" content="https://cpprefjp.github.io/reference/stacktrace/stacktrace_entry.html" />
         <meta property="og:site_name" content="cpprefjp - C++日本語リファレンス" />
         <meta property="og:type" content="article" />
-        <meta property="og:description" content="" />
+        <meta property="og:description" content="`stacktrace_entry`は、スタックトレースの各エントリ (行) を表すクラスであり、各エントリの情報を問い合せる操作を提供する。" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="stacktrace_entry - cpprefjp C++日本語リファレンス" />
         <meta name="twitter:url" content="https://cpprefjp.github.io/reference/stacktrace/stacktrace_entry.html" />
-        <meta name="twitter:description" content="" />
+        <meta name="twitter:description" content="`stacktrace_entry`は、スタックトレースの各エントリ (行) を表すクラスであり、各エントリの情報を問い合せる操作を提供する。" />
 
         
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="manifest" href="../../manifest.json?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="mask-icon" href="../../static/favicons/safari-pinned-tab.svg?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="manifest" href="../../manifest.json?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -53,9 +55,6 @@
     kn.cpprefjp();
   });
 </script>
-
-    
-  
 
     </head>
     <body>
@@ -82,6 +81,20 @@
             <div class="google-search">
               
   
+<script>
+  (function() {
+    var cx = '013316413321391058734:ji_u66hl7hq';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div class="gcse-search"></div>
+
 
             </div>
           </li>
@@ -165,12 +178,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2021-07-12T23:46:21">
-        2021年07月12日 23時46分21秒
+      <span itemprop="datePublished" content="2024-05-15T04:01:24">
+        2024年05月15日 04時01分24秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">Tetsuro Matsumura</span>
+        <span itemprop="name">Akira Takahashi</span>
       </span>
       が更新
     </small></p>
@@ -196,6 +209,8 @@
 </code></pre></div>
 </p>
 <h2>概要</h2>
+<p><code>stacktrace_entry</code>は、スタックトレースの各エントリ (行) を表すクラスであり、各エントリの情報を問い合せる操作を提供する。</p>
+<p>このクラスは、<code><a href="../concepts/regular.html">regular</a></code>および<code><a href="../compare/three_way_comparable.html">three_way_comparable</a>&lt;<a href="../compare/strong_ordering.html">strong_ordering</a>&gt;</code>のモデルである。</p>
 <h2>メンバ関数</h2>
 <h3>構築・破棄</h3>
 <table border="1" bordercolor="#888" style="border-collapse:collapse">
@@ -208,7 +223,7 @@
 </thead>
 <tbody>
 <tr>
-<td><code><span href="https://cpprefjp.github.io/reference/stacktrace/stacktrace_entry/op_constructor.md.nolink">(constructor)</span></code></td>
+<td><code><a href="stacktrace_entry/op_constructor.html">(constructor)</a></code></td>
 <td>コンストラクタ</td>
 <td>C++23</td>
 </tr>
@@ -218,7 +233,7 @@
 <td>C++23</td>
 </tr>
 <tr>
-<td><code><span href="https://cpprefjp.github.io/reference/stacktrace/stacktrace_entry/op_assign.md.nolink">operator=</span></code></td>
+<td><code>constexpr stacktrace_entry&amp; operator=(const stacktrace_entry&amp; other) noexcept;</code></td>
 <td>代入演算子</td>
 <td>C++23</td>
 </tr>
@@ -235,12 +250,12 @@
 </thead>
 <tbody>
 <tr>
-<td><code><span href="https://cpprefjp.github.io/reference/stacktrace/stacktrace_entry/native_handle.md.nolink">native_handle</span></code></td>
+<td><code><a href="stacktrace_entry/native_handle.html">native_handle</a></code></td>
 <td>ハンドルを取得する</td>
 <td>C++23</td>
 </tr>
 <tr>
-<td><code><span href="https://cpprefjp.github.io/reference/stacktrace/stacktrace_entry/op_bool.md.nolink">operator bool</span></code></td>
+<td><code><a href="stacktrace_entry/op_bool.html">operator bool</a></code></td>
 <td>空でないかを判定する</td>
 <td>C++23</td>
 </tr>
@@ -257,17 +272,17 @@
 </thead>
 <tbody>
 <tr>
-<td><code><span href="https://cpprefjp.github.io/reference/stacktrace/stacktrace_entry/description.md.nolink">description</span></code></td>
+<td><code><a href="stacktrace_entry/description.html">description</a></code></td>
 <td>このオブジェクトを説明する文字列を取得する</td>
 <td>C++23</td>
 </tr>
 <tr>
-<td><code><span href="https://cpprefjp.github.io/reference/stacktrace/stacktrace_entry/source_file.md.nolink">source_file</span></code></td>
+<td><code><a href="stacktrace_entry/source_file.html">source_file</a></code></td>
 <td>ソースファイル名を取得する</td>
 <td>C++23</td>
 </tr>
 <tr>
-<td><code><span href="https://cpprefjp.github.io/reference/stacktrace/stacktrace_entry/source_line.md.nolink">source_line</span></code></td>
+<td><code><a href="stacktrace_entry/source_line.html">source_line</a></code></td>
 <td>行番号を取得する</td>
 <td>C++23</td>
 </tr>
@@ -302,7 +317,7 @@
 </thead>
 <tbody>
 <tr>
-<td><code><span href="https://cpprefjp.github.io/reference/stacktrace/stacktrace_entry/op_ostream.md.nolink">operator&lt;&lt;</span></code></td>
+<td><code><a href="stacktrace_entry/op_ostream.html">operator&lt;&lt;</a></code></td>
 <td>出力ストリームに出力する</td>
 <td>C++23</td>
 </tr>
@@ -319,7 +334,7 @@
 </thead>
 <tbody>
 <tr>
-<td><code><span href="https://cpprefjp.github.io/reference/stacktrace/stacktrace_entry/to_string.md.nolink">to_string</span></code></td>
+<td><code><a href="stacktrace_entry/to_string.html">to_string</a></code></td>
 <td>文字列に変換する</td>
 <td>C++23</td>
 </tr>
@@ -336,7 +351,7 @@
 </thead>
 <tbody>
 <tr>
-<td><code><span href="https://cpprefjp.github.io/reference/stacktrace/stacktrace_entry/op_equal.md.nolink">operator==</span></code></td>
+<td><code><a href="stacktrace_entry/op_equal.html">operator==</a></code></td>
 <td>等値比較を行う</td>
 <td>C++23</td>
 </tr>
@@ -346,7 +361,7 @@
 <td>C++23</td>
 </tr>
 <tr>
-<td><code><span href="https://cpprefjp.github.io/reference/stacktrace/stacktrace_entry/op_compare_3way.md.nolink">operator&lt;=&gt;</span></code></td>
+<td><code>friend constexpr strong_ordering operator&lt;=&gt;(const stacktrace_entry&amp; x, const stacktrace_entry&amp; y) noexcept;</code></td>
 <td>三方比較を行う</td>
 <td>C++23</td>
 </tr>
@@ -394,17 +409,34 @@
 </tr>
 </tbody>
 </table>
+<h2>文字列フォーマットサポート</h2>
+<table border="1" bordercolor="#888" style="border-collapse:collapse">
+<thead>
+<tr>
+<th>名前</th>
+<th>説明</th>
+<th>対応バージョン</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code><a href="stacktrace_entry/formatter.html">formatter</a></code></td>
+<td><code><a href="../format/formatter.html">std::formatter</a></code>クラスの特殊化</td>
+<td>C++23</td>
+</tr>
+</tbody>
+</table>
 <h2>例</h2>
 <p><div class="yata" id="8128694dde5f2caabec33956aadbd7ebddfcc45d"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf"><a href="../iostream.html">&lt;iostream&gt;</a></span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf"><a href="../stacktrace.html">&lt;stacktrace&gt;</a></span><span class="cp"></span>
 
 <span class="kt">void</span> <span class="nf">g</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n"><a href="basic_stacktrace.html">std::stacktrace</a></span> <span class="n">st</span> <span class="o">=</span> <span class="n"><a href="basic_stacktrace.html">std::stacktrace</a></span><span class="o">::</span><span class="n">current</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="n"><a href="basic_stacktrace.html">std::stacktrace</a></span> <span class="n">st</span> <span class="o">=</span> <span class="n"><a href="basic_stacktrace.html">std::stacktrace</a></span><span class="o">::</span><span class="n"><a href="basic_stacktrace/current.html">current</a></span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
   <span class="n"><span style="color:#ff0000">std::stacktrace_entry</span></span> <span class="n">entry</span> <span class="o">=</span> <span class="n">st</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
 
-  <span class="n"><a href="../iostream/cout.html">std::cout</a></span> <span class="o">&lt;&lt;</span> <span class="n"><span href="https://cpprefjp.github.io/reference/stacktrace/stacktrace_entry/description.md.nolink">entry.description()</span></span> <span class="o">&lt;&lt;</span> <span class="n"><a href="../ostream/endl.html">std::endl</a></span><span class="p">;</span>
-  <span class="n"><a href="../iostream/cout.html">std::cout</a></span> <span class="o">&lt;&lt;</span> <span class="n"><span href="https://cpprefjp.github.io/reference/stacktrace/stacktrace_entry/source_file.md.nolink">entry.source_file()</span></span> <span class="o">&lt;&lt;</span> <span class="n"><a href="../ostream/endl.html">std::endl</a></span><span class="p">;</span>
-  <span class="n"><a href="../iostream/cout.html">std::cout</a></span> <span class="o">&lt;&lt;</span> <span class="n"><span href="https://cpprefjp.github.io/reference/stacktrace/stacktrace_entry/source_line.md.nolink">entry.source_line()</span></span> <span class="o">&lt;&lt;</span> <span class="n"><a href="../ostream/endl.html">std::endl</a></span><span class="p">;</span>
+  <span class="n"><a href="../iostream/cout.html">std::cout</a></span> <span class="o">&lt;&lt;</span> <span class="n"><a href="stacktrace_entry/description.html">entry.description()</a></span> <span class="o">&lt;&lt;</span> <span class="n"><a href="../ostream/endl.html">std::endl</a></span><span class="p">;</span>
+  <span class="n"><a href="../iostream/cout.html">std::cout</a></span> <span class="o">&lt;&lt;</span> <span class="n"><a href="stacktrace_entry/source_file.html">entry.source_file()</a></span> <span class="o">&lt;&lt;</span> <span class="n"><a href="../ostream/endl.html">std::endl</a></span><span class="p">;</span>
+  <span class="n"><a href="../iostream/cout.html">std::cout</a></span> <span class="o">&lt;&lt;</span> <span class="n"><a href="stacktrace_entry/source_line.html">entry.source_line()</a></span> <span class="o">&lt;&lt;</span> <span class="n"><a href="../ostream/endl.html">std::endl</a></span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="kt">void</span> <span class="nf">f</span><span class="p">()</span> <span class="p">{</span>
@@ -416,9 +448,9 @@
 <span class="p">}</span>
 </code></pre></div>
 </div></p>
-<h3>出力例</h3>
-<p><pre><code>g() at main.cpp:5
-main.cpp
+<h3>出力例 (GCC)</h3>
+<p><pre><code>g()
+/app/example.cpp
 5
 </code></pre></p>
 <h2>バージョン</h2>
@@ -429,7 +461,7 @@ main.cpp
 <h3>処理系</h3>
 <ul>
 <li><a href="../../implementation.html#clang">Clang</a>: ??</li>
-<li><a href="../../implementation.html#gcc">GCC</a>: ??</li>
+<li><a href="../../implementation.html#gcc">GCC</a>: 12</li>
 <li><a href="../../implementation.html#visual_cpp">Visual C++</a>: ??</li>
 </ul></div>
 

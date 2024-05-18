@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="cpprefjp" lang="ja" itemscope="" itemtype="http://schema.org/WebPage">
     <head>
+        
+  
+
         <meta charset="UTF-8">
 
         <title>basic_string::コンストラクタ - cpprefjp C++日本語リファレンス</title>
@@ -25,27 +28,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicons/apple-touch-icon.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicons/favicon-32x32.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicons/favicon-16x16.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="manifest" href="../../../manifest.json?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="mask-icon" href="../../../static/favicons/safari-pinned-tab.svg?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicons/apple-touch-icon.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicons/favicon-32x32.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicons/favicon-16x16.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="manifest" href="../../../manifest.json?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../../static/pygments/default.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
+<link rel="stylesheet" href="../../../static/pygments/default.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <!-- <link rel="stylesheet" href="../../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../../static/kunai/css/kunai-stage-0.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-1.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-2.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-3.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-0.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-1.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-2.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-3.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
 
-<script type="text/javascript" src="../../../static/kunai/js/kunai-vendor.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
-<script type="text/javascript" src="../../../static/kunai/js/kunai.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
+<script type="text/javascript" src="../../../static/kunai/js/kunai-vendor.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
+<script type="text/javascript" src="../../../static/kunai/js/kunai.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -53,9 +55,6 @@
     kn.cpprefjp();
   });
 </script>
-
-    
-  
 
     </head>
     <body>
@@ -82,6 +81,20 @@
             <div class="google-search">
               
   
+<script>
+  (function() {
+    var cx = '013316413321391058734:ji_u66hl7hq';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div class="gcse-search"></div>
+
 
             </div>
           </li>
@@ -177,8 +190,8 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2021-08-19T02:32:14">
-        2021年08月19日 02時32分14秒
+      <span itemprop="datePublished" content="2023-01-16T07:44:38">
+        2023年01月16日 07時44分38秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -202,69 +215,124 @@
       <div class="col-sm-12 content-body">
         
   <div class="identifier-type">function</div><div class="header">&lt;string&gt;</div><h1 itemprop="name"><span class="namespace" title="namespace std">std::</span><span class="class" title="class basic_string">basic_string::</span><span class="token">コンストラクタ</span></h1>
-<div itemprop="articleBody"><p><div class="codehilite"><pre><span></span><code><span class="n">basic_string</span><span class="p">();</span>                                                 <span class="c1">// (1) C++14</span>
+<div itemprop="articleBody"><p><div class="codehilite"><pre><span></span><code><span class="c1">// デフォルトコンストラクタ</span>
+<span class="n">basic_string</span><span class="p">();</span>                                                 <span class="c1">// (1) C++14</span>
 <span class="n">basic_string</span><span class="p">()</span> <span class="k">noexcept</span><span class="p">(</span><span class="k">noexcept</span><span class="p">(</span><span class="n">Allocator</span><span class="p">()))</span>                  <span class="c1">// (1) C++17</span>
+  <span class="o">:</span> <span class="n">basic_string</span><span class="p">(</span><span class="n">Allocator</span><span class="p">())</span> <span class="p">{}</span>
+<span class="k">constexpr</span> <span class="n">basic_string</span><span class="p">()</span> <span class="k">noexcept</span><span class="p">(</span><span class="k">noexcept</span><span class="p">(</span><span class="n">Allocator</span><span class="p">()))</span>        <span class="c1">// (1) C++20</span>
   <span class="o">:</span> <span class="n">basic_string</span><span class="p">(</span><span class="n">Allocator</span><span class="p">())</span> <span class="p">{}</span>
 
 <span class="k">explicit</span> <span class="n">basic_string</span><span class="p">(</span><span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">);</span>                      <span class="c1">// (2) C++14</span>
 <span class="k">explicit</span> <span class="nf">basic_string</span><span class="p">(</span><span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">)</span> <span class="k">noexcept</span><span class="p">;</span>             <span class="c1">// (2) C++17</span>
+<span class="k">constexpr</span> <span class="k">explicit</span> <span class="nf">basic_string</span><span class="p">(</span><span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">)</span> <span class="k">noexcept</span><span class="p">;</span>   <span class="c1">// (2) C++20</span>
 
 <span class="k">explicit</span> <span class="nf">basic_string</span><span class="p">(</span><span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Allocator</span><span class="p">());</span>        <span class="c1">// (1) + (2) C++03</span>
 
-<span class="n">basic_string</span><span class="p">(</span><span class="k">const</span> <span class="n">basic_string</span><span class="o">&amp;</span> <span class="n">str</span><span class="p">);</span>                          <span class="c1">// (3)</span>
-<span class="n">basic_string</span><span class="p">(</span><span class="n">basic_string</span><span class="o">&amp;&amp;</span> <span class="n">str</span><span class="p">)</span> <span class="k">noexcept</span><span class="p">;</span>                      <span class="c1">// (4) C++11</span>
+<span class="c1">// コピーコンストラクタ</span>
+<span class="n">basic_string</span><span class="p">(</span><span class="k">const</span> <span class="n">basic_string</span><span class="o">&amp;</span> <span class="n">str</span><span class="p">);</span>                          <span class="c1">// (3) C++03</span>
+<span class="k">constexpr</span> <span class="nf">basic_string</span><span class="p">(</span><span class="k">const</span> <span class="n">basic_string</span><span class="o">&amp;</span> <span class="n">str</span><span class="p">);</span>                <span class="c1">// (3) C++20</span>
 
+<span class="c1">// ムーブコンストラクタ</span>
+<span class="n">basic_string</span><span class="p">(</span><span class="n">basic_string</span><span class="o">&amp;&amp;</span> <span class="n">str</span><span class="p">)</span> <span class="k">noexcept</span><span class="p">;</span>                      <span class="c1">// (4) C++11</span>
+<span class="k">constexpr</span> <span class="nf">basic_string</span><span class="p">(</span><span class="n">basic_string</span><span class="o">&amp;&amp;</span> <span class="n">str</span><span class="p">)</span> <span class="k">noexcept</span><span class="p">;</span>            <span class="c1">// (4) C++20</span>
+
+<span class="c1">// basic_stringの指定範囲から構築するコンストラクタ</span>
 <span class="n">basic_string</span><span class="p">(</span><span class="k">const</span> <span class="n">basic_string</span><span class="o">&amp;</span> <span class="n">str</span><span class="p">,</span>
              <span class="n">size_type</span> <span class="n">pos</span><span class="p">,</span>
              <span class="n">size_type</span> <span class="n">n</span> <span class="o">=</span> <span class="n">npos</span><span class="p">,</span>
-             <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Allocator</span><span class="p">());</span>                 <span class="c1">// (5) C++14まで</span>
-
+             <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Allocator</span><span class="p">());</span>                 <span class="c1">// (5) C++03</span>
 <span class="n">basic_string</span><span class="p">(</span><span class="k">const</span> <span class="n">basic_string</span><span class="o">&amp;</span> <span class="n">str</span><span class="p">,</span>
              <span class="n">size_type</span> <span class="n">pos</span><span class="p">,</span>
              <span class="n">size_type</span> <span class="n">n</span><span class="p">,</span>
              <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Allocator</span><span class="p">());</span>                 <span class="c1">// (5) C++17</span>
+<span class="k">constexpr</span> <span class="nf">basic_string</span><span class="p">(</span><span class="k">const</span> <span class="n">basic_string</span><span class="o">&amp;</span> <span class="n">str</span><span class="p">,</span>
+                       <span class="n">size_type</span> <span class="n">pos</span><span class="p">,</span>
+                       <span class="n">size_type</span> <span class="n">n</span><span class="p">,</span>
+                       <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Allocator</span><span class="p">());</span>       <span class="c1">// (5) C++20</span>
 
 <span class="n">basic_string</span><span class="p">(</span><span class="k">const</span> <span class="n">basic_string</span><span class="o">&amp;</span> <span class="n">str</span><span class="p">,</span>
              <span class="n">size_type</span> <span class="n">pos</span><span class="p">,</span>
              <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Allocator</span><span class="p">());</span>                 <span class="c1">// (6) C++17</span>
+<span class="k">constexpr</span> <span class="nf">basic_string</span><span class="p">(</span><span class="k">const</span> <span class="n">basic_string</span><span class="o">&amp;</span> <span class="n">str</span><span class="p">,</span>
+                       <span class="n">size_type</span> <span class="n">pos</span><span class="p">,</span>
+                       <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Allocator</span><span class="p">());</span>       <span class="c1">// (6) C++20</span>
 
+<span class="k">constexpr</span> <span class="nf">basic_string</span><span class="p">(</span><span class="n">basic_string</span><span class="o">&amp;&amp;</span> <span class="n">str</span><span class="p">,</span>
+                       <span class="n">size_type</span> <span class="n">pos</span><span class="p">,</span>
+                       <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Allocator</span><span class="p">());</span>       <span class="c1">// (17) C++23</span>
+
+<span class="k">constexpr</span> <span class="nf">basic_string</span><span class="p">(</span><span class="n">basic_string</span><span class="o">&amp;&amp;</span> <span class="n">str</span><span class="p">,</span>
+                       <span class="n">size_type</span> <span class="n">pos</span><span class="p">,</span>
+                       <span class="n">size_type</span> <span class="n">n</span><span class="p">,</span>
+                       <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Allocator</span><span class="p">());</span>       <span class="c1">// (18) C++23</span>
+
+<span class="c1">// 文字列ポインタから構築するコンストラクタ</span>
 <span class="n">basic_string</span><span class="p">(</span><span class="k">const</span> <span class="n">charT</span><span class="o">*</span> <span class="n">s</span><span class="p">,</span>
              <span class="n">size_type</span> <span class="n">n</span><span class="p">,</span>
-             <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Allocator</span><span class="p">());</span>                 <span class="c1">// (7)</span>
+             <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Allocator</span><span class="p">());</span>                 <span class="c1">// (7) C++03</span>
+<span class="k">constexpr</span> <span class="nf">basic_string</span><span class="p">(</span><span class="k">const</span> <span class="n">charT</span><span class="o">*</span> <span class="n">s</span><span class="p">,</span>
+                       <span class="n">size_type</span> <span class="n">n</span><span class="p">,</span>
+                       <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Allocator</span><span class="p">());</span>       <span class="c1">// (7) C++20</span>
 
 <span class="n">basic_string</span><span class="p">(</span><span class="k">const</span> <span class="n">charT</span><span class="o">*</span> <span class="n">s</span><span class="p">,</span>
-             <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Allocator</span><span class="p">());</span>                 <span class="c1">// (8)</span>
-
-<span class="n">basic_string</span><span class="p">(</span><span class="n">size_type</span> <span class="n">n</span><span class="p">,</span>
-             <span class="n">charT</span> <span class="n">c</span><span class="p">,</span>
-             <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Allocator</span><span class="p">());</span>                 <span class="c1">// (9)</span>
-
-<span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">InputIterator</span><span class="o">&gt;</span>
-<span class="n">basic_string</span><span class="p">(</span><span class="n">InputIterator</span> <span class="n">begin</span><span class="p">,</span> <span class="n">InputIterator</span> <span class="n">end</span><span class="p">,</span>
-             <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Allocator</span><span class="p">());</span>                 <span class="c1">// (10)</span>
-
-<span class="n">basic_string</span><span class="p">(</span><span class="n"><a href="../../initializer_list/initializer_list.html">initializer_list</a></span><span class="o">&lt;</span><span class="n">charT</span><span class="o">&gt;</span> <span class="n">init</span><span class="p">,</span>
-             <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="o">=</span> <span class="n">Allocator</span><span class="p">());</span>                   <span class="c1">// (11) C++11</span>
-
-<span class="n">basic_string</span><span class="p">(</span><span class="k">const</span> <span class="n">basic_string</span><span class="o">&amp;</span> <span class="n">str</span><span class="p">,</span> <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span><span class="p">);</span>        <span class="c1">// (12) C++11</span>
-<span class="n">basic_string</span><span class="p">(</span><span class="n">basic_string</span><span class="o">&amp;&amp;</span> <span class="n">str</span><span class="p">,</span> <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span><span class="p">);</span>             <span class="c1">// (13) C++11</span>
-
-<span class="c1">// string_viewから構築するコンストラクタ</span>
-<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
-<span class="k">explicit</span> <span class="n">basic_string</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">t</span><span class="p">,</span>
-                      <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Allocator</span><span class="p">());</span>        <span class="c1">// (14) C++17</span>
-<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
-         <span class="n">basic_string</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">t</span><span class="p">,</span>
-                      <span class="n">size_type</span> <span class="n">pos</span><span class="p">,</span>
-                      <span class="n">size_type</span> <span class="n">n</span><span class="p">,</span>
-                      <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Allocator</span><span class="p">());</span>        <span class="c1">// (15) C++17</span>
+             <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Allocator</span><span class="p">());</span>                 <span class="c1">// (8) C++03</span>
+<span class="k">constexpr</span> <span class="nf">basic_string</span><span class="p">(</span><span class="k">const</span> <span class="n">charT</span><span class="o">*</span> <span class="n">s</span><span class="p">,</span>
+                       <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Allocator</span><span class="p">());</span>       <span class="c1">// (8) C++20</span>
 
 <span class="n">basic_string</span><span class="p">(</span><span class="n"><a href="../../cstddef/nullptr_t.html">nullptr_t</a></span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>                               <span class="c1">// (16) C++23</span>
+
+<span class="c1">// 文字個数から構築するコンストラクタ</span>
+<span class="n">basic_string</span><span class="p">(</span><span class="n">size_type</span> <span class="n">n</span><span class="p">,</span>
+             <span class="n">charT</span> <span class="n">c</span><span class="p">,</span>
+             <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Allocator</span><span class="p">());</span>                 <span class="c1">// (9) C++03</span>
+<span class="k">constexpr</span> <span class="nf">basic_string</span><span class="p">(</span><span class="n">size_type</span> <span class="n">n</span><span class="p">,</span>
+                       <span class="n">charT</span> <span class="n">c</span><span class="p">,</span>
+                       <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Allocator</span><span class="p">());</span>       <span class="c1">// (9) C++20</span>
+
+<span class="c1">// イテレータ範囲から構築するコンストラクタ</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">InputIterator</span><span class="o">&gt;</span>
+<span class="n">basic_string</span><span class="p">(</span><span class="n">InputIterator</span> <span class="n">begin</span><span class="p">,</span> <span class="n">InputIterator</span> <span class="n">end</span><span class="p">,</span>
+             <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Allocator</span><span class="p">());</span>                 <span class="c1">// (10) C++03</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">InputIterator</span><span class="o">&gt;</span>
+<span class="k">constexpr</span> <span class="n">basic_string</span><span class="p">(</span><span class="n">InputIterator</span> <span class="n">begin</span><span class="p">,</span> <span class="n">InputIterator</span> <span class="n">end</span><span class="p">,</span>
+                       <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Allocator</span><span class="p">());</span>       <span class="c1">// (10) C++20</span>
+
+<span class="c1">// 初期化子リストから構築するコンストラクタ</span>
+<span class="n">basic_string</span><span class="p">(</span><span class="n"><a href="../../initializer_list/initializer_list.html">initializer_list</a></span><span class="o">&lt;</span><span class="n">charT</span><span class="o">&gt;</span> <span class="n">init</span><span class="p">,</span>
+             <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="o">=</span> <span class="n">Allocator</span><span class="p">());</span>                   <span class="c1">// (11) C++11</span>
+<span class="k">constexpr</span> <span class="nf">basic_string</span><span class="p">(</span><span class="n"><a href="../../initializer_list/initializer_list.html">initializer_list</a></span><span class="o">&lt;</span><span class="n">charT</span><span class="o">&gt;</span> <span class="n">init</span><span class="p">,</span>
+                       <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="o">=</span> <span class="n">Allocator</span><span class="p">());</span>         <span class="c1">// (11) C++20</span>
+
+<span class="c1">// アロケータ指定コピー／ムーブコンストラクタ</span>
+<span class="n">basic_string</span><span class="p">(</span><span class="k">const</span> <span class="n">basic_string</span><span class="o">&amp;</span> <span class="n">str</span><span class="p">,</span> <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span><span class="p">);</span>           <span class="c1">// (12) C++11</span>
+<span class="k">constexpr</span> <span class="nf">basic_string</span><span class="p">(</span><span class="k">const</span> <span class="n">basic_string</span><span class="o">&amp;</span> <span class="n">str</span><span class="p">,</span> <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span><span class="p">);</span> <span class="c1">// (12) C++20</span>
+
+<span class="n">basic_string</span><span class="p">(</span><span class="n">basic_string</span><span class="o">&amp;&amp;</span> <span class="n">str</span><span class="p">,</span> <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span><span class="p">);</span>             <span class="c1">// (13) C++11</span>
+<span class="k">constexpr</span> <span class="nf">basic_string</span><span class="p">(</span><span class="n">basic_string</span><span class="o">&amp;&amp;</span> <span class="n">str</span><span class="p">,</span> <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span><span class="p">);</span>   <span class="c1">// (13) C++20</span>
+
+<span class="c1">// <a href="../../string_view/basic_string_view.html">string_view</a>から構築するコンストラクタ</span>
+<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
+<span class="k">explicit</span> <span class="n">basic_string</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">t</span><span class="p">,</span>
+                      <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Allocator</span><span class="p">());</span>           <span class="c1">// (14) C++17</span>
+<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
+<span class="k">constexpr</span> <span class="k">explicit</span> <span class="n">basic_string</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">t</span><span class="p">,</span>
+                                <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Allocator</span><span class="p">());</span> <span class="c1">// (14) C++20</span>
+
+<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
+<span class="n">basic_string</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">t</span><span class="p">,</span>
+             <span class="n">size_type</span> <span class="n">pos</span><span class="p">,</span>
+             <span class="n">size_type</span> <span class="n">n</span><span class="p">,</span>
+             <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Allocator</span><span class="p">());</span>                  <span class="c1">// (15) C++17</span>
+<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
+<span class="k">constexpr</span> <span class="n">basic_string</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">t</span><span class="p">,</span>
+                       <span class="n">size_type</span> <span class="n">pos</span><span class="p">,</span>
+                       <span class="n">size_type</span> <span class="n">n</span><span class="p">,</span>
+                       <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Allocator</span><span class="p">());</span>        <span class="c1">// (15) C++20</span>
 </code></pre></div>
 </p>
 <h2>概要</h2>
 <ul>
-<li>(1) : デフォルトコンストラクタ。アロケータをデフォルト構築して空の<code>basic_string</code>オブジェクトを構築する。</li>
+<li>(1) : デフォルトコンストラクタ。アロケータを<a class="cpprefjp-defined-word" data-desc="デフォルト初期化。`T x;`構文での初期化。トリビアルにデフォルト構築可能な型の場合は初期化されず（オブジェクトのlifetimeは開始される）、そうではないクラス型はデフォルトコンストラクタで初期化する。配列型の場合は各要素が再帰的にデフォルト初期化される">デフォルト構築</a>して空の<code>basic_string</code>オブジェクトを構築する。</li>
 <li>(2) : アロケータを受け取るデフォルトコンストラクタ。空の<code>basic_string</code>オブジェクトを構築する。</li>
 <li>(3) : コピーコンストラクタ。<code>str</code>オブジェクトと同じ文字列を構築する。</li>
 <li>(4) : ムーブコンストラクタ。<code>str</code>オブジェクトが指すデータの所有権を自身に移動する。<code>str</code>は<a class="cpprefjp-defined-word" data-desc="未規定の動作。事前の断りなく処理系によって異なる動作をする" href="../../../implementation-compliance.html#dfn-unspecified-behavior">未規定</a>の値になる。</li>
@@ -273,14 +341,16 @@
 <li>(7) : 文字配列<code>s</code>の先頭<code>n</code>文字からなる部分文字列のコピーから<code>basic_string</code>オブジェクトを構築する。</li>
 <li>(8) : 文字配列<code>s</code>のコピーから<code>basic_string</code>オブジェクトを構築する。</li>
 <li>(9) : 文字<code>c</code>の<code>n</code>回繰り返した文字列からなる<code>basic_string</code>オブジェクトを構築する。</li>
-<li>(10) : 文字列の範囲<code>[begin, end)</code>から<code>basic_string</code>オブジェクトを構築する。</li>
+<li>(10) : 文字列の<a class="cpprefjp-defined-word" data-desc="2つのイテレータで表現される半開区間を表す。C++20からイテレータと番兵で異なる型であっても指定可能になる">イテレータ範囲</a><code>[begin, end)</code>から<code>basic_string</code>オブジェクトを構築する。</li>
 <li>(11) : 文字の初期化子リストから<code>basic_string</code>オブジェクトを構築する。</li>
 <li>(12) : アロケータを受け取るコピーコンストラクタ。</li>
 <li>(13) : アロケータを受け取るムーブコンストラクタ。</li>
 <li>(14) : <code><a href="../../string_view/basic_string_view.html">std::basic_string_view</a></code>オブジェクトからの変換コンストラクタ。<code><a href="../../string_view/basic_string_view.html">basic_string_view</a>&lt;charT, traits&gt;</code>に変換可能な<code>t</code>が参照する範囲の文字列を<code>*this</code>にコピーする。</li>
 <li>(15) : <code><a href="../../string_view/basic_string_view.html">basic_string_view</a>&lt;charT, traits&gt;</code>に変換可能な<code>t</code>が参照する範囲の文字列の<code>pos</code>番目から<code>n</code>文字の部分文字列がコピーされる。<code>n == npos</code>の場合、<code>pos</code>番目から末尾までの部分文字列がコピーされる。</li>
+<li>(17) : <code>str</code>オブジェクトの部分文字列のコピーから<code>basic_string</code>オブジェクトを構築する。<code>str</code>オブジェクトの<code>pos</code>番目から<code>n</code>文字の部分文字列がコピーされる。<code>n == npos</code>の場合、<code>pos</code>番目から末尾までの部分文字列がコピーされる。<code>str</code>は<a class="cpprefjp-defined-word" data-desc="未規定の動作。事前の断りなく処理系によって異なる動作をする" href="../../../implementation-compliance.html#dfn-unspecified-behavior">未規定</a>の値になる。</li>
+<li>(18) : <code>str</code>オブジェクトの部分文字列のコピーから<code>basic_string</code>オブジェクトを構築する。<code>str</code>オブジェクトの<code>pos</code>番目から末尾までの部分文字列がコピーされる。<code>str</code>は<a class="cpprefjp-defined-word" data-desc="未規定の動作。事前の断りなく処理系によって異なる動作をする" href="../../../implementation-compliance.html#dfn-unspecified-behavior">未規定</a>の値になる。</li>
 </ul>
-<h2>テンプレートパラメータ制約</h2>
+<h2><a class="cpprefjp-defined-word" data-desc="関数であればオーバーロード解決に参加するための条件、それ以外であれば受け付ける型の条件">テンプレートパラメータ制約</a></h2>
 <ul>
 <li>(14) : 以下の両方を満たしていること<ul>
 <li><code><a href="../../type_traits/is_convertible.html">is_convertible_v</a>&lt;const T&amp;,<a href="../../string_view/basic_string_view.html">basic_string_view</a>&lt;charT, traits&gt;&gt; == true</code></li>
@@ -304,7 +374,7 @@
 </ul>
 <h2>例外</h2>
 <ul>
-<li>(5), (6) : <code>pos &gt; str.<a href="size.html">size()</a></code>の場合、<code><a href="../../stdexcept.html">out_of_range</a></code>例外を送出する。</li>
+<li>(5), (6), (17), (18) : <code>pos &gt; str.<a href="size.html">size()</a></code>の場合、<code><a href="../../stdexcept.html">out_of_range</a></code>例外を送出する。</li>
 <li>(13) : <code>alloc == str.<a href="get_allocator.html">get_allocator()</a></code>の場合、例外を投げない。</li>
 </ul>
 <h2>備考</h2>
@@ -362,7 +432,7 @@
   <span class="n"><a href="../basic_string.html">std::string</a></span> <span class="n">s9</span> <span class="o">=</span> <span class="p">{</span><span class="sc">'h'</span><span class="p">,</span> <span class="sc">'e'</span><span class="p">,</span> <span class="sc">'l'</span><span class="p">,</span> <span class="sc">'l'</span><span class="p">,</span> <span class="sc">'o'</span><span class="p">};</span>
   <span class="n"><a href="../../iostream/cout.html">std::cout</a></span> <span class="o">&lt;&lt;</span> <span class="s">"s9 : "</span> <span class="o">&lt;&lt;</span> <span class="n">s9</span> <span class="o">&lt;&lt;</span> <span class="n"><a href="../../ostream/endl.html">std::endl</a></span><span class="p">;</span>
 
-  <span class="c1">// string_viewからの変換</span>
+  <span class="c1">// <a href="../../string_view/basic_string_view.html">string_view</a>からの変換</span>
   <span class="k">auto</span> <span class="n">sv</span> <span class="o">=</span> <span class="n"><a href="../../string_view/basic_string_view.html">std::string_view</a></span><span class="p">{</span><span class="s">"Hello World"</span><span class="p">}.</span><span class="n">substr</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
   <span class="n"><a href="../basic_string.html">std::string</a></span> <span class="n">s14</span> <span class="p">{</span><span class="n">sv</span><span class="p">};</span>
   <span class="n"><a href="../../iostream/cout.html">std::cout</a></span> <span class="o">&lt;&lt;</span> <span class="s">"s14 : "</span> <span class="o">&lt;&lt;</span> <span class="n">s14</span> <span class="o">&lt;&lt;</span> <span class="n"><a href="../../ostream/endl.html">std::endl</a></span><span class="p">;</span>
@@ -407,8 +477,13 @@ s14 : Hello
 <li>意図しない暗黙変換防止のために<code>string_view</code>を受けるオーバーロード(14)の引数型を<code>const T&amp;</code>に変更</li>
 </ul>
 </li>
+<li><a href="https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p0980r1.pdf" target="_blank">P0980R1 Making <code>std::string</code> constexpr</a></li>
 <li><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p2166r1.html" target="_blank">P2166R1 A Proposal to Prohibit std::basic_string and std::basic_string_view construction from nullptr.</a><ul>
-<li>C++23での、<code>nullptr_t</code>をとるコンストラクタのdelete宣言追加</li>
+<li>C++23での(16)<code>nullptr_t</code>をとるコンストラクタのdelete宣言追加</li>
+</ul>
+</li>
+<li><a href="https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2022/p2438r2.html" target="_blank">P2438R2 <code>std::string::substr() &amp;&amp;</code></a><ul>
+<li>C++23での(17),(18)<code>basic_string&amp;&amp;</code>と範囲指定をとるコンストラクタ追加</li>
 </ul>
 </li>
 </ul></div>

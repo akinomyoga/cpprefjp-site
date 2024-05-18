@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="cpprefjp" lang="ja" itemscope="" itemtype="http://schema.org/WebPage">
     <head>
+        
+  
+
         <meta charset="UTF-8">
 
         <title>cyl_bessel_j - cpprefjp C++日本語リファレンス</title>
@@ -15,24 +18,23 @@
         <meta property="og:url" content="https://cpprefjp.github.io/reference/cmath/cyl_bessel_j.html" />
         <meta property="og:site_name" content="cpprefjp - C++日本語リファレンス" />
         <meta property="og:type" content="article" />
-        <meta property="og:description" content="第一種ベッセル関数 (Bessel functions of the first kind) を求める。" />
+        <meta property="og:description" content="第1種ベッセル関数 (Bessel functions of the first kind) を求める。" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="cyl_bessel_j - cpprefjp C++日本語リファレンス" />
         <meta name="twitter:url" content="https://cpprefjp.github.io/reference/cmath/cyl_bessel_j.html" />
-        <meta name="twitter:description" content="第一種ベッセル関数 (Bessel functions of the first kind) を求める。" />
+        <meta name="twitter:description" content="第1種ベッセル関数 (Bessel functions of the first kind) を求める。" />
 
         
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="manifest" href="../../manifest.json?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="mask-icon" href="../../static/favicons/safari-pinned-tab.svg?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="manifest" href="../../manifest.json?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
@@ -54,13 +56,13 @@
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -68,9 +70,6 @@
     kn.cpprefjp();
   });
 </script>
-
-    
-  
 
     </head>
     <body>
@@ -97,6 +96,20 @@
             <div class="google-search">
               
   
+<script>
+  (function() {
+    var cx = '013316413321391058734:ji_u66hl7hq';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div class="gcse-search"></div>
+
 
             </div>
           </li>
@@ -180,12 +193,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2018-01-22T15:55:28">
-        2018年01月22日 15時55分28秒
+      <span itemprop="datePublished" content="2024-04-17T07:14:53">
+        2024年04月17日 07時14分53秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">E Kawashima</span>
+        <span itemprop="name">Koichi Murase</span>
       </span>
       が更新
     </small></p>
@@ -206,23 +219,51 @@
         
   <div class="identifier-type">function</div><div class="header">&lt;cmath&gt;</div><h1 itemprop="name"><span class="namespace" title="namespace std">std::</span><span class="token">cyl_bessel_j</span><span class="cpp cpp17" title="C++17で追加">(C++17)</span></h1>
 <div itemprop="articleBody"><p><div class="codehilite"><pre><span></span><code><span class="k">namespace</span> <span class="n">std</span> <span class="p">{</span>
-<span class="kt">float</span> <span class="n">cyl_bessel_jf</span><span class="p">(</span><span class="kt">float</span> <span class="n">nu</span><span class="p">,</span> <span class="kt">float</span> <span class="n">x</span><span class="p">);</span>
-<span class="kt">double</span> <span class="nf">cyl_bessel_j</span><span class="p">(</span><span class="kt">double</span> <span class="n">nu</span><span class="p">,</span> <span class="kt">double</span> <span class="n">x</span><span class="p">);</span>
-<span class="kt">long</span> <span class="kt">double</span> <span class="nf">cyl_bessel_jl</span><span class="p">(</span><span class="kt">long</span> <span class="kt">double</span> <span class="n">nu</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">double</span> <span class="n">x</span><span class="p">);</span>
+  <span class="kt">double</span>
+    <span class="n">cyl_bessel_j</span><span class="p">(</span><span class="kt">double</span> <span class="n">nu</span><span class="p">,</span>
+                 <span class="kt">double</span> <span class="n">x</span><span class="p">);</span>              <span class="c1">// (1) C++17</span>
+  <span class="n"><i>floating-point-type</i></span>
+    <span class="nf">cyl_bessel_j</span><span class="p">(</span><span class="n"><i>floating-point-type</i></span> <span class="n">nu</span><span class="p">,</span>
+                 <span class="n"><i>floating-point-type</i></span> <span class="n">x</span><span class="p">);</span> <span class="c1">// (1) C++23</span>
+
+  <span class="n"><i>Promoted</i></span>
+    <span class="nf">cyl_bessel_j</span><span class="p">(</span><span class="n"><i>Arithmetic1</i></span> <span class="n">nu</span><span class="p">,</span>
+                 <span class="n"><i>Arithmetic2</i></span> <span class="n">x</span><span class="p">);</span>         <span class="c1">// (2) C++17</span>
+
+  <span class="kt">float</span>
+    <span class="nf">cyl_bessel_jf</span><span class="p">(</span><span class="kt">float</span> <span class="n">nu</span><span class="p">,</span>
+                  <span class="kt">float</span> <span class="n">x</span><span class="p">);</span>              <span class="c1">// (3) C++17</span>
+
+  <span class="kt">long</span> <span class="kt">double</span>
+    <span class="nf">cyl_bessel_jl</span><span class="p">(</span><span class="kt">long</span> <span class="kt">double</span> <span class="n">nu</span><span class="p">,</span>
+                  <span class="kt">long</span> <span class="kt">double</span> <span class="n">x</span><span class="p">);</span>        <span class="c1">// (4) C++17</span>
 <span class="p">}</span>
 </code></pre></div>
 </p>
 <h2>概要</h2>
-<p>第一種ベッセル関数 (Bessel functions of the first kind) を求める。</p>
+<p>第1種ベッセル関数 (Bessel functions of the first kind) を求める。</p>
+<ul>
+<li>(1) :<ul>
+<li>C++17 : <code>double</code>に対するオーバーロード</li>
+<li>C++23 : 浮動小数点数型に対するオーバーロード</li>
+</ul>
+</li>
+<li>(2) : 算術型に対するオーバーロード (対応する大きい方の精度の浮動小数点数型にキャストして計算される)</li>
+<li>(3) : <code>float</code>型規定</li>
+<li>(4) : <code>long double</code>型規定</li>
+</ul>
 <h2>戻り値</h2>
-<p>引数 <code>nu</code>, <code>x</code> の第一種ベッセル関数
+<p>引数 <code>nu</code>, <code>x</code> の第1種ベッセル関数
 $$
 J_\nu(x) = \sum_{k=0}^\infty \frac{(-1)^k}{k! \Gamma(\nu + k + 1)} \left( \frac{x}{2} \right)^{\nu + 2k}
 \quad \text{for } x \ge 0
 $$
 を返す。</p>
 <h2>備考</h2>
-<p><code>nu &gt;= 128</code> の場合、この関数の呼び出しの効果は<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">実装定義</a>である。</p>
+<ul>
+<li><code>nu &gt;= 128</code> の場合、この関数の呼び出しの効果は<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">実装定義</a>である</li>
+<li>(1) : C++23では、<a class="cpprefjp-defined-word" data-desc="&lt;stdfloat&gt;で定義される内部表現の規定された浮動小数点数型" href="../stdfloat.html">拡張浮動小数点数型</a>を含む浮動小数点数型へのオーバーロードとして定義された</li>
+</ul>
 <h2>例</h2>
 <p><div class="yata" id="7afc6d24fe76f8526356486eab4c3c255019a822"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf"><a href="../cmath.html">&lt;cmath&gt;</a></span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf"><a href="../iostream.html">&lt;iostream&gt;</a></span><span class="cp"></span>
@@ -273,16 +314,20 @@ cyl_bessel_j(1, 0.666667 pi) = 0.568869
 <p>GCC 7.1.0–8.0.0 では <code>nu &lt; 0</code> のときに <code><a href="../stdexcept.html">std::domain_error</a></code> を送出する</p>
 <h2>関連項目</h2>
 <ul>
-<li>第一種変形ベッセル関数 <code><a href="cyl_bessel_i.html">cyl_bessel_i</a></code></li>
-<li>第二種変形ベッセル関数 <code><a href="cyl_bessel_k.html">cyl_bessel_k</a></code></li>
-<li>第二種ベッセル関数 <code><a href="cyl_neumann.html">cyl_neumann</a></code></li>
-<li>第一種球ベッセル関数 <code><a href="sph_bessel.html">sph_bessel</a></code></li>
+<li>第2種ベッセル関数 <code><a href="cyl_neumann.html">cyl_neumann</a></code></li>
+<li>第1種変形ベッセル関数 <code><a href="cyl_bessel_i.html">cyl_bessel_i</a></code></li>
+<li>第2種変形ベッセル関数 <code><a href="cyl_bessel_k.html">cyl_bessel_k</a></code></li>
+<li>第1種球ベッセル関数 <code><a href="sph_bessel.html">sph_bessel</a></code></li>
 </ul>
 <h2>参照</h2>
 <ul>
 <li><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2010/n3060.pdf" target="_blank">N3060 JTC1.22.29124 Programming Language C++ — Special Math Functions</a></li>
 <li><a href="https://isocpp.org/files/papers/P0226R1.pdf" target="_blank">WG21 P0226R1 Mathematical Special Functions for C++17, v5</a></li>
 <li><a href="https://www.iso.org/standard/50511.html" target="_blank">ISO/IEC 29124:2010 Information technology -- Programming languages, their environments and system software interfaces -- Extensions to the C++ Library to support mathematical special functions</a></li>
+<li><a href="https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2022/p1467r9.html" target="_blank">P1467R9 Extended floating-point types and standard names</a><ul>
+<li>C++23で導入された<a class="cpprefjp-defined-word" data-desc="&lt;stdfloat&gt;で定義される内部表現の規定された浮動小数点数型" href="../stdfloat.html">拡張浮動小数点数型</a>への対応として、<code>float</code>、<code>double</code>、<code>long double</code>のオーバーロードを<code>floating-point-type</code>のオーバーロードに統合し、<a class="cpprefjp-defined-word" data-desc="&lt;stdfloat&gt;で定義される内部表現の規定された浮動小数点数型" href="../stdfloat.html">拡張浮動小数点数型</a>も扱えるようにした</li>
+</ul>
+</li>
 </ul></div>
 
       </div>

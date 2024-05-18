@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="cpprefjp" lang="ja" itemscope="" itemtype="http://schema.org/WebPage">
     <head>
+        
+  
+
         <meta charset="UTF-8">
 
         <title>operator&lt;&lt; - cpprefjp C++日本語リファレンス</title>
@@ -25,27 +28,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicons/apple-touch-icon.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicons/favicon-32x32.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicons/favicon-16x16.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="manifest" href="../../../manifest.json?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="mask-icon" href="../../../static/favicons/safari-pinned-tab.svg?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicons/apple-touch-icon.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicons/favicon-32x32.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicons/favicon-16x16.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="manifest" href="../../../manifest.json?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../../static/pygments/default.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
+<link rel="stylesheet" href="../../../static/pygments/default.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <!-- <link rel="stylesheet" href="../../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../../static/kunai/css/kunai-stage-0.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-1.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-2.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-3.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-0.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-1.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-2.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-3.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
 
-<script type="text/javascript" src="../../../static/kunai/js/kunai-vendor.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
-<script type="text/javascript" src="../../../static/kunai/js/kunai.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
+<script type="text/javascript" src="../../../static/kunai/js/kunai-vendor.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
+<script type="text/javascript" src="../../../static/kunai/js/kunai.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -53,9 +55,6 @@
     kn.cpprefjp();
   });
 </script>
-
-    
-  
 
     </head>
     <body>
@@ -82,6 +81,20 @@
             <div class="google-search">
               
   
+<script>
+  (function() {
+    var cx = '013316413321391058734:ji_u66hl7hq';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div class="gcse-search"></div>
+
 
             </div>
           </li>
@@ -177,12 +190,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2020-11-20T08:47:44">
-        2020年11月20日 08時47分44秒
+      <span itemprop="datePublished" content="2023-07-04T16:35:47">
+        2023年07月04日 16時35分47秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">Akira Takahashi</span>
+        <span itemprop="name">Shunsuke Shimizu</span>
       </span>
       が更新
     </small></p>
@@ -212,19 +225,19 @@
 </p>
 <h2>概要</h2>
 <p><code>duration</code>オブジェクトを出力ストリームに出力する。</p>
-<h2>適格要件</h2>
+<h2><a class="cpprefjp-defined-word" data-desc="満たさなければプログラムが不適格となる要件。`static_assert`や関数のdelete宣言などに相当する">適格要件</a></h2>
 <ul>
 <li><code>Rep</code>は、整数変換ランクが<code>short</code>以上の整数型か、浮動小数点数型であること</li>
 <li><code>charT</code>は<code>char</code>か<code>wchar_t</code>であること</li>
 </ul>
 <h2>効果</h2>
 <p>以下のように実装し、<code>duration</code>オブジェクト<code>d</code>を出力ストリーム<code>os</code>に出力する：</p>
-<p><div class="codehilite"><pre><span></span><code><span class="n"><span href="https://cpprefjp.github.io/reference/sstream/basic_ostringstream.md.nolink">basic_ostringstream</span></span><span class="o">&lt;</span><span class="n">charT</span><span class="p">,</span> <span class="n">traits</span><span class="o">&gt;</span> <span class="n">s</span><span class="p">;</span>
+<p><div class="codehilite"><pre><span></span><code><span class="n"><a href="../../sstream/basic_ostringstream.html">basic_ostringstream</a></span><span class="o">&lt;</span><span class="n">charT</span><span class="p">,</span> <span class="n">traits</span><span class="o">&gt;</span> <span class="n">s</span><span class="p">;</span>
 <span class="n">s</span><span class="p">.</span><span class="n"><a href="../../ios/ios_base/flags.html">flags</a></span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n"><a href="../../ios/ios_base/flags.html">flags</a></span><span class="p">());</span>
 <span class="n"><a href="../../ios/ios_base/imbue.html">s.imbue</a></span><span class="p">(</span><span class="n"><a href="../../ios/ios_base/getloc.html">os.getloc()</a></span><span class="p">);</span>
 <span class="n">s</span><span class="p">.</span><span class="n"><a href="../../ios/ios_base/precision.html">precision</a></span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n"><a href="../../ios/ios_base/precision.html">precision</a></span><span class="p">());</span>
 <span class="n">s</span> <span class="o">&lt;&lt;</span> <span class="n">d</span><span class="p">.</span><span class="n">count</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">units_suffix</span><span class="p">;</span>
-<span class="k">return</span> <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="n"><span href="https://cpprefjp.github.io/reference/sstream/basic_ostringstream/str.md.nolink">s.str()</span></span><span class="p">;</span>
+<span class="k">return</span> <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="n"><a href="../../sstream/basic_ostringstream/str.html">s.str()</a></span><span class="p">;</span>
 </code></pre></div>
 </p>
 <p>ここでの<code>units_suffix</code>は、<code>Period::type</code>単位型に以下のように対応する：</p>
@@ -341,7 +354,7 @@
   <span class="n"><a href="../../iostream/cout.html">std::cout</a></span> <span class="o">&lt;&lt;</span> <span class="s">"<a href="../duration_aliases.html">minutes</a> : "</span> <span class="o">&lt;&lt;</span> <span class="n"><a href="../duration_aliases.html">chrono::minutes</a></span><span class="p">{</span><span class="mi">3</span><span class="p">}</span> <span class="o">&lt;&lt;</span> <span class="n"><a href="../../ostream/endl.html">std::endl</a></span><span class="p">;</span>
   <span class="n"><a href="../../iostream/cout.html">std::cout</a></span> <span class="o">&lt;&lt;</span> <span class="s">"<a href="../duration_aliases.html">hours</a> : "</span> <span class="o">&lt;&lt;</span> <span class="n"><a href="../duration_aliases.html">chrono::hours</a></span><span class="p">{</span><span class="mi">3</span><span class="p">}</span> <span class="o">&lt;&lt;</span> <span class="n"><a href="../../ostream/endl.html">std::endl</a></span><span class="p">;</span>
   <span class="n"><a href="../../iostream/cout.html">std::cout</a></span> <span class="o">&lt;&lt;</span> <span class="s">"<a href="../duration_aliases.html">days</a> : "</span> <span class="o">&lt;&lt;</span> <span class="n"><a href="../duration_aliases.html">chrono::days</a></span><span class="p">{</span><span class="mi">3</span><span class="p">}</span> <span class="o">&lt;&lt;</span> <span class="n"><a href="../../ostream/endl.html">std::endl</a></span><span class="p">;</span>
-  <span class="n"><a href="../../iostream/cout.html">std::cout</a></span> <span class="o">&lt;&lt;</span> <span class="s">"weeks : "</span> <span class="o">&lt;&lt;</span> <span class="n"><a href="../duration_aliases.html">chrono::weeks</a></span><span class="p">{</span><span class="mi">3</span><span class="p">}</span> <span class="o">&lt;&lt;</span> <span class="n"><a href="../../ostream/endl.html">std::endl</a></span><span class="p">;</span>
+  <span class="n"><a href="../../iostream/cout.html">std::cout</a></span> <span class="o">&lt;&lt;</span> <span class="s">"<a href="../duration_aliases.html">weeks</a> : "</span> <span class="o">&lt;&lt;</span> <span class="n"><a href="../duration_aliases.html">chrono::weeks</a></span><span class="p">{</span><span class="mi">3</span><span class="p">}</span> <span class="o">&lt;&lt;</span> <span class="n"><a href="../../ostream/endl.html">std::endl</a></span><span class="p">;</span>
   <span class="n"><a href="../../iostream/cout.html">std::cout</a></span> <span class="o">&lt;&lt;</span> <span class="s">"1/3 <a href="../duration_aliases.html">seconds</a> : "</span> <span class="o">&lt;&lt;</span> <span class="n"><a href="../duration.html">chrono::duration</a></span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n"><a href="../../ratio/ratio.html">std::ratio</a></span><span class="o">&lt;</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="o">&gt;&gt;</span><span class="p">{</span><span class="mi">3</span><span class="p">}</span> <span class="o">&lt;&lt;</span> <span class="n"><a href="../../ostream/endl.html">std::endl</a></span><span class="p">;</span>
 
   <span class="k">using</span> <span class="n">float_seconds</span> <span class="o">=</span> <span class="n"><a href="../duration.html">chrono::duration</a></span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="n"><a href="../../ratio/ratio.html">std::ratio</a></span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;&gt;</span><span class="p">;</span>
@@ -356,7 +369,7 @@ milli sec : 3ms
 <a href="../duration_aliases.html">minutes</a> : 3min
 <a href="../duration_aliases.html">hours</a> : 3h
 <a href="../duration_aliases.html">days</a> : 3d
-weeks : 3[604800]s
+<a href="../duration_aliases.html">weeks</a> : 3[604800]s
 1/3 <a href="../duration_aliases.html">seconds</a> : 3[1/3]s
 float sec : 1.23s
 </code></pre></p>

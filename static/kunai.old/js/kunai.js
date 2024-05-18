@@ -16,7 +16,7 @@ importAll(__webpack_require__(2364));
 
 /***/ }),
 
-/***/ 5749:
+/***/ 6554:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -141,6 +141,7 @@ var sanitize = function sanitize(badges) {
 
       var deprecated_or_removed = false;
       var cppv = null;
+      var named_version = null;
 
       var _iterator3 = _createForOfIteratorHelper(b_classes),
           _step3;
@@ -148,6 +149,14 @@ var sanitize = function sanitize(badges) {
       try {
         for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
           var c = _step3.value;
+
+          if (/^(?:future|archive)$/.test(c)) {
+            named_version = c;
+            b.attr('data-named-version', c);
+            classes.push('named-version-spec');
+            continue;
+          }
+
           var cppm = c.match(/^cpp(\d[\da-zA-Z])(.*)$/);
           if (!cppm) continue;
           b.attr('data-cpp-version', cppm[1]);
@@ -175,7 +184,7 @@ var sanitize = function sanitize(badges) {
       }
 
       b.addClass(classes.join(' '));
-      var lang_path = cppv ? "/lang/cpp".concat(cppv) : "/lang";
+      var lang_path = cppv ? "/lang/cpp".concat(cppv) : named_version ? "/lang/".concat(named_version) : "/lang";
       var a_elem = badge_$('<a>', {
         href: "".concat(lang_path, ".html")
       }).append(badge_$('<i>')) // .append($('<span>').text(clean_txt))
@@ -192,11 +201,128 @@ var sanitize = function sanitize(badges) {
 };
 
 
+;// CONCATENATED MODULE: ./kunai/ui/tooltip.js
+
+
+
+
+var Tooltip = /*#__PURE__*/function () {
+  /**
+   * ツールチップを構築します。
+   * @param {Document} [_document] - 表示対象のドキュメント
+   * @param {object} [config] - 設定
+   */
+  function Tooltip(_document, config) {
+    (0,classCallCheck/* default */.Z)(this, Tooltip);
+
+    this.document = _document || document;
+    this.view = this.document.defaultView || window;
+    this.config = {
+      horizontalMargin: 8,
+      // (設定) ツールチップ配置時のビューポート横余白
+      verticalMargin: 8,
+      // (設定) ツールチップ配置時のビューポート縦余白
+      verticalOffset: 2,
+      // (設定) ツールチップと対象要素の縦の距離
+      tooltipId: 'kunai-ui-tooltip',
+      tooltipClassRevealed: 'kunai-ui-tooltip-revealed'
+    };
+    if (config) (0,esm_extends/* default */.Z)(this.config, config);
+    this.span = document.createElement('span');
+    this.span.id = this.config.tooltipId;
+    this.document.body.appendChild(this.span);
+  }
+
+  (0,createClass/* default */.Z)(Tooltip, [{
+    key: "_place",
+    value: function _place(x, y) {
+      // 物理ピクセル位置にぴったり合わせる
+      var pixelRatio = this.view.devicePixelRatio;
+      x = Math.round(x * pixelRatio) / pixelRatio;
+      y = Math.round(y * pixelRatio) / pixelRatio;
+      this.span.style.left = "".concat(x, "px");
+      this.span.style.top = "".concat(y, "px");
+      this.span.classList.add(this.config.tooltipClassRevealed);
+    }
+    /**
+     * マウス位置および対象領域を元にして、ツールチップを適切な位置に表示します。
+     * @param {string} desc - 表示する文字列
+     * @param {number} mouseX - ビューポート内のマウス位置X 
+     * @param {number} mouseY - ビューポート内のマウス位置Y
+     * @param {DOMRect} rect - 表示対象オブジェクトの領域
+     *
+     */
+
+  }, {
+    key: "show",
+    value: function show(desc, mouseX, mouseY, rect) {
+      // 幾何情報の取得
+      this.span.dataset.desc = desc;
+      var tw = this.span.offsetWidth; // ツールチップの表示幅
+
+      var th = this.span.offsetHeight; // ツールチップの表示高さ
+
+      var vw = this.document.documentElement.clientWidth; // スクロールバーを除くビューポートの幅
+
+      var vh = this.document.documentElement.clientHeight; // スクロールバーを除くビューポートの高さ
+      // 位置の決定
+
+      var x = Math.max(this.config.horizontalMargin, Math.min(vw - tw - this.config.horizontalMargin, mouseX));
+      var y = rect.top - this.config.verticalOffset - th;
+
+      if (y < this.config.verticalMargin) {
+        y = rect.bottom + this.config.verticalOffset;
+        if (y + th > vh - this.config.verticalMargin) y = mouseY + this.config.verticalOffset;
+      }
+
+      this._place(x, y);
+    }
+    /**
+     * ツールチップを隠します。
+     */
+
+  }, {
+    key: "hide",
+    value: function hide() {
+      this.span.classList.remove(this.config.tooltipClassRevealed);
+    }
+  }]);
+
+  return Tooltip;
+}();
+
+
 ;// CONCATENATED MODULE: ./kunai/ui/content.js
 /* provided dependency */ var content_$ = __webpack_require__(5638);
 
 
 
+function content_createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = content_unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
+
+function content_unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return content_arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return content_arrayLikeToArray(o, minLen); }
+
+function content_arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+
+
+
+var _hitElementRects = function _hitElementRects(elem, x, y) {
+  var _iterator = content_createForOfIteratorHelper(elem.getClientRects()),
+      _step;
+
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var rect = _step.value;
+      if (rect.left <= x && x <= rect.right && rect.top <= y && y <= rect.bottom) return rect;
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+
+  return null;
+};
 
 var Content = /*#__PURE__*/function () {
   function Content(log) {
@@ -204,80 +330,39 @@ var Content = /*#__PURE__*/function () {
 
     this.log = log.makeContext('Content');
     this.log.debug('initializing...');
-    this.log.debug("found ".concat(sanitize(content_$('main[role="main"] div[itemtype="http://schema.org/Article"] .content-body span.cpp')), " badges"));
+    this.log.debug("found ".concat(sanitize(content_$('main[role="main"] div[itemtype="http://schema.org/Article"] .content-body span.cpp')), " badges")); // 横幅を超える画像を横スクロール可能にするためにスクロール用のdivで囲む
+
+    content_$('div[itemprop="articleBody"]').find('img').wrap('<div class="scrollable">');
     this.setupTooltip();
   }
 
   (0,createClass/* default */.Z)(Content, [{
     key: "setupTooltip",
     value: function setupTooltip() {
-      var HORIZONTAL_MARGIN = 8; // (設定) ツールチップ配置時のビューポート横余白
-
-      var VERTICAL_MARGIN = 8; // (設定) ツールチップ配置時のビューポート縦余白
-
-      var VERTICAL_OFFSET = 2; // (設定) ツールチップと対象要素の縦の距離
-
-      var TOOLTIP_ID = 'cpprefjp-dfn-tooltip';
-      var TOOLTIP_CLASS_REVEALED = 'cpprefjp-dfn-tooltip-revealed';
-      var span = document.createElement('span');
-      span.id = TOOLTIP_ID;
-      document.body.appendChild(span);
+      var tooltip = new Tooltip(document);
       var target = null;
-
-      var showTooltipAt = function showTooltipAt(x, y, targetElement) {
-        target = targetElement; // 物理ピクセル位置にぴったり合わせる
-
-        x = Math.round(x * window.devicePixelRatio) / window.devicePixelRatio;
-        y = Math.round(y * window.devicePixelRatio) / window.devicePixelRatio;
-        span.style.left = "".concat(x, "px");
-        span.style.top = "".concat(y, "px");
-        span.classList.add(TOOLTIP_CLASS_REVEALED);
-      };
-
-      var hideTooltip = function hideTooltip() {
-        target = null;
-        span.classList.remove(TOOLTIP_CLASS_REVEALED);
-      };
-
       content_$('a[data-desc]').on({
         mouseover: function mouseover(e) {
-          // 幾何情報の取得
-          span.textContent = this.dataset.desc;
-          var rect = this.getBoundingClientRect(); // ツールチップ表示対象要素の矩形
+          var rect = _hitElementRects(this, e.clientX, e.clientY);
 
-          var vw = document.documentElement.clientWidth; // スクロールバーを除くビューポートの幅
-
-          var vh = document.documentElement.clientHeight; // スクロールバーを除くビューポートの高さ
-
-          var mx = e.clientX; // ビューポート内のマウス位置X
-
-          var my = e.clientY; // ビューポート内のマウス位置Y
-
-          var tw = span.offsetWidth; // ツールチップの表示幅
-
-          var th = span.offsetHeight; // ツールチップの表示高さ
-          // 位置の決定
-
-          var x = Math.max(HORIZONTAL_MARGIN, Math.min(vw - tw - HORIZONTAL_MARGIN, mx));
-          var y = rect.top - VERTICAL_OFFSET - th;
-
-          if (y < VERTICAL_MARGIN) {
-            y = rect.bottom + VERTICAL_OFFSET;
-            if (y + th > vh - VERTICAL_MARGIN) y = my + VERTICAL_OFFSET;
+          if (rect) {
+            target = this;
+            tooltip.show(this.dataset.desc, e.clientX, e.clientY, rect);
           }
-
-          showTooltipAt(x, y, this);
         },
         mouseout: function mouseout() {
-          if (this === target) hideTooltip();
+          if (this === target) {
+            target = null;
+            tooltip.hide();
+          }
         }
       });
 
       var checkScroll = function checkScroll(e) {
-        if (target === null) return;
-        var rect = target.getBoundingClientRect();
-        var hitResult = rect.left <= e.clientX && e.clientX <= rect.right && rect.top <= e.clientY && e.clientY <= rect.bottom;
-        if (!hitResult) hideTooltip();
+        if (target !== null && !_hitElementRects(target, e.clientX, e.clientY)) {
+          target = null;
+          tooltip.hide();
+        }
       };
 
       window.addEventListener('scroll', checkScroll, true);
@@ -289,12 +374,15 @@ var Content = /*#__PURE__*/function () {
 }();
 
 
+// EXTERNAL MODULE: ../node_modules/@babel/runtime/helpers/esm/toConsumableArray.js + 3 modules
+var toConsumableArray = __webpack_require__(126);
 // EXTERNAL MODULE: ../node_modules/@babel/runtime/helpers/esm/slicedToArray.js + 3 modules
 var slicedToArray = __webpack_require__(5809);
 // EXTERNAL MODULE: ../node_modules/crsearch/js/crsearch.js + 9 modules
 var crsearch = __webpack_require__(5704);
 ;// CONCATENATED MODULE: ./kunai/ui/treeview.js
 /* provided dependency */ var treeview_$ = __webpack_require__(5638);
+
 
 
 
@@ -335,7 +423,7 @@ var DOM = /*#__PURE__*/function () {
               case 0:
                 this.log.info("createContent '".concat(obj.self.id, "'"), obj);
                 _context.t0 = obj.self.id.type;
-                _context.next = _context.t0 === crsearch/* IndexType.header */.PX.header ? 4 : _context.t0 === crsearch/* IndexType.category */.PX.category ? 4 : 7;
+                _context.next = _context.t0 === crsearch/* IndexType.header */.PX.header ? 4 : _context.t0 === crsearch/* IndexType.category */.PX.category ? 4 : _context.t0 === crsearch/* IndexType.module */.PX.module ? 4 : 7;
                 break;
 
               case 4:
@@ -1159,7 +1247,9 @@ var Treeview = /*#__PURE__*/function () {
     key: "onPageID",
     value: function () {
       var _onPageID = (0,asyncToGenerator/* default */.Z)( /*#__PURE__*/regenerator_default().mark(function _callee23(ids) {
-        var h;
+        var _this5 = this;
+
+        var h, selector, article;
         return regenerator_default().wrap(function _callee23$(_context23) {
           while (1) {
             switch (_context23.prev = _context23.next) {
@@ -1212,31 +1302,39 @@ var Treeview = /*#__PURE__*/function () {
 
               case 20:
                 if (!(ids.length > 1)) {
-                  _context23.next = 24;
+                  _context23.next = 25;
                   break;
                 }
 
-                // highlight self
+                if (this.page_idx.id.type === 'article' && this.page_idx.id.indexes.length > 1) {
+                  selector = "[data-lang-id=\"C++".concat(this.page_idx.cpp_version, "\"] li.article");
+                  article = (0,toConsumableArray/* default */.Z)(treeview_$(selector)).find(function (li) {
+                    return li.innerText === _this5.page_idx.name;
+                  });
+                  this.dom.indexElems.set(this.page_idx.id, treeview_$(article));
+                } // highlight self
+
+
                 this.dom.indexElems.get(this.page_idx.id).addClass('current-page'); // finally, always scroll to self
 
-                _context23.next = 24;
+                _context23.next = 25;
                 return this.dom.scrollAt(this.page_idx.id);
 
-              case 24:
-                _context23.next = 29;
+              case 25:
+                _context23.next = 30;
                 break;
 
-              case 26:
-                _context23.prev = 26;
+              case 27:
+                _context23.prev = 27;
                 _context23.t0 = _context23["catch"](0);
                 this.log.error("Failed to determine current page for id '".concat(ids.join('/'), "'. Sidebar will NOT work properly! (").concat(_context23.t0, ")"), ids);
 
-              case 29:
+              case 30:
               case "end":
                 return _context23.stop();
             }
           }
-        }, _callee23, this, [[0, 26]]);
+        }, _callee23, this, [[0, 27]]);
       }));
 
       function onPageID(_x23) {
@@ -1301,7 +1399,7 @@ var Treeview = /*#__PURE__*/function () {
     key: "onDataImpl",
     value: function () {
       var _onDataImpl = (0,asyncToGenerator/* default */.Z)( /*#__PURE__*/regenerator_default().mark(function _callee27() {
-        var _this5 = this;
+        var _this6 = this;
 
         var root, cats;
         return regenerator_default().wrap(function _callee27$(_context27) {
@@ -1330,7 +1428,7 @@ var Treeview = /*#__PURE__*/function () {
                               'data-top-id': topID
                             });
 
-                            _this5.dom.topElems.set(topID, stack);
+                            _this6.dom.topElems.set(topID, stack);
 
                             _context26.t0 = stack;
                             _context26.t1 = treeview_$('<div>', {
@@ -1342,7 +1440,7 @@ var Treeview = /*#__PURE__*/function () {
                                 while (1) {
                                   switch (_context25.prev = _context25.next) {
                                     case 0:
-                                      _this5.dom.doStackExpand(topID);
+                                      _this6.dom.doStackExpand(topID);
 
                                     case 1:
                                     case "end":
@@ -1352,7 +1450,7 @@ var Treeview = /*#__PURE__*/function () {
                               }, _callee25);
                             }))));
                             _context26.next = 7;
-                            return _this5.dom.makeTitle(top);
+                            return _this6.dom.makeTitle(top);
 
                           case 7:
                             _context26.t2 = _context26.sent;
@@ -1374,7 +1472,7 @@ var Treeview = /*#__PURE__*/function () {
                             }
 
                             _context26.next = 16;
-                            return _this5.processLangTop(top, content);
+                            return _this6.processLangTop(top, content);
 
                           case 16:
                             is_not_empty = _context26.sent;
@@ -1383,7 +1481,7 @@ var Treeview = /*#__PURE__*/function () {
 
                           case 19:
                             _context26.next = 21;
-                            return _this5.processTop(top, content);
+                            return _this6.processTop(top, content);
 
                           case 21:
                             is_not_empty = _context26.sent;
@@ -1431,7 +1529,7 @@ var Treeview = /*#__PURE__*/function () {
     key: "processTop",
     value: function () {
       var _processTop = (0,asyncToGenerator/* default */.Z)( /*#__PURE__*/regenerator_default().mark(function _callee30(top, e) {
-        var _this6 = this;
+        var _this7 = this;
 
         var is_empty, self, _self;
 
@@ -1458,7 +1556,7 @@ var Treeview = /*#__PURE__*/function () {
                         switch (_context28.prev = _context28.next) {
                           case 0:
                             _context28.next = 2;
-                            return _this6.dom.makeArticle(ar);
+                            return _this7.dom.makeArticle(ar);
 
                           case 2:
                             return _context28.abrupt("return", _context28.sent);
@@ -1506,7 +1604,7 @@ var Treeview = /*#__PURE__*/function () {
                         switch (_context29.prev = _context29.next) {
                           case 0:
                             _context29.next = 2;
-                            return _this6.dom.makeHeader(h);
+                            return _this7.dom.makeHeader(h);
 
                           case 2:
                             return _context29.abrupt("return", _context29.sent);
@@ -1557,7 +1655,7 @@ var Treeview = /*#__PURE__*/function () {
     key: "processLangTop",
     value: function () {
       var _processLangTop = (0,asyncToGenerator/* default */.Z)( /*#__PURE__*/regenerator_default().mark(function _callee32(top, e) {
-        var _this7 = this;
+        var _this8 = this;
 
         var ars, ltops, _iterator3, _step3, ar, langs;
 
@@ -1620,7 +1718,7 @@ var Treeview = /*#__PURE__*/function () {
                           case 0:
                             _ref18 = (0,slicedToArray/* default */.Z)(_ref17, 2), id = _ref18[0], t = _ref18[1];
                             _context31.next = 3;
-                            return _this7.dom.makeLang(t);
+                            return _this8.dom.makeLang(t);
 
                           case 3:
                             return _context31.abrupt("return", _context31.sent);
@@ -2188,8 +2286,6 @@ var Meta = /*#__PURE__*/function () {
 ;// CONCATENATED MODULE: ./kunai/meta.js
 
 
-// EXTERNAL MODULE: ../node_modules/@babel/runtime/helpers/esm/toConsumableArray.js + 3 modules
-var toConsumableArray = __webpack_require__(126);
 // EXTERNAL MODULE: ../node_modules/numeral/numeral.js
 var numeral = __webpack_require__(4960);
 var numeral_default = /*#__PURE__*/__webpack_require__.n(numeral);
@@ -3099,8 +3195,8 @@ var Kunai = /*#__PURE__*/function () {
     this.opts = (0,esm_extends/* default */.Z)({}, Kunai.defaultOptions, opts); //this.log = new DefaultLogger()
 
     this.log = new ErrorLogger();
-    console.log("version ".concat({"version":"3.0.7","bugs_url":"https://github.com/cpprefjp/kunai/issues"}.version, " (https://github.com/cpprefjp/kunai/tree/v").concat({"version":"3.0.7","bugs_url":"https://github.com/cpprefjp/kunai/issues"}.version, ")"));
-    console.log("please report frontend bugs to: ".concat({"version":"3.0.7","bugs_url":"https://github.com/cpprefjp/kunai/issues"}.bugs_url));
+    console.log("version ".concat({"version":"3.0.9","bugs_url":"https://github.com/cpprefjp/kunai/issues"}.version, " (https://github.com/cpprefjp/kunai/tree/v").concat({"version":"3.0.9","bugs_url":"https://github.com/cpprefjp/kunai/issues"}.version, ")"));
+    console.log("please report frontend bugs to: ".concat({"version":"3.0.9","bugs_url":"https://github.com/cpprefjp/kunai/issues"}.bugs_url));
     this.ui = {
       navbar: null,
       sidebar: null,
@@ -3267,7 +3363,7 @@ var Kunai = /*#__PURE__*/function () {
     key: "initCRSearch",
     value: function () {
       var _initCRSearch = (0,asyncToGenerator/* default */.Z)( /*#__PURE__*/regenerator_default().mark(function _callee6(isEnabled) {
-        var dynamic_base_url, url_database, crs, e;
+        var dynamic_base_url, project_base_url, database_url, crs, e;
         return regenerator_default().wrap(function _callee6$(_context6) {
           while (1) {
             switch (_context6.prev = _context6.next) {
@@ -3299,33 +3395,42 @@ var Kunai = /*#__PURE__*/function () {
 
 
                   return "/";
+                }(); // Determine the project website URL, which is assumed to be stored in
+                // <meta name="twietter:url" content="..." /> or in <meta property="og:url"
+                // content="..." />.
+
+
+                project_base_url = function () {
+                  var meta = document.querySelector('meta[name="twitter:url"]') || document.querySelector('meta[property="og:url"]');
+
+                  if (meta && meta.content) {
+                    var m = meta.content.toString().match(/^https?:\/\/[^/]*\//);
+                    if (m) return m[0];
+                  }
+
+                  return null;
                 }();
 
-                url_database = function () {
+                database_url = function () {
                   // Determine the location of the database file "crsearch.json".
                   var current_script = document.currentScript || document.querySelector('script[src*="kunai/js/kunai.js"]');
 
                   if (current_script) {
-                    // Try to download crsearch.json from the project website for local
-                    // HTML files.  When a HTML in a local file system is directly opened
-                    // in a Web browser, "static/crsearch/crsearch.json" cannot be read
-                    // through XHR due to the CORS (cross-origin resource sharing) policy
-                    // for the local files.  We instead try to download "crsearch.json"
-                    // from the project website, which is assumed to be stored in <meta
-                    // name="twietter:url" content="..." /> or in <meta property="og:url"
-                    // content="..." />.
+                    // A special care is needed for local HTML files (file://...).  When a
+                    // HTML in a local file system is directly opened in a Web browser,
+                    // "static/crsearch/crsearch.json" cannot be read using XHR due to the
+                    // CORS (cross-origin resource sharing) policy for the local files.
                     if (/^file:\/\//.test(current_script.src)) {
-                      var _url_kunai = current_script.getAttribute("src");
+                      var _url_kunai = current_script.getAttribute("src"); // When the current script file (kunai.js) is located in an expected
+                      // path in the tree, we try to load the local database file
+                      // "crsearch/crsearch.js" in JSONP format.
+
 
                       var _url = _url_kunai.replace(/\bkunai\/js\/kunai\.js([?#].*)?$/, "crsearch/crsearch.js");
 
-                      if (_url != _url_kunai) return _url;
-                      var meta = document.querySelector('meta[name="twitter:url"]') || document.querySelector('meta[property="og:url"]');
+                      if (_url != _url_kunai) return _url; // Try to download "crsearch.json" from the project website.
 
-                      if (meta && meta.content) {
-                        var m = meta.content.toString().match(/^https?:\/\/[^/]*\//);
-                        if (m) return m[0] + "static/crsearch/crsearch.json";
-                      }
+                      if (project_base_url) return project_base_url + "static/crsearch/crsearch.json";
                     } // Try to determine the position of crsearch.json
                     // ({base_url}/static/crsearch/crsearch.json) based on the location of
                     // this script ({base_url}/static/kunai/js/kunai.js).
@@ -3342,18 +3447,19 @@ var Kunai = /*#__PURE__*/function () {
 
                 crs = new crsearch/* CRSearch */.Sv({
                   onDatabase: this.onDatabase.bind(this),
-                  base_url: dynamic_base_url
+                  base_url: dynamic_base_url,
+                  project_url: project_base_url
                 });
-                crs.database(url_database);
+                crs.database(database_url);
                 e = kunai_$('.crsearch');
-                _context6.next = 11;
+                _context6.next = 12;
                 return crs.searchbox(e);
 
-              case 11:
+              case 12:
                 e.addClass('loaded');
                 return _context6.abrupt("return", crs);
 
-              case 13:
+              case 14:
               case "end":
                 return _context6.stop();
             }
@@ -3486,7 +3592,7 @@ webpackContext.id = 2364;
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["Z"] = ("## TOPLEVEL_CATEGORY\n\n* cpprefjp[index]\n* リファレンス[reference]\n* 言語機能[lang]\n* 処理系[implementation]\n* コンパイラの実装状況[implementation-status]\n* C++国際標準規格[international-standard]\n* 標準規格と処理系[implementation-compliance]\n* 外部ライブラリ[third_party_library]\n* テーマ別解説[article]\n* コミュニティリスト[mailing-lists]\n* スタイル[working_style]\n* 編集者向け資料[editors_doc]\n\n\n## GLOBAL_QUALIFY_LIST\n\n* implementation-defined[italic]\n* SFINAE[link /lang/cpp11/sfinae_expressions.md]\n* thread_local[link /lang/cpp11/thread_local_storage.md]\n* decltype(auto)[link /lang/cpp14/decltype_auto.md]\n* <algorithm>[link /reference/algorithm.md]\n    * std::copy[link /reference/algorithm/copy.md]\n    * std::for_each[link /reference/algorithm/for_each.md]\n    * std::sort[link /reference/algorithm/sort.md]\n* <array>[link /reference/array.md]\n    * std::array[link /reference/array.md]\n* <atomic>[link /reference/atomic.md]\n    * std::atomic[link /reference/atomic/atomic.md]\n    * std::memory_order_acq_rel[link /reference/atomic/memory_order.md]\n    * std::memory_order_acquire[link /reference/atomic/memory_order.md]\n    * std::memory_order_consume[link /reference/atomic/memory_order.md]\n    * std::memory_order_relaxed[link /reference/atomic/memory_order.md]\n    * std::memory_order_release[link /reference/atomic/memory_order.md]\n    * std::memory_order_seq_cst[link /reference/atomic/memory_order.md]\n* <bitset>[link /reference/bitset.md]\n    * std::bitset[link /reference/bitset.md]\n* <cassert>[link /reference/cassert.md]\n    * assert[link /reference/cassert/assert.md]\n* <cerrno>[link /reference/cerrno.md]\n* <cfenv>[link /reference/cfenv.md]\n* <cfloat>[link /reference/cfloat.md]\n* <chrono>[link /reference/chrono.md]\n* <climits>[link /reference/climits.md]\n* <cmath>[link /reference/cmath.md]\n* <codecvt>[link /reference/codecvt.md]\n* <complex>[link /reference/complex.md]\n* <condition_variable>[link /reference/condition_variable.md]\n    * std::condition_variable[link /reference/condition_variable/condition_variable.md]\n* <cstddef>[link /reference/cstddef.md]\n    * std::size_t[link /reference/cstddef/size_t.md]\n* <cstdint>[link /reference/cstdint.md]\n    * std::uint8_t[link /reference/cstdint/uint8_t.md]\n* <cstdlib>[link /reference/cstdlib.md]\n* <deque>[link /reference/deque.md]\n    * std::deque[link /reference/deque.md]\n* <exception>[link /reference/exception.md]\n* <forward_list>[link /reference/forward_list.md]\n    * std::forward_list[link /reference/forward_list.md]\n* <fstream>[link /reference/fstream.md]\n* <functional>[link /reference/functional.md]\n* <future>[link /reference/future.md]\n* <initializer_list>[link /reference/initializer_list.md]\n    * std::initializer_list[link /reference/initializer_list.md]\n* <iomanip>[link /reference/iomanip.md]\n* <ios>[link /reference/ios.md]\n    * std::boolalpha[link /reference/ios/boolalpha.md]\n* <iostream>[link /reference/iostream.md]\n    * std::cout[link /reference/iostream/cout.md]\n* <istream>[link /reference/istream.md]\n* <iterator>[link /reference/iterator.md]\n    * std::back_inserter[link /reference/iterator/back_inserter.md]\n    * std::begin[link /reference/iterator/begin.md]\n    * std::distance[link /reference/iterator/distance.md]\n    * std::end[link /reference/iterator/end.md]\n    * std::ostream_iterator[link /reference/iterator/ostream_iterator.md]\n* <limits>[link /reference/limits.md]\n    * std::numeric_limits[link /reference/limits/numeric_limits.md]\n* <list>[link /reference/list.md]\n    * std::list[link /reference/list.md]\n* <locale>[link /reference/locale.md]\n* <map>[link /reference/map.md]\n    * std::map[link /reference/map/map.md]\n* <memory>[link /reference/memory.md]\n    * std::allocator[link /reference/memory/allocator.md]\n    * std::shared_ptr[link /reference/memory/shared_ptr.md]\n    * std::unique_ptr[link /reference/memory/unique_ptr.md]\n* <mutex>[link /reference/mutex.md]\n    * std::lock_guard[link /reference/mutex/lock_guard.md]\n    * std::unique_lock[link /reference/mutex/unique_lock.md]\n    * std::mutex[link /reference/mutex/mutex.md]\n* <new>[link /reference/new.md]\n* <numeric>[link /reference/numeric.md]\n    * std::accumulate[link /reference/numeric/accumulate.md]\n    * std::iota[link /reference/numeric/iota.md]\n* <optional>[link /reference/optional.md]\n    * std::optional[link /reference/optional/optional.md]\n* <ostream>[link /reference/ostream.md]\n    * std::endl[link /reference/ostream/endl.md]\n* <queue>[link /reference/queue.md]\n* <random>[link /reference/random.md]\n* <ratio>[link /reference/ratio.md]\n* <regex>[link /reference/regex.md]\n* <scoped_allocator>[link /reference/scoped_allocator.md]\n* <set>[link /reference/set.md]\n    * std::set[link /reference/set/set.md]\n* <shared_mutex>[link /reference/shared_mutex.md]\n* <sstream>[link /reference/sstream.md]\n* <stack>[link /reference/stack.md]\n* <stdexcept>[link /reference/stdexcept.md]\n* <streambuf>[link /reference/streambuf.md]\n* <string>[link /reference/string.md]\n    * std::basic_string[link /reference/string/basic_string.md]\n    * std::char_traits[link /reference/string/char_traits.md]\n    * std::string[link /reference/string/basic_string.md]\n    * std::u16string[link /reference/string/basic_string.md]\n    * std::u32string[link /reference/string/basic_string.md]\n    * std::wstring[link /reference/string/basic_string.md]\n* <system_error>[link /reference/system_error.md]\n* <thread>[link /reference/thread.md]\n    * std::thread[link /reference/thread/thread.md]\n    * t.join()[link /reference/thread/thread/join.md]\n    * t1.join()[link /reference/thread/thread/join.md]\n    * t2.join()[link /reference/thread/thread/join.md]\n    * t3.join()[link /reference/thread/thread/join.md]\n* <tuple>[link /reference/tuple.md]\n* <type_traits>[link /reference/type_traits.md]\n    * std::false_type[link /reference/type_traits/false_type.md]\n    * std::is_same[link /reference/type_traits/is_same.md]\n    * std::is_same_v[link /reference/type_traits/is_same.md]\n    * std::true_type[link /reference/type_traits/true_type.md]\n* <typeindex>[link /reference/typeindex.md]\n* <typeinfo>[link /reference/typeinfo.md]\n* <unordered_map>[link /reference/unordered_map.md]\n    * std::unordered_map[link /reference/unordered_map/unordered_map.md]\n* <unordered_set>[link /reference/unordered_set.md]\n    * std::unordered_set[link /reference/unordered_set/unordered_set.md]\n* <utility>[link /reference/utility.md]\n    * std::make_pair[link /reference/utility/make_pair.md]\n    * std::pair[link /reference/utility/pair.md]\n* <valarray>[link /reference/valarray.md]\n    * std::valarray[link /reference/valarray/valarray.md]\n* <vector>[link /reference/vector.md]\n    * std::vector[link /reference/vector.md]\n    * v.begin()[link /reference/vector/begin.md]\n    * v.end()[link /reference/vector/end.md]\n    * v.size()[link /reference/vector/size.md]\n    * v1.begin()[link /reference/vector/begin.md]\n    * v1.end()[link /reference/vector/end.md]\n    * v1.size()[link /reference/vector/size.md]\n    * v2.begin()[link /reference/vector/begin.md]\n    * v2.end()[link /reference/vector/end.md]\n    * v2.size()[link /reference/vector/size.md]\n    * v3.begin()[link /reference/vector/begin.md]\n    * v3.end()[link /reference/vector/end.md]\n    * v3.size()[link /reference/vector/size.md]\n\n");
+/* harmony default export */ __webpack_exports__["Z"] = ("## TOPLEVEL_CATEGORY\n\n* cpprefjp[index]\n* リファレンス[reference]\n* モジュール[module]\n* 言語機能[lang]\n* 処理系[implementation]\n* コンパイラの実装状況[implementation-status]\n* C++国際標準規格[international-standard]\n* 標準規格と処理系[implementation-compliance]\n* 外部ライブラリ[third_party_library]\n* テーマ別解説[article]\n* コミュニティリスト[mailing-lists]\n* スタイル[working_style]\n* はじめてのコントリビュート[start_editing]\n* 編集方針[edit_policy]\n\n\n## GLOBAL_QUALIFY_LIST\n\n* implementation-defined[italic]\n* SFINAE[link /lang/cpp11/sfinae_expressions.md]\n* thread_local[link /lang/cpp11/thread_local_storage.md]\n* decltype(auto)[link /lang/cpp14/decltype_auto.md]\n* <algorithm>[link /reference/algorithm.md]\n    * std::copy[link /reference/algorithm/copy.md]\n    * std::for_each[link /reference/algorithm/for_each.md]\n    * std::sort[link /reference/algorithm/sort.md]\n* <array>[link /reference/array.md]\n    * std::array[link /reference/array.md]\n* <atomic>[link /reference/atomic.md]\n    * std::atomic[link /reference/atomic/atomic.md]\n    * std::memory_order_acq_rel[link /reference/atomic/memory_order.md]\n    * std::memory_order_acquire[link /reference/atomic/memory_order.md]\n    * std::memory_order_consume[link /reference/atomic/memory_order.md]\n    * std::memory_order_relaxed[link /reference/atomic/memory_order.md]\n    * std::memory_order_release[link /reference/atomic/memory_order.md]\n    * std::memory_order_seq_cst[link /reference/atomic/memory_order.md]\n* <bitset>[link /reference/bitset.md]\n    * std::bitset[link /reference/bitset.md]\n* <cassert>[link /reference/cassert.md]\n    * assert[link /reference/cassert/assert.md]\n* <cerrno>[link /reference/cerrno.md]\n* <cfenv>[link /reference/cfenv.md]\n* <cfloat>[link /reference/cfloat.md]\n* <chrono>[link /reference/chrono.md]\n* <climits>[link /reference/climits.md]\n* <cmath>[link /reference/cmath.md]\n* <codecvt>[link /reference/codecvt.md]\n* <complex>[link /reference/complex.md]\n* <condition_variable>[link /reference/condition_variable.md]\n    * std::condition_variable[link /reference/condition_variable/condition_variable.md]\n* <cstddef>[link /reference/cstddef.md]\n    * std::size_t[link /reference/cstddef/size_t.md]\n* <cstdint>[link /reference/cstdint.md]\n    * std::uint8_t[link /reference/cstdint/uint8_t.md]\n* <cstdlib>[link /reference/cstdlib.md]\n* <deque>[link /reference/deque.md]\n    * std::deque[link /reference/deque.md]\n* <exception>[link /reference/exception.md]\n* <forward_list>[link /reference/forward_list.md]\n    * std::forward_list[link /reference/forward_list.md]\n* <fstream>[link /reference/fstream.md]\n* <functional>[link /reference/functional.md]\n* <future>[link /reference/future.md]\n* <initializer_list>[link /reference/initializer_list.md]\n    * std::initializer_list[link /reference/initializer_list.md]\n* <iomanip>[link /reference/iomanip.md]\n* <ios>[link /reference/ios.md]\n    * std::boolalpha[link /reference/ios/boolalpha.md]\n* <iostream>[link /reference/iostream.md]\n    * std::cout[link /reference/iostream/cout.md]\n* <istream>[link /reference/istream.md]\n* <iterator>[link /reference/iterator.md]\n    * std::back_inserter[link /reference/iterator/back_inserter.md]\n    * std::begin[link /reference/iterator/begin.md]\n    * std::distance[link /reference/iterator/distance.md]\n    * std::end[link /reference/iterator/end.md]\n    * std::ostream_iterator[link /reference/iterator/ostream_iterator.md]\n* <limits>[link /reference/limits.md]\n    * std::numeric_limits[link /reference/limits/numeric_limits.md]\n* <list>[link /reference/list.md]\n    * std::list[link /reference/list.md]\n* <locale>[link /reference/locale.md]\n* <map>[link /reference/map.md]\n    * std::map[link /reference/map/map.md]\n* <memory>[link /reference/memory.md]\n    * std::allocator[link /reference/memory/allocator.md]\n    * std::shared_ptr[link /reference/memory/shared_ptr.md]\n    * std::unique_ptr[link /reference/memory/unique_ptr.md]\n* <mutex>[link /reference/mutex.md]\n    * std::lock_guard[link /reference/mutex/lock_guard.md]\n    * std::unique_lock[link /reference/mutex/unique_lock.md]\n    * std::mutex[link /reference/mutex/mutex.md]\n* <new>[link /reference/new.md]\n* <numeric>[link /reference/numeric.md]\n    * std::accumulate[link /reference/numeric/accumulate.md]\n    * std::iota[link /reference/numeric/iota.md]\n* <optional>[link /reference/optional.md]\n    * std::optional[link /reference/optional/optional.md]\n* <ostream>[link /reference/ostream.md]\n    * std::endl[link /reference/ostream/endl.md]\n* <queue>[link /reference/queue.md]\n* <random>[link /reference/random.md]\n* <ratio>[link /reference/ratio.md]\n* <regex>[link /reference/regex.md]\n* <scoped_allocator>[link /reference/scoped_allocator.md]\n* <set>[link /reference/set.md]\n    * std::set[link /reference/set/set.md]\n* <shared_mutex>[link /reference/shared_mutex.md]\n* <sstream>[link /reference/sstream.md]\n* <stack>[link /reference/stack.md]\n* <stdexcept>[link /reference/stdexcept.md]\n* <streambuf>[link /reference/streambuf.md]\n* <string>[link /reference/string.md]\n    * std::basic_string[link /reference/string/basic_string.md]\n    * std::char_traits[link /reference/string/char_traits.md]\n    * std::string[link /reference/string/basic_string.md]\n    * std::u16string[link /reference/string/basic_string.md]\n    * std::u32string[link /reference/string/basic_string.md]\n    * std::wstring[link /reference/string/basic_string.md]\n* <system_error>[link /reference/system_error.md]\n* <thread>[link /reference/thread.md]\n    * std::thread[link /reference/thread/thread.md]\n    * t.join()[link /reference/thread/thread/join.md]\n    * t1.join()[link /reference/thread/thread/join.md]\n    * t2.join()[link /reference/thread/thread/join.md]\n    * t3.join()[link /reference/thread/thread/join.md]\n* <tuple>[link /reference/tuple.md]\n* <type_traits>[link /reference/type_traits.md]\n    * std::false_type[link /reference/type_traits/false_type.md]\n    * std::is_same[link /reference/type_traits/is_same.md]\n    * std::is_same_v[link /reference/type_traits/is_same.md]\n    * std::true_type[link /reference/type_traits/true_type.md]\n* <typeindex>[link /reference/typeindex.md]\n* <typeinfo>[link /reference/typeinfo.md]\n* <unordered_map>[link /reference/unordered_map.md]\n    * std::unordered_map[link /reference/unordered_map/unordered_map.md]\n* <unordered_set>[link /reference/unordered_set.md]\n    * std::unordered_set[link /reference/unordered_set/unordered_set.md]\n* <utility>[link /reference/utility.md]\n    * std::make_pair[link /reference/utility/make_pair.md]\n    * std::pair[link /reference/utility/pair.md]\n* <valarray>[link /reference/valarray.md]\n    * std::valarray[link /reference/valarray/valarray.md]\n* <vector>[link /reference/vector.md]\n    * std::vector[link /reference/vector.md]\n    * v.begin()[link /reference/vector/begin.md]\n    * v.end()[link /reference/vector/end.md]\n    * v.size()[link /reference/vector/size.md]\n    * v1.begin()[link /reference/vector/begin.md]\n    * v1.end()[link /reference/vector/end.md]\n    * v1.size()[link /reference/vector/size.md]\n    * v2.begin()[link /reference/vector/begin.md]\n    * v2.end()[link /reference/vector/end.md]\n    * v2.size()[link /reference/vector/size.md]\n    * v3.begin()[link /reference/vector/begin.md]\n    * v3.end()[link /reference/vector/end.md]\n    * v3.size()[link /reference/vector/size.md]\n\n");
 
 /***/ }),
 
@@ -3674,7 +3780,7 @@ module.exports = JSON.parse('{"order_priority":[["op_deduction_guide","推論補
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [449], function() { return __webpack_require__(5749); })
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [449], function() { return __webpack_require__(6554); })
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	window.Kunai = __webpack_exports__.Kunai;
 /******/ 	

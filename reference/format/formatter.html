@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="cpprefjp" lang="ja" itemscope="" itemtype="http://schema.org/WebPage">
     <head>
+        
+  
+
         <meta charset="UTF-8">
 
         <title>formatter - cpprefjp C++日本語リファレンス</title>
@@ -25,27 +28,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="manifest" href="../../manifest.json?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="mask-icon" href="../../static/favicons/safari-pinned-tab.svg?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="manifest" href="../../manifest.json?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -54,12 +56,9 @@
   });
 </script>
 
-    
-  
-
     </head>
     <body>
-<header data-kunai-mdinfo="{&#34;meta&#34;: {&#34;header&#34;: [&#34;format&#34;], &#34;id-type&#34;: [&#34;class template&#34;], &#34;namespace&#34;: [&#34;std&#34;], &#34;cpp&#34;: [&#34;cpp20&#34;]}, &#34;sources&#34;: [{&#34;id&#34;: &#34;dcb185ed32601c1d187fec3a50b5a187bb7b2698&#34;, &#34;source&#34;: &#34;#include &lt;iostream&gt;\n#include &lt;format&gt;\n\nenum color { red, green, blue };\n\nconst char* color_names[] = { \&#34;red\&#34;, \&#34;green\&#34;, \&#34;blue\&#34; };\n\ntemplate&lt;&gt; struct std::formatter&lt;color&gt; : std::formatter&lt;const char*&gt; {\n  auto format(color c, format_context&amp; ctx) {\n    return formatter&lt;const char*&gt;::format(color_names[c], ctx);\n  }\n};\n\nint main()\n{\n  int variable = 0;\n  std::cout &lt;&lt; std::format(\&#34;{}\&#34;, red) &lt;&lt; std::endl;\n}\n&#34;}], &#34;page_id&#34;: [&#34;reference&#34;, &#34;format&#34;, &#34;formatter&#34;]}">
+<header data-kunai-mdinfo="{&#34;meta&#34;: {&#34;header&#34;: [&#34;format&#34;], &#34;id-type&#34;: [&#34;class template&#34;], &#34;namespace&#34;: [&#34;std&#34;], &#34;cpp&#34;: [&#34;cpp20&#34;]}, &#34;sources&#34;: [{&#34;id&#34;: &#34;f0f1f0a4ab5ebbae12a3bb9c2578b97179eb8305&#34;, &#34;source&#34;: &#34;#include &lt;iostream&gt;\n#include &lt;format&gt;\n\nenum color { red, green, blue };\n\nconst char* color_names[] = { \&#34;red\&#34;, \&#34;green\&#34;, \&#34;blue\&#34; };\n\ntemplate&lt;&gt;\nstruct std::formatter&lt;color&gt; : std::formatter&lt;const char*&gt; {\n  auto format(color c, std::format_context&amp; ctx) const {\n    return std::formatter&lt;const char*&gt;::format(color_names[c], ctx);\n  }\n};\n\nint main()\n{\n  std::cout &lt;&lt; std::format(\&#34;{}\&#34;, red) &lt;&lt; std::endl;\n}\n&#34;}, {&#34;id&#34;: &#34;795293b1e8ac834d0cb3e053df1bcc3f84ab3a64&#34;, &#34;source&#34;: &#34;#include &lt;iostream&gt;\n#include &lt;format&gt;\n\nenum color { red, green, blue };\n\nconst char* color_names[] = { \&#34;red\&#34;, \&#34;green\&#34;, \&#34;blue\&#34; };\nconst char* jp_color_names[] = { \&#34;\u8d64\&#34;, \&#34;\u7dd1\&#34;, \&#34;\u9752\&#34; };\n\ntemplate&lt;&gt;\nstruct std::formatter&lt;color&gt; {\n  bool is_jp = false;\n\n  // \u30b3\u30f3\u30d1\u30a4\u30eb\u6642\u306e\u66f8\u5f0f\u6587\u5b57\u5217\u306e\u89e3\u6790\u304c\u3042\u308b\u305f\u3081\u3001\n  // constexpr\u306b\u3059\u308b\u5fc5\u8981\u304c\u3042\u308b\u3002\n  // \u3053\u306e\u95a2\u6570\u306b\u6e21\u3055\u308c\u308b\u30d1\u30e9\u30e1\u30fc\u30bf\u306f\u3001{:%j}\u306e%\u4ee5\u964d\u3002\n  // \u89e3\u6790\u304c\u304a\u308f\u3063\u305f\u5834\u6240\u3092\u6307\u3059\u30a4\u30c6\u30ec\u30fc\u30bf\u3092\u8fd4\u3059\u3002\n  constexpr auto parse(std::format_parse_context&amp; ctx) {\n    auto it = ctx.begin();\n    if (*it == &#39;%&#39;) {\n      ++it;\n      if (*it == &#39;j&#39;) {\n        is_jp = true;\n      }\n      else if (*it == &#39;e&#39;) {\n        is_jp = false;\n      }\n      ++it;\n    }\n    return it;\n  }\n\n  // format()\u95a2\u6570\u306f\u66f8\u5f0f\u306e\u60c5\u5831\u3092\u3082\u305f\u306a\u3044\u3002\n  // parse()\u95a2\u6570\u3067\u89e3\u6790\u3057\u305f\u66f8\u5f0f\u3092\u30e1\u30f3\u30d0\u5909\u6570\u3067\u4fdd\u6301\u3057\u3066\u304a\u3044\u3066\u3001\n  // \u305d\u308c\u3092\u3082\u3068\u306b\u66f8\u5f0f\u5316\u3059\u308b\n  auto format(color c, std::format_context&amp; ctx) const {\n    return std::format_to(ctx.out(), \&#34;{}\&#34;,\n      is_jp ? jp_color_names[c] : color_names[c]\n    );\n  }\n};\n\nint main()\n{\n  std::cout &lt;&lt; std::format(\&#34;{:%j} {:%e}\&#34;, red, blue) &lt;&lt; std::endl;\n}\n&#34;}], &#34;page_id&#34;: [&#34;reference&#34;, &#34;format&#34;, &#34;formatter&#34;]}">
   <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -82,6 +81,20 @@
             <div class="google-search">
               
   
+<script>
+  (function() {
+    var cx = '013316413321391058734:ji_u66hl7hq';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div class="gcse-search"></div>
+
 
             </div>
           </li>
@@ -165,12 +178,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2020-04-28T12:04:34">
-        2020年04月28日 12時04分34秒
+      <span itemprop="datePublished" content="2024-04-29T10:32:04">
+        2024年04月29日 10時32分04秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">Akira Takahashi</span>
+        <span itemprop="name">Tetsuro Matsumura</span>
       </span>
       が更新
     </small></p>
@@ -191,108 +204,238 @@
         
   <div class="identifier-type">class template</div><div class="header">&lt;format&gt;</div><h1 itemprop="name"><span class="namespace" title="namespace std">std::</span><span class="token">formatter</span><span class="cpp cpp20" title="C++20で追加">(C++20)</span></h1>
 <div itemprop="articleBody"><p><div class="codehilite"><pre><span></span><code><span class="k">namespace</span> <span class="n">std</span> <span class="p">{</span>
-  <span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="p">,</span> <span class="k">class</span> <span class="nc">U</span> <span class="o">=</span> <span class="kt">char</span><span class="o">&gt;</span>
-  <span class="k">struct</span> <span class="n">formatter</span><span class="p">;</span>
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="p">,</span> <span class="k">class</span> <span class="nc">charT</span> <span class="o">=</span> <span class="kt">char</span><span class="o">&gt;</span>
+  <span class="k">struct</span> <span class="n">formatter</span><span class="p">;</span>                                          <span class="c1">// (1) C++20</span>
+
+  <span class="k">template</span> <span class="o">&lt;</span><span class="n"><a href="../ranges/input_range.html">ranges::input_range</a></span> <span class="n">R</span><span class="p">,</span> <span class="k">class</span> <span class="nc">charT</span><span class="o">&gt;</span>
+    <span class="n">requires</span> <span class="p">(</span><span class="n"><a href="format_kind.html">format_kind</a></span><span class="o">&lt;</span><span class="n">R</span><span class="o">&gt;</span> <span class="o">!=</span> <span class="n"><a href="range_format.html">range_format</a></span><span class="o">::</span><span class="n">disabled</span><span class="p">)</span> <span class="o">&amp;&amp;</span>
+             <span class="n"><a href="formattable.html">formattable</a></span><span class="o">&lt;</span><span class="n"><a href="../ranges/range_reference_t.html">ranges::range_reference_t</a></span><span class="o">&lt;</span><span class="n">R</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">charT</span><span class="o">&gt;</span>
+  <span class="k">struct</span> <span class="n">formatter</span><span class="o">&lt;</span><span class="n">R</span><span class="p">,</span> <span class="n">charT</span><span class="o">&gt;</span>
+    <span class="o">:</span> <span class="n"><a href="range-default-formatter.html">range-default-formatter</a></span><span class="o">&lt;</span><span class="n"><a href="format_kind.html">format_kind</a></span><span class="o">&lt;</span><span class="n">R</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">charT</span><span class="o">&gt;</span> <span class="p">{</span> <span class="p">};</span> <span class="c1">// (2) C++23</span>
+
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">charT</span><span class="p">,</span> <span class="n"><a href="formattable.html">formattable</a></span><span class="o">&lt;</span><span class="n">charT</span><span class="o">&gt;</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+  <span class="k">struct</span> <span class="n">formatter</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">-</span><span class="n">or</span><span class="o">-</span><span class="n">tuple</span><span class="o">&lt;</span><span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">charT</span><span class="o">&gt;</span><span class="p">;</span>             <span class="c1">// (3) C++23</span>
+
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">charT</span><span class="p">,</span>
+            <span class="k">class</span> <span class="nc">T</span><span class="p">,</span>
+            <span class="n"><a href="formattable.html">formattable</a></span><span class="o">&lt;</span><span class="n">charT</span><span class="o">&gt;</span> <span class="n">Container</span><span class="p">,</span>
+            <span class="n">class</span><span class="p">...</span> <span class="n">U</span><span class="o">&gt;</span>
+  <span class="k">struct</span> <span class="n">formatter</span><span class="o">&lt;</span><span class="n">adaptor</span><span class="o">-</span><span class="n">type</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">Container</span><span class="p">,</span> <span class="n">U</span><span class="p">...</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">charT</span><span class="o">&gt;</span><span class="p">;</span> <span class="c1">// (4) C++23</span>
 <span class="p">}</span>
 </code></pre></div>
 </p>
 <h2>概要</h2>
 <p>フォーマット引数の個々の型に対応する書式文字列の解析と値のフォーマットを担うクラス。</p>
-<p><code>charT</code>を<code>char</code>または<code>wchar_t</code>とすると、標準で以下の特殊化が利用できる。</p>
 <ul>
-<li>
-<p>1 以下のもの。
-  <br />
-<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="o">&lt;&gt;</span> <span class="k">struct</span> <span class="n">formatter</span><span class="o">&lt;</span><span class="n">charT</span><span class="p">,</span> <span class="n">charT</span><span class="o">&gt;</span><span class="p">;</span>
-
-<span class="k">template</span><span class="o">&lt;&gt;</span> <span class="k">struct</span> <span class="n">formatter</span><span class="o">&lt;</span><span class="kt">char</span><span class="p">,</span> <span class="kt">wchar_t</span><span class="o">&gt;</span><span class="p">;</span>
-
-<span class="k">template</span><span class="o">&lt;&gt;</span> <span class="k">struct</span> <span class="n">formatter</span><span class="o">&lt;</span><span class="n">charT</span><span class="o">*</span><span class="p">,</span> <span class="n">charT</span><span class="o">&gt;</span><span class="p">;</span>
-
-<span class="k">template</span><span class="o">&lt;&gt;</span> <span class="k">struct</span> <span class="n">formatter</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">charT</span><span class="o">*</span><span class="p">,</span> <span class="n">charT</span><span class="o">&gt;</span><span class="p">;</span>
-
-<span class="k">template</span><span class="o">&lt;</span><span class="kt">size_t</span> <span class="n">N</span><span class="o">&gt;</span> <span class="k">struct</span> <span class="n">formatter</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">charT</span><span class="p">[</span><span class="n">N</span><span class="p">],</span> <span class="n">charT</span><span class="o">&gt;</span><span class="p">;</span>
-
-<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">traits</span><span class="p">,</span> <span class="k">class</span> <span class="nc">Allocator</span><span class="o">&gt;</span>
-<span class="k">struct</span> <span class="n">formatter</span><span class="o">&lt;</span><span class="n"><a href="../string/basic_string.html">basic_string</a></span><span class="o">&lt;</span><span class="n">charT</span><span class="p">,</span> <span class="n">traits</span><span class="p">,</span> <span class="n">Allocator</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">charT</span><span class="o">&gt;</span><span class="p">;</span>
-
-<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">traits</span><span class="o">&gt;</span>
-<span class="k">struct</span> <span class="n">formatter</span><span class="o">&lt;</span><span class="n"><a href="../string_view/basic_string_view.html">basic_string_view</a></span><span class="o">&lt;</span><span class="n">charT</span><span class="p">,</span> <span class="n">traits</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">charT</span><span class="o">&gt;</span><span class="p">;</span>
-</code></pre></div>
-</p>
-</li>
-<li>
-<p>2 第1テンプレート引数が<code>nullptr_t</code>, <code>void*</code>, <code>const void*</code>, <code>bool</code>, すべてのCV修飾されない標準の整数型, 拡張整数型, 浮動小数点数型であり、第2テンプレート引数が<code>charT</code>であるもの。</p>
-</li>
+<li>(1) : デフォルトのフォーマット</li>
+<li>(2) : Range用のフォーマット。実装は<code><a href="range-default-formatter.html">range-default-formatter</a></code>クラスが行う</li>
+<li>(3) : <code><a href="../utility/pair.html">std::pair</a></code>と<code><a href="../tuple/tuple.html">std::tuple</a></code>に対する特殊化</li>
+<li>(4) : コンテナアダプタである<code><a href="../queue/queue.html">std::queue</a></code>、<code><a href="../queue/priority_queue.html">std::priority_queue</a></code>、<code><a href="../stack/stack.html">std::stack</a></code>に対する特殊化</li>
+</ul>
+<p>(1)は、<code>charT</code>を<code>char</code>または<code>wchar_t</code>とすると、標準で以下の特殊化が利用できる。</p>
+<ul>
+<li><code>template&lt;&gt; struct formatter&lt;charT, charT&gt;</code></li>
+<li><code>template&lt;&gt; struct formatter&lt;char, wchar_t&gt;</code></li>
+<li><code>template&lt;&gt; struct formatter&lt;charT*, charT&gt;</code></li>
+<li><code>template&lt;&gt; struct formatter&lt;const charT*, charT&gt;</code></li>
+<li><code>template&lt;size_t N&gt; struct formatter&lt;const charT[N], charT&gt;</code></li>
+<li><code>template&lt;class traits, class Allocator&gt; struct formatter&lt;<a href="../string/basic_string.html">basic_string</a>&lt;charT, traits, Allocator&gt;, charT&gt;</code></li>
+<li><code>template&lt;class traits&gt; struct formatter&lt;<a href="../string_view/basic_string_view.html">basic_string_view</a>&lt;charT, traits&gt;, charT&gt;</code></li>
+<li>第1テンプレート引数が<code>nullptr_t</code>, <code>void*</code>, <code>const void*</code>, <code>bool</code>, すべてのCV修飾されない標準の整数型, 拡張整数型, 浮動小数点数型であり、第2テンプレート引数が<code>charT</code>であるもの。</li>
 </ul>
 <p>さらに、ユーザーが<code>formatter</code>を特殊化した場合、それも有効である。</p>
-<p>標準でもユーザー定義でも特殊化されない場合、その型に対する<code>formatter</code>は無効であり、そのような型はフォーマット関数の引数にできない。</p>
+<p>標準でも<a class="cpprefjp-defined-word" data-desc="プログラム定義。ユーザー（プログラマ）によって定義されること（標準ライブラリで定義されるものを除く）">ユーザー定義</a>でも特殊化されない場合、その型に対する<code>formatter</code>は無効であり、そのような型はフォーマット関数の引数にできない。</p>
 <p>ワイド文字列とマルチバイト文字列を相互に変換するような特殊化は意図的に用意されていないが、ユーザーが用意することは禁止していない。</p>
-<h2>Formatter要件</h2>
+<h2>ユーザーの型で<code>formatter</code>を特殊化する場合の要件</h2>
 <p><code>formatter</code>の有効な特殊化はFormatter要件を満たす必要がある。</p>
 <p>型<code>F</code>がFormatter要件を満たすとは、次のことをいう。</p>
 <ul>
-<li><code>F</code>は<code>Cpp17DefaultConstructible</code>、<code>Cpp17CopyConstructible</code>、<code>Cpp17CopyAssignable</code>、<code>Cpp17Destructible</code>であること (注: ここはC++20の策定までにコンセプトで書き換えられるかもしれない)</li>
+<li><code>F</code>は<code>Cpp17DefaultConstructible</code>、<code>Cpp17CopyConstructible</code>、<code>Cpp17CopyAssignable</code>、<code>Cpp17Destructible</code>であること</li>
 </ul>
 <p>さらに、以下の条件を満たすこと</p>
 <ol>
 <li>式 <code>f.parse(pc)</code> が有効であり、<ul>
 <li>戻り値の型が<code>PC::iterator</code>である</li>
-<li><code>[pc.begin(), pc.end())</code>の範囲を解析して<code>format_error</code>を投げるか、解析が終わった位置を指すイテレーターを返す</li>
+<li><a class="cpprefjp-defined-word" data-desc="2つのイテレータで表現される半開区間を表す。C++20からイテレータと番兵で異なる型であっても指定可能になる">イテレータ範囲</a><code>[pc.begin(), pc.end())</code>を解析して<code>format_error</code>を投げるか、解析が終わった位置を指すイテレータを返す</li>
 </ul>
 </li>
-<li>式 <code>f.format(t, fc)</code> が有効であり、<ul>
+<li>式 <code>cf.format(t, fc)</code> が有効であり、<ul>
 <li>戻り値の型が<code>FC::iterator</code>である</li>
-<li>フォーマット結果を<code>fc.out()</code>へ出力し、出力後のイテレーターを返す</li>
-<li>出力は<code>t</code>、グローバルロケール、最後に呼び出された<code>f.parse(pc)</code>の<code>[pc.begin(), pc.end())</code>の範囲以外に依存しない</li>
+<li>フォーマット結果を<code>fc.out()</code>へ出力し、出力後のイテレータを返す</li>
+<li>出力は<code>t</code>、<code>fc.locale()</code>、最後に呼び出された<code>f.parse(pc)</code>の<a class="cpprefjp-defined-word" data-desc="2つのイテレータで表現される半開区間を表す。C++20からイテレータと番兵で異なる型であっても指定可能になる">イテレータ範囲</a><code>[pc.begin(), pc.end())</code>以外に依存しない</li>
 </ul>
 </li>
-<li>式 <code>f.format(u, fc)</code> が有効であり、<ul>
+<li>式 <code>cf.format(u, fc)</code> が有効であり、<ul>
 <li>戻り値が<code>FC::iterator</code>である</li>
-<li>フォーマット結果を<code>fc.out()</code>へ出力し、出力後のイテレーターを返す</li>
-<li>出力は<code>t</code>、グローバルロケール、最後に呼び出された<code>f.parse(pc)</code>の<code>[pc.begin(), pc.end())</code>の範囲以外に依存しない</li>
+<li>フォーマット結果を<code>fc.out()</code>へ出力し、出力後のイテレータを返す</li>
+<li>出力は<code>u</code>、<code>fc.locale()</code>、最後に呼び出された<code>f.parse(pc)</code>の<a class="cpprefjp-defined-word" data-desc="2つのイテレータで表現される半開区間を表す。C++20からイテレータと番兵で異なる型であっても指定可能になる">イテレータ範囲</a><code>[pc.begin(), pc.end())</code>以外に依存しない</li>
 <li><code>u</code>を変更しない</li>
 </ul>
 </li>
 </ol>
-<p>条件内の各要素を、以下のように定義する</p>
+<p>条件内の各要素を、以下のように定義する。</p>
 <ul>
 <li>文字の型を<code>charT</code></li>
-<li>出力イテレーターの型を<code>Out</code></li>
+<li>出力イテレータの型を<code>Out</code></li>
 <li>フォーマット引数の型を<code>T</code></li>
 <li><code>f</code>を<code>F</code>のオブジェクト</li>
+<li><code>cf</code>を<code>F</code>の<code>const</code>オブジェクト</li>
 <li><code>u</code>を<code>T</code>のlvalue</li>
 <li><code>t</code>を<code>T</code>または<code>const T</code>へ変換できる型のオブジェクト</li>
-<li><code>PC</code>を<code>basic_format_parse_context&lt;charT&gt;</code></li>
-<li><code>FC</code>を<code>basic_format_context&lt;Out, charT&gt;</code></li>
+<li><code>PC</code>を<code><a href="basic_format_parse_context.html">basic_format_parse_context</a>&lt;charT&gt;</code></li>
+<li><code>FC</code>を<code><a href="basic_format_context.html">basic_format_context</a>&lt;Out, charT&gt;</code></li>
 <li><code>pc</code>を<code>PC</code>のlvalue</li>
 <li><code>fc</code>を<code>FC</code>のlvalue</li>
-<li><code>pc.begin()</code>は書式文字列中の対応する置換フィールドのオプションの先頭を指す</li>
+</ul>
+<p>ただし、<code><a href="formatter/parse.html">parse</a></code>の呼び出し前の状態で、<code>pc.begin()</code>は書式文字列中の対応する置換フィールドのオプションの先頭を指す。</p>
+<ul>
+<li>オプションが空でなければ、<code>*pc.begin()</code>は<code>:</code>の次の文字</li>
 <li>オプションが空なら、<code>pc.begin() == pc.end()</code>または<code>*pc.begin() == '}'</code>である</li>
 </ul>
+<p><code><a href="formattable.html">std::formattable</a></code>コンセプトも参照。</p>
+<p>フォーマッターは、書式文字列中に置換フィールドが見つかるたびに次のコードと近い形で呼び出される。</p>
+<p><div class="codehilite"><pre><span></span><code><span class="k">typename</span> <span class="n">FC</span><span class="o">::</span><span class="k">template</span> <span class="n">formatter_type</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">f</span><span class="p">;</span>
+<span class="n"><a href="basic_format_parse_context/advance_to.html">pc.advance_to</a></span><span class="p">(</span><span class="n"><a href="formatter/parse.html">f.parse</a></span><span class="p">(</span><span class="n">pc</span><span class="p">));</span>      <span class="c1">// オプションを解析し状態を保存する</span>
+<span class="n"><a href="basic_format_context/advance_to.html">fc.advance_to</a></span><span class="p">(</span><span class="n"><a href="formatter/format.html">f.format</a></span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">fc</span><span class="p">));</span>  <span class="c1">// 状態をもとにフォーマットを行う</span>
+</code></pre></div>
+</p>
+<p><a href="basic_format_arg/handle.html">handle</a>も参照。</p>
+<h2>メンバ関数</h2>
+<table border="1" bordercolor="#888" style="border-collapse:collapse">
+<thead>
+<tr>
+<th>メンバ関数</th>
+<th>説明</th>
+<th>対応バージョン</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code><a href="formatter/parse.html">parse</a></code></td>
+<td>書式の解析を行う</td>
+<td>C++20</td>
+</tr>
+<tr>
+<td><code><a href="formatter/format.html">format</a></code></td>
+<td>書式化を行う</td>
+<td>C++20</td>
+</tr>
+</tbody>
+</table>
+<h3>文字・文字列に対する特殊化</h3>
+<table border="1" bordercolor="#888" style="border-collapse:collapse">
+<thead>
+<tr>
+<th>メンバ関数</th>
+<th>説明</th>
+<th>対応バージョン</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code><a href="formatter/set_debug_format.html">set_debug_format</a></code></td>
+<td>デバッグ出力を有効にする</td>
+<td>C++23</td>
+</tr>
+</tbody>
+</table>
+<h3>pair / tuple向けの特殊化</h3>
+<table border="1" bordercolor="#888" style="border-collapse:collapse">
+<thead>
+<tr>
+<th>メンバ関数</th>
+<th>説明</th>
+<th>対応バージョン</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code><a href="formatter/set_separator.html">set_separator</a></code></td>
+<td>要素の区切り文字を設定する</td>
+<td>C++23</td>
+</tr>
+<tr>
+<td><code><a href="formatter/set_brackets.html">set_brackets</a></code></td>
+<td>全体の囲み文字を設定する</td>
+<td>C++23</td>
+</tr>
+</tbody>
+</table>
 <h2>例</h2>
-<p><div class="yata" id="dcb185ed32601c1d187fec3a50b5a187bb7b2698"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf"><a href="../iostream.html">&lt;iostream&gt;</a></span><span class="cp"></span>
+<h3>オリジナル書式なし、型変換のみの場合</h3>
+<p><div class="yata" id="f0f1f0a4ab5ebbae12a3bb9c2578b97179eb8305"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf"><a href="../iostream.html">&lt;iostream&gt;</a></span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf"><a href="../format.html">&lt;format&gt;</a></span><span class="cp"></span>
 
 <span class="k">enum</span> <span class="n">color</span> <span class="p">{</span> <span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span> <span class="p">};</span>
 
 <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">color_names</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="s">"red"</span><span class="p">,</span> <span class="s">"green"</span><span class="p">,</span> <span class="s">"blue"</span> <span class="p">};</span>
 
-<span class="k">template</span><span class="o">&lt;&gt;</span> <span class="k">struct</span> <span class="n">std</span><span class="o">::</span><span class="n">formatter</span><span class="o">&lt;</span><span class="n">color</span><span class="o">&gt;</span> <span class="o">:</span> <span class="n">std</span><span class="o">::</span><span class="n">formatter</span><span class="o">&lt;</span><span class="k">const</span> <span class="kt">char</span><span class="o">*&gt;</span> <span class="p">{</span>
-  <span class="k">auto</span> <span class="n">format</span><span class="p">(</span><span class="n">color</span> <span class="n">c</span><span class="p">,</span> <span class="n">format_context</span><span class="o">&amp;</span> <span class="n">ctx</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">formatter</span><span class="o">&lt;</span><span class="k">const</span> <span class="kt">char</span><span class="o">*&gt;::</span><span class="n">format</span><span class="p">(</span><span class="n">color_names</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="n">ctx</span><span class="p">);</span>
+<span class="k">template</span><span class="o">&lt;&gt;</span>
+<span class="k">struct</span> <span class="n">std</span><span class="o">::</span><span class="n">formatter</span><span class="o">&lt;</span><span class="n">color</span><span class="o">&gt;</span> <span class="o">:</span> <span class="n">std</span><span class="o">::</span><span class="n">formatter</span><span class="o">&lt;</span><span class="k">const</span> <span class="kt">char</span><span class="o">*&gt;</span> <span class="p">{</span>
+  <span class="k">auto</span> <span class="n">format</span><span class="p">(</span><span class="n">color</span> <span class="n">c</span><span class="p">,</span> <span class="n"><a href="basic_format_context.html">std::format_context</a></span><span class="o">&amp;</span> <span class="n">ctx</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">formatter</span><span class="o">&lt;</span><span class="k">const</span> <span class="kt">char</span><span class="o">*&gt;::</span><span class="n">format</span><span class="p">(</span><span class="n">color_names</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="n">ctx</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">};</span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
-  <span class="kt">int</span> <span class="n">variable</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="n"><a href="../iostream/cout.html">std::cout</a></span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">"{}"</span><span class="p">,</span> <span class="n">red</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n"><a href="../ostream/endl.html">std::endl</a></span><span class="p">;</span>
+  <span class="n"><a href="../iostream/cout.html">std::cout</a></span> <span class="o">&lt;&lt;</span> <span class="n"><a href="format.html">std::format</a></span><span class="p">(</span><span class="s">"{}"</span><span class="p">,</span> <span class="n">red</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n"><a href="../ostream/endl.html">std::endl</a></span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 </div></p>
-<h3>出力</h3>
+<h4>出力</h4>
 <p><pre><code>red
+</code></pre></p>
+<h3>オリジナル書式を定義する例</h3>
+<p><div class="yata" id="795293b1e8ac834d0cb3e053df1bcc3f84ab3a64"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf"><a href="../iostream.html">&lt;iostream&gt;</a></span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf"><a href="../format.html">&lt;format&gt;</a></span><span class="cp"></span>
+
+<span class="k">enum</span> <span class="n">color</span> <span class="p">{</span> <span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span> <span class="p">};</span>
+
+<span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">color_names</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="s">"red"</span><span class="p">,</span> <span class="s">"green"</span><span class="p">,</span> <span class="s">"blue"</span> <span class="p">};</span>
+<span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">jp_color_names</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="s">"赤"</span><span class="p">,</span> <span class="s">"緑"</span><span class="p">,</span> <span class="s">"青"</span> <span class="p">};</span>
+
+<span class="k">template</span><span class="o">&lt;&gt;</span>
+<span class="k">struct</span> <span class="n">std</span><span class="o">::</span><span class="n">formatter</span><span class="o">&lt;</span><span class="n">color</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="kt">bool</span> <span class="n">is_jp</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+  <span class="c1">// コンパイル時の書式文字列の解析があるため、</span>
+  <span class="c1">// constexprにする必要がある。</span>
+  <span class="c1">// この関数に渡されるパラメータは、{:%j}の%以降。</span>
+  <span class="c1">// 解析がおわった場所を指すイテレータを返す。</span>
+  <span class="k">constexpr</span> <span class="k">auto</span> <span class="nf">parse</span><span class="p">(</span><span class="n"><a href="basic_format_parse_context.html">std::format_parse_context</a></span><span class="o">&amp;</span> <span class="n">ctx</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n"><a href="basic_format_parse_context/begin.html">ctx.begin()</a></span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">*</span><span class="n">it</span> <span class="o">==</span> <span class="sc">'%'</span><span class="p">)</span> <span class="p">{</span>
+      <span class="o">++</span><span class="n">it</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">*</span><span class="n">it</span> <span class="o">==</span> <span class="sc">'j'</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">is_jp</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="o">*</span><span class="n">it</span> <span class="o">==</span> <span class="sc">'e'</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">is_jp</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="o">++</span><span class="n">it</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">it</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="c1">// format()関数は書式の情報をもたない。</span>
+  <span class="c1">// parse()関数で解析した書式をメンバ変数で保持しておいて、</span>
+  <span class="c1">// それをもとに書式化する</span>
+  <span class="k">auto</span> <span class="nf">format</span><span class="p">(</span><span class="n">color</span> <span class="n">c</span><span class="p">,</span> <span class="n"><a href="basic_format_context.html">std::format_context</a></span><span class="o">&amp;</span> <span class="n">ctx</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n"><a href="format_to.html">std::format_to</a></span><span class="p">(</span><span class="n"><a href="basic_format_context/out.html">ctx.out()</a></span><span class="p">,</span> <span class="s">"{}"</span><span class="p">,</span>
+      <span class="n">is_jp</span> <span class="o">?</span> <span class="n">jp_color_names</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">:</span> <span class="n">color_names</span><span class="p">[</span><span class="n">c</span><span class="p">]</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n"><a href="../iostream/cout.html">std::cout</a></span> <span class="o">&lt;&lt;</span> <span class="n"><a href="format.html">std::format</a></span><span class="p">(</span><span class="s">"{:%j} {:%e}"</span><span class="p">,</span> <span class="n">red</span><span class="p">,</span> <span class="n">blue</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n"><a href="../ostream/endl.html">std::endl</a></span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</div></p>
+<h4>出力</h4>
+<p><pre><code>赤 blue
 </code></pre></p>
 <h2>バージョン</h2>
 <h3>言語</h3>
@@ -302,14 +445,23 @@
 <h3>処理系</h3>
 <ul>
 <li><a href="../../implementation.html#clang">Clang</a>: ??</li>
-<li><a href="../../implementation.html#gcc">GCC</a>: ??</li>
+<li><a href="../../implementation.html#gcc">GCC</a>: 13</li>
 <li><a href="../../implementation.html#icc">ICC</a>: ??</li>
 <li><a href="../../implementation.html#visual_cpp">Visual C++</a>: ??</li>
+</ul>
+<h2>関連項目</h2>
+<ul>
+<li><code><a href="../vector/vector.html">vector&lt;bool&gt;</a></code></li>
 </ul>
 <h2>参照</h2>
 <ul>
 <li><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p0645r10.html" target="_blank">P0645R10 Text Formatting</a></li>
 <li><a href="https://github.com/fmtlib/fmt" target="_blank">{fmt}</a></li>
+<li><a href="https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2022/p2286r8.html" target="_blank">P2286R8 Formatting Ranges</a></li>
+<li><a href="https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2022/p2585r1.html" target="_blank">P2585R1 Improve default container formatting</a><ul>
+<li>C++23から、Range・コンテナ、<code>pair</code>、<code>tuple</code>のフォーマット出力、および文字・文字列のデバッグ指定 (<code>"?"</code>) が追加された</li>
+</ul>
+</li>
 </ul></div>
 
       </div>

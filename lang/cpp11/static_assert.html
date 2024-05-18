@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="cpprefjp" lang="ja" itemscope="" itemtype="http://schema.org/WebPage">
     <head>
+        
+  
+
         <meta charset="UTF-8">
 
         <title>コンパイル時アサート - cpprefjp C++日本語リファレンス</title>
@@ -25,27 +28,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="manifest" href="../../manifest.json?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="mask-icon" href="../../static/favicons/safari-pinned-tab.svg?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="manifest" href="../../manifest.json?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -53,9 +55,6 @@
     kn.cpprefjp();
   });
 </script>
-
-    
-  
 
     </head>
     <body>
@@ -82,6 +81,20 @@
             <div class="google-search">
               
   
+<script>
+  (function() {
+    var cx = '013316413321391058734:ji_u66hl7hq';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div class="gcse-search"></div>
+
 
             </div>
           </li>
@@ -165,8 +178,8 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2018-04-03T08:57:41">
-        2018年04月03日 08時57分41秒
+      <span itemprop="datePublished" content="2024-05-13T05:38:59">
+        2024年05月13日 05時38分59秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -211,6 +224,8 @@
 <li>この宣言は、名前空間スコープ、ブロックスコープ、メンバ宣言といった場所で記述できる</li>
 <li>定数式が真であると評価された場合は何も効果がない。定数式が偽であると評価された場合は、指定された文字列リテラルを含む<a class="cpprefjp-defined-word" data-desc="診断情報。コンパイルエラーや警告。処理系がプログラム翻訳時に提供する情報の総称" href="../../implementation-compliance.html#dfn-diagnostic-message">診断メッセージ</a>がコンパイラによって問題報告される。ただし、基本ソース文字集合に含まれない文字集合は、<a class="cpprefjp-defined-word" data-desc="診断情報。コンパイルエラーや警告。処理系がプログラム翻訳時に提供する情報の総称" href="../../implementation-compliance.html#dfn-diagnostic-message">診断メッセージ</a>に表示することはコンパイラに要求されない</li>
 <li><code>static_assert</code>宣言では、新たな型やオブジェクトは宣言しない。また、実行時にサイズや時間コストは発生しない</li>
+<li>(CWG 2518が適用された環境): template文(もしくは適切な特殊化や<a href="../cpp17/if_constexpr.html">C++17 constexpr if 文</a>の中の文)が実際にインスタンス化されるまで、<code>static_assert</code>文の宣言は遅延される。</li>
+<li><a href="../cpp17/if_constexpr.html">C++17 constexpr if 文</a>の解説を参照</li>
 </ul>
 <h2>例</h2>
 <p><div class="yata" id="51bef4336d48e5e1d98e2092bc804ed411c3328a"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf"><a href="../../reference/type_traits.html">&lt;type_traits&gt;</a></span><span class="cp"></span>
@@ -251,7 +266,10 @@
 <p>コンパイル時アサートのために<code>BOOST_STATIC_ASSERT</code>や<code>STATIC_CHECK</code>のようなマクロを使用することは、名前空間を汚染する問題があるが、コア言語にその機能を追加することでその問題は解消される。</p>
 <h2>関連項目</h2>
 <ul>
-<li><a href="../cpp17/extending_static_assert.html">C++17 <code>static_assert</code></a> — 第2引数の<a class="cpprefjp-defined-word" data-desc="診断情報。コンパイルエラーや警告。処理系がプログラム翻訳時に提供する情報の総称" href="../../implementation-compliance.html#dfn-diagnostic-message">診断メッセージ</a>を省略できるようになった</li>
+<li><a href="../cpp17/extending_static_assert.html">C++17 <code>static_assert</code>のメッセージ省略を許可</a></li>
+<li><a href="../cpp17/if_constexpr.html">C++17 constexpr if 文</a></li>
+<li><a href="../cpp23/narrowing_contextual_conversions_to_bool.html">C++23 定数式の文脈での<code>bool</code>への縮小変換を許可</a></li>
+<li><a href="../cpp26/user-generated_static_assert_messages.html">C++26 <code>static_assert</code>の診断メッセージにユーザーが生成した文字列の指定を許可</a></li>
 </ul>
 <h2>参照</h2>
 <ul>
@@ -259,6 +277,8 @@
 <li><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2004/n1604.html" target="_blank">N1604 Proposal to Add Static Assertions to the Core Language (Revision 1)</a></li>
 <li><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2004/n1617.html" target="_blank">N1617 Proposal to Add Static Assertions to the Core Language (Revision 2)</a></li>
 <li><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2004/n1720.html" target="_blank">N1720 Proposal to Add Static Assertions to the Core Language (Revision 3)</a></li>
+<li><a href="https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2023/p2593r1.html" target="_blank">P2593R1: Allowing static_assert(false)</a></li>
+<li><a href="https://wg21.cmeerw.net/cwg/issue2518" target="_blank">Issue 2518: Conformance requirements and #error/#warning - WG21 CWG Issues</a></li>
 </ul></div>
 
       </div>

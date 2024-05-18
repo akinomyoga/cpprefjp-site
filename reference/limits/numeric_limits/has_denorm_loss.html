@@ -1,13 +1,16 @@
 <!doctype html>
 <html class="cpprefjp" lang="ja" itemscope="" itemtype="http://schema.org/WebPage">
     <head>
+        
+  
+
         <meta charset="UTF-8">
 
         <title>numeric_limits::has_denorm_loss - cpprefjp C++日本語リファレンス</title>
 
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta name="keywords" content="
-  C++,標準ライブラリ,リファレンス,ドキュメント,STL,std,limits,std,numeric_limits,variable
+  C++,標準ライブラリ,リファレンス,ドキュメント,STL,std,limits,std,numeric_limits,variable,cpp23deprecated
 ">
         <meta name="title" content="numeric_limits::has_denorm_loss - cpprefjp C++日本語リファレンス" />
         <meta itemprop="name" content="numeric_limits::has_denorm_loss - cpprefjp C++日本語リファレンス" />
@@ -15,37 +18,36 @@
         <meta property="og:url" content="https://cpprefjp.github.io/reference/limits/numeric_limits/has_denorm_loss.html" />
         <meta property="og:site_name" content="cpprefjp - C++日本語リファレンス" />
         <meta property="og:type" content="article" />
-        <meta property="og:description" content="浮動小数点数型において、精度の損失が非正規化数によるものかを判定する" />
+        <meta property="og:description" content="浮動小数点数型において、精度の損失が非正規化数によるものかを判定する。" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="numeric_limits::has_denorm_loss - cpprefjp C++日本語リファレンス" />
         <meta name="twitter:url" content="https://cpprefjp.github.io/reference/limits/numeric_limits/has_denorm_loss.html" />
-        <meta name="twitter:description" content="浮動小数点数型において、精度の損失が非正規化数によるものかを判定する" />
+        <meta name="twitter:description" content="浮動小数点数型において、精度の損失が非正規化数によるものかを判定する。" />
 
         
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicons/apple-touch-icon.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicons/favicon-32x32.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicons/favicon-16x16.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="manifest" href="../../../manifest.json?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="mask-icon" href="../../../static/favicons/safari-pinned-tab.svg?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicons/apple-touch-icon.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicons/favicon-32x32.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicons/favicon-16x16.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="manifest" href="../../../manifest.json?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../../static/pygments/default.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
+<link rel="stylesheet" href="../../../static/pygments/default.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <!-- <link rel="stylesheet" href="../../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../../static/kunai/css/kunai-stage-0.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-1.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-2.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-3.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-0.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-1.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-2.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-3.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
 
-<script type="text/javascript" src="../../../static/kunai/js/kunai-vendor.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
-<script type="text/javascript" src="../../../static/kunai/js/kunai.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
+<script type="text/javascript" src="../../../static/kunai/js/kunai-vendor.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
+<script type="text/javascript" src="../../../static/kunai/js/kunai.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -54,12 +56,9 @@
   });
 </script>
 
-    
-  
-
     </head>
     <body>
-<header data-kunai-mdinfo="{&#34;meta&#34;: {&#34;header&#34;: [&#34;limits&#34;], &#34;namespace&#34;: [&#34;std&#34;], &#34;class&#34;: [&#34;numeric_limits&#34;], &#34;id-type&#34;: [&#34;variable&#34;]}, &#34;sources&#34;: [{&#34;id&#34;: &#34;c3b2bf2345ccf956768096201685548ae7fc03ef&#34;, &#34;source&#34;: &#34;#include &lt;iostream&gt;\n#include &lt;limits&gt;\n\nint main()\n{\n  constexpr bool a = std::numeric_limits&lt;int&gt;::has_denorm_loss;\n  constexpr bool b = std::numeric_limits&lt;float&gt;::has_denorm_loss;\n  constexpr bool c = std::numeric_limits&lt;double&gt;::has_denorm_loss;\n\n  std::cout &lt;&lt; std::boolalpha;\n  std::cout &lt;&lt; \&#34;int : \&#34; &lt;&lt; a &lt;&lt; std::endl;\n  std::cout &lt;&lt; \&#34;float : \&#34; &lt;&lt; b &lt;&lt; std::endl;\n  std::cout &lt;&lt; \&#34;double : \&#34; &lt;&lt; c &lt;&lt; std::endl;\n}\n&#34;}], &#34;page_id&#34;: [&#34;reference&#34;, &#34;limits&#34;, &#34;numeric_limits&#34;, &#34;has_denorm_loss&#34;]}">
+<header data-kunai-mdinfo="{&#34;meta&#34;: {&#34;header&#34;: [&#34;limits&#34;], &#34;namespace&#34;: [&#34;std&#34;], &#34;class&#34;: [&#34;numeric_limits&#34;], &#34;id-type&#34;: [&#34;variable&#34;], &#34;cpp&#34;: [&#34;cpp23deprecated&#34;]}, &#34;sources&#34;: [{&#34;id&#34;: &#34;c3b2bf2345ccf956768096201685548ae7fc03ef&#34;, &#34;source&#34;: &#34;#include &lt;iostream&gt;\n#include &lt;limits&gt;\n\nint main()\n{\n  constexpr bool a = std::numeric_limits&lt;int&gt;::has_denorm_loss;\n  constexpr bool b = std::numeric_limits&lt;float&gt;::has_denorm_loss;\n  constexpr bool c = std::numeric_limits&lt;double&gt;::has_denorm_loss;\n\n  std::cout &lt;&lt; std::boolalpha;\n  std::cout &lt;&lt; \&#34;int : \&#34; &lt;&lt; a &lt;&lt; std::endl;\n  std::cout &lt;&lt; \&#34;float : \&#34; &lt;&lt; b &lt;&lt; std::endl;\n  std::cout &lt;&lt; \&#34;double : \&#34; &lt;&lt; c &lt;&lt; std::endl;\n}\n&#34;}], &#34;page_id&#34;: [&#34;reference&#34;, &#34;limits&#34;, &#34;numeric_limits&#34;, &#34;has_denorm_loss&#34;]}">
   <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -82,6 +81,20 @@
             <div class="google-search">
               
   
+<script>
+  (function() {
+    var cx = '013316413321391058734:ji_u66hl7hq';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div class="gcse-search"></div>
+
 
             </div>
           </li>
@@ -177,8 +190,8 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2017-11-27T05:01:15">
-        2017年11月27日 05時01分15秒
+      <span itemprop="datePublished" content="2023-06-08T08:51:39">
+        2023年06月08日 08時51分39秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -201,16 +214,23 @@
     <div class="row">
       <div class="col-sm-12 content-body">
         
-  <div class="identifier-type">variable</div><div class="header">&lt;limits&gt;</div><h1 itemprop="name"><span class="namespace" title="namespace std">std::</span><span class="class" title="class numeric_limits">numeric_limits::</span><span class="token">has_denorm_loss</span></h1>
-<div itemprop="articleBody"><p><div class="codehilite"><pre><span></span><code><span class="c1">// C++03</span>
-<span class="k">static</span> <span class="k">const</span> <span class="kt">bool</span> <span class="n">has_denorm_loss</span><span class="p">;</span>
-
-<span class="c1">// C++11</span>
-<span class="k">static</span> <span class="k">constexpr</span> <span class="kt">bool</span> <span class="n">has_denorm_loss</span><span class="p">;</span>
+  <div class="identifier-type">variable</div><div class="header">&lt;limits&gt;</div><h1 itemprop="name"><span class="namespace" title="namespace std">std::</span><span class="class" title="class numeric_limits">numeric_limits::</span><span class="token">has_denorm_loss</span><span class="cpp cpp23deprecated text-warning" title="C++23で非推奨">(C++23で非推奨)</span></h1>
+<div itemprop="articleBody"><p><div class="codehilite"><pre><span></span><code><span class="k">static</span> <span class="k">const</span> <span class="kt">bool</span> <span class="n">has_denorm_loss</span><span class="p">;</span>     <span class="c1">// (1) C++03</span>
+<span class="k">static</span> <span class="k">constexpr</span> <span class="kt">bool</span> <span class="n">has_denorm_loss</span><span class="p">;</span> <span class="c1">// (1) C++11</span>
 </code></pre></div>
 </p>
+<p>この機能は、C++23で非推奨となった。</p>
 <h2>概要</h2>
-<p>浮動小数点数型において、精度の損失が非正規化数によるものかを判定する</p>
+<p>浮動小数点数型において、精度の損失が非正規化数によるものかを判定する。</p>
+<h2>非推奨・削除の詳細</h2>
+<p>非正規化数が使用されたことによって精度が低下した場合にそれを検出する次の2つの方法がIEEE754標準で指定されていた：</p>
+<ul>
+<li>非正規化損失（Denormalization loss）</li>
+<li>不正確な結果（Inexact result）</li>
+</ul>
+<p>実際には1つ目の実装は存在しなかったため、現在のIEE754からは削除されており、2つ目の実装だけが存在している。この機能はこの2つのどちらがその環境の浮動小数点数型で実装されているかを示すものだったが、このような理由によりもはや意味がない状況となった。</p>
+<p>また、この値は実装によってなぜか異なっている（MSVCだけが浮動小数点数型に対して<code>true</code>を返す）。</p>
+<p>これらの理由から、この機能は有用なものではなく、最悪勘違いして使用される危険性があるため、非推奨とする。</p>
 <h2>例</h2>
 <p><div class="yata" id="c3b2bf2345ccf956768096201685548ae7fc03ef"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf"><a href="../../iostream.html">&lt;iostream&gt;</a></span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf"><a href="../../limits.html">&lt;limits&gt;</a></span><span class="cp"></span>
@@ -232,7 +252,11 @@
 <p><pre><code>int : false
 float : false
 double : false
-</code></pre></p></div>
+</code></pre></p>
+<h2>参照</h2>
+<ul>
+<li><a href="https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2022/p2614r2.pdf" target="_blank">P2614R2 Deprecate <code>numeric_limits::has_denorm</code></a></li>
+</ul></div>
 
       </div>
     </div>

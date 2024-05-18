@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="cpprefjp" lang="ja" itemscope="" itemtype="http://schema.org/WebPage">
     <head>
+        
+  
+
         <meta charset="UTF-8">
 
         <title>確率が高い分岐と低い分岐を伝える属性 [[likely]], [[unlikely]] - cpprefjp C++日本語リファレンス</title>
@@ -25,27 +28,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="manifest" href="../../manifest.json?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="mask-icon" href="../../static/favicons/safari-pinned-tab.svg?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="manifest" href="../../manifest.json?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -53,9 +55,6 @@
     kn.cpprefjp();
   });
 </script>
-
-    
-  
 
     </head>
     <body>
@@ -82,6 +81,20 @@
             <div class="google-search">
               
   
+<script>
+  (function() {
+    var cx = '013316413321391058734:ji_u66hl7hq';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div class="gcse-search"></div>
+
 
             </div>
           </li>
@@ -165,12 +178,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2020-06-12T11:05:32">
-        2020年06月12日 11時05分32秒
+      <span itemprop="datePublished" content="2023-09-21T15:45:30">
+        2023年09月21日 15時45分30秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">yohhoy</span>
+        <span itemprop="name">nishidate-yuki</span>
       </span>
       が更新
     </small></p>
@@ -233,17 +246,21 @@
   <span class="p">}</span>
 <span class="p">}</span>
 <span class="c1">// 上記例の<span style="color:#ff0000">likely</span>属性利用は適切ではない可能性もあり、</span>
-<span class="c1">// swtich文ラベルへ属性指定構文例示として解釈すること。</span>
+<span class="c1">// switch文ラベルへ属性指定構文例示として解釈すること。</span>
 <span class="c1">// 入力nがランダムと仮定すると 8/15=53.3% の分岐確率となり、</span>
 <span class="c1">// この程度の偏りに対して最適化効果が得られるかは未知数である。</span>
 </code></pre></div>
 </p>
 <h2>この機能が必要になった背景・経緯</h2>
 <p>GCCやClangなど一部C++コンパイラでは独自拡張として同等機能を提供しており、Linuxカーネルや大規模OSSによる広い利用実績があったため、C++標準の属性として採用された。</p>
+<h2>関連項目</h2>
+<ul>
+<li><a href="../cpp23/portable_assumptions.html">C++23 <code>[[assume]]</code>属性</a></li>
+</ul>
 <h2>参照</h2>
 <ul>
 <li><a href="https://stackoverflow.com/questions/109710/" target="_blank">How do the likely/unlikely macros in the Linux kernel work and what is their benefit? - Stack Overflow</a></li>
-<li><a href="https://gcc.gnu.org/onlinedocs/gcc/Other-Builtins.html" target="_blank">GCC __builtin_expect組み込み関数</a></li>
+<li><a href="https://gcc.gnu.org/onlinedocs/gcc/extensions-to-the-c-language-family/other-built-in-functions-provided-by-gcc.html" target="_blank">GCC __builtin_expect組み込み関数</a></li>
 <li><a href="https://llvm.org/docs/BranchWeightMetadata.html" target="_blank">Clang __builtin_expect組み込み関数</a></li>
 <li><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/p0479r2.html" target="_blank">P0479R2 Attributes for Likely and Unlikely Statements (Revision 2)</a></li>
 <li><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/p0479r5.html" target="_blank">P0479R5 Proposed wording for likely and unlikely attributes (Revision 5)</a></li>

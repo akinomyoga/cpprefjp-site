@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="cpprefjp" lang="ja" itemscope="" itemtype="http://schema.org/WebPage">
     <head>
+        
+  
+
         <meta charset="UTF-8">
 
         <title>atomic_ref - cpprefjp C++日本語リファレンス</title>
@@ -25,27 +28,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="manifest" href="../../manifest.json?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
-<link rel="mask-icon" href="../../static/favicons/safari-pinned-tab.svg?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
+<link rel="manifest" href="../../manifest.json?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=ee18a708bd50511e18bdadb8ec85e0c575008790"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=7eccc9e015e78bc6eba51126bc693832fd24ba86"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -53,9 +55,6 @@
     kn.cpprefjp();
   });
 </script>
-
-    
-  
 
     </head>
     <body>
@@ -82,6 +81,20 @@
             <div class="google-search">
               
   
+<script>
+  (function() {
+    var cx = '013316413321391058734:ji_u66hl7hq';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div class="gcse-search"></div>
+
 
             </div>
           </li>
@@ -165,12 +178,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2020-04-06T03:59:13">
-        2020年04月06日 03時59分13秒
+      <span itemprop="datePublished" content="2023-03-02T09:59:22">
+        2023年03月02日 09時59分22秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">onihusube</span>
+        <span itemprop="name">Akira Takahashi</span>
       </span>
       が更新
     </small></p>
@@ -191,11 +204,11 @@
         
   <div class="identifier-type">class template</div><div class="header">&lt;atomic&gt;</div><h1 itemprop="name"><span class="namespace" title="namespace std">std::</span><span class="token">atomic_ref</span><span class="cpp cpp20" title="C++20で追加">(C++20)</span></h1>
 <div itemprop="articleBody"><p><div class="codehilite"><pre><span></span><code><span class="k">namespace</span> <span class="n">std</span> <span class="p">{</span>
-  <span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="k">struct</span> <span class="n">atomic_ref</span><span class="p">;</span>
+  <span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="k">struct</span> <span class="n">atomic_ref</span><span class="p">;</span>          <span class="c1">// (1) C++20</span>
 
-  <span class="k">template</span><span class="o">&lt;&gt;</span> <span class="k">struct</span> <span class="n">atomic_ref</span><span class="o">&lt;</span><span class="n"><i>integral</i></span><span class="o">&gt;</span><span class="p">;</span>
-  <span class="k">template</span><span class="o">&lt;&gt;</span> <span class="k">struct</span> <span class="n">atomic_ref</span><span class="o">&lt;</span><span class="n"><i>floating-point</i></span><span class="o">&gt;</span><span class="p">;</span>
-  <span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="k">struct</span> <span class="n">atomic_ref</span><span class="o">&lt;</span><span class="n">T</span><span class="o">*&gt;</span><span class="p">;</span>
+  <span class="k">template</span><span class="o">&lt;&gt;</span> <span class="k">struct</span> <span class="n">atomic_ref</span><span class="o">&lt;</span><span class="n"><i>integral</i></span><span class="o">&gt;</span><span class="p">;</span>       <span class="c1">// (2) C++20</span>
+  <span class="k">template</span><span class="o">&lt;&gt;</span> <span class="k">struct</span> <span class="n">atomic_ref</span><span class="o">&lt;</span><span class="n"><i>floating-point</i></span><span class="o">&gt;</span><span class="p">;</span> <span class="c1">// (3) C++20</span>
+  <span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="k">struct</span> <span class="n">atomic_ref</span><span class="o">&lt;</span><span class="n">T</span><span class="o">*&gt;</span><span class="p">;</span>      <span class="c1">// (4) C++20</span>
 <span class="p">}</span>
 </code></pre></div>
 </p>
@@ -205,7 +218,16 @@
 <p>同じオブジェクトを参照する異なる<code>atomic_ref</code>オブジェクトを介して行われるアトミック操作は、共通の参照するオブジェクトに対してアトミックに行われる。つまり、局所的に<code>atomic_ref</code>オブジェクトに変換してアトミック操作を適用してもよい。</p>
 <p>オブジェクトを参照してアトミック操作をするための制約として、アーキテクチャ固有のアライメント制約を満たすことが要求される。コンストラクタと代入演算子でオブジェクトを参照する際、メンバ定数としてのアライメント値<code>required_alignment</code>の位置にオブジェクトが配置されていること。</p>
 <p><code>atomic_ref</code>クラステンプレートは型<code>T</code>の値をコピーではなく参照で保持するため、<code>atomic_ref</code>オブジェクトより先に参照先の変数の寿命が尽きてはならない。</p>
-<h2>テンプレートパラメータ制約</h2>
+<ul>
+<li>(1) : プライマリテンプレート。宣言のみ</li>
+<li>(2) : 整数型に対する特殊化</li>
+<li>(3) : (CV修飾されていない) 浮動小数点数型に対する特殊化<ul>
+<li>(C++23) : <a class="cpprefjp-defined-word" data-desc="&lt;stdfloat&gt;で定義される内部表現の規定された浮動小数点数型" href="../stdfloat.html">拡張浮動小数点数型</a>を含む</li>
+</ul>
+</li>
+<li>(4) : 任意の型のポインタに対する特殊化</li>
+</ul>
+<h2><a class="cpprefjp-defined-word" data-desc="関数であればオーバーロード解決に参加するための条件、それ以外であれば受け付ける型の条件">テンプレートパラメータ制約</a></h2>
 <ul>
 <li>型<code>T</code>は<code><a href="../type_traits/is_trivially_copyable.html">is_trivially_copyable_v</a>&lt;T&gt; == true</code>であること</li>
 </ul>
@@ -577,6 +599,10 @@
 <h3>参照</h3>
 <ul>
 <li><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/p0019r8.html" target="_blank">P0019R8 Atomic Ref</a></li>
+<li><a href="https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2022/p1467r9.html" target="_blank">P1467R9 Extended floating-point types and standard names</a><ul>
+<li>C++23で<a class="cpprefjp-defined-word" data-desc="&lt;stdfloat&gt;で定義される内部表現の規定された浮動小数点数型" href="../stdfloat.html">拡張浮動小数点数型</a>もテンプレート引数として指定することが許可された</li>
+</ul>
+</li>
 </ul></div>
 
       </div>
