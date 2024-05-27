@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="cpprefjp" lang="ja" itemscope="" itemtype="http://schema.org/WebPage">
     <head>
+        
+  
+
         <meta charset="UTF-8">
 
         <title>stoull - cpprefjp C++日本語リファレンス</title>
@@ -25,27 +28,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298">
-<link rel="manifest" href="../../static/favicons/manifest.json?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298">
-<link rel="mask-icon" href="../../static/favicons/safari-pinned-tab.svg?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="manifest" href="../../manifest.json?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -53,9 +55,6 @@
     kn.cpprefjp();
   });
 </script>
-
-    
-  
 
     </head>
     <body>
@@ -179,8 +178,8 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2019-11-26T08:07:39">
-        2019年11月26日 08時07分39秒
+      <span itemprop="datePublished" content="2024-05-21T12:51:54">
+        2024年05月21日 12時51分54秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -421,8 +420,8 @@
 <h2>関連リンク</h2>
 <h3>C標準ライブラリに由来する関数</h3>
 <ul>
-<li><code>atoll</code>: <code>stoull</code>は<code>atoll</code>を<code>std::string</code>および<code>std::wsting</code>に対応させ、戻り値の型を<code>unsigned long long</code>に変更したものと見なせる。</li>
-<li><code>strtoll</code>, <code>wcstoll</code>: <code>stoull</code>は<code>strtoll</code>および<code>wcstoull</code>をそれぞれ<code>std::string</code>と<code>std::wsting</code>に対応させたものと見なせる。</li>
+<li><code>atoll</code>: <code>stoull</code>は<code>atoll</code>を<code>std::string</code>および<code>std::wstring</code>に対応させ、戻り値の型を<code>unsigned long long</code>に変更したものと見なせる。</li>
+<li><code>strtoll</code>, <code>wcstoll</code>: <code>stoull</code>は<code>strtoll</code>および<code>wcstoull</code>をそれぞれ<code>std::string</code>と<code>std::wstring</code>に対応させたものと見なせる。</li>
 </ul>
 <h3>ファミリー</h3>
 <ul>

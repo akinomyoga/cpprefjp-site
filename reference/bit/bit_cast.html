@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="cpprefjp" lang="ja" itemscope="" itemtype="http://schema.org/WebPage">
     <head>
+        
+  
+
         <meta charset="UTF-8">
 
         <title>bit_cast - cpprefjp C++日本語リファレンス</title>
@@ -25,27 +28,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298">
-<link rel="manifest" href="../../static/favicons/manifest.json?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298">
-<link rel="mask-icon" href="../../static/favicons/safari-pinned-tab.svg?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="manifest" href="../../manifest.json?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -53,9 +55,6 @@
     kn.cpprefjp();
   });
 </script>
-
-    
-  
 
     </head>
     <body>
@@ -212,16 +211,16 @@
 </p>
 <h2>概要</h2>
 <p>ビットレベルの再解釈キャストを行う。</p>
-<p>低レイヤーのプログラムでは、同じビットを維持してほかの型に解釈し直したいことがある。その際、<code>reinterpret_cast</code>や共用体を使用すると、Strict Aliasing規則に抵触して未定義動作になってしまう。安全な方法としては<code>std::memcpy()</code>を使用するなどがあるが、面倒なことなどから前述の危険な方法が多く見られた。そこで、同等の操作を簡単で安全にできるようにしたのが本関数である。</p>
-<h2>テンプレートパラメータ制約</h2>
+<p>低レイヤーのプログラムでは、同じビットを維持してほかの型に解釈し直したいことがある。その際、<code>reinterpret_cast</code>や共用体を使用すると、Strict Aliasing規則に抵触して<a class="cpprefjp-defined-word" data-desc="未定義の動作。処理系は予期せぬ動作をする可能性がある。要するに動作保証対象外" href="../../implementation-compliance.html#dfn-undefined-behavior">未定義動作</a>になってしまう。安全な方法としては<code>std::memcpy()</code>を使用するなどがあるが、面倒なことなどから前述の危険な方法が多く見られた。そこで、同等の操作を簡単で安全にできるようにしたのが本関数である。</p>
+<h2><a class="cpprefjp-defined-word" data-desc="関数であればオーバーロード解決に参加するための条件、それ以外であれば受け付ける型の条件">テンプレートパラメータ制約</a></h2>
 <ul>
 <li><code>sizeof(To) == sizeof(From)</code>であること</li>
 <li><code><a href="../type_traits/is_trivially_copyable.html">std::is_trivially_copyable_v</a>&lt;To&gt; == true</code>であること</li>
 <li><code><a href="../type_traits/is_trivially_copyable.html">std::is_trivially_copyable_v</a>&lt;From&gt; == true</code>であること</li>
 </ul>
 <h2>戻り値</h2>
-<p>型<code>To</code>の値を返す。その戻り値のビット表現は値<code>from</code>のビット表現と等しくなる。（もしあれば）戻り値のパディングビットは未規定。</p>
-<p>型<code>To</code>においてビット表現に対応する値が存在しない場合、その動作は未定義となる。またビット表現に対応する値が複数存在する場合、どの値が生成されるかは未規定となる。</p>
+<p>型<code>To</code>の値を返す。その戻り値のビット表現は値<code>from</code>のビット表現と等しくなる。（もしあれば）戻り値のパディングビットは<a class="cpprefjp-defined-word" data-desc="未規定の動作。事前の断りなく処理系によって異なる動作をする" href="../../implementation-compliance.html#dfn-unspecified-behavior">未規定</a>。</p>
+<p>型<code>To</code>においてビット表現に対応する値が存在しない場合、その動作は<a class="cpprefjp-defined-word" data-desc="未定義の動作。処理系は予期せぬ動作をする可能性がある。要するに動作保証対象外" href="../../implementation-compliance.html#dfn-undefined-behavior">未定義</a>となる。またビット表現に対応する値が複数存在する場合、どの値が生成されるかは<a class="cpprefjp-defined-word" data-desc="未規定の動作。事前の断りなく処理系によって異なる動作をする" href="../../implementation-compliance.html#dfn-unspecified-behavior">未規定</a>となる。</p>
 <h2>例外</h2>
 <p>投げない</p>
 <h2>定数式に評価される条件</h2>
@@ -235,7 +234,7 @@
 </ul>
 <h2>備考</h2>
 <ul>
-<li>この関数は、型<code>To</code>にデフォルト構築可能であることの要求を行わない。以下に実装イメージを示す：
+<li>この関数は、型<code>To</code>に<a class="cpprefjp-defined-word" data-desc="デフォルト初期化。`T x;`構文での初期化。トリビアルにデフォルト構築可能な型の場合は初期化されず（オブジェクトのlifetimeは開始される）、そうではないクラス型はデフォルトコンストラクタで初期化する。配列型の場合は各要素が再帰的にデフォルト初期化される">デフォルト構築</a>可能であることの要求を行わない。以下に実装イメージを示す：
   <br />
 <div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">To</span><span class="p">,</span> <span class="k">typename</span> <span class="n">From</span><span class="o">&gt;</span>
 <span class="n">To</span> <span class="n">bit_cast</span><span class="p">(</span><span class="k">const</span> <span class="n">From</span><span class="o">&amp;</span> <span class="n">from</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="c1">// 実際には、さらに要件チェックが行われる</span>

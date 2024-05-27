@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="cpprefjp" lang="ja" itemscope="" itemtype="http://schema.org/WebPage">
     <head>
+        
+  
+
         <meta charset="UTF-8">
 
         <title>recursive_directory_iterator::operator= - cpprefjp C++日本語リファレンス</title>
@@ -25,27 +28,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicons/apple-touch-icon.png?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298">
-<link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicons/favicon-32x32.png?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298">
-<link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicons/favicon-16x16.png?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298">
-<link rel="manifest" href="../../../static/favicons/manifest.json?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298">
-<link rel="mask-icon" href="../../../static/favicons/safari-pinned-tab.svg?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicons/apple-touch-icon.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicons/favicon-32x32.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicons/favicon-16x16.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="manifest" href="../../../manifest.json?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../../static/pygments/default.css?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298">
+<link rel="stylesheet" href="../../../static/pygments/default.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
 <!-- <link rel="stylesheet" href="../../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../../static/kunai/css/kunai-stage-0.css?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-1.css?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-2.css?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-3.css?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-0.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-1.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-2.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-3.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
 
-<script type="text/javascript" src="../../../static/kunai/js/kunai-vendor.js?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298"></script>
-<script type="text/javascript" src="../../../static/kunai/js/kunai.js?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298"></script>
+<script type="text/javascript" src="../../../static/kunai/js/kunai-vendor.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
+<script type="text/javascript" src="../../../static/kunai/js/kunai.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -53,9 +55,6 @@
     kn.cpprefjp();
   });
 </script>
-
-    
-  
 
     </head>
     <body>
@@ -244,7 +243,7 @@
 <li>(2) : <code><a href="options.html">options()</a></code>、<code><a href="depth.html">depth()</a></code>、<code><a href="recursion_pending.html">recursion_pending()</a></code>の値が、この関数を呼び出す前の<code>rhs.<a href="options.html">options()</a></code>、<code>rhs.<a href="depth.html">depth()</a></code>、<code>rhs.<a href="recursion_pending.html">recursion_pending()</a></code>の値を持つこと</li>
 </ul>
 <h2>備考</h2>
-<p>未規定だが、GCC 8.2およびClang 7.0環境では、この代入演算子はコピー元とコピー先で所有権を共有する。そのため、コピー・ムーブに関わらず、代入元のイテレータは代入後に再構築以外の操作をしてはならない</p>
+<p><a class="cpprefjp-defined-word" data-desc="未規定の動作。事前の断りなく処理系によって異なる動作をする" href="../../../implementation-compliance.html#dfn-unspecified-behavior">未規定</a>だが、GCC 8.2およびClang 7.0環境では、この代入演算子はコピー元とコピー先で所有権を共有する。そのため、コピー・ムーブに関わらず、代入元のイテレータは代入後に再構築以外の操作をしてはならない</p>
 <h2>例</h2>
 <p><div class="yata" id="bb0d44ac6312885ece536a57afe63b4a41b39388"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf"><a href="../../iostream.html">&lt;iostream&gt;</a></span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf"><a href="../../filesystem.html">&lt;filesystem&gt;</a></span><span class="cp"></span>

@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="cpprefjp" lang="ja" itemscope="" itemtype="http://schema.org/WebPage">
     <head>
+        
+  
+
         <meta charset="UTF-8">
 
         <title>indirectly_copyable_storable - cpprefjp C++日本語リファレンス</title>
@@ -25,27 +28,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298">
-<link rel="manifest" href="../../static/favicons/manifest.json?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298">
-<link rel="mask-icon" href="../../static/favicons/safari-pinned-tab.svg?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="manifest" href="../../manifest.json?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -53,9 +55,6 @@
     kn.cpprefjp();
   });
 </script>
-
-    
-  
 
     </head>
     <body>
@@ -231,7 +230,7 @@
 <p><div class="codehilite"><pre><span></span><code><span class="n">iter_value_t</span><span class="o">&lt;</span><span class="n">In</span><span class="o">&gt;</span> <span class="n">obj</span><span class="p">(</span><span class="o">*</span><span class="n">i</span><span class="p">);</span>
 </code></pre></div>
 </p>
-<p><code><a href="iter_reference_t.html">iter_reference_t&lt;In&gt;</a></code>が右辺値参照型の場合、この初期化の後で<code>*i</code>が示す値は有効だが未規定な状態となる。</p>
+<p><code><a href="iter_reference_t.html">iter_reference_t&lt;In&gt;</a></code>が右辺値参照型の場合、この初期化の後で<code>*i</code>が示す値は有効だが<a class="cpprefjp-defined-word" data-desc="未規定の動作。事前の断りなく処理系によって異なる動作をする" href="../../implementation-compliance.html#dfn-unspecified-behavior">未規定</a>な状態となる。</p>
 <h2>例</h2>
 <p><div class="yata" id="7a507ef5326427b18457ec24a672d488d550e099"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf"><a href="../iostream.html">&lt;iostream&gt;</a></span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf"><a href="../concepts.html">&lt;concepts&gt;</a></span><span class="cp"></span>

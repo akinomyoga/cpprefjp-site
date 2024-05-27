@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="cpprefjp" lang="ja" itemscope="" itemtype="http://schema.org/WebPage">
     <head>
+        
+  
+
         <meta charset="UTF-8">
 
         <title>通常関数の戻り値型推論 - cpprefjp C++日本語リファレンス</title>
@@ -25,27 +28,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298">
-<link rel="manifest" href="../../static/favicons/manifest.json?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298">
-<link rel="mask-icon" href="../../static/favicons/safari-pinned-tab.svg?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="manifest" href="../../manifest.json?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -53,9 +55,6 @@
     kn.cpprefjp();
   });
 </script>
-
-    
-  
 
     </head>
     <body>
@@ -256,7 +255,7 @@
 </p>
 <h3>複数個のreturn文</h3>
 <p>複数の<code>return</code>文がある場合には<a href="../../reference/type_traits/common_type.html">それらの式に共通する型</a>が戻り値の型となる。</p>
-<p>複数の<code>return</code>文があり、それらに共通する型がない場合、プログラムは不適格となる。</p>
+<p>複数の<code>return</code>文があり、それらに共通する型がない場合、プログラムは<a class="cpprefjp-defined-word" data-desc="プログラムが適格でないこと。コンパイルエラーなどになる" href="../../implementation-compliance.html#dfn-ill-formed">不適格</a>となる。</p>
 <p><div class="codehilite"><pre><span></span><code><span class="c1">// 戻り値の型は、intとconst int&amp;の共通の型であるint</span>
 <span class="k">auto</span> <span class="nf">f</span><span class="p">()</span>
 <span class="p">{</span>

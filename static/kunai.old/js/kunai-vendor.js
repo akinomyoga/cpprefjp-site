@@ -2008,7 +2008,7 @@ var CRSearch = /*#__PURE__*/function () {
       this._log.info('parsing...', json);
 
       if (this._opts.base_url) json.base_url = this._opts.base_url;
-      if (this._opts.project_url) json.project_url = this._opts.project_url;
+      if (this._opts.online_base_url) json.online_base_url = this._opts.online_base_url;
       var db = new Database(this._log, json);
 
       this._db.set(db.name, db);
@@ -2200,7 +2200,7 @@ var CRSearch = /*#__PURE__*/function () {
               _db = _step4$value[1];
 
           // always include fallback
-          var fallback_site = _db.project_url ? _db.project_url.host : _db.base_url.host;
+          var fallback_site = _db.online_base_url ? _db.online_base_url.host : _db.base_url.host;
 
           var _e2 = this._make_result(null, q.original_text, {
             name: _db.name,
@@ -2574,7 +2574,7 @@ var CRSearch = /*#__PURE__*/function () {
   google_url: new (url_parse_default())('https://www.google.co.jp/search'),
   force_new_window: false,
   base_url: null,
-  project_url: null
+  online_base_url: null
 });
 
 (0,defineProperty/* default */.Z)(CRSearch, "_KLASS", 'crsearch');

@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="cpprefjp" lang="ja" itemscope="" itemtype="http://schema.org/WebPage">
     <head>
+        
+  
+
         <meta charset="UTF-8">
 
         <title>rend - cpprefjp C++日本語リファレンス</title>
@@ -25,27 +28,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298">
-<link rel="manifest" href="../../static/favicons/manifest.json?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298">
-<link rel="mask-icon" href="../../static/favicons/safari-pinned-tab.svg?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298" color="#f5f8fc">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="manifest" href="../../manifest.json?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=ecf8b65441c53a5681611e9bb9047812550f2298"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -53,9 +55,6 @@
     kn.cpprefjp();
   });
 </script>
-
-    
-  
 
     </head>
     <body>
@@ -217,17 +216,17 @@
 <p>部分式<code>E</code>の型を<code>T</code>、<code>t</code>を<code>E</code>を評価した値とする。
 このとき、式<code>ranges::begin(E)</code>の効果は以下の通り。</p>
 <ol>
-<li><code>E</code>がrvalueかつ<code><a href="enable_borrowed_range.html">enable_borrowed_range</a>&lt;<a href="../type_traits/remove_cv.html">remove_cv_t</a>&lt;T&gt;&gt;</code>が<code>false</code>であれば、呼び出しは不適格。</li>
-<li><code>T</code>が配列型かつ<code><a href="../type_traits/remove_all_extents.html">remove_all_extents_t</a>&lt;T&gt;</code>が不完全型であれば、呼び出しは不適格(診断不要)。</li>
+<li><code>E</code>がrvalueかつ<code><a href="enable_borrowed_range.html">enable_borrowed_range</a>&lt;<a href="../type_traits/remove_cv.html">remove_cv_t</a>&lt;T&gt;&gt;</code>が<code>false</code>であれば、呼び出しは<a class="cpprefjp-defined-word" data-desc="プログラムが適格でないこと。コンパイルエラーなどになる" href="../../implementation-compliance.html#dfn-ill-formed">不適格</a>。</li>
+<li><code>T</code>が配列型かつ<code><a href="../type_traits/remove_all_extents.html">remove_all_extents_t</a>&lt;T&gt;</code>が不完全型であれば、呼び出しは<a class="cpprefjp-defined-word" data-desc="プログラムが適格でないこと。コンパイルエラーなどになる" href="../../implementation-compliance.html#dfn-ill-formed">不適格</a>(<a class="cpprefjp-defined-word" data-desc="処理系は規則違反に対してエラーメッセージや警告を出さないかもしれない" href="../../implementation-compliance.html#dfn-no-diagnostic-required">診断不要</a>)。</li>
 <li><code><a href="../exposition-only/decay-copy.html">decay-copy</a>(t.rend())</code>が有効な式でその型が<code><a href="../iterator/sentinel_for.html">sentinel_for</a>&lt;decltype(<a href="rbegin.html">ranges::rbegin</a>(E))&gt;</code>のモデルであれば、<code><a href="../exposition-only/decay-copy.html">decay-copy</a>(t.rend())</code>と等しい。</li>
 <li><code>T</code>がクラス型または列挙体であって、<code>rend</code>がADLで見つかり、<code><a href="../exposition-only/decay-copy.html">decay-copy</a>(rend(t))</code>が有効な式でその型が<code><a href="../iterator/sentinel_for.html">sentinel_for</a>&lt;decltype(<a href="rbegin.html">ranges::rbegin</a>(E))&gt;</code>のモデルであれば、<code><a href="../exposition-only/decay-copy.html">decay-copy</a>(rend(t))</code>と等しい。</li>
 <li><code><a href="begin.html">ranges::begin</a>(t)</code>と<code><a href="end.html">ranges::end</a>(t)</code>が同じ型をもつ有効な式で、その型が<code><a href="../iterator/bidirectional_iterator.html">bidirectional_iterator</a></code>のモデルであれば、<code><a href="../iterator/make_reverse_iterator.html">make_reverse_iterator</a>(<a href="begin.html">ranges::begin</a>(t))</code>と等しい。</li>
 </ol>
-<p>どれにも当てはまらないとき、呼び出しは不適格。</p>
+<p>どれにも当てはまらないとき、呼び出しは<a class="cpprefjp-defined-word" data-desc="プログラムが適格でないこと。コンパイルエラーなどになる" href="../../implementation-compliance.html#dfn-ill-formed">不適格</a>。</p>
 <h2>戻り値</h2>
 <p>Rangeの先頭の前を指す逆イテレータもしくは番兵。</p>
 <h2>カスタマイゼーションポイント</h2>
-<p>3か4の条件を満たすようにする。例えば、ユーザー定義のフリー関数<code>rend</code>を定義するか、ユーザー定義のクラスにメンバ関数<code>rend</code>を持たせることでカスタマイズできる。
+<p>3か4の条件を満たすようにする。例えば、<a class="cpprefjp-defined-word" data-desc="プログラム定義。ユーザー（プログラマ）によって定義されること（標準ライブラリで定義されるものを除く）">ユーザー定義</a>のフリー関数<code>rend</code>を定義するか、<a class="cpprefjp-defined-word" data-desc="プログラム定義。ユーザー（プログラマ）によって定義されること（標準ライブラリで定義されるものを除く）">ユーザー定義</a>のクラスにメンバ関数<code>rend</code>を持たせることでカスタマイズできる。
 または、5の条件を満たすようにして、<code><a href="begin.html">ranges::begin</a></code>、<code><a href="end.html">ranges::end</a></code>をカスタマイズすることで、<code>ranges::rend</code>をカスタマイズできる。</p>
 <h2>備考</h2>
 <p><code>ranges::rend(E)</code>が有効な式であるとき、<code>ranges::rend(E)</code>の型<code>S</code>、<code><a href="rbegin.html">ranges::rbegin</a>(E)</code>の型<code>I</code>は<code><a href="../iterator/sentinel_for.html">sentinel_for</a>&lt;S, I&gt;</code>のモデルである。</p>

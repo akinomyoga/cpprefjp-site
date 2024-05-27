@@ -3363,7 +3363,7 @@ var Kunai = /*#__PURE__*/function () {
     key: "initCRSearch",
     value: function () {
       var _initCRSearch = (0,asyncToGenerator/* default */.Z)( /*#__PURE__*/regenerator_default().mark(function _callee6(isEnabled) {
-        var dynamic_base_url, project_base_url, database_url, crs, e;
+        var dynamic_base_url, online_base_url, database_url, crs, e;
         return regenerator_default().wrap(function _callee6$(_context6) {
           while (1) {
             switch (_context6.prev = _context6.next) {
@@ -3400,7 +3400,7 @@ var Kunai = /*#__PURE__*/function () {
                 // content="..." />.
 
 
-                project_base_url = function () {
+                online_base_url = function () {
                   var meta = document.querySelector('meta[name="twitter:url"]') || document.querySelector('meta[property="og:url"]');
 
                   if (meta && meta.content) {
@@ -3430,7 +3430,7 @@ var Kunai = /*#__PURE__*/function () {
 
                       if (_url != _url_kunai) return _url; // Try to download "crsearch.json" from the project website.
 
-                      if (project_base_url) return project_base_url + "static/crsearch/crsearch.json";
+                      if (online_base_url) return online_base_url + "static/crsearch/crsearch.json";
                     } // Try to determine the position of crsearch.json
                     // ({base_url}/static/crsearch/crsearch.json) based on the location of
                     // this script ({base_url}/static/kunai/js/kunai.js).
@@ -3448,7 +3448,7 @@ var Kunai = /*#__PURE__*/function () {
                 crs = new crsearch/* CRSearch */.Sv({
                   onDatabase: this.onDatabase.bind(this),
                   base_url: dynamic_base_url,
-                  project_url: project_base_url
+                  online_base_url: online_base_url
                 });
                 crs.database(database_url);
                 e = kunai_$('.crsearch');
