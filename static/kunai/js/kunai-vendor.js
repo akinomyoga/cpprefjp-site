@@ -1664,7 +1664,7 @@ var Database = /*#__PURE__*/function () {
     this._log = log.makeContext('Database');
     this._name = json.database_name;
     this._base_url = new (url_parse_default())(json.base_url);
-    this._project_url = json.project_url ? new (url_parse_default())(json.project_url) : null;
+    this._online_base_url = json.online_base_url ? new (url_parse_default())(json.online_base_url) : null;
     this._path_ns_map = new Map();
     this._ids = []; // global map
 
@@ -1806,9 +1806,9 @@ var Database = /*#__PURE__*/function () {
       return this._base_url;
     }
   }, {
-    key: "project_url",
+    key: "online_base_url",
     get: function get() {
-      return this._project_url;
+      return this._online_base_url;
     }
   }, {
     key: "all_fullpath_pages",
