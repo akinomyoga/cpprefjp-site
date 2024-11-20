@@ -16,21 +16,21 @@
 
         <meta charset="UTF-8">
 
-        <title>char16_tとchar32_t - cpprefjp C++日本語リファレンス</title>
+        <title>char16_tとchar32_t [N2249] - cpprefjp C++日本語リファレンス</title>
 
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta name="keywords" content="
   C++,標準ライブラリ,リファレンス,ドキュメント,STL,std,cpp11
 ">
-        <meta name="title" content="char16_tとchar32_t - cpprefjp C++日本語リファレンス" />
-        <meta itemprop="name" content="char16_tとchar32_t - cpprefjp C++日本語リファレンス" />
-        <meta property="og:title" content="char16_tとchar32_t - cpprefjp C++日本語リファレンス" />
+        <meta name="title" content="char16_tとchar32_t [N2249] - cpprefjp C++日本語リファレンス" />
+        <meta itemprop="name" content="char16_tとchar32_t [N2249] - cpprefjp C++日本語リファレンス" />
+        <meta property="og:title" content="char16_tとchar32_t [N2249] - cpprefjp C++日本語リファレンス" />
         <meta property="og:url" content="https://cpprefjp.github.io/lang/cpp11/char16_32.html" />
         <meta property="og:site_name" content="cpprefjp - C++日本語リファレンス" />
         <meta property="og:type" content="article" />
         <meta property="og:description" content="`char16_t`はUTF-16符号化形式の文字型、`char32_t`はUTF-32符号化形式の文字型である。" />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="char16_tとchar32_t - cpprefjp C++日本語リファレンス" />
+        <meta name="twitter:title" content="char16_tとchar32_t [N2249] - cpprefjp C++日本語リファレンス" />
         <meta name="twitter:url" content="https://cpprefjp.github.io/lang/cpp11/char16_32.html" />
         <meta name="twitter:description" content="`char16_t`はUTF-16符号化形式の文字型、`char32_t`はUTF-32符号化形式の文字型である。" />
 
@@ -38,26 +38,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="manifest" href="../../manifest.json?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="manifest" href="../../manifest.json?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -171,7 +171,7 @@
         <span>
           
             
-              <span itemprop="name">char16_tとchar32_t</span>
+              <span itemprop="name">char16_tとchar32_t [N2249]</span>
             
           
         </span>
@@ -188,12 +188,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2024-01-29T09:47:42">
-        2024年01月29日 09時47分42秒
+      <span itemprop="datePublished" content="2024-07-27T07:23:15">
+        2024年07月27日 07時23分15秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">Akira Takahashi</span>
+        <span itemprop="name">koile</span>
       </span>
       が更新
     </small></p>
@@ -212,8 +212,12 @@
     <div class="row">
       <div class="col-sm-12 content-body">
         
-  <h1 itemprop="name"><span class="token">char16_tとchar32_t</span><span class="cpp cpp11" title="C++11で追加">(C++11)</span></h1>
-<div itemprop="articleBody"><h2>概要</h2>
+  <h1 itemprop="name"><span class="token">char16_tとchar32_t [N2249]</span><span class="cpp cpp11" title="C++11で追加">(C++11)</span></h1>
+<div itemprop="articleBody"><p></p>
+<p>このページはC++11に採用された言語機能の変更を解説しています。</p>
+<p>のちのC++規格でさらに変更される場合があるため<a href="#relative-page">関連項目</a>を参照してください。</p>
+<p></p>
+<h2>概要</h2>
 <p><code>char16_t</code>はUTF-16符号化形式の文字型、<code>char32_t</code>はUTF-32符号化形式の文字型である。</p>
 <p>UTF-16とUTF-32は、ISO/IEC 10646で標準化されている文字コード「UCS (Universal Coded Character Set)」とその互換文字コードである「Unicode (ユニコード)」で定義されている符号化形式である。UTF-16は、ひとつのコードポイント(≒文字)を表すために16ビットを基本的に使用する。UTF-32は32ビットである。</p>
 <p>標準C++では、これらの文字符号化形式を表す文字型、そのリテラル、および文字コード・符号化形式を変換する機能を提供する。</p>
@@ -251,8 +255,8 @@
 </ul>
 </li>
 <li><code>char16_t</code>と<code>char32_t</code>はそれぞれ、<code><a href="../../reference/cstdint.html">&lt;cstdint&gt;</a></code>ヘッダで定義される<code><a href="../../reference/cstdint/uint_least16_t.html">uint_least16_t</a></code>と<code><a href="../../reference/cstdint/uint_least32_t.html">uint_least32_t</a></code>と、サイズ、符号の有無、アライメントが同じである。</li>
-<li><code>&lt;uchar&gt;</code>ヘッダでマクロ<code>__STDC_UTF_16__</code>が定義される場合、<code>char16_t</code>型の値はUTF-16の妥当なコードポイントを持つ。そうでない場合、<code>char16_t</code>型の値は<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">実装定義</a>の文字コードとなる。</li>
-<li><code>&lt;uchar&gt;</code>ヘッダでマクロ<code>__STDC_UTF_32__</code>が定義される場合、<code>char32_t</code>型の値はUTF-32の妥当なコードポイントを持つ。そうでない場合、<code>char32_t</code>型の値は<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">実装定義</a>の文字コードとなる。</li>
+<li><code>&lt;cuchar&gt;</code>ヘッダでマクロ<code>__STDC_UTF_16__</code>が定義される場合、<code>char16_t</code>型の値はUTF-16の妥当なコードポイントを持つ。そうでない場合、<code>char16_t</code>型の値は<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">実装定義</a>の文字コードとなる。</li>
+<li><code>&lt;cuchar&gt;</code>ヘッダでマクロ<code>__STDC_UTF_32__</code>が定義される場合、<code>char32_t</code>型の値はUTF-32の妥当なコードポイントを持つ。そうでない場合、<code>char32_t</code>型の値は<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">実装定義</a>の文字コードとなる。</li>
 </ul>
 <h3>ユニバーサルキャラクタ名</h3>
 <ul>
@@ -319,7 +323,7 @@
 </code></pre></p>
 <h2>この機能が必要になった背景・経緯</h2>
 <p>この機能が提案された2004年当時にはすでにUCS／Unicodeが広く普及していた。多くのユーザーがその文字コードを扱うことを望んでいたために、標準C++で正式にサポートすることとなった。</p>
-<h2>関連項目</h2>
+<h2><a href="#relative-page" id="relative-page">関連項目</a></h2>
 <ul>
 <li><code><a href="../../reference/string/basic_string.html">u16string</a></code></li>
 <li><code><a href="../../reference/string/basic_string.html">u32string</a></code></li>

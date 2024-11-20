@@ -16,21 +16,21 @@
 
         <meta charset="UTF-8">
 
-        <title>コルーチン - cpprefjp C++日本語リファレンス</title>
+        <title>コルーチン [P0912R5] - cpprefjp C++日本語リファレンス</title>
 
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta name="keywords" content="
   C++,標準ライブラリ,リファレンス,ドキュメント,STL,std,cpp20
 ">
-        <meta name="title" content="コルーチン - cpprefjp C++日本語リファレンス" />
-        <meta itemprop="name" content="コルーチン - cpprefjp C++日本語リファレンス" />
-        <meta property="og:title" content="コルーチン - cpprefjp C++日本語リファレンス" />
+        <meta name="title" content="コルーチン [P0912R5] - cpprefjp C++日本語リファレンス" />
+        <meta itemprop="name" content="コルーチン [P0912R5] - cpprefjp C++日本語リファレンス" />
+        <meta property="og:title" content="コルーチン [P0912R5] - cpprefjp C++日本語リファレンス" />
         <meta property="og:url" content="https://cpprefjp.github.io/lang/cpp20/coroutines.html" />
         <meta property="og:site_name" content="cpprefjp - C++日本語リファレンス" />
         <meta property="og:type" content="article" />
         <meta property="og:description" content="処理途中でのサスペンド(中断)／レジューム(再開)をサポートする一般化された関数として、[コルーチン](https://ja.wikipedia.org/wiki/%E3%82%B3%E3%83%AB%E3%83%BC%E3%83%81%E3%83%B3)が導入される。" />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="コルーチン - cpprefjp C++日本語リファレンス" />
+        <meta name="twitter:title" content="コルーチン [P0912R5] - cpprefjp C++日本語リファレンス" />
         <meta name="twitter:url" content="https://cpprefjp.github.io/lang/cpp20/coroutines.html" />
         <meta name="twitter:description" content="処理途中でのサスペンド(中断)／レジューム(再開)をサポートする一般化された関数として、[コルーチン](https://ja.wikipedia.org/wiki/%E3%82%B3%E3%83%AB%E3%83%BC%E3%83%81%E3%83%B3)が導入される。" />
 
@@ -38,26 +38,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="manifest" href="../../manifest.json?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="manifest" href="../../manifest.json?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -171,7 +171,7 @@
         <span>
           
             
-              <span itemprop="name">コルーチン</span>
+              <span itemprop="name">コルーチン [P0912R5]</span>
             
           
         </span>
@@ -188,12 +188,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2023-09-21T15:33:21">
-        2023年09月21日 15時33分21秒
+      <span itemprop="datePublished" content="2024-07-18T16:39:47">
+        2024年07月18日 16時39分47秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">nishidate-yuki</span>
+        <span itemprop="name">Akira Takahashi</span>
       </span>
       が更新
     </small></p>
@@ -212,8 +212,12 @@
     <div class="row">
       <div class="col-sm-12 content-body">
         
-  <h1 itemprop="name"><span class="token">コルーチン</span><span class="cpp cpp20" title="C++20で追加">(C++20)</span></h1>
-<div itemprop="articleBody"><h2>概要</h2>
+  <h1 itemprop="name"><span class="token">コルーチン [P0912R5]</span><span class="cpp cpp20" title="C++20で追加">(C++20)</span></h1>
+<div itemprop="articleBody"><p></p>
+<p>このページはC++20に採用された言語機能の変更を解説しています。</p>
+<p>のちのC++規格でさらに変更される場合があるため<a href="#relative-page">関連項目</a>を参照してください。</p>
+<p></p>
+<h2>概要</h2>
 <p>処理途中でのサスペンド(中断)／レジューム(再開)をサポートする一般化された関数として、<a href="https://ja.wikipedia.org/wiki/%E3%82%B3%E3%83%AB%E3%83%BC%E3%83%81%E3%83%B3" target="_blank">コルーチン</a>が導入される。</p>
 <p>C++20時点では、コルーチン動作に関する言語仕様と新キーワード<code>co_return</code>, <code>co_await</code>, <code>co_yield</code>による新しい構文、コルーチンライブラリ実装者向けの低レベルライブラリ<code><a href="../../reference/coroutine.html">&lt;coroutine&gt;</a></code>のみが規定される。</p>
 <p><div class="codehilite"><pre><span></span><code><span class="c1">// コルーチンiotaを定義</span>
@@ -250,12 +254,12 @@
 <p>C++コルーチン動作理解の助けとなるよう、ここでは細部を省略した説明を行う。
 コルーチン実行の基本動作は、それぞれ下記ように説明される：</p>
 <ul>
-<li>呼出し: 通常の関数と同様に、括弧(<code>()</code>)を用いた関数呼び出し構文を用いる。コルーチンに対応するユーザ定義Promiseオブジェクトが自動的に生成されるため、そこからコルーチンハンドルを取得する。</li>
+<li>呼出し: 通常の関数と同様に、カッコ(<code>()</code>)を用いた関数呼び出し構文を用いる。コルーチンに対応するユーザ定義Promiseオブジェクトが自動的に生成されるため、そこからコルーチンハンドルを取得する。</li>
 <li>中断: コルーチン本体にて<code>co_yield</code>式または<code>co_await</code>式を記述する。中断されたコルーチンから呼出元へは、コルーチンハンドルを内包するコルーチン戻り値型オブジェクトを返す。</li>
 <li>再開: コルーチン中断により返された戻り値型オブジェクトを介して、コルーチンハンドルの再開関数<code><a href="../../reference/coroutine/coroutine_handle/resume.html">resume</a></code>を呼び出す。</li>
 <li>復帰: コルーチン本体にて<code>co_return</code>文を記述、またはコルーチン本体終端まで到達する。全てのローカル変数とPromiseオブジェクトは破棄される。</li>
 </ul>
-<p>この4種類の基本動作に対して、次のカスタマイズポイントが提供される。括弧内はコルーチンライブラリが実装すべきカスタマイズポイント名：</p>
+<p>この4種類の基本動作に対して、次のカスタマイズポイントが提供される。カッコ内はコルーチンライブラリが実装すべきカスタマイズポイント名：</p>
 <ul>
 <li>コルーチン呼出し直後の動作: 初期サスペンドポイント(<code>initial_suspend</code>)にて、コルーチン本体の開始前に中断して戻り値型オブジェクトを返すか、そのままコルーチン本体を実行継続するかを制御する。</li>
 <li>コルーチン復帰直前の動作: 最終サスペンドポイント(<code>final_suspend</code>)にて、コルーチンを最後に中断して戻り値型オブジェクトを返すか、そのままコルーチンに関するリソースを破棄するかを制御する。前者を選択した場合、リソースリークを防ぐためコルーチンハンドルの破棄関数<code><a href="../../reference/coroutine/coroutine_handle/destroy.html">destroy</a></code>呼出しが必要となる。</li>
@@ -370,7 +374,7 @@
 <li>ラベル <em>final-suspend</em> は説明のためにのみ定義される。</li>
 <li><em>promise-constructor-arguments</em> は次の通りに決定される:<ul>
 <li>引数リスト<code>Pi</code>の左辺値を<code>pi</code>とする。コルーチンが非静的メンバの場合、<code>p1</code>は<code>*this</code>を表し<code>p(i+1)</code>はi番目の関数パラメータを表す。</li>
-<li>左辺値<code>p1</code>...<code>pn</code>の実引数リストを用いて、Promiseコンストラクタ呼び出しのオーバーロード解決を試みる。</li>
+<li>左辺値<code>p1</code>...<code>pn</code>の実引数リストを用いて、Promiseコンストラクタ呼び出しの<a class="cpprefjp-defined-word" data-desc="関数呼び出し時に、同名の関数の中から実際に呼び出す関数を決定する処理。このときの候補になることを、オーバーロード解決に参加するという">オーバーロード解決</a>を試みる。</li>
 <li>適合するコンストラクタが見つかった場合は、<em>promise-constructor-arguments</em> は <code>(p1, ..., pn)</code> となる。見つからなかった場合、<em>promise-constructor-arguments</em> は空のリストとなる。</li>
 </ul>
 </li>
@@ -380,14 +384,14 @@
 <code>get_return_object</code>呼び出しは高々1回であり、<code>initial_suspend</code>呼び出しよりも前に順序付けられる。</p>
 <p>中断状態にあるコルーチンは、そのコルーチンを指すコルーチンハンドルの再開メンバ関数呼び出しによって、継続実行を再開できる。
 再開メンバ関数を呼び出した関数は、再開元(resumer)と呼ばれる。
-中断状態にないコルーチンに対する再開メンバ関数呼び出しは、<a class="cpprefjp-defined-word" data-desc="処理系は予期せぬ動作をする可能性がある。要するに動作保証対象外" href="../../implementation-compliance.html#dfn-undefined-behavior">未定義の動作</a>をもたらす。</p>
+中断状態にないコルーチンに対する再開メンバ関数呼び出しは、<a class="cpprefjp-defined-word" data-desc="処理系は予期せぬ動作をする可能性がある。要するに動作保証対象外。undefined behavior (UB)。" href="../../implementation-compliance.html#dfn-undefined-behavior">未定義の動作</a>をもたらす。</p>
 <p>処理系はコルーチンのために追加のメモリ領域を確保する必要があるかもしれない。
 このメモリ領域はコルーチン・ステートとして知られ、非配列版のメモリ確保関数(<code>operator new</code>)によって確保される。
 メモリ確保関数はPromise型のスコープで名前探索が行われる。
 名前探索に失敗した場合は、グローバルスコープで探索が行われる。
-名前探索がPromise型のスコープで確保関数を見つけた場合は、実引数リストを用いて関数呼び出しのオーバーロード解決が行われる。
+名前探索がPromise型のスコープで確保関数を見つけた場合は、実引数リストを用いて関数呼び出しの<a class="cpprefjp-defined-word" data-desc="関数呼び出し時に、同名の関数の中から実際に呼び出す関数を決定する処理。このときの候補になることを、オーバーロード解決に参加するという">オーバーロード解決</a>が行われる。
 第1引数は<code>std::size_t</code>型であり、要求メモリサイズの合計値となる。続く実引数は左辺値<code>p1</code>...<code>pn</code>となる。
-適合する関数が見つからなかった場合、<code>std::size_t</code>型の要求メモリサイズ合計値のみで再度オーバーロード解決が行われる。</p>
+適合する関数が見つからなかった場合、<code>std::size_t</code>型の要求メモリサイズ合計値のみで再度<a class="cpprefjp-defined-word" data-desc="関数呼び出し時に、同名の関数の中から実際に呼び出す関数を決定する処理。このときの候補になることを、オーバーロード解決に参加するという">オーバーロード解決</a>が行われる。</p>
 <p>Promise型のスコープにおいて、非修飾な<code>get_return_object_on_allocation_failure</code>の探索が行われる。
 何らかの宣言が見つかった場合、グローバルな<code>::operator new(size_t nothrow_t)</code>形式の確保関数が選択され、メモリ領域確保に失敗すると、コルーチン・ステート用メモリ領域取得のための確保関数呼び出し結果は<code>nullptr</code>を返すと想定される。
 このケースにおける確保関数は、例外を投げないnoexcept指定されるべきである。
@@ -444,7 +448,7 @@
 各パラメータのコピーの初期化と破棄は、呼び出されたコルーチンのコンテキストで行われる。
 パラメータのコピーの初期化は、コルーチンPromiseコンストラクタの呼び出しより前に順序付けられ、それぞれは互いに非決定順で順序付けられる。
 パラメータのコピーの生存期間は、パラメータPromiseオブジェクトの終了直後で終了する。
-（コルーチンが参照渡しのパラメータを持つ場合、そのパラメータにより参照されるエンティティ生存期間終了後のコルーチン再開は<a class="cpprefjp-defined-word" data-desc="未定義の動作。処理系は予期せぬ動作をする可能性がある。要するに動作保証対象外" href="../../implementation-compliance.html#dfn-undefined-behavior">未定義動作</a>を引き起こしやすい。）</p>
+（コルーチンが参照渡しのパラメータを持つ場合、そのパラメータにより参照されるエンティティ生存期間終了後のコルーチン再開は<a class="cpprefjp-defined-word" data-desc="未定義の動作。処理系は予期せぬ動作をする可能性がある。要するに動作保証対象外。undefined behavior (UB)。" href="../../implementation-compliance.html#dfn-undefined-behavior">未定義動作</a>を引き起こしやすい。）</p>
 <p>式 <em>promise</em><code>.unhandled_exception()</code>の評価が例外で終了した場合、コルーチンは最終サスペンドポイントで中断したとみなされる。</p>
 <p>式 <code>co_await</code> <em>promise</em><code>.final_suspend()</code> は例外送出してはならない。</p>
 <h3>Await式</h3>
@@ -467,9 +471,9 @@ Await式は、静的記憶域もしくは<a href="../cpp11/thread_local_storage.
 </ul>
 </li>
 <li><em>o</em> (Awaiter) を下記のように定義する。<em>o</em> がprvalueの場合は<a href="../cpp17/guaranteed_copy_elision.html">Temporary materialization conversion</a>が行われる：<ul>
-<li>実引数 <em>a</em> に対して適用可能な<code>operator co_await</code>関数を列挙し、<em>o</em> をオーバーロード解決により選択された関数呼び出しとする。</li>
+<li>実引数 <em>a</em> に対して適用可能な<code>operator co_await</code>関数を列挙し、<em>o</em> を<a class="cpprefjp-defined-word" data-desc="関数呼び出し時に、同名の関数の中から実際に呼び出す関数を決定する処理。このときの候補になることを、オーバーロード解決に参加するという">オーバーロード解決</a>により選択された関数呼び出しとする。</li>
 <li>適合する関数が見つからない場合、<em>o</em> を <em>a</em> とする。</li>
-<li>オーバーロード解決が曖昧な場合、プログラムは<a class="cpprefjp-defined-word" data-desc="プログラムが適格でないこと。コンパイルエラーなどになる" href="../../implementation-compliance.html#dfn-ill-formed">不適格</a>となる。</li>
+<li><a class="cpprefjp-defined-word" data-desc="関数呼び出し時に、同名の関数の中から実際に呼び出す関数を決定する処理。このときの候補になることを、オーバーロード解決に参加するという">オーバーロード解決</a>が曖昧な場合、プログラムは<a class="cpprefjp-defined-word" data-desc="プログラムが適格でないこと。コンパイルエラーなどになる" href="../../implementation-compliance.html#dfn-ill-formed">不適格</a>となる。</li>
 </ul>
 </li>
 <li><em>e</em> を、<em>o</em> の評価結果を参照する左辺値とする。</li>
@@ -586,7 +590,7 @@ Await式は、静的記憶域もしくは<a href="../cpp11/thread_local_storage.
 <li>そうでなければ、<em>S</em> を複合文 <code>{</code> <em>expression</em> <em>opt</em> <code>;</code> <em>p</em><code>.return_void(); }</code>とする。式 <em>p</em><code>.return_void()</code>は<code>void</code>型のprvalueであるべき。</li>
 </ul>
 <p><em>p</em><code>.return_void()</code>が有効な式のとき、コルーチン本体の終端到達はオペランド無し<code>co_return</code>と等価である。
-そうでなければ、コルーチン本体の終端到達は<a class="cpprefjp-defined-word" data-desc="処理系は予期せぬ動作をする可能性がある。要するに動作保証対象外" href="../../implementation-compliance.html#dfn-undefined-behavior">未定義の動作</a>を引き起こす。</p>
+そうでなければ、コルーチン本体の終端到達は<a class="cpprefjp-defined-word" data-desc="処理系は予期せぬ動作をする可能性がある。要するに動作保証対象外。undefined behavior (UB)。" href="../../implementation-compliance.html#dfn-undefined-behavior">未定義の動作</a>を引き起こす。</p>
 <h2>例</h2>
 <p><div class="yata" id="80c27bc07134b1355581a556e71f241e432142a1"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf"><a href="../../reference/iostream.html">&lt;iostream&gt;</a></span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf"><a href="../../reference/coroutine.html">&lt;coroutine&gt;</a></span><span class="cp"></span>
@@ -730,7 +734,7 @@ Await式は、静的記憶域もしくは<a href="../cpp11/thread_local_storage.
 最終的には既に実績のあるCoroutinesTS（発案者の名前にちなみ"Gor-routines"と呼ばれた）ベースのコルーチン仕様が採用されることになった。</p>
 <p>C++20コルーチンに関するキーワードは、いずれも接頭辞<code>co_</code>が付与されている。
 何度かの改名提案（<a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0071r0.html" target="_blank">P0071R0</a>、<a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1485r1.html" target="_blank">P1485R1</a>）も提出されたが、いずれも否決されてC++20仕様に落ち着いた。</p>
-<h2>関連項目</h2>
+<h2><a href="#relative-page" id="relative-page">関連項目</a></h2>
 <ul>
 <li>C++20 <code><a href="../../reference/coroutine.html">&lt;coroutine&gt;</a></code></li>
 <li>C++23 <code><a href="../../reference/generator.html">&lt;generator&gt;</a></code></li>

@@ -2,1006 +2,189 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>cpprefjp - C++日本語リファレンス</title>
   <link href="https://cpprefjp.github.io" />
-  <updated>2024-06-10T16:30:48.022269</updated>
-  <id>d0527486-5284-43c0-88ab-0dbe379b6abb</id>
+  <updated>2024-11-20T10:22:04.077338</updated>
+  <id>464c19bb-2a21-4370-bce3-7733fa55e9b1</id>
 
   
     <entry>
-      <title>accumulate -- &lt;numeric&gt;: Synopsisスタイル修正 &#34;namespace std {&#34;</title>
-      <link href="https://cpprefjp.github.io/reference/numeric/accumulate.html"/>
-      <id>54b70a0e170ee31f70ff5902bf9d0c57bc480201:reference/numeric/accumulate.md</id>
-      <updated>2024-05-29T13:02:04+09:00</updated>
+      <title>insert_range -- unordered_{map,set}/*/insert_range: 「コードブロックのあとに空行が必要な制限」に纏わる修正</title>
+      <link href="https://cpprefjp.github.io/reference/unordered_map/unordered_map/insert_range.html"/>
+      <id>5259ff6bc67ca8b95d5b9450555a4ca2de97a3ee:reference/unordered_map/unordered_map/insert_range.md</id>
+      <updated>2024-11-18T19:25:35+09:00</updated>
       
-        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/numeric/accumulate.md b/reference/numeric/accumulate.md
-index 0e1324c5f..790ed14e5 100644
---- a/reference/numeric/accumulate.md
-+++ b/reference/numeric/accumulate.md
-@@ -4,7 +4,7 @@
- * function template[meta id-type]
- 
- ```cpp
--namespace std{
-+namespace std {
-   template &amp;lt;class InputIterator, class T&amp;gt;
-   T accumulate(InputIterator first, InputIterator last, T init);           // (1) C++03
-   template &amp;lt;class InputIterator, class T&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;</summary>
-      
-      <author>
-        <name>Koichi Murase</name>
-        <email>myoga.murase@gmail.com</email>
-      </author>
-    </entry>
-  
-    <entry>
-      <title>exclusive_scan -- &lt;numeric&gt;: Synopsisスタイル修正 &#34;namespace std {&#34;</title>
-      <link href="https://cpprefjp.github.io/reference/numeric/exclusive_scan.html"/>
-      <id>54b70a0e170ee31f70ff5902bf9d0c57bc480201:reference/numeric/exclusive_scan.md</id>
-      <updated>2024-05-29T13:02:04+09:00</updated>
-      
-        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/numeric/exclusive_scan.md b/reference/numeric/exclusive_scan.md
-index c3ea1ad86..85256a183 100644
---- a/reference/numeric/exclusive_scan.md
-+++ b/reference/numeric/exclusive_scan.md
-@@ -5,7 +5,7 @@
- * cpp17[meta cpp]
- 
- ```cpp
--namespace std{
-+namespace std {
-   template &amp;lt;class InputIterator, class OutputIterator, class T&amp;gt;
-   OutputIterator
-     exclusive_scan(InputIterator first,
-&lt;/code&gt;&lt;/pre&gt;</summary>
-      
-      <author>
-        <name>Koichi Murase</name>
-        <email>myoga.murase@gmail.com</email>
-      </author>
-    </entry>
-  
-    <entry>
-      <title>inclusive_scan -- &lt;numeric&gt;: Synopsisスタイル修正 &#34;namespace std {&#34;</title>
-      <link href="https://cpprefjp.github.io/reference/numeric/inclusive_scan.html"/>
-      <id>54b70a0e170ee31f70ff5902bf9d0c57bc480201:reference/numeric/inclusive_scan.md</id>
-      <updated>2024-05-29T13:02:04+09:00</updated>
-      
-        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/numeric/inclusive_scan.md b/reference/numeric/inclusive_scan.md
-index 1ec04f407..d495f4c10 100644
---- a/reference/numeric/inclusive_scan.md
-+++ b/reference/numeric/inclusive_scan.md
-@@ -5,7 +5,7 @@
- * cpp17[meta cpp]
- 
- ```cpp
--namespace std{
-+namespace std {
-   template &amp;lt;class InputIterator, class OutputIterator&amp;gt;
-   OutputIterator
-     inclusive_scan(InputIterator first,
-&lt;/code&gt;&lt;/pre&gt;</summary>
-      
-      <author>
-        <name>Koichi Murase</name>
-        <email>myoga.murase@gmail.com</email>
-      </author>
-    </entry>
-  
-    <entry>
-      <title>iota -- &lt;numeric&gt;: Synopsisスタイル修正 &#34;namespace std {&#34;</title>
-      <link href="https://cpprefjp.github.io/reference/numeric/iota.html"/>
-      <id>54b70a0e170ee31f70ff5902bf9d0c57bc480201:reference/numeric/iota.md</id>
-      <updated>2024-05-29T13:02:04+09:00</updated>
-      
-        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/numeric/iota.md b/reference/numeric/iota.md
-index 86800506e..7d285ceca 100644
---- a/reference/numeric/iota.md
-+++ b/reference/numeric/iota.md
-@@ -5,7 +5,7 @@
- * cpp11[meta cpp]
- 
- ```cpp
--namespace std{
-+namespace std {
-   template &amp;lt;class ForwardIterator, class T&amp;gt;
-   void
-     iota(ForwardIterator first, ForwardIterator last, T value); // (1) C++11
-&lt;/code&gt;&lt;/pre&gt;</summary>
-      
-      <author>
-        <name>Koichi Murase</name>
-        <email>myoga.murase@gmail.com</email>
-      </author>
-    </entry>
-  
-    <entry>
-      <title>reduce -- &lt;numeric&gt;: Synopsisスタイル修正 &#34;namespace std {&#34;</title>
-      <link href="https://cpprefjp.github.io/reference/numeric/reduce.html"/>
-      <id>54b70a0e170ee31f70ff5902bf9d0c57bc480201:reference/numeric/reduce.md</id>
-      <updated>2024-05-29T13:02:04+09:00</updated>
-      
-        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/numeric/reduce.md b/reference/numeric/reduce.md
-index c49640fea..f1f12920d 100644
---- a/reference/numeric/reduce.md
-+++ b/reference/numeric/reduce.md
-@@ -5,7 +5,7 @@
- * cpp17[meta cpp]
- 
- ```cpp
--namespace std{
-+namespace std {
-   template &amp;lt;class InputIterator&amp;gt;
-   typename iterator_traits&amp;lt;InputIterator&amp;gt;::value_type
-     reduce(InputIterator first, InputIterator last);         // (1) C++17
-&lt;/code&gt;&lt;/pre&gt;</summary>
-      
-      <author>
-        <name>Koichi Murase</name>
-        <email>myoga.murase@gmail.com</email>
-      </author>
-    </entry>
-  
-    <entry>
-      <title>transform_exclusive_scan -- &lt;numeric&gt;: Synopsisスタイル修正 &#34;namespace std {&#34;</title>
-      <link href="https://cpprefjp.github.io/reference/numeric/transform_exclusive_scan.html"/>
-      <id>54b70a0e170ee31f70ff5902bf9d0c57bc480201:reference/numeric/transform_exclusive_scan.md</id>
-      <updated>2024-05-29T13:02:04+09:00</updated>
-      
-        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/numeric/transform_exclusive_scan.md b/reference/numeric/transform_exclusive_scan.md
-index 1ec2938fc..ad3648667 100644
---- a/reference/numeric/transform_exclusive_scan.md
-+++ b/reference/numeric/transform_exclusive_scan.md
-@@ -5,7 +5,7 @@
- * cpp17[meta cpp]
- 
- ```cpp
--namespace std{
-+namespace std {
-   template &amp;lt;class InputIterator, class OutputIterator, class T,
-             class BinaryOperation, class UnaryOperation&amp;gt;
-   OutputIterator
-&lt;/code&gt;&lt;/pre&gt;</summary>
-      
-      <author>
-        <name>Koichi Murase</name>
-        <email>myoga.murase@gmail.com</email>
-      </author>
-    </entry>
-  
-    <entry>
-      <title>transform_inclusive_scan -- &lt;numeric&gt;: Synopsisスタイル修正 &#34;namespace std {&#34;</title>
-      <link href="https://cpprefjp.github.io/reference/numeric/transform_inclusive_scan.html"/>
-      <id>54b70a0e170ee31f70ff5902bf9d0c57bc480201:reference/numeric/transform_inclusive_scan.md</id>
-      <updated>2024-05-29T13:02:04+09:00</updated>
-      
-        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/numeric/transform_inclusive_scan.md b/reference/numeric/transform_inclusive_scan.md
-index 8c604ea5d..f60a499cc 100644
---- a/reference/numeric/transform_inclusive_scan.md
-+++ b/reference/numeric/transform_inclusive_scan.md
-@@ -5,7 +5,7 @@
- * cpp17[meta cpp]
- 
- ```cpp
--namespace std{
-+namespace std {
-   template &amp;lt;class InputIterator, class OutputIterator,
-             class BinaryOperation, class UnaryOperation&amp;gt;
-   OutputIterator
-&lt;/code&gt;&lt;/pre&gt;</summary>
-      
-      <author>
-        <name>Koichi Murase</name>
-        <email>myoga.murase@gmail.com</email>
-      </author>
-    </entry>
-  
-    <entry>
-      <title>transform_reduce -- &lt;numeric&gt;: Synopsisスタイル修正 &#34;namespace std {&#34;</title>
-      <link href="https://cpprefjp.github.io/reference/numeric/transform_reduce.html"/>
-      <id>54b70a0e170ee31f70ff5902bf9d0c57bc480201:reference/numeric/transform_reduce.md</id>
-      <updated>2024-05-29T13:02:04+09:00</updated>
-      
-        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/numeric/transform_reduce.md b/reference/numeric/transform_reduce.md
-index 0c5a6d108..2bb408cbf 100644
---- a/reference/numeric/transform_reduce.md
-+++ b/reference/numeric/transform_reduce.md
-@@ -5,7 +5,7 @@
- * cpp17[meta cpp]
- 
- ```cpp
--namespace std{
-+namespace std {
-   template &amp;lt;class InputIterator1, class InputIterator2, class T&amp;gt;
-   T transform_reduce(InputIterator1 first1,
-                      InputIterator1 last1,
-&lt;/code&gt;&lt;/pre&gt;</summary>
-      
-      <author>
-        <name>Koichi Murase</name>
-        <email>myoga.murase@gmail.com</email>
-      </author>
-    </entry>
-  
-    <entry>
-      <title>setup_givens_rotation -- linalg : sgn関数の定義でコロンが抜けていた(#1233)</title>
-      <link href="https://cpprefjp.github.io/reference/linalg/setup_givens_rotation.html"/>
-      <id>0cebcd7b2f44fb9b5f221a8c9f161c018f826be1:reference/linalg/setup_givens_rotation.md</id>
-      <updated>2024-05-26T00:37:48+09:00</updated>
-      
-        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/linalg/setup_givens_rotation.md b/reference/linalg/setup_givens_rotation.md
-index d8695048f..cde2e71a9 100644
---- a/reference/linalg/setup_givens_rotation.md
-+++ b/reference/linalg/setup_givens_rotation.md
-@@ -44,7 +44,7 @@ $$
- - (1) `a`と`b`の型が`Real`の場合、`s`と`r`の型も`Real`。`r`は$(a, b)^T$のユークリッドノルム、つまり$\sqrt{|a|^2 + |b|^2}$である。
- - (2) `a`と`b`の型が`complex&amp;lt;Real&amp;gt;`の場合、`s`と`r`の型も`complex&amp;lt;Real&amp;gt;`。以下で定義される$sgn$関数を用いると、`r`は$sgn(a) * \sqrt{|a|^2 + |b|^2}$である。
- $$
--sgn(x)=
-+sgn(x):=
-     \begin{cases}
-         \frac{x}{|x|}   &amp;amp;   \text{($x \neq 0$)}  \\
-         1        &amp;amp;   \text{($x = 0$)}
-&lt;/code&gt;&lt;/pre&gt;</summary>
-      
-      <author>
-        <name>Yuya Asano</name>
-        <email>64895419+sukeya@users.noreply.github.com</email>
-      </author>
-    </entry>
-  
-    <entry>
-      <title>linalg -- linalg : setup_givens_rotationとタグ定数を追加(#1233)</title>
-      <link href="https://cpprefjp.github.io/reference/linalg.html"/>
-      <id>f44efbadac8fe2f59bdf10033031dd0657df1820:reference/linalg.md</id>
-      <updated>2024-05-25T21:07:58+09:00</updated>
-      
-        <content type="html">&lt;div class=&#34;header&#34;&gt;&amp;lt;linalg&amp;gt;&lt;/div&gt;&lt;h1 itemprop=&#34;name&#34;&gt;&lt;span class=&#34;token&#34;&gt;linalg&lt;/span&gt;&lt;span class=&#34;cpp cpp26&#34; title=&#34;C++26で追加&#34;&gt;(C++26)&lt;/span&gt;&lt;/h1&gt;
-&lt;div itemprop=&#34;articleBody&#34;&gt;&lt;p&gt;&lt;code&gt;&amp;lt;linalg&amp;gt;&lt;/code&gt;ヘッダでは、線形代数(linear algebra)に関する基礎的な演算アルゴリズムを提供する。
-ベクトルや行列の成分にアクセスするアルゴリズムは、多次元配列ビュー&lt;a href=&#34;mdspan/mdspan.html&#34;&gt; &lt;code&gt;std::mdspan&lt;/code&gt; &lt;/a&gt;を通してその要素にアクセスする。
-本ヘッダが提供するエンティティは、すべて名前空間&lt;code&gt;std::linalg&lt;/code&gt;に属する。&lt;/p&gt;
-&lt;p&gt;1次元データであるベクトル(vector)や2次元データである行列(matrix)に対して、線形代数分野のデファクトスタンダードとされる BLAS(Basic Linear Algebra Subprograms) 互換のアルゴリズム群、いくつかの LAPACK(Linear Algebra PACKage) 互換のアルゴリズムが提供される。
-BLAS互換アルゴリズムは、演算対象データの次元数や計算オーダーに応じて3段階に区分される。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Level 1 BLAS : ベクトルーベクトルの演算&lt;/li&gt;
-&lt;li&gt;Level 2 BLAS : 行列ーベクトルの演算&lt;/li&gt;
-&lt;li&gt;Level 3 BLAS : 行列ー行列の演算&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;例えば、2個の一般行列の積を求める&lt;code&gt;std::linalg::matrix_product&lt;/code&gt;はLevel 3 BLASルーチン&lt;code&gt;xGEMM&lt;/code&gt;に対応する。
-（実際のBLASルーチン名は、浮動小数点数型の単精度&lt;code&gt;S&lt;/code&gt;／倍精度&lt;code&gt;D&lt;/code&gt;とそれぞれの複素数版&lt;code&gt;C&lt;/code&gt;,&lt;code&gt;Z&lt;/code&gt;として、プレフィックス&lt;code&gt;x&lt;/code&gt;部は文字4種類のいずれか。）&lt;/p&gt;
-&lt;p&gt;また、&lt;code&gt;std::mdspan&lt;/code&gt;と組み合わせて利用する拡張機能が提供される。&lt;/p&gt;
-&lt;h2&gt;共通要件&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;&amp;lt;linalg&amp;gt;&lt;/code&gt;ヘッダが提供する演算アルゴリズムは、スカラ値およびベクトル／行列の要素型として線形代数値型(linear algebra value types)を取り扱う。&lt;/p&gt;
-&lt;p&gt;線形代数値型はBLASが取り扱う&lt;code&gt;float&lt;/code&gt;, &lt;code&gt;double&lt;/code&gt;, &lt;code&gt;&lt;a href=&#34;complex/complex.html&#34;&gt;std::complex&lt;/a&gt;&amp;lt;float&amp;gt;&lt;/code&gt;, &lt;code&gt;&lt;a href=&#34;complex/complex.html&#34;&gt;std::complex&lt;/a&gt;&amp;lt;double&amp;gt;&lt;/code&gt;をはじめ、&lt;code&gt;&lt;a href=&#34;concepts/semiregular.html&#34;&gt;semiregular&lt;/a&gt;&lt;/code&gt;のモデルであれば良い。
-また、線形代数値型の値初期化は加法元（算術型であれば値&lt;code&gt;0&lt;/code&gt;）であること。&lt;/p&gt;
-&lt;p&gt;プログラム定義型を利用する場合、演算アルゴリズムはカスタマイゼーションポイントとして&lt;code&gt;abs&lt;/code&gt;, &lt;code&gt;real&lt;/code&gt;, &lt;code&gt;imag&lt;/code&gt;, &lt;code&gt;conj&lt;/code&gt;を非修飾名で呼び出す。&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;std::mdspan&lt;/code&gt;向け機能拡張&lt;/h2&gt;
-&lt;table border=&#34;1&#34; bordercolor=&#34;#888&#34; style=&#34;border-collapse:collapse&#34;&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;名前&lt;/th&gt;
-&lt;th&gt;説明&lt;/th&gt;
-&lt;th&gt;対応バージョン&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;&lt;a href=&#34;linalg/layout_blas_packed.html&#34;&gt;layout_blas_packed&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;行列要素のBLAS互換パックレイアウトに対応する&lt;a href=&#34;mdspan/LayoutMappingPolicy.html&#34;&gt;レイアウトマッピングポリシー&lt;/a&gt; (class template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;&lt;a href=&#34;linalg/scaled_accessor.html&#34;&gt;scaled_accessor&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;scaled&lt;/code&gt;関数用の&lt;a href=&#34;mdspan/AccessorPolicy.html&#34;&gt;アクセサポリシー&lt;/a&gt; (class template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;&lt;a href=&#34;linalg/scaled.html&#34;&gt;scaled&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;要素値をスカラー倍した読み取り専用&lt;code&gt;std::mdspan&lt;/code&gt;を作る (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;&lt;a href=&#34;linalg/conjugated_accessor.html&#34;&gt;conjugated_accessor&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;conjugated&lt;/code&gt;関数用の&lt;a href=&#34;mdspan/AccessorPolicy.html&#34;&gt;アクセサポリシー&lt;/a&gt; (class template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;&lt;a href=&#34;linalg/conjugated.html&#34;&gt;conjugated&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;読み取り専用の複素共役ビュー&lt;code&gt;std::mdspan&lt;/code&gt;を作る (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;&lt;a href=&#34;linalg/layout_transpose.html&#34;&gt;layout_transpose&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;transposed&lt;/code&gt;関数用の&lt;a href=&#34;mdspan/LayoutMappingPolicy.html&#34;&gt;レイアウトマッピングポリシー&lt;/a&gt; (class template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;&lt;a href=&#34;linalg/transposed.html&#34;&gt;transposed&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;2次元&lt;code&gt;std::mdspan&lt;/code&gt;の行列転置ビューを作る (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;&lt;a href=&#34;linalg/conjugate_transposed.html&#34;&gt;conjugate_transposed&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;読み取り専用の複素共役転置ビュー&lt;code&gt;std::mdspan&lt;/code&gt;を作る (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2&gt;BLASの要件&lt;/h2&gt;
-&lt;p&gt;BLAS 1, 2, 3のアルゴリズムでテンプレートパラメータが特に制約されていない場合、テンプレートパラメータの名前によって以下の制約を満たすとする。&lt;/p&gt;
-&lt;table border=&#34;1&#34; bordercolor=&#34;#888&#34; style=&#34;border-collapse:collapse&#34;&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;名前&lt;/th&gt;
-&lt;th&gt;制約&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;ExecutionPolicy&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;is_execution_policy&amp;lt;ExecutionPolicy&amp;gt;::value == true&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;Real&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;complex&amp;lt;Real&amp;gt;&lt;/code&gt;が規定できる型&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;Triangle&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;upper_triangle_t&lt;/code&gt;または&lt;code&gt;lower_triangle_t&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;DiagonalStorage&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;implicit_unit_diagonal_t&lt;/code&gt;または&lt;code&gt;implicit_unit_diagonal_t&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2&gt;BLAS 1アルゴリズム&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;std::mpspan&lt;/code&gt;をパラメータに持つ、この節の全てのアルゴリズムの計算量は渡された&lt;code&gt;std::mdspan&lt;/code&gt;の&lt;code&gt;extents&lt;/code&gt;の積の最大値、つまりベクトルや行列の要素数の最大値に線形である。&lt;/p&gt;
-&lt;table border=&#34;1&#34; bordercolor=&#34;#888&#34; style=&#34;border-collapse:collapse&#34;&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;名前&lt;/th&gt;
-&lt;th&gt;説明&lt;/th&gt;
-&lt;th&gt;対応バージョン&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;&lt;a href=&#34;linalg/setup_givens_rotation_result.html&#34;&gt;setup_givens_rotation_result&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;setup_givens_rotation&lt;/code&gt;の結果型 (class template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;&lt;a href=&#34;linalg/setup_givens_rotation.html&#34;&gt;setup_givens_rotation&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;xLARTG: ギブンス回転をセットアップする (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;apply_givens_rotation&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;xROT: ベクトルにギブンス回転を適用する (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;swap_elements&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;xSWAP: 2つのベクトル／行列の要素を交換する (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;scale&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;xSCAL: ベクトル／行列の要素にスカラ値を乗算する (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;copy&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;xCOPY: ベクトル／行列の要素をコピーする (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;add&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;xAXPY: 2つのベクトル／行列の要素を加算する (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;dot&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;xDOT, xDOTU: 2つのベクトルのドット積を求める (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;dotc&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;xDOTC: 2つのベクトルの複素共役ドット積を求める (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;sum_of_squares_result&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;vector_sum_of_squares&lt;/code&gt;の結果型 (class template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;vector_sum_of_squares&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;xLASSQ: ベクトル要素の平方和を求める (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;vector_two_norm&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;xNRM2: ベクトルのユークリッドノルム(Euclidean norm)を求める (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;vector_abs_sum&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;xASUM: ベクトル要素の絶対値和を求める (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;vector_idx_abs_max&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;xIAMAX: ベクトル要素のうち最大絶対値インデクスを返す (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;matrix_frob_norm&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;行列のフロベニウスノルム(Frobenius norm)を求める (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;matrix_one_norm&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;行列の1ノルム(One norm)を求める (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;matrix_inf_norm&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;行列の無限大ノルム(Infinity norm)を求める (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2&gt;BLAS 2アルゴリズム&lt;/h2&gt;
-&lt;table border=&#34;1&#34; bordercolor=&#34;#888&#34; style=&#34;border-collapse:collapse&#34;&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;名前&lt;/th&gt;
-&lt;th&gt;説明&lt;/th&gt;
-&lt;th&gt;対応バージョン&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;matrix_vector_product&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;xGEMV: 一般行列とベクトルの積を求める (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;symmetric_matrix_vector_product&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;xSYMV: 対称行列とベクトルの積を求める (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;hermitian_matrix_vector_product&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;xHEMV: ハミルトニアン行列とベクトルの積を求める (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;triangular_matrix_vector_product&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;xTRMV: 三角行列とベクトルの積を求める (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;triangular_matrix_vector_solve&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;xTRSV: 三角行列を係数とする行列方程式を解く (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;matrix_rank_1_update&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;xGER, xGERU: 行列のRank-1更新 (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;matrix_rank_1_update_c&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;xGERC: 複素行列のRank-1更新 (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;symmetric_matrix_rank_1_update&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;xSYR: 対称行列のRank-1更新 (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;hermitian_matrix_rank_1_update&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;xHER: ハミルトニアン行列のRank-1更新 (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;symmetric_matrix_rank_2_update&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;xSYR2: 対称行列のRank-2更新 (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;hermitian_matrix_rank_2_update&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;xHER2: ハミルトニアン行列のRank-2更新 (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2&gt;BLAS 3アルゴリズム&lt;/h2&gt;
-&lt;table border=&#34;1&#34; bordercolor=&#34;#888&#34; style=&#34;border-collapse:collapse&#34;&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;名前&lt;/th&gt;
-&lt;th&gt;説明&lt;/th&gt;
-&lt;th&gt;対応バージョン&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;matrix_product&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;xGEMM: 2つの一般行列の積を求める (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;symmetric_matrix_product&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;xSYMM: 対称行列と行列の積を求める (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;hermitian_matrix_product&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;xHEMM: ハミルトニアン行列と行列の積を求める (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;triangular_matrix_product&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;xTRMM: 三角行列と行列の積を求める (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;triangular_matrix_left_product&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;xTRMM: In-placeに三角行列と行列の積を求める (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;triangular_matrix_right_product&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;xTRMM: In-placeに三角行列と行列の積を求める (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;symmetric_matrix_rank_k_update&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;xSYRK: 対称行列のRank-k更新 (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;hermitian_matrix_rank_k_update&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;xHERK: ハミルトニアン行列のRank-k更新 (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;symmetric_matrix_rank_2k_update&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;xSYR2K: 対称行列のRank-2k更新 (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;hermitian_matrix_rank_2k_update&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;xHER2K: ハミルトニアン行列のRank-2k更新 (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;triangular_matrix_matrix_left_solve&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;xTRSM: 三角行列の連立一次方程式を解く (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;triangular_matrix_matrix_right_solve&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;xTRSM: 三角行列の連立一次方程式を解く (function template)&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2&gt;タグ&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;&amp;lt;linalg&amp;gt;&lt;/code&gt;ヘッダでは、行列の格納順序や三角行列の上下をタグを使って表現している。&lt;/p&gt;
-&lt;h3&gt;格納順序&lt;/h3&gt;
-&lt;p&gt;行列の格納順序を表すタグ。&lt;/p&gt;
-&lt;table border=&#34;1&#34; bordercolor=&#34;#888&#34; style=&#34;border-collapse:collapse&#34;&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;名前&lt;/th&gt;
-&lt;th&gt;説明&lt;/th&gt;
-&lt;th&gt;対応バージョン&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;&lt;a href=&#34;linalg/column_major_t.html&#34;&gt;column_major_t&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;列優先(column-major)を表すタグ型&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;&lt;a href=&#34;linalg/column_major_t.html&#34;&gt;column_major&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;列優先(column-major)を表すタグ値&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;&lt;a href=&#34;linalg/row_major_t.html&#34;&gt;row_major_t&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;行優先(row-major)を表すタグ型&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;&lt;a href=&#34;linalg/row_major_t.html&#34;&gt;row_major&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;行優先(row-major)を表すタグ値&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3&gt;三角行列&lt;/h3&gt;
-&lt;p&gt;上三角行列か下三角行列かを表すタグ。&lt;/p&gt;
-&lt;table border=&#34;1&#34; bordercolor=&#34;#888&#34; style=&#34;border-collapse:collapse&#34;&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;名前&lt;/th&gt;
-&lt;th&gt;説明&lt;/th&gt;
-&lt;th&gt;対応バージョン&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;&lt;a href=&#34;linalg/upper_triangle_t.html&#34;&gt;upper_triangle_t&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;上三角行列を表すタグ型&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;&lt;a href=&#34;linalg/upper_triangle_t.html&#34;&gt;upper_triangle&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;上三角行列を表すタグ値&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;&lt;a href=&#34;linalg/lower_triangle_t.html&#34;&gt;lower_triangle_t&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;下三角行列を表すタグ型&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;&lt;a href=&#34;linalg/lower_triangle_t.html&#34;&gt;lower_triangle&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;下三角行列を表すタグ値&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3&gt;対角成分&lt;/h3&gt;
-&lt;p&gt;行列の全ての対角成分を暗黙に乗法における単位元とみなすかどうかを表すタグ。みなした場合、行列の対角成分にはアクセスせず、値が乗法における単位元であるとして計算する。&lt;/p&gt;
-&lt;table border=&#34;1&#34; bordercolor=&#34;#888&#34; style=&#34;border-collapse:collapse&#34;&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;名前&lt;/th&gt;
-&lt;th&gt;説明&lt;/th&gt;
-&lt;th&gt;対応バージョン&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;&lt;a href=&#34;linalg/implicit_unit_diagonal_t.html&#34;&gt;implicit_unit_diagonal_t&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;全ての対角成分を暗黙に乗法における単位元とみなすタグ型&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;&lt;a href=&#34;linalg/implicit_unit_diagonal_t.html&#34;&gt;implicit_unit_diagonal&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;全ての対角成分を暗黙に乗法における単位元とみなすタグ値&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;&lt;a href=&#34;linalg/explicit_diagonal_t.html&#34;&gt;explicit_diagonal_t&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;全ての対角成分にアクセスするタグ型&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;&lt;a href=&#34;linalg/explicit_diagonal_t.html&#34;&gt;explicit_diagonal&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;全ての対角成分にアクセスするタグ値&lt;/td&gt;
-&lt;td&gt;C++26&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2&gt;バージョン&lt;/h2&gt;
-&lt;h3&gt;言語&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;C++26&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;関連項目&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;&lt;a href=&#34;mdspan.html&#34;&gt;&amp;lt;mdspan&amp;gt;&lt;/a&gt;&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;参照&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2023/p1673r13.html&#34; target=&#34;_blank&#34;&gt;P1673R13 A free function linear algebra interface based on the BLAS&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2022/p1674r2.html&#34; target=&#34;_blank&#34;&gt;P1674R2: Evolving a Standard C++ Linear Algebra Library from the BLAS&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/CppCon/CppCon2023/blob/main/Presentations/stdlinalg_linear_algebra_coming_to_standard_cpp.pdf&#34; target=&#34;_blank&#34;&gt;std::linalg: Linear Algebra Coming to Standard C++&lt;/a&gt;, CppCon 2023&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.netlib.org/blas/&#34; target=&#34;_blank&#34;&gt;BLAS (Basic Linear Algebra Subprograms)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://eel.is/c++draft/complex.numbers&#34; target=&#34;_blank&#34;&gt;Numerics library&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/div&gt;</content>
-      
-      <author>
-        <name>Yuya Asano</name>
-        <email>64895419+sukeya@users.noreply.github.com</email>
-      </author>
-    </entry>
-  
-    <entry>
-      <title>setup_givens_rotation -- linalg : setup_givens_rotationとタグ定数を追加(#1233)</title>
-      <link href="https://cpprefjp.github.io/reference/linalg/setup_givens_rotation.html"/>
-      <id>f44efbadac8fe2f59bdf10033031dd0657df1820:reference/linalg/setup_givens_rotation.md</id>
-      <updated>2024-05-25T21:07:58+09:00</updated>
-      
-        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/linalg/setup_givens_rotation.md b/reference/linalg/setup_givens_rotation.md
-new file mode 100644
-index 000000000..d8695048f
---- /dev/null
-+++ b/reference/linalg/setup_givens_rotation.md
-@@ -0,0 +1,87 @@
-+# setup_givens_rotation
-+
-+* [mathjax enable]
-+* linalg[meta header]
-+* function template[meta id-type]
-+* std::linalg[meta namespace]
-+* cpp26[meta cpp]
-+
-+```cpp
-+namespace std::linalg {
-+  template&amp;lt;class Real&amp;gt;
-+  setup_givens_rotation_result&amp;lt;Real&amp;gt; setup_givens_rotation(Real a, Real b) noexcept; // (1)
-+
-+  template&amp;lt;class Real&amp;gt;
-+  setup_givens_rotation_result&amp;lt;complex&amp;lt;Real&amp;gt;&amp;gt; setup_givens_rotation(complex&amp;lt;Real&amp;gt; a, complex&amp;lt;Real&amp;gt; b) noexcept; // (2)
-+}
-+```
-+
-+
-+## 概要
-+ギブンス回転を計算する。すなわち、以下の式が成り立つような、`Real`型の値`c`と `s`, `r`を計算する。
-+
-+$$
-+\begin{split}
-+\begin{pmatrix}
-+c             &amp;amp; s \\
-+-\overline{s} &amp;amp; c
-+\end{pmatrix}
-+\begin{pmatrix}
-+a \\
-+b
-+\end{pmatrix}
-+&amp;amp;=
-+\begin{pmatrix}
-+r \\
-+0
-+\end{pmatrix},\\
-+c^2 + |s|^2 &amp;amp;= 1
-+\end{split}
-+$$
-+
-+ただし、`s`と`r`の型は`a`と`b`の型による。
-+
-+- (1) `a`と`b`の型が`Real`の場合、`s`と`r`の型も`Real`。`r`は$(a, b)^T$のユークリッドノルム、つまり$\sqrt{|a|^2 + |b|^2}$である。
-+- (2) `a`と`b`の型が`complex&amp;lt;Real&amp;gt;`の場合、`s`と`r`の型も`complex&amp;lt;Real&amp;gt;`。以下で定義される$sgn$関数を用いると、`r`は$sgn(a) * \sqrt{|a|^2 + |b|^2}$である。
-+$$
-+sgn(x)=
-+    \begin{cases}
-+        \frac{x}{|x|}   &amp;amp;   \text{($x \neq 0$)}  \\
-+        1        &amp;amp;   \text{($x = 0$)}
-+    \end{cases}
-+$$
-+
-+
-+## テンプレートパラメータ制約
-+- `Real`は`complex&amp;lt;Real&amp;gt;`が規定できる型であること。
-+
-+
-+## 戻り値
-+`c`と`s`が入力$(a, b)^T$に対するギブンス回転行列の成分で、`r`を入力$(a, b)^T$のユークリッドノルムとすると、戻り値は`{c, s, r}`である。
-+
-+
-+## 例
-+
-+
-+### 出力
-+
-+
-+## バージョン
-+### 言語
-+- C++26
-+
-+### 処理系
-+- [Clang](/implementation.md#clang): ??
-+- [GCC](/implementation.md#gcc): ??
-+- [ICC](/implementation.md#icc): ??
-+- [Visual C++](/implementation.md#visual_cpp): ??
-+
-+
-+## 関連項目
-+- [`setup_givens_rotation_result`](setup_givens_rotation_result.md)
-+
-+
-+## 参照
-+- [P0788R3 Standard Library Specification in a Concepts and Contracts World](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/p0788r3.pdf)
-+- [Working Draft Programming Languages — C++: 28 Numerics libarary](https://eel.is/c++draft/complex.numbers)
-+- [LAPACK: clartg](https://netlib.org/lapack/explore-html/da/dd3/group__lartg_ga45afd4405cf6da478ce4de9576303369.html#ga45afd4405cf6da478ce4de9576303369)
-&lt;/code&gt;&lt;/pre&gt;</summary>
-      
-      <author>
-        <name>Yuya Asano</name>
-        <email>64895419+sukeya@users.noreply.github.com</email>
-      </author>
-    </entry>
-  
-    <entry>
-      <title>setup_givens_rotation_result -- linalg : setup_givens_rotationとタグ定数を追加(#1233)</title>
-      <link href="https://cpprefjp.github.io/reference/linalg/setup_givens_rotation_result.html"/>
-      <id>f44efbadac8fe2f59bdf10033031dd0657df1820:reference/linalg/setup_givens_rotation_result.md</id>
-      <updated>2024-05-25T21:07:58+09:00</updated>
-      
-        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/linalg/setup_givens_rotation_result.md b/reference/linalg/setup_givens_rotation_result.md
-new file mode 100644
-index 000000000..d921a230d
---- /dev/null
-+++ b/reference/linalg/setup_givens_rotation_result.md
-@@ -0,0 +1,56 @@
-+# setup_givens_rotation_result
-+* linalg[meta header]
-+* class template[meta id-type]
-+* std::linalg[meta namespace]
-+* cpp26[meta cpp]
-+
-+```cpp
-+namespace std::linalg {
-+  template&amp;lt;class Real&amp;gt;
-+  struct setup_givens_rotation_result {
-+    Real c;
-+    Real s;
-+    Real r;
-+  };
-+
-+  template&amp;lt;class Real&amp;gt;
-+  struct setup_givens_rotation_result&amp;lt;complex&amp;lt;Real&amp;gt;&amp;gt; {
-+    Real c;
-+    complex&amp;lt;Real&amp;gt; s;
-+    complex&amp;lt;Real&amp;gt; r;
-+  };
-+}
-+```
-+
-+## 概要
-+ギブンス回転の結果を表すクラス。詳しくは、[`setup_givens_rotation`](setup_givens_rotation.md)にて。
-+
-+
-+## テンプレートパラメータ制約
-+- `Real`は`complex&amp;lt;Real&amp;gt;`が規定できる型であること。
-+
-+
-+## 例
-+
-+
-+### 出力
-+
-+
-+## バージョン
-+### 言語
-+- C++26
-+
-+### 処理系
-+- [Clang](/implementation.md#clang): ??
-+- [GCC](/implementation.md#gcc): ??
-+- [ICC](/implementation.md#icc): ??
-+- [Visual C++](/implementation.md#visual_cpp): ??
-+
-+
-+## 関連項目
-+- [`setup_givens_rotation`](setup_givens_rotation.md)
-+
-+
-+## 参照
-+- [P1673R13 A free function linear algebra interface based on the BLAS](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2023/p1673r13.html)
-+- [Numerics library](https://eel.is/c++draft/complex.numbers)
-\ No newline at end of file
-&lt;/code&gt;&lt;/pre&gt;</summary>
-      
-      <author>
-        <name>Yuya Asano</name>
-        <email>64895419+sukeya@users.noreply.github.com</email>
-      </author>
-    </entry>
-  
-    <entry>
-      <title>コンストラクタ -- error_codeのコンストラクタ : ErrorCodeEnumをとるオーバーロードの使用例を記載</title>
-      <link href="https://cpprefjp.github.io/reference/system_error/error_code/op_constructor.html"/>
-      <id>0eeefc0f1db52a7f5bdf7f2860daebcbefb674a4:reference/system_error/error_code/op_constructor.md</id>
-      <updated>2024-05-24T18:49:49+09:00</updated>
-      
-        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/system_error/error_code/op_constructor.md b/reference/system_error/error_code/op_constructor.md
-index 03071efb1..bc4fd6c50 100644
---- a/reference/system_error/error_code/op_constructor.md
-+++ b/reference/system_error/error_code/op_constructor.md
-@@ -31,10 +31,12 @@ error_code(ErrorCodeEnum e) noexcept;                    // (3)
- 
- 
- ## 備考
--- (3) : [`is_error_code_enum`](../is_error_code_enum.md)が`false`となる場合、この関数はオーバーロード解決から除外される。
-+- (3) : [`is_error_code_enum`](../is_error_code_enum.md)が`false`となる場合、この関数はオーバーロード解決から除外される
-+- (3) : [`make_error_code()`](../make_error_code.md)の呼び出しに`std::`名前空間がついていないことにより、指定された`ErrorCodeEnum`型が定義されている名前空間の`make_error_code()`関数がADLによって探索される
- 
- 
- ## 例
-+### 基本的な使い方
- ```cpp example
- #include &amp;lt;iostream&amp;gt;
- #include &amp;lt;system_error&amp;gt;
-@@ -107,7 +109,7 @@ int main()
- * std::errc::invalid_argument[link /reference/system_error/errc.md]
- * std::generic_category()[link /reference/system_error/generic_category.md]
- 
--### 出力
-+#### 出力
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/unordered_map/unordered_map/insert_range.md b/reference/unordered_map/unordered_map/insert_range.md
+index 09141d2bc..955631bfe 100644
+--- a/reference/unordered_map/unordered_map/insert_range.md
++++ b/reference/unordered_map/unordered_map/insert_range.md
+@@ -63,6 +63,7 @@ C 12
+ B 11
+ A 10
  ```
- default ctor
- success
-@@ -125,6 +127,63 @@ error
- generic
++
+ 注：[`unordered_map`](/reference/unordered_map/unordered_map.md) は非順序連想コンテナであるため、出力順序は無意味であることに注意
+ 
+ 
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>Koichi Murase</name>
+        <email>myoga.murase@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>insert_range -- unordered_{map,set}/*/insert_range: 「コードブロックのあとに空行が必要な制限」に纏わる修正</title>
+      <link href="https://cpprefjp.github.io/reference/unordered_map/unordered_multimap/insert_range.html"/>
+      <id>5259ff6bc67ca8b95d5b9450555a4ca2de97a3ee:reference/unordered_map/unordered_multimap/insert_range.md</id>
+      <updated>2024-11-18T19:25:35+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/unordered_map/unordered_multimap/insert_range.md b/reference/unordered_map/unordered_multimap/insert_range.md
+index 922c6050e..b63190f40 100644
+--- a/reference/unordered_map/unordered_multimap/insert_range.md
++++ b/reference/unordered_map/unordered_multimap/insert_range.md
+@@ -64,6 +64,7 @@ B 11
+ B 11
+ A 10
+ ```
++
+ 注：[`unordered_multimap`](/reference/unordered_map/unordered_multimap.md) は非順序連想コンテナであるため、出力順序は無意味であることに注意
+ 
+ 
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>Koichi Murase</name>
+        <email>myoga.murase@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>insert_range -- unordered_{map,set}/*/insert_range: 「コードブロックのあとに空行が必要な制限」に纏わる修正</title>
+      <link href="https://cpprefjp.github.io/reference/unordered_set/unordered_multiset/insert_range.html"/>
+      <id>5259ff6bc67ca8b95d5b9450555a4ca2de97a3ee:reference/unordered_set/unordered_multiset/insert_range.md</id>
+      <updated>2024-11-18T19:25:35+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/unordered_set/unordered_multiset/insert_range.md b/reference/unordered_set/unordered_multiset/insert_range.md
+index f44f7a72f..4a194ac8b 100644
+--- a/reference/unordered_set/unordered_multiset/insert_range.md
++++ b/reference/unordered_set/unordered_multiset/insert_range.md
+@@ -61,6 +61,7 @@ int main ()
+ ```
+ 4 3 3 2 2 1 
+ ```
++
+ 注：[`unordered_multiset`](/reference/unordered_set/unordered_multiset.md) は非順序連想コンテナであるため、出力順序は無意味であることに注意
+ 
+ 
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>Koichi Murase</name>
+        <email>myoga.murase@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>insert_range -- unordered_{map,set}/*/insert_range: 「コードブロックのあとに空行が必要な制限」に纏わる修正</title>
+      <link href="https://cpprefjp.github.io/reference/unordered_set/unordered_set/insert_range.html"/>
+      <id>5259ff6bc67ca8b95d5b9450555a4ca2de97a3ee:reference/unordered_set/unordered_set/insert_range.md</id>
+      <updated>2024-11-18T19:25:35+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/unordered_set/unordered_set/insert_range.md b/reference/unordered_set/unordered_set/insert_range.md
+index eb1b80ecc..a91d5a9e0 100644
+--- a/reference/unordered_set/unordered_set/insert_range.md
++++ b/reference/unordered_set/unordered_set/insert_range.md
+@@ -61,6 +61,7 @@ int main ()
+ ```
+ 4 3 2 1 
+ ```
++
+ 注：[`unordered_set`](/reference/unordered_set/unordered_set.md) は非順序連想コンテナであるため、出力順序は無意味であることに注意
+ 
+ 
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>Koichi Murase</name>
+        <email>myoga.murase@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>cpprefjpでのMarkdown記法の制限と拡張 -- Markdownの制限 : 「コードブロックのあとに空行が必要な制限」を追加 #1362</title>
+      <link href="https://cpprefjp.github.io/start_editing/markdown_cpprefjp.html"/>
+      <id>aacc4df55989bc9337150909a9bd8ab429312730:start_editing/markdown_cpprefjp.md</id>
+      <updated>2024-11-18T19:07:23+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/start_editing/markdown_cpprefjp.md b/start_editing/markdown_cpprefjp.md
+index c15f6e563..9c5543c1a 100644
+--- a/start_editing/markdown_cpprefjp.md
++++ b/start_editing/markdown_cpprefjp.md
+@@ -87,6 +87,9 @@ comment out text...
+ * リスト2
  ```
  
-+### 独自のエラーコードを定義する例
-+```cpp example
-+#include &amp;lt;iostream&amp;gt;
-+#include &amp;lt;system_error&amp;gt;
-+#include &amp;lt;type_traits&amp;gt;
++### コードブロックのあとに空行が必要な制限
++後述する「プログラムの修飾に関する拡張」に関連して、コードブロックのあとに説明文章を書く際には空行をあけなければなりません。
 +
-+namespace mylib {
+ 
+ ## Markdown記法の拡張
+ 
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>Akira Takahashi</name>
+        <email>faithandbrave@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>cpprefjpでのMarkdown記法の制限と拡張 -- HTMLエンティティの表示崩れを修正 #1362</title>
+      <link href="https://cpprefjp.github.io/start_editing/markdown_cpprefjp.html"/>
+      <id>c747f4a71f9ab8a4dfaf1a21424e58bd5ed73f55:start_editing/markdown_cpprefjp.md</id>
+      <updated>2024-11-18T18:08:56+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/start_editing/markdown_cpprefjp.md b/start_editing/markdown_cpprefjp.md
+index 501891627..c15f6e563 100644
+--- a/start_editing/markdown_cpprefjp.md
++++ b/start_editing/markdown_cpprefjp.md
+@@ -57,7 +57,8 @@ comment out text...
+ ```
+ &amp;amp;reg;
+ ```
+-のような書き方をすると、cpprefjpではエラーになります。HTML エンティティを使わず、以下のように書いてください。
 +
-+enum class my_error {
-+  not_found,
-+};
-+
-+class my_error_category : public std::error_category {
-+public:
-+  const char* name() const noexcept override
-+  {
-+    return &amp;#34;my_error_category&amp;#34;;
-+  }
-+
-+  std::string message(int value) const override
-+  {
-+    if (value == static_cast&amp;lt;int&amp;gt;(my_error::not_found))
-+      return &amp;#34;not found&amp;#34;;
-+    return &amp;#34;unknown&amp;#34;;
-+  }
-+};
-+
-+const my_error_category&amp;amp; get_my_error_category() {
-+  static my_error_category cat;
-+  return cat;
-+}
-+
-+std::error_code make_error_code(my_error err)
-+{
-+  return std::error_code(static_cast&amp;lt;int&amp;gt;(err), get_my_error_category());
-+}
-+}
-+
-+namespace std {
-+  template &amp;lt;&amp;gt;
-+  struct is_error_code_enum&amp;lt;mylib::my_error&amp;gt; : public std::true_type {};
-+}
-+
-+int main() {
-+  // ecにはmy_error_categoryが設定される
-+  std::error_code ec = mylib::my_error::not_found;
-+  std::cout &amp;lt;&amp;lt; ec.message() &amp;lt;&amp;lt; std::endl;
-+}
-+```
-+* ec.message()[link message.md]
-+* std::error_category[link /reference/system_error/error_category.md]
-+
-+#### 出力
-+```
-+not found
-+```
-+
- ## バージョン
- ### 言語
- - C++11
-@@ -136,4 +195,3 @@ generic
- - [Visual C++](/implementation.md#visual_cpp): 2010 (enum class未対応のため、ErrorCodeEnumのコンストラクタは動作しない)
++上記のような書き方をすると、cpprefjpではエラーになります。HTML エンティティを使わず、以下のように書いてください。
+ 
+ ```
+ ®
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>Akira Takahashi</name>
+        <email>faithandbrave@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>cpprefjpでのMarkdown記法の制限と拡張 -- 見出しレベルのミスを修正</title>
+      <link href="https://cpprefjp.github.io/start_editing/markdown_cpprefjp.html"/>
+      <id>a9aca4080b9491e260fc817a34f013dbfedfa82c:start_editing/markdown_cpprefjp.md</id>
+      <updated>2024-11-18T15:09:27+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/start_editing/markdown_cpprefjp.md b/start_editing/markdown_cpprefjp.md
+index 1d3e6f582..501891627 100644
+--- a/start_editing/markdown_cpprefjp.md
++++ b/start_editing/markdown_cpprefjp.md
+@@ -64,7 +64,7 @@ comment out text...
+ ```
  
  
--## 参照
+-## リストの前に空行が必要な制限
++### リストの前に空行が必要な制限
+ ```
+ 適当な文字列
+ * リスト
 &lt;/code&gt;&lt;/pre&gt;</summary>
       
       <author>

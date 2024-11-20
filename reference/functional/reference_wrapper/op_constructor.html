@@ -38,26 +38,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicons/apple-touch-icon.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicons/favicon-32x32.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicons/favicon-16x16.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="manifest" href="../../../manifest.json?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicons/apple-touch-icon.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicons/favicon-32x32.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicons/favicon-16x16.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="manifest" href="../../../manifest.json?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../../static/pygments/default.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="stylesheet" href="../../../static/pygments/default.css?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <!-- <link rel="stylesheet" href="../../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../../static/kunai/css/kunai-stage-0.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-1.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-2.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-3.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-0.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-1.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-2.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-3.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
 
-<script type="text/javascript" src="../../../static/kunai/js/kunai-vendor.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
-<script type="text/javascript" src="../../../static/kunai/js/kunai.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
+<script type="text/javascript" src="../../../static/kunai/js/kunai-vendor.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
+<script type="text/javascript" src="../../../static/kunai/js/kunai.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -200,8 +200,8 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2023-01-28T14:55:37">
-        2023年01月28日 14時55分37秒
+      <span itemprop="datePublished" content="2024-07-18T15:07:53">
+        2024年07月18日 15時07分53秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -241,7 +241,7 @@
 <ul>
 <li>
 <p>(1) : <code>T&amp; r = <a href="../../utility/forward.html">forward</a>&lt;U&gt;(u)</code>のように作成した<code>r</code>への参照を保持する<code>reference_wrapper</code>オブジェクトを構築する<br />
-<code>u</code>が右辺値参照、もしくは参照とCV修飾を除去した<code>U</code>が<code>reference_wrapper&lt;T&gt;</code>である（<code>is_same_v&lt;remove_cvref_t&lt;U&gt;, reference_wrapper&lt;T&gt;&gt; == true</code>となる）場合、このコンストラクタはオーバーロード解決に参加しない</p>
+<code>u</code>が右辺値参照、もしくは参照とCV修飾を除去した<code>U</code>が<code>reference_wrapper&lt;T&gt;</code>である（<code><a href="../../type_traits/is_same.html">is_same_v</a>&lt;<a href="../../type_traits/remove_cvref.html">remove_cvref_t</a>&lt;U&gt;, reference_wrapper&lt;T&gt;&gt; == true</code>となる）場合、このコンストラクタは<a class="cpprefjp-defined-word" data-desc="関数呼び出し時に、同名の関数の中から実際に呼び出す関数を決定する処理。このときの候補になることを、オーバーロード解決に参加するという">オーバーロード解決</a>に参加しない</p>
 </li>
 <li>
 <p>(2) : <code>x.<a href="get.html">get()</a></code>への参照を保持する<code>reference_wrapper</code>オブジェクトを構築する</p>
@@ -289,13 +289,14 @@
 <h3>処理系</h3>
 <ul>
 <li><a href="../../../implementation.html#clang">Clang</a>: ??</li>
-<li><a href="../../../implementation.html#gcc">GCC</a>: 4.7.0</li>
+<li><a href="../../../implementation.html#gcc">GCC</a>: 4.7.0 <span aria-label="検証済" role="img" title="検証済">✅</span></li>
 <li><a href="../../../implementation.html#icc">ICC</a>: ??</li>
 <li><a href="../../../implementation.html#visual_cpp">Visual C++</a>: ??</li>
 </ul>
 <h2>参照</h2>
 <ul>
 <li><a href="https://wg21.cmeerw.net/lwg/issue2993" target="_blank">LWG Issue 2993. <code>reference_wrapper&lt;T&gt;</code> conversion from <code>T&amp;&amp;</code></a></li>
+<li><a href="https://wg21.cmeerw.net/lwg/issue3041" target="_blank">LWG Issue 3041. Unnecessary decay in reference_wrapper</a></li>
 </ul></div>
 
       </div>

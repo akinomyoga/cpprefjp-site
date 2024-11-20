@@ -38,26 +38,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../static/favicons/apple-touch-icon.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="32x32" href="../static/favicons/favicon-32x32.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="16x16" href="../static/favicons/favicon-16x16.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="manifest" href="../manifest.json?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="apple-touch-icon" sizes="180x180" href="../static/favicons/apple-touch-icon.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="32x32" href="../static/favicons/favicon-32x32.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="16x16" href="../static/favicons/favicon-16x16.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="manifest" href="../manifest.json?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../static/pygments/default.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="stylesheet" href="../static/pygments/default.css?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <!-- <link rel="stylesheet" href="../static/css/root.css"> -->
 
         
   
 
 
-<link href="../static/kunai/css/kunai-stage-0.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../static/kunai/css/kunai-stage-1.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../static/kunai/css/kunai-stage-2.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../static/kunai/css/kunai-stage-3.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../static/kunai/css/kunai-stage-0.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../static/kunai/css/kunai-stage-1.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../static/kunai/css/kunai-stage-2.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../static/kunai/css/kunai-stage-3.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
 
-<script type="text/javascript" src="../static/kunai/js/kunai-vendor.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
-<script type="text/javascript" src="../static/kunai/js/kunai.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
+<script type="text/javascript" src="../static/kunai/js/kunai-vendor.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
+<script type="text/javascript" src="../static/kunai/js/kunai.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -176,8 +176,8 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2024-03-10T02:17:53">
-        2024年03月10日 02時17分53秒
+      <span itemprop="datePublished" content="2024-08-30T16:58:39">
+        2024年08月30日 16時58分39秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -719,6 +719,7 @@ C++20では関数によるカスタマイゼーションポイントの問題点
 </code></pre></div>
 </p>
 <p>このとき、式<code>adaptor(args...)</code>の値がRangeアダプタクロージャオブジェクトになっている。</p>
+<p>なお、元となるRangeを複数とるRangeアダプタは、パイプライン記法を提供しない。</p>
 <table border="1" bordercolor="#888" style="border-collapse:collapse">
 <thead>
 <tr>
@@ -1009,6 +1010,28 @@ C++20では関数によるカスタマイゼーションポイントの問題点
 </tr>
 </tbody>
 </table>
+<h3>concat view</h3>
+<table border="1" bordercolor="#888" style="border-collapse:collapse">
+<thead>
+<tr>
+<th>名前</th>
+<th>説明</th>
+<th>対応バージョン</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code><a href="ranges/concat_view.html">concat_view</a></code></td>
+<td>複数のRangeを連結するビュー (class template)</td>
+<td>C++26</td>
+</tr>
+<tr>
+<td><code><a href="ranges/concat_view.html">views::concat</a></code></td>
+<td><code>concat_view</code>を生成する (customization point object)</td>
+<td>C++26</td>
+</tr>
+</tbody>
+</table>
 <h3>counted view</h3>
 <table border="1" bordercolor="#888" style="border-collapse:collapse">
 <thead>
@@ -1104,17 +1127,17 @@ C++20では関数によるカスタマイゼーションポイントの問題点
 <tbody>
 <tr>
 <td><code><a href="ranges/elements_view.html">elements_view</a></code></td>
-<td>第n要素を集めたビュー (class template)</td>
+<td>タプルの第N要素にアクセスするビュー (class template)</td>
 <td>C++20</td>
 </tr>
 <tr>
 <td><code><a href="ranges/elements_view.html">keys_view</a></code></td>
-<td>第0要素を集めたビュー (alias template)</td>
+<td>タプルの第0要素にアクセスするビュー (alias template)</td>
 <td>C++20</td>
 </tr>
 <tr>
 <td><code><a href="ranges/elements_view.html">values_view</a></code></td>
-<td>第1要素を集めたビュー (alias template)</td>
+<td>タプルの第1要素にアクセスするビュー (alias template)</td>
 <td>C++20</td>
 </tr>
 <tr>
@@ -1217,7 +1240,12 @@ C++20では関数によるカスタマイゼーションポイントの問題点
 </tr>
 <tr>
 <td><code><a href="ranges/adjacent_view.html">views::adjacent</a></code></td>
-<td><code>adjacent_view</code>を生成する (customization point object)</td>
+<td><code>adjacent_view</code>を生成する (variable template)</td>
+<td>C++23</td>
+</tr>
+<tr>
+<td><code><a href="ranges/adjacent_view.html">views::pairwise</a></code></td>
+<td><code>adjacent&lt;2&gt;</code>の別名 (customization point object)</td>
 <td>C++23</td>
 </tr>
 </tbody>
@@ -1394,10 +1422,10 @@ C++20では関数によるカスタマイゼーションポイントの問題点
 </ul>
 <h3>処理系</h3>
 <ul>
-<li><a href="../implementation.html#clang">Clang</a>: 13.0.0</li>
-<li><a href="../implementation.html#gcc">GCC</a>: 10.1.0</li>
+<li><a href="../implementation.html#clang">Clang</a>: 13.0.0 <span aria-label="検証済" role="img" title="検証済">✅</span></li>
+<li><a href="../implementation.html#gcc">GCC</a>: 10.1.0 <span aria-label="検証済" role="img" title="検証済">✅</span></li>
 <li><a href="../implementation.html#icc">ICC</a>: ?</li>
-<li><a href="../implementation.html#visual_cpp">Visual C++</a>: 2019 Update 10</li>
+<li><a href="../implementation.html#visual_cpp">Visual C++</a>: 2019 Update 10 <span aria-label="検証済" role="img" title="検証済">✅</span></li>
 </ul>
 <h2>関連項目</h2>
 <ul>

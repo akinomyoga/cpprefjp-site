@@ -16,21 +16,21 @@
 
         <meta charset="UTF-8">
 
-        <title>if文とswitch文の条件式と初期化を分離 - cpprefjp C++日本語リファレンス</title>
+        <title>if文とswitch文の条件式と初期化を分離 [P0305R1] - cpprefjp C++日本語リファレンス</title>
 
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta name="keywords" content="
   C++,標準ライブラリ,リファレンス,ドキュメント,STL,std,cpp17
 ">
-        <meta name="title" content="if文とswitch文の条件式と初期化を分離 - cpprefjp C++日本語リファレンス" />
-        <meta itemprop="name" content="if文とswitch文の条件式と初期化を分離 - cpprefjp C++日本語リファレンス" />
-        <meta property="og:title" content="if文とswitch文の条件式と初期化を分離 - cpprefjp C++日本語リファレンス" />
+        <meta name="title" content="if文とswitch文の条件式と初期化を分離 [P0305R1] - cpprefjp C++日本語リファレンス" />
+        <meta itemprop="name" content="if文とswitch文の条件式と初期化を分離 [P0305R1] - cpprefjp C++日本語リファレンス" />
+        <meta property="og:title" content="if文とswitch文の条件式と初期化を分離 [P0305R1] - cpprefjp C++日本語リファレンス" />
         <meta property="og:url" content="https://cpprefjp.github.io/lang/cpp17/selection_statements_with_initializer.html" />
         <meta property="og:site_name" content="cpprefjp - C++日本語リファレンス" />
         <meta property="og:type" content="article" />
         <meta property="og:description" content="" />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="if文とswitch文の条件式と初期化を分離 - cpprefjp C++日本語リファレンス" />
+        <meta name="twitter:title" content="if文とswitch文の条件式と初期化を分離 [P0305R1] - cpprefjp C++日本語リファレンス" />
         <meta name="twitter:url" content="https://cpprefjp.github.io/lang/cpp17/selection_statements_with_initializer.html" />
         <meta name="twitter:description" content="" />
 
@@ -38,26 +38,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="manifest" href="../../manifest.json?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="manifest" href="../../manifest.json?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -171,7 +171,7 @@
         <span>
           
             
-              <span itemprop="name">if文とswitch文の条件式と初期化を分離</span>
+              <span itemprop="name">if文とswitch文の条件式と初期化を分離 [P0305R1]</span>
             
           
         </span>
@@ -188,12 +188,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2024-01-25T05:43:38">
-        2024年01月25日 05時43分38秒
+      <span itemprop="datePublished" content="2024-09-19T17:16:22">
+        2024年09月19日 17時16分22秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">Akira Takahashi</span>
+        <span itemprop="name">lpha</span>
       </span>
       が更新
     </small></p>
@@ -212,8 +212,12 @@
     <div class="row">
       <div class="col-sm-12 content-body">
         
-  <h1 itemprop="name"><span class="token">if文とswitch文の条件式と初期化を分離</span><span class="cpp cpp17" title="C++17で追加">(C++17)</span></h1>
-<div itemprop="articleBody"><h2>概要</h2>
+  <h1 itemprop="name"><span class="token">if文とswitch文の条件式と初期化を分離 [P0305R1]</span><span class="cpp cpp17" title="C++17で追加">(C++17)</span></h1>
+<div itemprop="articleBody"><p></p>
+<p>このページはC++17に採用された言語機能の変更を解説しています。</p>
+<p>のちのC++規格でさらに変更される場合があるため<a href="#relative-page">関連項目</a>を参照してください。</p>
+<p></p>
+<h2>概要</h2>
 <p>従来<code>for</code>文しか使用できなかった初期化を<code>if</code>文と<code>switch</code>文でも使えるようになった。</p>
 <p><code>for</code>文は下記のように初期化と条件式を同時に書くことができる。
 初期化で宣言した変数は<code>for</code>文のスコープのみで有効であり<code>for</code>文の外では参照できない特徴がある。</p>
@@ -230,7 +234,7 @@
   <span class="err">…</span>
   <span class="k">return</span> <span class="n">c</span><span class="p">;</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-  <span class="c1">//ステータスコード C が成功だったら、何かして、処理を続行する</span>
+  <span class="c1">//ステータスコード c が成功だったら、何かして、処理を続行する</span>
   <span class="err">…</span>
 <span class="p">}</span>
 <span class="c1">//この時点で c は無効</span>
@@ -329,7 +333,7 @@ selection statement:
   <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">get_value</span><span class="p">();</span>
 
   <span class="p">{</span>
-    <span class="n">status_code</span> <span class="n">C</span> <span class="o">=</span> <span class="n">bar</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+    <span class="n">status_code</span> <span class="n">c</span> <span class="o">=</span> <span class="n">bar</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">c</span> <span class="o">!=</span> <span class="n">status_code</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">c</span><span class="p">;</span> <span class="p">}</span>
   <span class="p">}</span>
   <span class="p">{</span>
@@ -347,15 +351,15 @@ selection statement:
 <p>仕様で説明したようにこの機能を使わなくても、従来の機能を使って<code>{ init; if (cond) E; }</code>と書けば同じ効果を得られる。
 しかし従来の記述が冗長である問題は解決しない。</p>
 <p>従来の記述を面倒に思い、時にプログラマは外側のスコープを省略して書いてしまう:</p>
-<p><div class="codehilite"><pre><span></span><code><span class="c1">//{ この括弧を省略してしまった</span>
+<p><div class="codehilite"><pre><span></span><code><span class="c1">//{ このカッコを省略してしまった</span>
 <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">m</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
 <span class="k">if</span> <span class="p">(</span><span class="n">it</span> <span class="o">!=</span> <span class="n">m</span><span class="p">.</span><span class="n">end</span><span class="p">())</span> <span class="p">{</span> <span class="k">return</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">();</span> <span class="p">}</span>
-<span class="c1">//} この括弧を省略してしまった</span>
+<span class="c1">//} このカッコを省略してしまった</span>
 
 <span class="c1">// "it" は不要なのにここでも使えてしまう、すなわちリークしてしまう</span>
 </code></pre></div>
 </p>
-<p>大抵は括弧を省略しても同じ効果を得られるし、変数がリークしても問題にならないが、オブジェクトの生存期間が大事な場合もある。
+<p>大抵はカッコを省略しても同じ効果を得られるし、変数がリークしても問題にならないが、オブジェクトの生存期間が大事な場合もある。
 例えばミューテックスのロックがリークすると予測しづらいバグが発生しやすい。</p>
 <p>新しい記法を使えば、初期化に使用した変数のスコープは<code>if</code>文または <code>switch</code>文の内部に限定されるため、
 変数の名前をつけるときに外側のスコープを意識して長い名前をつける必要がない利点もある。</p>
@@ -366,10 +370,11 @@ selection statement:
 <p>従来と異なる記法、例えば <code>with (init) if (cond) E;</code> のような記法を取り入れる方法も考えられる。
 新しいキーワードの導入により過去のC++コードとの互換性に問題が生じる可能性があるし、
 新しい概念を教えたり広めたりするコストが掛かる。さらに<code>for</code>文と文法の一貫性を取れる機会が失われてしまう問題がある。</p>
-<h2>関連項目</h2>
+<h2><a href="#relative-page" id="relative-page">関連項目</a></h2>
 <ul>
 <li><a href="../cpp20/range-based_for_statements_with_initializer.html">C++20 初期化式をともなう範囲for文</a></li>
 <li><a href="../cpp23/extend_init_statement_to_allow_alias_declaration.html">C++23 初期化文での型の別名宣言を許可</a></li>
+<li><a href="../cpp26/structured_binding_declaration_as_a_condition.html">C++26 条件式での構造化束縛の使用を許可</a></li>
 </ul>
 <h2>参照</h2>
 <ul>

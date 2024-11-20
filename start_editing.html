@@ -38,26 +38,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="./static/favicons/apple-touch-icon.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="32x32" href="./static/favicons/favicon-32x32.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="16x16" href="./static/favicons/favicon-16x16.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="manifest" href="./manifest.json?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="apple-touch-icon" sizes="180x180" href="./static/favicons/apple-touch-icon.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="32x32" href="./static/favicons/favicon-32x32.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="16x16" href="./static/favicons/favicon-16x16.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="manifest" href="./manifest.json?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="./static/pygments/default.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="stylesheet" href="./static/pygments/default.css?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <!-- <link rel="stylesheet" href="./static/css/root.css"> -->
 
         
   
 
 
-<link href="./static/kunai/css/kunai-stage-0.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="./static/kunai/css/kunai-stage-1.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="./static/kunai/css/kunai-stage-2.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="./static/kunai/css/kunai-stage-3.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="./static/kunai/css/kunai-stage-0.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="./static/kunai/css/kunai-stage-1.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="./static/kunai/css/kunai-stage-2.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="./static/kunai/css/kunai-stage-3.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
 
-<script type="text/javascript" src="./static/kunai/js/kunai-vendor.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
-<script type="text/javascript" src="./static/kunai/js/kunai.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
+<script type="text/javascript" src="./static/kunai/js/kunai-vendor.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
+<script type="text/javascript" src="./static/kunai/js/kunai.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -164,8 +164,8 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2023-12-13T11:17:12">
-        2023年12月13日 11時17分12秒
+      <span itemprop="datePublished" content="2024-11-18T05:55:10">
+        2024年11月18日 05時55分10秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -235,6 +235,21 @@
 <li><a href="https://github.com/cpprefjp/site/actions/workflows/code_qualify_check.yml" target="_blank">GitHub Actionsの実行ログ</a>で、どのページのどのコード修飾が不正かがわかるので、それを修正すること</li>
 </ul>
 </li>
+<li>所属ヘッダメタ情報の誤り検出 (meta header checkアクション)<ul>
+<li><code>[meta header]</code>または<code>[meta module]</code>指定が誤っている（ディレクトリ階層と一致しない）場合に、エラーが発生する</li>
+<li>導入経緯は <a href="https://github.com/cpprefjp/site/issues/1204" target="_blank">PR#1204</a> を参照</li>
+</ul>
+</li>
+<li>NGワードの検出 (ngword checkアクション)<ul>
+<li>日本語入力環境における典型的な誤入力・誤変換をエラーとして検知する</li>
+<li>具体的な対象ワードリストは<a href="https://github.com/cpprefjp/site/blob/master/.github/workflows/script/ngword_check.py" target="_blank">ngword_check.py</a>を参照</li>
+</ul>
+</li>
+<li>用語の誤った使い方を検出 (defined word checkアクション)<ul>
+<li>用語の許可した使い方、許可しない使い方を列挙し、許可した使い方以外の使われ方をエラーとして検出する</li>
+<li>具体的な用語、許可した使い方、許可しない使い方は、<a href="https://github.com/cpprefjp/site/blob/master/.github/workflows/script/defined_word_check.py" target="_blank">defined_word_check.py</a>を参照</li>
+</ul>
+</li>
 </ul>
 <h3>自動反映ツール</h3>
 <p>自動反映ツールも、GitHub上で開発が進められています。</p>
@@ -258,21 +273,13 @@
 <p>ただし、cpprefjp特有の拡張構文もあります。
 以下のページにまとめてあるので、そちらを参照して下さい。</p>
 <ul>
-<li><a href="start_editing/specialized.html">cpprefjp特有の拡張構文</a></li>
+<li><a href="start_editing/markdown_cpprefjp.html">cpprefjpでのMarkdown記法の制限と拡張</a></li>
 </ul>
-<p>Markdown形式では、HTMLのタグも併用できますが、cpprefjpサイトでは積極的にはHTMLタグを使用しない方針です。できるだけ、Markdown形式でできる範囲内で解決するようにしてください。</p>
+<p>Markdown形式では、HTMLのタグも併用できますが、cpprefjpサイトでは積極的にはHTMLタグを使用しない方針で、許可されたタグのみ使用できます。できるだけ、Markdown形式でできる範囲内で解決するようにしてください。</p>
 <p>ただし、注釈・出典を貼るためにHTMLタグを利用します。</p>
 <ul>
 <li><a href="start_editing/cite_note_ref.html">cpprefjpにおける注釈・出典の貼り方</a></li>
 </ul>
-<p>それ以外に本サイト内で使用しているHTMLタグは以下です：</p>
-<ul>
-<li>アンカーを貼るために、<code>&lt;a id="アンカー名"&gt;対象文字列&lt;/a&gt;</code>のようなHTML5に基づく記法を利用している</li>
-<li>表内での改行のために、<code>&lt;br/&gt;</code>タグを利用している</li>
-<li>値の大きさを表現するために、上付き文字を表す<code>&lt;sup&gt;</code>タグを利用している</li>
-<li>添字を表現するために、下付き文字を表す<code>&lt;sub&gt;</code>タグを利用している</li>
-</ul>
-<p>また、Markdownパーサーの制限を回避し、表内で <code>|</code> (縦線、vertical line) を使用するために、文字参照 <code>&amp;#x7C;</code> を使用してます。</p>
 <p>新規リファレンスを書くにあたって、雛形ページを用意していますので、そちらをベースにして編集作業を行ってください。</p>
 <ul>
 <li><a href="start_editing/lang_template_page.html">言語機能の雛形</a></li>
@@ -339,9 +346,14 @@
 <p><pre><code>## 処理系
 ### バージョン
 - [Clang](/implementation.md#clang): ??
-- [GCC](/implementation.md#gcc): 10
-- [Visual C++](/implementation.md#visual_cpp): 2019 Update 1
+- [GCC](/implementation.md#gcc): 9, &lt;span role="img" aria-label="未実装" title="未実装"&gt;❌&lt;/span&gt;, 10 &lt;span role="img" aria-label="検証済" title="検証済"&gt;✅&lt;/span&gt;
+- [Visual C++](/implementation.md#visual_cpp): 2019 Update 1 &lt;span role="img" aria-label="実装済" title="実装済"&gt;⭕&lt;/span&gt;
 </code></pre></p>
+<ul>
+<li>mark noimpl : 未実装を表す絵文字</li>
+<li>mark impl : 動作確認はできていないけど、リリースノートやそれに類するドキュメントには実装済みと書かれていることを表す絵文字</li>
+<li>mark verified : 動作検証済み</li>
+</ul>
 <p>バージョンの表記としては、とくにVisual C++は本サイト独自の表記法がありますので、以下のページを確認してください。</p>
 <ul>
 <li><a href="implementation.html">処理系</a></li>

@@ -16,21 +16,21 @@
 
         <meta charset="UTF-8">
 
-        <title>初期化文での型の別名宣言を許可 - cpprefjp C++日本語リファレンス</title>
+        <title>初期化文での型の別名宣言を許可 [P2360R0] - cpprefjp C++日本語リファレンス</title>
 
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta name="keywords" content="
   C++,標準ライブラリ,リファレンス,ドキュメント,STL,std,cpp23
 ">
-        <meta name="title" content="初期化文での型の別名宣言を許可 - cpprefjp C++日本語リファレンス" />
-        <meta itemprop="name" content="初期化文での型の別名宣言を許可 - cpprefjp C++日本語リファレンス" />
-        <meta property="og:title" content="初期化文での型の別名宣言を許可 - cpprefjp C++日本語リファレンス" />
+        <meta name="title" content="初期化文での型の別名宣言を許可 [P2360R0] - cpprefjp C++日本語リファレンス" />
+        <meta itemprop="name" content="初期化文での型の別名宣言を許可 [P2360R0] - cpprefjp C++日本語リファレンス" />
+        <meta property="og:title" content="初期化文での型の別名宣言を許可 [P2360R0] - cpprefjp C++日本語リファレンス" />
         <meta property="og:url" content="https://cpprefjp.github.io/lang/cpp23/extend_init_statement_to_allow_alias_declaration.html" />
         <meta property="og:site_name" content="cpprefjp - C++日本語リファレンス" />
         <meta property="og:type" content="article" />
         <meta property="og:description" content="`if`文、`switch`文、範囲`for`文で初期化文を指定できるが、C++20までその初期化文では`typedef`による型の別名定義はできたが、`using`による型の別名定義はできなかった。" />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="初期化文での型の別名宣言を許可 - cpprefjp C++日本語リファレンス" />
+        <meta name="twitter:title" content="初期化文での型の別名宣言を許可 [P2360R0] - cpprefjp C++日本語リファレンス" />
         <meta name="twitter:url" content="https://cpprefjp.github.io/lang/cpp23/extend_init_statement_to_allow_alias_declaration.html" />
         <meta name="twitter:description" content="`if`文、`switch`文、範囲`for`文で初期化文を指定できるが、C++20までその初期化文では`typedef`による型の別名定義はできたが、`using`による型の別名定義はできなかった。" />
 
@@ -38,26 +38,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="manifest" href="../../manifest.json?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="manifest" href="../../manifest.json?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -68,7 +68,7 @@
 
     </head>
     <body>
-<header data-kunai-mdinfo="{&#34;meta&#34;: {&#34;cpp&#34;: [&#34;cpp23&#34;]}, &#34;sources&#34;: [{&#34;id&#34;: &#34;69a9e4c783ad552360989462dad69a85638b6424&#34;, &#34;source&#34;: &#34;#include &lt;iostream&gt;\n\nint f() { return 1; }\n\nint main()\n{\n  // C++20 : OK\n  if (typedef int T; T x = f()) {\n    std::cout &lt;&lt; x &lt;&lt; std::endl;\n  }\n\n  // C++20 : OK\n  // C++23 : OK\n  if (using T = int; T x = f()) {\n    std::cout &lt;&lt; x &lt;&lt; std::endl;\n  }\n}\n&#34;}], &#34;page_id&#34;: [&#34;lang&#34;, &#34;cpp23&#34;, &#34;extend_init_statement_to_allow_alias_declaration&#34;]}">
+<header data-kunai-mdinfo="{&#34;meta&#34;: {&#34;cpp&#34;: [&#34;cpp23&#34;]}, &#34;sources&#34;: [{&#34;id&#34;: &#34;4e131e9b463b094339cfd82958ae36fcf6c26989&#34;, &#34;source&#34;: &#34;#include &lt;iostream&gt;\n\nint f() { return 1; }\n\nint main()\n{\n  // C++20 : OK\n  if (typedef int T; T x = f()) {\n    std::cout &lt;&lt; x &lt;&lt; std::endl;\n  }\n\n  // C++20 : NG\n  // C++23 : OK\n  if (using T = int; T x = f()) {\n    std::cout &lt;&lt; x &lt;&lt; std::endl;\n  }\n}\n&#34;}], &#34;page_id&#34;: [&#34;lang&#34;, &#34;cpp23&#34;, &#34;extend_init_statement_to_allow_alias_declaration&#34;]}">
   <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -171,7 +171,7 @@
         <span>
           
             
-              <span itemprop="name">初期化文での型の別名宣言を許可</span>
+              <span itemprop="name">初期化文での型の別名宣言を許可 [P2360R0]</span>
             
           
         </span>
@@ -188,12 +188,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2024-01-25T05:43:38">
-        2024年01月25日 05時43分38秒
+      <span itemprop="datePublished" content="2024-10-07T09:18:58">
+        2024年10月07日 09時18分58秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">Akira Takahashi</span>
+        <span itemprop="name">Raclamusi</span>
       </span>
       が更新
     </small></p>
@@ -212,8 +212,12 @@
     <div class="row">
       <div class="col-sm-12 content-body">
         
-  <h1 itemprop="name"><span class="token">初期化文での型の別名宣言を許可</span><span class="cpp cpp23" title="C++23で追加">(C++23)</span></h1>
-<div itemprop="articleBody"><h2>概要</h2>
+  <h1 itemprop="name"><span class="token">初期化文での型の別名宣言を許可 [P2360R0]</span><span class="cpp cpp23" title="C++23で追加">(C++23)</span></h1>
+<div itemprop="articleBody"><p></p>
+<p>このページはC++23に採用された言語機能の変更を解説しています。</p>
+<p>のちのC++規格でさらに変更される場合があるため<a href="#relative-page">関連項目</a>を参照してください。</p>
+<p></p>
+<h2>概要</h2>
 <p><code>if</code>文、<code>switch</code>文、範囲<code>for</code>文で初期化文を指定できるが、C++20までその初期化文では<code>typedef</code>による型の別名定義はできたが、<code>using</code>による型の別名定義はできなかった。</p>
 <p>C++23では<code>using</code>による別名定義もまた初期化文でできるようになる。</p>
 <h2>仕様</h2>
@@ -224,7 +228,7 @@
     alias-declaration
 </code></pre></p>
 <h2>例</h2>
-<p><div class="yata" id="69a9e4c783ad552360989462dad69a85638b6424"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf"><a href="../../reference/iostream.html">&lt;iostream&gt;</a></span><span class="cp"></span>
+<p><div class="yata" id="4e131e9b463b094339cfd82958ae36fcf6c26989"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf"><a href="../../reference/iostream.html">&lt;iostream&gt;</a></span><span class="cp"></span>
 
 <span class="kt">int</span> <span class="nf">f</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span> <span class="p">}</span>
 
@@ -235,7 +239,7 @@
     <span class="n"><a href="../../reference/iostream/cout.html">std::cout</a></span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n"><a href="../../reference/ostream/endl.html">std::endl</a></span><span class="p">;</span>
   <span class="p">}</span>
 
-  <span class="c1">// C++20 : OK</span>
+  <span class="c1">// C++20 : NG</span>
   <span class="c1">// C++23 : OK</span>
   <span class="k">if</span> <span class="p">(</span><span class="k">using</span> <span class="n">T</span> <span class="o">=</span> <span class="kt">int</span><span class="p">;</span> <span class="n">T</span> <span class="n">x</span> <span class="o">=</span> <span class="n">f</span><span class="p">())</span> <span class="p">{</span>
     <span class="n"><a href="../../reference/iostream/cout.html">std::cout</a></span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n"><a href="../../reference/ostream/endl.html">std::endl</a></span><span class="p">;</span>
@@ -243,7 +247,7 @@
 <span class="p">}</span>
 </code></pre></div>
 </div></p>
-<h2>関連項目</h2>
+<h2><a href="#relative-page" id="relative-page">関連項目</a></h2>
 <ul>
 <li><a href="../cpp17/selection_statements_with_initializer.html">C++17 if文とswitch文の条件式と初期化を分離</a></li>
 <li><a href="../cpp20/range-based_for_statements_with_initializer.html">C++20 初期化式をともなう範囲for文</a></li>

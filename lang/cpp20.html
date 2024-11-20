@@ -38,26 +38,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../static/favicons/apple-touch-icon.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="32x32" href="../static/favicons/favicon-32x32.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="16x16" href="../static/favicons/favicon-16x16.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="manifest" href="../manifest.json?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="apple-touch-icon" sizes="180x180" href="../static/favicons/apple-touch-icon.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="32x32" href="../static/favicons/favicon-32x32.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="16x16" href="../static/favicons/favicon-16x16.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="manifest" href="../manifest.json?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../static/pygments/default.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="stylesheet" href="../static/pygments/default.css?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <!-- <link rel="stylesheet" href="../static/css/root.css"> -->
 
         
   
 
 
-<link href="../static/kunai/css/kunai-stage-0.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../static/kunai/css/kunai-stage-1.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../static/kunai/css/kunai-stage-2.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../static/kunai/css/kunai-stage-3.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../static/kunai/css/kunai-stage-0.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../static/kunai/css/kunai-stage-1.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../static/kunai/css/kunai-stage-2.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../static/kunai/css/kunai-stage-3.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
 
-<script type="text/javascript" src="../static/kunai/js/kunai-vendor.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
-<script type="text/javascript" src="../static/kunai/js/kunai.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
+<script type="text/javascript" src="../static/kunai/js/kunai-vendor.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
+<script type="text/javascript" src="../static/kunai/js/kunai.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -176,12 +176,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2023-07-01T09:38:08">
-        2023年07月01日 09時38分08秒
+      <span itemprop="datePublished" content="2024-11-11T08:15:48">
+        2024年11月11日 08時15分48秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">OGAWA KenIchi</span>
+        <span itemprop="name">Akira Takahashi</span>
       </span>
       が更新
     </small></p>
@@ -215,7 +215,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="cpp20/consistent_comparison.html">一貫比較</a></td>
+<td><a href="cpp20/consistent_comparison.html"><code>&lt;=&gt;</code>/<code>==</code>による比較演算子の自動定義</a></td>
 <td>三方比較演算子によって比較演算子の自動生成を行うようにする</td>
 </tr>
 <tr>
@@ -280,6 +280,10 @@
 <tr>
 <td><a href="cpp20/using_enum.html">スコープ付き列挙型のusing宣言</a></td>
 <td><code>using enum EnumType;</code>もしくは<code>using EnumType::enumerator</code>とすることで、列挙値のスコープ指定を省略できるようにする</td>
+</tr>
+<tr>
+<td><a href="cpp20/deprecate_arithmetic_conversion_on_enumerations.html">列挙値から算術型への暗黙変換を非推奨化</a></td>
+<td>列挙値への算術演算で算術型に暗黙変換される仕様を非推奨とする</td>
 </tr>
 </tbody>
 </table>
@@ -463,7 +467,7 @@
 <td>constexpr関数内で<code>try-catch</code>ブロックを書けるようにする</td>
 </tr>
 <tr>
-<td><a href="cpp20/immediate_functions.html">即時関数</a></td>
+<td><a href="cpp20/immediate_functions.html">常に定数式評価する<code>consteval</code></a></td>
 <td><code>consteval</code>キーワードを追加し、常に定数式評価されるよう指定できるようにする</td>
 </tr>
 <tr>
@@ -718,7 +722,7 @@
 </ul>
 <h3>関数オブジェクト</h3>
 <ul>
-<li><code><a href="../reference/functional/reference_wrapper.html">std::reference_wrapper</a></code>クラス、<code><a href="../reference/functional/ref.html">std::ref()</a></code>関数、<code><a href="../reference/functional/cref.html">std::cref()</a></code>関数のテンプレートパラメータ<code>T</code>型に不完全型を指定することを許可</li>
+<li><code><a href="../reference/functional/reference_wrapper.html">std::reference_wrapper</a></code>クラス、<code><a href="../reference/functional/ref.html">std::ref()</a></code>関数、<code><a href="../reference/functional/cref.html">std::cref()</a></code>関数のテンプレートパラメータ<code>T</code>型に<a class="cpprefjp-defined-word" data-desc="型のサイズを決定できない、完全には定義されていない型。例えば先行宣言のみのクラス型、要素数不明の配列型、`void`など。クラス定義内部ではそのクラス自身は不完全型">不完全型</a>を指定することを許可</li>
 <li>メンバ関数の部分適用を簡単にするために、プレースホルダーの指定なく引数を先頭から順に束縛する<code><a href="../reference/functional/bind_front.html">std::bind_front()</a></code>関数を追加</li>
 <li><code><a href="../reference/functional/invoke.html">std::invoke()</a></code>、<code><a href="../reference/functional/reference_wrapper.html">std::reference_wrapper</a></code>の各操作、<code><a href="../reference/functional/not_fn.html">std::not_fn()</a></code>、<code><a href="../reference/functional/bind.html">std::bind()</a></code>、<code><a href="../reference/functional/mem_fn.html">std::mem_fn()</a></code>を<code>constexpr</code>対応</li>
 <li>コンセプトの導入にともない、<code><a href="../reference/functional.html">&lt;functional&gt;</a></code>に、受け取った値をそのまま返す関数オブジェクト<code><a href="../reference/functional/identity.html">std::identity</a></code>を追加</li>
@@ -817,17 +821,17 @@
 </ul>
 </li>
 <li><code><a href="../reference/memory/shared_ptr.html">std::shared_ptr</a></code>の<a href="../reference/memory/atomic.html"><code>std::atomic</code>特殊化</a>追加にともない、<code><a href="../reference/memory/shared_ptr.html">std::shared_ptr</a></code>に対する以下のアトミック操作を非推奨化：<ul>
-<li><code><a href="../reference/memory/shared_ptr/atomic_is_lock_free.html">atomic_is_lock_free</a></code></li>
-<li><code><a href="../reference/memory/shared_ptr/atomic_load.html">atomic_load</a></code></li>
-<li><code><a href="../reference/memory/shared_ptr/atomic_load_explicit.html">atomic_load_explicit</a></code></li>
-<li><code><a href="../reference/memory/shared_ptr/atomic_store.html">atomic_store</a></code></li>
-<li><code><a href="../reference/memory/shared_ptr/atomic_store_explicit.html">atomic_store_explicit</a></code></li>
-<li><code><a href="../reference/memory/shared_ptr/atomic_exchange.html">atomic_exchange</a></code></li>
-<li><code><a href="../reference/memory/shared_ptr/atomic_exchange_explicit.html">atomic_exchange_explicit</a></code></li>
-<li><code><a href="../reference/memory/shared_ptr/atomic_compare_exchange_weak.html">atomic_compare_exchange_weak</a></code></li>
-<li><code><a href="../reference/memory/shared_ptr/atomic_compare_exchange_strong.html">atomic_compare_exchange_strong</a></code></li>
-<li><code><a href="../reference/memory/shared_ptr/atomic_compare_exchange_weak_explicit.html">atomic_compare_exchange_weak_explicit</a></code></li>
-<li><code><a href="../reference/memory/shared_ptr/atomic_compare_exchange_strong_explicit.html">atomic_compare_exchange_strong_explicit</a></code></li>
+<li><code><a href="../reference/memory/shared_ptr/atomic_is_lock_free.html">std::atomic_is_lock_free</a></code></li>
+<li><code><a href="../reference/memory/shared_ptr/atomic_load.html">std::atomic_load</a></code></li>
+<li><code><a href="../reference/memory/shared_ptr/atomic_load_explicit.html">std::atomic_load_explicit</a></code></li>
+<li><code><a href="../reference/memory/shared_ptr/atomic_store.html">std::atomic_store</a></code></li>
+<li><code><a href="../reference/memory/shared_ptr/atomic_store_explicit.html">std::atomic_store_explicit</a></code></li>
+<li><code><a href="../reference/memory/shared_ptr/atomic_exchange.html">std::atomic_exchange</a></code></li>
+<li><code><a href="../reference/memory/shared_ptr/atomic_exchange_explicit.html">std::atomic_exchange_explicit</a></code></li>
+<li><code><a href="../reference/memory/shared_ptr/atomic_compare_exchange_weak.html">std::atomic_compare_exchange_weak</a></code></li>
+<li><code><a href="../reference/memory/shared_ptr/atomic_compare_exchange_strong.html">std::atomic_compare_exchange_strong</a></code></li>
+<li><code><a href="../reference/memory/shared_ptr/atomic_compare_exchange_weak_explicit.html">std::atomic_compare_exchange_weak_explicit</a></code></li>
+<li><code><a href="../reference/memory/shared_ptr/atomic_compare_exchange_strong_explicit.html">std::atomic_compare_exchange_strong_explicit</a></code></li>
 </ul>
 </li>
 </ul>

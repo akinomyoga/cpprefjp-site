@@ -38,26 +38,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="manifest" href="../../manifest.json?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="manifest" href="../../manifest.json?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -188,12 +188,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2023-02-16T09:06:36">
-        2023年02月16日 09時06分36秒
+      <span itemprop="datePublished" content="2024-07-06T08:13:49">
+        2024年07月06日 08時13分49秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">Akira Takahashi</span>
+        <span itemprop="name">suomesta</span>
       </span>
       が更新
     </small></p>
@@ -231,7 +231,7 @@
 <ul>
 <li>C++20まで :<ul>
 <li><code>Tuples...</code>の全ての型が<code><a href="tuple.html">std::tuple</a>&lt;Args...&gt;</code>であること。</li>
-<li><code>Args...</code>の各型が左辺値参照であればコピー構築可能、そうでなければムーブ構築可能であること。</li>
+<li><code>Tuples...</code>の各型が左辺値参照であればその要素型<code>Args...</code>の各型はコピー構築可能、そうでなければムーブ構築可能であること。</li>
 </ul>
 </li>
 <li>C++23から :<ul>
@@ -254,7 +254,7 @@
 </li>
 </ul>
 <h2>戻り値</h2>
-<p><code>Tuples...</code>の全ての<code>tuple</code>型の要素型全てを取り出し、<code>std::<a href="../utility/forward.html">forward</a>&lt;T&gt;(x)</code>して構築される1つの<code><a href="tuple.html">tuple</a></code>`オブジェクト。</p>
+<p><code>Tuples...</code>の全ての<code>tuple</code>型の要素型全てを取り出し、<code>std::<a href="../utility/forward.html">forward</a>&lt;T&gt;(x)</code>して構築される1つの<code><a href="tuple.html">tuple</a></code>オブジェクト。</p>
 <h2>備考</h2>
 <p>実装によっては、<code>Tuples...</code> パラメータパックに含めることのできる型として、他のタプルライクな型（<code><a href="../utility/pair.html">pair</a></code>や<code><a href="../array/array.html">array</a></code>のような）を追加的にサポートする可能性がある。（C++23からは<code><a href="tuple-like.html">tuple-like</a></code>を満たす型をサポートする。）</p>
 <h2>例</h2>
@@ -295,7 +295,7 @@ World
 <h3>処理系</h3>
 <ul>
 <li><a href="../../implementation.html#clang">Clang</a>: ??</li>
-<li><a href="../../implementation.html#gcc">GCC</a>: 4.6.1</li>
+<li><a href="../../implementation.html#gcc">GCC</a>: 4.6.1 <span aria-label="検証済" role="img" title="検証済">✅</span></li>
 <li><a href="../../implementation.html#icc">ICC</a>: ??</li>
 <li><a href="../../implementation.html#visual_cpp">Visual C++</a>: ??</li>
 </ul>

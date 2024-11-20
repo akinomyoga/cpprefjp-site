@@ -38,26 +38,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicons/apple-touch-icon.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicons/favicon-32x32.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicons/favicon-16x16.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="manifest" href="../../../manifest.json?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicons/apple-touch-icon.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicons/favicon-32x32.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicons/favicon-16x16.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="manifest" href="../../../manifest.json?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../../static/pygments/default.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="stylesheet" href="../../../static/pygments/default.css?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <!-- <link rel="stylesheet" href="../../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../../static/kunai/css/kunai-stage-0.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-1.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-2.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-3.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-0.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-1.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-2.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-3.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
 
-<script type="text/javascript" src="../../../static/kunai/js/kunai-vendor.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
-<script type="text/javascript" src="../../../static/kunai/js/kunai.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
+<script type="text/javascript" src="../../../static/kunai/js/kunai-vendor.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
+<script type="text/javascript" src="../../../static/kunai/js/kunai.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -200,12 +200,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2022-12-28T02:13:14">
-        2022年12月28日 02時13分14秒
+      <span itemprop="datePublished" content="2024-07-27T14:46:42">
+        2024年07月27日 14時46分42秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">Akira Takahashi</span>
+        <span itemprop="name">suomesta</span>
       </span>
       が更新
     </small></p>
@@ -251,6 +251,10 @@
 
 <span class="n">forward_list</span><span class="p">(</span><span class="n"><a href="../../initializer_list/initializer_list.html">initializer_list</a></span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">il</span><span class="p">,</span>
              <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Allocator</span><span class="p">());</span>          <span class="c1">// (10) C++11</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="n">container</span><span class="o">-</span><span class="n">compatible</span><span class="o">-</span><span class="n"><a href="../../ranges/range.html">range</a></span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">R</span><span class="o">&gt;</span>
+<span class="n">forward_list</span><span class="p">(</span><span class="n"><a href="../../ranges/from_range_t.html">from_range_t</a></span><span class="p">,</span> <span class="n">R</span><span class="o">&amp;&amp;</span> <span class="n">rg</span><span class="p">,</span>
+             <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Allocator</span><span class="p">());</span>          <span class="c1">// (11) C++23</span>
 </code></pre></div>
 </p>
 <h2>概要</h2>
@@ -272,6 +276,7 @@
 <li>(8) : アロケータを指定したコピーコンストラクタ  </li>
 <li>(9) : アロケータを指定したムーブコンストラクタ  </li>
 <li>(10) : 初期化子リストを受け取るコンストラクタ。<code>forward_list(il.<a href="../../initializer_list/initializer_list/begin.html">begin</a>(), il.<a href="../../initializer_list/initializer_list/end.html">end</a>(), a)</code> と等価。</li>
+<li>(11) : Range <code>rg</code> の要素をコピーした <code>forward_list</code> オブジェクトを構築する。</li>
 </ul>
 <h2>計算量</h2>
 <ul>
@@ -284,10 +289,11 @@
 <li>(8) : <code>x</code> の要素数に対して線形時間</li>
 <li>(9) : <code>x.<a href="get_allocator.html">get_allocator</a>() == a</code> であれば、定数時間。そうでなければ <code>x</code> の要素数に対して線形時間</li>
 <li>(10) : <code>il</code> の要素数に対して線形時間</li>
+<li>(11) : <code>rg</code> の要素数に対して線形時間</li>
 </ul>
 <h2>備考</h2>
 <ul>
-<li><a class="cpprefjp-defined-word" data-desc="2つのイテレータで表現される半開区間を表す。C++20からイテレータと番兵で異なる型であっても指定可能になる">イテレータ範囲</a>コンストラクタ <code>template &lt;class InputIterator&gt; forward_list(InputIterator first, InputIterator last, const Allocator&amp; a = Allocator())</code> は、<code>InputIterator</code> が入力イテレータの要件を満たさなければオーバーロード解決に参加しない。</li>
+<li><a class="cpprefjp-defined-word" data-desc="2つのイテレータで表現される半開区間を表す。C++20からイテレータと番兵で異なる型であっても指定可能になる">イテレータ範囲</a>コンストラクタ <code>template &lt;class InputIterator&gt; forward_list(InputIterator first, InputIterator last, const Allocator&amp; a = Allocator())</code> は、<code>InputIterator</code> が入力イテレータの要件を満たさなければ<a class="cpprefjp-defined-word" data-desc="関数呼び出し時に、同名の関数の中から実際に呼び出す関数を決定する処理。このときの候補になることを、オーバーロード解決に参加するという">オーバーロード解決</a>に参加しない。</li>
 <li>
 <p>C++14 では、<code>explicit forward_list(const Allocator&amp; a = Allocator())</code> がデフォルト引数を使用しない 2 つのオーバーロードに分割された。<br />
     これは、デフォルトコンストラクタに <code>explicit</code> が付いていると、</p>
@@ -378,9 +384,9 @@ ls7 : 1 2 3
 <h3>処理系</h3>
 <ul>
 <li><a href="../../../implementation.html#clang">Clang</a>: ??</li>
-<li><a href="../../../implementation.html#gcc">GCC</a>: 4.7.0</li>
+<li><a href="../../../implementation.html#gcc">GCC</a>: 4.7.0 <span aria-label="検証済" role="img" title="検証済">✅</span></li>
 <li><a href="../../../implementation.html#icc">ICC</a>: ??</li>
-<li><a href="../../../implementation.html#visual_cpp">Visual C++</a>: 2010, 2012, 2013, 2015, 2017<ul>
+<li><a href="../../../implementation.html#visual_cpp">Visual C++</a>: 2010 <span aria-label="検証済" role="img" title="検証済">✅</span>, 2012 <span aria-label="検証済" role="img" title="検証済">✅</span>, 2013 <span aria-label="検証済" role="img" title="検証済">✅</span>, 2015 <span aria-label="検証済" role="img" title="検証済">✅</span>, 2017 <span aria-label="検証済" role="img" title="検証済">✅</span><ul>
 <li>(1)と(2)は2010当初からC++14のとおり実装されている。</li>
 <li>(5)のオーバーロードも、2010当初から、デフォルト実引数を用いずアロケータを引数に取るものと取らないもの、2つのオーバーロードで実現されている。</li>
 <li>(8), (9)のオーバーロードは2012から。</li>

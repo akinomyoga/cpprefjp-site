@@ -38,26 +38,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="manifest" href="../../manifest.json?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="manifest" href="../../manifest.json?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -188,12 +188,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2023-09-08T05:23:01">
-        2023年09月08日 05時23分01秒
+      <span itemprop="datePublished" content="2024-09-03T06:22:35">
+        2024年09月03日 06時22分35秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">onihusube</span>
+        <span itemprop="name">Akira Takahashi</span>
       </span>
       が更新
     </small></p>
@@ -231,10 +231,13 @@
 </ul>
 <p>元のRangeから条件を満たす要素を探す処理は遅延評価される。</p>
 <ul>
-<li>初めてメンバ関数<code><span href="https://cpprefjp.github.io/reference/ranges/filter_view/begin.md.nolink">begin</span></code>が呼び出されたときに先頭の要素を決定し、残りはイテレータが進むときに求める。</li>
-<li><code><span href="https://cpprefjp.github.io/reference/ranges/filter_view/begin.md.nolink">begin</span></code>は償却定数時間で実行できなければならないため、<code><span href="https://cpprefjp.github.io/reference/ranges/filter_view/begin.md.nolink">begin</span></code>の値はキャッシュされる。</li>
+<li>初めてメンバ関数<code><a href="filter_view/begin.html">begin</a></code>が呼び出されたときに先頭の要素を決定し、残りはイテレータが進むときに求める。<ul>
+<li>探索は <code><a href="../algorithm/ranges_find_if.html">ranges::find_if</a></code> と同様に行われる。</li>
 </ul>
-<p><code>filter_view</code>の要素を書き換えてもよいが、書き換えた後の要素が<code>Pred</code>を満たさない場合は<a class="cpprefjp-defined-word" data-desc="未定義の動作。処理系は予期せぬ動作をする可能性がある。要するに動作保証対象外" href="../../implementation-compliance.html#dfn-undefined-behavior">未定義動作</a>となる。</p>
+</li>
+<li><code><a href="filter_view/begin.html">begin</a></code>は償却定数時間で実行できなければならないため、<code><a href="filter_view/begin.html">begin</a></code>の値はキャッシュされる。</li>
+</ul>
+<p><code>filter_view</code>の要素を書き換えてもよいが、書き換えた後の要素が<code>Pred</code>を満たさない場合は<a class="cpprefjp-defined-word" data-desc="未定義の動作。処理系は予期せぬ動作をする可能性がある。要するに動作保証対象外。undefined behavior (UB)。" href="../../implementation-compliance.html#dfn-undefined-behavior">未定義動作</a>を引き起こす。</p>
 <h3>Rangeコンセプト</h3>
 <table border="1" bordercolor="#888" style="border-collapse:collapse">
 <thead>
@@ -282,8 +285,35 @@
 </ul>
 <h2>効果</h2>
 <ul>
-<li>(2): 式<code>views::filter(E, P)</code>の効果は<code>filter_view(E, P)</code>と等しい</li>
+<li>(2): 式<code>views::filter(E, P)</code>の効果は<code><a href="filter_view/op_constructor.html">filter_view</a>(E, P)</code>と等しい</li>
 </ul>
+<h2>メンバ変数</h2>
+<table border="1" bordercolor="#888" style="border-collapse:collapse">
+<thead>
+<tr>
+<th>名前</th>
+<th>説明</th>
+<th>対応バージョン</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>V base_ = V()</code></td>
+<td>元の<code><a href="view.html">view</a></code> (説明専用)</td>
+<td>C++20</td>
+</tr>
+<tr>
+<td><code><a href="copyable_box.html">copyable-box</a>&lt;Pred&gt; pred_</code></td>
+<td>述語 (説明専用)</td>
+<td>C++20<br />C++23で削除</td>
+</tr>
+<tr>
+<td><code><a href="movable_box.html">movable-box</a>&lt;Pred&gt; pred_</code></td>
+<td>述語 (説明専用)</td>
+<td>C++23</td>
+</tr>
+</tbody>
+</table>
 <h2>メンバ関数</h2>
 <table border="1" bordercolor="#888" style="border-collapse:collapse">
 <thead>
@@ -295,27 +325,27 @@
 </thead>
 <tbody>
 <tr>
-<td><code><span href="https://cpprefjp.github.io/reference/ranges/filter_view/op_constructor.md.nolink">(constructor)</span></code></td>
+<td><code><a href="filter_view/op_constructor.html">(constructor)</a></code></td>
 <td>コンストラクタ</td>
 <td>C++20</td>
 </tr>
 <tr>
-<td><code><span href="https://cpprefjp.github.io/reference/ranges/filter_view/base.md.nolink">base</span></code></td>
+<td><code><a href="filter_view/base.html">base</a></code></td>
 <td><code>V</code>の参照を取得する</td>
 <td>C++20</td>
 </tr>
 <tr>
-<td><code><span href="https://cpprefjp.github.io/reference/ranges/filter_view/pred.md.nolink">pred</span></code></td>
+<td><code><a href="filter_view/pred.html">pred</a></code></td>
 <td>述語を取得する</td>
 <td>C++20</td>
 </tr>
 <tr>
-<td><code><span href="https://cpprefjp.github.io/reference/ranges/filter_view/begin.md.nolink">begin</span></code></td>
+<td><code><a href="filter_view/begin.html">begin</a></code></td>
 <td>先頭を指すイテレータを取得する</td>
 <td>C++20</td>
 </tr>
 <tr>
-<td><code><span href="https://cpprefjp.github.io/reference/ranges/filter_view/end.md.nolink">end</span></code></td>
+<td><code><a href="filter_view/end.html">end</a></code></td>
 <td>番兵を取得する</td>
 <td>C++20</td>
 </tr>
@@ -358,6 +388,28 @@
 </tr>
 </tbody>
 </table>
+<h2>メンバ型</h2>
+<table border="1" bordercolor="#888" style="border-collapse:collapse">
+<thead>
+<tr>
+<th>名前</th>
+<th>説明</th>
+<th>対応バージョン</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code><a href="filter_view/iterator.html">iterator</a></code></td>
+<td>イテレータ型(説明専用)</td>
+<td>C++20</td>
+</tr>
+<tr>
+<td><code><a href="filter_view/sentinel.html">sentinel</a></code></td>
+<td>番兵型(説明専用)</td>
+<td>C++20</td>
+</tr>
+</tbody>
+</table>
 <h2>推論補助</h2>
 <table border="1" bordercolor="#888" style="border-collapse:collapse">
 <thead>
@@ -369,7 +421,7 @@
 </thead>
 <tbody>
 <tr>
-<td><code><span href="https://cpprefjp.github.io/reference/ranges/filter_view/op_deduction_guide.md.nolink">(deduction_guide)</span></code></td>
+<td><code><a href="filter_view/op_deduction_guide.html">(deduction_guide)</a></code></td>
 <td>クラステンプレートの推論補助</td>
 <td>C++20</td>
 </tr>
@@ -405,14 +457,14 @@
 </ul>
 <h3>処理系</h3>
 <ul>
-<li><a href="../../implementation.html#clang">Clang</a>: 13.0.0</li>
-<li><a href="../../implementation.html#gcc">GCC</a>: 10.1.0</li>
+<li><a href="../../implementation.html#clang">Clang</a>: 13.0.0 <span aria-label="検証済" role="img" title="検証済">✅</span></li>
+<li><a href="../../implementation.html#gcc">GCC</a>: 10.1.0 <span aria-label="検証済" role="img" title="検証済">✅</span></li>
 <li><a href="../../implementation.html#icc">ICC</a>: ?</li>
-<li><a href="../../implementation.html#visual_cpp">Visual C++</a>: 2019 Update 10</li>
+<li><a href="../../implementation.html#visual_cpp">Visual C++</a>: 2019 Update 10 <span aria-label="検証済" role="img" title="検証済">✅</span></li>
 </ul>
 <h2>参照</h2>
 <ul>
-<li><a href="https://timsong-cpp.github.io/cppwp/n4861/ranges" target="_blank">N4861 24 Ranges library</a></li>
+<li><a href="https://timsong-cpp.github.io/cppwp/n4861/range.filter" target="_blank">N4861 24.7.4 Filter view</a></li>
 <li><a href="https://techbookfest.org/product/5134506308665344" target="_blank">C++20 ranges</a></li>
 <li><a href="https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2021/p2367r0.html" target="_blank">P2367R0 Remove misuses of list-initialization from Clause 24</a> (本提案文書はC++20に遡って適用されている)</li>
 </ul></div>

@@ -16,21 +16,21 @@
 
         <meta charset="UTF-8">
 
-        <title>状態を持たないラムダ式を、デフォルト構築可能、代入可能とする - cpprefjp C++日本語リファレンス</title>
+        <title>状態を持たないラムダ式を、デフォルト構築可能、代入可能とする [P0624R2] - cpprefjp C++日本語リファレンス</title>
 
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta name="keywords" content="
   C++,標準ライブラリ,リファレンス,ドキュメント,STL,std,cpp20
 ">
-        <meta name="title" content="状態を持たないラムダ式を、デフォルト構築可能、代入可能とする - cpprefjp C++日本語リファレンス" />
-        <meta itemprop="name" content="状態を持たないラムダ式を、デフォルト構築可能、代入可能とする - cpprefjp C++日本語リファレンス" />
-        <meta property="og:title" content="状態を持たないラムダ式を、デフォルト構築可能、代入可能とする - cpprefjp C++日本語リファレンス" />
+        <meta name="title" content="状態を持たないラムダ式を、デフォルト構築可能、代入可能とする [P0624R2] - cpprefjp C++日本語リファレンス" />
+        <meta itemprop="name" content="状態を持たないラムダ式を、デフォルト構築可能、代入可能とする [P0624R2] - cpprefjp C++日本語リファレンス" />
+        <meta property="og:title" content="状態を持たないラムダ式を、デフォルト構築可能、代入可能とする [P0624R2] - cpprefjp C++日本語リファレンス" />
         <meta property="og:url" content="https://cpprefjp.github.io/lang/cpp20/default_constructible_and_assignable_stateless_lambdas.html" />
         <meta property="og:site_name" content="cpprefjp - C++日本語リファレンス" />
         <meta property="og:type" content="article" />
         <meta property="og:description" content="" />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="状態を持たないラムダ式を、デフォルト構築可能、代入可能とする - cpprefjp C++日本語リファレンス" />
+        <meta name="twitter:title" content="状態を持たないラムダ式を、デフォルト構築可能、代入可能とする [P0624R2] - cpprefjp C++日本語リファレンス" />
         <meta name="twitter:url" content="https://cpprefjp.github.io/lang/cpp20/default_constructible_and_assignable_stateless_lambdas.html" />
         <meta name="twitter:description" content="" />
 
@@ -38,26 +38,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="manifest" href="../../manifest.json?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="manifest" href="../../manifest.json?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -171,7 +171,7 @@
         <span>
           
             
-              <span itemprop="name">状態を持たないラムダ式を、デフォルト構築可能、代入可能とする</span>
+              <span itemprop="name">状態を持たないラムダ式を、デフォルト構築可能、代入可能とする [P0624R2]</span>
             
           
         </span>
@@ -188,12 +188,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2020-06-11T06:56:13">
-        2020年06月11日 06時56分13秒
+      <span itemprop="datePublished" content="2024-07-08T07:33:21">
+        2024年07月08日 07時33分21秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">onihusube</span>
+        <span itemprop="name">Akira Takahashi</span>
       </span>
       が更新
     </small></p>
@@ -212,8 +212,12 @@
     <div class="row">
       <div class="col-sm-12 content-body">
         
-  <h1 itemprop="name"><span class="token">状態を持たないラムダ式を、デフォルト構築可能、代入可能とする</span><span class="cpp cpp20" title="C++20で追加">(C++20)</span></h1>
-<div itemprop="articleBody"><h2>概要</h2>
+  <h1 itemprop="name"><span class="token">状態を持たないラムダ式を、デフォルト構築可能、代入可能とする [P0624R2]</span><span class="cpp cpp20" title="C++20で追加">(C++20)</span></h1>
+<div itemprop="articleBody"><p></p>
+<p>このページはC++20に採用された言語機能の変更を解説しています。</p>
+<p>のちのC++規格でさらに変更される場合があるため<a href="#relative-page">関連項目</a>を参照してください。</p>
+<p></p>
+<h2>概要</h2>
 <p>C++17まではラムダ式の生成するクロージャ型に定義される特殊メンバ関数はコピー/ムーブコンストラクタとデストラクタのみだったが、C++20からは状態を持たない、すなわちキャプチャをしていないラムダ式の場合にのみそのクロージャ型はデフォルトコンストラクタと代入演算子を持つようになる。</p>
 <p><div class="codehilite"><pre><span></span><code><span class="k">auto</span> <span class="n">l</span> <span class="o">=</span> <span class="p">[](){</span> <span class="k">return</span> <span class="mi">20</span><span class="p">;};</span>
 <span class="k">using</span> <span class="n">lambda_t</span> <span class="o">=</span> <span class="k">decltype</span><span class="p">(</span><span class="n">l</span><span class="p">);</span>
@@ -342,7 +346,7 @@
 </p>
 <p>ラムダ式は関数オブジェクトを生成する糖衣構文であるが、これらのことは対応する関数オブジェクトを直接書いた場合と一貫しておらず不便であるため、状態を持たないラムダ式に限って<a class="cpprefjp-defined-word" data-desc="デフォルト初期化。`T x;`構文での初期化。トリビアルにデフォルト構築可能な型の場合は初期化されず（オブジェクトのlifetimeは開始される）、そうではないクラス型はデフォルトコンストラクタで初期化する。配列型の場合は各要素が再帰的にデフォルト初期化される">デフォルト構築</a>と代入が可能になるように変更された。</p>
 <p>C++20では同時に<a href="wording_for_lambdas_in_unevaluated_contexts.html">評価されない文脈にラムダ式を書くことができるようになった</a>ため、この様な場合にラムダ式のクロージャ型を直接取得し渡すことができ、余計なコードをほとんど削減することができるようになる。</p>
-<h2>関連項目</h2>
+<h2><a href="#relative-page" id="relative-page">関連項目</a></h2>
 <ul>
 <li><a href="wording_for_lambdas_in_unevaluated_contexts.html">評価されない文脈でのラムダ式</a></li>
 </ul>

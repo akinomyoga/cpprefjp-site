@@ -38,26 +38,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicons/apple-touch-icon.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicons/favicon-32x32.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicons/favicon-16x16.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="manifest" href="../../../manifest.json?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicons/apple-touch-icon.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicons/favicon-32x32.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicons/favicon-16x16.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="manifest" href="../../../manifest.json?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../../static/pygments/default.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="stylesheet" href="../../../static/pygments/default.css?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <!-- <link rel="stylesheet" href="../../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../../static/kunai/css/kunai-stage-0.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-1.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-2.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-3.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-0.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-1.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-2.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-3.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
 
-<script type="text/javascript" src="../../../static/kunai/js/kunai-vendor.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
-<script type="text/javascript" src="../../../static/kunai/js/kunai.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
+<script type="text/javascript" src="../../../static/kunai/js/kunai-vendor.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
+<script type="text/javascript" src="../../../static/kunai/js/kunai.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -200,12 +200,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2022-05-20T06:19:01">
-        2022年05月20日 06時19分01秒
+      <span itemprop="datePublished" content="2024-07-16T09:44:23">
+        2024年07月16日 09時44分23秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">onihusube</span>
+        <span itemprop="name">raclamusi</span>
       </span>
       が更新
     </small></p>
@@ -249,7 +249,7 @@
 <li>(1) : 提供されるストリームバッファ（<code>buf</code>）、アロケータ（<code>allocator</code>）を使用してプライベートメンバの<code><a href="../basic_syncbuf.html">std::basic_syncbuf</a></code>を初期化し、そのポインタを用いて基底クラスである<code><a href="../../ostream/basic_ostream.html">std::basic_ostream</a></code>を初期化する。</li>
 <li>(2)(3) : (1)に委譲。</li>
 <li>(4) : (3)に委譲。</li>
-<li>(5) : 対応する<code>other</code>のサブオブジェクトから基底クラスとプライベートメンバの<code>std::basic_syncbuf</code>をムーブ構築し、基底クラスの初期化を完了するために<code>std::basic_ostream&lt;charT、traits&gt;::set_rdbuf(addressof(sb))</code>を呼び出す。</li>
+<li>(5) : 対応する<code>other</code>のサブオブジェクトから基底クラスとプライベートメンバの<code>std::basic_syncbuf</code>をムーブ構築し、基底クラスの初期化を完了するために<code>std::basic_ostream&lt;charT, traits&gt;::set_rdbuf(addressof(sb))</code>を呼び出す。</li>
 </ul>
 <h2>事後条件</h2>
 <ul>
@@ -278,8 +278,8 @@
 <h3>処理系</h3>
 <ul>
 <li><a href="../../../implementation.html#clang">Clang</a>: ??</li>
-<li><a href="../../../implementation.html#gcc">GCC</a>: 11.1</li>
-<li><a href="../../../implementation.html#visual_cpp">Visual C++</a>: 2019 update 10</li>
+<li><a href="../../../implementation.html#gcc">GCC</a>: 11.1 <span aria-label="検証済" role="img" title="検証済">✅</span></li>
+<li><a href="../../../implementation.html#visual_cpp">Visual C++</a>: 2019 update 10 <span aria-label="検証済" role="img" title="検証済">✅</span></li>
 </ul>
 <h2>参照</h2>
 <ul>

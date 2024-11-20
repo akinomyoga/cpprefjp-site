@@ -38,26 +38,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicons/apple-touch-icon.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicons/favicon-32x32.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicons/favicon-16x16.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="manifest" href="../../../manifest.json?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicons/apple-touch-icon.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicons/favicon-32x32.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicons/favicon-16x16.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="manifest" href="../../../manifest.json?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../../static/pygments/default.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="stylesheet" href="../../../static/pygments/default.css?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <!-- <link rel="stylesheet" href="../../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../../static/kunai/css/kunai-stage-0.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-1.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-2.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-3.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-0.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-1.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-2.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-3.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
 
-<script type="text/javascript" src="../../../static/kunai/js/kunai-vendor.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
-<script type="text/javascript" src="../../../static/kunai/js/kunai.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
+<script type="text/javascript" src="../../../static/kunai/js/kunai-vendor.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
+<script type="text/javascript" src="../../../static/kunai/js/kunai.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -200,12 +200,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2022-12-28T04:08:57">
-        2022年12月28日 04時08分57秒
+      <span itemprop="datePublished" content="2024-07-16T09:43:27">
+        2024年07月16日 09時43分27秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">suomesta</span>
+        <span itemprop="name">raclamusi</span>
       </span>
       が更新
     </small></p>
@@ -240,7 +240,7 @@
 <h2>効果</h2>
 <p><code>abs_time</code>パラメータで指定された絶対時間に到達するまで、ミューテックスの共有所有権の取得を試みる。</p>
 <p>共有所有権が取得できるまで、もしくは<code>abs_time</code>時間に到達するまでこの関数はブロッキングする。</p>
-<p><code>abs_timeにすでに到達していた場合</code>、この関数は<code><a href="try_lock_shared.html">try_lock_shared()</a></code>と同じ効果をもち、ブロッキングせずにミューテックスの共有所有権の取得を試みる。</p>
+<p><code>abs_time</code>にすでに到達していた場合、この関数は<code><a href="try_lock_shared.html">try_lock_shared()</a></code>と同じ効果をもち、ブロッキングせずにミューテックスの共有所有権の取得を試みる。</p>
 <h2>戻り値</h2>
 <p>共有所有権が取得できた場合は<code>true</code>を返す。</p>
 <p><code>abs_time</code>パラメータで指定された相対時間の間に共有所有権が取得できなかった場合はタイムアウトとなり、<code>false</code>を返す。</p>
@@ -305,10 +305,10 @@
 </ul>
 <h3>処理系</h3>
 <ul>
-<li><a href="../../../implementation.html#clang">Clang</a>: 3.5</li>
-<li><a href="../../../implementation.html#gcc">GCC</a>: 4.9</li>
+<li><a href="../../../implementation.html#clang">Clang</a>: 3.5 <span aria-label="検証済" role="img" title="検証済">✅</span></li>
+<li><a href="../../../implementation.html#gcc">GCC</a>: 4.9 <span aria-label="検証済" role="img" title="検証済">✅</span></li>
 <li><a href="../../../implementation.html#icc">ICC</a>: ??</li>
-<li><a href="../../../implementation.html#visual_cpp">Visual C++</a>: 2015</li>
+<li><a href="../../../implementation.html#visual_cpp">Visual C++</a>: 2015 <span aria-label="検証済" role="img" title="検証済">✅</span></li>
 </ul></div>
 
       </div>

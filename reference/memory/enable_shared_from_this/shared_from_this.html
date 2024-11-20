@@ -38,26 +38,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicons/apple-touch-icon.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicons/favicon-32x32.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicons/favicon-16x16.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="manifest" href="../../../manifest.json?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicons/apple-touch-icon.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicons/favicon-32x32.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicons/favicon-16x16.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="manifest" href="../../../manifest.json?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../../static/pygments/default.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="stylesheet" href="../../../static/pygments/default.css?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <!-- <link rel="stylesheet" href="../../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../../static/kunai/css/kunai-stage-0.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-1.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-2.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-3.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-0.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-1.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-2.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-3.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
 
-<script type="text/javascript" src="../../../static/kunai/js/kunai-vendor.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
-<script type="text/javascript" src="../../../static/kunai/js/kunai.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
+<script type="text/javascript" src="../../../static/kunai/js/kunai-vendor.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
+<script type="text/javascript" src="../../../static/kunai/js/kunai.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -200,12 +200,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2020-06-18T07:58:26">
-        2020年06月18日 07時58分26秒
+      <span itemprop="datePublished" content="2024-09-03T06:17:49">
+        2024年09月03日 06時17分49秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">onihusube</span>
+        <span itemprop="name">Akira Takahashi</span>
       </span>
       が更新
     </small></p>
@@ -236,7 +236,7 @@
 <h2>戻り値</h2>
 <h3>C++14まで</h3>
 <p><code>this</code>ポインタを、<code>enable_shared_from_this</code>の派生クラス型<code>T</code>の<code><a href="../shared_ptr.html">shared_ptr</a></code>オブジェクトとして構築して返す。<br />
-要件を満たしていない場合は<a class="cpprefjp-defined-word" data-desc="未定義の動作。処理系は予期せぬ動作をする可能性がある。要するに動作保証対象外" href="../../../implementation-compliance.html#dfn-undefined-behavior">未定義動作</a>となる。</p>
+要件を満たしていない場合は<a class="cpprefjp-defined-word" data-desc="未定義の動作。処理系は予期せぬ動作をする可能性がある。要するに動作保証対象外。undefined behavior (UB)。" href="../../../implementation-compliance.html#dfn-undefined-behavior">未定義動作</a>を引き起こす。</p>
 <h3>C++17から</h3>
 <p>保持する<code>this</code>を指すポインタを<code>weak_this</code>（<code>weak_ptr&lt;T&gt;</code>）とすると、以下と等価。</p>
 <p><div class="codehilite"><pre><span></span><code><span class="k">return</span> <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">weak_this</span><span class="p">);</span>
@@ -247,7 +247,7 @@
 <p>この動作が望ましくない場合は、代わりに<code><a href="weak_from_this.html">weak_from_this()</a>.lock()</code>を用いることができる。この場合、例外を投げる代わりに空の<code>shared_ptr</code>オブジェクトを返す。</p>
 <h2>備考</h2>
 <p><code>enable_shared_from_this&lt;T&gt;</code>の派生クラス型<code>T</code>のコンストラクタ内ではまだ<code>enable_shared_from_this</code>の保持する<code>this</code>を指すポインタが設定されていないので、（<code>T</code>のコンストラクタ内では）本関数によって<code>this</code>を指す<code>shared_ptr</code>を取得することはできない。<br />
-その場合、C++14までならば<a class="cpprefjp-defined-word" data-desc="未定義の動作。処理系は予期せぬ動作をする可能性がある。要するに動作保証対象外" href="../../../implementation-compliance.html#dfn-undefined-behavior">未定義動作</a>となり、C++17以降は例外を送出する。</p>
+その場合、C++14までならば<a class="cpprefjp-defined-word" data-desc="未定義の動作。処理系は予期せぬ動作をする可能性がある。要するに動作保証対象外。undefined behavior (UB)。" href="../../../implementation-compliance.html#dfn-undefined-behavior">未定義動作</a>となり、C++17以降は例外を送出する。</p>
 <h2>例</h2>
 <p><div class="yata" id="d8aca3a8a5fd55e24eaba263e516783a57299fb1"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf"><a href="../../cassert.html">&lt;cassert&gt;</a></span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf"><a href="../../memory.html">&lt;memory&gt;</a></span><span class="cp"></span>
@@ -278,10 +278,10 @@
 </ul>
 <h3>処理系</h3>
 <ul>
-<li><a href="../../../implementation.html#gcc">GCC</a>: 4.3.6</li>
-<li><a href="../../../implementation.html#clang">Clang</a>: 3.0</li>
+<li><a href="../../../implementation.html#gcc">GCC</a>: 4.3.6 <span aria-label="検証済" role="img" title="検証済">✅</span></li>
+<li><a href="../../../implementation.html#clang">Clang</a>: 3.0 <span aria-label="検証済" role="img" title="検証済">✅</span></li>
 <li><a href="../../../implementation.html#icc">ICC</a>: ?</li>
-<li><a href="../../../implementation.html#visual_cpp">Visual C++</a>: 2008 (TR1), 2010, 2012, 2013</li>
+<li><a href="../../../implementation.html#visual_cpp">Visual C++</a>: 2008 (TR1) <span aria-label="検証済" role="img" title="検証済">✅</span>, 2010 <span aria-label="検証済" role="img" title="検証済">✅</span>, 2012 <span aria-label="検証済" role="img" title="検証済">✅</span>, 2013 <span aria-label="検証済" role="img" title="検証済">✅</span></li>
 </ul>
 <h2>参照</h2>
 <ul>

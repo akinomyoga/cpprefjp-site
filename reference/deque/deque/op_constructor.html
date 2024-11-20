@@ -38,26 +38,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicons/apple-touch-icon.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicons/favicon-32x32.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicons/favicon-16x16.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="manifest" href="../../../manifest.json?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicons/apple-touch-icon.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicons/favicon-32x32.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicons/favicon-16x16.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="manifest" href="../../../manifest.json?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../../static/pygments/default.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="stylesheet" href="../../../static/pygments/default.css?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <!-- <link rel="stylesheet" href="../../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../../static/kunai/css/kunai-stage-0.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-1.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-2.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../../static/kunai/css/kunai-stage-3.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-0.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-1.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-2.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../../static/kunai/css/kunai-stage-3.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
 
-<script type="text/javascript" src="../../../static/kunai/js/kunai-vendor.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
-<script type="text/javascript" src="../../../static/kunai/js/kunai.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
+<script type="text/javascript" src="../../../static/kunai/js/kunai-vendor.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
+<script type="text/javascript" src="../../../static/kunai/js/kunai.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -200,12 +200,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2019-02-12T07:01:02">
-        2019年02月12日 07時01分02秒
+      <span itemprop="datePublished" content="2024-07-27T14:46:42">
+        2024年07月27日 14時46分42秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">Akira Takahashi</span>
+        <span itemprop="name">suomesta</span>
       </span>
       が更新
     </small></p>
@@ -251,6 +251,10 @@
 
 <span class="n">deque</span><span class="p">(</span><span class="n"><a href="../../initializer_list/initializer_list.html">initializer_list</a></span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">il</span><span class="p">,</span>
       <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Allocator</span><span class="p">());</span>          <span class="c1">// (10) C++11 から</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="n">container</span><span class="o">-</span><span class="n">compatible</span><span class="o">-</span><span class="n"><a href="../../ranges/range.html">range</a></span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">R</span><span class="o">&gt;</span>
+<span class="n">deque</span><span class="p">(</span><span class="n"><a href="../../ranges/from_range_t.html">from_range_t</a></span><span class="p">,</span> <span class="n">R</span><span class="o">&amp;&amp;</span> <span class="n">rg</span><span class="p">,</span>
+      <span class="k">const</span> <span class="n">Allocator</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Allocator</span><span class="p">());</span>          <span class="c1">// (11) C++23 から</span>
 </code></pre></div>
 </p>
 <h2>概要</h2>
@@ -273,6 +277,7 @@
 <li>(8) : コピーコンストラクタ。アロケータに <code>a</code> を使用して、<code>x</code> と同じ要素を保持した <code>deque</code> を構築する。</li>
 <li>(9) : ムーブコンストラクタ。アロケータに <code>a</code> を使用して、ムーブセマンティクスを使って <code>y</code> の要素でコンテナを構築する。</li>
 <li>(10) : 初期化子リストで要素を構築するコンストラクタ。<code>deque(il.<a href="../../initializer_list/initializer_list/begin.html">begin</a>(), il.<a href="../../initializer_list/initializer_list/end.html">end</a>(), a)</code> と等価。</li>
+<li>(11) : Rangeコンストラクタ。アロケータに <code>a</code> を使用して、<code>rg</code> の要素で <code>deque</code> を構築する。</li>
 </ul>
 <h2>計算量</h2>
 <ul>
@@ -286,11 +291,12 @@
 <li>(7) : 定数時間</li>
 <li>(8) : <code>x</code> の要素数に対して線形時間</li>
 <li>(9) : <code>a == y.<a href="get_allocator.html">get_allocator</a>()</code> の場合、定数時間、そうでなければ <code>y</code> の要素数に対して線形時間</li>
-<li>(10) : <code>il</code>の要素数に対して線形時間</li>
+<li>(10) : <code>il</code> の要素数に対して線形時間</li>
+<li>(11) : <code>rg</code> の要素数に対して線形時間</li>
 </ul>
 <h2>備考</h2>
 <ul>
-<li><a class="cpprefjp-defined-word" data-desc="2つのイテレータで表現される半開区間を表す。C++20からイテレータと番兵で異なる型であっても指定可能になる">イテレータ範囲</a>コンストラクタ <code>template &lt;class InputIterator&gt; deque(InputIterator first, InputIterator last, const Allocator&amp; a = Allocator())</code> は、C++03 までは <code>InputIterator</code> が整数型の場合には <code>deque(static_cast&lt;typename deque::size_type&gt;(first), static_cast&lt;typename deque::value_type&gt;(last), a)</code> と等価とされていたが、C++11 では <code>InputIterator</code> が入力イテレータの要件を満たさなければオーバーロード解決に参加しないように変更された。</li>
+<li><a class="cpprefjp-defined-word" data-desc="2つのイテレータで表現される半開区間を表す。C++20からイテレータと番兵で異なる型であっても指定可能になる">イテレータ範囲</a>コンストラクタ <code>template &lt;class InputIterator&gt; deque(InputIterator first, InputIterator last, const Allocator&amp; a = Allocator())</code> は、C++03 までは <code>InputIterator</code> が整数型の場合には <code>deque(static_cast&lt;typename deque::size_type&gt;(first), static_cast&lt;typename deque::value_type&gt;(last), a)</code> と等価とされていたが、C++11 では <code>InputIterator</code> が入力イテレータの要件を満たさなければ<a class="cpprefjp-defined-word" data-desc="関数呼び出し時に、同名の関数の中から実際に呼び出す関数を決定する処理。このときの候補になることを、オーバーロード解決に参加するという">オーバーロード解決</a>に参加しないように変更された。</li>
 <li>
 <p>C++11 では、<code>explicit deque(size_type n, const T&amp; value = T(), const Allocator&amp; a = Allocator())</code> の引数 <code>value</code> に関するデフォルト引数が削除され、新たなコンストラクタ <code>explicit deque(size_type n)</code> が追加された。<br />
     これは、デフォルト引数を使用すると、引数 <code>value</code> の<a class="cpprefjp-defined-word" data-desc="`T x;`構文での初期化。トリビアルにデフォルト構築可能な型の場合は初期化されず（オブジェクトのlifetimeは開始される）、そうではないクラス型はデフォルトコンストラクタで初期化する。配列型の場合は各要素が再帰的にデフォルト初期化される">デフォルト初期化</a> 1 回＋<code>deque</code> の要素へのコピー初期化 <code>n</code> 回のコンストラクタ呼び出しが必要となるが、デフォルト引数でなければ <code>deque</code> の要素への<a class="cpprefjp-defined-word" data-desc="`T x;`構文での初期化。トリビアルにデフォルト構築可能な型の場合は初期化されず（オブジェクトのlifetimeは開始される）、そうではないクラス型はデフォルトコンストラクタで初期化する。配列型の場合は各要素が再帰的にデフォルト初期化される">デフォルト初期化</a> <code>n</code> 回のコンストラクタ呼び出しで済むためである。</p>

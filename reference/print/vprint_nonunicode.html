@@ -38,26 +38,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="manifest" href="../../manifest.json?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="manifest" href="../../manifest.json?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -188,8 +188,8 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2024-05-14T01:41:57">
-        2024年05月14日 01時41分57秒
+      <span itemprop="datePublished" content="2024-09-11T07:03:22">
+        2024年09月11日 07時03分22秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -244,7 +244,11 @@
 </p>
 </li>
 <li>
-<p>(2) : <code><a href="../format/vformat.html">vformat</a>(fmt, args)</code>の結果を<code>stream</code>に書き出す</p>
+<p>(2) :</p>
+<ul>
+<li>C++23 : <code><a href="../format/vformat.html">vformat</a>(fmt, args)</code>の結果を<code>stream</code>に書き出す</li>
+<li>C++26 : ストリームのロックを保持したまま、<code>fmt</code>で書式指定に従って書式化された<code>args</code>の文字表現を<code>stream</code>に書き出す</li>
+</ul>
 </li>
 </ul>
 <h2>例外</h2>
@@ -260,10 +264,10 @@
 </ul>
 <h3>処理系</h3>
 <ul>
-<li><a href="../../implementation.html#clang">Clang</a>: 19</li>
-<li><a href="../../implementation.html#gcc">GCC</a>: 14</li>
+<li><a href="../../implementation.html#clang">Clang</a>: 19 <span aria-label="検証済" role="img" title="検証済">✅</span></li>
+<li><a href="../../implementation.html#gcc">GCC</a>: 14 <span aria-label="検証済" role="img" title="検証済">✅</span></li>
 <li><a href="../../implementation.html#icc">ICC</a>: ??</li>
-<li><a href="../../implementation.html#visual_cpp">Visual C++</a>: 2022 Update 7</li>
+<li><a href="../../implementation.html#visual_cpp">Visual C++</a>: 2022 Update 7 <span aria-label="検証済" role="img" title="検証済">✅</span></li>
 </ul>
 <h2>関連項目</h2>
 <ul>
@@ -274,6 +278,11 @@
 <h2>参照</h2>
 <ul>
 <li><a href="https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2022/p2093r14.html" target="_blank">P2093R14 Formatted output</a></li>
+<li><a href="https://open-std.org/jtc1/sc22/wg21/docs/papers/2024/p3107r5.html" target="_blank">P3107R5 Permit an efficient implementation of <code>std::print</code></a></li>
+<li><a href="https://open-std.org/jtc1/sc22/wg21/docs/papers/2024/p3235r3.html" target="_blank">P3235R3 <code>std::print</code> more types faster with less memory</a><ul>
+<li>C++26の上記2つの提案文書では、余分な動的メモリ確保をしないよう仕様が見直された</li>
+</ul>
+</li>
 </ul></div>
 
       </div>

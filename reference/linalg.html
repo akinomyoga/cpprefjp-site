@@ -38,26 +38,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../static/favicons/apple-touch-icon.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="32x32" href="../static/favicons/favicon-32x32.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="16x16" href="../static/favicons/favicon-16x16.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="manifest" href="../manifest.json?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="apple-touch-icon" sizes="180x180" href="../static/favicons/apple-touch-icon.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="32x32" href="../static/favicons/favicon-32x32.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="16x16" href="../static/favicons/favicon-16x16.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="manifest" href="../manifest.json?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../static/pygments/default.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="stylesheet" href="../static/pygments/default.css?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <!-- <link rel="stylesheet" href="../static/css/root.css"> -->
 
         
   
 
 
-<link href="../static/kunai/css/kunai-stage-0.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../static/kunai/css/kunai-stage-1.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../static/kunai/css/kunai-stage-2.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../static/kunai/css/kunai-stage-3.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../static/kunai/css/kunai-stage-0.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../static/kunai/css/kunai-stage-1.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../static/kunai/css/kunai-stage-2.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../static/kunai/css/kunai-stage-3.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
 
-<script type="text/javascript" src="../static/kunai/js/kunai-vendor.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
-<script type="text/javascript" src="../static/kunai/js/kunai.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
+<script type="text/javascript" src="../static/kunai/js/kunai-vendor.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
+<script type="text/javascript" src="../static/kunai/js/kunai.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -176,8 +176,8 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2024-05-25T12:07:58">
-        2024年05月25日 12時07分58秒
+      <span itemprop="datePublished" content="2024-07-18T02:32:33">
+        2024年07月18日 02時32分33秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -295,7 +295,7 @@ BLAS互換アルゴリズムは、演算対象データの次元数や計算オ�
 </tr>
 <tr>
 <td><code>DiagonalStorage</code></td>
-<td><code>implicit_unit_diagonal_t</code>または<code>implicit_unit_diagonal_t</code></td>
+<td><code>implicit_unit_diagonal_t</code>または<code>explicit_diagonal_t</code></td>
 </tr>
 </tbody>
 </table>
@@ -321,77 +321,77 @@ BLAS互換アルゴリズムは、演算対象データの次元数や計算オ�
 <td>C++26</td>
 </tr>
 <tr>
-<td><code>apply_givens_rotation</code></td>
+<td><code><a href="linalg/apply_givens_rotation.html">apply_givens_rotation</a></code></td>
 <td>xROT: ベクトルにギブンス回転を適用する (function template)</td>
 <td>C++26</td>
 </tr>
 <tr>
-<td><code>swap_elements</code></td>
+<td><code><a href="linalg/swap_elements.html">swap_elements</a></code></td>
 <td>xSWAP: 2つのベクトル／行列の要素を交換する (function template)</td>
 <td>C++26</td>
 </tr>
 <tr>
-<td><code>scale</code></td>
+<td><code><a href="linalg/scale.html">scale</a></code></td>
 <td>xSCAL: ベクトル／行列の要素にスカラ値を乗算する (function template)</td>
 <td>C++26</td>
 </tr>
 <tr>
-<td><code>copy</code></td>
+<td><code><a href="linalg/copy.html">copy</a></code></td>
 <td>xCOPY: ベクトル／行列の要素をコピーする (function template)</td>
 <td>C++26</td>
 </tr>
 <tr>
-<td><code>add</code></td>
+<td><code><a href="linalg/add.html">add</a></code></td>
 <td>xAXPY: 2つのベクトル／行列の要素を加算する (function template)</td>
 <td>C++26</td>
 </tr>
 <tr>
-<td><code>dot</code></td>
+<td><code><a href="linalg/dot.html">dot</a></code></td>
 <td>xDOT, xDOTU: 2つのベクトルのドット積を求める (function template)</td>
 <td>C++26</td>
 </tr>
 <tr>
-<td><code>dotc</code></td>
+<td><code><a href="linalg/dotc.html">dotc</a></code></td>
 <td>xDOTC: 2つのベクトルの複素共役ドット積を求める (function template)</td>
 <td>C++26</td>
 </tr>
 <tr>
-<td><code>sum_of_squares_result</code></td>
+<td><code><a href="linalg/sum_of_squares_result.html">sum_of_squares_result</a></code></td>
 <td><code>vector_sum_of_squares</code>の結果型 (class template)</td>
 <td>C++26</td>
 </tr>
 <tr>
-<td><code>vector_sum_of_squares</code></td>
+<td><code><a href="linalg/vector_sum_of_squares.html">vector_sum_of_squares</a></code></td>
 <td>xLASSQ: ベクトル要素の平方和を求める (function template)</td>
 <td>C++26</td>
 </tr>
 <tr>
-<td><code>vector_two_norm</code></td>
+<td><code><a href="linalg/vector_two_norm.html">vector_two_norm</a></code></td>
 <td>xNRM2: ベクトルのユークリッドノルム(Euclidean norm)を求める (function template)</td>
 <td>C++26</td>
 </tr>
 <tr>
-<td><code>vector_abs_sum</code></td>
+<td><code><a href="linalg/vector_abs_sum.html">vector_abs_sum</a></code></td>
 <td>xASUM: ベクトル要素の絶対値和を求める (function template)</td>
 <td>C++26</td>
 </tr>
 <tr>
-<td><code>vector_idx_abs_max</code></td>
+<td><code><a href="linalg/vector_idx_abs_max.html">vector_idx_abs_max</a></code></td>
 <td>xIAMAX: ベクトル要素のうち最大絶対値インデクスを返す (function template)</td>
 <td>C++26</td>
 </tr>
 <tr>
-<td><code>matrix_frob_norm</code></td>
+<td><code><a href="linalg/matrix_frob_norm.html">matrix_frob_norm</a></code></td>
 <td>行列のフロベニウスノルム(Frobenius norm)を求める (function template)</td>
 <td>C++26</td>
 </tr>
 <tr>
-<td><code>matrix_one_norm</code></td>
+<td><code><a href="linalg/matrix_one_norm.html">matrix_one_norm</a></code></td>
 <td>行列の1ノルム(One norm)を求める (function template)</td>
 <td>C++26</td>
 </tr>
 <tr>
-<td><code>matrix_inf_norm</code></td>
+<td><code><a href="linalg/matrix_inf_norm.html">matrix_inf_norm</a></code></td>
 <td>行列の無限大ノルム(Infinity norm)を求める (function template)</td>
 <td>C++26</td>
 </tr>
@@ -408,57 +408,57 @@ BLAS互換アルゴリズムは、演算対象データの次元数や計算オ�
 </thead>
 <tbody>
 <tr>
-<td><code>matrix_vector_product</code></td>
+<td><code><a href="linalg/matrix_vector_product.html">matrix_vector_product</a></code></td>
 <td>xGEMV: 一般行列とベクトルの積を求める (function template)</td>
 <td>C++26</td>
 </tr>
 <tr>
-<td><code>symmetric_matrix_vector_product</code></td>
+<td><code><a href="linalg/symmetric_matrix_vector_product.html">symmetric_matrix_vector_product</a></code></td>
 <td>xSYMV: 対称行列とベクトルの積を求める (function template)</td>
 <td>C++26</td>
 </tr>
 <tr>
-<td><code>hermitian_matrix_vector_product</code></td>
+<td><code><a href="linalg/hermitian_matrix_vector_product.html">hermitian_matrix_vector_product</a></code></td>
 <td>xHEMV: ハミルトニアン行列とベクトルの積を求める (function template)</td>
 <td>C++26</td>
 </tr>
 <tr>
-<td><code>triangular_matrix_vector_product</code></td>
+<td><code><a href="linalg/triangular_matrix_vector_product.html">triangular_matrix_vector_product</a></code></td>
 <td>xTRMV: 三角行列とベクトルの積を求める (function template)</td>
 <td>C++26</td>
 </tr>
 <tr>
-<td><code>triangular_matrix_vector_solve</code></td>
+<td><code><a href="linalg/triangular_matrix_vector_solve.html">triangular_matrix_vector_solve</a></code></td>
 <td>xTRSV: 三角行列を係数とする行列方程式を解く (function template)</td>
 <td>C++26</td>
 </tr>
 <tr>
-<td><code>matrix_rank_1_update</code></td>
+<td><code><a href="linalg/matrix_rank_1_update.html">matrix_rank_1_update</a></code></td>
 <td>xGER, xGERU: 行列のRank-1更新 (function template)</td>
 <td>C++26</td>
 </tr>
 <tr>
-<td><code>matrix_rank_1_update_c</code></td>
+<td><code><a href="linalg/matrix_rank_1_update_c.html">matrix_rank_1_update_c</a></code></td>
 <td>xGERC: 複素行列のRank-1更新 (function template)</td>
 <td>C++26</td>
 </tr>
 <tr>
-<td><code>symmetric_matrix_rank_1_update</code></td>
+<td><code><a href="linalg/symmetric_matrix_rank_1_update.html">symmetric_matrix_rank_1_update</a></code></td>
 <td>xSYR: 対称行列のRank-1更新 (function template)</td>
 <td>C++26</td>
 </tr>
 <tr>
-<td><code>hermitian_matrix_rank_1_update</code></td>
+<td><code><a href="linalg/hermitian_matrix_rank_1_update.html">hermitian_matrix_rank_1_update</a></code></td>
 <td>xHER: ハミルトニアン行列のRank-1更新 (function template)</td>
 <td>C++26</td>
 </tr>
 <tr>
-<td><code>symmetric_matrix_rank_2_update</code></td>
+<td><code><a href="linalg/symmetric_matrix_rank_2_update.html">symmetric_matrix_rank_2_update</a></code></td>
 <td>xSYR2: 対称行列のRank-2更新 (function template)</td>
 <td>C++26</td>
 </tr>
 <tr>
-<td><code>hermitian_matrix_rank_2_update</code></td>
+<td><code><a href="linalg/hermitian_matrix_rank_2_update.html">hermitian_matrix_rank_2_update</a></code></td>
 <td>xHER2: ハミルトニアン行列のRank-2更新 (function template)</td>
 <td>C++26</td>
 </tr>
@@ -475,62 +475,62 @@ BLAS互換アルゴリズムは、演算対象データの次元数や計算オ�
 </thead>
 <tbody>
 <tr>
-<td><code>matrix_product</code></td>
+<td><code><a href="linalg/matrix_product.html">matrix_product</a></code></td>
 <td>xGEMM: 2つの一般行列の積を求める (function template)</td>
 <td>C++26</td>
 </tr>
 <tr>
-<td><code>symmetric_matrix_product</code></td>
+<td><code><a href="linalg/symmetric_matrix_product.html">symmetric_matrix_product</a></code></td>
 <td>xSYMM: 対称行列と行列の積を求める (function template)</td>
 <td>C++26</td>
 </tr>
 <tr>
-<td><code>hermitian_matrix_product</code></td>
+<td><code><a href="linalg/hermitian_matrix_product.html">hermitian_matrix_product</a></code></td>
 <td>xHEMM: ハミルトニアン行列と行列の積を求める (function template)</td>
 <td>C++26</td>
 </tr>
 <tr>
-<td><code>triangular_matrix_product</code></td>
+<td><code><a href="linalg/triangular_matrix_product.html">triangular_matrix_product</a></code></td>
 <td>xTRMM: 三角行列と行列の積を求める (function template)</td>
 <td>C++26</td>
 </tr>
 <tr>
-<td><code>triangular_matrix_left_product</code></td>
+<td><code><a href="linalg/triangular_matrix_left_product.html">triangular_matrix_left_product</a></code></td>
 <td>xTRMM: In-placeに三角行列と行列の積を求める (function template)</td>
 <td>C++26</td>
 </tr>
 <tr>
-<td><code>triangular_matrix_right_product</code></td>
+<td><code><a href="linalg/triangular_matrix_right_product.html">triangular_matrix_right_product</a></code></td>
 <td>xTRMM: In-placeに三角行列と行列の積を求める (function template)</td>
 <td>C++26</td>
 </tr>
 <tr>
-<td><code>symmetric_matrix_rank_k_update</code></td>
+<td><code><a href="linalg/symmetric_matrix_rank_k_update.html">symmetric_matrix_rank_k_update</a></code></td>
 <td>xSYRK: 対称行列のRank-k更新 (function template)</td>
 <td>C++26</td>
 </tr>
 <tr>
-<td><code>hermitian_matrix_rank_k_update</code></td>
+<td><code><a href="linalg/hermitian_matrix_rank_k_update.html">hermitian_matrix_rank_k_update</a></code></td>
 <td>xHERK: ハミルトニアン行列のRank-k更新 (function template)</td>
 <td>C++26</td>
 </tr>
 <tr>
-<td><code>symmetric_matrix_rank_2k_update</code></td>
+<td><code><a href="linalg/symmetric_matrix_rank_2k_update.html">symmetric_matrix_rank_2k_update</a></code></td>
 <td>xSYR2K: 対称行列のRank-2k更新 (function template)</td>
 <td>C++26</td>
 </tr>
 <tr>
-<td><code>hermitian_matrix_rank_2k_update</code></td>
+<td><code><a href="linalg/hermitian_matrix_rank_2k_update.html">hermitian_matrix_rank_2k_update</a></code></td>
 <td>xHER2K: ハミルトニアン行列のRank-2k更新 (function template)</td>
 <td>C++26</td>
 </tr>
 <tr>
-<td><code>triangular_matrix_matrix_left_solve</code></td>
+<td><code><a href="linalg/triangular_matrix_matrix_left_solve.html">triangular_matrix_matrix_left_solve</a></code></td>
 <td>xTRSM: 三角行列の連立一次方程式を解く (function template)</td>
 <td>C++26</td>
 </tr>
 <tr>
-<td><code>triangular_matrix_matrix_right_solve</code></td>
+<td><code><a href="linalg/triangular_matrix_matrix_right_solve.html">triangular_matrix_matrix_right_solve</a></code></td>
 <td>xTRSM: 三角行列の連立一次方程式を解く (function template)</td>
 <td>C++26</td>
 </tr>

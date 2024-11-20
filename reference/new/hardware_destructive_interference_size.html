@@ -38,26 +38,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="manifest" href="../../manifest.json?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="manifest" href="../../manifest.json?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -68,7 +68,7 @@
 
     </head>
     <body>
-<header data-kunai-mdinfo="{&#34;meta&#34;: {&#34;header&#34;: [&#34;new&#34;], &#34;namespace&#34;: [&#34;std&#34;], &#34;id-type&#34;: [&#34;variable&#34;], &#34;cpp&#34;: [&#34;cpp17&#34;]}, &#34;sources&#34;: [], &#34;page_id&#34;: [&#34;reference&#34;, &#34;new&#34;, &#34;hardware_destructive_interference_size&#34;]}">
+<header data-kunai-mdinfo="{&#34;meta&#34;: {&#34;header&#34;: [&#34;new&#34;], &#34;namespace&#34;: [&#34;std&#34;], &#34;id-type&#34;: [&#34;variable&#34;], &#34;cpp&#34;: [&#34;cpp17&#34;]}, &#34;sources&#34;: [{&#34;id&#34;: &#34;9eafccbc93e4ab96355a1d5d42f95ed43e22be65&#34;, &#34;source&#34;: &#34;#include &lt;iostream&gt;\n#include &lt;new&gt;\n#include &lt;thread&gt;\n#include &lt;vector&gt;\n\nstruct X {\n  alignas(std::hardware_destructive_interference_size) int a;\n  alignas(std::hardware_destructive_interference_size) int b;\n};\n\nstruct IndividualCacheInt {\n  alignas(std::hardware_destructive_interference_size) int value;\n};\n\nint main()\n{\n  std::cout &lt;&lt; \&#34;hardware_destructive_interference_size : \&#34;\n            &lt;&lt; std::hardware_destructive_interference_size\n            &lt;&lt; std::endl;\n\n  // \u69cb\u9020\u4f53\u5185\u306e\u30e1\u30f3\u30d0\u5909\u6570a\u3068b\u3092\u3001\u305d\u308c\u305e\u308c\u5225\u306a\u30ad\u30e3\u30c3\u30b7\u30e5\u30e9\u30a4\u30f3\u306b\u4e57\u305b\u308b\n  {\n    X x;\n    x.a = 0;\n    x.b = 0;\n    std::thread t1{[&amp;x]{\n      for (int i = 0; i &lt; 100; ++i) {\n        ++x.a;\n      }\n    }};\n\n    std::thread t2{[&amp;x]{\n      for (int i = 0; i &lt; 100; ++i) {\n        ++x.b;\n      }\n    }};\n\n    t1.join();\n    t2.join();\n  }\n\n  // \u9023\u7d9a\u3057\u305f\u30e1\u30e2\u30ea\u306e\u5404\u8981\u7d20\u3092\u3001\u500b\u5225\u306e\u30ad\u30e3\u30c3\u30b7\u30e5\u306b\u4e57\u305b\u308b\n  {\n    std::vector&lt;IndividualCacheInt&gt; v{10};\n    std::vector&lt;std::thread&gt; threads;\n    for (std::size_t i = 0; i &lt; v.size(); ++i) {\n      threads.push_back(std::thread{[&amp;v, i]{\n        for (int j = 0; j &lt; 100; ++j) {\n          ++v[i].value;\n        }\n      }});\n    }\n\n    for (std::thread&amp; t : threads) {\n      t.join();\n    }\n  }\n}\n&#34;}], &#34;page_id&#34;: [&#34;reference&#34;, &#34;new&#34;, &#34;hardware_destructive_interference_size&#34;]}">
   <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -188,12 +188,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2024-01-03T07:17:02">
-        2024年01月03日 07時17分02秒
+      <span itemprop="datePublished" content="2024-09-18T05:54:15">
+        2024年09月18日 05時54分15秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">joseph0304</span>
+        <span itemprop="name">Akira Takahashi</span>
       </span>
       が更新
     </small></p>
@@ -240,7 +240,7 @@
 <li>実装上、<code>hardware_constructive_interference_size</code>と<code>hardware_destructive_interference_size</code>は同値になるはずだが、利用目的によって名前を使い分けるために分かれている</li>
 </ul>
 <h2>例</h2>
-<p><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf"><a href="../iostream.html">&lt;iostream&gt;</a></span><span class="cp"></span>
+<p><div class="yata" id="9eafccbc93e4ab96355a1d5d42f95ed43e22be65"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf"><a href="../iostream.html">&lt;iostream&gt;</a></span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf"><a href="../new.html">&lt;new&gt;</a></span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf"><a href="../thread.html">&lt;thread&gt;</a></span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf"><a href="../vector.html">&lt;vector&gt;</a></span><span class="cp"></span>
@@ -299,7 +299,7 @@
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-</p>
+</div></p>
 <h3>出力例</h3>
 <p><pre><code>hardware_destructive_interference_size : 64
 </code></pre></p>
@@ -310,9 +310,9 @@
 </ul>
 <h3>処理系</h3>
 <ul>
-<li><a href="../../implementation.html#clang">Clang</a>:</li>
-<li><a href="../../implementation.html#gcc">GCC</a>: 12.1</li>
-<li><a href="../../implementation.html#visual_cpp">Visual C++</a>:</li>
+<li><a href="../../implementation.html#clang">Clang</a>: 19 <span aria-label="検証済" role="img" title="検証済">✅</span></li>
+<li><a href="../../implementation.html#gcc">GCC</a>: 12.1 <span aria-label="検証済" role="img" title="検証済">✅</span></li>
+<li><a href="../../implementation.html#visual_cpp">Visual C++</a>: 2019 <span aria-label="検証済" role="img" title="検証済">✅</span></li>
 </ul>
 <h2>参照</h2>
 <ul>

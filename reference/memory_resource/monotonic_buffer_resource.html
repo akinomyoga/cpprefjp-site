@@ -28,36 +28,36 @@
         <meta property="og:url" content="https://cpprefjp.github.io/reference/memory_resource/monotonic_buffer_resource.html" />
         <meta property="og:site_name" content="cpprefjp - C++日本語リファレンス" />
         <meta property="og:type" content="article" />
-        <meta property="og:description" content="`monotonic_buffer_resource`はオブジェクトの破棄時にのみ管理しているメモリを全て開放する特殊な [`memory_resource`](memory_resource.md)実装である。  " />
+        <meta property="og:description" content="`monotonic_buffer_resource`はオブジェクトの破棄時にのみ管理しているメモリを全て解放する特殊な [`memory_resource`](memory_resource.md)実装である。" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="monotonic_buffer_resource - cpprefjp C++日本語リファレンス" />
         <meta name="twitter:url" content="https://cpprefjp.github.io/reference/memory_resource/monotonic_buffer_resource.html" />
-        <meta name="twitter:description" content="`monotonic_buffer_resource`はオブジェクトの破棄時にのみ管理しているメモリを全て開放する特殊な [`memory_resource`](memory_resource.md)実装である。  " />
+        <meta name="twitter:description" content="`monotonic_buffer_resource`はオブジェクトの破棄時にのみ管理しているメモリを全て解放する特殊な [`memory_resource`](memory_resource.md)実装である。" />
 
         
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="manifest" href="../../manifest.json?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="manifest" href="../../manifest.json?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -188,12 +188,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2020-08-17T15:37:10">
-        2020年08月17日 15時37分10秒
+      <span itemprop="datePublished" content="2024-09-05T13:04:13">
+        2024年09月05日 13時04分13秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">onihusube</span>
+        <span itemprop="name">Yuya Asano</span>
       </span>
       が更新
     </small></p>
@@ -219,8 +219,8 @@
 </code></pre></div>
 </p>
 <h2>概要</h2>
-<p><code>monotonic_buffer_resource</code>はオブジェクトの破棄時にのみ管理しているメモリを全て開放する特殊な <code><a href="memory_resource.html">memory_resource</a></code>実装である。<br />
-少さなオブジェクトを多数構築するために割り当てを行い、最後にまとめて開放するといった状況において高速なメモリ割り当てを行うことを目的としている。</p>
+<p><code>monotonic_buffer_resource</code>はオブジェクトの破棄時にのみ管理しているメモリを全て解放する特殊な <code><a href="memory_resource.html">memory_resource</a></code>実装である。
+小さなオブジェクトを多数構築するために割り当てを行い、最後にまとめて解放するといった状況において高速なメモリ割り当てを行うことを目的としている。</p>
 <p>このクラスはスレッドセーフではない。</p>
 <h2><code>monotonic_buffer_resource</code>の性質</h2>
 <ul>
@@ -366,8 +366,8 @@
 <h3>処理系</h3>
 <ul>
 <li><a href="../../implementation.html#clang">Clang</a>: ??</li>
-<li><a href="../../implementation.html#gcc">GCC</a>: 9.1</li>
-<li><a href="../../implementation.html#visual_cpp">Visual C++</a>: 2017 update 6</li>
+<li><a href="../../implementation.html#gcc">GCC</a>: 9.1 <span aria-label="検証済" role="img" title="検証済">✅</span></li>
+<li><a href="../../implementation.html#visual_cpp">Visual C++</a>: 2017 update 6 <span aria-label="検証済" role="img" title="検証済">✅</span></li>
 </ul>
 <h2>関連項目</h2>
 <ul>

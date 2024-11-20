@@ -16,21 +16,21 @@
 
         <meta charset="UTF-8">
 
-        <title>ユーザー定義リテラル - cpprefjp C++日本語リファレンス</title>
+        <title>ユーザー定義リテラル [N2765] - cpprefjp C++日本語リファレンス</title>
 
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta name="keywords" content="
   C++,標準ライブラリ,リファレンス,ドキュメント,STL,std,cpp11
 ">
-        <meta name="title" content="ユーザー定義リテラル - cpprefjp C++日本語リファレンス" />
-        <meta itemprop="name" content="ユーザー定義リテラル - cpprefjp C++日本語リファレンス" />
-        <meta property="og:title" content="ユーザー定義リテラル - cpprefjp C++日本語リファレンス" />
+        <meta name="title" content="ユーザー定義リテラル [N2765] - cpprefjp C++日本語リファレンス" />
+        <meta itemprop="name" content="ユーザー定義リテラル [N2765] - cpprefjp C++日本語リファレンス" />
+        <meta property="og:title" content="ユーザー定義リテラル [N2765] - cpprefjp C++日本語リファレンス" />
         <meta property="og:url" content="https://cpprefjp.github.io/lang/cpp11/user_defined_literals.html" />
         <meta property="og:site_name" content="cpprefjp - C++日本語リファレンス" />
         <meta property="og:type" content="article" />
         <meta property="og:description" content="ユーザー定義リテラル(User-defined literals)は、`123`、`3.14`、`&#34;hello&#34;`といったリテラルに対して付けられるサフィックスをオーバーロードできるようにすることで、ユーザーがリテラルに意味を持たせられるようにする機能である。" />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="ユーザー定義リテラル - cpprefjp C++日本語リファレンス" />
+        <meta name="twitter:title" content="ユーザー定義リテラル [N2765] - cpprefjp C++日本語リファレンス" />
         <meta name="twitter:url" content="https://cpprefjp.github.io/lang/cpp11/user_defined_literals.html" />
         <meta name="twitter:description" content="ユーザー定義リテラル(User-defined literals)は、`123`、`3.14`、`&#34;hello&#34;`といったリテラルに対して付けられるサフィックスをオーバーロードできるようにすることで、ユーザーがリテラルに意味を持たせられるようにする機能である。" />
 
@@ -38,26 +38,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="manifest" href="../../manifest.json?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="manifest" href="../../manifest.json?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -171,7 +171,7 @@
         <span>
           
             
-              <span itemprop="name">ユーザー定義リテラル</span>
+              <span itemprop="name">ユーザー定義リテラル [N2765]</span>
             
           
         </span>
@@ -188,8 +188,8 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2018-10-12T05:01:58">
-        2018年10月12日 05時01分58秒
+      <span itemprop="datePublished" content="2024-07-08T07:33:21">
+        2024年07月08日 07時33分21秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -212,8 +212,12 @@
     <div class="row">
       <div class="col-sm-12 content-body">
         
-  <h1 itemprop="name"><span class="token">ユーザー定義リテラル</span><span class="cpp cpp11" title="C++11で追加">(C++11)</span></h1>
-<div itemprop="articleBody"><h2>概要</h2>
+  <h1 itemprop="name"><span class="token">ユーザー定義リテラル [N2765]</span><span class="cpp cpp11" title="C++11で追加">(C++11)</span></h1>
+<div itemprop="articleBody"><p></p>
+<p>このページはC++11に採用された言語機能の変更を解説しています。</p>
+<p>のちのC++規格でさらに変更される場合があるため<a href="#relative-page">関連項目</a>を参照してください。</p>
+<p></p>
+<h2>概要</h2>
 <p><a class="cpprefjp-defined-word" data-desc="プログラム定義。ユーザー（プログラマ）によって定義されること（標準ライブラリで定義されるものを除く）">ユーザー定義</a>リテラル(User-defined literals)は、<code>123</code>、<code>3.14</code>、<code>"hello"</code>といったリテラルに対して付けられるサフィックスをオーバーロードできるようにすることで、ユーザーがリテラルに意味を持たせられるようにする機能である。</p>
 <p>これは、リテラルに対して以下のような情報を持たせるために使用できる：</p>
 <ul>
@@ -534,7 +538,7 @@
 <p>この案では、先頭のパラメータ<code>literalString</code>に<code>12.34</code>のようなリテラルの値が文字列として代入され、リテラルに入力される文字を<code>double</code>に属する値に限定し、サフィックスとして使用できる文字列として<code>"df"</code>と<code>"DF"</code>を許可する、というような形式となっていた。</p>
 <p>その後の案では、コンストラクタではなく演算子をオーバーロードする形式となった。当時は<code>DecimalFloat operator"df"(const char*)</code>のように、サフィックスの名称をダブルクォーテーション内に書くようになっていた。</p>
 <p>リテラル名がサフィックスであることを明示的にするために、今日の<code>DecimalFloat operator"" df(long double)</code>という形式になった。</p>
-<h2>関連項目</h2>
+<h2><a href="#relative-page" id="relative-page">関連項目</a></h2>
 <ul>
 <li><a href="../cpp14/no_whitespace_literal_operators.html">C++14 リテラル演算子のスペースを省略可能とする</a></li>
 <li><a href="../../reference/string/basic_string/op_s.html"><code>std::basic_string</code>の文字列リテラル<code>s</code></a></li>

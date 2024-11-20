@@ -38,26 +38,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
-<link rel="manifest" href="../../manifest.json?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="manifest" href="../../manifest.json?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=0e476399d981581c37613c7023035bba5447c826">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=9c16b0834006ee9d4db2d0c5adeda0699b11e2a3"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -188,8 +188,8 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2022-09-29T07:54:25">
-        2022年09月29日 07時54分25秒
+      <span itemprop="datePublished" content="2024-07-08T06:48:42">
+        2024年07月08日 06時48分42秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -215,7 +215,8 @@
   <h1 itemprop="name"><span class="token">契約に基づくプログラミング</span><span class="cpp future" title="将来のC++として検討中">(将来のC++機能)</span></h1>
 <div itemprop="articleBody"><h2>概要</h2>
 <p>将来のC++では、いわゆる<a href="https://ja.wikipedia.org/wiki/%E5%A5%91%E7%B4%84%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0" target="_blank">契約プログラミング</a>が検討されている。</p>
-<p>以下の内容はC++20で予定されていた仕様に基づいており、今後変わる可能性が高い。</p>
+<p>この機能は一度はC++20のドラフトに取り込まれたが、実装が進む中で問題が見つかり最終的に取り除かれた。現在ではC++26以降を目標に議論されている。</p>
+<p>以下の内容はC++20で予定されていた仕様に基づいており、最新の案とは異なる。</p>
 <h2>例</h2>
 <p><div class="yata" id="a7b092c360b2d82b27d3a0eeeb18df0ebd1565e2"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf"><a href="../../reference/iostream.html">&lt;iostream&gt;</a></span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf"><a href="../../reference/cmath.html">&lt;cmath&gt;</a></span><span class="cp"></span>
@@ -251,7 +252,7 @@
 <p>expectおよびensure属性の述語は、関数の最初の式文と同じセマンティクスで評価される。
 より詳細に言えば、仮引数は見えるがローカル変数は見えない。</p>
 <p>述語が例外を送出すると、<code><a href="../../reference/exception/terminate.html">std::terminate()</a></code>関数を呼び出してプログラムを終了させる。</p>
-<p>述語が副作用を持つ場合、動作は<a class="cpprefjp-defined-word" data-desc="未定義の動作。処理系は予期せぬ動作をする可能性がある。要するに動作保証対象外" href="../../implementation-compliance.html#dfn-undefined-behavior">未定義</a>である。例えば、グローバル変数の変更、<code>volatile</code>変数の参照、変数を変更する可能性のある関数の呼び出しなどが該当する。</p>
+<p>述語が副作用を持つ場合、<a class="cpprefjp-defined-word" data-desc="未定義の動作。処理系は予期せぬ動作をする可能性がある。要するに動作保証対象外。undefined behavior (UB)。" href="../../implementation-compliance.html#dfn-undefined-behavior">動作は未定義</a>である。例えば、グローバル変数の変更、<code>volatile</code>変数の参照、変数を変更する可能性のある関数の呼び出しなどが該当する。</p>
 <p><div class="codehilite"><pre><span></span><code><span class="c1">// <a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/p0542r5.html" target="_blank">P0542R5</a>より引用</span>
 <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
 <span class="k">volatile</span> <span class="kt">int</span> <span class="n">y</span><span class="p">;</span>
@@ -321,7 +322,7 @@
 <p>なお、契約がチェックされることと、評価されることは異なる。</p>
 <ul>
 <li><code>constexpr</code>などの定数表現評価では、チェックされた契約のみが評価される。</li>
-<li>チェックされない契約が評価されるかは<a class="cpprefjp-defined-word" data-desc="未規定の動作。事前の断りなく処理系によって異なる動作をする" href="../../implementation-compliance.html#dfn-unspecified-behavior">未規定</a>である。チェックされない契約が評価され、結果が<code>false</code>となった場合の動作は<a class="cpprefjp-defined-word" data-desc="未定義の動作。処理系は予期せぬ動作をする可能性がある。要するに動作保証対象外" href="../../implementation-compliance.html#dfn-undefined-behavior">未定義</a>である。</li>
+<li>チェックされない契約が評価されるかは<a class="cpprefjp-defined-word" data-desc="未規定の動作。事前の断りなく処理系によって異なる動作をする" href="../../implementation-compliance.html#dfn-unspecified-behavior">未規定</a>である。チェックされない契約が評価され、結果が<code>false</code>となった場合の<a class="cpprefjp-defined-word" data-desc="未定義の動作。処理系は予期せぬ動作をする可能性がある。要するに動作保証対象外。undefined behavior (UB)。" href="../../implementation-compliance.html#dfn-undefined-behavior">動作は未定義</a>である。</li>
 </ul>
 <h3>違反ハンドラーと違反継続モード</h3>
 <p>違反ハンドラーは <code>void(const std::contract_violation&amp;)</code> という型を持つ関数である(処理系によってはさらに<code>noexcept</code>が指定される)。</p>
@@ -414,7 +415,7 @@
 契約属性はアサーションを含む契約を記述する、マクロを用いない新たな方法として導入された。</p>
 <p>特に、戻り値に対する契約は従来の<a href="../../reference/cassert/assert.html"><code>assert</code>マクロ</a>では簡潔に書くことができなかった。</p>
 <p>なお、<a href="../../reference/cassert/assert.html"><code>assert</code>マクロ</a>は関数形式のマクロなので、<code>[[assert]]</code>属性を置換してしまうことはない。</p>
-<h2>関連項目</h2>
+<h2><a href="#relative-page" id="relative-page">関連項目</a></h2>
 <ul>
 <li><a href="../cpp11/attributes.html">C++11 属性構文</a></li>
 <li><a href="../cpp11/static_assert.html">C++11 コンパイル時アサート</a></li>
