@@ -2,27 +2,940 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>cpprefjp - C++日本語リファレンス</title>
   <link href="https://cpprefjp.github.io" />
-  <updated>2024-11-20T10:22:04.077338</updated>
-  <id>464c19bb-2a21-4370-bce3-7733fa55e9b1</id>
+  <updated>2024-12-10T11:53:20.481935</updated>
+  <id>509bca4f-2d6a-486f-beb8-d1e91ff58bec</id>
 
   
     <entry>
-      <title>insert_range -- unordered_{map,set}/*/insert_range: 「コードブロックのあとに空行が必要な制限」に纏わる修正</title>
-      <link href="https://cpprefjp.github.io/reference/unordered_map/unordered_map/insert_range.html"/>
-      <id>5259ff6bc67ca8b95d5b9450555a4ca2de97a3ee:reference/unordered_map/unordered_map/insert_range.md</id>
-      <updated>2024-11-18T19:25:35+09:00</updated>
+      <title>submdspan_mapping -- mdspan/layout_{left,right}(_padded): P3355R1対応</title>
+      <link href="https://cpprefjp.github.io/reference/mdspan/layout_left/mapping/submdspan_mapping.html"/>
+      <id>7675064dcb97135b059322e9be4dbf90b2fc2d7d:reference/mdspan/layout_left/mapping/submdspan_mapping.md</id>
+      <updated>2024-12-10T00:06:18+09:00</updated>
       
-        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/unordered_map/unordered_map/insert_range.md b/reference/unordered_map/unordered_map/insert_range.md
-index 09141d2bc..955631bfe 100644
---- a/reference/unordered_map/unordered_map/insert_range.md
-+++ b/reference/unordered_map/unordered_map/insert_range.md
-@@ -63,6 +63,7 @@ C 12
- B 11
- A 10
- ```
-+
- 注：[`unordered_map`](/reference/unordered_map/unordered_map.md) は非順序連想コンテナであるため、出力順序は無意味であることに注意
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/mdspan/layout_left/mapping/submdspan_mapping.md b/reference/mdspan/layout_left/mapping/submdspan_mapping.md
+index ed45bc337..e831b2de2 100644
+--- a/reference/mdspan/layout_left/mapping/submdspan_mapping.md
++++ b/reference/mdspan/layout_left/mapping/submdspan_mapping.md
+@@ -59,18 +59,24 @@ friend constexpr auto submdspan_mapping(
+ - パラメータパック`P` : [`is_same_v`](/reference/type_traits/is_same.md)`&amp;lt;`[`make_index_sequence`](/reference/utility/make_index_sequence.md)`&amp;lt;rank()&amp;gt;,` [`index_sequence`](/reference/utility/index_sequence.md)`&amp;lt;P...&amp;gt;&amp;gt; == true`
+ - 値`offset` : `size_t`型の値[`(*this)`](op_call.md)`(`[`first_`](../../first_.md)`&amp;lt;index_type, P&amp;gt;(slices...)...)`
  
++下記を満たす型`S`を、単位ストライド幅スライス(unit-stride slice)と定義する。
++
++- 型`S`が[`strided_slice`](../../strided_slice.md)の特殊化であり型`S::stride_type`が[`integral-constant-like`](/reference/span/integral-constant-like.md)のモデルかつ`S::stride_type::value`が`1`に等しい、もしくは
++- 型`S`が[`index-pair-like`](../../index-pair-like.md)`&amp;lt;index_type&amp;gt;`のモデル、もしくは
++- [`is_convertible_v`](/reference/type_traits/is_convertible.md)`&amp;lt;S,` [`full_extent_t`](../../full_extent_t.md)`&amp;gt;`が`true`
++
+ 説明専用の`submdspan-mapping-impl`関数テンプレートは下記の値を返す。
+ 
+ - [`Extents::rank()`](../../extents/rank.md) `== 0`のとき、[`submdspan_mapping_result`](../../submdspan_mapping_result.md)`{*this, 0}`
+ - `SubExtents::rank() == 0`のとき、[`submdspan_mapping_result`](../../submdspan_mapping_result.md)`{`[`layout_left::mapping`](../../layout_left.md)`(sub_ext), offset}`
+ - 以下を満たすとき、[`submdspan_mapping_result`](../../submdspan_mapping_result.md)`{`[`layout_left::mapping`](../../layout_left.md)`(sub_ext), offset}`
+     - 半開区間`[0, SubExtents::rank()-1)`の値`k`に対して、[`is_convertible_v`](/reference/type_traits/is_convertible.md)`&amp;lt;S_k,` [`full_extent_t`](../../full_extent_t.md)`&amp;gt;`が`true`、かつ
+-    - `SubExtents::rank()-1`に等しい値`k`に対して、型`S_k`が[`index-pair-like`](../../index-pair-like.md)`&amp;lt;index_type&amp;gt;`のモデルもしくは[`is_convertible_v`](/reference/type_traits/is_convertible.md)`&amp;lt;S_k,` [`full_extent_t`](../../full_extent_t.md)`&amp;gt;`が`true`
++    - `SubExtents::rank()-1`に等しい値`k`に対して、型`S_k`が単位ストライド幅スライスである
+ - 以下を満たすとき、[`submdspan_mapping_result`](../../submdspan_mapping_result.md)`{`[`layout_left_padded&amp;lt;S_static&amp;gt;::mapping`](../../layout_left_padded/mapping.md)`(sub_ext, stride(u + 1)), offset}`
+-    - 型`S_p`が[`index-pair-like`](../../index-pair-like.md)`&amp;lt;index_type&amp;gt;`のモデルもしくは[`is_convertible_v`](/reference/type_traits/is_convertible.md)`&amp;lt;S_k,` [`full_extent_t`](../../full_extent_t.md)`&amp;gt;`が`true`を満たす`0`より大きい最小値`p`に対して、`u+1`が`p`となる値`u`を用いて
+-        - 型`S_0`が[`index-pair-like`](../../index-pair-like.md)`&amp;lt;index_type&amp;gt;`のモデルもしくは[`is_convertible_v`](/reference/type_traits/is_convertible.md)`&amp;lt;S_0,` [`full_extent_t`](../../full_extent_t.md)`&amp;gt;`が`true`、かつ
++    - 型`S_p`が単位ストライド幅スライスを満たす`0`より大きい最小値`p`に対して、`u+1`が`p`となる値`u`を用いて
++        - 型`S_0`が単位ストライド幅スライスであり、かつ
+         - 半開区間`[u+1, u+SubExtents::rank()-1)`の値`k`に対して、[`is_convertible_v`](/reference/type_traits/is_convertible.md)`&amp;lt;S_k,` [`full_extent_t`](../../full_extent_t.md)`&amp;gt;`、かつ
+-        - `u+SubExtents::rank()-1`に等しい値`k`に対して、型`S_k`が[`index-pair-like`](../../index-pair-like.md)`&amp;lt;index_type&amp;gt;`のモデルもしくは[`is_convertible_v`](/reference/type_traits/is_convertible.md)`&amp;lt;S_k,` [`full_extent_t`](../../full_extent_t.md)`&amp;gt;`が`true`
++        - `u+SubExtents::rank()-1`に等しい値`k`に対して、型`S_k`が単位ストライド幅スライスである
+     - ここで定数`S_static`は
+         - 半開区間`[0, u+1)`のいずれかの値`k`に対して`static_extent(k)`が[`dynamic_extent`](/reference/span/dynamic_extent.md)のとき、`dynamic_extent`
+         - そうでなければ、半開区間`[0, u+1)`の全ての値`k`に対して`static_extent(k)`を乗算した値
+@@ -95,3 +101,4 @@ friend constexpr auto submdspan_mapping(
+ ## 参照
+ - [P2630R4 Submdspan](https://open-std.org/jtc1/sc22/wg21/docs/papers/2023/p2630r4.html)
+ - [P2642R6 Padded mdspan layouts](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2024/p2642r6.pdf)
++- [P3355R1 Fix submdspan for C++26](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2024/p3355r1.html)
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>yoh</name>
+        <email>kawasaki.liamg@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>submdspan_mapping -- mdspan/layout_{left,right}(_padded): P3355R1対応</title>
+      <link href="https://cpprefjp.github.io/reference/mdspan/layout_left_padded/mapping/submdspan_mapping.html"/>
+      <id>7675064dcb97135b059322e9be4dbf90b2fc2d7d:reference/mdspan/layout_left_padded/mapping/submdspan_mapping.md</id>
+      <updated>2024-12-10T00:06:18+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/mdspan/layout_left_padded/mapping/submdspan_mapping.md b/reference/mdspan/layout_left_padded/mapping/submdspan_mapping.md
+index 39da81837..6b6cdb3b0 100644
+--- a/reference/mdspan/layout_left_padded/mapping/submdspan_mapping.md
++++ b/reference/mdspan/layout_left_padded/mapping/submdspan_mapping.md
+@@ -59,18 +59,24 @@ friend constexpr auto submdspan_mapping(
+ - パラメータパック`P` : [`is_same_v`](/reference/type_traits/is_same.md)`&amp;lt;`[`make_index_sequence`](/reference/utility/make_index_sequence.md)`&amp;lt;rank()&amp;gt;,` [`index_sequence`](/reference/utility/index_sequence.md)`&amp;lt;P...&amp;gt;&amp;gt; == true`
+ - 値`offset` : `size_t`型の値[`(*this)`](op_call.md)`(`[`first_`](../../first_.md)`&amp;lt;index_type, P&amp;gt;(slices...)...)`
+ 
++下記を満たす型`S`を、単位ストライド幅スライス(unit-stride slice)と定義する。
++
++- 型`S`が[`strided_slice`](../../strided_slice.md)の特殊化であり型`S::stride_type`が[`integral-constant-like`](/reference/span/integral-constant-like.md)のモデルかつ`S::stride_type::value`が`1`に等しい、もしくは
++- 型`S`が[`index-pair-like`](../../index-pair-like.md)`&amp;lt;index_type&amp;gt;`のモデル、もしくは
++- [`is_convertible_v`](/reference/type_traits/is_convertible.md)`&amp;lt;S,` [`full_extent_t`](../../full_extent_t.md)`&amp;gt;`が`true`
++
+ 説明専用の`submdspan-mapping-impl`関数テンプレートは下記の値を返す。
+ 
+ - [`Extents::rank()`](../../extents/rank.md) `== 0`のとき、[`submdspan_mapping_result`](../../submdspan_mapping_result.md)`{*this, 0}`
+ - `rank_ == 1`または`SubExtents::rank() == 0`のとき、[`submdspan_mapping_result`](../../submdspan_mapping_result.md)`{`[`layout_left::mapping`](../../layout_left.md)`(sub_ext), offset}`
+ - 以下を満たすとき、[`submdspan_mapping_result`](../../submdspan_mapping_result.md)`{`[`layout_left::mapping`](../../layout_left.md)`(sub_ext), offset}`
+     - `SubExtents::rank() == 1`、かつ
+-    - 型`S_0`が[`index-pair-like`](../../index-pair-like.md)`&amp;lt;index_type&amp;gt;`のモデルもしくは[`is_convertible_v`](/reference/type_traits/is_convertible.md)`&amp;lt;S_0,` [`full_extent_t`](../../full_extent_t.md)`&amp;gt;`が`true`
++    - 型`S_0`が単位ストライド幅スライスである
+ - 以下を満たすとき、[`submdspan_mapping_result`](../../submdspan_mapping_result.md)`{layout_left_padded&amp;lt;S_static&amp;gt;::mapping(sub_ext, stride(u + 1)), offset}`
+-    - 型`S_p`が[`index-pair-like`](../../index-pair-like.md)`&amp;lt;index_type&amp;gt;`のモデルもしくは[`is_convertible_v`](/reference/type_traits/is_convertible.md)`&amp;lt;S_k,` [`full_extent_t`](../../full_extent_t.md)`&amp;gt;`が`true`を満たす`0`より大きい最小値`p`に対して、`u+1`が`p`となる値`u`を用いて
+-        - 型`S_0`が[`index-pair-like`](../../index-pair-like.md)`&amp;lt;index_type&amp;gt;`のモデルもしくは[`is_convertible_v`](/reference/type_traits/is_convertible.md)`&amp;lt;S_0,` [`full_extent_t`](../../full_extent_t.md)`&amp;gt;`が`true`、かつ
++    - 型`S_p`が単位ストライド幅スライスを満たす`0`より大きい最小値`p`に対して、`u+1`が`p`となる値`u`を用いて
++        - 型`S_0`が単位ストライド幅スライスであり、かつ
+         - 半開区間`[u+1, u+SubExtents::rank()-1)`の値`k`に対して、[`is_convertible_v`](/reference/type_traits/is_convertible.md)`&amp;lt;S_k,` [`full_extent_t`](../../full_extent_t.md)`&amp;gt;`、かつ
+-        - `u+SubExtents::rank()-1`に等しい値`k`に対して、型`S_k`が[`index-pair-like`](../../index-pair-like.md)`&amp;lt;index_type&amp;gt;`のモデルもしくは[`is_convertible_v`](/reference/type_traits/is_convertible.md)`&amp;lt;S_k,` [`full_extent_t`](../../full_extent_t.md)`&amp;gt;`が`true`
++        - `u+SubExtents::rank()-1`に等しい値`k`に対して、型`S_k`が単位ストライド幅スライスである
+     - ここで定数`S_static`は
+         - 半開区間`[0, u+1)`のいずれかの値`k`に対して`static_extent(k)`が[`dynamic_extent`](/reference/span/dynamic_extent.md)のとき、`dynamic_extent`
+         - そうでなければ、半開区間`[0, u+1)`の全ての値`k`に対して`static_extent(k)`を乗算した値
+@@ -95,3 +101,4 @@ friend constexpr auto submdspan_mapping(
+ ## 参照
+ - [P2630R4 Submdspan](https://open-std.org/jtc1/sc22/wg21/docs/papers/2023/p2630r4.html)
+ - [P2642R6 Padded mdspan layouts](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2024/p2642r6.pdf)
++- [P3355R1 Fix submdspan for C++26](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2024/p3355r1.html)
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>yoh</name>
+        <email>kawasaki.liamg@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>submdspan_mapping -- mdspan/layout_{left,right}(_padded): P3355R1対応</title>
+      <link href="https://cpprefjp.github.io/reference/mdspan/layout_right/mapping/submdspan_mapping.html"/>
+      <id>7675064dcb97135b059322e9be4dbf90b2fc2d7d:reference/mdspan/layout_right/mapping/submdspan_mapping.md</id>
+      <updated>2024-12-10T00:06:18+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/mdspan/layout_right/mapping/submdspan_mapping.md b/reference/mdspan/layout_right/mapping/submdspan_mapping.md
+index 3b7ba7f52..627f6a57e 100644
+--- a/reference/mdspan/layout_right/mapping/submdspan_mapping.md
++++ b/reference/mdspan/layout_right/mapping/submdspan_mapping.md
+@@ -59,18 +59,24 @@ friend constexpr auto submdspan_mapping(
+ - パラメータパック`P` : [`is_same_v`](/reference/type_traits/is_same.md)`&amp;lt;`[`make_index_sequence`](/reference/utility/make_index_sequence.md)`&amp;lt;rank()&amp;gt;,` [`index_sequence`](/reference/utility/index_sequence.md)`&amp;lt;P...&amp;gt;&amp;gt; == true`
+ - 値`offset` : `size_t`型の値[`(*this)`](op_call.md)`(`[`first_`](../../first_.md)`&amp;lt;index_type, P&amp;gt;(slices...)...)`
+ 
++下記を満たす型`S`を、単位ストライド幅スライス(unit-stride slice)と定義する。
++
++- 型`S`が[`strided_slice`](../../strided_slice.md)の特殊化であり型`S::stride_type`が[`integral-constant-like`](/reference/span/integral-constant-like.md)のモデルかつ`S::stride_type::value`が`1`に等しい、もしくは
++- 型`S`が[`index-pair-like`](../../index-pair-like.md)`&amp;lt;index_type&amp;gt;`のモデル、もしくは
++- [`is_convertible_v`](/reference/type_traits/is_convertible.md)`&amp;lt;S,` [`full_extent_t`](../../full_extent_t.md)`&amp;gt;`が`true`
++
+ 説明専用の`submdspan-mapping-impl`関数テンプレートは下記の値を返す。
+ 
+ - [`Extents::rank()`](../../extents/rank.md) `== 0`のとき、[`submdspan_mapping_result`](../../submdspan_mapping_result.md)`{*this, 0}`
+ - `SubExtents::rank() == 0`のとき、[`submdspan_mapping_result`](../../submdspan_mapping_result.md)`{`[`layout_right::mapping`](../../layout_right.md)`(sub_ext), offset}`
+ - 以下を満たすとき、[`submdspan_mapping_result`](../../submdspan_mapping_result.md)`{`[`layout_right::mapping`](../../layout_right.md)`(sub_ext), offset}`
+     - 半開区間`[Extents::rank() - SubExtents::rank()+1, Extents::rank())`の値`k`に対して、[`is_convertible_v`](/reference/type_traits/is_convertible.md)`&amp;lt;S_k,` [`full_extent_t`](../../full_extent_t.md)`&amp;gt;`が`true`、かつ
+-    - `Extents::rank()-SubExtents::rank()`に等しい値`k`に対して、型`S_k`が[`index-pair-like`](../../index-pair-like.md)`&amp;lt;index_type&amp;gt;`のモデルもしくは[`is_convertible_v`](/reference/type_traits/is_convertible.md)`&amp;lt;S_k,` [`full_extent_t`](../../full_extent_t.md)`&amp;gt;`が`true`
++    - `Extents::rank()-SubExtents::rank()`に等しい値`k`に対して、型`S_k`が単位ストライド幅スライスである
+ - 以下を満たすとき、[`submdspan_mapping_result`](../../submdspan_mapping_result.md)`{`[`layout_right_padded&amp;lt;S_static&amp;gt;::mapping`](../../layout_right_padded/mapping.md)`(sub_ext, stride(rank_-u-2)), offset}`
+-    - 型`S_p`が[`index-pair-like`](../../index-pair-like.md)`&amp;lt;index_type&amp;gt;`のモデルもしくは[`is_convertible_v`](/reference/type_traits/is_convertible.md)`&amp;lt;S_k,` [`full_extent_t`](../../full_extent_t.md)`&amp;gt;`が`true`を満たす`rank_-1`より小さい最大値`p`に対して、`rank_-u-2`が`p`となる値`u`を用いて
+-        - `rank_-1`に等しい値`k`に対して、型`S_k`が[`index-pair-like`](../../index-pair-like.md)`&amp;lt;index_type&amp;gt;`のモデルもしくは[`is_convertible_v`](/reference/type_traits/is_convertible.md)`&amp;lt;S_k,` [`full_extent_t`](../../full_extent_t.md)`&amp;gt;`が`true`、かつ
++    - 型`S_p`が単位ストライド幅スライスを満たす`rank_-1`より小さい最大値`p`に対して、`rank_-u-2`が`p`となる値`u`を用いて
++        - `rank_-1`に等しい値`k`に対して、型`S_k`が単位ストライド幅スライスであり、かつ
+         - 半開区間`[rank_-SubExtents::rank()-u+1, rank_-u-1)`の値`k`に対して、[`is_convertible_v`](/reference/type_traits/is_convertible.md)`&amp;lt;S_k,` [`full_extent_t`](../../full_extent_t.md)`&amp;gt;`、かつ
+-        - `rank_-SubExtents::rank()-u`に等しい値`k`に対して、型`S_k`が[`index-pair-like`](../../index-pair-like.md)`&amp;lt;index_type&amp;gt;`のモデルもしくは[`is_convertible_v`](/reference/type_traits/is_convertible.md)`&amp;lt;S_k,` [`full_extent_t`](../../full_extent_t.md)`&amp;gt;`が`true`
++        - `rank_-SubExtents::rank()-u`に等しい値`k`に対して、型`S_k`が単位ストライド幅スライスである
+     - ここで定数`S_static`は
+         - 半開区間`[rank_-u-1, rank_)`のいずれかの値`k`に対して`static_extent(k)`が[`dynamic_extent`](/reference/span/dynamic_extent.md)のとき、`dynamic_extent`
+         - そうでなければ、半開区間`[rank_-u-1, rank_)`の全ての値`k`に対して`static_extent(k)`を乗算した値
+@@ -95,3 +101,4 @@ friend constexpr auto submdspan_mapping(
+ ## 参照
+ - [P2630R4 Submdspan](https://open-std.org/jtc1/sc22/wg21/docs/papers/2023/p2630r4.html)
+ - [P2642R6 Padded mdspan layouts](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2024/p2642r6.pdf)
++- [P3355R1 Fix submdspan for C++26](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2024/p3355r1.html)
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>yoh</name>
+        <email>kawasaki.liamg@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>submdspan_mapping -- mdspan/layout_{left,right}(_padded): P3355R1対応</title>
+      <link href="https://cpprefjp.github.io/reference/mdspan/layout_right_padded/mapping/submdspan_mapping.html"/>
+      <id>7675064dcb97135b059322e9be4dbf90b2fc2d7d:reference/mdspan/layout_right_padded/mapping/submdspan_mapping.md</id>
+      <updated>2024-12-10T00:06:18+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/mdspan/layout_right_padded/mapping/submdspan_mapping.md b/reference/mdspan/layout_right_padded/mapping/submdspan_mapping.md
+index b53c0d1e4..afb947788 100644
+--- a/reference/mdspan/layout_right_padded/mapping/submdspan_mapping.md
++++ b/reference/mdspan/layout_right_padded/mapping/submdspan_mapping.md
+@@ -59,18 +59,24 @@ friend constexpr auto submdspan_mapping(
+ - パラメータパック`P` : [`is_same_v`](/reference/type_traits/is_same.md)`&amp;lt;`[`make_index_sequence`](/reference/utility/make_index_sequence.md)`&amp;lt;rank()&amp;gt;,` [`index_sequence`](/reference/utility/index_sequence.md)`&amp;lt;P...&amp;gt;&amp;gt; == true`
+ - 値`offset` : `size_t`型の値[`(*this)`](op_call.md)`(`[`first_`](../../first_.md)`&amp;lt;index_type, P&amp;gt;(slices...)...)`
+ 
++下記を満たす型`S`を、単位ストライド幅スライス(unit-stride slice)と定義する。
++
++- 型`S`が[`strided_slice`](../../strided_slice.md)の特殊化であり型`S::stride_type`が[`integral-constant-like`](/reference/span/integral-constant-like.md)のモデルかつ`S::stride_type::value`が`1`に等しい、もしくは
++- 型`S`が[`index-pair-like`](../../index-pair-like.md)`&amp;lt;index_type&amp;gt;`のモデル、もしくは
++- [`is_convertible_v`](/reference/type_traits/is_convertible.md)`&amp;lt;S,` [`full_extent_t`](../../full_extent_t.md)`&amp;gt;`が`true`
++
+ 説明専用の`submdspan-mapping-impl`関数テンプレートは下記の値を返す。
+ 
+ - [`Extents::rank()`](../../extents/rank.md) `== 0`のとき、[`submdspan_mapping_result`](../../submdspan_mapping_result.md)`{*this, 0}`
+ - `rank_ == 1`または`SubExtents::rank() == 0`のとき、[`submdspan_mapping_result`](../../submdspan_mapping_result.md)`{`[`layout_right::mapping`](../../layout_right.md)`(sub_ext), offset}`
+ - 以下を満たすとき、[`submdspan_mapping_result`](../../submdspan_mapping_result.md)`{`[`layout_right::mapping`](../../layout_right.md)`(sub_ext), offset}`
+     - `SubExtents::rank() == 1`、かつ
+-    - `rank_-1`に等しい値`k`に対して、型`S_k`が[`index-pair-like`](../../index-pair-like.md)`&amp;lt;index_type&amp;gt;`のモデルもしくは[`is_convertible_v`](/reference/type_traits/is_convertible.md)`&amp;lt;S_k,` [`full_extent_t`](../../full_extent_t.md)`&amp;gt;`が`true`
++    - `rank_-1`に等しい値`k`に対して、型`S_k`が単位ストライド幅スライスである
+ - 以下を満たすとき、[`submdspan_mapping_result`](../../submdspan_mapping_result.md)`{layout_right_padded&amp;lt;S_static&amp;gt;::mapping(sub_ext, stride(rank_-u-2)), offset}`
+-    - 型`S_p`が[`index-pair-like`](../../index-pair-like.md)`&amp;lt;index_type&amp;gt;`のモデルもしくは[`is_convertible_v`](/reference/type_traits/is_convertible.md)`&amp;lt;S_k,` [`full_extent_t`](../../full_extent_t.md)`&amp;gt;`が`true`を満たす`rank_-1`より小さい最大値`p`に対して、`rank_-u-2`が`p`となる値`u`を用いて
+-        - `rank_-1`に等しい値`k`に対して、型`S_k`が[`index-pair-like`](../../index-pair-like.md)`&amp;lt;index_type&amp;gt;`のモデルもしくは[`is_convertible_v`](/reference/type_traits/is_convertible.md)`&amp;lt;S_k,` [`full_extent_t`](../../full_extent_t.md)`&amp;gt;`が`true`、かつ
++    - 型`S_p`が単位ストライド幅スライスを満たす`rank_-1`より小さい最大値`p`に対して、`rank_-u-2`が`p`となる値`u`を用いて
++        - `rank_-1`に等しい値`k`に対して、型`S_k`が単位ストライド幅スライスであり、かつ
+         - 半開区間`[rank_-SubExtents::rank()-u+1, rank_-u-1)`の値`k`に対して、[`is_convertible_v`](/reference/type_traits/is_convertible.md)`&amp;lt;S_k,` [`full_extent_t`](../../full_extent_t.md)`&amp;gt;`、かつ
+-        - `rank_-SubExtents::rank()-u`に等しい値`k`に対して、型`S_k`が[`index-pair-like`](../../index-pair-like.md)`&amp;lt;index_type&amp;gt;`のモデルもしくは[`is_convertible_v`](/reference/type_traits/is_convertible.md)`&amp;lt;S_k,` [`full_extent_t`](../../full_extent_t.md)`&amp;gt;`が`true`
++        - `rank_-SubExtents::rank()-u`に等しい値`k`に対して、型`S_k`が単位ストライド幅スライスである
+     - ここで定数`S_static`は
+         - 半開区間`[rank_-u-1, rank_-1)`のいずれかの値`k`に対して`static_extent(k)`が[`dynamic_extent`](/reference/span/dynamic_extent.md)のとき、`dynamic_extent`
+         - そうでなければ、半開区間`[rank_-u-1, rank_-1)`の全ての値`k`に対して`static_extent(k)`を乗算した値
+@@ -95,3 +101,4 @@ friend constexpr auto submdspan_mapping(
+ ## 参照
+ - [P2630R4 Submdspan](https://open-std.org/jtc1/sc22/wg21/docs/papers/2023/p2630r4.html)
+ - [P2642R6 Padded mdspan layouts](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2024/p2642r6.pdf)
++- [P3355R1 Fix submdspan for C++26](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2024/p3355r1.html)
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>yoh</name>
+        <email>kawasaki.liamg@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>スタイル -- mdspan/layout_{left,right}(_padded): P3355R1対応</title>
+      <link href="https://cpprefjp.github.io/working_style.html"/>
+      <id>7675064dcb97135b059322e9be4dbf90b2fc2d7d:working_style.md</id>
+      <updated>2024-12-10T00:06:18+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/working_style.md b/working_style.md
+index f7668d166..980f18020 100644
+--- a/working_style.md
++++ b/working_style.md
+@@ -144,6 +144,7 @@ C++11以降対応については対応バージョンを明記します。バー
+ | trait                              | トレイト                     |
+ | trivial                            | トリビアル (逆は非トリビアル)            |
+ | underlying type                    | 基底型                       |
++| unit-stride slice                  | 単位ストライド幅スライス     |
+ | unordered associative container(s) | 非順序連想コンテナ           |
+ | unspecified                        | 未規定                       |
+ | program-defined type               | プログラム定義型             |
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>yoh</name>
+        <email>kawasaki.liamg@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>operator partial_ordering -- add meta cpp tag</title>
+      <link href="https://cpprefjp.github.io/reference/compare/strong_ordering/op_partial_ordering.html"/>
+      <id>17433f40f69bd9debd8b19f1257063fb589dd73b:reference/compare/strong_ordering/op_partial_ordering.md</id>
+      <updated>2024-12-09T22:04:29+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/compare/strong_ordering/op_partial_ordering.md b/reference/compare/strong_ordering/op_partial_ordering.md
+index 058a26797..b4ebedfe1 100644
+--- a/reference/compare/strong_ordering/op_partial_ordering.md
++++ b/reference/compare/strong_ordering/op_partial_ordering.md
+@@ -3,6 +3,7 @@
+ * std[meta namespace]
+ * strong_ordering[meta class]
+ * function[meta id-type]
++* cpp20[meta cpp]
+ 
+ ```cpp
+ constexpr operator partial_ordering() const noexcept;
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>suomesta</name>
+        <email>shawn316michaels@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>operator weak_ordering -- add meta cpp tag</title>
+      <link href="https://cpprefjp.github.io/reference/compare/strong_ordering/op_weak_ordering.html"/>
+      <id>17433f40f69bd9debd8b19f1257063fb589dd73b:reference/compare/strong_ordering/op_weak_ordering.md</id>
+      <updated>2024-12-09T22:04:29+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/compare/strong_ordering/op_weak_ordering.md b/reference/compare/strong_ordering/op_weak_ordering.md
+index ab9d56fee..aa1eda64b 100644
+--- a/reference/compare/strong_ordering/op_weak_ordering.md
++++ b/reference/compare/strong_ordering/op_weak_ordering.md
+@@ -3,6 +3,7 @@
+ * std[meta namespace]
+ * strong_ordering[meta class]
+ * function[meta id-type]
++* cpp20[meta cpp]
+ 
+ ```cpp
+ constexpr operator weak_ordering() const noexcept;
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>suomesta</name>
+        <email>shawn316michaels@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>operator partial_ordering -- add meta cpp tag</title>
+      <link href="https://cpprefjp.github.io/reference/compare/weak_ordering/op_partial_ordering.html"/>
+      <id>17433f40f69bd9debd8b19f1257063fb589dd73b:reference/compare/weak_ordering/op_partial_ordering.md</id>
+      <updated>2024-12-09T22:04:29+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/compare/weak_ordering/op_partial_ordering.md b/reference/compare/weak_ordering/op_partial_ordering.md
+index 8807cea4a..ad6221133 100644
+--- a/reference/compare/weak_ordering/op_partial_ordering.md
++++ b/reference/compare/weak_ordering/op_partial_ordering.md
+@@ -3,6 +3,7 @@
+ * std[meta namespace]
+ * weak_ordering[meta class]
+ * function[meta id-type]
++* cpp20[meta cpp]
+ 
+ ```cpp
+ constexpr operator partial_ordering() const noexcept;
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>suomesta</name>
+        <email>shawn316michaels@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>cfloat -- markdown_to_html.html_attribute 変更に伴う修正</title>
+      <link href="https://cpprefjp.github.io/reference/cfloat.html"/>
+      <id>1956c49740bc18530991c27a64e1a8de0e731cfc:reference/cfloat.md</id>
+      <updated>2024-11-20T21:15:43+09:00</updated>
+      
+        <content type="html">&lt;div class=&#34;header&#34;&gt;&amp;lt;cfloat&amp;gt;&lt;/div&gt;&lt;h1 itemprop=&#34;name&#34;&gt;&lt;span class=&#34;token&#34;&gt;cfloat&lt;/span&gt;&lt;/h1&gt;
+&lt;div itemprop=&#34;articleBody&#34;&gt;&lt;p&gt;&lt;code&gt;&amp;lt;cfloat&amp;gt;&lt;/code&gt;ヘッダでは、浮動小数点数に関連する定数値マクロを定義する。これは、C言語の標準ライブラリ&lt;code&gt;&amp;lt;float.h&amp;gt;&lt;/code&gt;と同じである。&lt;/p&gt;
+&lt;p&gt;本ヘッダはフリースタンディング環境でも提供される。&lt;/p&gt;
+&lt;p&gt;浮動小数点数 $x$ は以下のようにモデル化される。&lt;/p&gt;
+&lt;p&gt;$$x = sb^e\sum^p_{k=1}f_kb^{-k},\qquad e_{\rm min} \le e \le e_{\rm max}$$&lt;/p&gt;
+&lt;p&gt;各パラメータは以下の通り。&lt;/p&gt;
+&lt;p&gt;$$
+\begin{array}{ll}
+s&amp;amp;\text{符号($\pm 1$)}\\
+b&amp;amp;\text{指数表現の基数(1 より大きい整数)}\\
+e&amp;amp;\text{指数(最小 $e_{\rm min}$ 最大 $e_{\rm max}$ の整数)}\\
+p&amp;amp;\text{精度(基数 $b$ での仮数部の桁数)}\\
+f_k&amp;amp;\text{$b$ より小さい非負整数(仮数部の有効数字)}\\
+\end{array}
+$$&lt;/p&gt;
+&lt;p&gt;浮動小数点型で表される値としては、ゼロと $f_1 \gt 0$ である正規化数の他に、$e = e_{\rm min}$ かつ $f_1 = 0$ である非正規化数（subnormal numbers）、$e \gt e_{\rm min}$ かつ $f_1 = 0$ である正規化されていない数（unnormalized numbers）、および、浮動小数点数ではない無限大や NaN 等が含まれているかもしれない（実装によっては含まれていないかもしれない）。&lt;br /&gt;
+NaN とは非数（Not-a-Number）を表し、ほとんど全ての演算で浮動小数点例外を起こさず結果に伝播する quiet NaN（quiet：静かな）と、演算のオペランドに使用されると浮動小数点例外を引き起こす signaling NaN（signaling：信号を発する）がある。&lt;br /&gt;
+ゼロと浮動小数点数ではない値（無限大や NaN 等）には符号があるかもしれない（実装によっては無いかもしれない）。&lt;/p&gt;
+&lt;p&gt;本ヘッダで提供される整数値を表すマクロは、&lt;code&gt;&lt;a href=&#34;cfloat/flt_rounds.html&#34;&gt;FLT_ROUNDS&lt;/a&gt;&lt;/code&gt; を除いて &lt;code&gt;#if&lt;/code&gt; プリプロセッサディレクティブに使用可能な定数式である。&lt;/p&gt;
+&lt;h2&gt;丸め&lt;/h2&gt;
+&lt;table border=&#34;1&#34; bordercolor=&#34;#888&#34; style=&#34;border-collapse:collapse&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;マクロ&lt;/th&gt;
+&lt;th&gt;説明&lt;/th&gt;
+&lt;th&gt;対応バージョン&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/flt_rounds.html&#34;&gt;FLT_ROUNDS&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;浮動小数点加算の丸めモード&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;基数&lt;/h2&gt;
+&lt;table border=&#34;1&#34; bordercolor=&#34;#888&#34; style=&#34;border-collapse:collapse&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;マクロ&lt;/th&gt;
+&lt;th&gt;説明&lt;/th&gt;
+&lt;th&gt;対応バージョン&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/flt_radix.html&#34;&gt;FLT_RADIX&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;指数表現の基数。&lt;br /&gt;上記モデルでは、$b$&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;浮動小数点の評価方法&lt;/h2&gt;
+&lt;table border=&#34;1&#34; bordercolor=&#34;#888&#34; style=&#34;border-collapse:collapse&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;マクロ&lt;/th&gt;
+&lt;th&gt;説明&lt;/th&gt;
+&lt;th&gt;対応バージョン&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/flt_eval_method.html&#34;&gt;FLT_EVAL_METHOD&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;浮動小数点数がどのように評価されるかを表す整数値&lt;/td&gt;
+&lt;td&gt;C++11&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;桁数&lt;/h2&gt;
+&lt;table border=&#34;1&#34; bordercolor=&#34;#888&#34; style=&#34;border-collapse:collapse&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;マクロ&lt;/th&gt;
+&lt;th&gt;説明&lt;/th&gt;
+&lt;th&gt;対応バージョン&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/flt_dig.html&#34;&gt;FLT_DIG&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;float&lt;/code&gt;で正確に表現可能な10進数の最大の桁数。&lt;br /&gt;上記モデルでは、$b$ が $10$ の累乗の場合、$p \log_{10} b$、それ以外の場合、$\lfloor (p - 1)\log_{10} b\rfloor$&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/dbl_dig.html&#34;&gt;DBL_DIG&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;double&lt;/code&gt;で正確に表現可能な10進数の最大の桁数。&lt;br /&gt;上記モデルでは、$b$ が $10$ の累乗の場合、$p \log_{10} b$、それ以外の場合、$\lfloor (p - 1)\log_{10} b\rfloor$&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/ldbl_dig.html&#34;&gt;LDBL_DIG&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;long double&lt;/code&gt;で正確に表現可能な10進数の最大の桁数。&lt;br /&gt;上記モデルでは、$b$ が $10$ の累乗の場合、$p \log_{10} b$、それ以外の場合、$\lfloor (p - 1)\log_{10} b\rfloor$&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/flt_decimal_dig.html&#34;&gt;FLT_DECIMAL_DIG&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;float&lt;/code&gt;の数値を10進数で正確に表すのに必要な有効数字の桁数。&lt;br /&gt;上記モデルでは、$b$ が $10$ の累乗の場合、$p \log_{10} b$、それ以外の場合、$\lceil 1 + p \log_{10} b\rceil$&lt;/td&gt;
+&lt;td&gt;C++17&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/dbl_decimal_dig.html&#34;&gt;DBL_DECIMAL_DIG&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;double&lt;/code&gt;の数値を10進数で正確に表すのに必要な有効数字の桁数。&lt;br /&gt;上記モデルでは、$b$ が $10$ の累乗の場合、$p \log_{10} b$、それ以外の場合、$\lceil 1 + p \log_{10} b\rceil$&lt;/td&gt;
+&lt;td&gt;C++17&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/ldbl_decimal_dig.html&#34;&gt;LDBL_DECIMAL_DIG&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;long double&lt;/code&gt;の数値を10進数で正確に表すのに必要な有効数字の桁数。&lt;br /&gt;上記モデルでは、$b$ が $10$ の累乗の場合、$p \log_{10} b$、それ以外の場合、$\lceil 1 + p \log_{10} b\rceil$&lt;/td&gt;
+&lt;td&gt;C++17&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/decimal_dig.html&#34;&gt;DECIMAL_DIG&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;精度が一番高い浮動小数点型の数値を10進数で正確に表すのに必要な有効数字の桁数。&lt;br /&gt;上記モデルでは、$p_{\rm max}$ を精度が一番高い浮動小数点型の $p$ とすると、$b$ が $10$ の累乗の場合、$p_{\rm max} \log_{10} b$、それ以外の場合、$\lceil 1 + p_{\rm max}\log_{10} b\rceil$&lt;/td&gt;
+&lt;td&gt;C++11&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/flt_mant_dig.html&#34;&gt;FLT_MANT_DIG&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;float&lt;/code&gt;を基数 &lt;code&gt;&lt;a href=&#34;cfloat/flt_radix.html&#34;&gt;FLT_RADIX&lt;/a&gt;&lt;/code&gt; で表現した際の仮数部の桁数。&lt;br /&gt;上記モデルでは、$p$&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/dbl_mant_dig.html&#34;&gt;DBL_MANT_DIG&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;double&lt;/code&gt;を基数 &lt;code&gt;&lt;a href=&#34;cfloat/flt_radix.html&#34;&gt;FLT_RADIX&lt;/a&gt;&lt;/code&gt; で表現した際の仮数部の桁数。&lt;br /&gt;上記モデルでは、$p$&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/ldbl_mant_dig.html&#34;&gt;LDBL_MANT_DIG&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;long double&lt;/code&gt;を基数 &lt;code&gt;&lt;a href=&#34;cfloat/flt_radix.html&#34;&gt;FLT_RADIX&lt;/a&gt;&lt;/code&gt; で表現した際の仮数部の桁数。&lt;br /&gt;上記モデルでは、$p$&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;機械イプシロン&lt;/h2&gt;
+&lt;table border=&#34;1&#34; bordercolor=&#34;#888&#34; style=&#34;border-collapse:collapse&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;マクロ&lt;/th&gt;
+&lt;th&gt;説明&lt;/th&gt;
+&lt;th&gt;対応バージョン&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/flt_epsilon.html&#34;&gt;FLT_EPSILON&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;float&lt;/code&gt;における、$1$ と $1$ より大きい最小の数との差。（機械イプシロン）&lt;br /&gt;上記モデルでは、$b^{1-p}$&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/dbl_epsilon.html&#34;&gt;DBL_EPSILON&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;double&lt;/code&gt;における、$1$ と $1$ より大きい最小の数との差。（機械イプシロン）&lt;br /&gt;上記モデルでは、$b^{1-p}$&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/ldbl_epsilon.html&#34;&gt;LDBL_EPSILON&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;long double&lt;/code&gt;における、$1$ と $1$ より大きい最小の数との差。（機械イプシロン）&lt;br /&gt;上記モデルでは、$b^{1-p}$&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;非正規化数&lt;/h2&gt;
+&lt;table border=&#34;1&#34; bordercolor=&#34;#888&#34; style=&#34;border-collapse:collapse&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;マクロ&lt;/th&gt;
+&lt;th&gt;説明&lt;/th&gt;
+&lt;th&gt;対応バージョン&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/flt_has_subnorm.html&#34;&gt;FLT_HAS_SUBNORM&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;float&lt;/code&gt;における非正規化数のサポート状況を判定する&lt;/td&gt;
+&lt;td&gt;C++17&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/dbl_has_subnorm.html&#34;&gt;DBL_HAS_SUBNORM&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;double&lt;/code&gt;における非正規化数のサポート状況を判定する&lt;/td&gt;
+&lt;td&gt;C++17&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/ldbl_has_subnorm.html&#34;&gt;LDBL_HAS_SUBNORM&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;long double&lt;/code&gt;における非正規化数のサポート状況を判定する&lt;/td&gt;
+&lt;td&gt;C++17&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;最大値&lt;/h2&gt;
+&lt;table border=&#34;1&#34; bordercolor=&#34;#888&#34; style=&#34;border-collapse:collapse&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;マクロ&lt;/th&gt;
+&lt;th&gt;説明&lt;/th&gt;
+&lt;th&gt;対応バージョン&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/flt_max.html&#34;&gt;FLT_MAX&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;float&lt;/code&gt;の最大の有限値。&lt;br /&gt;上記モデルでは、$(1-b^{-p})b^{e_{\rm max}}$&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/dbl_max.html&#34;&gt;DBL_MAX&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;double&lt;/code&gt;の最大の有限値。&lt;br /&gt;上記モデルでは、$(1-b^{-p})b^{e_{\rm max}}$&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/ldbl_max.html&#34;&gt;LDBL_MAX&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;long double&lt;/code&gt;の最大の有限値。&lt;br /&gt;上記モデルでは、$(1-b^{-p})b^{e_{\rm max}}$&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/flt_max_10_exp.html&#34;&gt;FLT_MAX_10_EXP&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$10$ の $n$ 乗が、&lt;code&gt;float&lt;/code&gt;の有限の値として表現可能であるような、最大の整数値 $n$。&lt;br /&gt;上記モデルでは、$\lfloor\log_{10} ((1-b^{-p})b^{e_{\rm max}})\rfloor$&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/dbl_max_10_exp.html&#34;&gt;DBL_MAX_10_EXP&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$10$ の $n$ 乗が、&lt;code&gt;double&lt;/code&gt;の有限の値として表現可能であるような、最大の整数値 $n$。&lt;br /&gt;上記モデルでは、$\lfloor\log_{10} ((1-b^{-p})b^{e_{\rm max}})\rfloor$&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/ldbl_max_10_exp.html&#34;&gt;LDBL_MAX_10_EXP&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$10$ の $n$ 乗が、&lt;code&gt;long double&lt;/code&gt;の有限の値として表現可能であるような、最大の整数値 $n$。&lt;br /&gt;上記モデルでは、$\lfloor\log_{10} ((1-b^{-p})b^{e_{\rm max}})\rfloor$&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/flt_max_exp.html&#34;&gt;FLT_MAX_EXP&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/flt_radix.html&#34;&gt;FLT_RADIX&lt;/a&gt;&lt;/code&gt; の $n - 1$ 乗が、&lt;code&gt;float&lt;/code&gt;の有限の値として表現可能であるような、最大の整数値 $n$。&lt;br /&gt;上記モデルでは、$e_{\rm max}$&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/dbl_max_exp.html&#34;&gt;DBL_MAX_EXP&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/flt_radix.html&#34;&gt;FLT_RADIX&lt;/a&gt;&lt;/code&gt; の $n - 1$ 乗が、&lt;code&gt;double&lt;/code&gt;の有限の値として表現可能であるような、最大の整数値 $n$。&lt;br /&gt;上記モデルでは、$e_{\rm max}$&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/ldbl_max_exp.html&#34;&gt;LDBL_MAX_EXP&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/flt_radix.html&#34;&gt;FLT_RADIX&lt;/a&gt;&lt;/code&gt; の $n - 1$ 乗が、&lt;code&gt;long double&lt;/code&gt;の有限の値として表現可能であるような、最大の整数値 $n$。&lt;br /&gt;上記モデルでは、$e_{\rm max}$&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;最小値&lt;/h2&gt;
+&lt;table border=&#34;1&#34; bordercolor=&#34;#888&#34; style=&#34;border-collapse:collapse&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;マクロ&lt;/th&gt;
+&lt;th&gt;説明&lt;/th&gt;
+&lt;th&gt;対応バージョン&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/flt_min.html&#34;&gt;FLT_MIN&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;float&lt;/code&gt;の正の正規化数のうち最小のもの。&lt;br /&gt;上記モデルでは、$b^{e_{\rm min} - 1}$&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/dbl_min.html&#34;&gt;DBL_MIN&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;double&lt;/code&gt;の正の正規化数のうち最小のもの。&lt;br /&gt;上記モデルでは、$b^{e_{\rm min} - 1}$&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/ldbl_min.html&#34;&gt;LDBL_MIN&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;long double&lt;/code&gt;の正の正規化数のうち最小のもの。&lt;br /&gt;上記モデルでは、$b^{e_{\rm min} - 1}$&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/flt_true_min.html&#34;&gt;FLT_TRUE_MIN&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;float&lt;/code&gt;の正の最小値&lt;/td&gt;
+&lt;td&gt;C++17&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/dbl_true_min.html&#34;&gt;DBL_TRUE_MIN&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;double&lt;/code&gt;の正の最小値&lt;/td&gt;
+&lt;td&gt;C++17&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/ldbl_true_min.html&#34;&gt;LDBL_TRUE_MIN&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;long double&lt;/code&gt;の正の最小値&lt;/td&gt;
+&lt;td&gt;C++17&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/flt_min_10_exp.html&#34;&gt;FLT_MIN_10_EXP&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$10$ の $n$ 乗が&lt;code&gt;float&lt;/code&gt;の正の正規化数であるような最小の負の整数値 $n$。&lt;br /&gt;上記モデルでは、$\lceil\log_{10} b^{e_{\rm min} - 1}\rceil$&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/dbl_min_10_exp.html&#34;&gt;DBL_MIN_10_EXP&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$10$ の $n$ 乗が&lt;code&gt;double&lt;/code&gt;の正の正規化数であるような最小の負の整数値 $n$。&lt;br /&gt;上記モデルでは、$\lceil\log_{10} b^{e_{\rm min} - 1}\rceil$&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/ldbl_min_10_exp.html&#34;&gt;LDBL_MIN_10_EXP&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$10$ の $n$ 乗が&lt;code&gt;long double&lt;/code&gt;の正の正規化数であるような最小の負の整数値 $n$。&lt;br /&gt;上記モデルでは、$\lceil\log_{10} b^{e_{\rm min} - 1}\rceil$&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/flt_min_exp.html&#34;&gt;FLT_MIN_EXP&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/flt_radix.html&#34;&gt;FLT_RADIX&lt;/a&gt;&lt;/code&gt; の $n - 1$ 乗が&lt;code&gt;float&lt;/code&gt;の正規化数として表現可能な最小の負の整数値 $n$。&lt;br /&gt;上記モデルでは、$e_{\rm min}$&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/dbl_min_exp.html&#34;&gt;DBL_MIN_EXP&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/flt_radix.html&#34;&gt;FLT_RADIX&lt;/a&gt;&lt;/code&gt; の $n - 1$ 乗が&lt;code&gt;double&lt;/code&gt;の正規化数として表現可能な最小の負の整数値 $n$。&lt;br /&gt;上記モデルでは、$e_{\rm min}$&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/ldbl_min_exp.html&#34;&gt;LDBL_MIN_EXP&lt;/a&gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&lt;a href=&#34;cfloat/flt_radix.html&#34;&gt;FLT_RADIX&lt;/a&gt;&lt;/code&gt; の $n - 1$ 乗が&lt;code&gt;long double&lt;/code&gt;の正規化数として表現可能な最小の負の整数値 $n$。&lt;br /&gt;上記モデルでは、$e_{\rm min}$&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;参照&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0063r3.html&#34; target=&#34;_blank&#34;&gt;P0063R3 C++17 should refer to C11 instead of C99&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0175r1.html&#34; target=&#34;_blank&#34;&gt;P0175R1 Synopses for the C library&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;</content>
+      
+      <author>
+        <name>Koichi Murase</name>
+        <email>myoga.murase@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>DBL_DECIMAL_DIG -- markdown_to_html.html_attribute 変更に伴う修正</title>
+      <link href="https://cpprefjp.github.io/reference/cfloat/dbl_decimal_dig.html"/>
+      <id>1956c49740bc18530991c27a64e1a8de0e731cfc:reference/cfloat/dbl_decimal_dig.md</id>
+      <updated>2024-11-20T21:15:43+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/cfloat/dbl_decimal_dig.md b/reference/cfloat/dbl_decimal_dig.md
+index 6e8ebca1a..deea71152 100644
+--- a/reference/cfloat/dbl_decimal_dig.md
++++ b/reference/cfloat/dbl_decimal_dig.md
+@@ -16,8 +16,8 @@
+ $$
+ \left\{
+ \begin{array}{ll}
+-p \log_{10} b&amp;amp;amp;\text{$b$ が $10$ の累乗の場合}\\
+-\lceil 1 + p \log_{10} b\rceil&amp;amp;amp;\text{上記以外の場合}\\
++p \log_{10} b&amp;amp;\text{$b$ が $10$ の累乗の場合}\\
++\lceil 1 + p \log_{10} b\rceil&amp;amp;\text{上記以外の場合}\\
+ \end{array}
+ \right.
+ $$
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>Koichi Murase</name>
+        <email>myoga.murase@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>DBL_DIG -- markdown_to_html.html_attribute 変更に伴う修正</title>
+      <link href="https://cpprefjp.github.io/reference/cfloat/dbl_dig.html"/>
+      <id>1956c49740bc18530991c27a64e1a8de0e731cfc:reference/cfloat/dbl_dig.md</id>
+      <updated>2024-11-20T21:15:43+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/cfloat/dbl_dig.md b/reference/cfloat/dbl_dig.md
+index 945489d50..3bf9d9261 100644
+--- a/reference/cfloat/dbl_dig.md
++++ b/reference/cfloat/dbl_dig.md
+@@ -15,8 +15,8 @@
+ $$
+ \left\{
+ \begin{array}{ll}
+-p \log_{10}b&amp;amp;amp;\text{もし $b$ が $10$ の累乗の場合}\\
+-\lfloor (p - 1) \log_{10} b\rfloor&amp;amp;amp;\text{上記以外の場合}\\
++p \log_{10}b&amp;amp;\text{もし $b$ が $10$ の累乗の場合}\\
++\lfloor (p - 1) \log_{10} b\rfloor&amp;amp;\text{上記以外の場合}\\
+ \end{array}
+ \right.
+ $$
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>Koichi Murase</name>
+        <email>myoga.murase@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>DECIMAL_DIG -- markdown_to_html.html_attribute 変更に伴う修正</title>
+      <link href="https://cpprefjp.github.io/reference/cfloat/decimal_dig.html"/>
+      <id>1956c49740bc18530991c27a64e1a8de0e731cfc:reference/cfloat/decimal_dig.md</id>
+      <updated>2024-11-20T21:15:43+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/cfloat/decimal_dig.md b/reference/cfloat/decimal_dig.md
+index c19fb885b..5adf80d54 100644
+--- a/reference/cfloat/decimal_dig.md
++++ b/reference/cfloat/decimal_dig.md
+@@ -16,8 +16,8 @@
+ $$
+ \left\{
+ \begin{array}{ll}
+-p_{\rm max} \log_{10} b&amp;amp;amp;\text{$b$ が $10$ の累乗の場合}\\
+-\lceil 1 + p_{\rm max}\log_{10} b\rceil&amp;amp;amp;\text{上記以外の場合}\\
++p_{\rm max} \log_{10} b&amp;amp;\text{$b$ が $10$ の累乗の場合}\\
++\lceil 1 + p_{\rm max}\log_{10} b\rceil&amp;amp;\text{上記以外の場合}\\
+ \end{array}
+ \right.
+ $$
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>Koichi Murase</name>
+        <email>myoga.murase@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>FLT_DECIMAL_DIG -- markdown_to_html.html_attribute 変更に伴う修正</title>
+      <link href="https://cpprefjp.github.io/reference/cfloat/flt_decimal_dig.html"/>
+      <id>1956c49740bc18530991c27a64e1a8de0e731cfc:reference/cfloat/flt_decimal_dig.md</id>
+      <updated>2024-11-20T21:15:43+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/cfloat/flt_decimal_dig.md b/reference/cfloat/flt_decimal_dig.md
+index c2771dc77..e02e9e2d8 100644
+--- a/reference/cfloat/flt_decimal_dig.md
++++ b/reference/cfloat/flt_decimal_dig.md
+@@ -16,8 +16,8 @@
+ $$
+ \left\{
+ \begin{array}{ll}
+-p \log_{10} b&amp;amp;amp;\text{$b$ が $10$ の累乗の場合}\\
+-\lceil 1 + p \log_{10} b\rceil&amp;amp;amp;\text{上記以外の場合}\\
++p \log_{10} b&amp;amp;\text{$b$ が $10$ の累乗の場合}\\
++\lceil 1 + p \log_{10} b\rceil&amp;amp;\text{上記以外の場合}\\
+ \end{array}
+ \right.
+ $$
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>Koichi Murase</name>
+        <email>myoga.murase@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>FLT_DIG -- markdown_to_html.html_attribute 変更に伴う修正</title>
+      <link href="https://cpprefjp.github.io/reference/cfloat/flt_dig.html"/>
+      <id>1956c49740bc18530991c27a64e1a8de0e731cfc:reference/cfloat/flt_dig.md</id>
+      <updated>2024-11-20T21:15:43+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/cfloat/flt_dig.md b/reference/cfloat/flt_dig.md
+index fa16ccad4..cabd5e081 100644
+--- a/reference/cfloat/flt_dig.md
++++ b/reference/cfloat/flt_dig.md
+@@ -15,8 +15,8 @@
+ $$
+ \left\{
+ \begin{array}{ll}
+-p \log_{10}b&amp;amp;amp;\text{もし $b$ が $10$ の累乗の場合}\\
+-\lfloor (p - 1) \log_{10} b\rfloor&amp;amp;amp;\text{上記以外の場合}\\
++p \log_{10}b&amp;amp;\text{もし $b$ が $10$ の累乗の場合}\\
++\lfloor (p - 1) \log_{10} b\rfloor&amp;amp;\text{上記以外の場合}\\
+ \end{array}
+ \right.
+ $$
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>Koichi Murase</name>
+        <email>myoga.murase@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>LDBL_DECIMAL_DIG -- markdown_to_html.html_attribute 変更に伴う修正</title>
+      <link href="https://cpprefjp.github.io/reference/cfloat/ldbl_decimal_dig.html"/>
+      <id>1956c49740bc18530991c27a64e1a8de0e731cfc:reference/cfloat/ldbl_decimal_dig.md</id>
+      <updated>2024-11-20T21:15:43+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/cfloat/ldbl_decimal_dig.md b/reference/cfloat/ldbl_decimal_dig.md
+index 6788bdd03..8064f1c0e 100644
+--- a/reference/cfloat/ldbl_decimal_dig.md
++++ b/reference/cfloat/ldbl_decimal_dig.md
+@@ -16,8 +16,8 @@
+ $$
+ \left\{
+ \begin{array}{ll}
+-p \log_{10} b&amp;amp;amp;\text{$b$ が $10$ の累乗の場合}\\
+-\lceil 1 + p \log_{10} b\rceil&amp;amp;amp;\text{上記以外の場合}\\
++p \log_{10} b&amp;amp;\text{$b$ が $10$ の累乗の場合}\\
++\lceil 1 + p \log_{10} b\rceil&amp;amp;\text{上記以外の場合}\\
+ \end{array}
+ \right.
+ $$
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>Koichi Murase</name>
+        <email>myoga.murase@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>LDBL_DIG -- markdown_to_html.html_attribute 変更に伴う修正</title>
+      <link href="https://cpprefjp.github.io/reference/cfloat/ldbl_dig.html"/>
+      <id>1956c49740bc18530991c27a64e1a8de0e731cfc:reference/cfloat/ldbl_dig.md</id>
+      <updated>2024-11-20T21:15:43+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/cfloat/ldbl_dig.md b/reference/cfloat/ldbl_dig.md
+index e1a2c5c4d..654bec299 100644
+--- a/reference/cfloat/ldbl_dig.md
++++ b/reference/cfloat/ldbl_dig.md
+@@ -15,8 +15,8 @@
+ $$
+ \left\{
+ \begin{array}{ll}
+-p \log_{10}b&amp;amp;amp;\text{もし $b$ が $10$ の累乗の場合}\\
+-\lfloor (p - 1) \log_{10} b\rfloor&amp;amp;amp;\text{上記以外の場合}\\
++p \log_{10}b&amp;amp;\text{もし $b$ が $10$ の累乗の場合}\\
++\lfloor (p - 1) \log_{10} b\rfloor&amp;amp;\text{上記以外の場合}\\
+ \end{array}
+ \right.
+ $$
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>Koichi Murase</name>
+        <email>myoga.murase@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>acos -- markdown_to_html.html_attribute 変更に伴う修正</title>
+      <link href="https://cpprefjp.github.io/reference/cmath/acos.html"/>
+      <id>1956c49740bc18530991c27a64e1a8de0e731cfc:reference/cmath/acos.md</id>
+      <updated>2024-11-20T21:15:43+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/cmath/acos.md b/reference/cmath/acos.md
+index 75be823d9..ec8954c95 100644
+--- a/reference/cmath/acos.md
++++ b/reference/cmath/acos.md
+@@ -112,12 +112,12 @@ acos(-1.0) = 3.141593
+ ## 実装例
+ 以下のマクローリン級数を適当な次数で打ち切ることで近似的に求めることができる。
+ 
+-$$ \mathrm{Arccos}~x = \frac{\pi}{2} - \sum_{n = 0}^{\infty}\frac{\left(2n\right)!}{4^n\left(n!\right)^2\left(2n + 1\right)}x^{2n+1} \quad \mathrm{for} \; |x| &amp;amp;lt; 1 $$
++$$ \mathrm{Arccos}~x = \frac{\pi}{2} - \sum_{n = 0}^{\infty}\frac{\left(2n\right)!}{4^n\left(n!\right)^2\left(2n + 1\right)}x^{2n+1} \quad \mathrm{for} \; |x| &amp;lt; 1 $$
+ 
+ 
+ また、逆正接関数と逆余接関数の和は π / 2 なので [`asin`](asin.md) から求めることができる。
+ 
+-$$ \mathrm{Arccos}~x = \frac{\pi}{2} - \mathrm{Arcsin}~x \quad \mathrm{for} \; |x| &amp;amp;lt; 1 $$
++$$ \mathrm{Arccos}~x = \frac{\pi}{2} - \mathrm{Arcsin}~x \quad \mathrm{for} \; |x| &amp;lt; 1 $$
+ 
+ 
+ ## 参照
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>Koichi Murase</name>
+        <email>myoga.murase@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>acosh -- markdown_to_html.html_attribute 変更に伴う修正</title>
+      <link href="https://cpprefjp.github.io/reference/cmath/acosh.html"/>
+      <id>1956c49740bc18530991c27a64e1a8de0e731cfc:reference/cmath/acosh.md</id>
+      <updated>2024-11-20T21:15:43+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/cmath/acosh.md b/reference/cmath/acosh.md
+index fa00c8a38..37351dd1a 100644
+--- a/reference/cmath/acosh.md
++++ b/reference/cmath/acosh.md
+@@ -102,7 +102,7 @@ acosh(∞)  = inf
+ ## 実装例
+ 対数に変換して求めることができる。
+ 
+-$$ \mathrm{arcosh}~x = \log_e \left(x + \sqrt{x^2-1}\right) \quad \mathrm{for} \; 1 &amp;amp;lt; x $$
++$$ \mathrm{arcosh}~x = \log_e \left(x + \sqrt{x^2-1}\right) \quad \mathrm{for} \; 1 &amp;lt; x $$
+ 
+ 
+ ## 参照
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>Koichi Murase</name>
+        <email>myoga.murase@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>asin -- markdown_to_html.html_attribute 変更に伴う修正</title>
+      <link href="https://cpprefjp.github.io/reference/cmath/asin.html"/>
+      <id>1956c49740bc18530991c27a64e1a8de0e731cfc:reference/cmath/asin.md</id>
+      <updated>2024-11-20T21:15:43+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/cmath/asin.md b/reference/cmath/asin.md
+index c95a03bc7..aed3a97b7 100644
+--- a/reference/cmath/asin.md
++++ b/reference/cmath/asin.md
+@@ -108,10 +108,10 @@ asin(1.0)   = 1.570796
+ ## 実装例
+ 以下のマクローリン級数を適当な次数で打ち切ることで近似的に求めることができる。
+ 
+-$$ \mathrm{Arcsin}~x = \sum_{n = 0}^{\infty} \frac{(2n)!}{4^n (n!)^2 (2n+1)} x^{2n + 1} \quad \mathrm{for} \; |x| &amp;amp;lt; 1 $$
++$$ \mathrm{Arcsin}~x = \sum_{n = 0}^{\infty} \frac{(2n)!}{4^n (n!)^2 (2n+1)} x^{2n + 1} \quad \mathrm{for} \; |x| &amp;lt; 1 $$
+ 
+ 
+-$|x| = 1$ 近傍の精度低下する領域（特に $1 / \sqrt{2} &amp;amp;lt; |x| \le 1$）においては、以下の公式による変換で精度向上を図れる。
++$|x| = 1$ 近傍の精度低下する領域（特に $1 / \sqrt{2} &amp;lt; |x| \le 1$）においては、以下の公式による変換で精度向上を図れる。
+ 
+ $$ \mathrm{Arcsin}~x = \frac{\pi}{2} - \mathrm{Arccos}~x = \frac{\pi}{2} - \mathrm{Arcsin}~\sqrt{1 - x^2} \quad \mathrm{for} \; 0 \le x \le 1 $$
  
 &lt;/code&gt;&lt;/pre&gt;</summary>
       
@@ -33,22 +946,62 @@ index 09141d2bc..955631bfe 100644
     </entry>
   
     <entry>
-      <title>insert_range -- unordered_{map,set}/*/insert_range: 「コードブロックのあとに空行が必要な制限」に纏わる修正</title>
-      <link href="https://cpprefjp.github.io/reference/unordered_map/unordered_multimap/insert_range.html"/>
-      <id>5259ff6bc67ca8b95d5b9450555a4ca2de97a3ee:reference/unordered_map/unordered_multimap/insert_range.md</id>
-      <updated>2024-11-18T19:25:35+09:00</updated>
+      <title>asinh -- markdown_to_html.html_attribute 変更に伴う修正</title>
+      <link href="https://cpprefjp.github.io/reference/cmath/asinh.html"/>
+      <id>1956c49740bc18530991c27a64e1a8de0e731cfc:reference/cmath/asinh.md</id>
+      <updated>2024-11-20T21:15:43+09:00</updated>
       
-        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/unordered_map/unordered_multimap/insert_range.md b/reference/unordered_map/unordered_multimap/insert_range.md
-index 922c6050e..b63190f40 100644
---- a/reference/unordered_map/unordered_multimap/insert_range.md
-+++ b/reference/unordered_map/unordered_multimap/insert_range.md
-@@ -64,6 +64,7 @@ B 11
- B 11
- A 10
- ```
-+
- 注：[`unordered_multimap`](/reference/unordered_map/unordered_multimap.md) は非順序連想コンテナであるため、出力順序は無意味であることに注意
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/cmath/asinh.md b/reference/cmath/asinh.md
+index f64c9b702..744ff3e8f 100644
+--- a/reference/cmath/asinh.md
++++ b/reference/cmath/asinh.md
+@@ -98,7 +98,7 @@ asinh(1.0)  = 0.881374
+ ## 実装例
+ 以下のマクローリン級数を適当な次数で打ち切ることで近似的に求めることができる。
  
+-$$ \mathrm{arsinh}~x = \sum_{n = 0}^{\infty} \frac{(-1)^n (2n)!}{4^n (n!)^2 (2n + 1)} x^{2n + 1} \quad \mathrm{for} \; |x| &amp;amp;lt; 1 $$
++$$ \mathrm{arsinh}~x = \sum_{n = 0}^{\infty} \frac{(-1)^n (2n)!}{4^n (n!)^2 (2n + 1)} x^{2n + 1} \quad \mathrm{for} \; |x| &amp;lt; 1 $$
+ 
+ 
+ または対数に変換して求めることができる。
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>Koichi Murase</name>
+        <email>myoga.murase@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>atan -- markdown_to_html.html_attribute 変更に伴う修正</title>
+      <link href="https://cpprefjp.github.io/reference/cmath/atan.html"/>
+      <id>1956c49740bc18530991c27a64e1a8de0e731cfc:reference/cmath/atan.md</id>
+      <updated>2024-11-20T21:15:43+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/cmath/atan.md b/reference/cmath/atan.md
+index f795bc0b0..2fa1667e7 100644
+--- a/reference/cmath/atan.md
++++ b/reference/cmath/atan.md
+@@ -99,17 +99,17 @@ atan(∞)    = 1.570796
+ ## 実装例
+ 以下のマクローリン級数を適当な次数で打ち切ることで近似的に求めることができる。
+ 
+-$$ \mathrm{Arctan}~x = \sum_{n = 0}^{\infty} \frac{(-1)^n}{2n + 1} x^{2n + 1} \quad \mathrm{for} \; |x| &amp;amp;lt; 1 $$
++$$ \mathrm{Arctan}~x = \sum_{n = 0}^{\infty} \frac{(-1)^n}{2n + 1} x^{2n + 1} \quad \mathrm{for} \; |x| &amp;lt; 1 $$
+ 
+ 
+ $ |x| \ge 1 $ の範囲、および $ |x| \rightarrow 1 $ 近傍の精度低下する領域においては、以下の公式による変換で求めることができる。
+ 
+-（特に $ \sqrt{2} + 1 &amp;amp;lt; |x| $ の場合）
++（特に $ \sqrt{2} + 1 &amp;lt; |x| $ の場合）
+ 
+ $$ \mathrm{Arctan}~x = \frac{\pi}{2} - \mathrm{Arctan}~\frac{1}{x} \quad \mathrm{for} \; x &amp;gt; 0 $$
+ 
+ 
+-（特に $ \sqrt{2} - 1 &amp;amp;lt; |x| \le \sqrt{2} + 1 $ の場合）
++（特に $ \sqrt{2} - 1 &amp;lt; |x| \le \sqrt{2} + 1 $ の場合）
+ 
+ $$ \mathrm{Arctan}~x = \frac{\pi}{4} + \mathrm{Arctan}~\frac{x - 1}{x + 1} \quad \mathrm{for} \; x \ne -1 $$
  
 &lt;/code&gt;&lt;/pre&gt;</summary>
       
@@ -59,48 +1012,27 @@ index 922c6050e..b63190f40 100644
     </entry>
   
     <entry>
-      <title>insert_range -- unordered_{map,set}/*/insert_range: 「コードブロックのあとに空行が必要な制限」に纏わる修正</title>
-      <link href="https://cpprefjp.github.io/reference/unordered_set/unordered_multiset/insert_range.html"/>
-      <id>5259ff6bc67ca8b95d5b9450555a4ca2de97a3ee:reference/unordered_set/unordered_multiset/insert_range.md</id>
-      <updated>2024-11-18T19:25:35+09:00</updated>
+      <title>atan2 -- markdown_to_html.html_attribute 変更に伴う修正</title>
+      <link href="https://cpprefjp.github.io/reference/cmath/atan2.html"/>
+      <id>1956c49740bc18530991c27a64e1a8de0e731cfc:reference/cmath/atan2.md</id>
+      <updated>2024-11-20T21:15:43+09:00</updated>
       
-        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/unordered_set/unordered_multiset/insert_range.md b/reference/unordered_set/unordered_multiset/insert_range.md
-index f44f7a72f..4a194ac8b 100644
---- a/reference/unordered_set/unordered_multiset/insert_range.md
-+++ b/reference/unordered_set/unordered_multiset/insert_range.md
-@@ -61,6 +61,7 @@ int main ()
- ```
- 4 3 3 2 2 1 
- ```
-+
- 注：[`unordered_multiset`](/reference/unordered_set/unordered_multiset.md) は非順序連想コンテナであるため、出力順序は無意味であることに注意
- 
- 
-&lt;/code&gt;&lt;/pre&gt;</summary>
-      
-      <author>
-        <name>Koichi Murase</name>
-        <email>myoga.murase@gmail.com</email>
-      </author>
-    </entry>
-  
-    <entry>
-      <title>insert_range -- unordered_{map,set}/*/insert_range: 「コードブロックのあとに空行が必要な制限」に纏わる修正</title>
-      <link href="https://cpprefjp.github.io/reference/unordered_set/unordered_set/insert_range.html"/>
-      <id>5259ff6bc67ca8b95d5b9450555a4ca2de97a3ee:reference/unordered_set/unordered_set/insert_range.md</id>
-      <updated>2024-11-18T19:25:35+09:00</updated>
-      
-        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/unordered_set/unordered_set/insert_range.md b/reference/unordered_set/unordered_set/insert_range.md
-index eb1b80ecc..a91d5a9e0 100644
---- a/reference/unordered_set/unordered_set/insert_range.md
-+++ b/reference/unordered_set/unordered_set/insert_range.md
-@@ -61,6 +61,7 @@ int main ()
- ```
- 4 3 2 1 
- ```
-+
- 注：[`unordered_set`](/reference/unordered_set/unordered_set.md) は非順序連想コンテナであるため、出力順序は無意味であることに注意
- 
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/cmath/atan2.md b/reference/cmath/atan2.md
+index 809a3b367..2cb6bf45b 100644
+--- a/reference/cmath/atan2.md
++++ b/reference/cmath/atan2.md
+@@ -138,9 +138,9 @@ atan2(-1.0, 1.0)  = -0.785398
+ $$
+ \mathrm{Arctan}~\frac{y}{x} =
+ \begin{cases}
+-\displaystyle \mathrm{Arctan}~\frac{y}{x}       &amp;amp;amp; \quad \mathrm{for} \; 0 \le x \\[2ex]
+-\displaystyle \mathrm{Arctan}~\frac{y}{x} + \pi &amp;amp;amp; \quad \mathrm{for} \; x &amp;amp;lt; 0, \; 0 \le y \\[2ex]
+-\displaystyle \mathrm{Arctan}~\frac{y}{x} - \pi &amp;amp;amp; \quad \mathrm{for} \; x &amp;amp;lt; 0, \; y &amp;amp;lt; 0
++\displaystyle \mathrm{Arctan}~\frac{y}{x}       &amp;amp; \quad \mathrm{for} \; 0 \le x \\[2ex]
++\displaystyle \mathrm{Arctan}~\frac{y}{x} + \pi &amp;amp; \quad \mathrm{for} \; x &amp;lt; 0, \; 0 \le y \\[2ex]
++\displaystyle \mathrm{Arctan}~\frac{y}{x} - \pi &amp;amp; \quad \mathrm{for} \; x &amp;lt; 0, \; y &amp;lt; 0
+ \end{cases}
+ $$
  
 &lt;/code&gt;&lt;/pre&gt;</summary>
       
@@ -111,24 +1043,408 @@ index eb1b80ecc..a91d5a9e0 100644
     </entry>
   
     <entry>
-      <title>cpprefjpでのMarkdown記法の制限と拡張 -- Markdownの制限 : 「コードブロックのあとに空行が必要な制限」を追加 #1362</title>
+      <title>atanh -- markdown_to_html.html_attribute 変更に伴う修正</title>
+      <link href="https://cpprefjp.github.io/reference/cmath/atanh.html"/>
+      <id>1956c49740bc18530991c27a64e1a8de0e731cfc:reference/cmath/atanh.md</id>
+      <updated>2024-11-20T21:15:43+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/cmath/atanh.md b/reference/cmath/atanh.md
+index 0a8febb2d..0233b76ca 100644
+--- a/reference/cmath/atanh.md
++++ b/reference/cmath/atanh.md
+@@ -105,12 +105,12 @@ atanh(1.0)  = inf
+ ## 実装例
+ 以下のマクローリン級数を適当な次数で打ち切ることで近似的に求めることができる。
+ 
+-$$ \mathrm{artanh}~x = \sum_{n = 0}^{\infty} \frac{1}{2n + 1} x^{2n + 1} \quad \mathrm{for} \; |x| &amp;amp;lt; 1 $$
++$$ \mathrm{artanh}~x = \sum_{n = 0}^{\infty} \frac{1}{2n + 1} x^{2n + 1} \quad \mathrm{for} \; |x| &amp;lt; 1 $$
+ 
+ 
+ または対数に変換して求めることができる。
+ 
+-$$ \mathrm{artanh}~x = \frac{1}{2} \log_e \frac{1 + x}{1 - x} \quad \mathrm{for} \; |x| &amp;amp;lt; 1 $$
++$$ \mathrm{artanh}~x = \frac{1}{2} \log_e \frac{1 + x}{1 - x} \quad \mathrm{for} \; |x| &amp;lt; 1 $$
+ 
+ 
+ ## 参照
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>Koichi Murase</name>
+        <email>myoga.murase@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>log -- markdown_to_html.html_attribute 変更に伴う修正</title>
+      <link href="https://cpprefjp.github.io/reference/cmath/log.html"/>
+      <id>1956c49740bc18530991c27a64e1a8de0e731cfc:reference/cmath/log.md</id>
+      <updated>2024-11-20T21:15:43+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/cmath/log.md b/reference/cmath/log.md
+index e750a577d..9faf89171 100644
+--- a/reference/cmath/log.md
++++ b/reference/cmath/log.md
+@@ -108,7 +108,7 @@ log(-1.0) = nan
+ ## 実装例
+ 以下のマクローリン級数を適当な次数で打ち切ることで近似的に求めることができる。
+ 
+-$$ \log_e (1 + x) = \sum_{n = 1}^{\infty} \frac{(-1)^{n + 1}}{n} x^n \quad \mathrm{for} \; -1 &amp;amp;lt; x \le 1 $$
++$$ \log_e (1 + x) = \sum_{n = 1}^{\infty} \frac{(-1)^{n + 1}}{n} x^n \quad \mathrm{for} \; -1 &amp;lt; x \le 1 $$
+ 
+ 
+ ## 参照
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>Koichi Murase</name>
+        <email>myoga.murase@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>riemann_zeta -- markdown_to_html.html_attribute 変更に伴う修正</title>
+      <link href="https://cpprefjp.github.io/reference/cmath/riemann_zeta.html"/>
+      <id>1956c49740bc18530991c27a64e1a8de0e731cfc:reference/cmath/riemann_zeta.md</id>
+      <updated>2024-11-20T21:15:43+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/cmath/riemann_zeta.md b/reference/cmath/riemann_zeta.md
+index 65d1f4dfd..06d06fef1 100644
+--- a/reference/cmath/riemann_zeta.md
++++ b/reference/cmath/riemann_zeta.md
+@@ -41,11 +41,11 @@ namespace std {
+ $$
+ \zeta (x) = \begin{cases}
+   \displaystyle
+-  \sum_{k=1}^\infty k^{-x} &amp;amp;amp; \text{for } x &amp;gt; 1 \\
++  \sum_{k=1}^\infty k^{-x} &amp;amp; \text{for } x &amp;gt; 1 \\
+   \displaystyle
+-  \frac{1}{1 - 2^{1-x}} \sum_{k=1}^\infty (-1)^{k-1} k^{-x} &amp;amp;amp; \text{for } 0 \le x \le 1 \\
++  \frac{1}{1 - 2^{1-x}} \sum_{k=1}^\infty (-1)^{k-1} k^{-x} &amp;amp; \text{for } 0 \le x \le 1 \\
+   \displaystyle
+-  2^x \pi^{x-1} \sin \frac{\pi x}{2} \Gamma (1 - x) \zeta(1 - x) &amp;amp;amp; \text{for } x &amp;amp;lt; 0
++  2^x \pi^{x-1} \sin \frac{\pi x}{2} \Gamma (1 - x) \zeta(1 - x) &amp;amp; \text{for } x &amp;lt; 0
+ \end{cases}
+ $$
+ を返す。
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>Koichi Murase</name>
+        <email>myoga.murase@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>tan -- markdown_to_html.html_attribute 変更に伴う修正</title>
+      <link href="https://cpprefjp.github.io/reference/cmath/tan.html"/>
+      <id>1956c49740bc18530991c27a64e1a8de0e731cfc:reference/cmath/tan.md</id>
+      <updated>2024-11-20T21:15:43+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/cmath/tan.md b/reference/cmath/tan.md
+index d72996df4..2eecf915b 100644
+--- a/reference/cmath/tan.md
++++ b/reference/cmath/tan.md
+@@ -103,7 +103,7 @@ tan(pi/2) = 16331239353195370.000000
+ ## 実装例
+ `tan` のマクローリン展開はベルヌーイ数が登場するため計算には向かない。
+ 
+-$$ \tan x = \sum_{n = 1}^{\infty} \frac{B_{2n}(-4)^n(1-4^n)}{(2n)!} x^{2n - 1} \quad \mathrm{for} \; |x| &amp;amp;lt; \frac{\pi}{2} $$
++$$ \tan x = \sum_{n = 1}^{\infty} \frac{B_{2n}(-4)^n(1-4^n)}{(2n)!} x^{2n - 1} \quad \mathrm{for} \; |x| &amp;lt; \frac{\pi}{2} $$
+ 
+ 以下の公式から求めることができる。
+ 
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>Koichi Murase</name>
+        <email>myoga.murase@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>tanh -- markdown_to_html.html_attribute 変更に伴う修正</title>
+      <link href="https://cpprefjp.github.io/reference/cmath/tanh.html"/>
+      <id>1956c49740bc18530991c27a64e1a8de0e731cfc:reference/cmath/tanh.md</id>
+      <updated>2024-11-20T21:15:43+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/cmath/tanh.md b/reference/cmath/tanh.md
+index 4e05c79e8..bfae3387e 100644
+--- a/reference/cmath/tanh.md
++++ b/reference/cmath/tanh.md
+@@ -97,7 +97,7 @@ tanh(1.0)  = 0.761594
+ ## 実装例
+ `tanh` のマクローリン展開はベルヌーイ数が登場するため計算には向かない。
+ 
+-$$ \tanh x = \sum_{n = 1}^{\infty} \frac{B_{2n}4^n(4^n - 1)}{(2n)!} x^{2n - 1} \quad \mathrm{for} \; |x| &amp;amp;lt; \frac{\pi}{2} $$
++$$ \tanh x = \sum_{n = 1}^{\infty} \frac{B_{2n}4^n(4^n - 1)}{(2n)!} x^{2n - 1} \quad \mathrm{for} \; |x| &amp;lt; \frac{\pi}{2} $$
+ 
+ 以下の公式から求めることができる。
+ 
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>Koichi Murase</name>
+        <email>myoga.murase@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>gcd -- markdown_to_html.html_attribute 変更に伴う修正</title>
+      <link href="https://cpprefjp.github.io/reference/numeric/gcd.html"/>
+      <id>1956c49740bc18530991c27a64e1a8de0e731cfc:reference/numeric/gcd.md</id>
+      <updated>2024-11-20T21:15:43+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/numeric/gcd.md b/reference/numeric/gcd.md
+index 68ef4a17d..1e2049b6d 100644
+--- a/reference/numeric/gcd.md
++++ b/reference/numeric/gcd.md
+@@ -164,6 +164,6 @@ int main() {
+ 
+ ## 実装例
+ $$ \mathrm{gcd}(m, n) = \begin{cases}
+-  |m| &amp;amp;amp; \text{if } n = 0 \\
+-  \mathrm{gcd}(n, m \bmod n) &amp;amp;amp; \text{otherwise}
++  |m| &amp;amp; \text{if } n = 0 \\
++  \mathrm{gcd}(n, m \bmod n) &amp;amp; \text{otherwise}
+ \end{cases} $$
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>Koichi Murase</name>
+        <email>myoga.murase@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>cpprefjpでのMarkdown記法の制限と拡張 -- markdown_to_html.html_attribute 変更に伴う修正</title>
       <link href="https://cpprefjp.github.io/start_editing/markdown_cpprefjp.html"/>
-      <id>aacc4df55989bc9337150909a9bd8ab429312730:start_editing/markdown_cpprefjp.md</id>
-      <updated>2024-11-18T19:07:23+09:00</updated>
+      <id>1956c49740bc18530991c27a64e1a8de0e731cfc:start_editing/markdown_cpprefjp.md</id>
+      <updated>2024-11-20T21:15:43+09:00</updated>
       
         <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/start_editing/markdown_cpprefjp.md b/start_editing/markdown_cpprefjp.md
-index c15f6e563..9c5543c1a 100644
+index 9c5543c1a..ea8d3cb62 100644
 --- a/start_editing/markdown_cpprefjp.md
 +++ b/start_editing/markdown_cpprefjp.md
-@@ -87,6 +87,9 @@ comment out text...
- * リスト2
- ```
+@@ -31,7 +31,7 @@ comment out text...
  
-+### コードブロックのあとに空行が必要な制限
-+後述する「プログラムの修飾に関する拡張」に関連して、コードブロックのあとに説明文章を書く際には空行をあけなければなりません。
+ ### 表内での縦線の制限
+ 
+-表内で `|` (縦線、vertical line) を使用するために、文字参照 `&amp;amp;amp;#x7C;` を使用しています。
++表内で `|` (縦線、vertical line) を使用するために、文字参照 `&amp;amp;#x7C;` を使用しています。
+ 
+ 
+ ### 箇条書きのインデントとして4スペースのみを許可する制限
+@@ -372,8 +372,8 @@ Markdown:
+ $$
+ \left\{
+ \begin{array}{ll}
+-p \log_{10}b&amp;amp;amp;\text{もし $b$ が $10$ の累乗の場合}\\
+-\lfloor (p - 1) \log_{10} b\rfloor&amp;amp;amp;\text{上記以外の場合}\\
++p \log_{10}b&amp;amp;\text{もし $b$ が $10$ の累乗の場合}\\
++\lfloor (p - 1) \log_{10} b\rfloor&amp;amp;\text{上記以外の場合}\\
+ \end{array}
+ \right.
+ $$
+@@ -383,8 +383,8 @@ $$
+ $$
+ \left\{
+ \begin{array}{ll}
+-p \log_{10}b&amp;amp;amp;\text{もし $b$ が $10$ の累乗の場合}\\
+-\lfloor (p - 1) \log_{10} b\rfloor&amp;amp;amp;\text{上記以外の場合}\\
++p \log_{10}b&amp;amp;\text{もし $b$ が $10$ の累乗の場合}\\
++\lfloor (p - 1) \log_{10} b\rfloor&amp;amp;\text{上記以外の場合}\\
+ \end{array}
+ \right.
+ $$
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>Koichi Murase</name>
+        <email>myoga.murase@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>AccessorPolicy -- mdspan/AccessorPolicy: fix typo</title>
+      <link href="https://cpprefjp.github.io/reference/mdspan/AccessorPolicy.html"/>
+      <id>ae69e815d066d9e655008da074abf27b02e25b41:reference/mdspan/AccessorPolicy.md</id>
+      <updated>2024-12-09T16:44:41+09:00</updated>
+      
+        <content type="html">&lt;div class=&#34;identifier-type&#34;&gt;named requirement&lt;/div&gt;&lt;div class=&#34;header&#34;&gt;&amp;lt;mdspan&amp;gt;&lt;/div&gt;&lt;h1 itemprop=&#34;name&#34;&gt;&lt;span class=&#34;namespace&#34; title=&#34;namespace &#34;&gt;::&lt;/span&gt;&lt;span class=&#34;token&#34;&gt;AccessorPolicy&lt;/span&gt;&lt;span class=&#34;cpp cpp23&#34; title=&#34;C++23で追加&#34;&gt;(C++23)&lt;/span&gt;&lt;/h1&gt;
+&lt;div itemprop=&#34;articleBody&#34;&gt;&lt;h2&gt;概要&lt;/h2&gt;
+&lt;p&gt;AccessorPolicyは、多次元配列ビュー&lt;code&gt;&lt;a href=&#34;mdspan.html&#34;&gt;mdspan&lt;/a&gt;&lt;/code&gt;を介した要素アクセス動作を定義するクラスが満たすべき要件である。&lt;/p&gt;
+&lt;h2&gt;要件&lt;/h2&gt;
+&lt;p&gt;AccessorPolicyを満たす型&lt;code&gt;A&lt;/code&gt;は&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;A&lt;/code&gt;は&lt;code&gt;&lt;a href=&#34;../concepts/copyable.html&#34;&gt;copyable&lt;/a&gt;&lt;/code&gt;のモデルであり、かつ&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&lt;a href=&#34;../type_traits/is_nothrow_constructible.html&#34;&gt;is_nothrow_move_constructible_v&lt;/a&gt;&amp;lt;A&amp;gt;&lt;/code&gt;は&lt;code&gt;true&lt;/code&gt;であり、かつ&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&lt;a href=&#34;../type_traits/is_nothrow_move_assignable.html&#34;&gt;is_nothrow_move_assignable_v&lt;/a&gt;&amp;lt;A&amp;gt;&lt;/code&gt;は&lt;code&gt;true&lt;/code&gt;であり、かつ&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&lt;a href=&#34;../type_traits/is_nothrow_swappable.html&#34;&gt;is_nothrow_swappable_v&lt;/a&gt;&amp;lt;A&amp;gt;&lt;/code&gt;は&lt;code&gt;true&lt;/code&gt;であること&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;型&lt;code&gt;A&lt;/code&gt;は下記のメンバ型を持つこと&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;A::element_type&lt;/code&gt; : 要素型&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;A::data_handle_type&lt;/code&gt; : メモリブロックのポインタ型&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;A::reference&lt;/code&gt; : 要素への参照型&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;A::offset_policy&lt;/code&gt; : &lt;code&gt;offset&lt;/code&gt;適用後のアクセサポリシー&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;説明用の変数&lt;code&gt;a&lt;/code&gt;を&lt;code&gt;(const) A&lt;/code&gt;の値、&lt;code&gt;p&lt;/code&gt;を&lt;code&gt;(const) A::data_handle_type&lt;/code&gt;の値、&lt;code&gt;i&lt;/code&gt;を&lt;code&gt;size_t&lt;/code&gt;の値としたとき、下記の式が妥当であること&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;a.access(p, i)&lt;/code&gt; : &lt;code&gt;A::reference&lt;/code&gt;を返す&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;a.offset(p, i)&lt;/code&gt; : &lt;code&gt;A::offset_policy::data_handle_type&lt;/code&gt;を返す&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;code&gt;AccessorPolicy&lt;/code&gt;に該当する型&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&lt;a href=&#34;default_accessor.html&#34;&gt;default_accessor&lt;/a&gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;バージョン&lt;/h2&gt;
+&lt;h3&gt;言語&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;C++23&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;関連項目&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&lt;a href=&#34;mdspan.html&#34;&gt;mdspan&lt;/a&gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;参照&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2022/p0009r18.html&#34; target=&#34;_blank&#34;&gt;P0009R18 MDSPAN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2022/p2604r0.html&#34; target=&#34;_blank&#34;&gt;P2604R0 &lt;code&gt;mdspan&lt;/code&gt;: rename &lt;code&gt;pointer&lt;/code&gt; and &lt;code&gt;contiguous&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;</content>
+      
+      <author>
+        <name>yoh</name>
+        <email>kawasaki.liamg@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>lexicographical_compare_three_way -- Merge pull request #1368 from cpprefjp/star_item_indent</title>
+      <link href="https://cpprefjp.github.io/reference/algorithm/lexicographical_compare_three_way.html"/>
+      <id>18510a118aa80c598d1eec5cb27c0531a3f06533:reference/algorithm/lexicographical_compare_three_way.md</id>
+      <updated>2024-12-05T13:44:36+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/algorithm/lexicographical_compare_three_way.md b/reference/algorithm/lexicographical_compare_three_way.md
+index c60f0ad44..caf3b5a09 100644
+--- a/reference/algorithm/lexicographical_compare_three_way.md
++++ b/reference/algorithm/lexicographical_compare_three_way.md
+@@ -57,10 +57,10 @@ namespace std {
+         - 全ての要素が等しいならば、長さを比較する
+ 
+ - (2) : 以下と等価、すなわち(1)に委譲
+-  ```cpp
+-  return lexicographical_compare_three_way(first1, last1, first2, last2, compare_three_way());
+-  ```
+-  * compare_three_way[link /reference/compare/compare_three_way.md]
++    ```cpp
++    return lexicographical_compare_three_way(first1, last1, first2, last2, compare_three_way());
++    ```
++    * compare_three_way[link /reference/compare/compare_three_way.md]
+ 
+ 
+ ## 戻り値
+@@ -114,7 +114,7 @@ int main() {
+   }
+ }
+ ```
+-  * weak_ordering[link /reference/compare/weak_ordering.md]
++* weak_ordering[link /reference/compare/weak_ordering.md]
+ 
+ ### 出力例
+ ```
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>Akira Takahashi</name>
+        <email>faithandbrave@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>iterator_traits -- Merge pull request #1368 from cpprefjp/star_item_indent</title>
+      <link href="https://cpprefjp.github.io/reference/iterator/iterator_traits.html"/>
+      <id>18510a118aa80c598d1eec5cb27c0531a3f06533:reference/iterator/iterator_traits.md</id>
+      <updated>2024-12-05T13:44:36+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/iterator/iterator_traits.md b/reference/iterator/iterator_traits.md
+index 7fdad8e58..c5c314468 100644
+--- a/reference/iterator/iterator_traits.md
++++ b/reference/iterator/iterator_traits.md
+@@ -95,46 +95,46 @@ namespace std {
+     - この時、`I::pointer`も定義されているならば、`pointer`はそれを用いて定義される。
+ 
+ - いずれかのメンバ型が定義されておらず、`I`が`cpp17-input-iterator`コンセプトを満たす場合、それぞれのメンバ型は次のように定義される
+-  ```cpp
+-  using difference_type   = typename incrementable_traits&amp;lt;I&amp;gt;::difference_type;
+-  using value_type        = typename indirectly_readable_traits&amp;lt;I&amp;gt;::value_type;
+-  using pointer           = /*see below*/;
+-  using reference         = /*see below*/;
+-  using iterator_category = /*see below*/;
+-  ```
+-  * see below[italic]
+-  * indirectly_readable_traits[link /reference/iterator/indirectly_readable_traits.md]
+-  * incrementable_traits[link /reference/iterator/incrementable_traits.md]
+-  * iter_reference_t[link /reference/iterator/iter_reference_t.md]
++    ```cpp
++    using difference_type   = typename incrementable_traits&amp;lt;I&amp;gt;::difference_type;
++    using value_type        = typename indirectly_readable_traits&amp;lt;I&amp;gt;::value_type;
++    using pointer           = /*see below*/;
++    using reference         = /*see below*/;
++    using iterator_category = /*see below*/;
++    ```
++    * see below[italic]
++    * indirectly_readable_traits[link /reference/iterator/indirectly_readable_traits.md]
++    * incrementable_traits[link /reference/iterator/incrementable_traits.md]
++    * iter_reference_t[link /reference/iterator/iter_reference_t.md]
+ 
+     - `pointer`は、上から順に次のいずれか
+-      ```cpp
+-      using pointer = I::pointer;
+-      using pointer = decltype(declval&amp;lt;I&amp;amp;&amp;gt;().operator-&amp;gt;());
+-      using pointer = void;
+-      ```
++    ```cpp
++    using pointer = I::pointer;
++    using pointer = decltype(declval&amp;lt;I&amp;amp;&amp;gt;().operator-&amp;gt;());
++    using pointer = void;
++    ```
+ 
+     - `reference`は、上から順に次のいずれか
+-      ```cpp
+-      using reference = typename I::reference;
+-      using reference = iter_reference_t&amp;lt;I&amp;gt;;
+-      ```
++    ```cpp
++    using reference = typename I::reference;
++    using reference = iter_reference_t&amp;lt;I&amp;gt;;
++    ```
+ 
+     - `iterator_category`は、上から順に次のいずれか
+         - `I`が`cpp17-random-access-iterator`コンセプトを満たす場合、`random_access_iterator_tag`
+         - `I`が`cpp17-bidirectional-iterator`コンセプトを満たす場合、`bidirectional_iterator_tag`
+         - `I`が`cpp17-forward-iterator`コンセプトを満たす場合、`forward_iterator_tag`
+         - それ以外の場合、`input_iterator_tag`
+-      
 +
  
- ## Markdown記法の拡張
+ - そうではなく、`I`が`cpp17-iterator`コンセプトを満たす場合、それぞれのメンバ型は次のように定義される
+-  ```cpp
+-  using difference_type   = typename incrementable_traits&amp;lt;I&amp;gt;::difference_type;
+-  using value_type        = void;
+-  using pointer           = void;
+-  using reference         = void;
+-  using iterator_category = output_iterator_tag;
+-  ```
++    ```cpp
++    using difference_type   = typename incrementable_traits&amp;lt;I&amp;gt;::difference_type;
++    using value_type        = void;
++    using pointer           = void;
++    using reference         = void;
++    using iterator_category = output_iterator_tag;
++    ```
+ 
+     - この時、`incrementable_traits&amp;lt;I&amp;gt;::difference_type`が定義されない場合、`difference_type = void`
  
 &lt;/code&gt;&lt;/pre&gt;</summary>
       
@@ -139,25 +1455,40 @@ index c15f6e563..9c5543c1a 100644
     </entry>
   
     <entry>
-      <title>cpprefjpでのMarkdown記法の制限と拡張 -- HTMLエンティティの表示崩れを修正 #1362</title>
-      <link href="https://cpprefjp.github.io/start_editing/markdown_cpprefjp.html"/>
-      <id>c747f4a71f9ab8a4dfaf1a21424e58bd5ed73f55:start_editing/markdown_cpprefjp.md</id>
-      <updated>2024-11-18T18:08:56+09:00</updated>
+      <title>operator-&gt; -- Merge pull request #1368 from cpprefjp/star_item_indent</title>
+      <link href="https://cpprefjp.github.io/reference/iterator/reverse_iterator/op_arrow.html"/>
+      <id>18510a118aa80c598d1eec5cb27c0531a3f06533:reference/iterator/reverse_iterator/op_arrow.md</id>
+      <updated>2024-12-05T13:44:36+09:00</updated>
       
-        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/start_editing/markdown_cpprefjp.md b/start_editing/markdown_cpprefjp.md
-index 501891627..c15f6e563 100644
---- a/start_editing/markdown_cpprefjp.md
-+++ b/start_editing/markdown_cpprefjp.md
-@@ -57,7 +57,8 @@ comment out text...
- ```
- &amp;amp;reg;
- ```
--のような書き方をすると、cpprefjpではエラーになります。HTML エンティティを使わず、以下のように書いてください。
-+
-+上記のような書き方をすると、cpprefjpではエラーになります。HTML エンティティを使わず、以下のように書いてください。
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/iterator/reverse_iterator/op_arrow.md b/reference/iterator/reverse_iterator/op_arrow.md
+index cc2109b2c..0728dbaa4 100644
+--- a/reference/iterator/reverse_iterator/op_arrow.md
++++ b/reference/iterator/reverse_iterator/op_arrow.md
+@@ -22,16 +22,16 @@ constexpr pointer operator-&amp;gt;() const  // C++20
+ - C++14 : [`addressof`](/reference/memory/addressof.md)`(operator*())`
+ - C++20 : 次のいずれか
+     - `Iterator`がポインタ型である場合
+-      ```cpp
+-      return prev(current);
+-      ```
+-      * prev[link /reference/iterator/prev.md]
++    ```cpp
++    return prev(current);
++    ```
++    * prev[link /reference/iterator/prev.md]
  
- ```
- ®
+     - それ以外の場合
+-      ```cpp
+-      return prev(current).operator-&amp;gt;();
+-      ```
+-      * prev[link /reference/iterator/prev.md]
++    ```cpp
++    return prev(current).operator-&amp;gt;();
++    ```
++    * prev[link /reference/iterator/prev.md]
+ 
+ ## 例
+ ```cpp example
 &lt;/code&gt;&lt;/pre&gt;</summary>
       
       <author>
@@ -167,24 +1498,464 @@ index 501891627..c15f6e563 100644
     </entry>
   
     <entry>
-      <title>cpprefjpでのMarkdown記法の制限と拡張 -- 見出しレベルのミスを修正</title>
-      <link href="https://cpprefjp.github.io/start_editing/markdown_cpprefjp.html"/>
-      <id>a9aca4080b9491e260fc817a34f013dbfedfa82c:start_editing/markdown_cpprefjp.md</id>
-      <updated>2024-11-18T15:09:27+09:00</updated>
+      <title>append -- Merge pull request #1368 from cpprefjp/star_item_indent</title>
+      <link href="https://cpprefjp.github.io/reference/string/basic_string/append.html"/>
+      <id>18510a118aa80c598d1eec5cb27c0531a3f06533:reference/string/basic_string/append.md</id>
+      <updated>2024-12-05T13:44:36+09:00</updated>
       
-        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/start_editing/markdown_cpprefjp.md b/start_editing/markdown_cpprefjp.md
-index 1d3e6f582..501891627 100644
---- a/start_editing/markdown_cpprefjp.md
-+++ b/start_editing/markdown_cpprefjp.md
-@@ -64,7 +64,7 @@ comment out text...
- ```
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/string/basic_string/append.md b/reference/string/basic_string/append.md
+index aec336438..8115e4703 100644
+--- a/reference/string/basic_string/append.md
++++ b/reference/string/basic_string/append.md
+@@ -107,21 +107,21 @@ constexpr basic_string&amp;amp;
+     * `append(il.begin(), il.end())` と等価。
+ - (8) 対象オブジェクトの末尾に、[`basic_string_view`](/reference/string_view/basic_string_view.md)`&amp;lt;charT, traits&amp;gt;`に変換可能な`t`が参照する範囲の文字列が追加される。  
+ 以下と等価。
+-  ```cpp
+-  basic_string_view&amp;lt;charT, traits&amp;gt; sv = t;
+-  return append(sv.data(), sv.size());
+-  ```
+-  * basic_string_view[link /reference/string_view/basic_string_view.md]
++    ```cpp
++    basic_string_view&amp;lt;charT, traits&amp;gt; sv = t;
++    return append(sv.data(), sv.size());
++    ```
++    * basic_string_view[link /reference/string_view/basic_string_view.md]
+ 
+ - (9) 対象オブジェクトの末尾に、[`basic_string_view`](/reference/string_view/basic_string_view.md)`&amp;lt;charT, traits&amp;gt;`に変換可能な`t`の指定された範囲の文字列が追加される。
+     * 文字列の長さ `rlen` は、`n` と [`sv.size()`](/reference/string_view/basic_string_view/size.md)` - pos` の小さい方である。  
+ 以下と等価。
+-  ```cpp
+-  basic_string_view&amp;lt;charT, traits&amp;gt; sv = t;
+-  return append(sv.substr(pos, n));
+-  ```
+-  * basic_string_view[link /reference/string_view/basic_string_view.md]
+-  * substr[link /reference/string_view/basic_string_view/substr.md]
++    ```cpp
++    basic_string_view&amp;lt;charT, traits&amp;gt; sv = t;
++    return append(sv.substr(pos, n));
++    ```
++    * basic_string_view[link /reference/string_view/basic_string_view.md]
++    * substr[link /reference/string_view/basic_string_view/substr.md]
  
  
--## リストの前に空行が必要な制限
-+### リストの前に空行が必要な制限
- ```
- 適当な文字列
- * リスト
+ ## 戻り値
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>Akira Takahashi</name>
+        <email>faithandbrave@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>assign -- Merge pull request #1368 from cpprefjp/star_item_indent</title>
+      <link href="https://cpprefjp.github.io/reference/string/basic_string/assign.html"/>
+      <id>18510a118aa80c598d1eec5cb27c0531a3f06533:reference/string/basic_string/assign.md</id>
+      <updated>2024-12-05T13:44:36+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/string/basic_string/assign.md b/reference/string/basic_string/assign.md
+index fc55fcb48..8cdbf74ac 100644
+--- a/reference/string/basic_string/assign.md
++++ b/reference/string/basic_string/assign.md
+@@ -99,20 +99,20 @@ constexpr basic_string&amp;amp;
+     - `assign(il.begin(), il.end())`を呼び出す。
+ - (9) : [`basic_string_view`](/reference/string_view/basic_string_view.md)`&amp;lt;charT, traits&amp;gt;`に変換可能な`t`が参照する範囲をコピーして、`basic_string`オブジェクトを構築する。  
+ 以下と等価。
+-  ```cpp
+-  basic_string_view&amp;lt;charT, traits&amp;gt; sv = t;
+-  return assign(sv.data(), sv.size());
+-  ```
+-  * basic_string_view[link /reference/string_view/basic_string_view.md]
++    ```cpp
++    basic_string_view&amp;lt;charT, traits&amp;gt; sv = t;
++    return assign(sv.data(), sv.size());
++    ```
++    * basic_string_view[link /reference/string_view/basic_string_view.md]
+ 
+ - (10) : [`basic_string_view`](/reference/string_view/basic_string_view.md)`&amp;lt;charT, traits&amp;gt;`に変換可能な`t`が参照する文字列を範囲指定でコピーして、`basic_string`オブジェクトを構築する。  
+ 以下と等価。
+-  ```cpp
+-  basic_string_view&amp;lt;charT, traits&amp;gt; sv = t;
+-  return assign(sv.substr(pos, n));
+-  ```
+-  * basic_string_view[link /reference/string_view/basic_string_view.md]
+-  * substr[link /reference/string_view/basic_string_view/substr.md]
++    ```cpp
++    basic_string_view&amp;lt;charT, traits&amp;gt; sv = t;
++    return assign(sv.substr(pos, n));
++    ```
++    * basic_string_view[link /reference/string_view/basic_string_view.md]
++    * substr[link /reference/string_view/basic_string_view/substr.md]
+ 
+ 
+ ## 戻り値
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>Akira Takahashi</name>
+        <email>faithandbrave@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>compare -- Merge pull request #1368 from cpprefjp/star_item_indent</title>
+      <link href="https://cpprefjp.github.io/reference/string/basic_string/compare.html"/>
+      <id>18510a118aa80c598d1eec5cb27c0531a3f06533:reference/string/basic_string/compare.md</id>
+      <updated>2024-12-05T13:44:36+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/string/basic_string/compare.md b/reference/string/basic_string/compare.md
+index 6797746a7..dc9ef61c3 100644
+--- a/reference/string/basic_string/compare.md
++++ b/reference/string/basic_string/compare.md
+@@ -127,13 +127,13 @@ constexpr int
+ - (7) (1)と同様の結果を返す。`return basic_string_view&amp;lt;charT, traits&amp;gt;(*this).`[`compare`](/reference/string_view/basic_string_view/compare.md)`(t);`と等価。
+ - (8) `basic_string_view&amp;lt;charT, traits&amp;gt;(*this).`[`substr`](/reference/string_view/basic_string_view/substr.md)`(pos1, n1).`[`compare`](/reference/string_view/basic_string_view/compare.md)`(t)` と等価
+ - (9) 以下と等価。
+-  ```cpp
+-  basic_string_view&amp;lt;charT, traits&amp;gt; s = *this, sv = t;
+-  return s.substr(pos1, n1).compare(sv.substr(pos2, n2));
+-  ```
+-  * basic_string_view[link /reference/string_view/basic_string_view.md]
+-  * substr[link /reference/string_view/basic_string_view/substr.md]
+-  * compare[link /reference/string_view/basic_string_view/compare.md]
++    ```cpp
++    basic_string_view&amp;lt;charT, traits&amp;gt; s = *this, sv = t;
++    return s.substr(pos1, n1).compare(sv.substr(pos2, n2));
++    ```
++    * basic_string_view[link /reference/string_view/basic_string_view.md]
++    * substr[link /reference/string_view/basic_string_view/substr.md]
++    * compare[link /reference/string_view/basic_string_view/compare.md]
+ 
+ ## 例外
+ 
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>Akira Takahashi</name>
+        <email>faithandbrave@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>insert -- Merge pull request #1368 from cpprefjp/star_item_indent</title>
+      <link href="https://cpprefjp.github.io/reference/string/basic_string/insert.html"/>
+      <id>18510a118aa80c598d1eec5cb27c0531a3f06533:reference/string/basic_string/insert.md</id>
+      <updated>2024-12-05T13:44:36+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/string/basic_string/insert.md b/reference/string/basic_string/insert.md
+index 7d8c6927d..452956796 100644
+--- a/reference/string/basic_string/insert.md
++++ b/reference/string/basic_string/insert.md
+@@ -118,19 +118,19 @@ constexpr basic_string&amp;amp;
+ - (8) : `insert(p -` [`begin()`](begin.md)`, basic_string(first, last))`と等価の効果を持つ。
+ - (9) : `insert(p, il.`[`begin()`](/reference/initializer_list/initializer_list/begin.md)`, il.`[`end()`](/reference/initializer_list/initializer_list/end.md)`)`
+ - (10) : 以下と等価。
+-  ```cpp
+-  basic_string_view&amp;lt;charT, traits&amp;gt; sv = t;
+-  return insert(pos1, sv.data(), sv.size());
+-  ```
+-  * basic_string_view[link /reference/string_view/basic_string_view.md]
++    ```cpp
++    basic_string_view&amp;lt;charT, traits&amp;gt; sv = t;
++    return insert(pos1, sv.data(), sv.size());
++    ```
++    * basic_string_view[link /reference/string_view/basic_string_view.md]
+ 
+ - (11) : 以下と等価。
+-  ```cpp
+-  basic_string_view&amp;lt;charT, traits&amp;gt; sv = t;
+-  return insert(pos1, sv.substr(pos2, n));
+-  ```
+-  * basic_string_view[link /reference/string_view/basic_string_view.md]
+-  * substr[link /reference/string_view/basic_string_view/substr.md]
++    ```cpp
++    basic_string_view&amp;lt;charT, traits&amp;gt; sv = t;
++    return insert(pos1, sv.substr(pos2, n));
++    ```
++    * basic_string_view[link /reference/string_view/basic_string_view.md]
++    * substr[link /reference/string_view/basic_string_view/substr.md]
+ 
+ 
+ ## 戻り値
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>Akira Takahashi</name>
+        <email>faithandbrave@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>operator= -- Merge pull request #1368 from cpprefjp/star_item_indent</title>
+      <link href="https://cpprefjp.github.io/reference/string/basic_string/op_assign.html"/>
+      <id>18510a118aa80c598d1eec5cb27c0531a3f06533:reference/string/basic_string/op_assign.md</id>
+      <updated>2024-12-05T13:44:36+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/string/basic_string/op_assign.md b/reference/string/basic_string/op_assign.md
+index bae7dba46..103089ce1 100644
+--- a/reference/string/basic_string/op_assign.md
++++ b/reference/string/basic_string/op_assign.md
+@@ -42,12 +42,12 @@ basic_string&amp;amp; operator=(nullptr_t) = delete;                       // (7) C++23
+ - (4) : `*this = basic_string(1, c);` と等価。
+ - (5) : `*this = basic_string(il);` と等価。
+ - (6) : [`std::basic_string_view`](/reference/string_view/basic_string_view.md)オブジェクトからの変換。以下と等価。
+-  ```cpp
+-  basic_string_view&amp;lt;charT, traits&amp;gt; sv = t;
+-  return assign(sv);
+-  ```
+-  * basic_string_view[link /reference/string_view/basic_string_view.md]
+-  * assign[link assign.md]
++    ```cpp
++    basic_string_view&amp;lt;charT, traits&amp;gt; sv = t;
++    return assign(sv);
++    ```
++    * basic_string_view[link /reference/string_view/basic_string_view.md]
++    * assign[link assign.md]
+ 
+ 
+ ## テンプレートパラメータ制約
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>Akira Takahashi</name>
+        <email>faithandbrave@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>operator+ -- Merge pull request #1368 from cpprefjp/star_item_indent</title>
+      <link href="https://cpprefjp.github.io/reference/string/basic_string/op_plus.html"/>
+      <id>18510a118aa80c598d1eec5cb27c0531a3f06533:reference/string/basic_string/op_plus.md</id>
+      <updated>2024-12-05T13:44:36+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/string/basic_string/op_plus.md b/reference/string/basic_string/op_plus.md
+index 7e45e540f..d44c7578e 100644
+--- a/reference/string/basic_string/op_plus.md
++++ b/reference/string/basic_string/op_plus.md
+@@ -152,73 +152,73 @@ namespace std {
+ ### C++20から
+ 
+ - (1)(9) : 以下と等価
+-  ```cpp
+-  basic_string&amp;lt;charT, traits, Allocator&amp;gt; r = lhs;
+-  r.append(rhs);
+-  return r;
+-  ```
+-  * append[link append.md]
++    ```cpp
++    basic_string&amp;lt;charT, traits, Allocator&amp;gt; r = lhs;
++    r.append(rhs);
++    return r;
++    ```
++    * append[link append.md]
+ 
+ - (2)(10) : 以下と等価
+-  ```cpp
+-  lhs.append(rhs);
+-  return std::move(lhs);
+-  ```
+-  * append[link append.md]
++    ```cpp
++    lhs.append(rhs);
++    return std::move(lhs);
++    ```
++    * append[link append.md]
+ 
+ - (3)(6) : 以下と等価
+-  ```cpp
+-  rhs.insert(0, lhs);
+-  return std::move(rhs);
+-  ```
+-  * insert[link insert.md]
++    ```cpp
++    rhs.insert(0, lhs);
++    return std::move(rhs);
++    ```
++    * insert[link insert.md]
+ 
+ - (4) : 呼び出しの後でも`lhs`と`rhs`は有効だが未規定な状態のままであることを除いて、以下と等価
+-  ```cpp
+-  lhs.append(rhs);
+-  return std::move(lhs);
+-  ```
+-  * append[link append.md]
++    ```cpp
++    lhs.append(rhs);
++    return std::move(lhs);
++    ```
++    * append[link append.md]
+ 
+ - (5) : 以下と等価
+-  ```cpp
+-  basic_string&amp;lt;charT, traits, Allocator&amp;gt; r = rhs;
+-  r.insert(0, lhs);
+-  return r;
+-  ```
+-  * insert[link insert.md]
++    ```cpp
++    basic_string&amp;lt;charT, traits, Allocator&amp;gt; r = rhs;
++    r.insert(0, lhs);
++    return r;
++    ```
++    * insert[link insert.md]
+ 
+ - (7) : 以下と等価
+-  ```cpp
+-  basic_string&amp;lt;charT, traits, Allocator&amp;gt; r = rhs;
+-  r.insert(r.begin(), lhs);
+-  return r;
+-  ```
+-  * insert[link insert.md]
+-  * begin[link begin.md]
++    ```cpp
++    basic_string&amp;lt;charT, traits, Allocator&amp;gt; r = rhs;
++    r.insert(r.begin(), lhs);
++    return r;
++    ```
++    * insert[link insert.md]
++    * begin[link begin.md]
+ 
+ - (8) : 以下と等価
+-  ```cpp
+-  rhs.insert(rhs.begin(), lhs);
+-  return std::move(rhs);
+-  ```
+-  * insert[link insert.md]
+-  * begin[link begin.md]
++    ```cpp
++    rhs.insert(rhs.begin(), lhs);
++    return std::move(rhs);
++    ```
++    * insert[link insert.md]
++    * begin[link begin.md]
+ 
+ - (11) : 以下と等価
+-  ```cpp
+-  basic_string&amp;lt;charT, traits, Allocator&amp;gt; r = lhs;
+-  r.push_back(rhs);
+-  return r;
+-  ```
+-  * push_back[link push_back.md]
++    ```cpp
++    basic_string&amp;lt;charT, traits, Allocator&amp;gt; r = lhs;
++    r.push_back(rhs);
++    return r;
++    ```
++    * push_back[link push_back.md]
+ 
+ - (12) : 以下と等価
+-  ```cpp
+-  lhs.push_back(rhs);
+-  return std::move(lhs);
+-  ```
+-  * push_back[link push_back.md]
++    ```cpp
++    lhs.push_back(rhs);
++    return std::move(lhs);
++    ```
++    * push_back[link push_back.md]
+ 
+ 
+ ## 備考
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>Akira Takahashi</name>
+        <email>faithandbrave@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>operator+= -- Merge pull request #1368 from cpprefjp/star_item_indent</title>
+      <link href="https://cpprefjp.github.io/reference/string/basic_string/op_plus_assign.html"/>
+      <id>18510a118aa80c598d1eec5cb27c0531a3f06533:reference/string/basic_string/op_plus_assign.md</id>
+      <updated>2024-12-05T13:44:36+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/string/basic_string/op_plus_assign.md b/reference/string/basic_string/op_plus_assign.md
+index 7f5dbb1ff..970ee09ef 100644
+--- a/reference/string/basic_string/op_plus_assign.md
++++ b/reference/string/basic_string/op_plus_assign.md
+@@ -55,12 +55,12 @@ constexpr basic_string&amp;amp; operator+=(const T&amp;amp; t); // (5) C++20
+ 
+ - (5) 対象オブジェクトの末尾に[`basic_string_view`](/reference/string_view/basic_string_view.md)`&amp;lt;charT, traits&amp;gt;`に変換可能な`t`の参照する文字列が追加される。  
+ 以下と等価。
+-  ```cpp
+-  basic_string_view&amp;lt;charT, traits&amp;gt; sv = t;
+-  return append(sv);
+-  ```
+-  * basic_string_view[link /reference/string_view/basic_string_view.md]
+-  * append[link append.md]
++    ```cpp
++    basic_string_view&amp;lt;charT, traits&amp;gt; sv = t;
++    return append(sv);
++    ```
++    * basic_string_view[link /reference/string_view/basic_string_view.md]
++    * append[link append.md]
+ 
+ 
+ ## 戻り値
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>Akira Takahashi</name>
+        <email>faithandbrave@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>replace -- Merge pull request #1368 from cpprefjp/star_item_indent</title>
+      <link href="https://cpprefjp.github.io/reference/string/basic_string/replace.html"/>
+      <id>18510a118aa80c598d1eec5cb27c0531a3f06533:reference/string/basic_string/replace.md</id>
+      <updated>2024-12-05T13:44:36+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/string/basic_string/replace.md b/reference/string/basic_string/replace.md
+index 1ffedb7c8..623eebd07 100644
+--- a/reference/string/basic_string/replace.md
++++ b/reference/string/basic_string/replace.md
+@@ -225,26 +225,26 @@ constexpr basic_string&amp;amp;
+ - (10) : `replace(i1 -` [`begin()`](begin.md)`, i2 - i1, basic_string(j1, j2))`を呼び出す。
+ - (11) : `replace(i1 -` [`begin()`](begin.md)`, i2 - i1, il.`[`begin()`](/reference/initializer_list/initializer_list/begin.md)`, il.`[`size()`](/reference/initializer_list/initializer_list/size.md)`)`を呼び出す。
+ - (12) : 以下と等価。
+-  ```cpp
+-  basic_string_view&amp;lt;charT, traits&amp;gt; sv = t;
+-  return replace(pos1, n1, sv.data(), sv.size());
+-  ```
+-  * basic_string_view[link /reference/string_view/basic_string_view.md]
++    ```cpp
++    basic_string_view&amp;lt;charT, traits&amp;gt; sv = t;
++    return replace(pos1, n1, sv.data(), sv.size());
++    ```
++    * basic_string_view[link /reference/string_view/basic_string_view.md]
+ 
+ - (13) : 以下と等価。
+-  ```cpp
+-  basic_string_view&amp;lt;charT, traits&amp;gt; sv = t;
+-  return replace(pos1, n1, sv.substr(pos2, n2));
+-  ```
+-  * basic_string_view[link /reference/string_view/basic_string_view.md]
+-  * substr[link /reference/string_view/basic_string_view/substr.md]
++    ```cpp
++    basic_string_view&amp;lt;charT, traits&amp;gt; sv = t;
++    return replace(pos1, n1, sv.substr(pos2, n2));
++    ```
++    * basic_string_view[link /reference/string_view/basic_string_view.md]
++    * substr[link /reference/string_view/basic_string_view/substr.md]
+ 
+ - (14) : 以下と等価。
+-  ```cpp
+-  basic_string_view&amp;lt;charT, traits&amp;gt; sv = t;
+-  return replace(i1 - begin(), i2 - i1, sv.data(), sv.size());
+-  ```
+-  * basic_string_view[link /reference/string_view/basic_string_view.md]
++    ```cpp
++    basic_string_view&amp;lt;charT, traits&amp;gt; sv = t;
++    return replace(i1 - begin(), i2 - i1, sv.data(), sv.size());
++    ```
++    * basic_string_view[link /reference/string_view/basic_string_view.md]
+ 
+ 
+ ## 戻り値
 &lt;/code&gt;&lt;/pre&gt;</summary>
       
       <author>
