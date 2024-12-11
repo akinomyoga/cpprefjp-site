@@ -260,16 +260,12 @@ C++ の処理系は、翻訳を担うコンパイラと実行を担うオペレ�
 </ul>
 <p>プログラムの性質についての慣用語</p>
 <ul>
-<li>
-<p><strong>処理系依存</strong> (implementation-dependent): プログラムの動作が処理系によって異なりうること。
-  条件付き対応の機能を使用している場合や、<a class="cpprefjp-defined-word" data-desc="処理系によって事前に定めた動作をする" href="#dfn-implementation-defined-behavior">処理系定義の動作</a>・<a class="cpprefjp-defined-word" data-desc="事前の断りなく処理系によって異なる動作をする" href="#dfn-unspecified-behavior">未規定の動作</a>・<a class="cpprefjp-defined-word" data-desc="処理系は予期せぬ動作をする可能性がある。要するに動作保証対象外。undefined behavior (UB)。" href="#dfn-undefined-behavior">未定義の動作</a>・文化圏固有動作を起こす場合、処理系限界を超える場合、規則に違反している場合を含む。</p>
-</li>
-<li>
-<p><strong>合法</strong> (legal)・<strong>違法</strong> (illegal): これらの語はプログラムに対しても慣用されるが、具体的な意味は明確でない。
+<li><strong>処理系依存</strong> (implementation-dependent): プログラムの動作が処理系によって異なりうること。
+  条件付き対応の機能を使用している場合や、<a class="cpprefjp-defined-word" data-desc="処理系によって事前に定めた動作をする" href="#dfn-implementation-defined-behavior">処理系定義の動作</a>・<a class="cpprefjp-defined-word" data-desc="事前の断りなく処理系によって異なる動作をする" href="#dfn-unspecified-behavior">未規定の動作</a>・<a class="cpprefjp-defined-word" data-desc="処理系は予期せぬ動作をする可能性がある。要するに動作保証対象外。undefined behavior (UB)。" href="#dfn-undefined-behavior">未定義の動作</a>・文化圏固有動作を起こす場合、処理系限界を超える場合、規則に違反している場合を含む。</li>
+<li><strong>合法</strong> (legal)・<strong>違法</strong> (illegal): これらの語はプログラムに対しても慣用されるが、具体的な意味は明確でない。
   プログラムの正しさには複数の水準があるためである。
   <a class="cpprefjp-defined-word" data-desc="プログラムが文法規則・診断対象の意味規則・単一定義規則を満たすこと" href="#dfn-well-formed">適格</a>、またはすべての規則を満たす、または<a class="cpprefjp-defined-word" data-desc="処理系は予期せぬ動作をする可能性がある。要するに動作保証対象外。undefined behavior (UB)。" href="#dfn-undefined-behavior">未定義の動作</a>を含まないなどが考えられる。
-  曖昧さを避けるため、このサイトではプログラムに対して合法・違法という語は用いない。</p>
-</li>
+  曖昧さを避けるため、このサイトではプログラムに対して合法・違法という語は用いない。</li>
 </ul>
 <h2><a href="#nasal-demon" id="nasal-demon">「鼻から悪魔」とプログラムの可搬性</a></h2>
 <p>プログラムが</p>
@@ -310,23 +306,17 @@ C++ の処理系は、翻訳を担うコンパイラと実行を担うオペレ�
 </ol>
 <h2>注釈</h2>
 <ol>
-<li>
-<p><a href="#note_ref-1" id="note-1"><strong>^</strong></a> no diagnostic required: JIS C++ では一定の訳は与えられず、登場する度に異なる翻訳のされ方をしている。
-  ここでは "<a class="cpprefjp-defined-word" data-desc="処理系は規則違反に対してエラーメッセージや警告を出さないかもしれない" href="#dfn-no-diagnostic-required">診断不要</a>" という語を割り当てることにする。</p>
-</li>
-<li>
-<p><a href="#note_ref-2" id="note-2"><strong>^</strong></a> diagnostic message: JIS C++ では "<a class="cpprefjp-defined-word" data-desc="コンパイルエラーや警告。処理系がプログラム翻訳時に提供する情報の総称" href="#dfn-diagnostic-message">診断情報</a>" としている。
-  JIS C言語 (JIS X 3010:2003) では "<a class="cpprefjp-defined-word" data-desc="診断情報。コンパイルエラーや警告。処理系がプログラム翻訳時に提供する情報の総称" href="#dfn-diagnostic-message">診断メッセージ</a>" としている。</p>
-</li>
-<li>
-<p><a href="#note_ref-3" id="note-3"><strong>^</strong></a> conditionally-supported constructs: C++11 で導入されたものなので、JIS C++ には対応訳は存在しない。
+<li><a href="#note_ref-1" id="note-1"><strong>^</strong></a> no diagnostic required: JIS C++ では一定の訳は与えられず、登場する度に異なる翻訳のされ方をしている。
+  ここでは "<a class="cpprefjp-defined-word" data-desc="処理系は規則違反に対してエラーメッセージや警告を出さないかもしれない" href="#dfn-no-diagnostic-required">診断不要</a>" という語を割り当てることにする。</li>
+<li><a href="#note_ref-2" id="note-2"><strong>^</strong></a> diagnostic message: JIS C++ では "<a class="cpprefjp-defined-word" data-desc="コンパイルエラーや警告。処理系がプログラム翻訳時に提供する情報の総称" href="#dfn-diagnostic-message">診断情報</a>" としている。
+  JIS C言語 (JIS X 3010:2003) では "<a class="cpprefjp-defined-word" data-desc="診断情報。コンパイルエラーや警告。処理系がプログラム翻訳時に提供する情報の総称" href="#dfn-diagnostic-message">診断メッセージ</a>" としている。</li>
+<li><a href="#note_ref-3" id="note-3"><strong>^</strong></a> conditionally-supported constructs: C++11 で導入されたものなので、JIS C++ には対応訳は存在しない。
   ここでは "条件付き対応の構成" と訳す。
   因みに JIS C++ では constructs は "構文" と訳している。
   現に C++98/03 で constructs という単語が使われているのは構文に対してのみである。
   しかし conditionally-supported constructs が導入された今、
   constructs という単語は構文とは言い難いものにも使われている。
-  因みに、本来 constructs というのは構成要素というぐらいの意味である。</p>
-</li>
+  因みに、本来 constructs というのは構成要素というぐらいの意味である。</li>
 </ol></div>
 
       </div>

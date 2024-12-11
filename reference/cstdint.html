@@ -738,13 +738,9 @@ the C standard) play no role in C++.</p>
 </blockquote>
 <p>おそらく上記 C99 の脚注のため、 C++ 処理系によってはヘッダ <code>&lt;stdint.h&gt;</code> および <code>&lt;cstdint&gt;</code> での限界値マクロ、定数値マクロの提供にこれらマクロの定義が必要となっているかもしれない。（特に C++03 対応の処理系が拡張として C99 由来のこれらヘッダを提供していた場合など。）</p>
 <ul>
-<li>
-<p>glibc に対するバグ報告（修正は 2013/05/21 ）
-  <a href="https://sourceware.org/bugzilla/show_bug.cgi?id=15366" target="_blank">Bug 15366 – Per C11 and C++11, <code>&lt;stdint.h&gt;</code> should not look at <code>__STDC_LIMIT_MACROS</code> or <code>__STDC_CONSTANT_MACROS</code></a></p>
-</li>
-<li>
-<p><a href="https://stackoverflow.com/questions/986426/what-do-stdc-limit-macros-and-stdc-constant-macros-mean" target="_blank">What do __STDC_LIMIT_MACROS and __STDC_CONSTANT_MACROS mean? - Stack Overflow</a></p>
-</li>
+<li>glibc に対するバグ報告（修正は 2013/05/21 ）
+  <a href="https://sourceware.org/bugzilla/show_bug.cgi?id=15366" target="_blank">Bug 15366 – Per C11 and C++11, <code>&lt;stdint.h&gt;</code> should not look at <code>__STDC_LIMIT_MACROS</code> or <code>__STDC_CONSTANT_MACROS</code></a></li>
+<li><a href="https://stackoverflow.com/questions/986426/what-do-stdc-limit-macros-and-stdc-constant-macros-mean" target="_blank">What do __STDC_LIMIT_MACROS and __STDC_CONSTANT_MACROS mean? - Stack Overflow</a></li>
 </ul>
 <h2>バージョン</h2>
 <h3>言語</h3>

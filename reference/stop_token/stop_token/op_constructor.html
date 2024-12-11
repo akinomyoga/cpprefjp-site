@@ -232,13 +232,9 @@
 </p>
 <h2>概要</h2>
 <ul>
-<li>
-<p>(1) : デフォルトコンストラクタ。<br />
-<code><a href="../stop_source.html">stop_source</a></code>と停止状態を共有していない<code><a href="../stop_token.html">stop_token</a></code>を構築する。このとき、停止状態を扱うためのリソースは確保せず、停止要求を決して受け取らない状態になる。（停止要求を受け取れる<code>stop_token</code>を構築するには、<code>stop_source</code>の<code><a href="../stop_source/get_token.html">get_token()</a></code>メンバ関数を呼び出して、<code>stop_source</code>と停止状態を共有する<code>stop_token</code>を構築する必要がある）</p>
-</li>
-<li>
-<p>(2) : コピーコンストラクタ。</p>
-</li>
+<li>(1) : デフォルトコンストラクタ。<br />
+<code><a href="../stop_source.html">stop_source</a></code>と停止状態を共有していない<code><a href="../stop_token.html">stop_token</a></code>を構築する。このとき、停止状態を扱うためのリソースは確保せず、停止要求を決して受け取らない状態になる。（停止要求を受け取れる<code>stop_token</code>を構築するには、<code>stop_source</code>の<code><a href="../stop_source/get_token.html">get_token()</a></code>メンバ関数を呼び出して、<code>stop_source</code>と停止状態を共有する<code>stop_token</code>を構築する必要がある）</li>
+<li>(2) : コピーコンストラクタ。</li>
 <li>(3) : ムーブコンストラクタ。</li>
 </ul>
 <h2>事後条件</h2>

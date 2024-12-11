@@ -237,14 +237,10 @@
 <h2>事後条件</h2>
 <ul>
 <li><code>rhs.get_wrapped() == nullptr</code>は<code>true</code>である。</li>
-<li>
-<p><code>allocator_traits&lt;Allocator&gt;::propagate_on_container_move_assignment::value</code>が<code>true</code>のとき、
-  <code>this-&gt;get_allocator() == rhs.get_allocator()</code>は<code>true</code>である。 </p>
-</li>
-<li>
-<p>そうではなく、<code>allocator_traits&lt;Allocator&gt;::propagate_on_container_move_assignment::value</code>が<code>false</code>のときは、
-  アロケータは変更されない。</p>
-</li>
+<li><code>allocator_traits&lt;Allocator&gt;::propagate_on_container_move_assignment::value</code>が<code>true</code>のとき、
+  <code>this-&gt;get_allocator() == rhs.get_allocator()</code>は<code>true</code>である。 </li>
+<li>そうではなく、<code>allocator_traits&lt;Allocator&gt;::propagate_on_container_move_assignment::value</code>が<code>false</code>のときは、
+  アロケータは変更されない。</li>
 </ul>
 <h2>例外</h2>
 <p>投げない。</p>
