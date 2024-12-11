@@ -395,9 +395,13 @@
 <li>
 <p>C++17から<code>void</code>の特殊化版が非推奨となり、C++20で削除された。</p>
 <ul>
-<li>従来<code>void</code>の特殊化版は<code>allocate</code>/<code>deallocate</code>メンバ関数が存在せず、実際に確保するオブジェクトの型(<code>R</code>とする)を隠蔽しつつメモリアロケータとしては<code>std::allocator</code>を使うことを表明するためにのみ用いられた。
-  この際<code>typename std::allocator&lt;void&gt;::template rebind&lt;R&gt;::other</code>型から実際に確保するオブジェクト型の<code>std::allocator&lt;R&gt;</code>を再束縛していた。</li>
-<li>この非推奨・削除は<code>std::allocator&lt;void&gt;</code>もプライマリテンプレートからインスタンス化されるようになったことを意味し、C++20以降も<code>std::allocator&lt;void&gt;</code>の使用自体は問題なく可能であることに注意。<ul>
+<li>
+<p>従来<code>void</code>の特殊化版は<code>allocate</code>/<code>deallocate</code>メンバ関数が存在せず、実際に確保するオブジェクトの型(<code>R</code>とする)を隠蔽しつつメモリアロケータとしては<code>std::allocator</code>を使うことを表明するためにのみ用いられた。
+  この際<code>typename std::allocator&lt;void&gt;::template rebind&lt;R&gt;::other</code>型から実際に確保するオブジェクト型の<code>std::allocator&lt;R&gt;</code>を再束縛していた。</p>
+</li>
+<li>
+<p>この非推奨・削除は<code>std::allocator&lt;void&gt;</code>もプライマリテンプレートからインスタンス化されるようになったことを意味し、C++20以降も<code>std::allocator&lt;void&gt;</code>の使用自体は問題なく可能であることに注意。</p>
+<ul>
 <li>なお、プライマリテンプレートからインスタンス化されるようになっても<code>allocate</code>/<code>deallocate</code>メンバは内部で<code>sizeof(void)</code>を要求するため引き続き使用不可能であり、<code>std::allocator&lt;void&gt;</code>の使用用途としては従来と同じく再束縛を目的とすることになる(上述のように<code><a href="allocator_traits.html">std::allocator_traits</a></code>の代替機能を用いて<code>typename <a href="allocator_traits.html">std::allocator_traits</a>&lt;std::allocator&lt;void&gt;&gt;::template rebind_alloc&lt;R&gt;</code>のようにする)。</li>
 </ul>
 </li>

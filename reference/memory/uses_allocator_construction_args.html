@@ -320,12 +320,18 @@
 </ul>
 <h2>備考</h2>
 <ul>
-<li>本関数は、uses-allocator 構築をサポートするために C++20 で導入された。<br />
+<li>
+<p>本関数は、uses-allocator 構築をサポートするために C++20 で導入された。<br />
     本関数を用いることで、uses-allocator 構築、特に <code><a href="../utility/pair.html">pair</a></code> に対する特殊な uses-allocator 構築を容易にサポートすることが可能となる。<br />
-    ただし、実際には構築まで実施する <code><a href="make_obj_using_allocator.html">make_obj_using_allocator</a></code> や <code><a href="uninitialized_construct_using_allocator.html">uninitialized_construct_using_allocator</a></code> が存在するため、これらの関数を直接呼び出す機会はあまり多くはないだろう。</li>
-<li>上記 (1) を見ればわかる通り、uses-allocator 構築は、その名前に反して必ずしもアロケータオブジェクトを使うとは限らないので注意。<br />
-    （<code><a href="uses_allocator.html">uses_allocator_v</a>&lt;T, Alloc&gt;</code> が <code>false</code> の場合、アロケータオブジェクト <code>alloc</code> は無視される）</li>
-<li>上記 (2)～(6) を見ればわかる通り、<code>T</code> が <code><a href="../utility/pair.html">pair</a></code> の場合には再帰的に <code>uses_allocator_construction_args</code> を呼び出しているため、ネストした <code><a href="../utility/pair.html">pair</a></code> に対しても正しく uses-allocator 構築をサポートできる。</li>
+    ただし、実際には構築まで実施する <code><a href="make_obj_using_allocator.html">make_obj_using_allocator</a></code> や <code><a href="uninitialized_construct_using_allocator.html">uninitialized_construct_using_allocator</a></code> が存在するため、これらの関数を直接呼び出す機会はあまり多くはないだろう。</p>
+</li>
+<li>
+<p>上記 (1) を見ればわかる通り、uses-allocator 構築は、その名前に反して必ずしもアロケータオブジェクトを使うとは限らないので注意。<br />
+    （<code><a href="uses_allocator.html">uses_allocator_v</a>&lt;T, Alloc&gt;</code> が <code>false</code> の場合、アロケータオブジェクト <code>alloc</code> は無視される）</p>
+</li>
+<li>
+<p>上記 (2)～(6) を見ればわかる通り、<code>T</code> が <code><a href="../utility/pair.html">pair</a></code> の場合には再帰的に <code>uses_allocator_construction_args</code> を呼び出しているため、ネストした <code><a href="../utility/pair.html">pair</a></code> に対しても正しく uses-allocator 構築をサポートできる。</p>
+</li>
 </ul>
 <h2>例</h2>
 <p><div class="yata" id="f546b8e10237bd33ed8391144ac4cedc74b73f80"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf"><a href="../iostream.html">&lt;iostream&gt;</a></span><span class="cp"></span>

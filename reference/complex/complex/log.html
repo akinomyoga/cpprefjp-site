@@ -243,8 +243,10 @@
 <h2>備考</h2>
 <ul>
 <li>分岐截断は負の実軸に沿っている。</li>
-<li>規格には、上記の戻り値の記載、および、分岐截断以外の規定・説明は無い。<br />
-    なお、C99 の規格にある本関数と等価の関数群（<code>complex.h</code> ヘッダの <code>clog</code>、<code>clogf</code>、<code>clogl</code>の 3 つ。それぞれ C++ の <code>log&lt;double&gt;</code>、<code>log&lt;float&gt;</code>、<code>log&lt;long double&gt;</code> に相当）では、処理系が ISO IEC 60559（IEEE 754 と同一）に準拠している場合、以下のように規定されている。<ul>
+<li>
+<p>規格には、上記の戻り値の記載、および、分岐截断以外の規定・説明は無い。<br />
+    なお、C99 の規格にある本関数と等価の関数群（<code>complex.h</code> ヘッダの <code>clog</code>、<code>clogf</code>、<code>clogl</code>の 3 つ。それぞれ C++ の <code>log&lt;double&gt;</code>、<code>log&lt;float&gt;</code>、<code>log&lt;long double&gt;</code> に相当）では、処理系が ISO IEC 60559（IEEE 754 と同一）に準拠している場合、以下のように規定されている。</p>
+<ul>
 <li><code>log(<a href="conj.html">conj</a>(x)) = <a href="conj.html">conj</a>(log(x))</code>。</li>
 <li><code>log(complex(-0, +0))</code> は <code>complex(-∞, +π)</code> を返し、ゼロ除算の浮動小数点例外（<code>FE_DIVBYZERO</code>）を引き起こす。</li>
 <li><code>log(complex(+0, +0))</code> は <code>complex(-∞, +0)</code> を返し、ゼロ除算の浮動小数点例外（<code>FE_DIVBYZERO</code>）を引き起こす。</li>
@@ -258,13 +260,11 @@
 <li>有限の <code>y</code> に対して、<code>log(complex(NaN, y))</code> は <code>complex(NaN, NaN)</code> を返し、無効演算の浮動小数点例外（<code>FE_INVALID</code>）を引き起こす可能性がある。</li>
 <li><code>log(complex(NaN, +∞))</code> は <code>complex(+∞, NaN)</code> を返す。</li>
 <li><code>log(complex(NaN, NaN))</code> は <code>complex(NaN, NaN)</code> を返す。</li>
-</ul>
-</li>
 <li>処理系が ISO IEC 60559 に準拠しているかどうかは、C99 の場合はマクロ <code>__STDC_IEC_559_COMPLEX__</code> が <code>1</code> に定義されている事で判別可能であるが、C++ の規格書には該当する記載を見つける事ができなかった。</li>
 <li>規格には、上記の「戻り値」に記載の通り、<code>x</code> が負の実数の場合には戻り値の虚部は <code>π</code> との記載があるが、値域の虚部が <code>-π</code> を含むことからも分かるように、<code>x</code> の実部が負で虚部が <code>-0</code> の場合（この場合も <code>x</code> は負の実数と考えられる）には戻り値の虚部は <code>-π</code> である。なお、C99 の規格にはそのような記載はない。</li>
 <li>本関数は数学的には <code>complex(<a href="../../cmath/log.html">log</a>(<a href="abs.html">abs</a>(x)), <a href="arg.html">arg</a>(x))</code> と等価である。</li>
-<li>
-<p>自然対数の算出については、一部の算術型、および、<code><a href="../../valarray.html">valarray</a></code> クラステンプレートに対しても、他のヘッダで定義されている。</p>
+<li>自然対数の算出については、一部の算術型、および、<code><a href="../../valarray.html">valarray</a></code> クラステンプレートに対しても、他のヘッダで定義されている。</li>
+</ul>
 <table border="1" bordercolor="#888" style="border-collapse:collapse">
 <thead>
 <tr>

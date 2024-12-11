@@ -252,13 +252,15 @@
 </ul>
 <h2>備考</h2>
 <ul>
-<li>文字列の一致は、文字列の各文字について <code>traits_type::eq()</code> を用いて検査される。<br />
-    例えば、(1) の形式の場合、以下のような条件を満たす最大の <code>xpos</code> を求める。<ul>
+<li>
+<p>文字列の一致は、文字列の各文字について <code>traits_type::eq()</code> を用いて検査される。<br />
+    例えば、(1) の形式の場合、以下のような条件を満たす最大の <code>xpos</code> を求める。</p>
+<ul>
 <li><code>xpos &lt;= pos</code> かつ <code>xpos + sv.size() &lt;= size()</code></li>
 <li><code>0 &lt;= I</code> かつ <code>I &lt; sv.size()</code> を満たす全ての <code>I</code> について、<code>traits_type::eq(at(xpos + I), sv.at(I))</code></li>
+<li>(4) の形式の場合、<code>s</code> の文字列長は <code>traits_type::length(s)</code> で求められる。</li>
 </ul>
 </li>
-<li>(4) の形式の場合、<code>s</code> の文字列長は <code>traits_type::length(s)</code> で求められる。</li>
 </ul>
 <h2>例</h2>
 <p><div class="yata" id="37d74f3006c33a0358fb39314fb24381ffee6ac7"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf"><a href="../../iostream.html">&lt;iostream&gt;</a></span><span class="cp"></span>

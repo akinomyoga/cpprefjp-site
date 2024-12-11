@@ -274,9 +274,13 @@
 </ul>
 <h3>備考</h3>
 <ul>
-<li>GCC 5.1.0 以降では、単に C++03 モードにしても <code><span href="https://cpprefjp.github.io/reference/cstring/strcmp.md.nolink">strcmp</span>(what(), msg.<a href="../../../string/basic_string/c_str.html">c_str</a>()) == 0</code> にはならない。<br />
-    どうしても C++03 の挙動にしたい場合には、コンパイルオプションに <code>-D_GLIBCXX_USE_CXX11_ABI=0</code> を指定する必要がある。</li>
-<li>Clang では、C++03 モードでも <code><span href="https://cpprefjp.github.io/reference/cstring/strcmp.md.nolink">strcmp</span>(what(), msg.<a href="../../../string/basic_string/c_str.html">c_str</a>()) == 0</code> にはならない。  </li>
+<li>
+<p>GCC 5.1.0 以降では、単に C++03 モードにしても <code><span href="https://cpprefjp.github.io/reference/cstring/strcmp.md.nolink">strcmp</span>(what(), msg.<a href="../../../string/basic_string/c_str.html">c_str</a>()) == 0</code> にはならない。<br />
+    どうしても C++03 の挙動にしたい場合には、コンパイルオプションに <code>-D_GLIBCXX_USE_CXX11_ABI=0</code> を指定する必要がある。</p>
+</li>
+<li>
+<p>Clang では、C++03 モードでも <code><span href="https://cpprefjp.github.io/reference/cstring/strcmp.md.nolink">strcmp</span>(what(), msg.<a href="../../../string/basic_string/c_str.html">c_str</a>()) == 0</code> にはならない。  </p>
+</li>
 </ul>
 <h2>参照</h2>
 <ul>

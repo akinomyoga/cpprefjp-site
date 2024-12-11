@@ -259,9 +259,13 @@
 <li>
 <p>本メンバ関数で返されたポインタは、以下のような操作により無効になる可能性がある。</p>
 <ul>
-<li>C++03 まで：対象オブジェクトに対する非コンストメンバ関数呼び出し<br />
-    なお、規格書に記載はないものの、<code><a href="../basic_string.html">basic_string</a></code> への非コンスト参照を引数に取る標準ライブラリ関数を、対象オブジェクトを渡して呼び出した場合にも、無効になるものと思われる</li>
-<li>C++11 から：対象オブジェクトに対する <code><a href="op_at.html">operator[]</a></code>、<code><a href="at.html">at</a></code>、<code><a href="front.html">front</a></code>、<code><a href="back.html">back</a></code>、<code><a href="begin.html">begin</a></code>、<code><a href="rbegin.html">rbegin</a></code>、<code><a href="end.html">end</a></code>、<code><a href="rend.html">rend</a></code> 以外の非コンストメンバ関数呼び出し、あるいは、<code><a href="../basic_string.html">basic_string</a></code> への非コンスト参照を引数に取る標準ライブラリ関数の、対象オブジェクトを渡しての呼び出し</li>
+<li>
+<p>C++03 まで：対象オブジェクトに対する非コンストメンバ関数呼び出し<br />
+    なお、規格書に記載はないものの、<code><a href="../basic_string.html">basic_string</a></code> への非コンスト参照を引数に取る標準ライブラリ関数を、対象オブジェクトを渡して呼び出した場合にも、無効になるものと思われる</p>
+</li>
+<li>
+<p>C++11 から：対象オブジェクトに対する <code><a href="op_at.html">operator[]</a></code>、<code><a href="at.html">at</a></code>、<code><a href="front.html">front</a></code>、<code><a href="back.html">back</a></code>、<code><a href="begin.html">begin</a></code>、<code><a href="rbegin.html">rbegin</a></code>、<code><a href="end.html">end</a></code>、<code><a href="rend.html">rend</a></code> 以外の非コンストメンバ関数呼び出し、あるいは、<code><a href="../basic_string.html">basic_string</a></code> への非コンスト参照を引数に取る標準ライブラリ関数の、対象オブジェクトを渡しての呼び出し</p>
+</li>
 </ul>
 </li>
 <li>

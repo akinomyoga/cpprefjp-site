@@ -242,8 +242,10 @@
 <h2>備考</h2>
 <ul>
 <li>本関数は実軸の区間 <code>[-1, +1]</code> の外側を分岐截断とする。</li>
-<li>本関数は、C99 の規格にある <code>casinh</code>（より正確には <code>complex.h</code> ヘッダの <code>casinh</code>、<code>casinhf</code>、<code>casinhl</code> の 3 つ。それぞれ C++ の <code>asinh&lt;double&gt;</code>、<code>asinh&lt;float&gt;</code>、<code>asinh&lt;long double&gt;</code> に相当）と等価である。<br />
-    C99 では、処理系が ISO IEC 60559（IEEE 754 と同一）に準拠している場合、以下のように規定されている。<ul>
+<li>
+<p>本関数は、C99 の規格にある <code>casinh</code>（より正確には <code>complex.h</code> ヘッダの <code>casinh</code>、<code>casinhf</code>、<code>casinhl</code> の 3 つ。それぞれ C++ の <code>asinh&lt;double&gt;</code>、<code>asinh&lt;float&gt;</code>、<code>asinh&lt;long double&gt;</code> に相当）と等価である。<br />
+    C99 では、処理系が ISO IEC 60559（IEEE 754 と同一）に準拠している場合、以下のように規定されている。</p>
+<ul>
 <li><code>asinh(<a href="conj.html">conj</a>(x)) = <a href="conj.html">conj</a>(asinh(x))</code> で、また、<code>asinh</code> は奇関数（つまり、<code>asinh(-x) = -asinh(x)</code>）。</li>
 <li><code>asinh(complex(+0, +0))</code> は <code>complex(+0, +0)</code> を返す。</li>
 <li>有限で正の符号を持つ（<code>+0</code> を含む）<code>x</code> について、<code>asinh(complex(x, +∞))</code> は <code>complex(+∞, π/2)</code> を返す。</li>
@@ -255,11 +257,9 @@
 <li>有限で非ゼロの <code>y</code> について、<code>asinh(complex(NaN, y))</code> は <code>complex(NaN, NaN)</code> を返すとともに、無効演算の浮動小数点例外（<code>FE_INVALID</code>）を引き起こす可能性がある。</li>
 <li><code>asinh(complex(NaN, +∞))</code> は <code>complex(±∞, NaN)</code> を返す（結果値の実部の符号は<a class="cpprefjp-defined-word" data-desc="未規定の動作。事前の断りなく処理系によって異なる動作をする" href="../../../implementation-compliance.html#dfn-unspecified-behavior">未規定</a>）。</li>
 <li><code>asinh(complex(NaN, NaN))</code> は <code>complex(NaN, NaN)</code> を返す。</li>
-</ul>
-</li>
 <li>処理系が ISO IEC 60559 に準拠しているかどうかは、C99 の場合はマクロ <code>__STDC_IEC_559_COMPLEX__</code> が <code>1</code> に定義されている事で判別可能であるが、C++ の規格書には該当する記載を見つける事ができなかった。</li>
-<li>
-<p>逆双曲線正弦の算出については、一部の算術型に対しても、他のヘッダで定義されている。</p>
+<li>逆双曲線正弦の算出については、一部の算術型に対しても、他のヘッダで定義されている。</li>
+</ul>
 <table border="1" bordercolor="#888" style="border-collapse:collapse">
 <thead>
 <tr>

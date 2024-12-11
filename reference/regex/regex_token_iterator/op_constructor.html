@@ -271,12 +271,16 @@
 <h2>効果</h2>
 <ul>
 <li>(1) デフォルトコンストラクタ。シーケンス終端イテレータ（シーケンスの終端を示す特別なイテレータ）を構築する。</li>
-<li>(2)～(5) メンバ変数 <code>subs</code> を、引数 <code>submatch</code> の 1 要素のみで（(2) の形式の場合）、あるいは、引数 <code>submatches</code> で（(3)～(5) の形式の場合）初期化する。
+<li>
+<p>(2)～(5) メンバ変数 <code>subs</code> を、引数 <code>submatch</code> の 1 要素のみで（(2) の形式の場合）、あるいは、引数 <code>submatches</code> で（(3)～(5) の形式の場合）初期化する。
     また、メンバ変数 <code>N</code>、<code>position</code> をそれぞれ、<code>0</code>、<code><a href="../regex_iterator.html">regex_iterator</a>&lt;BidirectionalIterator&gt;(a, b, re, m)</code> で初期化する。
     もし、<code>position</code> がシーケンス終端イテレータでなければ、メンバ変数 <code>result</code> を現在のマッチ（備考参照）のアドレスに設定する。<br />
     そうでなくて、もし、メンバ変数 <code>subs</code> が <code>-1</code> を含んでいたら、<code>*this</code> を範囲 <code>[a, b)</code> を指す接尾辞イテレータとして設定する。<br />
-    そうでなければ、<code>*this</code> をシーケンス終端イテレータとして設定する。</li>
-<li>(6)～(9) deleted コンストラクタであるため、使用するとコンパイルエラーとなる。（(2)～(5) の形式の <code>re</code> の型を <code>const regex_type&amp;</code> から <code>regex_type&amp;&amp;</code> に変更したもの）</li>
+    そうでなければ、<code>*this</code> をシーケンス終端イテレータとして設定する。</p>
+</li>
+<li>
+<p>(6)～(9) deleted コンストラクタであるため、使用するとコンパイルエラーとなる。（(2)～(5) の形式の <code>re</code> の型を <code>const regex_type&amp;</code> から <code>regex_type&amp;&amp;</code> に変更したもの）</p>
+</li>
 <li>(10) コピーコンストラクタ。</li>
 </ul>
 <h2>備考</h2>

@@ -304,12 +304,12 @@
 <ul>
 <li>(1), (2) : 非空の<a class="cpprefjp-defined-word" data-desc="2つのイテレータで表現される半開区間を表す。C++20からイテレータと番兵で異なる型であっても指定可能になる">イテレータ範囲</a><code>[first, last)</code>について、<ol>
 <li><code>*result = *first</code>で結果の初期値を書き込む。<code>acc = *first</code>としてひとつ前の位置の値を保持する</li>
-<li><a class="cpprefjp-defined-word" data-desc="2つのイテレータで表現される半開区間を表す。C++20からイテレータと番兵で異なる型であっても指定可能になる">イテレータ範囲</a><code>[first + 1, last)</code>の各イテレータを<code>i</code>、そのイテレータが指す値を<code>val</code>として定義する
-3.<ul>
+<li>
+<p><a class="cpprefjp-defined-word" data-desc="2つのイテレータで表現される半開区間を表す。C++20からイテレータと番兵で異なる型であっても指定可能になる">イテレータ範囲</a><code>[first + 1, last)</code>の各イテレータを<code>i</code>、そのイテレータが指す値を<code>val</code>として定義する
+3.</p>
+<ul>
 <li>C++17 : (1)であれば<code>val - acc</code>、(2)であれば<code>binary_op(val, acc)</code>で隣接値を求めて、その結果を<code>*result</code>に代入する</li>
-<li>C++20 : (1)であれば<code>val - <a href="../utility/move.html">std::move</a>(acc)</code>、(2)であれば<code>binary_op(val, <a href="../utility/move.html">std::move</a>d(acc))</code>で隣接値を求めて、その結果を<code>*result</code>に代入する</li>
-</ul>
-</li>
+<li>C++20 : (1)であれば<code>val - <a href="../utility/move.html">std::move</a>(acc)</code>、(2)であれば<code>binary_op(val, <a href="../utility/move.html">std::move</a>d(acc))</code>で隣接値を求めて、その結果を<code>*result</code>に代入する<ol>
 <li><code>val</code>を<code>acc</code>にムーブ代入し、ひとつ前の位置の値を更新する</li>
 </ol>
 </li>
@@ -318,6 +318,10 @@
 <li>インデックス範囲<code>[1, last - first - 1]</code>のそれぞれの値<code>d</code>として定義する</li>
 <li>(3)であれば<code>val = *(first + d) - *(first + d - 1)</code>、(4)であれば<code>val = binary_op(*(first + d), *(first + d - 1))</code>として、隣接値を求める</li>
 <li><code>*(result + d) = val</code>で各隣接値を出力する</li>
+</ol>
+</li>
+</ul>
+</li>
 </ol>
 </li>
 </ul>

@@ -247,12 +247,16 @@
 <p>ある<code><a href="../../generator.html">generator</a></code>オブジェクト<code>x</code>において、<code>coroutine_</code>がアクティブスタック<code>*x.active_</code>に含まれること。</p>
 <h2>効果</h2>
 <ul>
-<li>(1) : 次と等価
+<li>
+<p>(1) : 次と等価
   <br />
 <div class="codehilite"><pre><span></span><code><span class="n">x</span><span class="p">.</span><span class="n">active_</span><span class="o">-&gt;</span><span class="n">top</span><span class="p">().</span><span class="n"><a href="../../../coroutine/coroutine_handle/resume.html">resume()</a></span>
 </code></pre></div>
+</p>
 </li>
-<li>(2) : 次と等価: <code>++*this</code></li>
+<li>
+<p>(2) : 次と等価: <code>++*this</code></p>
+</li>
 </ul>
 <h2>戻り値</h2>
 <ul>

@@ -259,17 +259,25 @@
 <li>(2) <code>that</code> を <code>*this</code> にムーブ代入する。</li>
 <li>(3) <code>assign(string_type(ptr), f)</code> と等価。</li>
 <li>(4) <code>assign(string_type(ptr, len), f)</code> と等価。</li>
-<li>(5) 引数 <code>f</code> で指定されたフラグに従って、文字列 <code>p</code> で指定された正規表現を <code>*this</code> に代入する。文字列 <code>p</code> が有効な正規表現で無い場合には、例外 <code><a href="../regex_error.html">regex_error</a></code> を投げる。<br />
-    例外が投げられた場合、<code>*this</code> は変更されない。</li>
-<li>(6) <code>assign(string_type(first, last), f)</code> と等価。</li>
+<li>
+<p>(5) 引数 <code>f</code> で指定されたフラグに従って、文字列 <code>p</code> で指定された正規表現を <code>*this</code> に代入する。文字列 <code>p</code> が有効な正規表現で無い場合には、例外 <code><a href="../regex_error.html">regex_error</a></code> を投げる。<br />
+    例外が投げられた場合、<code>*this</code> は変更されない。</p>
+</li>
+<li>
+<p>(6) <code>assign(string_type(first, last), f)</code> と等価。</p>
+</li>
 <li>(7) <code>assign(il.begin(), il.end(), f)</code> と等価。</li>
 </ul>
 <h2>事後条件</h2>
 <ul>
 <li>(1) <code><a href="flags.html">flags</a>()</code> と <code><a href="mark_count.html">mark_count</a></code> は、それぞれ <code>that.<a href="flags.html">flags</a>()</code> と <code>that.<a href="mark_count.html">mark_count</a></code> を返す。</li>
-<li>(2) <code><a href="flags.html">flags</a>()</code> と <code><a href="mark_count.html">mark_count</a></code> は、それぞれ <code>that.<a href="flags.html">flags</a>()</code> と <code>that.<a href="mark_count.html">mark_count</a></code> の元の値を返す。<br />
-<code>that</code> は<a class="cpprefjp-defined-word" data-desc="未規定の動作。事前の断りなく処理系によって異なる動作をする" href="../../../implementation-compliance.html#dfn-unspecified-behavior">未規定</a>の有効な状態である。</li>
-<li>(3) -</li>
+<li>
+<p>(2) <code><a href="flags.html">flags</a>()</code> と <code><a href="mark_count.html">mark_count</a></code> は、それぞれ <code>that.<a href="flags.html">flags</a>()</code> と <code>that.<a href="mark_count.html">mark_count</a></code> の元の値を返す。<br />
+<code>that</code> は<a class="cpprefjp-defined-word" data-desc="未規定の動作。事前の断りなく処理系によって異なる動作をする" href="../../../implementation-compliance.html#dfn-unspecified-behavior">未規定</a>の有効な状態である。</p>
+</li>
+<li>
+<p>(3) -</p>
+</li>
 <li>(4) -</li>
 <li>(5) 例外が投げられなければ、<code><a href="flags.html">flags</a>()</code> は引数 <code>f</code> を、<code><a href="mark_count.html">mark_count</a></code> は指定された正規表現内のキャプチャグループの数を返す。</li>
 <li>(6) -</li>

@@ -240,9 +240,13 @@
 <h2>仕様</h2>
 <p><code>e</code> を式とすると、<code>decltype(e)</code> が意味する型は以下のとおりである。</p>
 <ul>
-<li><code>e</code> が丸カッコで囲まれていない識別子の場合、あるいは、丸カッコで囲まれていないクラスメンバアクセスの場合、<code>decltype(e)</code> は <code>e</code> で指定された実体の型である。<br />
-    もしそのような実体が無いか、あるいは、<code>e</code> がオーバーロードされた複数の関数を指す場合、プログラムは<a class="cpprefjp-defined-word" data-desc="プログラムが適格でないこと。コンパイルエラーなどになる" href="../../implementation-compliance.html#dfn-ill-formed">不適格</a>である。</li>
-<li>そうではなくて、もし <code>e</code> が xvalue の場合、<code>e</code> の型を <code>T</code> とすると、<code>decltype(e)</code> は <code>T&amp;&amp;</code> である。</li>
+<li>
+<p><code>e</code> が丸カッコで囲まれていない識別子の場合、あるいは、丸カッコで囲まれていないクラスメンバアクセスの場合、<code>decltype(e)</code> は <code>e</code> で指定された実体の型である。<br />
+    もしそのような実体が無いか、あるいは、<code>e</code> がオーバーロードされた複数の関数を指す場合、プログラムは<a class="cpprefjp-defined-word" data-desc="プログラムが適格でないこと。コンパイルエラーなどになる" href="../../implementation-compliance.html#dfn-ill-formed">不適格</a>である。</p>
+</li>
+<li>
+<p>そうではなくて、もし <code>e</code> が xvalue の場合、<code>e</code> の型を <code>T</code> とすると、<code>decltype(e)</code> は <code>T&amp;&amp;</code> である。</p>
+</li>
 <li>そうではなくて、もし <code>e</code> が lvalue の場合、<code>e</code> の型を <code>T</code> とすると、<code>decltype(e)</code> は <code>T&amp;</code> である。</li>
 <li>上記以外の場合、<code>decltype(e)</code> は <code>e</code> の型である。</li>
 </ul>
@@ -408,14 +412,20 @@ end
 <p>GCC や Clang には <code>decltype</code> が導入される前から、同様の機能を持つ <code>typeof</code> が非標準の拡張機能として存在している。<br />
 <code>decltype</code> もこれらの拡張機能を参考にしているが、大きく以下の 3 点において <code>typeof</code> とは異なる。  </p>
 <ul>
-<li>参照の扱い。<br />
+<li>
+<p>参照の扱い。<br />
 <code>decltype</code> はオペランドの型にある参照を保存するが、<code>typeof</code> はオペランドの型から参照を外す。<br />
     ただし、上記の仕様に書かれているように <code>decltype</code> もオペランドが単なる識別子やクラスメンバアクセスだった場合には、当該識別子やメンバがたとえ lvalue であっても左辺値参照とはならない。<br />
-    本機能の <code>decltype</code> という名称はここから来ている。（declared type：宣言された型）</li>
-<li>使用可能な箇所。<br />
-<code>decltype</code> は型名が使用可能な箇所であれはほぼどこでも使用可能であるが、<code>typeof</code> は変数宣言でしか使用できない。</li>
-<li>オペランドの種類。<br />
-<code>decltype</code> のオペランドは式のみしか許されていないが、<code>typeof</code> は式だけでなく型そのものも許されている。</li>
+    本機能の <code>decltype</code> という名称はここから来ている。（declared type：宣言された型）</p>
+</li>
+<li>
+<p>使用可能な箇所。<br />
+<code>decltype</code> は型名が使用可能な箇所であれはほぼどこでも使用可能であるが、<code>typeof</code> は変数宣言でしか使用できない。</p>
+</li>
+<li>
+<p>オペランドの種類。<br />
+<code>decltype</code> のオペランドは式のみしか許されていないが、<code>typeof</code> は式だけでなく型そのものも許されている。</p>
+</li>
 </ul>
 <h2><a href="#relative-page" id="relative-page">関連項目</a></h2>
 <ul>

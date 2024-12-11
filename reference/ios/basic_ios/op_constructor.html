@@ -242,23 +242,31 @@
 <h2>効果</h2>
 <ul>
 <li>(1) <code><a href="../basic_ios.html">basic_ios</a></code> オブジェクトを構築し、<code><a href="init.html">init</a>(sb)</code> を呼び出して各メンバを初期化する。</li>
-<li>(2) デフォルトコンストラクタ。<br />
+<li>
+<p>(2) デフォルトコンストラクタ。<br />
     構築が完了した時点では、本オブジェクトの各メンバの値は不定である。<br />
     本オブジェクトの各メンバは、初めて使用する時かデストラクタが呼ばれる時のいずれか早い方の前までに <code><a href="../basic_ios.html">basic_ios</a>::<a href="init.html">init</a></code> を呼び出して初期化しなければならない。<br />
-    さもなければ、<a class="cpprefjp-defined-word" data-desc="未定義の動作。処理系は予期せぬ動作をする可能性がある。要するに動作保証対象外。undefined behavior (UB)。" href="../../../implementation-compliance.html#dfn-undefined-behavior">未定義動作</a>を引き起こす。</li>
-<li>(3) コピーコンストラクタ。コピー構築不可。<br />
-<code><a href="../basic_ios.html">basic_ios</a></code> オブジェクトをコピー構築することはできない。</li>
+    さもなければ、<a class="cpprefjp-defined-word" data-desc="未定義の動作。処理系は予期せぬ動作をする可能性がある。要するに動作保証対象外。undefined behavior (UB)。" href="../../../implementation-compliance.html#dfn-undefined-behavior">未定義動作</a>を引き起こす。</p>
+</li>
+<li>
+<p>(3) コピーコンストラクタ。コピー構築不可。<br />
+<code><a href="../basic_ios.html">basic_ios</a></code> オブジェクトをコピー構築することはできない。</p>
+</li>
 </ul>
 <h2>備考</h2>
 <ul>
-<li>コピーコンストラクタは、<ul>
+<li>
+<p>コピーコンストラクタは、</p>
+<ul>
 <li>C++03 : アクセス指定子<code>private</code>で宣言のみされ、定義はされない</li>
 <li>C++11 : アクセス指定子<code>public</code>で<code>delete</code>定義される
 （いずれにせよコピーすることはできないが、<code>public</code> で <code>delete</code> の方が誤ってコピーしようとした際のエラーメッセージが分かりやすいため、変更されている）</li>
 </ul>
 </li>
-<li>コピーコンストラクタが宣言されているため、ムーブコンストラクタも自動生成されない。
-    ただし、派生クラスでムーブ構築、ムーブ代入、交換ができるように、メンバ関数 <code><a href="move.html">move</a>()</code>、および、<code><a href="swap.html">swap</a>()</code> が提供されている。</li>
+<li>
+<p>コピーコンストラクタが宣言されているため、ムーブコンストラクタも自動生成されない。
+    ただし、派生クラスでムーブ構築、ムーブ代入、交換ができるように、メンバ関数 <code><a href="move.html">move</a>()</code>、および、<code><a href="swap.html">swap</a>()</code> が提供されている。</p>
+</li>
 </ul>
 <h2>バージョン</h2>
 <h3>言語</h3>

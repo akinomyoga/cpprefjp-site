@@ -294,13 +294,17 @@
 <li><code>(<a href="../../type_traits/is_nothrow_constructible.html">is_nothrow_constructible_v</a>&lt;T, U&gt; || <a href="../../type_traits/is_nothrow_move_constructible.html">is_nothrow_move_constructible_v</a>&lt;T&gt; || <a href="../../type_traits/is_nothrow_move_constructible.html">is_nothrow_move_constructible_v</a>&lt;E&gt;) == true</code></li>
 </ul>
 </li>
-<li>(4) : 次の制約を全て満たすこと<ul>
+<li>
+<p>(4) : 次の制約を全て満たすこと</p>
+<ul>
 <li><code><a href="../../type_traits/is_constructible.html">is_constructible_v</a>&lt;E, const G&amp;&gt; == true</code></li>
 <li><code><a href="../../type_traits/is_assignable.html">is_assignable_v</a>&lt;E&amp;, const G&amp;&gt; == true</code></li>
 <li><code>(<a href="../../type_traits/is_nothrow_constructible.html">is_nothrow_constructible_v</a>&lt;E, const G&amp;&gt; || <a href="../../type_traits/is_nothrow_move_constructible.html">is_nothrow_move_constructible_v</a>&lt;T&gt; ||<a href="../../type_traits/is_nothrow_move_constructible.html">is_nothrow_move_constructible_v</a>&lt;E&gt;) == true</code></li>
 </ul>
 </li>
-<li>(5) : 次の制約を全て満たすこと<ul>
+<li>
+<p>(5) : 次の制約を全て満たすこと</p>
+<ul>
 <li><code><a href="../../type_traits/is_constructible.html">is_constructible_v</a>&lt;E, G&gt; == true</code></li>
 <li><code><a href="../../type_traits/is_assignable.html">is_assignable_v</a>&lt;E&amp;, G&gt; == true</code></li>
 <li><code>(<a href="../../type_traits/is_nothrow_constructible.html">is_nothrow_constructible_v</a>&lt;E, G&gt; || <a href="../../type_traits/is_nothrow_move_constructible.html">is_nothrow_move_constructible_v</a>&lt;T&gt; || <a href="../../type_traits/is_nothrow_move_constructible.html">is_nothrow_move_constructible_v</a>&lt;E&gt;) == true</code></li>
@@ -328,16 +332,24 @@
 <li><code>this</code>がエラー値を保持していたら、<code>reinit-expected(val, unex, <a href="../../utility/forward.html">std::forward</a>&lt;U&gt;(v)); has_val = true;</code></li>
 </ul>
 </li>
-<li>(4) : 次の処理と等価<ul>
-<li><code>this</code>が正常値を保持していたら、<code>reinit-expected(unex, val, <a href="../../utility/forward.html">std::forward</a>&lt;const G&amp;&gt;(e.<a href="../unexpected/error.html">error()</a>));
-has_val = false;</code></li>
-<li><code>this</code>がエラー値を保持していたら、<code>unex = <a href="../../utility/forward.html">std::forward</a>&lt;const G&amp;&gt;(e.<a href="../unexpected/error.html">error()</a>);</code></li>
-</ul>
+<li>
+<p>(4) : 次の処理と等価</p>
+<ul>
+<li>
+<p><code>this</code>が正常値を保持していたら、<code>reinit-expected(unex, val, <a href="../../utility/forward.html">std::forward</a>&lt;const G&amp;&gt;(e.<a href="../unexpected/error.html">error()</a>));
+has_val = false;</code></p>
 </li>
-<li>(5) : 次の処理と等価<ul>
-<li><code>this</code>が正常値を保持していたら、<code>reinit-expected(unex, val, <a href="../../utility/forward.html">std::forward</a>&lt;G&gt;(e.<a href="../unexpected/error.html">error()</a>));
-has_val = false;</code></li>
-<li><code>this</code>がエラー値を保持していたら、<code>unex = <a href="../../utility/forward.html">std::forward</a>&lt;G&gt;(e.<a href="../unexpected/error.html">error()</a>);</code></li>
+<li>
+<p><code>this</code>がエラー値を保持していたら、<code>unex = <a href="../../utility/forward.html">std::forward</a>&lt;const G&amp;&gt;(e.<a href="../unexpected/error.html">error()</a>);</code></p>
+</li>
+<li>(5) : 次の処理と等価</li>
+<li>
+<p><code>this</code>が正常値を保持していたら、<code>reinit-expected(unex, val, <a href="../../utility/forward.html">std::forward</a>&lt;G&gt;(e.<a href="../unexpected/error.html">error()</a>));
+has_val = false;</code></p>
+</li>
+<li>
+<p><code>this</code>がエラー値を保持していたら、<code>unex = <a href="../../utility/forward.html">std::forward</a>&lt;G&gt;(e.<a href="../unexpected/error.html">error()</a>);</code></p>
+</li>
 </ul>
 </li>
 </ul>

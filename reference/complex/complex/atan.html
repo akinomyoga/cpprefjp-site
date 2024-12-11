@@ -242,9 +242,13 @@
 <h2>備考</h2>
 <ul>
 <li>本関数は虚軸の区間 <code>[-</code><em>i</em><code>, +</code><em>i</em><code>]</code> の外側を分岐截断とする（<em>i</em> は虚数単位）。</li>
-<li>本関数は、C99 の規格にある <code>catan</code>（より正確には <code>complex.h</code> ヘッダの <code>catan</code>、<code>catanf</code>、<code>catanl</code> の 3 つ。それぞれ C++ の <code>atan&lt;double&gt;</code>、<code>atan&lt;float&gt;</code>、<code>atan&lt;long double&gt;</code> に相当）と等価である。<br />
-    C99 では、処理系が ISO IEC 60559（IEEE 754 と同一）に準拠している場合、<code>catan(x) = -</code><em>i</em> <code>catanh(</code><em>i</em> <code>x)</code> と規定されている（<em>i</em> は虚数単位）。</li>
-<li>処理系が ISO IEC 60559 に準拠しているかどうかは、C99 の場合はマクロ <code>__STDC_IEC_559_COMPLEX__</code> が <code>1</code> に定義されている事で判別可能であるが、C++ の規格書には該当する記載を見つける事ができなかった。</li>
+<li>
+<p>本関数は、C99 の規格にある <code>catan</code>（より正確には <code>complex.h</code> ヘッダの <code>catan</code>、<code>catanf</code>、<code>catanl</code> の 3 つ。それぞれ C++ の <code>atan&lt;double&gt;</code>、<code>atan&lt;float&gt;</code>、<code>atan&lt;long double&gt;</code> に相当）と等価である。<br />
+    C99 では、処理系が ISO IEC 60559（IEEE 754 と同一）に準拠している場合、<code>catan(x) = -</code><em>i</em> <code>catanh(</code><em>i</em> <code>x)</code> と規定されている（<em>i</em> は虚数単位）。</p>
+</li>
+<li>
+<p>処理系が ISO IEC 60559 に準拠しているかどうかは、C99 の場合はマクロ <code>__STDC_IEC_559_COMPLEX__</code> が <code>1</code> に定義されている事で判別可能であるが、C++ の規格書には該当する記載を見つける事ができなかった。</p>
+</li>
 <li>
 <p>逆正接の算出については、一部の算術型、および、<code><a href="../../valarray.html">valarray</a></code> クラステンプレートに対しても、他のヘッダで定義されている。</p>
 <table border="1" bordercolor="#888" style="border-collapse:collapse">

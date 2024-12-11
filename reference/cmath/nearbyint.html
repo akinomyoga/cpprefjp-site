@@ -250,9 +250,13 @@
 <li><code>x = ±∞</code> の場合、<code>±∞</code> を返す。</li>
 </ul>
 </li>
-<li>C99 では、丸めモードの設定時には <code>#pragma STDC FENV_ACCESS ON</code> でなければなければならないと記載されているが、C++ には該当する記載を見つけることができなかった。<br />
-    なお、C99 でも <code>FENV_ACCESS</code> のデフォルトは<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">処理系定義</a>である。</li>
-<li>丸めモード <code><a href="../cfenv/fe_tonearest.html">FE_TONEAREST</a></code> は単なる四捨五入ではないことに注意。</li>
+<li>
+<p>C99 では、丸めモードの設定時には <code>#pragma STDC FENV_ACCESS ON</code> でなければなければならないと記載されているが、C++ には該当する記載を見つけることができなかった。<br />
+    なお、C99 でも <code>FENV_ACCESS</code> のデフォルトは<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">処理系定義</a>である。</p>
+</li>
+<li>
+<p>丸めモード <code><a href="../cfenv/fe_tonearest.html">FE_TONEAREST</a></code> は単なる四捨五入ではないことに注意。</p>
+</li>
 <li>C++23では、(1)、(2)、(3)が(4)に統合され、<a class="cpprefjp-defined-word" data-desc="&lt;stdfloat&gt;で定義される内部表現の規定された浮動小数点数型" href="../stdfloat.html">拡張浮動小数点数型</a>を含む浮動小数点数型へのオーバーロードとして定義された</li>
 </ul>
 <h2>例</h2>

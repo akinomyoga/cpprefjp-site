@@ -243,10 +243,14 @@
 <h3>その他</h3>
 <p>以下のことが推奨される。</p>
 <ul>
-<li><code><a href="../concepts/copy_constructible.html">copy_constructible</a>&lt;T&gt;</code> なら、<code>movable-box&lt;T&gt;</code> は
-<code>T</code> が <code><a href="../concepts/copyable.html">copyable</a></code>のモデルであるか、<code><a href="../type_traits/is_nothrow_move_constructible.html">is_nothrow_move_constructible_v</a>&lt;T&gt; &amp;&amp;<a href="../type_traits/is_nothrow_copy_constructible.html">is_nothrow_copy_constructible_v</a>&lt;T&gt;</code>を満たす場合のみ値を保持する。</li>
-<li>そうでなければ、<code>movable-box&lt;T&gt;</code> は
-<code>T</code> が <code><a href="../concepts/movable.html">movable</a></code>のモデルであるか、<code><a href="../type_traits/is_nothrow_move_constructible.html">is_nothrow_move_constructible_v</a>&lt;T&gt;</code>を満たす場合のみ値を保持する。</li>
+<li>
+<p><code><a href="../concepts/copy_constructible.html">copy_constructible</a>&lt;T&gt;</code> なら、<code>movable-box&lt;T&gt;</code> は
+<code>T</code> が <code><a href="../concepts/copyable.html">copyable</a></code>のモデルであるか、<code><a href="../type_traits/is_nothrow_move_constructible.html">is_nothrow_move_constructible_v</a>&lt;T&gt; &amp;&amp;<a href="../type_traits/is_nothrow_copy_constructible.html">is_nothrow_copy_constructible_v</a>&lt;T&gt;</code>を満たす場合のみ値を保持する。</p>
+</li>
+<li>
+<p>そうでなければ、<code>movable-box&lt;T&gt;</code> は
+<code>T</code> が <code><a href="../concepts/movable.html">movable</a></code>のモデルであるか、<code><a href="../type_traits/is_nothrow_move_constructible.html">is_nothrow_move_constructible_v</a>&lt;T&gt;</code>を満たす場合のみ値を保持する。</p>
+</li>
 </ul>
 <h2>備考</h2>
 <p>このクラスは、<code><a href="copyable_box.html">copyable-box</a></code>を置き換える形で導入された。</p>

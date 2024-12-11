@@ -242,8 +242,10 @@
 <h2>備考</h2>
 <ul>
 <li>本関数は実軸の区間 <code>[-1, +1]</code> の外側を分岐截断とする。</li>
-<li>本関数は、C99 の規格にある <code>cacos</code>（より正確には <code>complex.h</code> ヘッダの <code>cacos</code>、<code>cacosf</code>、<code>cacosl</code> の 3 つ。それぞれ C++ の <code>acos&lt;double&gt;</code>、<code>acos&lt;float&gt;</code>、<code>acos&lt;long double&gt;</code> に相当）と等価である。<br />
-    C99 では、処理系が ISO IEC 60559（IEEE 754 と同一）に準拠している場合、以下のように規定されている。<ul>
+<li>
+<p>本関数は、C99 の規格にある <code>cacos</code>（より正確には <code>complex.h</code> ヘッダの <code>cacos</code>、<code>cacosf</code>、<code>cacosl</code> の 3 つ。それぞれ C++ の <code>acos&lt;double&gt;</code>、<code>acos&lt;float&gt;</code>、<code>acos&lt;long double&gt;</code> に相当）と等価である。<br />
+    C99 では、処理系が ISO IEC 60559（IEEE 754 と同一）に準拠している場合、以下のように規定されている。</p>
+<ul>
 <li><code>acos(<a href="conj.html">conj</a>(x)) = <a href="conj.html">conj</a>(acos(x))</code></li>
 <li><code>acos(complex(±0, +0))</code> は <code>complex(π/2, -0)</code> を返す。</li>
 <li><code>acos(complex(±0, NaN))</code> は <code>complex(π/2, NaN)</code> を返す。</li>
@@ -257,11 +259,9 @@
 <li>有限の <code>y</code> について、<code>acos(NaN, y)</code> は <code>complex(NaN, NaN)</code> を返すとともに、無効演算の浮動小数点例外（<code>FE_INVALID</code>）を引き起こす可能性がある。</li>
 <li><code>acos(NaN, +∞)</code> は <code>complex(NaN, -∞)</code> を返す。</li>
 <li><code>acos(NaN, NaN)</code> は <code>complex(NaN, NaN)</code> を返す。</li>
-</ul>
-</li>
 <li>処理系が ISO IEC 60559 に準拠しているかどうかは、C99 の場合はマクロ <code>__STDC_IEC_559_COMPLEX__</code> が <code>1</code> に定義されている事で判別可能であるが、C++ の規格書には該当する記載を見つける事ができなかった。</li>
-<li>
-<p>逆余弦の算出については、一部の算術型、および、<code><a href="../../valarray.html">valarray</a></code> クラステンプレートに対しても、他のヘッダで定義されている。  </p>
+<li>逆余弦の算出については、一部の算術型、および、<code><a href="../../valarray.html">valarray</a></code> クラステンプレートに対しても、他のヘッダで定義されている。  </li>
+</ul>
 <table border="1" bordercolor="#888" style="border-collapse:collapse">
 <thead>
 <tr>

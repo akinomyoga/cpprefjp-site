@@ -238,9 +238,13 @@
 <h2>備考</h2>
 <ul>
 <li><code>traits_inst</code> は<a class="cpprefjp-defined-word" data-desc="`T x;`構文での初期化。トリビアルにデフォルト構築可能な型の場合は初期化されず（オブジェクトのlifetimeは開始される）、そうではないクラス型はデフォルトコンストラクタで初期化する。配列型の場合は各要素が再帰的にデフォルト初期化される">デフォルト初期化</a>されたオブジェクトである。</li>
-<li>効果に記載されている通り、本メンバ関数呼び出し後、<code>*this</code> はいかなる文字列にもマッチしない。<br />
-    従って、<code>*this</code> を使用するためには、<code><a href="op_assign.html">operator=</a></code> か <code><a href="assign.html">assign</a></code> を用いて正規表現を代入しなければならない。</li>
-<li><code>locale_type</code> は、ロケールに関する型であり、<code>traits_type::locale_type</code> の別名である。</li>
+<li>
+<p>効果に記載されている通り、本メンバ関数呼び出し後、<code>*this</code> はいかなる文字列にもマッチしない。<br />
+    従って、<code>*this</code> を使用するためには、<code><a href="op_assign.html">operator=</a></code> か <code><a href="assign.html">assign</a></code> を用いて正規表現を代入しなければならない。</p>
+</li>
+<li>
+<p><code>locale_type</code> は、ロケールに関する型であり、<code>traits_type::locale_type</code> の別名である。</p>
+</li>
 <li><code>traits_type</code> は、クラステンプレート <code><a href="../basic_regex.html">basic_regex</a></code> の 2 番目のテンプレート引数で、デフォルトでは <code><a href="../regex_traits.html">regex_traits</a>&lt;char_type&gt;</code> である。<br />
     その場合、<code>locale_type</code> は <code><a href="../../locale/locale.html">locale</a></code> である。</li>
 </ul>

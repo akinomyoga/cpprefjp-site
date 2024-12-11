@@ -315,11 +315,17 @@
 <p><pre><code></code></pre></p>
 <h2>参照</h2>
 <ul>
-<li>C++14 - 19.3 [assertions]
-  ただしC++としての規定はほとんど無く、ほぼ参照規格であるISO C 7.2の規定によるものとなっている。</li>
-<li><a href="https://groups.google.com/a/isocpp.org/d/topic/std-discussion/6EHDRo1A2EE/discussion" target="_blank">What does it mean for C++ that assert takes a scalar argument?</a>
-  パラメータの式の型についての要件は参照規格であるCの規定によるものであり、「スカラ型」が<a href="../type_traits/is_scalar.html">C++におけるスカラ型</a>となるのか、あるいはCにおけるスカラ型の範囲に限定されるのか、少なくともC++14時点でははっきりしていない。</li>
-<li><a href="http://wg21.cmeerw.net/lwg/issue2234" target="_blank">LWG Issue 2234. <code>assert()</code> should allow usage in constant expressions</a></li>
+<li>
+<p>C++14 - 19.3 [assertions]
+  ただしC++としての規定はほとんど無く、ほぼ参照規格であるISO C 7.2の規定によるものとなっている。</p>
+</li>
+<li>
+<p><a href="https://groups.google.com/a/isocpp.org/d/topic/std-discussion/6EHDRo1A2EE/discussion" target="_blank">What does it mean for C++ that assert takes a scalar argument?</a>
+  パラメータの式の型についての要件は参照規格であるCの規定によるものであり、「スカラ型」が<a href="../type_traits/is_scalar.html">C++におけるスカラ型</a>となるのか、あるいはCにおけるスカラ型の範囲に限定されるのか、少なくともC++14時点でははっきりしていない。</p>
+</li>
+<li>
+<p><a href="http://wg21.cmeerw.net/lwg/issue2234" target="_blank">LWG Issue 2234. <code>assert()</code> should allow usage in constant expressions</a></p>
+</li>
 <li><a href="https://open-std.org/jtc1/sc22/wg21/docs/papers/2023/p2264r7.html" target="_blank">P2264R7 Make <code>assert()</code> macro user friendly for C and C++</a><ul>
 <li>C++26から、カンマを含む式を条件式として使用できるようになった</li>
 </ul>

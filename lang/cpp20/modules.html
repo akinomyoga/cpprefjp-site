@@ -256,10 +256,14 @@
 <p>まず、モジュールを構成する翻訳単位(モジュールユニット)とそれ以外(従来の翻訳単位すべて)の区別がある。</p>
 <p>モジュールユニットはさらにインターフェースと実装に分けられる。</p>
 <ul>
-<li>モジュールインターフェースユニット<br />
-    従来のヘッダーファイルに相当する翻訳単位(<code>#include</code>のようにソースファイルに展開されることはなく、単独で翻訳単位になる)。外部(別のモジュール)に公開したい宣言や定義を書く。</li>
-<li>モジュール実装ユニット<br />
-    従来のソースファイルに相当する翻訳単位。公開しない宣言や定義を書く。</li>
+<li>
+<p>モジュールインターフェースユニット<br />
+    従来のヘッダーファイルに相当する翻訳単位(<code>#include</code>のようにソースファイルに展開されることはなく、単独で翻訳単位になる)。外部(別のモジュール)に公開したい宣言や定義を書く。</p>
+</li>
+<li>
+<p>モジュール実装ユニット<br />
+    従来のソースファイルに相当する翻訳単位。公開しない宣言や定義を書く。</p>
+</li>
 </ul>
 <p>また、それぞれにモジュール本体とパーティションという区別がある。</p>
 <p>パーティションは、モジュールを構成するファイルをさらに分割するために使うもので、内部的には別モジュールのように見えるが、外部からは見えないファイルである。</p>
@@ -621,16 +625,24 @@
 <ul>
 <li><a href="https://onihusube.hatenablog.com/entry/2021/05/28/214612" target="_blank">［C++］C++20モジュールの変遷 - Module TSからC++20DISまで - 地面を見下ろす少年の足蹴にされる私</a></li>
 <li><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1103r3.pdf" target="_blank">P1103R3 Merging Modules</a></li>
-<li><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1502r1.html" target="_blank">P1502R1
+<li>
+<p><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1502r1.html" target="_blank">P1502R1
 Standard library header units for C++20</a><br />
-  C++ライブラリヘッダーはインポータブルヘッダーとなった。</li>
-<li><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1703r1.html" target="_blank">P1703R1 Recognizing Header Unit Imports Requires Full Preprocessing</a><br />
-  ヘッダーユニットのインポート宣言について、書き方が<code>#include</code>と同程度まで制限された。</li>
-<li><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1766r1.html" target="_blank">P1766R1
-Mitigating minor modules maladies</a></li>
-<li><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1811r0.html#problem" target="_blank">P1811R0
+  C++ライブラリヘッダーはインポータブルヘッダーとなった。</p>
+</li>
+<li>
+<p><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1703r1.html" target="_blank">P1703R1 Recognizing Header Unit Imports Requires Full Preprocessing</a><br />
+  ヘッダーユニットのインポート宣言について、書き方が<code>#include</code>と同程度まで制限された。</p>
+</li>
+<li>
+<p><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1766r1.html" target="_blank">P1766R1
+Mitigating minor modules maladies</a></p>
+</li>
+<li>
+<p><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1811r0.html#problem" target="_blank">P1811R0
 Relaxing redefinition restrictions for re-exportation robustness</a><br />
-  同時に到達可能とならなければODR違反にならないという仕様が削除された。また、インポータブルヘッダーの<code>#include</code>を<code>import</code>に置き換えるかは<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">処理系定義</a>となった。</li>
+  同時に到達可能とならなければODR違反にならないという仕様が削除された。また、インポータブルヘッダーの<code>#include</code>を<code>import</code>に置き換えるかは<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">処理系定義</a>となった。</p>
+</li>
 </ul></div>
 
       </div>

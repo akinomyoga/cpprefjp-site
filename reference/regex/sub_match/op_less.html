@@ -277,11 +277,17 @@
 <h2>戻り値</h2>
 <ul>
 <li>(1) <code>lhs.<a href="compare.html">compare</a>(rhs) &lt; 0</code></li>
-<li>(2) <code>rhs.<a href="compare.html">compare</a>(typename <a href="../sub_match.html">sub_match</a>&lt;BiIter&gt;::string_type(lhs.<a href="../../string/basic_string/data.html">data</a>(), lhs.<a href="../../string/basic_string/size.html">size</a>())) &gt; 0</code><br />
-    なお、C++11 の規格書では <code>rhs.<a href="compare.html">compare</a>(lhs.<a href="../../string/basic_string/c_str.html">c_str</a>()) &gt; 0</code> となっているが、この式では <code>lhs</code> に <code>'\0'</code> が含まれていた場合に正しく比較することができないため、規格上の誤りとして上記の式に修正された。</li>
-<li>(3) <code>lhs.<a href="compare.html">compare</a>(typename <a href="../sub_match.html">sub_match</a>&lt;BiIter&gt;::string_type(rhs.<a href="../../string/basic_string/data.html">data</a>(), rhs.<a href="../../string/basic_string/size.html">size</a>())) &lt; 0</code><br />
-    なお、C++11 の規格書では <code>lhs.<a href="compare.html">compare</a>(rhs.<a href="../../string/basic_string/c_str.html">c_str</a>()) &lt; 0</code> となっているが、この式では <code>rhs</code> に <code>'\0'</code> が含まれていた場合に正しく比較することができないため、規格上の誤りとして上記の式に修正された。</li>
-<li>(4) <code>rhs.<a href="compare.html">compare</a>(lhs) &gt; 0</code></li>
+<li>
+<p>(2) <code>rhs.<a href="compare.html">compare</a>(typename <a href="../sub_match.html">sub_match</a>&lt;BiIter&gt;::string_type(lhs.<a href="../../string/basic_string/data.html">data</a>(), lhs.<a href="../../string/basic_string/size.html">size</a>())) &gt; 0</code><br />
+    なお、C++11 の規格書では <code>rhs.<a href="compare.html">compare</a>(lhs.<a href="../../string/basic_string/c_str.html">c_str</a>()) &gt; 0</code> となっているが、この式では <code>lhs</code> に <code>'\0'</code> が含まれていた場合に正しく比較することができないため、規格上の誤りとして上記の式に修正された。</p>
+</li>
+<li>
+<p>(3) <code>lhs.<a href="compare.html">compare</a>(typename <a href="../sub_match.html">sub_match</a>&lt;BiIter&gt;::string_type(rhs.<a href="../../string/basic_string/data.html">data</a>(), rhs.<a href="../../string/basic_string/size.html">size</a>())) &lt; 0</code><br />
+    なお、C++11 の規格書では <code>lhs.<a href="compare.html">compare</a>(rhs.<a href="../../string/basic_string/c_str.html">c_str</a>()) &lt; 0</code> となっているが、この式では <code>rhs</code> に <code>'\0'</code> が含まれていた場合に正しく比較することができないため、規格上の誤りとして上記の式に修正された。</p>
+</li>
+<li>
+<p>(4) <code>rhs.<a href="compare.html">compare</a>(lhs) &gt; 0</code></p>
+</li>
 <li>(5) <code>lhs.<a href="compare.html">compare</a>(rhs) &lt; 0</code></li>
 <li>(6) <code>rhs.<a href="compare.html">compare</a>(typename <a href="../sub_match.html">sub_match</a>&lt;BiIter&gt;::string_type(1, lhs)) &gt; 0</code></li>
 <li>(7) <code>lhs.<a href="compare.html">compare</a>(typename <a href="../sub_match.html">sub_match</a>&lt;BiIter&gt;::string_type(1, rhs)) &lt; 0</code></li>
