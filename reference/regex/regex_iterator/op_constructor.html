@@ -243,13 +243,9 @@
 <h2>効果</h2>
 <ul>
 <li>(1) デフォルトコンストラクタ。シーケンスの終端を示す特別なイテレータを構築する。</li>
-<li>
-<p>(2) メンバ変数 <code>begin</code>、<code>end</code>、<code>pregex</code>、<code>flags</code> をそれぞれ <code>a</code>、<code>b</code>、<code><a href="../../memory/addressof.html">addressof</a>(re)</code>、<code>m</code> で初期化して、<code><a href="../regex_search.html">regex_search</a>(begin, end, match, *pregex, flags)</code> を呼び出す。
-    検索に成功しなかった場合（<code>false</code> が返された場合）、デフォルトコンストラクタで構築した場合と同様、直ちにシーケンスの終端を示す特別なイテレータとなる。</p>
-</li>
-<li>
-<p>(3) deleted コンストラクタであるため、使用するとコンパイルエラーとなる。</p>
-</li>
+<li>(2) メンバ変数 <code>begin</code>、<code>end</code>、<code>pregex</code>、<code>flags</code> をそれぞれ <code>a</code>、<code>b</code>、<code><a href="../../memory/addressof.html">addressof</a>(re)</code>、<code>m</code> で初期化して、<code><a href="../regex_search.html">regex_search</a>(begin, end, match, *pregex, flags)</code> を呼び出す。
+    検索に成功しなかった場合（<code>false</code> が返された場合）、デフォルトコンストラクタで構築した場合と同様、直ちにシーケンスの終端を示す特別なイテレータとなる。</li>
+<li>(3) deleted コンストラクタであるため、使用するとコンパイルエラーとなる。</li>
 <li>(4) コピーコンストラクタ。</li>
 </ul>
 <h2>備考</h2>

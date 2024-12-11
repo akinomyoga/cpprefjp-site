@@ -248,20 +248,14 @@
 </ul>
 <h2>備考</h2>
 <ul>
-<li>
-<p>入力ストリーム（<code><a href="../../istream/basic_istream.html">basic_istream</a></code>）、および、出力ストリーム（<code><a href="../../ostream/basic_ostream.html">basic_ostream</a></code>）の <code>tie()</code> に出力ストリームを設定すると、書式化・非書式化入出力を実行するたびに <code>tie()-&gt;<a href="../../ostream/basic_ostream/flush.html">flush</a>()</code> が実行される。<br />
+<li>入力ストリーム（<code><a href="../../istream/basic_istream.html">basic_istream</a></code>）、および、出力ストリーム（<code><a href="../../ostream/basic_ostream.html">basic_ostream</a></code>）の <code>tie()</code> に出力ストリームを設定すると、書式化・非書式化入出力を実行するたびに <code>tie()-&gt;<a href="../../ostream/basic_ostream/flush.html">flush</a>()</code> が実行される。<br />
     これにより、<code>*this</code> で書式化・非書式化入出力を実行する際には必ず <code>tie()</code> で指定された出力ストリームがフラッシュされることが保証される。<br />
-    なお、この動作は、<code><a href="../../istream/basic_istream.html">basic_istream</a>::<a href="../../istream/basic_istream/sentry.html">sentry</a>::<a href="../../istream/basic_istream/sentry/op_constructor.html">sentry</a></code>、および、<code><a href="../../ostream/basic_ostream.html">basic_ostream</a>::<a href="../../ostream/basic_ostream/sentry.html">sentry</a>::<a href="../../ostream/basic_ostream/sentry/op_constructor.html">sentry</a></code> によって引き起こされる。</p>
-</li>
-<li>
-<p>上記の要件欄の記載は C++11 で追加されたが、これは、<code><a href="../../ostream/basic_ostream.html">basic_ostream</a>::<a href="../../ostream/basic_ostream/flush.html">flush</a>()</code> が非書式化出力であることによる。<br />
+    なお、この動作は、<code><a href="../../istream/basic_istream.html">basic_istream</a>::<a href="../../istream/basic_istream/sentry.html">sentry</a>::<a href="../../istream/basic_istream/sentry/op_constructor.html">sentry</a></code>、および、<code><a href="../../ostream/basic_ostream.html">basic_ostream</a>::<a href="../../ostream/basic_ostream/sentry.html">sentry</a>::<a href="../../ostream/basic_ostream/sentry/op_constructor.html">sentry</a></code> によって引き起こされる。</li>
+<li>上記の要件欄の記載は C++11 で追加されたが、これは、<code><a href="../../ostream/basic_ostream.html">basic_ostream</a>::<a href="../../ostream/basic_ostream/flush.html">flush</a>()</code> が非書式化出力であることによる。<br />
     （<code><a href="../../ostream/basic_ostream.html">basic_ostream</a>::<a href="../../ostream/basic_ostream/flush.html">flush</a>()</code> が <code>tie()</code> で指定された出力ストリームのフラッシュを引き起こし、それが次のフラッシュを引き起こし…となり、無限ループを引き起こしてしまうため）<br />
     したがって、明記はされていないものの C++03 まででも必要な要件であるものと思われる。（C++03 では、<code><a href="../../ostream/basic_ostream.html">basic_ostream</a>::<a href="../../ostream/basic_ostream/flush.html">flush</a>()</code> が非書式化出力ではない旨の記載が追加されたが、これは誤りということで C++11 で修正された）<br />
-    なお、この要件は「<code>tie</code> に設定した後でこのようになってはいけない」という意味であるものと思われる。（さもないと、設定したことによって無限ループが生じることを防げない）</p>
-</li>
-<li>
-<p>標準入出力ストリームは、以下のような設定が行われている。</p>
-<ul>
+    なお、この要件は「<code>tie</code> に設定した後でこのようになってはいけない」という意味であるものと思われる。（さもないと、設定したことによって無限ループが生じることを防げない）</li>
+<li>標準入出力ストリームは、以下のような設定が行われている。<ul>
 <li><code><a href="../../iostream/cin.html">cin</a>.tie() == &amp;<a href="../../iostream/cout.html">cout</a></code></li>
 <li><code><span href="https://cpprefjp.github.io/reference/iostream/wcin.md.nolink">wcin</span>.tie() == &amp;<span href="https://cpprefjp.github.io/reference/iostream/wcout.md.nolink">wcout</span></code></li>
 <li><code><a href="../../iostream/cerr.html">cerr</a>.tie() == &amp;<a href="../../iostream/cout.html">cout</a></code>（C++11 から）</li>
@@ -320,18 +314,12 @@ new
 <li><code><span href="https://cpprefjp.github.io/reference/iostream/wcerr.md.nolink">wcerr</span></code></li>
 <li><code><a href="../../istream/basic_istream.html">basic_istream</a>::<a href="../../istream/basic_istream/sentry.html">sentry</a>::<a href="../../istream/basic_istream/sentry/op_constructor.html">sentry</a></code></li>
 <li><code><a href="../../ostream/basic_ostream.html">basic_ostream</a>::<a href="../../ostream/basic_ostream/sentry.html">sentry</a>::<a href="../../ostream/basic_ostream/sentry/op_constructor.html">sentry</a></code></li>
-<li>
-<p><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/lwg-defects.html#60" target="_blank">60. What is a formatted input function?</a><br />
-    C++03 で <code><a href="../../ostream/basic_ostream.html">basic_ostream</a>::<a href="../../ostream/basic_ostream/flush.html">flush</a>()</code> が非書式化出力ではないと明記された Defect Report</p>
-</li>
-<li>
-<p><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/lwg-defects.html#581" target="_blank">581. flush() not unformatted function</a><br />
-    上記の Defect Report で非書式化出力ではなくなってしまった <code><a href="../../ostream/basic_ostream.html">basic_ostream</a>::<a href="../../ostream/basic_ostream/flush.html">flush</a>()</code> を非書式化出力に変更する Defect Report</p>
-</li>
-<li>
-<p><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/lwg-defects.html#835" target="_blank">835. Tying two streams together (correction to DR 581)</a><br />
-<code>tiestr</code> に関する要件を追加する Defect Report</p>
-</li>
+<li><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/lwg-defects.html#60" target="_blank">60. What is a formatted input function?</a><br />
+    C++03 で <code><a href="../../ostream/basic_ostream.html">basic_ostream</a>::<a href="../../ostream/basic_ostream/flush.html">flush</a>()</code> が非書式化出力ではないと明記された Defect Report</li>
+<li><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/lwg-defects.html#581" target="_blank">581. flush() not unformatted function</a><br />
+    上記の Defect Report で非書式化出力ではなくなってしまった <code><a href="../../ostream/basic_ostream.html">basic_ostream</a>::<a href="../../ostream/basic_ostream/flush.html">flush</a>()</code> を非書式化出力に変更する Defect Report</li>
+<li><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/lwg-defects.html#835" target="_blank">835. Tying two streams together (correction to DR 581)</a><br />
+<code>tiestr</code> に関する要件を追加する Defect Report</li>
 </ul></div>
 
       </div>

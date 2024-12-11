@@ -352,13 +352,9 @@
 <li>引数 <code>position</code> は、C++14 までは間接参照可能（dereferenceable）でなければならない（つまり、<code><a href="cend.html">cend</a>()</code> ではいけない）との記載になっていたが、これは規格の誤りとして C++17 で修正された。</li>
 </ul>
 </li>
-<li>
-<p>上記の要件に示したように、<code>first</code>、および、<code>last</code> の参照先の要素は <code>value_type</code> 型でなければならないとされているが、その要件を満たさなくてももう一つの要件である直接構築可能を満たすだけで十分にライブラリを実装可能と思われる。<br />
-    実際、Clang(libc++) は <code>first</code>、および、<code>last</code> の参照先の要素が <code>value_type</code> 型でなくとも (7) の形式を使用可能である。</p>
-</li>
-<li>
-<p>(9), (10) の場合、要素はコピーもムーブもされない。</p>
-</li>
+<li>上記の要件に示したように、<code>first</code>、および、<code>last</code> の参照先の要素は <code>value_type</code> 型でなければならないとされているが、その要件を満たさなくてももう一つの要件である直接構築可能を満たすだけで十分にライブラリを実装可能と思われる。<br />
+    実際、Clang(libc++) は <code>first</code>、および、<code>last</code> の参照先の要素が <code>value_type</code> 型でなくとも (7) の形式を使用可能である。</li>
+<li>(9), (10) の場合、要素はコピーもムーブもされない。</li>
 </ul>
 <h2>例</h2>
 <p><div class="yata" id="f8f062ef5f7b3e08ac01c6c996a50478092c4707"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf"><a href="../../iostream.html">&lt;iostream&gt;</a></span><span class="cp"></span>

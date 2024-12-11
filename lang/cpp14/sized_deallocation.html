@@ -288,13 +288,9 @@ delete with two arguments, 13
 </code></pre></p>
 <h2>備考</h2>
 <ul>
-<li>
-<p>C++14 で追加された関数のうち、最後の引数が <code>const std::nothrow_t&amp;</code> であるオーバーロード 2 つは、次期規格では削除される予定である。<br />
-    これは、当該オーバーロードが <code>new</code> 式、あるいは <code>delete</code> 式から暗黙で呼び出される事は無いためである。</p>
-</li>
-<li>
-<p>Clangは3.7以降、サイズをとる<code>delete</code>演算子を使用する場合、<code>-fsized-deallocation</code>オプションを付ける必要がある。</p>
-</li>
+<li>C++14 で追加された関数のうち、最後の引数が <code>const std::nothrow_t&amp;</code> であるオーバーロード 2 つは、次期規格では削除される予定である。<br />
+    これは、当該オーバーロードが <code>new</code> 式、あるいは <code>delete</code> 式から暗黙で呼び出される事は無いためである。</li>
+<li>Clangは3.7以降、サイズをとる<code>delete</code>演算子を使用する場合、<code>-fsized-deallocation</code>オプションを付ける必要がある。</li>
 </ul>
 <h2><a href="#relative-page" id="relative-page">関連項目</a></h2>
 <ul>

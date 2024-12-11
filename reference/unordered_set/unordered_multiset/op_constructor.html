@@ -456,26 +456,16 @@
 <ul>
 <li>(1) : 定数</li>
 <li>(2) : 定数</li>
-<li>
-<p>(3) : 平均的には O(n)、ここで、n は <code>std::<a href="../../iterator/distance.html">distance</a>(first, last)</code>。
-    最悪のケースでは O(n<sup>2</sup>)</p>
-</li>
-<li>
-<p>(4) : 平均的には O(n)、ここで、n は <code>v.<a href="size.html">size</a>()</code>。
-    最悪のケースでは O(n<sup>2</sup>)</p>
-</li>
-<li>
-<p>(5) : 定数</p>
-</li>
+<li>(3) : 平均的には O(n)、ここで、n は <code>std::<a href="../../iterator/distance.html">distance</a>(first, last)</code>。
+    最悪のケースでは O(n<sup>2</sup>)</li>
+<li>(4) : 平均的には O(n)、ここで、n は <code>v.<a href="size.html">size</a>()</code>。
+    最悪のケースでは O(n<sup>2</sup>)</li>
+<li>(5) : 定数</li>
 <li>(6) : 定数</li>
 <li>(7) : O(<code>v.<a href="size.html">size</a>()</code>)</li>
-<li>
-<p>(8) : <code>a == rv.<a href="get_allocator.html">get_allocator</a>()</code> の場合、定数。
-    そうでない場合、O(<code>rv.<a href="size.html">size</a>()</code>)。</p>
-</li>
-<li>
-<p>(9) : (3) の形式を <code>unordered_multiset(il.begin(), il.end(), n, hf, eql, a)</code> として呼び出した場合と等価。</p>
-</li>
+<li>(8) : <code>a == rv.<a href="get_allocator.html">get_allocator</a>()</code> の場合、定数。
+    そうでない場合、O(<code>rv.<a href="size.html">size</a>()</code>)。</li>
+<li>(9) : (3) の形式を <code>unordered_multiset(il.begin(), il.end(), n, hf, eql, a)</code> として呼び出した場合と等価。</li>
 <li>(10) : (2) の形式を <code>unordered_multiset(n, hasher(), key_equal(), a)</code> として呼び出した場合と等価。</li>
 <li>(11) : (2) の形式を <code>unordered_multiset(n, hf, key_equal(), a)</code> として呼び出した場合と等価。</li>
 <li>(12) : (3) の形式を <code>unordered_multiset(f, l, n, hasher(), key_equal(), a)</code> として呼び出した場合と等価。</li>
@@ -537,15 +527,11 @@
 <li>(9)の経緯となる提案文書</li>
 </ul>
 </li>
-<li>
-<p><a href="http://cplusplus.github.io/LWG/lwg-defects.html#2193" target="_blank">LWG 2193. Default constructors for standard library containers are explicit</a><br />
-    (1) + (2) を 2 つのオーバーロードに分割するきっかけとなったレポート</p>
-</li>
-<li>
-<p><a href="http://cplusplus.github.io/LWG/lwg-defects.html#2210" target="_blank">LWG 2210. Missing allocator-extended constructor for allocator-aware containers</a><br />
+<li><a href="http://cplusplus.github.io/LWG/lwg-defects.html#2193" target="_blank">LWG 2193. Default constructors for standard library containers are explicit</a><br />
+    (1) + (2) を 2 つのオーバーロードに分割するきっかけとなったレポート</li>
+<li><a href="http://cplusplus.github.io/LWG/lwg-defects.html#2210" target="_blank">LWG 2210. Missing allocator-extended constructor for allocator-aware containers</a><br />
     (10)、(11)、(12)、(13)、(14)、(15) を追加するきっかけとなったレポート<br />
-    なお、Discussion の例はアロケータの型が誤っているので注意</p>
-</li>
+    なお、Discussion の例はアロケータの型が誤っているので注意</li>
 </ul></div>
 
       </div>

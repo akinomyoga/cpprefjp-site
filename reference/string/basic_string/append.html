@@ -350,9 +350,8 @@
 </li>
 <li>
 <p>(8) 対象オブジェクトの末尾に、<code><a href="../../string_view/basic_string_view.html">basic_string_view</a>&lt;charT, traits&gt;</code>に変換可能な<code>t</code>が参照する範囲の文字列が追加される。<br />
-以下と等価。
-  <br />
-<div class="codehilite"><pre><span></span><code><span class="n"><a href="../../string_view/basic_string_view.html">basic_string_view</a></span><span class="o">&lt;</span><span class="n">charT</span><span class="p">,</span> <span class="n">traits</span><span class="o">&gt;</span> <span class="n">sv</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+以下と等価。</p>
+<p><div class="codehilite"><pre><span></span><code><span class="n"><a href="../../string_view/basic_string_view.html">basic_string_view</a></span><span class="o">&lt;</span><span class="n">charT</span><span class="p">,</span> <span class="n">traits</span><span class="o">&gt;</span> <span class="n">sv</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
 <span class="k">return</span> <span class="nf">append</span><span class="p">(</span><span class="n"><a href="../../string_view/basic_string_view/data.html">sv.data()</a></span><span class="p">,</span> <span class="n"><a href="../../string_view/basic_string_view/size.html">sv.size()</a></span><span class="p">);</span>
 </code></pre></div>
 </p>
@@ -361,13 +360,12 @@
 <p>(9) 対象オブジェクトの末尾に、<code><a href="../../string_view/basic_string_view.html">basic_string_view</a>&lt;charT, traits&gt;</code>に変換可能な<code>t</code>の指定された範囲の文字列が追加される。</p>
 <ul>
 <li>文字列の長さ <code>rlen</code> は、<code>n</code> と <code><a href="../../string_view/basic_string_view/size.html">sv.size()</a>- pos</code> の小さい方である。<br />
-以下と等価。
-
-<div class="codehilite"><pre><span></span><code><span class="n"><a href="../../string_view/basic_string_view.html">basic_string_view</a></span><span class="o">&lt;</span><span class="n">charT</span><span class="p">,</span> <span class="n">traits</span><span class="o">&gt;</span> <span class="n">sv</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+以下と等価。</li>
+</ul>
+<p><div class="codehilite"><pre><span></span><code><span class="n"><a href="../../string_view/basic_string_view.html">basic_string_view</a></span><span class="o">&lt;</span><span class="n">charT</span><span class="p">,</span> <span class="n">traits</span><span class="o">&gt;</span> <span class="n">sv</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
 <span class="k">return</span> <span class="nf">append</span><span class="p">(</span><span class="n">sv</span><span class="p">.</span><span class="n"><a href="../../string_view/basic_string_view/substr.html">substr</a></span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">n</span><span class="p">));</span>
 </code></pre></div>
-</li>
-</ul>
+</p>
 </li>
 </ul>
 <h2>戻り値</h2>

@@ -250,13 +250,9 @@
 </ul>
 <h2>戻り値</h2>
 <ul>
-<li>
-<p>(1), (2) : 「削除前に、削除された要素の次だった位置」を指すイテレータ。<code>erase()</code> を呼び出しても削除された要素以外を指す全てのイテレータは無効にならないため、<code>std::<a href="../../iterator/next.html">next</a>(position)</code> と同じ位置を指す <code>iterator</code> である。<br />
-    なお、<code>position</code> は <code>const_iterator</code> なのに対して、戻り値は <code>iterator</code> であるため注意が必要である。</p>
-</li>
-<li>
-<p>(3) : 削除した要素数。</p>
-</li>
+<li>(1), (2) : 「削除前に、削除された要素の次だった位置」を指すイテレータ。<code>erase()</code> を呼び出しても削除された要素以外を指す全てのイテレータは無効にならないため、<code>std::<a href="../../iterator/next.html">next</a>(position)</code> と同じ位置を指す <code>iterator</code> である。<br />
+    なお、<code>position</code> は <code>const_iterator</code> なのに対して、戻り値は <code>iterator</code> であるため注意が必要である。</li>
+<li>(3) : 削除した要素数。</li>
 <li>(4) :  「削除前に、削除された要素の範囲の次だった位置」を指すイテレータ。<code>erase()</code> を呼び出しても削除された要素以外を指す全てのイテレータは無効にならないため、<code>last</code> と同じ位置を指す <code>iterator</code> である。<br />
     なお、<code>first</code> 及び <code>last</code> は <code>const_iterator</code> なのに対して、戻り値は <code>iterator</code> であるため注意が必要である。<br />
     また、要件に示したように <code>first</code> が間接参照可能である必要がなかった場合にも、他の種類のコンテナの戻り値と照らし合わせると、<code>last</code> と同じ位置を指す <code>iterator</code> を返すのが適切であるものと思われる。</li>

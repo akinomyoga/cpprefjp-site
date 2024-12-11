@@ -251,14 +251,10 @@
 <h2>備考</h2>
 <ul>
 <li><code>comp</code> は 2 引数の関数オブジェクトで、1 番目の引数が 2 番目の引数「より小さい」場合に <code>true</code> を、そうでない場合に <code>false</code> を返すものとして扱われる。</li>
-<li>
-<p>最小の要素が複数ある場合、<code><a href="min_element.html">min_element</a></code> と同様、最も左側（<code>first</code> に近い方）にある要素を指すイテレータを返す。<br />
-    一方、最大の要素が複数ある場合、<code><a href="max_element.html">max_element</a></code> と<strong>異なり</strong>、最も右側（<code>last</code> に近い方）にあるイテレータを返す。</p>
-</li>
-<li>
-<p>最小の要素と最大の要素の両方が必要な場合には、<code><a href="min_element.html">min_element</a></code> と <code><a href="max_element.html">max_element</a></code> をそれぞれ呼び出すよりも本関数を呼び出した方が、計算量の点で効率的である。<br />
-    ただし、上記の通り最大の要素に関しては <code><a href="max_element.html">max_element</a></code> と結果が異なる可能性があるため、注意する必要がある。</p>
-</li>
+<li>最小の要素が複数ある場合、<code><a href="min_element.html">min_element</a></code> と同様、最も左側（<code>first</code> に近い方）にある要素を指すイテレータを返す。<br />
+    一方、最大の要素が複数ある場合、<code><a href="max_element.html">max_element</a></code> と<strong>異なり</strong>、最も右側（<code>last</code> に近い方）にあるイテレータを返す。</li>
+<li>最小の要素と最大の要素の両方が必要な場合には、<code><a href="min_element.html">min_element</a></code> と <code><a href="max_element.html">max_element</a></code> をそれぞれ呼び出すよりも本関数を呼び出した方が、計算量の点で効率的である。<br />
+    ただし、上記の通り最大の要素に関しては <code><a href="max_element.html">max_element</a></code> と結果が異なる可能性があるため、注意する必要がある。</li>
 </ul>
 <h2>例</h2>
 <p><div class="yata" id="ac15f1f02d47055d3a67f5752b02a1515c709682"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf"><a href="../cassert.html">&lt;cassert&gt;</a></span><span class="cp"></span>

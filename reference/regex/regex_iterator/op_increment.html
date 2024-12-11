@@ -236,28 +236,22 @@
 <p>シーケンスの終端を示すイテレータではない事。（シーケンス終端イテレータに対して呼び出した場合は<a class="cpprefjp-defined-word" data-desc="未定義の動作。処理系は予期せぬ動作をする可能性がある。要するに動作保証対象外。undefined behavior (UB)。" href="../../../implementation-compliance.html#dfn-undefined-behavior">未定義動作</a>を引き起こす）</p>
 <h2>効果</h2>
 <ul>
-<li>
-<p>(1) の形式（前置形式）は、以下のように振る舞う。</p>
-<ul>
+<li>(1) の形式（前置形式）は、以下のように振る舞う。<ul>
 <li><code>BidirectionalIterator</code> 型のローカル変数 <code>start</code> を構築し、値 <code>match[0].second</code> で初期化する。</li>
 <li>イテレータが長さゼロのマッチの場合（<code>match[0].matched == true</code> かつ <code>match[0].first == match[0].second</code> の場合）で、かつ、<code>start == end</code> の場合、<code>*this</code> をシーケンス終端イテレータにして <code>*this</code> を返す。</li>
-<li>
-<p>そうではなくて、イテレータが長さゼロのマッチの場合、<code><a href="../regex_search.html">regex_search</a>(start, end, match, *pregex, flags | regex_constants::match_not_null | regex_constants::match_continuous)</code> を呼び出す。<br />
-    もしマッチしたら（<code>true</code> が返されたら）、<code>*this</code> を返す。マッチしなかったら、<code>start</code> をインクリメントし、イテレータが長さゼロのマッチで無いかのように、以下の処理を続ける。</p>
-</li>
-<li>
-<p>イテレータが長さゼロのマッチでない場合、<code>flags</code> を <code>flags | regex_constants ::match_prev_avail</code> に更新し、<code><a href="../regex_search.html">regex_search</a>(start, end, match, *pregex, flags)</code> を呼び出す。<br />
-    もしマッチしなかったら、<code>*this</code> をシーケンス終端イテレータにする。その後、<code>*this</code> を返す。</p>
-</li>
-<li>
-<p>上記のうち、<code><a href="../regex_search.html">regex_search</a></code> が <code>true</code> を返した全てのケースでは、以下の補正が行われる。</p>
-<ul>
+<li>そうではなくて、イテレータが長さゼロのマッチの場合、<code><a href="../regex_search.html">regex_search</a>(start, end, match, *pregex, flags | regex_constants::match_not_null | regex_constants::match_continuous)</code> を呼び出す。<br />
+    もしマッチしたら（<code>true</code> が返されたら）、<code>*this</code> を返す。マッチしなかったら、<code>start</code> をインクリメントし、イテレータが長さゼロのマッチで無いかのように、以下の処理を続ける。</li>
+<li>イテレータが長さゼロのマッチでない場合、<code>flags</code> を <code>flags | regex_constants ::match_prev_avail</code> に更新し、<code><a href="../regex_search.html">regex_search</a>(start, end, match, *pregex, flags)</code> を呼び出す。<br />
+    もしマッチしなかったら、<code>*this</code> をシーケンス終端イテレータにする。その後、<code>*this</code> を返す。</li>
+<li>上記のうち、<code><a href="../regex_search.html">regex_search</a></code> が <code>true</code> を返した全てのケースでは、以下の補正が行われる。<ul>
 <li><code>match.prefix().first</code> を直前の <code>match[0].second</code> に設定する。</li>
 <li>半開区間 <code>[0, match.size())</code> の全てのインデックス <code>i</code> について、<code>match[i].matched</code> が <code>true</code> であれば、<code>match.position(i)</code> が <code>distance(begin, match[i].first)</code> を返すように設定する。</li>
 </ul>
 </li>
-<li>(2) の形式（後置形式）は、以下のように振る舞う。</li>
 </ul>
+</li>
+<li>
+<p>(2) の形式（後置形式）は、以下のように振る舞う。</p>
 <p><div class="codehilite"><pre><span></span><code><span class="n">regex_iterator</span> <span class="n">tmp</span> <span class="o">=</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
 <span class="o">++</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">);</span>
 <span class="k">return</span> <span class="n">tmp</span><span class="p">;</span>
@@ -273,14 +267,10 @@
 <h2>備考</h2>
 <ul>
 <li>メンバ変数 <code>begin</code>、<code>end</code>、<code>pregex</code>、<code>flags</code>、<code>match</code> はあくまでも説明用のプライベートメンバ変数であるため、注意すること。</li>
-<li>
-<p>「効果」にあるように、<code>match</code> には検索後に補正が行われるため、<code>regex_iterator</code> を間接参照した結果は、<code><a href="../regex_search.html">regex_search</a></code> を順に呼び出した結果とは異なる。<br />
-    また、これらの補正が実装でどのように行われるかについては、規格では規定されていない。</p>
-</li>
-<li>
-<p>「効果」では <code><a href="../regex_search.html">regex_search</a></code> が呼ばれるものとして記載されているが、実際に <code><a href="../regex_search.html">regex_search</a></code> が呼ばれるかどうかについては、規格では規定されていない。<br />
-    したがって、<code><a href="../regex_search.html">regex_search</a></code> にユーザ定義の特殊化バージョンを提供しても、呼ばれないかもしれない。</p>
-</li>
+<li>「効果」にあるように、<code>match</code> には検索後に補正が行われるため、<code>regex_iterator</code> を間接参照した結果は、<code><a href="../regex_search.html">regex_search</a></code> を順に呼び出した結果とは異なる。<br />
+    また、これらの補正が実装でどのように行われるかについては、規格では規定されていない。</li>
+<li>「効果」では <code><a href="../regex_search.html">regex_search</a></code> が呼ばれるものとして記載されているが、実際に <code><a href="../regex_search.html">regex_search</a></code> が呼ばれるかどうかについては、規格では規定されていない。<br />
+    したがって、<code><a href="../regex_search.html">regex_search</a></code> にユーザ定義の特殊化バージョンを提供しても、呼ばれないかもしれない。</li>
 </ul>
 <h2>例</h2>
 <p><div class="yata" id="818aee08f69f6558149a302d7c6047fec0818273"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf"><a href="../../iostream.html">&lt;iostream&gt;</a></span><span class="cp"></span>

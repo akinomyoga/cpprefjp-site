@@ -226,13 +226,9 @@ C++17 ではこれを省略できるようになった。</p>
 </code></pre></div>
 </p>
 <ul>
-<li>
-<p>「『<code>文字列リテラル</code>が与えられた場合、』<a class="cpprefjp-defined-word" data-desc="診断情報。コンパイルエラーや警告。処理系がプログラム翻訳時に提供する情報の総称" href="../../implementation-compliance.html#dfn-diagnostic-message">診断メッセージ</a>は<code>文字列リテラル</code>を含む」と文面が改められた<br />
-    それ以外の場合の<a class="cpprefjp-defined-word" data-desc="診断情報。コンパイルエラーや警告。処理系がプログラム翻訳時に提供する情報の総称" href="../../implementation-compliance.html#dfn-diagnostic-message">診断メッセージ</a>は<a class="cpprefjp-defined-word" data-desc="未規定の動作。事前の断りなく処理系によって異なる動作をする" href="../../implementation-compliance.html#dfn-unspecified-behavior">未規定</a></p>
-</li>
-<li>
-<p>その他の点は <a href="../cpp11/static_assert.html">C++11</a> と同じ</p>
-</li>
+<li>「『<code>文字列リテラル</code>が与えられた場合、』<a class="cpprefjp-defined-word" data-desc="診断情報。コンパイルエラーや警告。処理系がプログラム翻訳時に提供する情報の総称" href="../../implementation-compliance.html#dfn-diagnostic-message">診断メッセージ</a>は<code>文字列リテラル</code>を含む」と文面が改められた<br />
+    それ以外の場合の<a class="cpprefjp-defined-word" data-desc="診断情報。コンパイルエラーや警告。処理系がプログラム翻訳時に提供する情報の総称" href="../../implementation-compliance.html#dfn-diagnostic-message">診断メッセージ</a>は<a class="cpprefjp-defined-word" data-desc="未規定の動作。事前の断りなく処理系によって異なる動作をする" href="../../implementation-compliance.html#dfn-unspecified-behavior">未規定</a></li>
+<li>その他の点は <a href="../cpp11/static_assert.html">C++11</a> と同じ</li>
 <li>機能テストマクロは <code>__cpp_static_assert</code> (<code>201411</code>)</li>
 </ul>
 <h2>例</h2>
@@ -265,17 +261,11 @@ C++17 ではこれを省略できるようになった。</p>
 <p><code>BOOST_STATIC_ASSERT</code> のようなマクロで<code>定数式</code>をテキスト化することには反対意見があり、以下の案が検討された
 (『』内は追加された箇所):</p>
 <ul>
-<li>
-<p>『<code>文字列リテラル</code>が与えられた場合、』<a class="cpprefjp-defined-word" data-desc="診断情報。コンパイルエラーや警告。処理系がプログラム翻訳時に提供する情報の総称" href="../../implementation-compliance.html#dfn-diagnostic-message">診断メッセージ</a>は<code>文字列リテラル</code>を含む<br />
-    『それ以外の場合、<a class="cpprefjp-defined-word" data-desc="診断情報。コンパイルエラーや警告。処理系がプログラム翻訳時に提供する情報の総称" href="../../implementation-compliance.html#dfn-diagnostic-message">診断メッセージ</a>は<code>定数式</code>のテキストからなる』</p>
-</li>
-<li>
-<p>『<code>文字列リテラル</code>が与えられた場合、』<a class="cpprefjp-defined-word" data-desc="診断情報。コンパイルエラーや警告。処理系がプログラム翻訳時に提供する情報の総称" href="../../implementation-compliance.html#dfn-diagnostic-message">診断メッセージ</a>は<code>文字列リテラル</code>を含む<br />
-    『それ以外の場合、<a class="cpprefjp-defined-word" data-desc="診断情報。コンパイルエラーや警告。処理系がプログラム翻訳時に提供する情報の総称" href="../../implementation-compliance.html#dfn-diagnostic-message">診断メッセージ</a>は実装依存』</p>
-</li>
-<li>
-<p>『<code>static_assert</code> は1つ以上の<code>定数式</code>を取り、<a class="cpprefjp-defined-word" data-desc="診断情報。コンパイルエラーや警告。処理系がプログラム翻訳時に提供する情報の総称" href="../../implementation-compliance.html#dfn-diagnostic-message">診断メッセージ</a>はテキストに変換した<code>定数式</code>を含む』</p>
-</li>
+<li>『<code>文字列リテラル</code>が与えられた場合、』<a class="cpprefjp-defined-word" data-desc="診断情報。コンパイルエラーや警告。処理系がプログラム翻訳時に提供する情報の総称" href="../../implementation-compliance.html#dfn-diagnostic-message">診断メッセージ</a>は<code>文字列リテラル</code>を含む<br />
+    『それ以外の場合、<a class="cpprefjp-defined-word" data-desc="診断情報。コンパイルエラーや警告。処理系がプログラム翻訳時に提供する情報の総称" href="../../implementation-compliance.html#dfn-diagnostic-message">診断メッセージ</a>は<code>定数式</code>のテキストからなる』</li>
+<li>『<code>文字列リテラル</code>が与えられた場合、』<a class="cpprefjp-defined-word" data-desc="診断情報。コンパイルエラーや警告。処理系がプログラム翻訳時に提供する情報の総称" href="../../implementation-compliance.html#dfn-diagnostic-message">診断メッセージ</a>は<code>文字列リテラル</code>を含む<br />
+    『それ以外の場合、<a class="cpprefjp-defined-word" data-desc="診断情報。コンパイルエラーや警告。処理系がプログラム翻訳時に提供する情報の総称" href="../../implementation-compliance.html#dfn-diagnostic-message">診断メッセージ</a>は実装依存』</li>
+<li>『<code>static_assert</code> は1つ以上の<code>定数式</code>を取り、<a class="cpprefjp-defined-word" data-desc="診断情報。コンパイルエラーや警告。処理系がプログラム翻訳時に提供する情報の総称" href="../../implementation-compliance.html#dfn-diagnostic-message">診断メッセージ</a>はテキストに変換した<code>定数式</code>を含む』</li>
 </ul>
 <h2><a href="#relative-page" id="relative-page">関連項目</a></h2>
 <ul>

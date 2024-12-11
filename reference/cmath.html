@@ -239,14 +239,10 @@
 <ul>
 <li>各関数は std 名前空間に定義されている。</li>
 <li><code>fabs</code> と等価の関数 <code>abs</code> を追加している。</li>
-<li>
-<p>引数に <code>double</code> を含む各関数（上記 <code>abs</code> を含む）に対して、引数および戻り値の <code>double</code> に対応する箇所が <code>float</code> と <code>long double</code> のオーバーロードバージョンを追加している。<br />
+<li>引数に <code>double</code> を含む各関数（上記 <code>abs</code> を含む）に対して、引数および戻り値の <code>double</code> に対応する箇所が <code>float</code> と <code>long double</code> のオーバーロードバージョンを追加している。<br />
     なお、C99 にも同様の関数（接尾辞が <code>f</code> および <code>l</code> のもの）が存在するが、それらについては規格書では言及されていない。<br />
-    ただし、<code>nan</code> については、引数の型では区別がつかないため、C99 の <code>nanf</code> および <code>nanl</code> をそのまま使用する。</p>
-</li>
-<li>
-<p>数値分類、および、数値比較の各マクロの替わりに、引数が各浮動小数点型で、戻り値が <code>bool</code> の関数を追加している。</p>
-</li>
+    ただし、<code>nan</code> については、引数の型では区別がつかないため、C99 の <code>nanf</code> および <code>nanl</code> をそのまま使用する。</li>
+<li>数値分類、および、数値比較の各マクロの替わりに、引数が各浮動小数点型で、戻り値が <code>bool</code> の関数を追加している。</li>
 <li>
 <p>上記に加えて、以下のような<a class="cpprefjp-defined-word" data-desc="関数呼び出し時に、同名の関数の中から実際に呼び出す関数を決定する処理。このときの候補になることを、オーバーロード解決に参加するという">オーバーロード解決</a>ができるように、更にオーバーロードを追加している。</p>
 <ol>

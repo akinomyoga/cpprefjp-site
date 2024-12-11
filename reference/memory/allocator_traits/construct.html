@@ -235,14 +235,10 @@
 <p>引数を元にインスタンスを構築する。</p>
 <h2>効果</h2>
 <ul>
-<li>
-<p>C++17 まで
-    <code>a.construct(p,<a href="../../utility/forward.html">forward</a>&lt;Args&gt;(args)...)</code> という式が有効ならそれを呼び出し、そうでなければデフォルト実装として <code>::new(static_cast&lt;void*&gt;(p)) T(<a href="../../utility/forward.html">forward</a>&lt;Args&gt;(args)...)</code> を呼び出す。</p>
-</li>
-<li>
-<p>C++20 から
-    <code>a.construct(p,<a href="../../utility/forward.html">forward</a>&lt;Args&gt;(args)...)</code> という式が有効ならそれを呼び出し、そうでなければデフォルト実装として <code><a href="../construct_at.html">construct_at</a>(p, <a href="../../utility/forward.html">forward</a>&lt;Args&gt;(args)...)</code>を呼び出す。</p>
-</li>
+<li>C++17 まで
+    <code>a.construct(p,<a href="../../utility/forward.html">forward</a>&lt;Args&gt;(args)...)</code> という式が有効ならそれを呼び出し、そうでなければデフォルト実装として <code>::new(static_cast&lt;void*&gt;(p)) T(<a href="../../utility/forward.html">forward</a>&lt;Args&gt;(args)...)</code> を呼び出す。</li>
+<li>C++20 から
+    <code>a.construct(p,<a href="../../utility/forward.html">forward</a>&lt;Args&gt;(args)...)</code> という式が有効ならそれを呼び出し、そうでなければデフォルト実装として <code><a href="../construct_at.html">construct_at</a>(p, <a href="../../utility/forward.html">forward</a>&lt;Args&gt;(args)...)</code>を呼び出す。</li>
 </ul>
 <h2>戻り値</h2>
 <p>なし</p>

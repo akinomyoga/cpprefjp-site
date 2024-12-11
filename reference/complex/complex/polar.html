@@ -243,13 +243,9 @@
 <p>絶対値が <code>rho</code> で偏角が <code>theta</code> の複素数</p>
 <h2>備考</h2>
 <ul>
-<li>
-<p>規格には、偏角 <code>theta</code> の単位については何も記載がない。しかし、この引数の単位がラジアンであることは異論をはさむ余地はないだろう。<br />
-    実際、本関数の逆関数（の片割れ）とも言える <code><a href="arg.html">arg</a></code> の戻り値はラジアンである。</p>
-</li>
-<li>
-<p>コンストラクタのデフォルト引数を踏まえると、偏角 <code>theta</code> のデフォルト引数が <code>T()</code> ではなく <code>0</code> であるのは、規格の誤りであるように思われる。</p>
-</li>
+<li>規格には、偏角 <code>theta</code> の単位については何も記載がない。しかし、この引数の単位がラジアンであることは異論をはさむ余地はないだろう。<br />
+    実際、本関数の逆関数（の片割れ）とも言える <code><a href="arg.html">arg</a></code> の戻り値はラジアンである。</li>
+<li>コンストラクタのデフォルト引数を踏まえると、偏角 <code>theta</code> のデフォルト引数が <code>T()</code> ではなく <code>0</code> であるのは、規格の誤りであるように思われる。</li>
 <li><code>rho</code> と <code>theta</code> に現れる型 <code>T</code> は（残念ながら）同じ型でなければならない。（<code>int</code> と <code>double</code> を渡すなどといったことはできない）<br />
     同じ <code><a href="../../complex.html">&lt;complex&gt;</a></code> ヘッダの <code><a href="pow.html">pow</a></code> や、<code><a href="../../cmath.html">cmath</a></code> ヘッダの <code><a href="../../cmath/atan2.html">atan2</a></code> などの関数群は、引数の型が異なっていても簡単に呼び出せるように C++11 でオーバーロードが追加されているため、単なる規格の考慮漏れかもしれない。</li>
 </ul>

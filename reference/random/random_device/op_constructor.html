@@ -251,23 +251,15 @@
 </ul>
 <h3>有効なトークン</h3>
 <ul>
-<li>
-<p>Windows</p>
-<ul>
+<li>Windows<ul>
 <li>Visual C++: 無視される</li>
-<li>
-<p>Clang: <code>"/dev/urandom"</code> (これ以外を与えると例外が送出される)<br />
-  ただし <code><a href="https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/rand-s" target="_blank">rand_s</a></code> に使われることはないので指定する必要はない</p>
-</li>
-<li>
-<p>GCC (MinGW): 文字列化した整数<br />
-  ただし実体は <code><a href="../mt19937.html">mt19937</a></code> なので<strong>使用を推奨しない</strong></p>
-</li>
+<li>Clang: <code>"/dev/urandom"</code> (これ以外を与えると例外が送出される)<br />
+  ただし <code><a href="https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/rand-s" target="_blank">rand_s</a></code> に使われることはないので指定する必要はない</li>
+<li>GCC (MinGW): 文字列化した整数<br />
+  ただし実体は <code><a href="../mt19937.html">mt19937</a></code> なので<strong>使用を推奨しない</strong></li>
 </ul>
 </li>
-<li>
-<p>Unix 系</p>
-<ul>
+<li>Unix 系<ul>
 <li>Clang (libc++): <code>"/dev/urandom"</code> (デフォルト) または <code>"/dev/random"</code></li>
 <li>GCC (libstdc++): <code>"default"</code> (デフォルト)、<code>"/dev/urandom"</code> または <code>"/dev/random"</code><br />
   デフォルトでは、CPU の <code>RDRAND</code> 命令が使用できれば (<code>_GLIBCXX_X86_RDRAND</code> が定義されていれば) それを、そうでなければ <code>/dev/urandom</code> から値を取得する</li>

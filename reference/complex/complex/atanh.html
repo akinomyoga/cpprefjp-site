@@ -242,10 +242,8 @@
 <h2>備考</h2>
 <ul>
 <li>本関数は実軸の区間 <code>[-1, +1]</code> の外側を分岐截断とする。</li>
-<li>
-<p>本関数は、C99 の規格にある <code>catanh</code>（より正確には <code>complex.h</code> ヘッダの <code>catanh</code>、<code>catanhf</code>、<code>catanhl</code> の 3 つ。それぞれ C++ の <code>atanh&lt;double&gt;</code>、<code>atanh&lt;float&gt;</code>、<code>atanh&lt;long double&gt;</code> に相当）と等価である。<br />
-    C99 では、処理系が ISO IEC 60559（IEEE 754 と同一）に準拠している場合、以下のように規定されている。</p>
-<ul>
+<li>本関数は、C99 の規格にある <code>catanh</code>（より正確には <code>complex.h</code> ヘッダの <code>catanh</code>、<code>catanhf</code>、<code>catanhl</code> の 3 つ。それぞれ C++ の <code>atanh&lt;double&gt;</code>、<code>atanh&lt;float&gt;</code>、<code>atanh&lt;long double&gt;</code> に相当）と等価である。<br />
+    C99 では、処理系が ISO IEC 60559（IEEE 754 と同一）に準拠している場合、以下のように規定されている。<ul>
 <li><code>atanh(<a href="conj.html">conj</a>(x)) = <a href="conj.html">conj</a>(atanh(x))</code>で、また、<code>atanh</code> は奇関数（つまり、<code>atanh(-x) = -atanh(x)</code>）。</li>
 <li><code>atanh(complex(+0, +0))</code> は <code>complex(+0, +0)</code> を返す。</li>
 <li><code>atanh(complex(+0, NaN))</code> は <code>complex(+0, NaN)</code> を返す。</li>
@@ -258,9 +256,11 @@
 <li>有限の <code>y</code> について、<code>atanh(complex(NaN, y))</code> は <code>complex(NaN, NaN)</code> を返すとともに、無効演算の浮動小数点例外（<code>FE_INVALID</code>）を引き起こす可能性がある。</li>
 <li><code>atanh(complex(NaN, +∞))</code> は <code>complex(±0, π/2)</code> を返す（結果値の実部の符号は<a class="cpprefjp-defined-word" data-desc="未規定の動作。事前の断りなく処理系によって異なる動作をする" href="../../../implementation-compliance.html#dfn-unspecified-behavior">未規定</a>）。</li>
 <li><code>atanh(complex(NaN, NaN))</code> は <code>complex(NaN, NaN)</code> を返す。</li>
-<li>処理系が ISO IEC 60559 に準拠しているかどうかは、C99 の場合はマクロ <code>__STDC_IEC_559_COMPLEX__</code> が <code>1</code> に定義されている事で判別可能であるが、C++ の規格書には該当する記載を見つける事ができなかった。</li>
-<li>逆双曲線正接の算出については、一部の算術型に対しても、他のヘッダで定義されている。</li>
 </ul>
+</li>
+<li>処理系が ISO IEC 60559 に準拠しているかどうかは、C99 の場合はマクロ <code>__STDC_IEC_559_COMPLEX__</code> が <code>1</code> に定義されている事で判別可能であるが、C++ の規格書には該当する記載を見つける事ができなかった。</li>
+<li>
+<p>逆双曲線正接の算出については、一部の算術型に対しても、他のヘッダで定義されている。</p>
 <table border="1" bordercolor="#888" style="border-collapse:collapse">
 <thead>
 <tr>

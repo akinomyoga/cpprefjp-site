@@ -255,15 +255,11 @@
 <p><code>*this</code></p>
 <h2>備考</h2>
 <ul>
-<li>
-<p>名前が示すように、書式設定はコピーするがストリームバッファ（<code><a href="rdbuf.html">rdbuf</a></code>）、および、その状態（<code><a href="rdstate.html">rdstate</a>()</code>）はコピーしない。<br />
-    ただし、<code><a href="exceptions.html">exceptions</a>()</code> は設定する。</p>
-</li>
-<li>
-<p>コールバックは <code><a href="../ios_base/type-event.html">erase_event</a></code> と <code><a href="../ios_base/type-event.html">copyfmt_event</a></code> の 2 回呼び出されるが、<code><a href="../ios_base/type-event.html">erase_event</a></code> で呼び出されるのはもともと <code>*this</code> に登録されていたコールバック、<code><a href="../ios_base/type-event.html">copyfmt_event</a></code> で呼び出されるのは <code>rhs</code> 側に登録されていた（本関数で <code>*this</code> にコピーされた）コールバックである。<br />
+<li>名前が示すように、書式設定はコピーするがストリームバッファ（<code><a href="rdbuf.html">rdbuf</a></code>）、および、その状態（<code><a href="rdstate.html">rdstate</a>()</code>）はコピーしない。<br />
+    ただし、<code><a href="exceptions.html">exceptions</a>()</code> は設定する。</li>
+<li>コールバックは <code><a href="../ios_base/type-event.html">erase_event</a></code> と <code><a href="../ios_base/type-event.html">copyfmt_event</a></code> の 2 回呼び出されるが、<code><a href="../ios_base/type-event.html">erase_event</a></code> で呼び出されるのはもともと <code>*this</code> に登録されていたコールバック、<code><a href="../ios_base/type-event.html">copyfmt_event</a></code> で呼び出されるのは <code>rhs</code> 側に登録されていた（本関数で <code>*this</code> にコピーされた）コールバックである。<br />
 <code><a href="../ios_base/type-event.html">erase_event</a></code> で、<code>pword</code> の私用記憶域に格納されていたポインタが指すオブジェクトの破棄、<code><a href="../ios_base/type-event.html">copyfmt_event</a></code> で <code>pword</code> の私用記憶域にコピーされたポインタが指すオブジェクトのコピー（あるいはポインタのヌルポインタへの変更）を行うことができる。<br />
-<code>pword</code> の私用記憶域に格納したポインタの対処については <code><a href="../ios_base.html">ios_base</a>::<a href="../ios_base/pword.html">pword</a></code> の例を参照。</p>
-</li>
+<code>pword</code> の私用記憶域に格納したポインタの対処については <code><a href="../ios_base.html">ios_base</a>::<a href="../ios_base/pword.html">pword</a></code> の例を参照。</li>
 </ul>
 <h2>例</h2>
 <p><div class="yata" id="de52482f72cf61ce9bdcad226ffe2b4a1e2c1c73"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf"><a href="../../iostream.html">&lt;iostream&gt;</a></span><span class="cp"></span>

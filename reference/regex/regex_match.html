@@ -263,13 +263,9 @@
 <p><code>BidirectionalIterator</code> は双方向イテレータの要件を満たすこと。</p>
 <h2>効果</h2>
 <ul>
-<li>
-<p>(1) <code>[first, last)</code> で指定された文字列全体が、<code>e</code> で指定された正規表現にマッチするか否かの判定を行う。<br />
-<code>flags</code> は正規表現が文字列に対してどのようにマッチするかを指定する。</p>
-</li>
-<li>
-<p>(2) <code>return regex_match(str, str + <a href="../string/char_traits.html">char_traits</a>::<a href="../string/char_traits/length.html">length</a>(str), m, e, flags)</code> と等価。</p>
-</li>
+<li>(1) <code>[first, last)</code> で指定された文字列全体が、<code>e</code> で指定された正規表現にマッチするか否かの判定を行う。<br />
+<code>flags</code> は正規表現が文字列に対してどのようにマッチするかを指定する。</li>
+<li>(2) <code>return regex_match(str, str + <a href="../string/char_traits.html">char_traits</a>::<a href="../string/char_traits/length.html">length</a>(str), m, e, flags)</code> と等価。</li>
 <li>(3) <code>return regex_match(s.<a href="../string/basic_string/begin.html">begin</a>(), s.<a href="../string/basic_string/end.html">end</a>(), m, e, flags)</code> と等価。</li>
 <li>(4) <code>deleted</code> 宣言されているため、使用するとコンパイルエラーとなる。</li>
 <li>(5) <code><a href="match_results.html">match_results</a>&lt;BidirectionalIterator&gt;</code> 型のダミーオブジェクト <code>what</code> を構築し、<code>return regex_match(first, last, what, e, flags)</code> としたものと等価。</li>

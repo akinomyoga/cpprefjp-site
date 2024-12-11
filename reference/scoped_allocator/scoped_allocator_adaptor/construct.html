@@ -258,29 +258,19 @@
 <li>
 <p>(1) :</p>
 <ul>
-<li>
-<p>C++17 まで : 以下のいずれかの動作を行う。</p>
-<ul>
-<li>
-<p><code><a href="../../memory/uses_allocator.html">uses_allocator</a>&lt;T, inner_allocator_type&gt;::value == false</code> かつ <code><a href="../../type_traits/is_constructible.html">is_constructible</a>&lt;T, Args...&gt;::value == true</code> の場合<br />
-<code>CONSTRUCT(<a href="../../utility/forward.html">forward</a>&lt;Args&gt;(args)...)</code> を呼び出す。</p>
-</li>
-<li>
-<p><code><a href="../../memory/uses_allocator.html">uses_allocator</a>&lt;T, inner_allocator_type&gt;::value == true</code> かつ <code><a href="../../type_traits/is_constructible.html">is_constructible</a>&lt;T, <a href="../../memory/allocator_arg_t.html">allocator_arg_t</a>, inner_allocator_type, Args...&gt;::value == true</code> の場合<br />
-<code>CONSTRUCT(<a href="../../memory/allocator_arg_t.html">allocator_arg</a>, <a href="inner_allocator.html">inner_allocator</a>(), <a href="../../utility/forward.html">forward</a>&lt;Args&gt;(args)...)</code> を呼び出す。</p>
-</li>
-<li>
-<p><code><a href="../../memory/uses_allocator.html">uses_allocator</a>&lt;T, inner_allocator_type&gt;::value == true</code> かつ <code><a href="../../type_traits/is_constructible.html">is_constructible</a>&lt;T, Args..., inner_allocator_type&gt;::value == true</code> の場合<br />
-<code>CONSTRUCT(<a href="../../utility/forward.html">forward</a>&lt;Args&gt;(args)..., <a href="inner_allocator.html">inner_allocator</a>())</code>を呼び出す。</p>
-</li>
-<li>
-<p>それ以外の場合、プログラムは<a class="cpprefjp-defined-word" data-desc="プログラムが適格でないこと。コンパイルエラーなどになる" href="../../../implementation-compliance.html#dfn-ill-formed">不適格</a>となる。</p>
-</li>
-<li>この関数は <code>T</code> が <code><a href="../../utility/pair.html">pair</a></code> の特殊化でない場合に限り<a class="cpprefjp-defined-word" data-desc="関数呼び出し時に、同名の関数の中から実際に呼び出す関数を決定する処理。このときの候補になることを、オーバーロード解決に参加するという">オーバーロード解決</a>に参加する。<ul>
-<li>C++20 から : 以下と等価の動作を行う。</li>
+<li>C++17 まで : 以下のいずれかの動作を行う。<ul>
+<li><code><a href="../../memory/uses_allocator.html">uses_allocator</a>&lt;T, inner_allocator_type&gt;::value == false</code> かつ <code><a href="../../type_traits/is_constructible.html">is_constructible</a>&lt;T, Args...&gt;::value == true</code> の場合<br />
+<code>CONSTRUCT(<a href="../../utility/forward.html">forward</a>&lt;Args&gt;(args)...)</code> を呼び出す。</li>
+<li><code><a href="../../memory/uses_allocator.html">uses_allocator</a>&lt;T, inner_allocator_type&gt;::value == true</code> かつ <code><a href="../../type_traits/is_constructible.html">is_constructible</a>&lt;T, <a href="../../memory/allocator_arg_t.html">allocator_arg_t</a>, inner_allocator_type, Args...&gt;::value == true</code> の場合<br />
+<code>CONSTRUCT(<a href="../../memory/allocator_arg_t.html">allocator_arg</a>, <a href="inner_allocator.html">inner_allocator</a>(), <a href="../../utility/forward.html">forward</a>&lt;Args&gt;(args)...)</code> を呼び出す。</li>
+<li><code><a href="../../memory/uses_allocator.html">uses_allocator</a>&lt;T, inner_allocator_type&gt;::value == true</code> かつ <code><a href="../../type_traits/is_constructible.html">is_constructible</a>&lt;T, Args..., inner_allocator_type&gt;::value == true</code> の場合<br />
+<code>CONSTRUCT(<a href="../../utility/forward.html">forward</a>&lt;Args&gt;(args)..., <a href="inner_allocator.html">inner_allocator</a>())</code>を呼び出す。</li>
+<li>それ以外の場合、プログラムは<a class="cpprefjp-defined-word" data-desc="プログラムが適格でないこと。コンパイルエラーなどになる" href="../../../implementation-compliance.html#dfn-ill-formed">不適格</a>となる。</li>
+<li>この関数は <code>T</code> が <code><a href="../../utility/pair.html">pair</a></code> の特殊化でない場合に限り<a class="cpprefjp-defined-word" data-desc="関数呼び出し時に、同名の関数の中から実際に呼び出す関数を決定する処理。このときの候補になることを、オーバーロード解決に参加するという">オーバーロード解決</a>に参加する。</li>
 </ul>
 </li>
-</ul>
+<li>
+<p>C++20 から : 以下と等価の動作を行う。</p>
 <p><div class="codehilite"><pre><span></span><code><span class="n"><a href="../../tuple/apply.html">apply</a></span><span class="p">(</span>
   <span class="p">[</span><span class="n">p</span><span class="p">,</span> <span class="k">this</span><span class="p">](</span><span class="k">auto</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">newargs</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">CONSTRUCT</span><span class="p">(</span><span class="n"><a href="../../utility/forward.html">forward</a></span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">newargs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">newargs</span><span class="p">)...);</span>
@@ -297,21 +287,13 @@
 <code>CONSTRUCT(<a href="../../utility/piecewise_construct_t.html">piecewise_construct</a>, <a href="../../utility/move.html">move</a>(xprime), <a href="../../utility/move.html">move</a>(yprime))</code><br />
     ここで、<code>xprime</code> は以下のルールに従って <code>x</code> から構築された <code><a href="../../tuple/tuple.html">tuple</a></code> とする。（<code>yprime</code> も <code>y</code> から同様に構築されるものとする）</p>
 <ul>
-<li>
-<p><code><a href="../../memory/uses_allocator.html">uses_allocator</a>&lt;T1, inner_allocator_type&gt;::value == false</code> かつ <code><a href="../../type_traits/is_constructible.html">is_constructible</a>&lt;T1, Args1...&gt;::value == true</code> の場合<br />
-<code>x</code> を <code>xprime</code> とする。</p>
-</li>
-<li>
-<p><code><a href="../../memory/uses_allocator.html">uses_allocator</a>&lt;T1, inner_allocator_type&gt;::value == true</code> かつ <code><a href="../../type_traits/is_constructible.html">is_constructible</a>&lt;T1, <a href="../../memory/allocator_arg_t.html">allocator_arg_t</a>, inner_allocator_type, Args1...&gt;::value == true</code> の場合<br />
-<code><a href="../../tuple/tuple_cat.html">tuple_cat</a>(<a href="../../tuple/tuple.html">tuple</a>&lt;<a href="../../memory/allocator_arg_t.html">allocator_arg_t</a>, inner_allocator_type&amp;&gt;(<a href="../../memory/allocator_arg_t.html">allocator_arg</a>, inner_allocator_type()), x)</code> を <code>xprime</code> とする。</p>
-</li>
-<li>
-<p><code><a href="../../memory/uses_allocator.html">uses_allocator</a>&lt;T1, inner_allocator_type&gt;::value == true</code> かつ <code><a href="../../type_traits/is_constructible.html">is_constructible</a>&lt;T1, Args1..., inner_allocator_type&gt;::value == true</code> の場合<br />
-<code><a href="../../tuple/tuple_cat.html">tuple_cat</a>(x, <a href="../../tuple/tuple.html">tuple</a>&lt;inner_allocator_type&amp;&gt;(inner_allocator_type()))</code> を <code>xprime</code> とする。</p>
-</li>
-<li>
-<p>それ以外の場合、プログラムは<a class="cpprefjp-defined-word" data-desc="プログラムが適格でないこと。コンパイルエラーなどになる" href="../../../implementation-compliance.html#dfn-ill-formed">不適格</a>となる。</p>
-</li>
+<li><code><a href="../../memory/uses_allocator.html">uses_allocator</a>&lt;T1, inner_allocator_type&gt;::value == false</code> かつ <code><a href="../../type_traits/is_constructible.html">is_constructible</a>&lt;T1, Args1...&gt;::value == true</code> の場合<br />
+<code>x</code> を <code>xprime</code> とする。</li>
+<li><code><a href="../../memory/uses_allocator.html">uses_allocator</a>&lt;T1, inner_allocator_type&gt;::value == true</code> かつ <code><a href="../../type_traits/is_constructible.html">is_constructible</a>&lt;T1, <a href="../../memory/allocator_arg_t.html">allocator_arg_t</a>, inner_allocator_type, Args1...&gt;::value == true</code> の場合<br />
+<code><a href="../../tuple/tuple_cat.html">tuple_cat</a>(<a href="../../tuple/tuple.html">tuple</a>&lt;<a href="../../memory/allocator_arg_t.html">allocator_arg_t</a>, inner_allocator_type&amp;&gt;(<a href="../../memory/allocator_arg_t.html">allocator_arg</a>, inner_allocator_type()), x)</code> を <code>xprime</code> とする。</li>
+<li><code><a href="../../memory/uses_allocator.html">uses_allocator</a>&lt;T1, inner_allocator_type&gt;::value == true</code> かつ <code><a href="../../type_traits/is_constructible.html">is_constructible</a>&lt;T1, Args1..., inner_allocator_type&gt;::value == true</code> の場合<br />
+<code><a href="../../tuple/tuple_cat.html">tuple_cat</a>(x, <a href="../../tuple/tuple.html">tuple</a>&lt;inner_allocator_type&amp;&gt;(inner_allocator_type()))</code> を <code>xprime</code> とする。</li>
+<li>それ以外の場合、プログラムは<a class="cpprefjp-defined-word" data-desc="プログラムが適格でないこと。コンパイルエラーなどになる" href="../../../implementation-compliance.html#dfn-ill-formed">不適格</a>となる。</li>
 </ul>
 </li>
 <li>

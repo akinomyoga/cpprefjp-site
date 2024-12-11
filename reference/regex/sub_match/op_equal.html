@@ -280,14 +280,10 @@
 <li>(2) <code>lhs.<a href="compare.html">compare</a>(typename <a href="../sub_match.html">sub_match</a>&lt;BiIter&gt;::string_type(rhs.<a href="../../string/basic_string/data.html">data</a>(), rhs.<a href="../../string/basic_string/size.html">size</a>())) == 0</code>  </li>
 <li>(3) <code>lhs.<a href="compare.html">compare</a>(rhs) == 0</code></li>
 <li>(4) <code>lhs.<a href="compare.html">compare</a>(typename <a href="../sub_match.html">sub_match</a>&lt;BiIter&gt;::string_type(1, rhs)) == 0</code></li>
-<li>
-<p>(5) <code>rhs.<a href="compare.html">compare</a>(typename <a href="../sub_match.html">sub_match</a>&lt;BiIter&gt;::string_type(lhs.<a href="../../string/basic_string/data.html">data</a>(), lhs.<a href="../../string/basic_string/size.html">size</a>())) == 0</code><br />
+<li>(5) <code>rhs.<a href="compare.html">compare</a>(typename <a href="../sub_match.html">sub_match</a>&lt;BiIter&gt;::string_type(lhs.<a href="../../string/basic_string/data.html">data</a>(), lhs.<a href="../../string/basic_string/size.html">size</a>())) == 0</code><br />
     なお、C++11 の規格書では <code>rhs.<a href="compare.html">compare</a>(lhs.<a href="../../string/basic_string/c_str.html">c_str</a>()) == 0</code> となっているが、この式では <code>lhs</code> に <code>'\0'</code> が含まれていた場合に正しく比較することができないため、規格上の誤りとして上記の式に修正された。
-    なお、C++11 の規格書では <code>lhs.<a href="compare.html">compare</a>(rhs.<a href="../../string/basic_string/c_str.html">c_str</a>()) == 0</code> となっているが、この式では <code>rhs</code> に <code>'\0'</code> が含まれていた場合に正しく比較することができないため、規格上の誤りとして上記の式に修正された。</p>
-</li>
-<li>
-<p>(6) <code>rhs.<a href="compare.html">compare</a>(lhs) == 0</code></p>
-</li>
+    なお、C++11 の規格書では <code>lhs.<a href="compare.html">compare</a>(rhs.<a href="../../string/basic_string/c_str.html">c_str</a>()) == 0</code> となっているが、この式では <code>rhs</code> に <code>'\0'</code> が含まれていた場合に正しく比較することができないため、規格上の誤りとして上記の式に修正された。</li>
+<li>(6) <code>rhs.<a href="compare.html">compare</a>(lhs) == 0</code></li>
 <li>(7) <code>rhs.<a href="compare.html">compare</a>(typename <a href="../sub_match.html">sub_match</a>&lt;BiIter&gt;::string_type(1, lhs)) == 0</code></li>
 </ul>
 <h2>備考</h2>

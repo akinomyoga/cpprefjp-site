@@ -270,13 +270,9 @@
 </ul>
 <h2>備考</h2>
 <ul>
-<li>
-<p>引数、および、戻り値の型 <em><code>ValOrProxy</code></em> は、<code><a href="../valarray.html">valarray</a></code>、あるいは、その代理となる型である。<br />
-<code><a href="../../valarray.html">&lt;valarray&gt;</a></code> の概要も参照のこと。</p>
-</li>
-<li>
-<p>(3), (5), (7), (9) : <code>valarray&lt;T&gt;</code>型のオブジェクトを返すこの関数を含むあらゆる関数は、<code>valarray</code>クラスと同じ<code>const</code>メンバ関数をもつほかの型を返すことが実装に許可される。例として複数の<code>valarray</code>操作をつなげて記述したときに最適化できるよう、式テンプレートを返す実装もある</p>
-</li>
+<li>引数、および、戻り値の型 <em><code>ValOrProxy</code></em> は、<code><a href="../valarray.html">valarray</a></code>、あるいは、その代理となる型である。<br />
+<code><a href="../../valarray.html">&lt;valarray&gt;</a></code> の概要も参照のこと。</li>
+<li>(3), (5), (7), (9) : <code>valarray&lt;T&gt;</code>型のオブジェクトを返すこの関数を含むあらゆる関数は、<code>valarray</code>クラスと同じ<code>const</code>メンバ関数をもつほかの型を返すことが実装に許可される。例として複数の<code>valarray</code>操作をつなげて記述したときに最適化できるよう、式テンプレートを返す実装もある</li>
 <li>(7), (8) : <code><a href="size.html">size()</a> != mask.<a href="size.html">size()</a></code>の場合、<a class="cpprefjp-defined-word" data-desc="未定義の動作。処理系は予期せぬ動作をする可能性がある。要するに動作保証対象外。undefined behavior (UB)。" href="../../../implementation-compliance.html#dfn-undefined-behavior">未定義動作</a>を引き起こす。</li>
 </ul>
 <h2>例</h2>

@@ -235,13 +235,9 @@
 <p><code><a href="size.html">size</a>() == 0</code></p>
 <h2>備考</h2>
 <ul>
-<li>
-<p><code><a href="../regex_match.html">regex_match</a></code>、および、<code><a href="../regex_search.html">regex_search</a></code> の引数に渡した <code><a href="../match_results.html">match_results</a></code> オブジェクトは、マッチが成功すると <code>empty() != true</code> となる。<br />
-<code><a href="../match_results.html">match_results</a></code> オブジェクトの結果が利用可能か否かを確認する場合には <code><a href="ready.html">ready</a></code> を使用すると良い。</p>
-</li>
-<li>
-<p><code><a href="../regex_iterator.html">regex_iterator</a></code> を間接参照して得られる <code><a href="../match_results.html">match_results</a></code> オブジェクトは、必ず <code>empty() != true</code> となる。</p>
-</li>
+<li><code><a href="../regex_match.html">regex_match</a></code>、および、<code><a href="../regex_search.html">regex_search</a></code> の引数に渡した <code><a href="../match_results.html">match_results</a></code> オブジェクトは、マッチが成功すると <code>empty() != true</code> となる。<br />
+<code><a href="../match_results.html">match_results</a></code> オブジェクトの結果が利用可能か否かを確認する場合には <code><a href="ready.html">ready</a></code> を使用すると良い。</li>
+<li><code><a href="../regex_iterator.html">regex_iterator</a></code> を間接参照して得られる <code><a href="../match_results.html">match_results</a></code> オブジェクトは、必ず <code>empty() != true</code> となる。</li>
 <li><code>empty() == true</code> の場合、<code><a href="../match_results.html">match_results</a></code> のメンバ関数には結果が<a class="cpprefjp-defined-word" data-desc="未規定の動作。事前の断りなく処理系によって異なる動作をする" href="../../../implementation-compliance.html#dfn-unspecified-behavior">未規定</a>であるものがあるので、注意が必要である（<code><a href="../regex_match.html">regex_match</a></code>、および、<code><a href="../regex_search.html">regex_search</a></code> を参照）。</li>
 <li>本メンバ関数は <code><a href="ready.html">ready</a>() == false</code> でも呼び出すことが可能である（その場合、<code>true</code> が返される）。</li>
 </ul>

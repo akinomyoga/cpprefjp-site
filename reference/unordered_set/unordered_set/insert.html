@@ -275,13 +275,9 @@
 <h2>効果</h2>
 <ul>
 <li>(1) : 引数 <code>v</code>、あるいは <code>rv</code> で指定した値と等価なキーがコンテナに存在していなければ、当該要素を追加する。</li>
-<li>
-<p>(2) : 引数 <code>v</code>、あるいは <code>rv</code> で指定した値と等価なキーがコンテナに存在していなければ、当該要素を追加する。<br />
-    引数 <code>position</code> は、要素の挿入位置を探し始める場所のヒントとして使用されるが、実装によって無視されるかもしれない。</p>
-</li>
-<li>
-<p>(3) : <a class="cpprefjp-defined-word" data-desc="2つのイテレータで表現される半開区間を表す。C++20からイテレータと番兵で異なる型であっても指定可能になる">イテレータ範囲</a> <code>[first, last)</code> のすべての要素 <code>t</code> に対して、(1)の形式の <code>insert(t)</code> を呼び出した場合と等価である。</p>
-</li>
+<li>(2) : 引数 <code>v</code>、あるいは <code>rv</code> で指定した値と等価なキーがコンテナに存在していなければ、当該要素を追加する。<br />
+    引数 <code>position</code> は、要素の挿入位置を探し始める場所のヒントとして使用されるが、実装によって無視されるかもしれない。</li>
+<li>(3) : <a class="cpprefjp-defined-word" data-desc="2つのイテレータで表現される半開区間を表す。C++20からイテレータと番兵で異なる型であっても指定可能になる">イテレータ範囲</a> <code>[first, last)</code> のすべての要素 <code>t</code> に対して、(1)の形式の <code>insert(t)</code> を呼び出した場合と等価である。</li>
 <li>(4) : (3)の形式を <code>insert(il.begin(), il.end())</code> として呼び出した場合と等価である。</li>
 <li>
 <p>(5) : <code>nh</code>が空の場合、効果はない。
@@ -295,17 +291,11 @@
 </ul>
 <h2>戻り値</h2>
 <ul>
-<li>
-<p>(1) : <code><a href="../../utility/pair.html">pair</a></code> の <code>bool</code> 部分（<code>second</code> 部）は、要素が追加されたら <code>true</code>、追加されなかったら（既にあったら）<code>false</code>。<br />
-<code><a href="../../utility/pair.html">pair</a></code> の <code>iterator</code> 部分（<code>first</code> 部）は、追加された要素（<code>bool</code> 部分が <code>true</code> の場合）、あるいは、既にあった要素（<code>bool</code> 部分が <code>false</code> の場合）を指すイテレータ。</p>
-</li>
-<li>
-<p>(2) : 新たな要素が追加された場合、その追加された要素を指すイテレータ。<br />
-    新たな要素が追加されなかった場合、既にあった要素を指すイテレータ。</p>
-</li>
-<li>
-<p>(3) : なし</p>
-</li>
+<li>(1) : <code><a href="../../utility/pair.html">pair</a></code> の <code>bool</code> 部分（<code>second</code> 部）は、要素が追加されたら <code>true</code>、追加されなかったら（既にあったら）<code>false</code>。<br />
+<code><a href="../../utility/pair.html">pair</a></code> の <code>iterator</code> 部分（<code>first</code> 部）は、追加された要素（<code>bool</code> 部分が <code>true</code> の場合）、あるいは、既にあった要素（<code>bool</code> 部分が <code>false</code> の場合）を指すイテレータ。</li>
+<li>(2) : 新たな要素が追加された場合、その追加された要素を指すイテレータ。<br />
+    新たな要素が追加されなかった場合、既にあった要素を指すイテレータ。</li>
+<li>(3) : なし</li>
 <li>(4) : なし</li>
 <li>(5) : 戻り値としては、<code><a href="../../map/map.html">insert_return_type</a></code>を返す。<code>insert_return_type</code>のイテレータ型メンバ変数<code>position</code>、<code>bool</code>型メンバ変数<code>inserted</code>に格納される値は(1), (2)のものと同じ情報である。<code>nh</code>が空の場合は、<code>position</code>は終端イテレータである。<code>node_type</code>型メンバ変数<code>node</code>には、<ul>
 <li>挿入された場合には、空の<a href="../../node_handle/node_handle.html">ノードハンドル</a>。</li>
@@ -330,10 +320,8 @@
 </ul>
 <h2>備考</h2>
 <ul>
-<li>
-<p>これらの関数が呼ばれた後も、当該コンテナ内の要素を指す参照は無効にはならない。
-    なお、規格書に明確な記載は無いが、当該コンテナ内の要素を指すポインタも無効にはならない。</p>
-</li>
+<li>これらの関数が呼ばれた後も、当該コンテナ内の要素を指す参照は無効にはならない。
+    なお、規格書に明確な記載は無いが、当該コンテナ内の要素を指すポインタも無効にはならない。</li>
 <li>
 <p>これらの関数が呼ばれた後も、呼び出しの前後でこのコンテナのバケット数（<code><a href="bucket_count.html">bucket_count</a>()</code> の戻り値）が変わらなかった場合には当該コンテナを指すイテレータは無効にはならない。<br />
     それ以外の場合は、当該コンテナを指すイテレータは無効になる可能性がある。<br />
