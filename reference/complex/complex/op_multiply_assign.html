@@ -245,14 +245,10 @@
 <p><code>*this</code></p>
 <h2>備考</h2>
 <ul>
-<li>
-<p>(1) の形式の場合、引数の型は <code>const T&amp;</code> なので、引数（演算子の右オペランド）の型が <code>T</code> ではない場合には暗黙の型変換が適用される。<br />
-例えば、<code>T</code> が規格でサポートが明示されている <code>float</code>、<code>double</code>、<code>long double</code> の場合、各種の暗黙の標準変換が（縮小変換も含めて）効くため、<code>complex&lt;float&gt;</code> に <code>long double</code> を掛けるといったこともできる。</p>
-</li>
-<li>
-<p>(2) の形式の場合、<code>rhs</code> の型はクラステンプレートなので、引数そのものに暗黙の型変換が適用されることはない。<br />
-しかし、（規格書内に明確な規定は無いが）<code>*this</code> に <code>rhs</code> を掛ける際には各コンポーネント間の演算となるため、やはり暗黙の型変換が適用されると考えて良いと思われる。</p>
-</li>
+<li>(1) の形式の場合、引数の型は <code>const T&amp;</code> なので、引数（演算子の右オペランド）の型が <code>T</code> ではない場合には暗黙の型変換が適用される。<br />
+例えば、<code>T</code> が規格でサポートが明示されている <code>float</code>、<code>double</code>、<code>long double</code> の場合、各種の暗黙の標準変換が（縮小変換も含めて）効くため、<code>complex&lt;float&gt;</code> に <code>long double</code> を掛けるといったこともできる。</li>
+<li>(2) の形式の場合、<code>rhs</code> の型はクラステンプレートなので、引数そのものに暗黙の型変換が適用されることはない。<br />
+しかし、（規格書内に明確な規定は無いが）<code>*this</code> に <code>rhs</code> を掛ける際には各コンポーネント間の演算となるため、やはり暗黙の型変換が適用されると考えて良いと思われる。</li>
 </ul>
 <h2>例</h2>
 <p><div class="yata" id="dd4c992c515b23bc45396fb4d8b1da88883bb6ca"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf"><a href="../../iostream.html">&lt;iostream&gt;</a></span><span class="cp"></span>

@@ -278,24 +278,16 @@
 <li><code>this</code>と<code>rhs</code>が共にエラー値を保持していたら、<code>unex = <a href="../../utility/move.html">std::move</a>(rhs.<a href="error.html">error()</a>)</code></li>
 </ul>
 </li>
-<li>
-<p>(3) : 次の処理と等価</p>
-<ul>
-<li>
-<p><code>this</code>が正常値を保持していたら、<code><a href="../../memory/construct_at.html">construct_at</a>(<a href="../../memory/addressof.html">addressof</a>(unex), val, <a href="../../utility/forward.html">std::forward</a>&lt;const G&amp;&gt;(e.<a href="../unexpected/error.html">error()</a>));
-has_val = false;</code></p>
+<li>(3) : 次の処理と等価<ul>
+<li><code>this</code>が正常値を保持していたら、<code><a href="../../memory/construct_at.html">construct_at</a>(<a href="../../memory/addressof.html">addressof</a>(unex), val, <a href="../../utility/forward.html">std::forward</a>&lt;const G&amp;&gt;(e.<a href="../unexpected/error.html">error()</a>));
+has_val = false;</code></li>
+<li><code>this</code>がエラー値を保持していたら、<code>unex = <a href="../../utility/forward.html">std::forward</a>&lt;const G&amp;&gt;(e.<a href="../unexpected/error.html">error()</a>);</code></li>
+</ul>
 </li>
-<li>
-<p><code>this</code>がエラー値を保持していたら、<code>unex = <a href="../../utility/forward.html">std::forward</a>&lt;const G&amp;&gt;(e.<a href="../unexpected/error.html">error()</a>);</code></p>
-</li>
-<li>(4) : 次の処理と等価</li>
-<li>
-<p><code>this</code>が正常値を保持していたら、<code><a href="../../memory/construct_at.html">construct_at</a>(<a href="../../memory/addressof.html">addressof</a>(unex), val, <a href="../../utility/forward.html">std::forward</a>&lt;G&gt;(e.<a href="../unexpected/error.html">error()</a>));
-has_val = false;</code></p>
-</li>
-<li>
-<p><code>this</code>がエラー値を保持していたら、<code>unex = <a href="../../utility/forward.html">std::forward</a>&lt;G&gt;(e.<a href="../unexpected/error.html">error()</a>);</code></p>
-</li>
+<li>(4) : 次の処理と等価<ul>
+<li><code>this</code>が正常値を保持していたら、<code><a href="../../memory/construct_at.html">construct_at</a>(<a href="../../memory/addressof.html">addressof</a>(unex), val, <a href="../../utility/forward.html">std::forward</a>&lt;G&gt;(e.<a href="../unexpected/error.html">error()</a>));
+has_val = false;</code></li>
+<li><code>this</code>がエラー値を保持していたら、<code>unex = <a href="../../utility/forward.html">std::forward</a>&lt;G&gt;(e.<a href="../unexpected/error.html">error()</a>);</code></li>
 </ul>
 </li>
 </ul>
