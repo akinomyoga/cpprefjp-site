@@ -38,26 +38,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
-<link rel="manifest" href="../../manifest.json?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e">
+<link rel="manifest" href="../../manifest.json?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -188,12 +188,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2024-12-05T02:54:34">
-        2024年12月05日 02時54分34秒
+      <span itemprop="datePublished" content="2024-12-22T06:27:29">
+        2024年12月22日 06時27分29秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">Akira Takahashi</span>
+        <span itemprop="name">Raclamusi</span>
       </span>
       が更新
     </small></p>
@@ -216,11 +216,21 @@
 <div itemprop="articleBody"><p><div class="codehilite"><pre><span></span><code><span class="k">namespace</span> <span class="n">std</span><span class="o">::</span><span class="n">ranges</span> <span class="p">{</span>
   <span class="k">template</span> <span class="o">&lt;</span><span class="n"><a href="no-throw-forward-iterator.html">no-throw-forward-iterator</a></span> <span class="n">I</span><span class="p">,</span> <span class="n"><a href="no-throw-sentinel.html">no-throw-sentinel</a></span><span class="o">&lt;</span><span class="n">I</span><span class="o">&gt;</span> <span class="n">S</span><span class="o">&gt;</span>
     <span class="n">requires</span> <span class="n"><a href="../concepts/default_initializable.html">default_initializable</a></span><span class="o">&lt;</span><span class="n"><a href="../iterator/iter_value_t.html">iter_value_t</a></span><span class="o">&lt;</span><span class="n">I</span><span class="o">&gt;&gt;</span>
-  <span class="n">I</span> <span class="n">uninitialized_default_construct</span><span class="p">(</span><span class="n">I</span> <span class="n">first</span><span class="p">,</span> <span class="n">S</span> <span class="n">last</span><span class="p">);</span>            <span class="c1">// (1) C++20</span>
+  <span class="n">I</span>
+    <span class="n">uninitialized_default_construct</span><span class="p">(</span><span class="n">I</span> <span class="n">first</span><span class="p">,</span> <span class="n">S</span> <span class="n">last</span><span class="p">);</span> <span class="c1">// (1) C++20</span>
+  <span class="k">template</span> <span class="o">&lt;</span><span class="n"><a href="no-throw-forward-iterator.html">no-throw-forward-iterator</a></span> <span class="n">I</span><span class="p">,</span> <span class="n"><a href="no-throw-sentinel.html">no-throw-sentinel</a></span><span class="o">&lt;</span><span class="n">I</span><span class="o">&gt;</span> <span class="n">S</span><span class="o">&gt;</span>
+    <span class="n">requires</span> <span class="n"><a href="../concepts/default_initializable.html">default_initializable</a></span><span class="o">&lt;</span><span class="n"><a href="../iterator/iter_value_t.html">iter_value_t</a></span><span class="o">&lt;</span><span class="n">I</span><span class="o">&gt;&gt;</span>
+  <span class="k">constexpr</span> <span class="n">I</span>
+    <span class="n">uninitialized_default_construct</span><span class="p">(</span><span class="n">I</span> <span class="n">first</span><span class="p">,</span> <span class="n">S</span> <span class="n">last</span><span class="p">);</span> <span class="c1">// (1) C++26</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="n"><a href="no-throw-forward-range.html">no-throw-forward-range</a></span> <span class="n">R</span><span class="o">&gt;</span>
     <span class="n">requires</span> <span class="n"><a href="../concepts/default_initializable.html">default_initializable</a></span><span class="o">&lt;</span><span class="n"><a href="../ranges/range_value_t.html">range_value_t</a></span><span class="o">&lt;</span><span class="n">R</span><span class="o">&gt;&gt;</span>
-  <span class="n"><a href="../ranges/borrowed_iterator_t.html">borrowed_iterator_t</a></span><span class="o">&lt;</span><span class="n">R</span><span class="o">&gt;</span> <span class="n">uninitialized_default_construct</span><span class="p">(</span><span class="n">R</span><span class="o">&amp;&amp;</span> <span class="n">r</span><span class="p">);</span> <span class="c1">// (2) C++20</span>
+  <span class="n"><a href="../ranges/borrowed_iterator_t.html">borrowed_iterator_t</a></span><span class="o">&lt;</span><span class="n">R</span><span class="o">&gt;</span>
+    <span class="n">uninitialized_default_construct</span><span class="p">(</span><span class="n">R</span><span class="o">&amp;&amp;</span> <span class="n">r</span><span class="p">);</span>           <span class="c1">// (2) C++20</span>
+  <span class="k">template</span> <span class="o">&lt;</span><span class="n"><a href="no-throw-forward-range.html">no-throw-forward-range</a></span> <span class="n">R</span><span class="o">&gt;</span>
+    <span class="n">requires</span> <span class="n"><a href="../concepts/default_initializable.html">default_initializable</a></span><span class="o">&lt;</span><span class="n"><a href="../ranges/range_value_t.html">range_value_t</a></span><span class="o">&lt;</span><span class="n">R</span><span class="o">&gt;&gt;</span>
+  <span class="k">constexpr</span> <span class="n"><a href="../ranges/borrowed_iterator_t.html">borrowed_iterator_t</a></span><span class="o">&lt;</span><span class="n">R</span><span class="o">&gt;</span>
+    <span class="n">uninitialized_default_construct</span><span class="p">(</span><span class="n">R</span><span class="o">&amp;&amp;</span> <span class="n">r</span><span class="p">);</span>           <span class="c1">// (2) C++26</span>
 <span class="p">}</span>
 </code></pre></div>
 </p>
@@ -230,7 +240,7 @@
 <li>(1): <a class="cpprefjp-defined-word" data-desc="2つのイテレータで表現される半開区間を表す。C++20からイテレータと番兵で異なる型であっても指定可能になる">イテレータ範囲</a>を指定する</li>
 <li>(2): Rangeを直接指定する</li>
 </ul>
-<h2><a class="cpprefjp-defined-word" data-desc="関数であればオーバーロード解決に参加するための条件、それ以外であれば受け付ける型の条件">テンプレートパラメータ制約</a></h2>
+<h2><a class="cpprefjp-defined-word" data-desc="関数等の意味論を構成する要素の1つ。Constraints。関数であればオーバーロード解決に参加するための条件、それ以外であれば受け付ける型の条件">テンプレートパラメータ制約</a></h2>
 <ul>
 <li>(1):<ul>
 <li><code>I</code>が<code><a href="no-throw-forward-iterator.html">no-throw-forward-iterator</a></code>である</li>
@@ -258,8 +268,8 @@
 <span class="k">return</span> <span class="n">first</span><span class="p">;</span>
 </code></pre></div>
 </p>
-<h2>例外</h2>
-<p>呼び出すコンストラクタなどから例外がスローされた場合、その例外がこの関数の外側に伝播される前に、その時点で構築済のオブジェクトは全て<a class="cpprefjp-defined-word" data-desc="未規定の動作。事前の断りなく処理系によって異なる動作をする" href="../../implementation-compliance.html#dfn-unspecified-behavior">未規定</a>の順序で破棄される。すなわち、例外がスローされた場合は初期化対象領域は未初期化のままとなる。</p>
+<h2><a class="cpprefjp-defined-word" data-desc="問題が発生したときに、現在実行位置を過去に通過・記録した位置に戻し、文脈情報を添えて紐づけられた処理(例外ハンドラー)を呼び出す仕組み。またはその事態">例外</a></h2>
+<p>呼び出すコンストラクタなどから<a class="cpprefjp-defined-word" data-desc="問題が発生したときに、現在実行位置を過去に通過・記録した位置に戻し、文脈情報を添えて紐づけられた処理(例外ハンドラー)を呼び出す仕組み。またはその事態">例外</a>がスローされた場合、その<a class="cpprefjp-defined-word" data-desc="問題が発生したときに、現在実行位置を過去に通過・記録した位置に戻し、文脈情報を添えて紐づけられた処理(例外ハンドラー)を呼び出す仕組み。またはその事態">例外</a>がこの関数の外側に伝播される前に、その時点で構築済のオブジェクトは全て<a class="cpprefjp-defined-word" data-desc="未規定の動作。事前の断りなく処理系によって異なる動作をする" href="../../implementation-compliance.html#dfn-unspecified-behavior">未規定</a>の順序で破棄される。すなわち、<a class="cpprefjp-defined-word" data-desc="問題が発生したときに、現在実行位置を過去に通過・記録した位置に戻し、文脈情報を添えて紐づけられた処理(例外ハンドラー)を呼び出す仕組み。またはその事態">例外</a>がスローされた場合は初期化対象領域は未初期化のままとなる。</p>
 <h2>備考</h2>
 <ul>
 <li><code><a href="../vector/vector.html">std::vector</a></code>クラスの要素数を変更する操作は、要素を<a class="cpprefjp-defined-word" data-desc="値初期化。`T x{};`構文での初期化。組み込み型の場合はゼロ相当の値で、クラス型の場合はデフォルトコンストラクタで初期化する。配列型の場合は各要素が再帰的に値初期化される">値構築</a>するためゼロ初期化が行われる。その<a class="cpprefjp-defined-word" data-desc="`T x{};`構文での初期化。組み込み型の場合はゼロ相当の値で、クラス型の場合はデフォルトコンストラクタで初期化する。配列型の場合は各要素が再帰的に値初期化される">値初期化</a>のコストが気になるような場合に、<a class="cpprefjp-defined-word" data-desc="デフォルト初期化。`T x;`構文での初期化。トリビアルにデフォルト構築可能な型の場合は初期化されず（オブジェクトのlifetimeは開始される）、そうではないクラス型はデフォルトコンストラクタで初期化する。配列型の場合は各要素が再帰的にデフォルト初期化される">デフォルト構築</a>することでプログラマの責任で必要な分だけ任意に初期化でき、パフォーマンス向上が期待できるようになる。<ul>
@@ -323,7 +333,12 @@
 </ul>
 <h2>参照</h2>
 <ul>
-<li><a href="https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/p0896r4.pdf" target="_blank">P9896R4 The One Ranges Proposal</a></li>
+<li><a href="https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/p0896r4.pdf" target="_blank">P0896R4 The One Ranges Proposal</a></li>
+<li><a href="https://open-std.org/jtc1/sc22/wg21/docs/papers/2024/p3508r0.html" target="_blank">P3508R0 Wording for "constexpr for specialized memory algorithms"</a></li>
+<li><a href="https://open-std.org/jtc1/sc22/wg21/docs/papers/2024/p3369r0.html" target="_blank">P3369R0 <code>constexpr</code> for <code>uninitialized_default_construct</code></a><ul>
+<li>上記2文書で、C++26から<code>constexpr</code>がついた</li>
+</ul>
+</li>
 </ul></div>
 
       </div>

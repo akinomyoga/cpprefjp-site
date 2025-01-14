@@ -38,26 +38,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
-<link rel="manifest" href="../../manifest.json?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e">
+<link rel="manifest" href="../../manifest.json?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -188,8 +188,8 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2024-06-11T13:45:38">
-        2024年06月11日 13時45分38秒
+      <span itemprop="datePublished" content="2024-12-23T06:19:33">
+        2024年12月23日 06時19分33秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -227,18 +227,29 @@
 <ul>
 <li>(1) : プライマリテンプレート。宣言のみ</li>
 <li>(2) : 整数型に対する特殊化</li>
-<li>(3) : (CV修飾されていない) 浮動小数点数型に対する特殊化<ul>
+<li>(3) : (<a class="cpprefjp-defined-word" data-desc="型をconstおよび・もしくはvolatileで修飾すること">CV修飾</a>されていない) 浮動小数点数型に対する特殊化<ul>
 <li>(C++23) : <a class="cpprefjp-defined-word" data-desc="&lt;stdfloat&gt;で定義される内部表現の規定された浮動小数点数型" href="../stdfloat.html">拡張浮動小数点数型</a>を含む</li>
 </ul>
 </li>
 <li>(4) : 任意の型のポインタに対する特殊化</li>
 </ul>
 <p>これらのほか、<code><a href="../memory.html">&lt;memory&gt;</a></code>ヘッダで<a href="../memory/atomic.html"><code>std::shared_ptr</code>と<code>std::weak_ptr</code>に対する<code>atomic</code>クラスの特殊化</a>が定義される。</p>
-<h2><a class="cpprefjp-defined-word" data-desc="関数であればオーバーロード解決に参加するための条件、それ以外であれば受け付ける型の条件">テンプレートパラメータ制約</a></h2>
+<h2><a class="cpprefjp-defined-word" data-desc="関数等の意味論を構成する要素の1つ。Constraints。関数であればオーバーロード解決に参加するための条件、それ以外であれば受け付ける型の条件">テンプレートパラメータ制約</a></h2>
 <ul>
 <li>型<code>T</code>は<a href="../concepts/copy_constructible.html">コピー構築可能</a>かつ<a href="../type_traits/is_copy_assignable.html">コピー代入可能</a>であること</li>
-<li><code><a href="../type_traits/is_trivially_copyable.html">is_trivially_copyable_v</a>&lt;T&gt; &amp;&amp; <a href="../type_traits/is_copy_constructible.html">is_copy_constructible_v</a>&lt;T&gt; &amp;&amp; <a href="../type_traits/is_move_constructible.html">is_move_constructible_v</a>&lt;T&gt; &amp;&amp; <a href="../type_traits/is_copy_assignable.html">is_copy_assignable_v</a>&lt;T&gt; &amp;&amp; <a href="../type_traits/is_move_assignable.html">is_move_assignable_v</a>&lt;T&gt;</code>が<code>false</code>である場合、プログラムは<a class="cpprefjp-defined-word" data-desc="プログラムが適格でないこと。コンパイルエラーなどになる" href="../../implementation-compliance.html#dfn-ill-formed">不適格</a>となる<ul>
+<li>以下のいずれかが<code>false</code>である場合、プログラムは<a class="cpprefjp-defined-word" data-desc="プログラムが適格でないこと。コンパイルエラーなどになる" href="../../implementation-compliance.html#dfn-ill-formed">不適格</a>となる：<ul>
+<li><code><a href="../type_traits/is_trivially_copyable.html">is_trivially_copyable_v</a>&lt;T&gt;</code><ul>
 <li>簡潔に言うと、<code>memcpy()</code>可能な型であること</li>
+</ul>
+</li>
+<li><code><a href="../type_traits/is_copy_constructible.html">is_copy_constructible_v</a>&lt;T&gt;</code></li>
+<li><code><a href="../type_traits/is_move_constructible.html">is_move_constructible_v</a>&lt;T&gt;</code></li>
+<li><code><a href="../type_traits/is_copy_assignable.html">is_copy_assignable_v</a>&lt;T&gt;</code></li>
+<li><code><a href="../type_traits/is_move_assignable.html">is_move_assignable_v</a>&lt;T&gt;</code></li>
+<li>C++26: <code><a href="../concepts/same_as.html">same_as</a>&lt;T, <a href="../type_traits/remove_cv.html">remove_cv_t</a>&lt;T&gt;&gt;</code><ul>
+<li><a class="cpprefjp-defined-word" data-desc="型をconstおよび・もしくはvolatileで修飾すること">CV修飾</a>された<code>T</code>は許可しない</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -687,6 +698,16 @@
 <td>C++11</td>
 </tr>
 <tr>
+<td><code><a href="atomic/fetch_max.html">fetch_max</a></code></td>
+<td>最大値取得</td>
+<td>C++26</td>
+</tr>
+<tr>
+<td><code><a href="atomic/fetch_min.html">fetch_min</a></code></td>
+<td>最小値取得</td>
+<td>C++26</td>
+</tr>
+<tr>
 <td><code><a href="atomic/op_increment.html">operator++</a></code></td>
 <td>インクリメント</td>
 <td>C++11</td>
@@ -810,6 +831,16 @@
 <td><code><a href="atomic/fetch_sub.html">fetch_sub</a></code></td>
 <td>減算</td>
 <td>C++11</td>
+</tr>
+<tr>
+<td><code><a href="atomic/fetch_max.html">fetch_max</a></code></td>
+<td>最大値取得</td>
+<td>C++26</td>
+</tr>
+<tr>
+<td><code><a href="atomic/fetch_min.html">fetch_min</a></code></td>
+<td>最小値取得</td>
+<td>C++26</td>
 </tr>
 <tr>
 <td><code><a href="atomic/op_increment.html">operator++</a></code></td>
@@ -955,6 +986,10 @@
 </li>
 <li><a href="https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2022/p1467r9.html" target="_blank">P1467R9 Extended floating-point types and standard names</a><ul>
 <li>C++23で<a class="cpprefjp-defined-word" data-desc="&lt;stdfloat&gt;で定義される内部表現の規定された浮動小数点数型" href="../stdfloat.html">拡張浮動小数点数型</a>もテンプレート引数として指定することが許可された</li>
+</ul>
+</li>
+<li><a href="https://open-std.org/jtc1/sc22/wg21/docs/papers/2024/p3323r1.html" target="_blank">P3323R1 cv-qualified types in <code>atomic</code> and <code>atomic_ref</code></a><ul>
+<li>C++26で<a class="cpprefjp-defined-word" data-desc="型をconstおよび・もしくはvolatileで修飾すること">CV修飾</a>されたテンプレートパラメータが明確に禁止された</li>
 </ul>
 </li>
 </ul></div>

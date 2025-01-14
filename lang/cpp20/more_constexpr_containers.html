@@ -38,26 +38,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
-<link rel="manifest" href="../../manifest.json?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e">
+<link rel="manifest" href="../../manifest.json?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -188,12 +188,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2024-07-08T07:33:21">
-        2024年07月08日 07時33分21秒
+      <span itemprop="datePublished" content="2025-01-09T11:51:24">
+        2025年01月09日 11時51分24秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">Akira Takahashi</span>
+        <span itemprop="name">Yuhki Ogasawara</span>
       </span>
       が更新
     </small></p>
@@ -288,7 +288,7 @@
 </code></pre></div>
 </p>
 <p>当然ながら、<code>new/delete</code>式によって動的メモリ確保しようとする型はリテラル型であり、呼び出されるコンストラクタとデストラクタは共に定数式で実行可能でなければならない。</p>
-<p>また、コンパイル時に実行される<code>new</code>式はグローバルのオーバーロード可能な<code><a href="../../reference/new/op_new.html">operator new</a></code>を呼び出すものでなくてはならない。そうではない<code>new</code>式の定数式における評価はコンパイルエラーとなる。</p>
+<p>また、コンパイル時に実行される<code>new</code>式はグローバルの<a class="cpprefjp-defined-word" data-desc="同名の関数を異なる引数・テンプレート・制約などで複数定義すること。または同名の関数の集合">オーバーロード</a>可能な<code><a href="../../reference/new/op_new.html">operator new</a></code>を呼び出すものでなくてはならない。そうではない<code>new</code>式の定数式における評価はコンパイルエラーとなる。</p>
 <p><div class="codehilite"><pre><span></span><code><span class="k">struct</span> <span class="n">S</span> <span class="p">{</span>
   <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 
@@ -426,7 +426,7 @@
 <p><code>std::allocator::allocate()</code>はグローバルの<code>::operator new()</code>を呼び出すが、この呼び出しは<code>new</code>式の時と同様に省略されており、<code>std::allocator::deallocate()</code>における<code>::operator delete()</code>の呼び出しも省略されている。この2つもまた<code>new/delete</code>式と同様に、メモリの確保と解放が一貫していることのマーカーとしての側面が強くなっている。</p>
 <p>結局、C++20のコンパイル時動的メモリ確保は定数式にヒープ領域を導入するものではなく、デフォルトの<code>::operator new</code>による動的メモリ確保を別の領域をあてがう形に置換することで行われている。</p>
 <h2>この機能が必要になった背景・経緯</h2>
-<p><code>std::vector</code>をはじめとする可変サイズのコンテナは実行時に非常に有用であるため、同様に定数式においても有用である可能性があり、その必要性がC++コミュニティからも示されいていた（<a href="https://youtu.be/HMB9oXFobJc" target="_blank">C++Now 2017: Ben Deane &amp; Jason Turner "constexpr ALL the things!"</a>、<a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/p0810r0.pdf" target="_blank">P0810R0 constexpr in Practice</a>など）。</p>
+<p><code>std::vector</code>をはじめとする可変サイズのコンテナは実行時に非常に有用であるため、同様に定数式においても有用である可能性があり、その必要性がC++コミュニティからも示されていた（<a href="https://youtu.be/HMB9oXFobJc" target="_blank">C++Now 2017: Ben Deane &amp; Jason Turner "constexpr ALL the things!"</a>、<a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/p0810r0.pdf" target="_blank">P0810R0 constexpr in Practice</a>など）。</p>
 <p>また、静的リフレクション機能の導入にあたっては、コンパイル時に使用可能な可変サイズコンテナおよび可変サイズの文字列型が必要となっていた。例えば、ある型のテンプレート引数をクエリするコードは次のようなものになる</p>
 <p><div class="codehilite"><pre><span></span><code><span class="c1">// 型Tのテンプレート引数の情報を取り出す</span>
 <span class="n"><a href="../../reference/vector/vector.html">std::vector</a></span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">metainfo</span><span class="o">&gt;</span> <span class="n">args</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">meta</span><span class="o">::</span><span class="n">get_template_args</span><span class="p">(</span><span class="n">reflexpr</span><span class="p">(</span><span class="n">T</span><span class="p">));</span>

@@ -38,26 +38,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
-<link rel="manifest" href="../../manifest.json?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e">
+<link rel="manifest" href="../../manifest.json?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -188,8 +188,8 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2024-03-12T14:39:48">
-        2024年03月12日 14時39分48秒
+      <span itemprop="datePublished" content="2024-12-19T07:56:49">
+        2024年12月19日 07時56分49秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -221,14 +221,16 @@
 </p>
 <h2>概要</h2>
 <p>行列(matrix)を表現する2次元配列ビュー<code><a href="../mdspan/mdspan.html">std::mdspan</a></code>に対して、転置行列(transposed matrix)を表現する新しい2次元配列ビューを作る。</p>
-<p>本操作により<code>mdspan</code>参照先メモリブロックが書き換えられることはなく、戻り値<code>mdspan</code>を介した要素アクセス時に行／列を入れ替える転置操作が行われる。</p>
-<h2><a class="cpprefjp-defined-word" data-desc="満たさなければプログラムが不適格となる要件。`static_assert`や関数のdelete宣言などに相当する">適格要件</a></h2>
+<p>本操作により<code>mdspan</code>参照先メモリブロックが書き換えられることはなく、<a class="cpprefjp-defined-word" data-desc="関数呼び出し式の評価結果となるオブジェクト・値">戻り値</a><code>mdspan</code>を介した要素アクセス時に行／列を入れ替える転置操作が行われる。</p>
+<h2><a class="cpprefjp-defined-word" data-desc="関数等の意味論を構成する要素の1つ。Mandates。満たさなければプログラムが不適格となる要件。この要件は、オーバーロード解決によって選択された関数内での`static_assert`の定数条件式や、関数に対するdelete宣言などで表現できる">適格要件</a></h2>
 <p><code><a href="../mdspan/extents/rank.html">Extents::rank()</a> == 2</code></p>
-<h2>戻り値</h2>
+<h2><a class="cpprefjp-defined-word" data-desc="関数呼び出し式の評価結果となるオブジェクト・値">戻り値</a></h2>
 <p>説明用の型<code>ReturnExtents</code>を<code><a href="layout_transpose/transpose-extents.html">transpose-extents-t</a>&lt;Extents&gt;</code>、型<code>R</code>を<code><a href="../mdspan/mdspan.html">mdspan</a>&lt;ElementType, ReturnExtents, ReturnLayout, Accessor&gt;</code>、型<code>ReturnLayout</code>を下記の通りとする。</p>
 <ul>
 <li><code>Layout</code>が<code><a href="../mdspan/layout_left.html">layout_left</a></code>のとき、<code><a href="../mdspan/layout_right.html">layout_right</a></code></li>
 <li><code>Layout</code>が<code><a href="../mdspan/layout_right.html">layout_right</a></code>のとき、<code><a href="../mdspan/layout_left.html">layout_left</a></code></li>
+<li><code>Layout</code>が<code><a href="../mdspan/layout_left_padded.html">layout_left_padded&lt;PaddingValue&gt;</a></code>のとき、<code><a href="../mdspan/layout_right_padded.html">layout_right_padded&lt;PaddingValue&gt;</a></code></li>
+<li><code>Layout</code>が<code><a href="../mdspan/layout_right_padded.html">layout_right_padded&lt;PaddingValue&gt;</a></code>のとき、<code><a href="../mdspan/layout_left_padded.html">layout_left_padded&lt;PaddingValue&gt;</a></code></li>
 <li><code>Layout</code>が<code><a href="../mdspan/layout_stride.html">layout_stride</a></code>のとき、<code>layout_stride</code></li>
 <li><code>Layout</code>が<code><a href="layout_blas_packed.html">layout_blas_packed</a>&lt;Triangle, StorageOrder&gt;</code>のとき、<code>layout_blas_packed&lt;OppositeTriangle, OppositeStorageOrder&gt;</code><ul>
 <li><code>OppositeTriangle</code>は<code><a href="../type_traits/conditional.html">conditional_t</a>&lt;<a href="../type_traits/is_same.html">is_same_v</a>&lt;Triangle, upper_triangle_t&gt;, lower_triangle_t, upper_triangle_t&gt;</code></li>
@@ -249,7 +251,31 @@
 </p>
 </li>
 <li>
-<p><code>Layout</code>が<code><a href="../mdspan/layout_stride.html">layout_stride</a></code>の特殊化であるとき、</p>
+<p><code>Layout</code>が<code><a href="../mdspan/layout_left_padded.html">layout_left_padded&lt;PaddingValue&gt;</a></code>であるとき、</p>
+</li>
+</ul>
+<p><div class="codehilite"><pre><span></span><code><span class="n">R</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">data_handle</span><span class="p">(),</span>
+  <span class="n">ReturnMapping</span><span class="p">(</span><span class="n">transpose</span><span class="o">-</span><span class="n">extents</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">mapping</span><span class="p">().</span><span class="n">extents</span><span class="p">()),</span> <span class="n">a</span><span class="p">.</span><span class="n">mapping</span><span class="p">().</span><span class="n">stride</span><span class="p">(</span><span class="mi">1</span><span class="p">)),</span>
+  <span class="n">a</span><span class="p">.</span><span class="n">accessor</span><span class="p">())</span>
+</code></pre></div>
+</p>
+<p><div class="codehilite"><pre><span></span><code><span class="err">* transpose-extents[link layout_transpose/transpose-extents.md]</span>
+</code></pre></div>
+</p>
+<ul>
+<li><code>Layout</code>が<code><a href="../mdspan/layout_right_padded.html">layout_right_padded&lt;PaddingValue&gt;</a></code>であるとき、</li>
+</ul>
+<p><div class="codehilite"><pre><span></span><code><span class="n">R</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">data_handle</span><span class="p">(),</span>
+  <span class="n">ReturnMapping</span><span class="p">(</span><span class="n">transpose</span><span class="o">-</span><span class="n">extents</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">mapping</span><span class="p">().</span><span class="n">extents</span><span class="p">()),</span> <span class="n">a</span><span class="p">.</span><span class="n">mapping</span><span class="p">().</span><span class="n">stride</span><span class="p">(</span><span class="mi">0</span><span class="p">)),</span>
+  <span class="n">a</span><span class="p">.</span><span class="n">accessor</span><span class="p">())</span>
+</code></pre></div>
+</p>
+<p><div class="codehilite"><pre><span></span><code><span class="err">* transpose-extents[link layout_transpose/transpose-extents.md]</span>
+</code></pre></div>
+</p>
+<ul>
+<li>
+<p><code>Layout</code>が<code><a href="../mdspan/layout_stride.html">layout_stride</a></code>であるとき、</p>
 <p><div class="codehilite"><pre><span></span><code><span class="n">R</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">data_handle</span><span class="p">(),</span>
   <span class="n">ReturnMapping</span><span class="p">(</span><span class="n"><a href="layout_transpose/transpose-extents.html">transpose-extents</a></span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">mapping</span><span class="p">().</span><span class="n">extents</span><span class="p">()),</span>
                 <span class="n">array</span><span class="p">{</span><span class="n">a</span><span class="p">.</span><span class="n">mapping</span><span class="p">().</span><span class="n">stride</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">a</span><span class="p">.</span><span class="n">mapping</span><span class="p">().</span><span class="n">stride</span><span class="p">(</span><span class="mi">0</span><span class="p">)}),</span>
@@ -318,6 +344,7 @@
 <ul>
 <li><a href="https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2023/p1673r13.html" target="_blank">P1673R13 A free function linear algebra interface based on the BLAS</a></li>
 <li><a href="https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2022/p1674r2.html" target="_blank">P1674R2: Evolving a Standard C++ Linear Algebra Library from the BLAS</a></li>
+<li><a href="https://open-std.org/jtc1/sc22/wg21/docs/papers/2024/p3222r0.html" target="_blank">P3222R0 Fix C++26 by adding transposed special cases for P2642 layouts</a></li>
 </ul></div>
 
       </div>

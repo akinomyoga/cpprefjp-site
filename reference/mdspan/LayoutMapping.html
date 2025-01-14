@@ -38,26 +38,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
-<link rel="manifest" href="../../manifest.json?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e">
+<link rel="manifest" href="../../manifest.json?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -188,8 +188,8 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2024-07-28T13:32:33">
-        2024年07月28日 13時32分33秒
+      <span itemprop="datePublished" content="2024-12-20T08:46:04">
+        2024年12月20日 08時46分04秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -268,52 +268,58 @@
 <ul>
 <li><code>m.extents()</code> : <code>const M::extents_type&amp;</code>型を返すこと。</li>
 <li><code>m(i...)</code> : <code>M::index_type</code>型を返すこと。<ul>
-<li>戻り値 : 非負整数値</li>
+<li><a class="cpprefjp-defined-word" data-desc="関数呼び出し式の評価結果となるオブジェクト・値">戻り値</a> : 非負整数値</li>
 </ul>
 </li>
 <li><code>m(i...) == m(static_cast&lt;M::index_type&gt;(i)...)</code> : <code>true</code>となること。</li>
 <li><code>m.required_span_size()</code> : <code>M::index_type</code>型を返すこと。<ul>
-<li>戻り値 : <code>m.extents()</code>の多次元インデクス空間サイズが0のときは値<code>0</code>。そうでなければ、レイアウトマッピングによりアクセスする可能性のあるメモリブロック範囲の最大値に<code>1</code>を足した値。</li>
+<li><a class="cpprefjp-defined-word" data-desc="関数呼び出し式の評価結果となるオブジェクト・値">戻り値</a> : <code>m.extents()</code>の多次元インデクス空間サイズが0のときは値<code>0</code>。そうでなければ、レイアウトマッピングによりアクセスする可能性のあるメモリブロック範囲の最大値に<code>1</code>を足した値。</li>
 </ul>
 </li>
 <li><code>m.is_unique()</code> : <code>bool</code>型を返すこと。<ul>
-<li>戻り値 : Unique特性を満たすときに限り<code>true</code>。</li>
+<li><a class="cpprefjp-defined-word" data-desc="関数呼び出し式の評価結果となるオブジェクト・値">戻り値</a> : Unique特性を満たすときに限り<code>true</code>。</li>
 </ul>
 </li>
 <li><code>m.is_exhaustive()</code> : <code>bool</code>型を返すこと。<ul>
-<li>戻り値 : Exhaustive特性を満たすときに限り<code>true</code>。</li>
+<li><a class="cpprefjp-defined-word" data-desc="関数呼び出し式の評価結果となるオブジェクト・値">戻り値</a> : Exhaustive特性を満たすときに限り<code>true</code>。</li>
 </ul>
 </li>
 <li><code>m.is_strided()</code> : <code>bool</code>型を返すこと。<ul>
-<li>戻り値 : Strided特性を満たすときに限り<code>true</code>。</li>
+<li><a class="cpprefjp-defined-word" data-desc="関数呼び出し式の評価結果となるオブジェクト・値">戻り値</a> : Strided特性を満たすときに限り<code>true</code>。</li>
 </ul>
 </li>
 <li><code>m.stride(r)</code> : <code>M::index_type</code>型を返すこと。<ul>
 <li>前提条件 : <code>m.is_strided() == true</code></li>
-<li>戻り値 : <code>r</code>番目次元のストライド幅</li>
+<li><a class="cpprefjp-defined-word" data-desc="関数呼び出し式の評価結果となるオブジェクト・値">戻り値</a> : <code>r</code>番目次元のストライド幅</li>
 </ul>
 </li>
 <li><code>M::is_always_unique()</code> : <code>bool</code>型の定数式となること。<ul>
-<li>戻り値 : 型<code>M</code>のあらゆるオブジェクトにおいてUnique特性を満たすときに<code>true</code>。</li>
+<li><a class="cpprefjp-defined-word" data-desc="関数呼び出し式の評価結果となるオブジェクト・値">戻り値</a> : 型<code>M</code>のあらゆるオブジェクトにおいてUnique特性を満たすときに<code>true</code>。</li>
 </ul>
 </li>
 <li><code>M::is_always_exhaustive()</code> : <code>bool</code>型の定数となること。<ul>
-<li>戻り値 : 型<code>M</code>のあらゆるオブジェクトにおいてExhaustive特性を満たすときに<code>true</code>。</li>
+<li><a class="cpprefjp-defined-word" data-desc="関数呼び出し式の評価結果となるオブジェクト・値">戻り値</a> : 型<code>M</code>のあらゆるオブジェクトにおいてExhaustive特性を満たすときに<code>true</code>。</li>
 </ul>
 </li>
 <li><code>M::is_always_strided()</code> : <code>bool</code>型の定数となること。<ul>
-<li>戻り値 : 型<code>M</code>のあらゆるオブジェクトにおいてStrided特性を満たすときに<code>true</code>。</li>
+<li><a class="cpprefjp-defined-word" data-desc="関数呼び出し式の評価結果となるオブジェクト・値">戻り値</a> : 型<code>M</code>のあらゆるオブジェクトにおいてStrided特性を満たすときに<code>true</code>。</li>
 </ul>
 </li>
 </ul>
 <h2><code>LayoutMapping</code>に該当する型</h2>
 <ul>
-<li><code><a href="layout_left/mapping.html">layout_left::mapping&lt;E&gt;</a></code></li>
-<li><code><a href="layout_right/mapping.html">layout_right::mapping&lt;E&gt;</a></code></li>
-<li><code><a href="layout_stride/mapping.html">layout_stride::mapping&lt;E&gt;</a></code></li>
-<li><code><a href="layout_left_padded/mapping.html">layout_left_padded&lt;S&gt;::mapping&lt;E&gt;</a></code></li>
-<li><code><a href="layout_right_padded/mapping.html">layout_right_padded&lt;S&gt;::mapping&lt;E&gt;</a></code></li>
-<li><code><a href="../linalg/layout_blas_packed/mapping.html">layout_blas_packed&lt;T,SO&gt;::mapping&lt;E&gt;</a></code></li>
+<li><code><a href="../mdspan.html">&lt;mdspan&gt;</a></code>ヘッダ<ul>
+<li>C++23 <code><a href="layout_left/mapping.html">layout_left::mapping&lt;E&gt;</a></code></li>
+<li>C++23 <code><a href="layout_right/mapping.html">layout_right::mapping&lt;E&gt;</a></code></li>
+<li>C++23 <code><a href="layout_stride/mapping.html">layout_stride::mapping&lt;E&gt;</a></code></li>
+<li>C++26 <code><a href="layout_left_padded/mapping.html">layout_left_padded&lt;S&gt;::mapping&lt;E&gt;</a></code></li>
+<li>C++26 <code><a href="layout_right_padded/mapping.html">layout_right_padded&lt;S&gt;::mapping&lt;E&gt;</a></code></li>
+</ul>
+</li>
+<li><code><a href="../linalg.html">&lt;linalg&gt;</a></code>ヘッダ<ul>
+<li>C++26 <code><a href="../linalg/layout_blas_packed/mapping.html">layout_blas_packed&lt;T,SO&gt;::mapping&lt;E&gt;</a></code></li>
+</ul>
+</li>
 </ul>
 <h2>バージョン</h2>
 <h3>言語</h3>

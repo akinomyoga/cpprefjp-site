@@ -38,26 +38,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
-<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
-<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
-<link rel="manifest" href="../../manifest.json?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="apple-touch-icon" sizes="180x180" href="../../static/favicons/apple-touch-icon.png?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e">
+<link rel="icon" type="image/png" sizes="32x32" href="../../static/favicons/favicon-32x32.png?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e">
+<link rel="icon" type="image/png" sizes="16x16" href="../../static/favicons/favicon-16x16.png?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e">
+<link rel="manifest" href="../../manifest.json?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="stylesheet" href="../../static/pygments/default.css?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e">
 <!-- <link rel="stylesheet" href="../../static/css/root.css"> -->
 
         
   
 
 
-<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
-<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-0.css?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-1.css?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-2.css?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e" rel="stylesheet">
+<link href="../../static/kunai/css/kunai-stage-3.css?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e" rel="stylesheet">
 
-<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
-<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai-vendor.js?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e"></script>
+<script type="text/javascript" src="../../static/kunai/js/kunai.js?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -188,8 +188,8 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2024-09-12T04:12:48">
-        2024年09月12日 04時12分48秒
+      <span itemprop="datePublished" content="2024-12-21T02:13:39">
+        2024年12月21日 02時13分39秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -225,7 +225,7 @@
 <span class="p">}</span>
 
 <span class="c1">// 関数f()の戻り値である整数と文字列の組を分解する。</span>
-<span class="c1">// pairのfirstをid変数に代入し、secondをmessage変数に代入する。</span>
+<span class="c1">// <a href="../../reference/utility/pair.html">pair</a>のfirstをid変数に代入し、secondをmessage変数に代入する。</span>
 <span class="c1">// id変数の型はfirstの型(int)となり、message変数の型はsecondの型(string)となる。</span>
 <span class="k">auto</span> <span class="p">[</span><span class="n">id</span><span class="p">,</span> <span class="n">message</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span><span class="p">();</span>
 
@@ -234,8 +234,8 @@
 </code></pre></div>
 </p>
 <p>この機能は、他の言語では「多重代入 (Multiple assignment, Python言語やRuby言語)」や「分割代入 (Destructuring assignment, JavaScript言語)」といった名称で知られている。</p>
-<p>構造化束縛は、多値を返す関数の戻り値を、受け取りやすくするための機能である。構造の各要素を受け取るための変数宣言と構造の分解を同時に行う。</p>
-<p>変数宣言は、<code>auto</code>を記述したあとに角カッコ内に変数名を列挙する。それぞれの変数に対する、型や修飾子の指定はできない。<code>auto</code>の部分を<code>const auto&amp;</code>のように、全体に対してCV修飾や参照を付加することはできる。それぞれの変数の型は、各要素を<code>decltype</code>したものとなる。</p>
+<p>構造化束縛は、多値を返す関数の<a class="cpprefjp-defined-word" data-desc="関数呼び出し式の評価結果となるオブジェクト・値">戻り値</a>を、受け取りやすくするための機能である。構造の各要素を受け取るための変数宣言と構造の分解を同時に行う。</p>
+<p>変数宣言は、<code>auto</code>を記述したあとに角カッコ内に変数名を列挙する。それぞれの変数に対する、型や修飾子の指定はできない。<code>auto</code>の部分を<code>const auto&amp;</code>のように、全体に対して<a class="cpprefjp-defined-word" data-desc="型をconstおよび・もしくはvolatileで修飾すること">CV修飾</a>や参照を付加することはできる。それぞれの変数の型は、各要素を<code>decltype</code>したものとなる。</p>
 <h2>仕様</h2>
 <ul>
 <li>「構造化束縛 (structured binding)」は宣言(declaration)に分類される機能である</li>
@@ -292,7 +292,7 @@
   <span class="c1">// 組を分解する</span>
   <span class="p">{</span>
     <span class="c1">// 関数f()の戻り値である整数と文字列の組を分解する。</span>
-    <span class="c1">// pairのfirstをid変数に代入し、secondをmessage変数に代入する。</span>
+    <span class="c1">// <a href="../../reference/utility/pair.html">pair</a>のfirstをid変数に代入し、secondをmessage変数に代入する。</span>
     <span class="c1">// id変数の型はfirstの型(int)となり、message変数の型はsecondの型(string)となる。</span>
     <span class="k">auto</span> <span class="p">[</span><span class="n">id</span><span class="p">,</span> <span class="n">message</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span><span class="p">();</span>
 
@@ -461,7 +461,7 @@ Hello
 Bob : 1
 Carol : 4
 </code></pre></p>
-<h3>map::insert()の戻り値を分解する</h3>
+<h3>map::insert()の<a class="cpprefjp-defined-word" data-desc="関数呼び出し式の評価結果となるオブジェクト・値">戻り値</a>を分解する</h3>
 <p><div class="yata" id="d84ca2366ea2e35a3f189a69c15df22da3a5f0f6"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf"><a href="../../reference/iostream.html">&lt;iostream&gt;</a></span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf"><a href="../../reference/map.html">&lt;map&gt;</a></span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf"><a href="../../reference/string.html">&lt;string&gt;</a></span><span class="cp"></span>
@@ -471,7 +471,7 @@ Carol : 4
   <span class="n"><a href="../../reference/map/map.html">std::map</a></span><span class="o">&lt;</span><span class="n"><a href="../../reference/string/basic_string.html">std::string</a></span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">m</span><span class="p">;</span>
 
   <span class="c1">// 単一要素をとるmap::<a href="../../reference/map/map/insert.html">insert</a>()メンバ関数は、</span>
-  <span class="c1">// 戻り値としてpair&lt;iterator, bool&gt;を返す。</span>
+  <span class="c1">// 戻り値として<a href="../../reference/utility/pair.html">pair</a>&lt;iterator, bool&gt;を返す。</span>
   <span class="c1">// firstは指定したキーを保持する要素へのイテレータ、</span>
   <span class="c1">// secondは挿入に成功したかを表すbool値。</span>
   <span class="n">m</span><span class="p">.</span><span class="n"><a href="../../reference/map/map/insert.html">insert</a></span><span class="p">({</span><span class="s">"Alice"</span><span class="p">,</span> <span class="mi">3</span><span class="p">});</span>
@@ -508,7 +508,7 @@ false
 <p>C++17時点の構造化束縛では、使用しない変数もコピーあるいはムーブされ、新たな変数が作られてしまう。</p>
 <p>また、入れ子になった構造を同時に分解する機能も備えていないため、そのような状況では分解しにくいこともあるだろう。</p>
 <p><div class="codehilite"><pre><span></span><code><span class="n"><a href="../../reference/tuple/tuple.html">std::tuple</a></span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span> <span class="n"><a href="../../reference/utility/pair.html">std::pair</a></span><span class="o">&lt;</span><span class="n">T2</span><span class="p">,</span> <span class="n">T3</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">T4</span><span class="o">&gt;</span> <span class="n">f</span><span class="p">();</span>
-<span class="k">auto</span> <span class="p">{</span> <span class="n">w</span><span class="p">,</span> <span class="p">{</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">},</span> <span class="n">z</span> <span class="p">}</span> <span class="o">=</span> <span class="n">f</span><span class="p">();</span> <span class="c1">// このような、tuple内にあるpairを同時に分解はできない</span>
+<span class="k">auto</span> <span class="p">{</span> <span class="n">w</span><span class="p">,</span> <span class="p">{</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">},</span> <span class="n">z</span> <span class="p">}</span> <span class="o">=</span> <span class="n">f</span><span class="p">();</span> <span class="c1">// このような、tuple内にある<a href="../../reference/utility/pair.html">pair</a>を同時に分解はできない</span>
 </code></pre></div>
 </p>
 <h2><a href="#relative-page" id="relative-page">関連項目</a></h2>
@@ -519,6 +519,7 @@ false
 <li><a href="../cpp20/reference_capture_of_structured_bindings.html">C++20 構造化束縛した変数の参照キャプチャを許可</a></li>
 <li><a href="../cpp26/attributes_for_structured_bindings.html">C++26 構造化束縛への属性を許可</a></li>
 <li><a href="../cpp26/structured_binding_declaration_as_a_condition.html">C++26 条件式での構造化束縛の使用を許可</a></li>
+<li><a href="../cpp26/nice_placeholder_with_no_name.html">C++26 宣言のみで使用しない変数の名前として_をサポート</a></li>
 </ul>
 <h2>参照</h2>
 <ul>

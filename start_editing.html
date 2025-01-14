@@ -38,26 +38,26 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="./static/favicons/apple-touch-icon.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
-<link rel="icon" type="image/png" sizes="32x32" href="./static/favicons/favicon-32x32.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
-<link rel="icon" type="image/png" sizes="16x16" href="./static/favicons/favicon-16x16.png?cachebust=0e476399d981581c37613c7023035bba5447c826">
-<link rel="manifest" href="./manifest.json?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="apple-touch-icon" sizes="180x180" href="./static/favicons/apple-touch-icon.png?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e">
+<link rel="icon" type="image/png" sizes="32x32" href="./static/favicons/favicon-32x32.png?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e">
+<link rel="icon" type="image/png" sizes="16x16" href="./static/favicons/favicon-16x16.png?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e">
+<link rel="manifest" href="./manifest.json?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e">
 <meta name="theme-color" content="#f5f8fc">
 
-<link rel="stylesheet" href="./static/pygments/default.css?cachebust=0e476399d981581c37613c7023035bba5447c826">
+<link rel="stylesheet" href="./static/pygments/default.css?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e">
 <!-- <link rel="stylesheet" href="./static/css/root.css"> -->
 
         
   
 
 
-<link href="./static/kunai/css/kunai-stage-0.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
-<link href="./static/kunai/css/kunai-stage-1.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
-<link href="./static/kunai/css/kunai-stage-2.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
-<link href="./static/kunai/css/kunai-stage-3.css?cachebust=0e476399d981581c37613c7023035bba5447c826" rel="stylesheet">
+<link href="./static/kunai/css/kunai-stage-0.css?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e" rel="stylesheet">
+<link href="./static/kunai/css/kunai-stage-1.css?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e" rel="stylesheet">
+<link href="./static/kunai/css/kunai-stage-2.css?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e" rel="stylesheet">
+<link href="./static/kunai/css/kunai-stage-3.css?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e" rel="stylesheet">
 
-<script type="text/javascript" src="./static/kunai/js/kunai-vendor.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
-<script type="text/javascript" src="./static/kunai/js/kunai.js?cachebust=0e476399d981581c37613c7023035bba5447c826"></script>
+<script type="text/javascript" src="./static/kunai/js/kunai-vendor.js?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e"></script>
+<script type="text/javascript" src="./static/kunai/js/kunai.js?cachebust=79fbdc6e2698b03b1210e8cbc5c0f5098eaacd7e"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
@@ -164,12 +164,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2024-12-05T02:54:34">
-        2024年12月05日 02時54分34秒
+      <span itemprop="datePublished" content="2025-01-11T18:50:43">
+        2025年01月11日 18時50分43秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">Akira Takahashi</span>
+        <span itemprop="name">Koichi Murase</span>
       </span>
       が更新
     </small></p>
@@ -206,6 +206,7 @@
 <p>日次の変換中にコミットした変更は、日次の変換がおわったあと (だいたい1時間30分〜2時間くらい) に自動で変換・反映されます。</p>
 <h3>自動デプロイ、自動テスト</h3>
 <p>本リポジトリでは、GitHub Actionsを使用して、自動デプロイと自動テストを行っています。</p>
+<p>Pull Request 時にも自動テストと自動プレビュー生成を行います。</p>
 <h4>自動デプロイ</h4>
 <p>buildアクションで、MarkdownからHTMLへの変換と、GitHub Pagesへのデプロイを行っています。</p>
 <p>変換時になんらかのエラーが発生した場合には、GitHub Actionsが失敗します。その場合、手元で修正して再度git pushを行うことになります</p>
@@ -218,7 +219,7 @@
 </li>
 <li>内部リンクの誤り検出 (inner link checkアクション)<ul>
 <li>サイト内のリンクが存在しない、または存在しているのに.nolinkを指定している場合にエラーが発生する</li>
-<li><a href="https://github.com/cpprefjp/site/actions/workflows/inner_link_check.yml" target="_blank">GitHub Actionsの実行ログ</a>で、どのページのどのリンクが不正かがわかるので、それを修正すること</li>
+<li><a href="https://github.com/cpprefjp/site/actions/workflows/check.yml" target="_blank">GitHub Actionsの実行ログ</a>で、どのページのどのリンクが不正かがわかるので、それを修正すること</li>
 </ul>
 </li>
 <li>外部リンク切れを検出 (outer link checkアクション)<ul>
@@ -232,7 +233,7 @@
 </li>
 <li>コード修飾の誤り検出 (code qualify checkアクション)<ul>
 <li>コードブロック中のコードを修飾しているのに、その修飾対象がない場合に、エラーが発生する</li>
-<li><a href="https://github.com/cpprefjp/site/actions/workflows/code_qualify_check.yml" target="_blank">GitHub Actionsの実行ログ</a>で、どのページのどのコード修飾が不正かがわかるので、それを修正すること</li>
+<li><a href="https://github.com/cpprefjp/site/actions/workflows/check.yml" target="_blank">GitHub Actionsの実行ログ</a>で、どのページのどのコード修飾が不正かがわかるので、それを修正すること</li>
 </ul>
 </li>
 <li>所属ヘッダメタ情報の誤り検出 (meta header checkアクション)<ul>
@@ -423,7 +424,7 @@
 <ul>
 <li>次のバージョンの言語機能・ライブラリ機能の解説は、随時許可する</li>
 <li>ただし、Working Draftに採択された機能のみを対象とする。まだ提案中の機能は、本サイトでの解説の対象外とする<ul>
-<li>例外は、機能テストマクロのようなコンパイラへの推奨機能</li>
+<li><a class="cpprefjp-defined-word" data-desc="問題が発生したときに、現在実行位置を過去に通過・記録した位置に戻し、文脈情報を添えて紐づけられた処理(例外ハンドラー)を呼び出す仕組み。またはその事態">例外</a>は、機能テストマクロのようなコンパイラへの推奨機能</li>
 </ul>
 </li>
 <li>採択された機能は、Wikiの各言語バージョンのページに記載されているが、されていなかったら<a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/" target="_blank">C++ Standards Committee Papers</a>のEditor's Reportで確認できる</li>
