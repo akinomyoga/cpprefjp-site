@@ -1,4 +1,6 @@
 * floating-point-type[italic]
+# 実は現時点でコメントは除外されるのでは? でも内部にあるものもひっかける?
+# - int[link /reference/cstdint.md]
 * implementation-defined[italic]
 * import std;[link /module/std.md]
 * import std.compat;[link /module/std.compat.md]
