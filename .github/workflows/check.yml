@@ -116,7 +116,8 @@ jobs:
             core.setOutput('ubranch', encodeURIComponent(branch));
             core.setOutput('time', time);
 
-      - id: file_list
+      - name: Run script to generate a Markdown list of changed files
+        id: file_list
         shell: bash
         run: |
             set -ex
