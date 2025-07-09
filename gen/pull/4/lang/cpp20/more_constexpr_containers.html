@@ -188,12 +188,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2025-06-11T14:15:20">
-        2025年06月11日 14時15分20秒
+      <span itemprop="datePublished" content="2025-07-09T14:26:43">
+        2025年07月09日 14時26分43秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">Raclamusi</span>
+        <span itemprop="name">Koichi Murase</span>
       </span>
       が更新
     </small></p>
@@ -339,7 +339,7 @@
 <span class="p">}</span>
 </code></pre></div>
 </p>
-<p>実際にはどこのストレージが提供されるかは<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">実装定義</a>である。</p>
+<p>実際にはどこのストレージが提供されるかは<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">処理系定義</a>である。</p>
 <h3><code>std::allocator/std::allocator_traits</code></h3>
 <p>標準ライブラリのコンテナ等は<code>new/delete</code>式を直接利用するわけではなく、<code>std::allocator_traits</code>を介して<code>std::allocator</code>を使用してメモリ確保・解放とオブジェクト構築・破棄を行う。<code>std::allocator/std::allocator_traits</code>も見かけ上はポインタの再解釈を必要とせずにそれを行うため、<code>std::allocator/std::allocator_traits</code>によるメモリ確保周りの機能もまた、コンパイル時の動的メモリ確保・解放の方法として許可される。</p>
 <p><code>std::allocator/std::allocator_traits</code>では<code>new/delete</code>式とは異なり、メモリの確保・解放（<code><a href="../../reference/memory/allocator/allocate.html">allocate</a></code>/<code><a href="../../reference/memory/allocator/deallocate.html">deallocate</a></code>）とその領域へのオブジェクト構築・破棄（<code><a href="../../reference/memory/allocator_traits/construct.html">construct</a></code>/<code><a href="../../reference/memory/allocator_traits/destroy.html">destroy</a></code>）の操作が複合していない。オブジェクト構築・破棄においては<em>placement new</em>と<em>pseudo-destructor call</em>が必要となるが、<em>placement new</em>はポインタの再解釈が必要となることから許可されず、そのために不必要であるので<em>pseudo-destructor call</em>も許可されない。</p>

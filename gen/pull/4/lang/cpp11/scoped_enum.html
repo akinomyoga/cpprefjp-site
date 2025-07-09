@@ -188,12 +188,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2024-12-22T06:27:29">
-        2024年12月22日 06時27分29秒
+      <span itemprop="datePublished" content="2025-07-09T14:26:43">
+        2025年07月09日 14時26分43秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">Raclamusi</span>
+        <span itemprop="name">Koichi Murase</span>
       </span>
       が更新
     </small></p>
@@ -250,7 +250,7 @@
 <p>列挙型は、先行宣言でも基底型を指定できる。その場合、再宣言および定義でも、同じ基底型を明示的に指定する必要がある</p>
 </li>
 <li>スコープを持つ列挙型に基底型を指定しない場合、基底型は<code>int</code>となる</li>
-<li>スコープを持たない列挙型に基底型を指定しない場合、その列挙型の全ての列挙子の値を表現できる整数型のいずれかが基底型となる（どの整数型となるかは<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">実装定義</a>だが、すべての列挙子の値が<code>int</code>もしくは<code>unsigned int</code>に収まる限り<code>int</code>より大きな型にはならない）</li>
+<li>スコープを持たない列挙型に基底型を指定しない場合、その列挙型の全ての列挙子の値を表現できる整数型のいずれかが基底型となる（どの整数型となるかは<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">処理系定義</a>だが、すべての列挙子の値が<code>int</code>もしくは<code>unsigned int</code>に収まる限り<code>int</code>より大きな型にはならない）</li>
 <li>スコープを持たない列挙型の列挙子が空である場合、値<code>0</code>ひとつを列挙子として持つ</li>
 <li>2つの列挙型の基底型が同じである場合、それらの列挙型は互換性のあるメモリレイアウトを持つ</li>
 <li>列挙子に値を指定しない場合、最初の列挙子には定数値<code>0</code>が設定される。2つ目以降の列挙子は、ひとつ前の値を<code>1</code>進めた値を持つ</li>

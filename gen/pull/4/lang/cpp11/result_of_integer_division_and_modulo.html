@@ -28,11 +28,11 @@
         <meta property="og:url" content="https://cpprefjp.github.io/lang/cpp11/result_of_integer_division_and_modulo.html" />
         <meta property="og:site_name" content="cpprefjp - C++日本語リファレンス" />
         <meta property="og:type" content="article" />
-        <meta property="og:description" content="整数`a`, `b`に対する除算`a/b`の結果(商)と剰余算`a%b`の結果(余り)について`(a/b)*b + a%b = a`という等式が成り立つことが規定されているが、C++03まで、少なくとも一方が負の数である場合の余りの符号は実装定義だった。このため先述の等式により商も実装定義となっていた。C++11ではC99に合わせて「商の小数部がゼロ方向に切り捨てられた結果となること」が規定された" />
+        <meta property="og:description" content="整数`a`, `b`に対する除算`a/b`の結果(商)と剰余算`a%b`の結果(余り)について`(a/b)*b + a%b = a`という等式が成り立つことが規定されているが、C++03まで、少なくとも一方が負の数である場合の余りの符号は処理系定義だった。このため先述の等式により商も処理系定義となっていた。C++11ではC99に合わせて「商の小数部がゼロ方向に切り捨てられた結果となること」が規定さ" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="整数に対する除算と剰余算の丸め結果を規定 - cpprefjp C++日本語リファレンス" />
         <meta name="twitter:url" content="https://cpprefjp.github.io/lang/cpp11/result_of_integer_division_and_modulo.html" />
-        <meta name="twitter:description" content="整数`a`, `b`に対する除算`a/b`の結果(商)と剰余算`a%b`の結果(余り)について`(a/b)*b + a%b = a`という等式が成り立つことが規定されているが、C++03まで、少なくとも一方が負の数である場合の余りの符号は実装定義だった。このため先述の等式により商も実装定義となっていた。C++11ではC99に合わせて「商の小数部がゼロ方向に切り捨てられた結果となること」が規定された" />
+        <meta name="twitter:description" content="整数`a`, `b`に対する除算`a/b`の結果(商)と剰余算`a%b`の結果(余り)について`(a/b)*b + a%b = a`という等式が成り立つことが規定されているが、C++03まで、少なくとも一方が負の数である場合の余りの符号は処理系定義だった。このため先述の等式により商も処理系定義となっていた。C++11ではC99に合わせて「商の小数部がゼロ方向に切り捨てられた結果となること」が規定さ" />
 
         
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
@@ -188,12 +188,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2024-07-08T07:33:21">
-        2024年07月08日 07時33分21秒
+      <span itemprop="datePublished" content="2025-07-09T14:26:43">
+        2025年07月09日 14時26分43秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">Akira Takahashi</span>
+        <span itemprop="name">Koichi Murase</span>
       </span>
       が更新
     </small></p>
@@ -218,11 +218,11 @@
 <p>のちのC++規格でさらに変更される場合があるため<a href="#relative-page">関連項目</a>を参照してください。</p>
 <p></p>
 <h2>概要</h2>
-<p>整数<code>a</code>, <code>b</code>に対する除算<code>a/b</code>の結果(商)と剰余算<code>a%b</code>の結果(余り)について<code>(a/b)*b + a%b = a</code>という等式が成り立つことが規定されているが、C++03まで、少なくとも一方が負の数である場合の余りの符号は<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">実装定義</a>だった。このため先述の等式により商も<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">実装定義</a>となっていた。C++11ではC99に合わせて「商の小数部がゼロ方向に切り捨てられた結果となること」が規定された。</p>
+<p>整数<code>a</code>, <code>b</code>に対する除算<code>a/b</code>の結果(商)と剰余算<code>a%b</code>の結果(余り)について<code>(a/b)*b + a%b = a</code>という等式が成り立つことが規定されているが、C++03まで、少なくとも一方が負の数である場合の余りの符号は<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">処理系定義</a>だった。このため先述の等式により商も<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">処理系定義</a>となっていた。C++11ではC99に合わせて「商の小数部がゼロ方向に切り捨てられた結果となること」が規定された。</p>
 <p>これにより、整数に対する除算と剰余算の結果が移植性のある値となるようになった。</p>
 <h2>仕様</h2>
 <p>C++03では、余りの符号が以下のように規定されていた：</p>
-<p>「両方の項が非負である場合、余りは非負となる。片方もしくは両方の項が負数である場合、余りの符号は<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">実装定義</a>となる。注釈：現在作業中のISO Cのリビジョン(C99のこと)とISO/IEC 1539:1991で標準化されているFortranの規格ではいずれも、整数に対する除算の商は必ずゼロ方向に丸められる。」</p>
+<p>「両方の項が非負である場合、余りは非負となる。片方もしくは両方の項が負数である場合、余りの符号は<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">処理系定義</a>となる。注釈：現在作業中のISO Cのリビジョン(C99のこと)とISO/IEC 1539:1991で標準化されているFortranの規格ではいずれも、整数に対する除算の商は必ずゼロ方向に丸められる。」</p>
 <p>C++11では、C99との互換性のために、上記規定を置き換えて、整数に対する除算の結果が以下のように規定された：</p>
 <p>「整数型を項とする<code>/</code>演算子の結果は代数的な商から小数部を切り捨てたものとなる。注釈：これは「ゼロ方向への切り捨て(truncation towards zero)」とも呼ばれる。」</p>
 <h2>例</h2>

@@ -28,11 +28,11 @@
         <meta property="og:url" content="https://cpprefjp.github.io/lang/cpp23/support_for_utf8_as_a_portable_source_file_encoding.html" />
         <meta property="og:site_name" content="cpprefjp - C++日本語リファレンス" />
         <meta property="og:type" content="article" />
-        <meta property="og:description" content="C++20まで、ソースコードの文字集合は実装定義だったが、その仕様では移植性に問題があった。C++23からは、すべてのコンパイラはUTF-8文字コードのソースコードをサポートしなければならないことが規定される。" />
+        <meta property="og:description" content="C++20まで、ソースコードの文字集合は処理系定義だったが、その仕様では移植性に問題があった。C++23からは、すべてのコンパイラはUTF-8文字コードのソースコードをサポートしなければならないことが規定される。" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="汎用的なソースコードのエンコーディングとしてUTF-8をサポート [P2295R6] - cpprefjp C++日本語リファレンス" />
         <meta name="twitter:url" content="https://cpprefjp.github.io/lang/cpp23/support_for_utf8_as_a_portable_source_file_encoding.html" />
-        <meta name="twitter:description" content="C++20まで、ソースコードの文字集合は実装定義だったが、その仕様では移植性に問題があった。C++23からは、すべてのコンパイラはUTF-8文字コードのソースコードをサポートしなければならないことが規定される。" />
+        <meta name="twitter:description" content="C++20まで、ソースコードの文字集合は処理系定義だったが、その仕様では移植性に問題があった。C++23からは、すべてのコンパイラはUTF-8文字コードのソースコードをサポートしなければならないことが規定される。" />
 
         
   <link rel="alternate" type="application/atom+xml" title="Atom" href="https://cpprefjp.github.io/rss.xml" />
@@ -188,12 +188,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2024-07-08T07:33:21">
-        2024年07月08日 07時33分21秒
+      <span itemprop="datePublished" content="2025-07-09T14:26:43">
+        2025年07月09日 14時26分43秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">Akira Takahashi</span>
+        <span itemprop="name">Koichi Murase</span>
       </span>
       が更新
     </small></p>
@@ -218,8 +218,8 @@
 <p>のちのC++規格でさらに変更される場合があるため<a href="#relative-page">関連項目</a>を参照してください。</p>
 <p></p>
 <h2>概要</h2>
-<p>C++20まで、ソースコードの文字集合は<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">実装定義</a>だったが、その仕様では移植性に問題があった。C++23からは、すべてのコンパイラはUTF-8文字コードのソースコードをサポートしなければならないことが規定される。</p>
-<p>コンパイラは、ほかの文字コードと区別するため、入力ファイルがUTF-8であることを決定する<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">実装定義</a>の手段をもたなければならない。つまり、BOM (バイトオーダーマーク) を認識するだけでは十分ではない。</p>
+<p>C++20まで、ソースコードの文字集合は<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">処理系定義</a>だったが、その仕様では移植性に問題があった。C++23からは、すべてのコンパイラはUTF-8文字コードのソースコードをサポートしなければならないことが規定される。</p>
+<p>コンパイラは、ほかの文字コードと区別するため、入力ファイルがUTF-8であることを決定する<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">処理系定義</a>の手段をもたなければならない。つまり、BOM (バイトオーダーマーク) を認識するだけでは十分ではない。</p>
 <h2>参照</h2>
 <ul>
 <li><a href="https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2022/p2295r6.pdf" target="_blank">P2295R6 Support for UTF-8 as a portable source file encoding</a></li>

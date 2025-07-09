@@ -188,12 +188,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2024-07-27T07:23:15">
-        2024年07月27日 07時23分15秒
+      <span itemprop="datePublished" content="2025-07-09T14:26:43">
+        2025年07月09日 14時26分43秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">koile</span>
+        <span itemprop="name">Koichi Murase</span>
       </span>
       が更新
     </small></p>
@@ -241,7 +241,7 @@
 <li>ひとつの文字を含む<code>char16_t</code>リテラルの値は、ひとつの16ビットコードポイントで表現できるISO 10646のコードポイント値と同じである。</li>
 <li>ひとつの値を16ビットで表現できない場合、プログラムは<a class="cpprefjp-defined-word" data-desc="プログラムが適格でないこと。コンパイルエラーなどになる" href="../../implementation-compliance.html#dfn-ill-formed">不適格</a>となる。</li>
 <li>複数の文字を含む<code>char16_t</code>文字リテラルは<a class="cpprefjp-defined-word" data-desc="プログラムが適格でないこと。コンパイルエラーなどになる" href="../../implementation-compliance.html#dfn-ill-formed">不適格</a>である。</li>
-<li><code>char16_t</code>文字リテラルが、基本文字集合とユニバーサルキャラクタ名より多くを含む場合は<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">実装定義</a>となる。</li>
+<li><code>char16_t</code>文字リテラルが、基本文字集合とユニバーサルキャラクタ名より多くを含む場合は<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">処理系定義</a>となる。</li>
 <li><code>char16_t</code>の場合、ひとつの文字がひとつ以上の<code>char16_t</code>を生成することがある。その文字はサロゲートペアと呼ばれる。</li>
 <li><code>char16_t</code>型の文字列リテラルは、静的ストレージに配置される。</li>
 </ul>
@@ -250,13 +250,13 @@
 <li>ひとつの文字を含む<code>char32_t</code>リテラルの値は、ひとつの32ビットコードポイントで表現できるISO 10646のコードポイント値と同じである。</li>
 <li>ひとつの値を32ビットで表現できない場合、プログラムは<a class="cpprefjp-defined-word" data-desc="プログラムが適格でないこと。コンパイルエラーなどになる" href="../../implementation-compliance.html#dfn-ill-formed">不適格</a>となる。</li>
 <li>複数の文字を含む<code>char32_t</code>文字リテラルは<a class="cpprefjp-defined-word" data-desc="プログラムが適格でないこと。コンパイルエラーなどになる" href="../../implementation-compliance.html#dfn-ill-formed">不適格</a>である。</li>
-<li><code>char32_t</code>文字リテラルが、基本文字集合とユニバーサルキャラクタ名より多くを含む場合は<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">実装定義</a>となる。</li>
+<li><code>char32_t</code>文字リテラルが、基本文字集合とユニバーサルキャラクタ名より多くを含む場合は<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">処理系定義</a>となる。</li>
 <li><code>char32_t</code>型の文字列リテラルは、静的ストレージに配置される。</li>
 </ul>
 </li>
 <li><code>char16_t</code>と<code>char32_t</code>はそれぞれ、<code><a href="../../reference/cstdint.html">&lt;cstdint&gt;</a></code>ヘッダで定義される<code><a href="../../reference/cstdint/uint_least16_t.html">uint_least16_t</a></code>と<code><a href="../../reference/cstdint/uint_least32_t.html">uint_least32_t</a></code>と、サイズ、符号の有無、アライメントが同じである。</li>
-<li><code>&lt;cuchar&gt;</code>ヘッダでマクロ<code>__STDC_UTF_16__</code>が定義される場合、<code>char16_t</code>型の値はUTF-16の妥当なコードポイントを持つ。そうでない場合、<code>char16_t</code>型の値は<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">実装定義</a>の文字コードとなる。</li>
-<li><code>&lt;cuchar&gt;</code>ヘッダでマクロ<code>__STDC_UTF_32__</code>が定義される場合、<code>char32_t</code>型の値はUTF-32の妥当なコードポイントを持つ。そうでない場合、<code>char32_t</code>型の値は<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">実装定義</a>の文字コードとなる。</li>
+<li><code>&lt;cuchar&gt;</code>ヘッダでマクロ<code>__STDC_UTF_16__</code>が定義される場合、<code>char16_t</code>型の値はUTF-16の妥当なコードポイントを持つ。そうでない場合、<code>char16_t</code>型の値は<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">処理系定義</a>の文字コードとなる。</li>
+<li><code>&lt;cuchar&gt;</code>ヘッダでマクロ<code>__STDC_UTF_32__</code>が定義される場合、<code>char32_t</code>型の値はUTF-32の妥当なコードポイントを持つ。そうでない場合、<code>char32_t</code>型の値は<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">処理系定義</a>の文字コードとなる。</li>
 </ul>
 <h3>ユニバーサルキャラクタ名</h3>
 <ul>

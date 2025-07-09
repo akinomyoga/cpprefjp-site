@@ -188,12 +188,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2024-07-08T07:33:21">
-        2024年07月08日 07時33分21秒
+      <span itemprop="datePublished" content="2025-07-09T14:26:43">
+        2025年07月09日 14時26分43秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">Akira Takahashi</span>
+        <span itemprop="name">Koichi Murase</span>
       </span>
       が更新
     </small></p>
@@ -227,7 +227,7 @@
 <span class="kt">char</span> <span class="n">t</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">u8</span><span class="s">"</span><span class="se">\U00020BB7</span><span class="s">野家"</span><span class="p">;</span> <span class="c1">// 𠮷野家</span>
 </code></pre></div>
 </p>
-<p><code>u8</code>プレフィックスを指定しない場合は、<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">実装定義</a>のマルチバイト文字コードにエンコードされる。その<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">実装定義</a>の文字コードは、ASCII文字コードと互換があることは保証されない。そのため、UTF-8のASCII互換部分が、<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">実装定義</a>の文字コードと互換があることも、保証されない。</p>
+<p><code>u8</code>プレフィックスを指定しない場合は、<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">処理系定義</a>のマルチバイト文字コードにエンコードされる。その<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">処理系定義</a>の文字コードは、ASCII文字コードと互換があることは保証されない。そのため、UTF-8のASCII互換部分が、<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">処理系定義</a>の文字コードと互換があることも、保証されない。</p>
 <p>C++20ではUTF-8文字リテラルの型が<a href="../cpp20/char8_t.html"><code>const char[N]</code>ではなく<code>const char8_t[N]</code>になる</a></p>
 <h2>仕様</h2>
 <ul>

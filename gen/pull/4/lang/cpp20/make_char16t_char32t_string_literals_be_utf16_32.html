@@ -188,12 +188,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2024-07-27T07:23:15">
-        2024年07月27日 07時23分15秒
+      <span itemprop="datePublished" content="2025-07-09T14:26:43">
+        2025年07月09日 14時26分43秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">koile</span>
+        <span itemprop="name">Koichi Murase</span>
       </span>
       が更新
     </small></p>
@@ -221,8 +221,8 @@
 <p>C++11で追加された文字型<a href="../cpp11/char16_32.html"><code>char16_t</code>と<code>char32_t</code></a>の文字・文字列リテラルの文字コード、C++20からはUTF-16とUTF-32であることが規定される。</p>
 <p>これまでは、以下のような仕様であった：</p>
 <ul>
-<li><code>&lt;cuchar&gt;</code>ヘッダでマクロ<code>__STDC_UTF_16__</code>が定義される場合、<code>char16_t</code>型の値はUTF-16の妥当なコードポイントを持つ。そうでない場合、<code>char16_t</code>型の値は<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">実装定義</a>の文字コードとなる。</li>
-<li><code>&lt;cuchar&gt;</code>ヘッダでマクロ<code>__STDC_UTF_32__</code>が定義される場合、<code>char32_t</code>型の値はUTF-32の妥当なコードポイントを持つ。そうでない場合、<code>char32_t</code>型の値は<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">実装定義</a>の文字コードとなる。</li>
+<li><code>&lt;cuchar&gt;</code>ヘッダでマクロ<code>__STDC_UTF_16__</code>が定義される場合、<code>char16_t</code>型の値はUTF-16の妥当なコードポイントを持つ。そうでない場合、<code>char16_t</code>型の値は<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">処理系定義</a>の文字コードとなる。</li>
+<li><code>&lt;cuchar&gt;</code>ヘッダでマクロ<code>__STDC_UTF_32__</code>が定義される場合、<code>char32_t</code>型の値はUTF-32の妥当なコードポイントを持つ。そうでない場合、<code>char32_t</code>型の値は<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">処理系定義</a>の文字コードとなる。</li>
 </ul>
 <p>C++20では、無条件にUTF-16とUTF-32であることが規定される。</p>
 <p>なお、<code>u8</code>プレフィックスをつけた文字・文字列リテラルは、UTF-8であることがこれまでに規定されていた。</p>

@@ -188,12 +188,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2025-02-27T06:55:09">
-        2025年02月27日 06時55分09秒
+      <span itemprop="datePublished" content="2025-07-09T14:26:43">
+        2025年07月09日 14時26分43秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">Akira Takahashi</span>
+        <span itemprop="name">Koichi Murase</span>
       </span>
       が更新
     </small></p>
@@ -266,7 +266,7 @@
 </ul>
 <h2>効果</h2>
 <p>この関数は、パラメータ<code>policy</code>で指定された実行ポリシーの値によって振る舞いを変える。</p>
-<p><code>policy</code>を指定しない場合は<code><a href="launch.html">launch::async</a> | <a href="launch.html">launch::deferred</a></code>となり、どちらの実行ポリシーが選択されるかは<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">実装定義</a>となる。</p>
+<p><code>policy</code>を指定しない場合は<code><a href="launch.html">launch::async</a> | <a href="launch.html">launch::deferred</a></code>となり、どちらの実行ポリシーが選択されるかは<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">処理系定義</a>となる。</p>
 <p>各実行ポリシーの振る舞いは以下のようになる：</p>
 <ul>
 <li><code>policy &amp; launch::async</code>が<code>0</code>でない場合、新たなスレッドで関数オブジェクト<code>f</code>に<code>args...</code>を渡して実行する<ul>

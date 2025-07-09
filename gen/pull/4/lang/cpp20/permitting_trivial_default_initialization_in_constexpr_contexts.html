@@ -188,12 +188,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2024-07-08T07:33:21">
-        2024年07月08日 07時33分21秒
+      <span itemprop="datePublished" content="2025-07-09T14:26:43">
+        2025年07月09日 14時26分43秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">Akira Takahashi</span>
+        <span itemprop="name">Koichi Murase</span>
       </span>
       が更新
     </small></p>
@@ -218,7 +218,7 @@
 <p>のちのC++規格でさらに変更される場合があるため<a href="#relative-page">関連項目</a>を参照してください。</p>
 <p></p>
 <h2>概要</h2>
-<p>型<code>T</code>の変数を単に<code>T t;</code>のように（関数スコープで）初期化した時、<code>T</code>がクラス型であり非トリビアルなデフォルトコンストラクタを持っているか、集成体型であり全てのメンバがデフォルトメンバ初期化によって初期化されていれば、<code>t</code>は初期化されており値は決定的である。しかし、組み込み型など<a href="../../reference/type_traits/is_trivially_default_constructible.html">トリビアルにデフォルト構築可能</a>な型の場合はその初期化は<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">実装定義</a>であり、その値の読み取りは<a class="cpprefjp-defined-word" data-desc="未定義の動作。処理系は予期せぬ動作をする可能性がある。要するに動作保証対象外。undefined behavior (UB)。" href="../../implementation-compliance.html#dfn-undefined-behavior">未定義動作</a>である。</p>
+<p>型<code>T</code>の変数を単に<code>T t;</code>のように（関数スコープで）初期化した時、<code>T</code>がクラス型であり非トリビアルなデフォルトコンストラクタを持っているか、集成体型であり全てのメンバがデフォルトメンバ初期化によって初期化されていれば、<code>t</code>は初期化されており値は決定的である。しかし、組み込み型など<a href="../../reference/type_traits/is_trivially_default_constructible.html">トリビアルにデフォルト構築可能</a>な型の場合はその初期化は<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">処理系定義</a>であり、その値の読み取りは<a class="cpprefjp-defined-word" data-desc="未定義の動作。処理系は予期せぬ動作をする可能性がある。要するに動作保証対象外。undefined behavior (UB)。" href="../../implementation-compliance.html#dfn-undefined-behavior">未定義動作</a>である。</p>
 <p>定数式には<a class="cpprefjp-defined-word" data-desc="未定義の動作。処理系は予期せぬ動作をする可能性がある。要するに動作保証対象外。undefined behavior (UB)。" href="../../implementation-compliance.html#dfn-undefined-behavior">未定義動作</a>が含まれてはならない事から、<code>constexpr</code>関数内のローカル変数が初期化されておらずその関数がコンパイル時に実行された場合、C++17までは不定な値が読み取られているかに関わらずコンパイルエラーとなっていた。</p>
 <p><div class="codehilite"><pre><span></span><code><span class="k">constexpr</span> <span class="kt">int</span> <span class="nf">ng</span><span class="p">()</span> <span class="p">{</span>
   <span class="kt">int</span> <span class="n">n</span><span class="p">;</span> <span class="c1">// トリビアルなデフォルト初期化、組み込み型については値は不定</span>

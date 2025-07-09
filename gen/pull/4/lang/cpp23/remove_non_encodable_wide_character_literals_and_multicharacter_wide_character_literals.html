@@ -188,12 +188,12 @@
   
     <p class="text-right"><small>
       最終更新日時(UTC):
-      <span itemprop="datePublished" content="2025-04-04T07:20:26">
-        2025年04月04日 07時20分26秒
+      <span itemprop="datePublished" content="2025-07-09T14:26:43">
+        2025年07月09日 14時26分43秒
       </span>
       <br/>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">Akira Takahashi</span>
+        <span itemprop="name">Koichi Murase</span>
       </span>
       が更新
     </small></p>
@@ -231,7 +231,7 @@
 <p><code>wchar_t</code>はプラットフォームによって16ビットか32ビットのどちらかとなる。
 変数<code>a</code>のケースは<code>wchar_t</code>が32ビットの環境では情報を損うことなく表現でき、16ビットの環境では上位16ビットか下位16ビットのどちらかが切り捨てられる実装がある。
 <code>a</code>のケースは32ビットの場合には正しいものであるため、C++23では維持される。</p>
-<p>変数<code>b</code>のケースはマルチキャラクタリテラル (multi-character literals) であり、<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">実装定義</a>の値となるが、多くの環境でいずれか1文字の値のみが使われていた。また、韓国語やバラモン語では1文字に見えて複数文字であるような場合があるため、<code>wchar_t</code>にマルチキャラクタリテラルを許可することはバグの元であるため、禁止とする。</p>
+<p>変数<code>b</code>のケースはマルチキャラクタリテラル (multi-character literals) であり、<a class="cpprefjp-defined-word" data-desc="処理系定義の動作。処理系によって事前に定めた動作をする" href="../../implementation-compliance.html#dfn-implementation-defined-behavior">処理系定義</a>の値となるが、多くの環境でいずれか1文字の値のみが使われていた。また、韓国語やバラモン語では1文字に見えて複数文字であるような場合があるため、<code>wchar_t</code>にマルチキャラクタリテラルを許可することはバグの元であるため、禁止とする。</p>
 <p>変数<code>c</code>のケースは1文字のように見えても複数のコードポイントで構成されており、マルチキャラクタリテラルの一種であるため禁止とする。</p>
 <h2><a href="#relative-page" id="relative-page">関連項目</a></h2>
 <ul>
