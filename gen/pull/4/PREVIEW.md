@@ -1,8 +1,8 @@
 # PR [\#4](https://github.com/akinomyoga/cpprefjp-site/pull/4) プレビュー
-- &#x231a; 更新時刻: 2025-07-09 23:40:10 JST
+- &#x231a; 更新時刻: 2025-07-10 00:44:40 JST
 - &#x1f50d; [プレビュー (HTML)](https://akinomyoga.github.io/cpprefjp-site/gen/pull/4)
 - &#x1f4c8; [プレビュー生成記録](https://github.com/akinomyoga/cpprefjp-site/actions?query=event%3Apull_request_target+branch%3Apreview_link.test)
-- **&#x2AEF;** ソースの変更: [`0c815fe..4471168`](https://github.com/akinomyoga/cpprefjp-site/compare/0c815fe5fd5d85c41f706d7b97b91542047dbe6d..4471168c98298eafb01bd1951a4e738986a13dc0)
+- **&#x2AEF;** ソースの変更: [`27a3858..49f42e0`](https://github.com/akinomyoga/cpprefjp-site/compare/27a385832b68d81b9c4179df9872eae17a07f3ca..49f42e0cbef516023809297e4ff60f77b870b4ab)
 
 ## 変更記事一覧 (118件)
 
