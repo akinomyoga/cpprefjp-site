@@ -40,7 +40,7 @@ namespace std::filesystem {
 | `character` | キャラクタ・スペシャル・ファイル。キャラクタデバイスとも呼ばれる |
 | `fifo`      | FIFOファイルもしくはパイプファイル |
 | `socket`    | ソケットファイル |
-| implementation-defined | OSのファイルシステムがサポートする実装定義のファイル種別 |
+| implementation-defined | OSのファイルシステムがサポートする処理系定義のファイル種別 |
 | `unknown`   | ファイルは存在するが種別を決定できなかった |
 
 

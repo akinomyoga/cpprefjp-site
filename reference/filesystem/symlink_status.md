@@ -27,7 +27,7 @@ namespace std::filesystem {
 error_code ec;
 file_status result = symlink_status(p, ec);
 if (result.type() == file_type::none)
-    throw filesystem_error(実装定義のメッセージ, p, ec);
+    throw filesystem_error(処理系定義のメッセージ, p, ec);
 
 return result;
 ```

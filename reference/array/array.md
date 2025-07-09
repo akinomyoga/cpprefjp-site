@@ -79,8 +79,8 @@ namespace std {
 |--------------------------|------------------------------------------------------|-------|
 | `reference`              | 要素の参照型 `T&` | C++11 |
 | `const_reference`        | 読取り専用の要素の参照型 `const T&` | C++11 |
-| `iterator`               | ランダムアクセスイテレータ (実装定義) | C++11 |
-| `const_iterator`         | 読取り専用のランダムアクセスイテレータ (実装定義) | C++11 |
+| `iterator`               | ランダムアクセスイテレータ (処理系定義) | C++11 |
+| `const_iterator`         | 読取り専用のランダムアクセスイテレータ (処理系定義) | C++11 |
 | `reverse_iterator`       | 逆イテレータ [`reverse_iterator`](/reference/iterator/reverse_iterator.md)`<iterator>` | C++11 |
 | `const_reverse_iterator` | 読み取り専用の逆イテレータ [`reverse_iterator`](/reference/iterator/reverse_iterator.md)`<const_iterator>` | C++11 |
 | `size_type`              | 符号なし整数型 [`size_t`](/reference/cstddef/size_t.md) | C++11 |

@@ -48,7 +48,7 @@ return os << s.str();
 | [`femto`](/reference/ratio/si_prefix.md)      | `"fs"` |
 | [`pico`](/reference/ratio/si_prefix.md)       | `"ps"` |
 | [`nano`](/reference/ratio/si_prefix.md)       | `"ns"` |
-| [`micro`](/reference/ratio/si_prefix.md)      | `"µs"` (`"\u00b5\u0073"`) もしくは`"us"`が実装定義で選択される |
+| [`micro`](/reference/ratio/si_prefix.md)      | `"µs"` (`"\u00b5\u0073"`) もしくは`"us"`が処理系定義で選択される |
 | [`milli`](/reference/ratio/si_prefix.md)      | `"ms"` |
 | [`centi`](/reference/ratio/si_prefix.md)      | `"cs"` |
 | [`deci`](/reference/ratio/si_prefix.md)       | `"ds"` |

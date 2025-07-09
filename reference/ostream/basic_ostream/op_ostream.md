@@ -67,7 +67,7 @@ basic_ostream& operator<<(basic_streambuf<CharT, Traits>* sb); // (20) C++03
     - (16) 拡張浮動小数点数型:
         - 変換順位が`double`以下であれば、`static_cast<double>(f)`
         - そうでなく変換順位が`long double`以下であれば、`static_cast<long double>(f)`
-        - そうでなければ実装定義の意味論を持ち、この演算子は条件付きサポートとなる
+        - そうでなければ処理系定義の意味論を持ち、この演算子は条件付きサポートとなる
     - (18) `const volatile void*`:
         - `return operator<<(const_cast<const void*>(val));`
 1. `num_put::put`から得られた`iostate`値を実引数にして`setstate`関数を呼び出す
@@ -75,7 +75,7 @@ basic_ostream& operator<<(basic_streambuf<CharT, Traits>* sb); // (20) C++03
 
 ### (19) : `nullptr_t`の出力
 
-- C++17 : 実装定義の出力文字列`s`を、`return operator<<(s)`として渡した場合と等価である。
+- C++17 : 処理系定義の出力文字列`s`を、`return operator<<(s)`として渡した場合と等価である。
 
 
 ### (20) : ストリームバッファの非書式化出力

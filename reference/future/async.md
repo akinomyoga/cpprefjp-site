@@ -65,7 +65,7 @@ namespace std {
 ## 効果
 この関数は、パラメータ`policy`で指定された実行ポリシーの値によって振る舞いを変える。
 
-`policy`を指定しない場合は[`launch::async`](launch.md) `|` [`launch::deferred`](launch.md)となり、どちらの実行ポリシーが選択されるかは実装定義となる。
+`policy`を指定しない場合は[`launch::async`](launch.md) `|` [`launch::deferred`](launch.md)となり、どちらの実行ポリシーが選択されるかは処理系定義となる。
 
 各実行ポリシーの振る舞いは以下のようになる：
 

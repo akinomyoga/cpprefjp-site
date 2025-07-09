@@ -21,7 +21,7 @@
 
 | マクロ名      | 値        | 説明                    |
 |---------------|-----------|-------------------------|
-| `__STDCPP_DEFAULT_NEW_ALIGNMENT__` | 実装定義 | 動的メモリ確保時のデフォルトのアライメント値 |
+| `__STDCPP_DEFAULT_NEW_ALIGNMENT__` | 処理系定義 | 動的メモリ確保時のデフォルトのアライメント値 |
 
 
 ## <a id="relative-page" href="#relative-page">関連項目</a>

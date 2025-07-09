@@ -43,7 +43,7 @@ namespace regex_constants {
 * unspecified[italic]
 
 ## 概要
-正規表現のエラーを表す実装定義の列挙型。
+正規表現のエラーを表す処理系定義の列挙型。
 
 
 | 名前 | 説明 | 対応バージョン |

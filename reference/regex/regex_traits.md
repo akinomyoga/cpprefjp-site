@@ -58,7 +58,7 @@ namespace std {
 | `char_type`       | テンプレートパラメータ`CharT` | C++11 |
 | `string_type`     | `char_type`文字を要素とする文字列型 [`std::basic_string`](/reference/string/basic_string.md)`<char_type>` | C++11 |
 | `locale_type`     | ロケール型 [`std::locale`](/reference/locale/locale.md) | C++11 |
-| `char_class_type` | 正規表現の文字クラス名を表す、実装定義のビットマスク型 | C++11 |
+| `char_class_type` | 正規表現の文字クラス名を表す、処理系定義のビットマスク型 | C++11 |
 
 
 ## 例

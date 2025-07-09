@@ -43,7 +43,7 @@ namespace regex_constants{
 * unspecified[italic]
 
 ## 概要
-マッチ条件と書式を表す実装定義のビットマスク型
+マッチ条件と書式を表す処理系定義のビットマスク型
 
 
 | 名前 | 説明 | 対応バージョン |

@@ -135,7 +135,7 @@ shared_ptr(shared_ptr<Y>&& r, element_type* p) noexcept; // (16) C++20
 ## 例外
 - (3), (4), (5), (6) : メモリ確保に失敗した場合、[`bad_alloc`](/reference/new/bad_alloc.md)例外を送出する。例外送出時には`d(p)`を呼び出すことが保証される。
 - (12) : `r.`[`expired()`](/reference/memory/weak_ptr/expired.md) `== true`の場合、[`bad_weak_ptr`](/reference/memory/bad_weak_ptr.md)例外を送出する。
-- (13) : メモリ確保に失敗した場合、[`bad_alloc`](/reference/new/bad_alloc.md)もしくはその他実装定義の例外を送出する。
+- (13) : メモリ確保に失敗した場合、[`bad_alloc`](/reference/new/bad_alloc.md)もしくはその他処理系定義の例外を送出する。
 
 
 ## 備考

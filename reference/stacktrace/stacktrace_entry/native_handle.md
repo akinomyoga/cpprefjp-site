@@ -14,7 +14,7 @@ constexpr native_handle_type native_handle() const noexcept; // (1) C++23
 
 
 ## 戻り値
-実装定義のハンドルを返す。
+処理系定義のハンドルを返す。
 
 
 ## 備考
