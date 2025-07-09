@@ -112,8 +112,35 @@ jobs:
         path: site_generator/cpprefjp/gh-pages
 
     # あとはスクリプトで頑張る
+    - id: vars
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const sha0 = context.payload.pull_request.base.sha;
+          const sha = context.payload.pull_request.head.sha;
+          const base_url = (() => {
+            const owner = context.payload.pull_request.base.repo.owner.login;
+            const repo = context.payload.pull_request.base.repo.name;
+            const pull = context.payload.number;
+            return `https://${owner}.github.io/${repo}/gen/pull/${pull}`;
+          })();
+          const repo_full = context.payload.pull_request.base.repo.full_name;
+          const branch = context.payload.pull_request.head.ref;
+
+          // https://qiita.com/akko_merry/items/dda3c6b7ae01ac143a8b#comment-e0ecb4abe4d3d6d76054
+          const now = new Date();
+          now.setMinutes(now.getMinutes() + 9 * 60); // JST is +0900
+          const time = now.toJSON()?.replace('T', ' ').slice(0, 19) + ' JST';
+
+          core.setOutput('sha0', sha0);
+          core.setOutput('sha', sha);
+          core.setOutput('base_url', base_url);
+          core.setOutput('repo_full', repo_full);
+          core.setOutput('ubranch', encodeURIComponent(branch));
+          core.setOutput('time', time);
+
     - name: Run script build.sh
-      run: ../.trusted/.github/workflows/script/build.sh ${{ inputs.arguments }}
+      run: ../.trusted/.github/workflows/script/build.sh ${{ inputs.arguments }} ${{ steps.vars.outputs.sha0 }} ${{ steps.vars.outputs.sha }} ${{ steps.vars.outputs.base_url }} ${{ steps.vars.outputs.time }}
       working-directory: site_generator
 
     # Preview 用
