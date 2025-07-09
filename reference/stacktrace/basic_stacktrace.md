@@ -108,12 +108,12 @@ namespace std {
 | `value_type`       | 要素型 [`stacktrace_entry`](stacktrace_entry.md) | C++23 |
 | `const_reference`  | `const`参照型 `const value_type&` | C++23 |
 | `reference`        | 参照型 `value_type&` | C++23 |
-| `const_iterator`   | 読み取り専用イテレータ型。実装定義のランダムアクセスイテレータ | C++23 |
+| `const_iterator`   | 読み取り専用イテレータ型。処理系定義のランダムアクセスイテレータ | C++23 |
 | `iterator`         | イテレータ型 `const_iterator` | C++23 |
 | `reverse_iterator` | 逆順イテレータ型 [`reverse_iterator`](/reference/iterator/reverse_iterator.md)`<iterator>` | C++23 |
 | `const_reverse_iterator` | 読み取り専用逆順イテレータ型 [`reverse_iterator`](/reference/iterator/reverse_iterator.md)`<const_iterator>` | C++23 |
-| `diferrence_type`  | イテレータの差を表す型。実装定義 | C++23 |
-| `size_type`        | 要素数を表す型。実装定義 | C++23 |
+| `diferrence_type`  | イテレータの差を表す型。処理系定義 | C++23 |
+| `size_type`        | 要素数を表す型。処理系定義 | C++23 |
 | `allocator_type`   | アロケータ型 `allocator` | C++23 |
 
 

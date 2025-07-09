@@ -17,7 +17,7 @@ namespace std {
 ## 効果
 パラメータ`excepts`で指定された浮動小数点例外を発生させる。`excepts`には、ビットORを使用して複数の浮動小数点例外を指定できる。この効果は、算術演算によって発生する浮動小数点例外と同様。発生する例外の順序は未規定。
 
-[`FE_OVERFLOW`](fe_overflow.md)もしくは[`FE_UNDERFLOW`](fe_underflow.md)が指定されたときに、追加で[`FE_INEXACT`](fe_inexact.md)も発生させるかは実装定義。
+[`FE_OVERFLOW`](fe_overflow.md)もしくは[`FE_UNDERFLOW`](fe_underflow.md)が指定されたときに、追加で[`FE_INEXACT`](fe_inexact.md)も発生させるかは処理系定義。
 
 
 ## 戻り値

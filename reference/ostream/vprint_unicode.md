@@ -33,7 +33,7 @@ namespace std {
     * string[link /reference/string/basic_string.md]
     * vformat[link /reference/format/vformat.md]
 
-- `os`が実装定義されたUnicodeを表示できる端末を参照するストリームである場合、ネイティブのUnicode APIを使用して端末に書き出す
+- `os`が処理系定義されたUnicodeを表示できる端末を参照するストリームである場合、ネイティブのUnicode APIを使用して端末に書き出す
 - `out`に無効なコードユニットが含まれる場合、その動作は未定義であり，実装者はそれを診断することが推奨される
 - ネイティブのUnicode APIを使用する場合、この関数は`out`を書き出す前にフラッシュする
 

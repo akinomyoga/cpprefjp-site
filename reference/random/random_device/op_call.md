@@ -14,12 +14,12 @@ result_type operator()();
 
 
 ## 戻り値
-実装定義な方法で、非決定論的な乱数を生成して返す。  
+処理系定義な方法で、非決定論的な乱数を生成して返す。  
 値の範囲は`[`[`min()`](min.md), [`max()`](max.md)`]`である。つまり、最小値と最大値両方を含む。
 
 
 ## 例外
-非決定論的な乱数を生成できなかった場合、[`exception`](/reference/exception/exception.md)から派生した実装定義の例外オブジェクトを送出する。
+非決定論的な乱数を生成できなかった場合、[`exception`](/reference/exception/exception.md)から派生した処理系定義の例外オブジェクトを送出する。
 
 
 ## 例

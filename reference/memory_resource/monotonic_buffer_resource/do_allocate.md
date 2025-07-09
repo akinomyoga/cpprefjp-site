@@ -28,7 +28,7 @@ void* do_allocate(std::size_t bytes, std::size_t alignment) override;
 
 内部メモリ領域を補充する場合、[`this->upstream_resource()`](upstream_resource.md)[`->allocate(n, m)`](/reference/memory_resource/memory_resource/allocate.md)のように上流メモリリソースから追加のメモリを取得する。  
 次に補充する予定のメモリ領域サイズを`next_buffer_size`という変数に保持しているとすると`n, m`は`n = max(bytes, next_buffer_size)`、`m >= alignment `となる値をそれぞれ用いる。  
-その後、`next_buffer_size`を実装定義の増加分（整数とは限らない）だけ増やす。
+その後、`next_buffer_size`を処理系定義の増加分（整数とは限らない）だけ増やす。
 
 少なくとも`bytes`のメモリを割り当て、`alignment`にアラインする。
 

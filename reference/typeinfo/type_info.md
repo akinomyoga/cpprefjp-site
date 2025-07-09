@@ -29,7 +29,7 @@ namespace std {
 | `operator=(const type_info&) = delete`      | 代入演算子                  | |
 | [`before`](type_info/before.md)           | 2つの型の照合順序を比較する | |
 | [`hash_code`](type_info/hash_code.md)     | 型のハッシュ値を取得する    | C++11 |
-| [`name`](type_info/name.md)               | 実装定義の型名を取得する    | |
+| [`name`](type_info/name.md)               | 処理系定義の型名を取得する    | |
 | [`operator==`](type_info/op_equal.md)     | 2つの型が同じかを判定する   | |
 | [`operator!=`](type_info/op_not_equal.md) | 2つの型が異なるかを判定する | |
 

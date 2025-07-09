@@ -6,7 +6,7 @@
 
 ```cpp
 namespace std::filesystem {
-  using file_time_type = chrono::time_point<実装定義のクロック型>; // (1) C++17
+  using file_time_type = chrono::time_point<処理系定義のクロック型>; // (1) C++17
   using file_time_type = chrono::time_point<chrono::file_clock>;   // (1) C++20
 }
 ```

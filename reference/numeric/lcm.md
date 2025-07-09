@@ -70,7 +70,7 @@ int main() {
   std::uint16_t m = 20000;
   std::uint16_t n = 40000;
 
-  // 標準std::lcm()の動作は実装定義
+  // 標準std::lcm()の動作は処理系定義
   std::cout << "std::lcm(" << m << ", " << n << ")     " << std::lcm(m, n) << std::endl;
 
   // 公式通りのオーバーフローしやすい最小公倍数の実装

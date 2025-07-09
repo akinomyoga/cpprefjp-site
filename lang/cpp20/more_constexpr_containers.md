@@ -156,7 +156,7 @@ constexpr void f() {
 }
 ```
 
-実際にはどこのストレージが提供されるかは実装定義である。
+実際にはどこのストレージが提供されるかは処理系定義である。
 
 ### `std::allocator/std::allocator_traits`
 

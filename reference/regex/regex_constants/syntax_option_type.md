@@ -38,7 +38,7 @@ namespace regex_constants {
 * unspecified[italic]
 
 ## 概要
-構文オプションを表す実装定義のビットマスク型。
+構文オプションを表す処理系定義のビットマスク型。
 
 
 | 名前 | 説明 | 対応バージョン |

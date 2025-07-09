@@ -15,7 +15,7 @@ constexpr const char* what() const noexcept override; // (1) C++26
 
 
 ## 戻り値
-エラー理由となる実装定義の文字列
+エラー理由となる処理系定義の文字列
 
 
 ## 例外

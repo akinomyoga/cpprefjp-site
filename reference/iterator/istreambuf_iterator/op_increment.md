@@ -21,7 +21,7 @@ proxy operator++(int);
 
 後置インクリメント：
 `sbuf->sbumpc()`を行い、前の状態を`proxy`オブジェクトとして返す。
-`proxy`クラスは実装定義。
+`proxy`クラスは処理系定義。
 
 ※`sbuf_`は、メンバ変数として保持している`streambuf_type`オブジェクトへのポインタ
 
