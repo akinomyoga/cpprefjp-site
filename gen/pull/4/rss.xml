@@ -2,14 +2,14 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>cpprefjp - C++日本語リファレンス</title>
   <link href="https://cpprefjp.github.io" />
-  <updated>2025-07-09T13:09:00.326370</updated>
-  <id>54872ec9-1741-4e48-afd3-6257ef532bfb</id>
+  <updated>2025-07-09T13:16:59.874141</updated>
+  <id>aae260fd-66dd-4385-92be-555259250a9b</id>
 
   
     <entry>
       <title>hello -- [Test] update</title>
       <link href="https://cpprefjp.github.io/reference/hello.html"/>
-      <id>8a16935a83761701c0e8c7b6da6c78d745edc58a:reference/hello.md</id>
+      <id>29db4207e9d6823587ab0e7f92bf550429e35e5b:reference/hello.md</id>
       <updated>2025-07-09T21:02:11+09:00</updated>
       
         <content type="html">&lt;div class=&#34;header&#34;&gt;&amp;lt;hello&amp;gt;&lt;/div&gt;&lt;h1 itemprop=&#34;name&#34;&gt;&lt;span class=&#34;token&#34;&gt;hello&lt;/span&gt;&lt;/h1&gt;
@@ -28,7 +28,7 @@ context を参照できるようです。&lt;/p&gt;
     <entry>
       <title>hello -- [Test] update</title>
       <link href="https://cpprefjp.github.io/reference/hello.html"/>
-      <id>ec21d845e89a7f881d14b6324700ec00713e16cc:reference/hello.md</id>
+      <id>47cc9996774c7a89850b985d3e4b44c45b24ddd2:reference/hello.md</id>
       <updated>2025-07-09T20:51:26+09:00</updated>
       
         <content type="html">&lt;div class=&#34;header&#34;&gt;&amp;lt;hello&amp;gt;&lt;/div&gt;&lt;h1 itemprop=&#34;name&#34;&gt;&lt;span class=&#34;token&#34;&gt;hello&lt;/span&gt;&lt;/h1&gt;
@@ -46,7 +46,7 @@ context を参照できるようです。&lt;/p&gt;&lt;/div&gt;</content>
     <entry>
       <title>hello -- [Test page]</title>
       <link href="https://cpprefjp.github.io/reference/hello.html"/>
-      <id>1fa2a7c25f7f10630e9a73499d2039e4e8a66f50:reference/hello.md</id>
+      <id>68672e64fe6fbea3c6743955952bc86b0c4d170b:reference/hello.md</id>
       <updated>2025-07-09T18:59:54+09:00</updated>
       
         <content type="html">&lt;div class=&#34;header&#34;&gt;&amp;lt;hello&amp;gt;&lt;/div&gt;&lt;h1 itemprop=&#34;name&#34;&gt;&lt;span class=&#34;token&#34;&gt;hello&lt;/span&gt;&lt;/h1&gt;
