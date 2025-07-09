@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>cpprefjp - C++日本語リファレンス</title>
+  <link href="https://cpprefjp.github.io" />
+  <updated>2025-07-09T10:00:43.463319</updated>
+  <id>af66b27f-9411-445a-a457-0551c60209ad</id>
+
+  
+    <entry>
+      <title>fopen -- fixed inner link</title>
+      <link href="https://cpprefjp.github.io/reference/cstdio/fopen.html"/>
+      <id>fe03d64172bd4a07a2bb62d8605d005172e17d5b:reference/cstdio/fopen.md</id>
+      <updated>2025-07-09T11:22:41+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/cstdio/fopen.md b/reference/cstdio/fopen.md
+index 127db4b21..9c5c872c3 100644
+--- a/reference/cstdio/fopen.md
++++ b/reference/cstdio/fopen.md
+@@ -34,7 +34,7 @@ int main() {
+ * fopen[color ff0000]
+ * fclose[link /reference/cstdio/fclose.md]
+ * FILE[link /reference/cstdio/file.md]
+-* printf[link /reference/cstdio/printf.md]
++* printf[link /reference/cstdio/printf.md.nolink]
+ 
+ ## 処理系
+ - [Clang](/implementation.md#clang): ??
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>rotarymars</name>
+        <email>s.goto2050@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>fclose -- fixed word</title>
+      <link href="https://cpprefjp.github.io/reference/cstdio/fclose.html"/>
+      <id>fbe54bde61bf30121e2f8ba8410a4e7a0aaa081d:reference/cstdio/fclose.md</id>
+      <updated>2025-07-09T11:21:04+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/cstdio/fclose.md b/reference/cstdio/fclose.md
+index 5e5a3f446..e9f07484f 100644
+--- a/reference/cstdio/fclose.md
++++ b/reference/cstdio/fclose.md
+@@ -12,7 +12,7 @@ int fclose(FILE* stream);
+ 
+ 原則、開かれたファイルはプロセスが終了する前にこれを呼び出すことが望ましい。
+ 
+-`fclose`によって閉じられたファイルストリームは無効になり、そのファイルストリームに対する以降の操作は未定義動作となる。
++`fclose`によって閉じられたファイルストリームは無効になり、そのファイルストリームに対する以降の操作は未定義の動作となる。
+ 
+ ## 戻り値
+ 正常に実行されれば、`0`を返す。
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>rotarymars</name>
+        <email>s.goto2050@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>fprintf -- fixed inner links</title>
+      <link href="https://cpprefjp.github.io/reference/cstdio/fprintf.html"/>
+      <id>d900425904cdb086949b4d4d9fc5a71898eeafbe:reference/cstdio/fprintf.md</id>
+      <updated>2025-07-09T11:19:38+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/cstdio/fprintf.md b/reference/cstdio/fprintf.md
+index 70636d1ca..8c3a0b67f 100644
+--- a/reference/cstdio/fprintf.md
++++ b/reference/cstdio/fprintf.md
+@@ -24,8 +24,8 @@ int main() {
+ }
+ ```
+ * std::fprintf[color ff0000]
+-* std::fopen[link /reference/cstdio/fopen.md.nolink]
+-* std::fclose[link /reference/cstdio/fclose.md.nolink]
++* std::fopen[link /reference/cstdio/fopen.md]
++* std::fclose[link /reference/cstdio/fclose.md]
+ * std::FILE[link /reference/cstdio/file.md]
+ ### 出力
+ ```
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>rotarymars</name>
+        <email>s.goto2050@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>fscanf -- fixed inner links</title>
+      <link href="https://cpprefjp.github.io/reference/cstdio/fscanf.html"/>
+      <id>d900425904cdb086949b4d4d9fc5a71898eeafbe:reference/cstdio/fscanf.md</id>
+      <updated>2025-07-09T11:19:38+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/cstdio/fscanf.md b/reference/cstdio/fscanf.md
+index 1d7705e2e..852599ef4 100644
+--- a/reference/cstdio/fscanf.md
++++ b/reference/cstdio/fscanf.md
+@@ -24,8 +24,8 @@ int main() {
+ }
+ ```
+ * std::fscanf[color ff0000]
+-* std::fopen[link /reference/cstdio/fopen.md.nolink]
+-* std::fclose[link /reference/cstdio/fclose.md.nolink]
++* std::fopen[link /reference/cstdio/fopen.md]
++* std::fclose[link /reference/cstdio/fclose.md]
+ * std::FILE[link /reference/cstdio/file.md]
+ ### 出力(test.txtは以下参照)
+ ```
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>rotarymars</name>
+        <email>s.goto2050@gmail.com</email>
+      </author>
+    </entry>
+  
+    <entry>
+      <title>tmpfile -- fixed inner links</title>
+      <link href="https://cpprefjp.github.io/reference/cstdio/tmpfile.html"/>
+      <id>d900425904cdb086949b4d4d9fc5a71898eeafbe:reference/cstdio/tmpfile.md</id>
+      <updated>2025-07-09T11:19:38+09:00</updated>
+      
+        <summary type="html">&lt;pre&gt;&lt;code&gt;diff --git a/reference/cstdio/tmpfile.md b/reference/cstdio/tmpfile.md
+index 807315c26..6ca0c6edb 100644
+--- a/reference/cstdio/tmpfile.md
++++ b/reference/cstdio/tmpfile.md
+@@ -10,7 +10,7 @@ std::FILE* tmpfile();
+ ## 概要
+ 一時ファイルを生成する。
+ 
+-[`std::fclose`](/reference/cstdio/fclose.md.nolink)関数を呼び出すと、一時ファイルは自動的に削除される。
++[`std::fclose`](/reference/cstdio/fclose.md)関数を呼び出すと、一時ファイルは自動的に削除される。
+ 
+ 通常終了（[`exit`](/reference/cstdlib/exit.md)関数や`main`関数のreturn文）時には、一時ファイルは自動的に削除される。
+ 
+&lt;/code&gt;&lt;/pre&gt;</summary>
+      
+      <author>
+        <name>rotarymars</name>
+        <email>s.goto2050@gmail.com</email>
+      </author>
+    </entry>
+  
+</feed>
